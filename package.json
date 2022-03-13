@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Test suite for forms42core",
 
-  "main": "main.ts",
   "scripts": {
     "build": "webpack --mode production && cp index.html styles.css dist"
   },
