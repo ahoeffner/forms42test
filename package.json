@@ -2,8 +2,10 @@
   "name": "test",
   "version": "1.0.0",
   "description": "Test suite for forms42core",
+
+  "main": "index.ts",
   "scripts": {
-    "build": "webpack --mode production && cp index.html dist",
+    "build": "webpack --mode production && cp index.html styles.css dist",
     "compile": "tsc && cp index.html dist"
   },
   "keywords": [],
