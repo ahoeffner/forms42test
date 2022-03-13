@@ -5,8 +5,7 @@
 
   "main": "main.ts",
   "scripts": {
-    "build": "webpack --mode production && cp index.html styles.css dist",
-    "compile": "tsc && cp index.html dist"
+    "build": "webpack --mode production && cp index.html styles.css dist"
   },
   "keywords": [],
   "author": "Alex Høffner",
