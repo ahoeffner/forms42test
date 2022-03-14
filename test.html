@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <style>
+            .window
+            {
+                top: 30px;
+                left: 30px;
+                position: absolute;
+                resize: both;
+                overflow:auto;
+                border: 1px solid black;
+            }
+
+            .page
+            {
+                top: 0;
+                left: 0;
+                position: relative;
+                width: fit-content;
+                height: fit-content;
+                z-index: 1;
+            }
+
+            .modal
+            {
+                top: 0;
+                left: 0;
+                position: absolute;
+                background-color: aqua;
+                opacity: 0.8;
+                z-index: 2;
+            }
+        </style>
+    </head>
+
+    <div class="window" draggable="true">
+        <div class="modal">
+        </div>
+        <div class="page">
+            slam<br>
+            name: <input> <button onclick="hide()">Hide</button>
+            slam<br>
+        </div>
+    </div>
+
+    <script>
+        function hide()
+        {
+            var modal = document.querySelector(".modal");
+            var window = document.querySelector(".window");
+
+            modal.style.width = window.offsetWidth;
+            modal.style.height = window.offsetHeight;
+
+            window.style.resize = "none";
+            window.setAttribute("draggable","false");
+        }
+    </script>
+</html>
