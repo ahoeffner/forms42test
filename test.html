@@ -1,16 +1,14 @@
 <html>
     <head>
         <style>
-            .window
+            .window-handle
             {
-                top: 30px;
-                left: 30px;
                 position: absolute;
                 resize: both;
                 overflow:hidden;
             }
 
-            .page
+            .window-page-content
             {
                 top: 0;
                 left: 0;
@@ -20,22 +18,21 @@
                 z-index: 1;
             }
 
-            .modal
+            .window-modal-block
             {
                 top: 0;
                 left: 0;
                 position: absolute;
-                background-color: aqua;
                 opacity: 0.8;
                 z-index: 2;
             }
         </style>
     </head>
 
-    <div class="window" onmousedown="dragstart(event)">
-        <div class="modal">
+    <div class="window-handle" onmousedown="dragstart(event)">
+        <div class="window-modal-block">
         </div>
-        <div class="page">
+        <div class="window-page-content">
             <span name="win">xxx</span>
             slam<br>
             name: <input> <button onclick="hide()">Hide</button>
@@ -46,8 +43,8 @@
     <script>
         var move = false;
         var mouse = {x: 0, y: 0};
-        var modal = document.querySelector(".modal");
-        var element = document.querySelector(".window");
+        var element = document.querySelector(".window-handle");
+        var modal = document.querySelector(".window-modal-block");
 
         console.log("win: "+element.querySelector("[name=win]"))
 
