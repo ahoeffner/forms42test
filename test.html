@@ -44,46 +44,25 @@
     </div>
 
     <script>
-        /*
-        var isDown = false;
-        var div = document.querySelector(".window");
-
-        div.addEventListener('mousedown', function(e) {
-            isDown = true;
-            offset = [
-                div.offsetLeft - e.clientX,
-                div.offsetTop - e.clientY
-            ];
-        }, true);
-
-        document.addEventListener('mouseup', function() {
-            isDown = false;
-        }, true);
-
-        document.addEventListener('mousemove', function(event) {
-            event.preventDefault();
-            if (isDown) {
-                mousePosition = {
-
-                    x : event.clientX,
-                    y : event.clientY
-
-                };
-                div.style.left = (mousePosition.x + offset[0]) + 'px';
-                div.style.top  = (mousePosition.y + offset[1]) + 'px';
-            }
-        }, true);
-        */
-
         var move = false;
         var mouse = {x: 0, y: 0};
+        var modal = document.querySelector(".modal");
         var element = document.querySelector(".window");
 
         function dragstart(event)
         {
+            var height = element.offsetHeight;
+            var offY = event.clientY - element.offsetTop;
+
+            if (height < 240) height = 240;
+            console.log("offY: "+offY+" height: "+height);
+            if (offY >= height / 10) return;
+
             move = true;
+
             document.addEventListener('mousemove',drag);
             document.addEventListener('mouseup',dragend);
+
             mouse = {x: event.clientX, y: event.clientY};
         }
 
@@ -118,14 +97,9 @@
 
         function hide()
         {
-            var modal = document.querySelector(".modal");
-            var window = document.querySelector(".window");
-
-            modal.style.width = window.offsetWidth;
-            modal.style.height = window.offsetHeight;
-
-            window.style.resize = "none";
-            window.setAttribute("draggable","false");
+            element.style.resize = "none";
+            modal.style.width = element.offsetWidth;
+            modal.style.height = element.offsetHeight;
         }
     </script>
 </html>
