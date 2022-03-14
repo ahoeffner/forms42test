@@ -51,12 +51,8 @@
 
         function dragstart(event)
         {
-            var height = element.offsetHeight;
-            var offY = event.clientY - element.offsetTop;
-
-            if (height < 240) height = 240;
-            console.log("offY: "+offY+" height: "+height);
-            if (offY >= height / 10) return;
+            if (event.clientY - element.offsetTop >= 24)
+                return;
 
             move = true;
 
