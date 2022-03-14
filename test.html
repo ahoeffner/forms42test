@@ -81,7 +81,6 @@
 
         function dragstart(event)
         {
-            console.log("dragstart "+event);
             move = true;
             document.addEventListener('mousemove',drag);
             document.addEventListener('mouseup',dragend);
@@ -93,16 +92,28 @@
             if (move)
             {
                 event.preventDefault();
-                var offX = mouse.x - event.clientX;
-                var offY = mouse.y - event.clientY;
-                console.log("move "+mouse.x+" "+event.clientX+" "+offY+" "+event.clientX);
+                var offX = event.clientX - mouse.x;
+                var offY = event.clientY - mouse.y;
+
+                var elemY = element.offsetTop;
+                var elemX = element.offsetLeft;
+
+                var posX = elemX + offX;
+                var posY = elemY + offY;
+
+                element.style.top = posY + "px";
+                element.style.left = posX + "px";
+
+                mouse = {x: event.clientX, y: event.clientY};
+
             }
         }
 
         function dragend(event)
         {
             move = false;
-            console.log("dragend");
+            document.removeEventListener('mousemove',drag);
+            document.removeEventListener('mouseup',dragend);
         }
 
         function hide()
