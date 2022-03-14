@@ -8,7 +8,6 @@
                 position: absolute;
                 resize: both;
                 overflow:hidden;
-                border: 1px solid black;
             }
 
             .page
@@ -37,6 +36,7 @@
         <div class="modal">
         </div>
         <div class="page">
+            <span name="win">xxx</span>
             slam<br>
             name: <input> <button onclick="hide()">Hide</button>
             slam<br>
@@ -48,6 +48,8 @@
         var mouse = {x: 0, y: 0};
         var modal = document.querySelector(".modal");
         var element = document.querySelector(".window");
+
+        console.log("win: "+element.querySelector("[name=win]"))
 
         function dragstart(event)
         {
