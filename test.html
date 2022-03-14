@@ -33,7 +33,7 @@
         </style>
     </head>
 
-    <div class="window" draggable="true">
+    <div class="window" onmousedown="dragstart(event)">
         <div class="modal">
         </div>
         <div class="page">
@@ -44,6 +44,67 @@
     </div>
 
     <script>
+        /*
+        var isDown = false;
+        var div = document.querySelector(".window");
+
+        div.addEventListener('mousedown', function(e) {
+            isDown = true;
+            offset = [
+                div.offsetLeft - e.clientX,
+                div.offsetTop - e.clientY
+            ];
+        }, true);
+
+        document.addEventListener('mouseup', function() {
+            isDown = false;
+        }, true);
+
+        document.addEventListener('mousemove', function(event) {
+            event.preventDefault();
+            if (isDown) {
+                mousePosition = {
+
+                    x : event.clientX,
+                    y : event.clientY
+
+                };
+                div.style.left = (mousePosition.x + offset[0]) + 'px';
+                div.style.top  = (mousePosition.y + offset[1]) + 'px';
+            }
+        }, true);
+        */
+
+        var move = false;
+        var mouse = {x: 0, y: 0};
+        var element = document.querySelector(".window");
+
+        function dragstart(event)
+        {
+            console.log("dragstart "+event);
+            move = true;
+            document.addEventListener('mousemove',drag);
+            document.addEventListener('mouseup',dragend);
+            mouse = {x: event.clientX, y: event.clientY};
+        }
+
+        function drag(event)
+        {
+            if (move)
+            {
+                event.preventDefault();
+                var offX = mouse.x - event.clientX;
+                var offY = mouse.y - event.clientY;
+                console.log("move "+mouse.x+" "+event.clientX+" "+offY+" "+event.clientX);
+            }
+        }
+
+        function dragend(event)
+        {
+            move = false;
+            console.log("dragend");
+        }
+
         function hide()
         {
             var modal = document.querySelector(".modal");
