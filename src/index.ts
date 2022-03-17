@@ -13,5 +13,7 @@ class Main extends FormsModule
 }
 
 let main:Main = new Main();
-main.parseByTags();
-main.callform("/countries")
+
+main.parseIndexPage();
+main.getApplication().showform("countries")
+main.getApplication().showform("/countries")

@@ -9,8 +9,10 @@ export class Countries extends Form
         super(content);
     }
 
-    public hello() : void
+    public hello(msg?:string, n?:number) : void
     {
-        console.log("It works II");
+        if (n == null) n = 0;
+        if (msg == null) msg = "none";
+        console.log("Message "+msg+"["+n+"]");
     }
 }
