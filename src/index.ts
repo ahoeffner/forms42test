@@ -1,6 +1,6 @@
 import { Header } from './html/Header';
 import { Countries } from './forms/Countries';
-import {FormsModule, ModuleDefinition} from 'forms42core';
+import { FormsModule, ModuleDefinition } from 'forms42core';
 
 @ModuleDefinition(
     [

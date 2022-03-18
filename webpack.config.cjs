@@ -6,8 +6,7 @@ module.exports =
   {
     path: __dirname+'/dist',
     filename: 'test.js',
-    library: "forms42core",
-    libraryTarget: "umd"
+    library: "forms42core"
   },
   module:
   {
