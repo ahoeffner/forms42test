@@ -18,7 +18,8 @@ html, body
     height: 3vh;
     display: flex;
     justify-content: center;
-    background-color: aqua;
+    border: 1px solid black;
+    background-color: lightgray;
 }
 
 .page-footer
@@ -29,7 +30,7 @@ html, body
 
 .page-left
 {
-    border: 1px solid red;
+    border: 1px solid gray;
 }
 
 .page-right
@@ -48,7 +49,7 @@ html, body
     height: 18px;
     display: flex;
     border: 1px solid black;
-    background-color: rgb(209, 209, 228);
+    background-color: lightgrey;
 }
 
 .canvas-header-left
