@@ -1,10 +1,10 @@
 .header
 {
     width: 100%;
-    height: 16px;
+    height: 18px;
     display: flex;
-    background-color: rgb(209, 209, 228);
     border: 1px solid black;
+    background-color: rgb(209, 209, 228);
 }
 
 .header-left
@@ -14,7 +14,10 @@
 
 .header-right
 {
-    flex: 0 0 4ch; /* no grow, no shrink, start at 16px */
+    height: 14px;
+    display: flex;
+    cursor: default;
+    flex: 0 0 32px; /* no grow, no shrink, start at 16px */
 }
 
 .canvas
