@@ -1,9 +1,61 @@
+<head>
+    <style>
+        html, body
+        {
+            margin: 0;
+            height: 100%;
+        }
+
+        .page
+        {
+            display: grid;
+            height: 92vh;
+            grid-auto-flow:column;
+            grid-template-columns: fit-content(10%);
+        }
+
+        .page-header
+        {
+            width: 100%;
+            height: 3vh;
+            display: flex;
+            justify-content: center;
+            background-color: aqua;
+        }
+
+        .page-footer
+        {
+            height: 5vh;
+            display: block;
+        }
+
+        .page-left
+        {
+            border: 1px solid red;
+        }
+
+        .page-right
+        {
+            border: 1px solid green;
+        }
+
+    </style>
+</head>
 <body>
-        <div style="background-color: aqua;">
-            <span style="height: 8px; width: 100px; background-color: aqua;">
-                <span style="height: 8px;" onclick="this.close()">-</span>
-                <span style="display: inline-flex; position: relative; top: 8px; height: 6px; width: 6px; border: 1px solid black; width: 6px;" onclick="this.close()">&nbsp</span>
-                <span style="height: 8px;" onclick="this.close()">x</span>
-            </span>
+    <div class="page-header">
+        <b>Miracle 42</b>
+    </div>
+
+    <div class="page">
+        <div class="page-left">
+            Menu
         </div>
+        <div class="page-right">
+            Forms
+        </div>
+    </div>
+
+    <div class="page-footer">
+        Footer II
+    </div>
 </body>
