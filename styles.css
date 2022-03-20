@@ -9,7 +9,7 @@ html, body
 {
     display: grid;
     height: calc(100vh - 56px);
-    grid-auto-flow:column;
+    grid-auto-flow: column;
     grid-template-columns: fit-content(10%);
 }
 
