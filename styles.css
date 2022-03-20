@@ -2,6 +2,7 @@ html, body
 {
     margin: 0;
     height: 100%;
+    overflow: hidden;
 }
 
 .page
@@ -14,6 +15,7 @@ html, body
 
 .page-header
 {
+    top: 1px;
     width: 100%;
     height: 24px;
     display: flex;
