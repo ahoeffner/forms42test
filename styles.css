@@ -49,6 +49,7 @@ html, body
     height: 20px;
     display: inline-grid;
     grid-auto-flow: column;
+    border-bottom: 1px solid black;
     grid-template-columns: 40px calc(100% - 80px) 40px;
 }
 
