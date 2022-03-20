@@ -8,19 +8,20 @@ html, body
 .page
 {
     display: grid;
-    height: calc(100vh - 56px);
     grid-auto-flow: column;
-    grid-template-columns: fit-content(10%);
+    height: calc(100vh - 56px);
+    grid-template-columns: fit-content(40%);
 }
 
 .page-header
 {
     width: 100%;
-    height: 24px;
-    display: flex;
-    justify-content: center;
+    height: 20px;
+    display: inline-grid;
+    grid-auto-flow: column;
     border: 1px solid black;
     background-color: lightgray;
+    grid-template-columns: 40px calc(100% - 80px) 40px;
 }
 
 .page-footer
@@ -29,18 +30,6 @@ html, body
     display: block;
     border-top: 1px solid black;
 }
-
-.page-left
-{
-    border-right: 1px solid gray;
-}
-
-/*
-.page-right
-{
-    background-color: whitesmoke;
-}
-*/
 
 .canvas
 {
