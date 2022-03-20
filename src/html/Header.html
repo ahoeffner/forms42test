@@ -1,18 +1,24 @@
 <div class="canvas-header">
-    <div class="canvas-header-left canvas-handle">
+    <div class="canvas-header-left">
+    </div>
+
+    <div class="canvas-header-middle canvas-handle">
     </div>
 
     <div class="canvas-header-right">
-        <span style="height: 8px;" onclick="this.close()">
-            <b onclick="this.close()">-</b>
-        </span>
+        <div style="display: grid; grid-auto-flow: column; position: relative; top: 1px; height: 16px; width: 38px;">
 
-        <span style=" margin-left: 4px; display: inline-flex; position: relative; top:6px; height: 6px; width: 6px; border: 1.5px solid black; width: 6px;">
-            <b onclick="this.close()">&nbsp;</b>
-        </span>
+            <span style="position: relative; top: -2px; width: 8px;">
+                <b onclick="this.close()">-</b>
+            </span>
 
-        <span style="height: 8px; margin-left: 4px;">
-            <b onclick="this.close()">x</b>
-        </span>
+            <span style="position: relative; display: inline-block; top: 3.5px; height: 6px; width: 6px; border: 1.5px solid black;">
+                &nbsp
+            </span>
+
+            <span style="position: relative; top: -2px; width: 8px; margin-left: 2px;">
+                <b onclick="this.close()">x</b>
+            </span>
+        </div>
     </div>
 </div>
