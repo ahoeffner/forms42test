@@ -27,17 +27,20 @@ html, body
 {
     height: 32px;
     display: block;
+    border-top: 1px solid black;
 }
 
 .page-left
 {
-    border: 1px solid gray;
+    border-right: 1px solid gray;
 }
 
+/*
 .page-right
 {
-    border: 1px solid green;
+    background-color: whitesmoke;
 }
+*/
 
 .canvas
 {
