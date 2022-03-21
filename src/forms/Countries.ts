@@ -1,4 +1,4 @@
-import { Form } from 'forms42core';
+import { Form } from './Form';
 import content from './Countries.html';
 
 
@@ -14,5 +14,7 @@ export class Countries extends Form
         if (n == null) n = 0;
         if (msg == null) msg = "none";
         console.log("Message "+msg+"["+n+"]");
+        console.log("Canvas "+this.canvas.getFrame());
+        this.canvas.setFrame(this.canvas.getParentFrame());
     }
 }

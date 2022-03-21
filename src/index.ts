@@ -11,9 +11,10 @@ import { FormsModule, ModuleDefinition } from 'forms42core';
 
 class Main extends FormsModule
 {
-    public showmenu(type:string) : void
+    public showmenu(name:string) : void
     {
-        console.log("showmenu "+type);
+        let menu:Element = document.getElementById("main-menu");
+        menu.appendChild(document.createTextNode("show menu: "+name));
     }
 }
 
