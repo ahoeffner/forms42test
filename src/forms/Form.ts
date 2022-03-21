@@ -1,10 +1,22 @@
-import { Form as Base } from 'forms42core';
+import { Form as Base, Frame } from 'forms42core';
 
 
 export class Form extends Base
 {
+    private frame:Frame = null;
+
+
     public toggle() : void
     {
-        console.log("toggle");
+        if (this.frame == null)
+        {
+            this.frame = this.canvas.getFrame();
+            this.canvas.setFrame(this.canvas.getParentFrame());
+        }
+        else
+        {
+            this.canvas.setFrame(this.frame);
+            this.frame = null;
+        }
     }
 }
