@@ -1,7 +1,7 @@
-import fragment from './Header.html';
 import { Include } from 'forms42core';
+import fragment from './PageHeader.html';
 
-export class Header implements Include
+export class PageHeader implements Include
 {
     public get content() : string | Element
     {
