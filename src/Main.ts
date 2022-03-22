@@ -4,6 +4,7 @@ import { FormHeader } from './html/FormHeader';
 import { PageHeader } from './html/PageHeader';
 import { PageFooter } from './html/PageFooter';
 import { FormsModule, ModuleDefinition } from 'forms42core';
+import { FormList } from './FormList';
 
 @ModuleDefinition(
     [
@@ -17,6 +18,7 @@ import { FormsModule, ModuleDefinition } from 'forms42core';
 export class Main extends FormsModule
 {
     public menu:Menu = null;
+    public list:FormList = null;
 
     public static load() : void {new Main();}
 
@@ -26,6 +28,8 @@ export class Main extends FormsModule
         this.parseIndexPage();
 
         this.menu = new Menu();
+        this.list = new FormList();
+
         this.getApplication().showform("/countries");
     }
 }

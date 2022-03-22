@@ -21,7 +21,7 @@ html, body
     grid-auto-flow: column;
     border: 1px solid black;
     background-color: lightgray;
-    grid-template-columns: 40px calc(100% - 80px) 40px;
+    grid-template-columns: 40px calc(100% - 80px);
 }
 
 .page-footer

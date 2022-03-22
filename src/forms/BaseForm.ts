@@ -1,9 +1,18 @@
-import { Form, View } from 'forms42core';
+import { Main } from '../Main';
+import { Form, FormsModule, View } from 'forms42core';
 
 
 export class BaseForm extends Form
 {
+    public id:string = null;
     private view:View = null;
+    private static forms:number = 0;
+
+    constructor(content:string)
+    {
+        super(content);
+        this.id = "f" + ++BaseForm.forms;
+    }
 
     public toggle() : void
     {
@@ -24,7 +33,20 @@ export class BaseForm extends Form
         }
     }
 
+    public hide() : void
+    {
+        this.canvas.getContent().style.display = "none";
+    }
+
+    public show() : void
+    {
+        this.canvas.getContent().style.display = "block";
+    }
+
     public minimize() : void
     {
+        let main:Main = FormsModule.get() as Main;
+        main.list.add(this);
+        this.hide();
     }
 }
