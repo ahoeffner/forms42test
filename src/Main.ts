@@ -1,9 +1,9 @@
+import { Menu } from './Menu';
 import { Countries } from './forms/Countries';
 import { FormHeader } from './html/FormHeader';
 import { PageHeader } from './html/PageHeader';
 import { PageFooter } from './html/PageFooter';
 import { FormsModule, ModuleDefinition } from 'forms42core';
-import { Menu } from './Menu';
 
 @ModuleDefinition(
     [
@@ -26,12 +26,6 @@ export class Main extends FormsModule
         this.parseIndexPage();
 
         this.menu = new Menu();
-
         this.getApplication().showform("/countries");
-    }
-
-    public showmenu(menu:string) : void
-    {
-        console.log("show "+menu+" "+this["menu"]["showmenu"]);
     }
 }
