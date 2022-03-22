@@ -13,11 +13,8 @@ import { FormsModule, ModuleDefinition } from 'forms42core';
 
 export class Main extends FormsModule
 {
-    public static load() : void
-    {
-        new Main();
-    }
-
+    private menu:boolean = false;
+    public static load() : void {new Main();}
 
     constructor()
     {
@@ -30,6 +27,10 @@ export class Main extends FormsModule
     public showmenu(name:string) : void
     {
         let menu:Element = document.getElementById("main-menu");
-        menu.appendChild(document.createTextNode("show menu: "+name));
+
+        if (this.menu) menu.firstChild.remove();
+        else menu.appendChild(document.createTextNode("show menu: "+name));
+
+        this.menu = !this.menu;
     }
 }

@@ -1,10 +1,9 @@
-import { Form as Base, View } from 'forms42core';
+import { Form, View } from 'forms42core';
 
 
-export class Form extends Base
+export class BaseForm extends Form
 {
     private view:View = null;
-
 
     public toggle() : void
     {
@@ -23,5 +22,10 @@ export class Form extends Base
             this.canvas.setView(this.view);
             this.view = null;
         }
+    }
+
+    public minimize() : void
+    {
+        //this.canvas.querySelector("")
     }
 }

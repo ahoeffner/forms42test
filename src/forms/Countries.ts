@@ -1,18 +1,11 @@
-import { Form } from './Form';
+import { BaseForm } from './BaseForm';
 import content from './Countries.html';
 
 
-export class Countries extends Form
+export class Countries extends BaseForm
 {
     constructor()
     {
         super(content);
-    }
-
-    public hello(msg?:string, n?:number) : void
-    {
-        if (n == null) n = 0;
-        if (msg == null) msg = "none";
-        console.log("Message "+msg+"["+n+"]");
     }
 }
