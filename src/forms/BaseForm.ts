@@ -26,6 +26,8 @@ export class BaseForm extends Form
 
     public minimize() : void
     {
-        //this.canvas.querySelector("")
+        let icon:HTMLImageElement = this.canvas.getElementById("icon") as HTMLImageElement;
+        icon.style.display = "block";
+        console.log("icon: "+icon)
     }
 }

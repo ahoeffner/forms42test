@@ -5,7 +5,7 @@
   "description": "Test suite for forms42core",
 
   "scripts": {
-    "build": "webpack --mode production && cp index.html styles.css dist"
+    "build": "webpack --mode production && cp index.html styles.css dist && cp -R images dist"
   },
   "keywords": [],
   "author": "Alex Høffner",
