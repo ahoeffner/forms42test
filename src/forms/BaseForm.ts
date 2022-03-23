@@ -6,6 +6,8 @@ export class BaseForm extends Form
 {
     public id:string = null;
     private view:View = null;
+    private parent:HTMLElement;
+    private display:HTMLElement;
     private static forms:number = 0;
 
     constructor(content:string)
@@ -35,12 +37,15 @@ export class BaseForm extends Form
 
     public hide() : void
     {
-        this.canvas.getContent().style.display = "none";
+        this.display = this.canvas.getElement();
+        this.parent = this.display.parentElement;
+        this.display.remove();
+
     }
 
     public show() : void
     {
-        this.canvas.getContent().style.display = "block";
+        this.parent.appendChild(this.display);
     }
 
     public minimize() : void
