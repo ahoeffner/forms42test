@@ -37,6 +37,11 @@ html, body
     border: 1px solid black;
 }
 
+.form
+{
+    background: white;
+}
+
 .form-header
 {
     width: 100%;
