@@ -37,15 +37,12 @@ export class BaseForm extends Form
 
     public hide() : void
     {
-        this.display = this.canvas.getElement();
-        this.parent = this.display.parentElement;
-        this.display.remove();
-
+        this.canvas.remove();
     }
 
     public show() : void
     {
-        this.parent.appendChild(this.display);
+        this.canvas.restore();
     }
 
     public minimize() : void
