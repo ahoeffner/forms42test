@@ -31,5 +31,9 @@ export class Main extends FormsModule
         this.list = new FormList();
 
         this.getApplication().showform("/countries");
+
+        setTimeout(() => {
+            this.getApplication().showform("/countries");
+        }, 5000);
     }
 }

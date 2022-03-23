@@ -9,8 +9,8 @@ html, body
 {
     display: grid;
     grid-auto-flow: column;
-    height: calc(100vh - 56px);
-    grid-template-columns: fit-content(40%);
+    height: calc(100vh - 60px);
+    grid-template-columns: fit-content(30%);
 }
 
 .page-header
@@ -26,17 +26,18 @@ html, body
 
 .page-footer
 {
-    height: 32px;
-    display: block;
+    height: 36px;
+    display: flex;
     border-top: 1px solid black;
 }
 
 .canvas
 {
+    opacity: 1;
     border: 1px solid black;
 }
 
-.canvas-header
+.form-header
 {
     width: 100%;
     height: 20px;
@@ -46,17 +47,19 @@ html, body
     grid-template-columns: 40px calc(100% - 80px) 40px;
 }
 
-.canvas-header-left
+.form-header-left
 {
     background-color: lightgray;
 }
 
-.canvas-header-middle
+.form-header-middle
 {
+    display: flex;
+    justify-content: center;
     background-color: lightgray;
 }
 
-.canvas-header-right
+.form-header-right
 {
     cursor: default;
     background-color: lightgray;

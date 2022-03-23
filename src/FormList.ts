@@ -19,7 +19,10 @@ export class FormList implements EventListenerObject
         icon.id = form.id;
         icon.style.width = "32px";
         icon.style.height = "32px";
-        icon.style.display = "block";
+        icon.style.display = "flex";
+        icon.style.marginTop = "2.5px";
+        icon.style.marginLeft = "1.5px";
+        icon.style.marginRight = "1.5px";
         icon.addEventListener("click",this);
 
         this.list.appendChild(icon);

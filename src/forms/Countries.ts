@@ -7,5 +7,6 @@ export class Countries extends BaseForm
     constructor()
     {
         super(content);
+        this.setTitle("Countries");
     }
 }

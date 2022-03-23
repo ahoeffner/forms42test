@@ -6,8 +6,6 @@ export class BaseForm extends Form
 {
     public id:string = null;
     private view:View = null;
-    private parent:HTMLElement;
-    private display:HTMLElement;
     private static forms:number = 0;
 
     constructor(content:string)
@@ -23,6 +21,8 @@ export class BaseForm extends Form
             this.view = this.canvas.getView();
             let avail:View = this.canvas.getParentView();
 
+            avail.x = 0;
+            avail.y = 0;
             avail.width = +avail.width - 2;
             avail.height = +avail.height - 2;
 
@@ -50,5 +50,11 @@ export class BaseForm extends Form
         let main:Main = FormsModule.get() as Main;
         main.list.add(this);
         this.hide();
+    }
+
+    public setTitle(title:string) : void
+    {
+        let header:HTMLElement = this.getPage().querySelector("[name='title']");
+        header.appendChild(document.createTextNode(title));
     }
 }
