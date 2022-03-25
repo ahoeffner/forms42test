@@ -14,6 +14,18 @@ export class BaseForm extends Form
         this.id = "f" + ++BaseForm.forms;
     }
 
+    public oninit() : void
+    {
+        let px:number = 16;
+        let off:number = BaseForm.forms % 8;
+
+        let posY:number = off*px;
+        let posX:number = off*px;
+
+        this.canvas.getElement().style.top = posY + "px";
+        this.canvas.getElement().style.left = posX + "px";
+    }
+
     public toggle() : void
     {
         if (this.view == null)
