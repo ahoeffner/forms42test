@@ -2,11 +2,22 @@ import { Main } from '../Main';
 import { Form, FormsModule, View } from 'forms42core';
 
 
+class EventHandler implements EventListenerObject
+{
+    public handleEvent(event:Event): void
+    {
+        console.log("event "+event.type);
+    }
+
+}
+
+
 export class BaseForm extends Form
 {
     public id:string = null;
     private view:View = null;
     private static forms:number = 0;
+    private handler:EventHandler = new EventHandler();
 
     constructor(content:string)
     {
@@ -24,6 +35,9 @@ export class BaseForm extends Form
 
         this.canvas.getElement().style.top = posY + "px";
         this.canvas.getElement().style.left = posX + "px";
+
+        this.canvas.getContent().addEventListener("blur",this.handler);
+        this.canvas.getContent().addEventListener("focus",this.handler);
     }
 
     public toggle() : void
