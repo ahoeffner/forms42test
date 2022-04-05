@@ -71,3 +71,9 @@ html, body
     cursor: default;
     background-color: lightgray;
 }
+
+.menu-left
+{
+    height: 100%;
+    border-right: 1px solid black;
+}
