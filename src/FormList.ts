@@ -2,7 +2,7 @@ import { BaseForm as Form } from './forms/BaseForm';
 
 export class FormList implements EventListenerObject
 {
-    private list:Element = null;
+    private list:HTMLElement = null;
     private icon:HTMLImageElement = null;
     private forms:Map<string,Form> = new Map<string,Form>();
 
