@@ -1,5 +1,5 @@
 import { Main } from '../Main';
-import { Form, FormsModule, View } from 'forms42core';
+import { Form, FormsModule, View, Events, EventType } from 'forms42core';
 
 
 class EventHandler implements EventListenerObject
@@ -25,12 +25,14 @@ export class BaseForm extends Form
     {
         super(content);
         this.id = "f" + ++BaseForm.forms;
+		Events.addListener(this,"oninit",{type: EventType.NewForm});
     }
 
     public oninit() : void
     {
         let px:number = 16;
         let off:number = BaseForm.forms % 8;
+		console.log("OnInit called");
 
         let posY:number = off*px;
         let posX:number = off*px;
