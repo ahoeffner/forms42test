@@ -1,14 +1,20 @@
 import { Main } from '../Main';
-import { Form, FormsModule, View, Events, EventType } from 'forms42core';
+import { Form, FormsModule, View, EventType } from 'forms42core';
 
 
 class EventHandler implements EventListenerObject
 {
+	private static zindex:number = 0;
+
     constructor(private form:BaseForm) {}
 
     public handleEvent(event:Event): void
     {
-        console.log("event II "+event.type+" "+this.form.id);
+		if (event.type == "focus")
+		{
+			EventHandler.zindex++;
+			this.form.canvas.zindex = EventHandler.zindex;
+		}
     }
 
 }
@@ -25,14 +31,13 @@ export class BaseForm extends Form
     {
         super(content);
         this.id = "f" + ++BaseForm.forms;
-		Events.addListener(this,"oninit",{type: EventType.NewForm});
+		this.addEventListener(this.oninit,{type: EventType.NewForm});
     }
 
     public oninit() : void
     {
         let px:number = 16;
         let off:number = BaseForm.forms % 8;
-		console.log("OnInit called");
 
         let posY:number = off*px;
         let posX:number = off*px;

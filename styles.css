@@ -77,3 +77,37 @@ html, body
     height: 100%;
     border-right: 1px solid black;
 }
+
+.left-menu-container
+{
+	display: none;
+	margin: 5px;
+	width: 100px;
+	padding: 10px;
+	background: transparent;
+	border-radius: 0;
+	text-align: left;
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.menu-item
+{
+	font-size: 13px;
+	display: block;
+	position: absolute;
+	background: #dddddd;
+	margin-top: 15px;
+	margin-left: -15px;
+}
+
+.link-item
+{
+	font-size: 13px;
+	display: block;
+	position: absolute;
+	background: #dddddd;
+	margin-top: 15px;
+	margin-left: -15px;
+}
