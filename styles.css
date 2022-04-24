@@ -96,7 +96,6 @@ html, body
 {
 	font-size: 13px;
 	display: block;
-	position: absolute;
 	background: #dddddd;
 	margin-top: 15px;
 	margin-left: -15px;
@@ -106,7 +105,6 @@ html, body
 {
 	font-size: 13px;
 	display: block;
-	position: absolute;
 	background: #dddddd;
 	margin-top: 15px;
 	margin-left: -15px;

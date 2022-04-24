@@ -30,10 +30,6 @@ export class Main extends FormsModule
         this.menu = new Menu();
         this.list = new FormList();
 
-        this.getApplication().showform("/countries");
-
-        setTimeout(() => {
-            this.getApplication().showform("/countries");
-        }, 5000);
+        //this.getApplication().showform("/countries");
     }
 }
