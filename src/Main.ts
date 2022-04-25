@@ -4,7 +4,7 @@ import { FormHeader } from './html/FormHeader';
 import { PageHeader } from './html/PageHeader';
 import { PageFooter } from './html/PageFooter';
 import { FormsModule, ModuleDefinition } from 'forms42core';
-import { FormList } from './FormList';
+import { Minimized } from './Minimized';
 
 @ModuleDefinition(
     [
@@ -18,7 +18,7 @@ import { FormList } from './FormList';
 export class Main extends FormsModule
 {
     public menu:Menu = null;
-    public list:FormList = null;
+    public list:Minimized = null;
 
     public static load() : void {new Main();}
 
@@ -28,8 +28,8 @@ export class Main extends FormsModule
         this.parseIndexPage();
 
         this.menu = new Menu();
-        this.list = new FormList();
+        this.list = new Minimized();
 
-        //this.getApplication().showform("/countries");
+        this.getApplication().showform("/countries");
     }
 }

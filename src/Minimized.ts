@@ -1,6 +1,6 @@
 import { BaseForm as Form } from './forms/BaseForm';
 
-export class FormList implements EventListenerObject
+export class Minimized implements EventListenerObject
 {
     private list:HTMLElement = null;
     private icon:HTMLImageElement = null;
