@@ -15,12 +15,12 @@ import { FormsModule, ModuleDefinition, Properties } from 'forms42core';
     ]
 )
 
-export class Main extends FormsModule
+export class Forms extends FormsModule
 {
     public menu:Menu = null;
     public list:Minimized = null;
 
-    public static load() : void {new Main();}
+    public static load() : void {new Forms();}
 
     constructor()
     {
