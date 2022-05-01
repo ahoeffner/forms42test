@@ -26,9 +26,8 @@ export class Main extends FormsModule
     {
         super();
 		Properties.EventPrefix = "frm.";
-		
-        this.parseIndexPage();
 
+        this.parse();
         this.menu = new Menu();
         this.list = new Minimized();
 
