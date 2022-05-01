@@ -4,7 +4,7 @@ import { Countries } from './forms/Countries';
 import { FormHeader } from './html/FormHeader';
 import { PageHeader } from './html/PageHeader';
 import { PageFooter } from './html/PageFooter';
-import { FormsModule, ModuleDefinition } from 'forms42core';
+import { FormsModule, ModuleDefinition, Properties } from 'forms42core';
 
 @ModuleDefinition(
     [
@@ -25,6 +25,8 @@ export class Main extends FormsModule
     constructor()
     {
         super();
+		Properties.EventPrefix = "frm.";
+		
         this.parseIndexPage();
 
         this.menu = new Menu();
