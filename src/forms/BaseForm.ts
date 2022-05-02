@@ -16,7 +16,6 @@ class EventHandler implements EventListenerObject
 			this.form.canvas.zindex = EventHandler.zindex;
 		}
     }
-
 }
 
 
@@ -39,8 +38,8 @@ export class BaseForm extends Form
         let px:number = 16;
         let off:number = BaseForm.forms % 8;
 
-        let posY:number = off*px;
         let posX:number = off*px;
+        let posY:number = off*px;
 
         this.canvas.getElement().style.top = posY + "px";
         this.canvas.getElement().style.left = posX + "px";
@@ -83,8 +82,8 @@ export class BaseForm extends Form
 
     public minimize() : void
     {
-        let main:Forms = FormsModule.get() as Forms;
-        main.list.add(this);
+        let forms:Forms = FormsModule.get() as Forms;
+        forms.list.add(this);
         this.hide();
     }
 
