@@ -5,7 +5,7 @@ module.exports =
   output:
   {
     path: __dirname+'/dist',
-    filename: 'test.js',
+    filename: 'demo.js',
     library: "forms42core"
   },
   module:

@@ -2,23 +2,6 @@ import { Forms } from '../Forms';
 import { Form, FormsModule, View, EventType } from 'forms42core';
 
 
-class EventHandler implements EventListenerObject
-{
-	private static zindex:number = 0;
-
-    constructor(private form:BaseForm) {}
-
-    public handleEvent(event:Event): void
-    {
-		if (event.type == "focus")
-		{
-			EventHandler.zindex++;
-			this.form.canvas.zindex = EventHandler.zindex;
-		}
-    }
-}
-
-
 export class BaseForm extends Form
 {
     public id:string = null;
@@ -91,5 +74,22 @@ export class BaseForm extends Form
     {
         let header:HTMLElement = this.getLayout().querySelector("[name='title']");
         header.appendChild(document.createTextNode(title));
+    }
+}
+
+
+class EventHandler implements EventListenerObject
+{
+	private static zindex:number = 0;
+
+    constructor(private form:BaseForm) {}
+
+    public handleEvent(event:Event): void
+    {
+		if (event.type == "focus")
+		{
+			EventHandler.zindex++;
+			this.form.canvas.zindex = EventHandler.zindex;
+		}
     }
 }
