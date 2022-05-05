@@ -109,3 +109,9 @@ html, body
 	margin-top: 15px;
 	margin-left: -15px;
 }
+
+.cfld
+{
+	margin-left: 4px;
+	margin-right: 4px;
+}

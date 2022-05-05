@@ -4,8 +4,13 @@
     <div style="display: flex; min-width: 400px; min-height: 200px; width: 100%; height: 100%; justify-content: center;">
         <div>
             <p>This is the Countries Form</p>
-            <input>
-			<field type="x-int"></field>
+			<foreach expr="row in 1..5" class="block" style="margin-bottom: 8px;">
+				<div style="margin-top: 4px; margin-bottom: 4px;">
+					<field id="id$row" name="country_id"   block="countries" row="$row" type="x-int"  class="cfld"></field>
+					<field id="cc$row" name="country_code" block="countries" row="$row" type="x-fixed" x-pattern="{2A} - {2#}" class="cfld"></field>
+					<field id="cn$row" name="country_name" block="countries" row="$row" type="x-int"  class="cfld"></field>
+				</div>
+			</foreach>
         </div>
     </div>
 </div>
