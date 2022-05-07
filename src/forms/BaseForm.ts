@@ -6,6 +6,7 @@ export class BaseForm extends Form
 {
     public id:string = null;
     private view:View = null;
+	public title:string = null;
     private static forms:number = 0;
     private handler:EventHandler = new EventHandler(this);
 
@@ -30,6 +31,8 @@ export class BaseForm extends Form
         this.canvas.getContent().tabIndex = -1;
         this.canvas.getContent().addEventListener("blur",this.handler);
         this.canvas.getContent().addEventListener("focus",this.handler);
+
+		this.setTitle(this.title);
     }
 
     public toggle() : void
