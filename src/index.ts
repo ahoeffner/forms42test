@@ -1,4 +1,4 @@
-import { Forms } from './Forms';
+import { FormsModule } from './FormsModule';
 
-Forms.load();
+FormsModule.load();
 console.log("Demo Version 1.2");

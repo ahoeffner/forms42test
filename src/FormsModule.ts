@@ -4,7 +4,7 @@ import { Countries } from './forms/Countries';
 import { FormHeader } from './html/FormHeader';
 import { PageHeader } from './html/PageHeader';
 import { PageFooter } from './html/PageFooter';
-import { FormsModule, ModuleDefinition, Properties } from 'forms42core';
+import { FormsModule as FormsCoreModule, ModuleDefinition, Properties } from 'forms42core';
 
 @ModuleDefinition(
     [
@@ -15,17 +15,17 @@ import { FormsModule, ModuleDefinition, Properties } from 'forms42core';
     ]
 )
 
-export class Forms extends FormsModule
+export class FormsModule extends FormsCoreModule
 {
     public menu:Menu = null;
     public list:Minimized = null;
 
-    public static load() : void {new Forms();}
+    public static load() : void {new FormsModule();}
 
     constructor()
     {
         super();
-		Properties.EventPrefix = "frm.";
+		Properties.AttributePrefix = "frm.";
 
         this.parse();
         this.menu = new Menu();

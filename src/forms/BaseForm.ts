@@ -1,5 +1,5 @@
-import { Forms } from '../Forms';
-import { Form, FormsModule, View, EventType } from 'forms42core';
+import { FormsModule } from '../FormsModule';
+import { Form, View, EventType } from 'forms42core';
 
 
 export class BaseForm extends Form
@@ -68,7 +68,7 @@ export class BaseForm extends Form
 
     public minimize() : void
     {
-        let forms:Forms = FormsModule.get() as Forms;
+        let forms:FormsModule = FormsModule.get() as FormsModule;
         forms.list.add(this);
         this.hide();
     }
