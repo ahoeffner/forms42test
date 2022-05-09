@@ -12,6 +12,6 @@ export class Countries extends BaseForm
 
 	public test() : void
 	{
-		this.setView("<button>Reset</button>");
+		console.log("test");
 	}
 }
