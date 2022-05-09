@@ -9,4 +9,9 @@ export class Countries extends BaseForm
         super(content);
 		this.title = "Countries";
     }
+
+	public test() : void
+	{
+		this.setView("<button>Reset</button>");
+	}
 }
