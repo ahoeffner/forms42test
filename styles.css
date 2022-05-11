@@ -77,7 +77,6 @@ html, body
     height: 100%;
     border-right: 1px solid black;
 }
-
 .left-menu-container
 {
 	display: none;
@@ -92,11 +91,17 @@ html, body
 	cursor: pointer;
 }
 
+.left-menu-container .menu-items
+{
+    padding-left:5px;
+    transition: 0.3s;
+}
+
 .menu-item
 {
 	font-size: 13px;
 	display: block;
-	background: #dddddd;
+	background: white;
 	margin-top: 15px;
 	margin-left: -15px;
 }
@@ -105,13 +110,7 @@ html, body
 {
 	font-size: 13px;
 	display: block;
-	background: #dddddd;
+	background: white;
 	margin-top: 15px;
 	margin-left: -15px;
-}
-
-.cfld
-{
-	margin-left: 4px;
-	margin-right: 4px;
 }
