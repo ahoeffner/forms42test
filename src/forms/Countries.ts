@@ -1,3 +1,4 @@
+import { Event } from 'forms42core';
 import { BaseForm } from './BaseForm';
 import content from './Countries.html';
 
@@ -8,10 +9,17 @@ export class Countries extends BaseForm
     {
         super(content);
 		this.title = "Countries";
+		this.addEventListener(this.handle);
     }
 
 	public test() : void
 	{
 		console.log("test");
+	}
+
+	public async handle(event:Event) : Promise<boolean>
+	{
+		console.log("event: "+event);
+		return(true);
 	}
 }
