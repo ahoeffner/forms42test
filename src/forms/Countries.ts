@@ -1,4 +1,4 @@
-import { Event } from 'forms42core';
+import { Event, EventType } from 'forms42core';
 import { BaseForm } from './BaseForm';
 import content from './Countries.html';
 
@@ -20,6 +20,7 @@ export class Countries extends BaseForm
 	public async handle(event:Event) : Promise<boolean>
 	{
 		console.log("event: "+event);
+		//if (event.type == EventType.PostChange) return(false);
 		return(true);
 	}
 }
