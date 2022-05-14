@@ -4,7 +4,7 @@ import { Countries } from './forms/Countries';
 import { FormHeader } from './html/FormHeader';
 import { PageHeader } from './html/PageHeader';
 import { PageFooter } from './html/PageFooter';
-import { FormsModule as FormsCoreModule, ModuleDefinition, Properties } from 'forms42core';
+import { FormsModule as FormsCoreModule, Keymap, ModuleDefinition, Properties } from 'forms42core';
 
 @ModuleDefinition(
     [
@@ -31,6 +31,7 @@ export class FormsModule extends FormsCoreModule
         this.menu = new Menu();
         this.list = new Minimized();
 
+		Keymap.merge(Keymap);
         this.getApplication().showform("/countries");
     }
 }
