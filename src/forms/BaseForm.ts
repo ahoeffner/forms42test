@@ -26,7 +26,7 @@ export class BaseForm extends Form
     {
         super(content);
         this.id = "f" + ++BaseForm.forms;
-		this.addEventListener(this.oninit,{type: EventType.NewForm});
+		this.addEventListener(this.oninit,{type: EventType.PreForm});
     }
 
     public oninit() : void
