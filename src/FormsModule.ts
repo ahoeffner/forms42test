@@ -16,7 +16,7 @@ import { Countries } from './forms/Countries';
 import { FormHeader } from './html/FormHeader';
 import { PageHeader } from './html/PageHeader';
 import { PageFooter } from './html/PageFooter';
-import { FormsModule as FormsCoreModule, KeyMap, ModuleDefinition, Properties } from 'forms42core';
+import { ModuleDefinition, FormsModule as FormsCoreModule, KeyCodes, KeyMap, Properties } from 'forms42core';
 
 @ModuleDefinition(
     [
@@ -43,12 +43,12 @@ export class FormsModule extends FormsCoreModule
         this.menu = new Menu();
         this.list = new Minimized();
 
-		KeyMap.update(keymap);
+		this.updateKeyMap(keymap);
         this.getApplication().showform("/countries");
     }
 }
 
 export class keymap extends KeyMap
 {
-	public static Enter2:KeyMap = new KeyMap({key: 13});
+	public static test:KeyMap = new KeyMap({key: KeyCodes.enter});
 }
