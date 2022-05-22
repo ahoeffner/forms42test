@@ -50,5 +50,5 @@ export class FormsModule extends FormsCoreModule
 
 export class keymap extends KeyMap
 {
-	public static test:KeyMap = new KeyMap({key: KeyCodes.enter});
+	public static test:KeyMap = new KeyMap({key: KeyCodes.Enter});
 }
