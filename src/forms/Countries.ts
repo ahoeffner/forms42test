@@ -28,7 +28,7 @@ export class Countries extends BaseForm
 	{
 		if (event.type == EventType.ValidateField)
 		{
-			let val:string = this.getFieldValue("countries","country_name");
+			let val:string = this.getValue("countries","country_name");
 			if (val == "err") return(false);
 		}
 
