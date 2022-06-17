@@ -24,13 +24,17 @@ export class Countries extends BaseForm
 		this.addEventListener(this.handle);
     }
 
+	private rec:number = 0;
 	public async handle(event:Event) : Promise<boolean>
 	{
-		if (event.type == EventType.ValidateField)
-		{
-			let val:string = this.getValue("countries","country_name");
-			if (val == "err") return(false);
-		}
+		if (event.type == EventType.PostQuery)
+			this.setValue("countries","country_id",this.rec++);
+
+		if (event.type == EventType.WhenValidateField)
+			console.log("validate field "+event.fieldname);
+
+		if (event.type == EventType.WhenValidateRecord)
+			console.log("validate record "+event.blockname);
 
 		return(true);
 	}

@@ -13,11 +13,11 @@
 
 				<tr frm.for="row in 1..5" class="block">
 					<td>
-						<input id="cc$row" name="country_code" block="countries" row="$row" type="x-fixed" x-pattern="{2A} - {2#}">
+						<input id="cc$row" name="country_code" block="countries" row="$row" format="{2A} - {2#}" placeholder="DK - 45">
 					</td>
 
 					<td>
-						<input id="cn$row" name="country_name" block="countries" row="$row">
+						<input id="cn$row" name="country_name" block="countries" row="$row" initcap>
 					</td>
 				</tr>
 			</table>
@@ -31,19 +31,29 @@
 				<tr>
 					<th>Id</th>
 					<td>
-						<input id="id" name="country_id" block="countries" type="x-int">
+						<input id="id" name="country_id" block="countries" integer placeholder="##">
 					</td>
 				</tr>
 				<tr>
 					<th>Code</th>
 					<td>
-						<input id="cc" name="country_code" block="countries" type="x-fixed" x-pattern="{2A} - {2#}">
+						<input id="cc" name="country_code" block="countries" format="{2A} - {2#}" placeholder="DK - 45">
 					</td>
 				</tr>
 				<tr>
 					<th>Name</th>
 					<td>
-						<input id="cn" name="country_name" block="countries">
+						<input id="cn" name="country_name" block="countries" initcap>
+					</td>
+				</tr>
+				<tr>
+					<th>Category</th>
+					<td>
+						<select name="country_name" id="pn" block="countries">
+							<option>Asia</option>
+							<option>Europe</option>
+							<option>Africa</option>
+						</select>
 					</td>
 				</tr>
 			</table>
