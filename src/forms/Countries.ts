@@ -30,10 +30,10 @@ export class Countries extends BaseForm
 		if (event.type == EventType.PostQuery)
 			this.setValue("countries","country_id",this.rec++);
 
-		if (event.type == EventType.WhenValidateField)
+		if (event.type == EventType.ValidateField)
 			console.log("validate field "+event.fieldname+" <"+event.field.getValue()+">");
 
-		if (event.type == EventType.WhenValidateRecord)
+		if (event.type == EventType.ValidateRecord)
 			console.log("validate record "+event.blockname);
 
 		return(true);

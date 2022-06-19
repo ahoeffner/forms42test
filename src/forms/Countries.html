@@ -8,16 +8,16 @@
 			<table>
 				<tr>
 					<th>Code</th>
-					<th>Name</th>
+					<th>Shortname</th>
 				</tr>
 
 				<tr for="row in 1..5" class="block">
 					<td>
-						<input id="cc$row" name="country_code" block="countries" row="$row" format="{2A} - {2#}" placeholder="DK - 45">
+						<input size="10" id="cc$row" name="country_code" block="countries" row="$row" format="{2A} - {2#}" placeholder="DK - 45">
 					</td>
 
 					<td>
-						<input id="cn$row" name="country_name" block="countries" row="$row" initcap>
+						<input size="10" id="cn$row" name="country_name" block="countries" row="$row" upper>
 					</td>
 				</tr>
 			</table>
@@ -28,32 +28,68 @@
 				<tr>
 					<td>&nbsp;</td>
 				</tr>
+
 				<tr>
-					<th>Id</th>
 					<td>
-						<input id="id" name="country_id" block="countries" integer placeholder="##">
+						<b>Id : </b>
+					</td>
+					<td>
+						<input size="2" id="id" name="country_id" block="countries" integer required placeholder="##">
 					</td>
 				</tr>
+
 				<tr>
-					<th>Code</th>
 					<td>
-						<input id="cc" name="country_code" block="countries" format="{2A} - {2#}" placeholder="DK - 45">
+						<b>Code : </b>
+					</td>
+					<td>
+						<input size="10" id="cc" name="country_code" block="countries" format="{2A} - {2#}" placeholder="DK - 45">
 					</td>
 				</tr>
+
 				<tr>
-					<th>Name</th>
 					<td>
-						<input id="cn" name="country_name" block="countries" initcap>
+						<b>Shortname : </b>
+					</td>
+					<td>
+						<input size="10" id="cn" name="country_name" block="countries" upper>
 					</td>
 				</tr>
+
 				<tr>
-					<th>Category</th>
 					<td>
-						<select name="country_name" id="pn" block="countries">
-							<option>Asia</option>
-							<option>Europe</option>
-							<option>Africa</option>
+						<b>Country : </b>
+					</td>
+					<td>
+						<select style="min-width: 80px" name="country_name" id="pn" block="countries" multiple>
+							<option value="DK">Denmark</option>
+							<option value="SE">Sweden</option>
+							<option value="NO">Norway</option>
 						</select>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<b>Denmark : </b>
+						<input type="checkbox" id="cn" name="country_name" block="countries" value="DK">
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<b>Denmark : </b>
+						<input type="radio" id="cn" name="country_name" block="countries" value="DK">
+					</td>
+
+					<td>
+						<b>Norway : </b>
+						<input type="radio" id="cn" name="country_name" block="countries" value="NO">
+					</td>
+
+					<td>
+						<b>Sweden : </b>
+						<input type="radio" id="cn" name="country_name" block="countries" value="SE">
 					</td>
 				</tr>
 			</table>
