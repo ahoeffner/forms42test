@@ -12,7 +12,7 @@
 
 import { BaseForm } from './BaseForm';
 import content from './Countries.html';
-import { Event, EventType } from 'forms42core';
+import { Event, EventType, dates } from 'forms42core';
 
 
 export class Countries extends BaseForm
@@ -22,13 +22,22 @@ export class Countries extends BaseForm
         super(content);
 		this.title = "Countries";
 		this.addEventListener(this.handle);
+
+		let date:Date = new Date();
+		console.log("date: "+dates.format(date));
     }
 
 	private rec:number = 0;
 	public async handle(event:Event) : Promise<boolean>
 	{
+		//if (event.type == EventType.Mouse)
+			//console.log(EventType[event.type])
+
 		if (event.type == EventType.PostQuery)
 			this.setValue("countries","country_id",this.rec++);
+
+		if (EventType[event.type].startsWith("Pre") || EventType[event.type].startsWith("Post"))
+			console.log(EventType[event.type]+" "+this.getValue("Countries","country_id")+" field: "+event.fieldname)
 
 		if (event.type == EventType.ValidateField)
 			console.log("validate field "+event.fieldname+" <"+event.field.getValue()+">");

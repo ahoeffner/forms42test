@@ -33,6 +33,7 @@ export class BaseForm extends Form
     {
         let px:number = 16;
         let off:number = BaseForm.forms % 8;
+		this.setValue("countries","country_id",100)
 
         let posX:number = off*px;
         let posY:number = off*px;
