@@ -1,15 +1,15 @@
 <div name="form">
     <include src="/html/formheader"></include>
 
-	<form>
-		<button frm.click="this.test()">Test</button>
+	<form action="javascript:alert('Send data to server')">
+		<button onclick="this.dumpInstances()">Test</button>
 
 		<div style="display: flex; min-width: 500px; min-height: 200px; width: 100%; height: 100%; justify-content: center;">
 			<div>
 				<table>
 					<tr>
 						<th>Code</th>
-						<th>Shortname</th>
+						<th>Country</th>
 					</tr>
 
 					<tr for="row in 1..5" class="block">
@@ -18,7 +18,7 @@
 						</td>
 
 						<td>
-							<input size="10" id="cn$row" name="country_name" block="countries" row="$row" upper required autocomplete="do-not-autofill">
+							<input size="10" id="cn$row" name="country_name" block="countries" row="$row" initcap required autocomplete="do-not-autofill">
 						</td>
 					</tr>
 				</table>
@@ -35,7 +35,7 @@
 							<b>Id : </b>
 						</td>
 						<td>
-							<input size="2" id="id" name="country_id" block="countries" integer required placeholder="##">
+							<input size="2" id="cr-id1" name="country_id" block="countries" integer required placeholder="##">
 						</td>
 					</tr>
 
@@ -44,7 +44,7 @@
 							<b>Code : </b>
 						</td>
 						<td>
-							<input size="10" id="cc" name="country_code" block="countries" format="{2A} - {2#}" placeholder="DK - 45" required>
+							<input size="10" id="cr-cc1" name="country_code" block="countries" autocomplete="do-not-autofill" format="{2A} - {2#}" placeholder="DK - 45" required>
 						</td>
 					</tr>
 
@@ -53,7 +53,25 @@
 							<b>Shortname : </b>
 						</td>
 						<td>
-							<input size="10" id="cn" name="country_name" block="countries" upper>
+							<input size="10" id="cr-cn1" name="country_name" block="countries" upper autocomplete="do-not-autofill">
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<b>Date : </b>
+						</td>
+						<td>
+							<input size="10" id="cr-cd1" name="country_date" block="countries" date>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<b>DateTime : </b>
+						</td>
+						<td>
+							<input id="cr-cd2" name="country_date" block="countries" datetime>
 						</td>
 					</tr>
 
@@ -62,7 +80,7 @@
 							<b>Shortlist : </b>
 						</td>
 						<td>
-							<input size="10" list="list" name="country_name" block="countries" required>
+							<input id="cr-cn2" list="list" name="country_name" block="countries" required>
 
 							<datalist id="list">
 								<option>DK</option>
@@ -77,7 +95,7 @@
 							<b>Country : </b>
 						</td>
 						<td>
-							<select style="min-width: 80px" name="country_name" id="pn" block="countries" multiple>
+							<select id="cr-cn3" style="min-width: 80px" name="country_name" id="pn" block="countries" multiple>
 								<option value="DK">Denmark</option>
 								<option value="SE">Sweden</option>
 								<option value="NO">Norway</option>
@@ -88,31 +106,40 @@
 					<tr>
 						<td>
 							<b>Denmark : </b>
-							<input type="checkbox" id="cn" name="country_name" block="countries" value="DK">
+							<input type="checkbox" id="ig" name="country_name" block="countries" value="DK">
 						</td>
 					</tr>
 
 					<tr>
 						<td>
 							<b>Denmark : </b>
-							<input type="radio" id="cn" name="country_name" block="countries" value="DK">
+							<input type="radio" id="ig" name="country_name" block="countries" value="DK">
 						</td>
 
 						<td>
 							<b>Norway : </b>
-							<input type="radio" id="cn" name="country_name" block="countries" value="NO">
+							<input type="radio" id="ig" name="country_name" block="countries" value="NO">
 						</td>
 
 						<td>
 							<b>Sweden : </b>
-							<input type="radio" id="cn" name="country_name" block="countries" value="SE">
+							<input type="radio" id="ig" name="country_name" block="countries" value="SE">
 						</td>
 					</tr>
 
 					<tr>
 						<td>
 							<b>Text : </b>
-							<span name="country_name" block="countries"></span>
+						</td>
+						<td>
+							<textarea id="cr-cd1" name="country_desc" block="countries" required>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<b>Text : </b>
+							<span id="ig" name="country_name" block="countries"></span>
 						</td>
 					</tr>
 				</table>

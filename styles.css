@@ -116,7 +116,8 @@ html, body
     transition: 0.3s;
 }
 
-.left-menu-container .menu-item:before{
+.left-menu-container .menu-item:before
+{
     content: '\25B6';
     font-size: 13px;
     color: black;
@@ -124,7 +125,8 @@ html, body
     margin-right: 5px;
 }
 
-.left-menu-container .link-item:before{
+.left-menu-container .link-item:before
+{
     content: '\00a0';
     font-size: 13px;
     color: black;
@@ -132,8 +134,8 @@ html, body
     margin-right: 13px;
 }
 
-.left-menu-container a:hover{
-
+.left-menu-container a:hover
+{
     color: hwb(0 2% 98% / 0.582);
 }
 
@@ -143,6 +145,14 @@ html, body
 }
 
 input.invalid
+{
+    border: 2px;
+    border-color:red;
+    border-style: solid;
+	outline: none !important;
+}
+
+textarea.invalid
 {
     border: 2px;
     border-color:red;
