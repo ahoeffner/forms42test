@@ -20,7 +20,7 @@ import { FormsPathMapping, FormsModule as FormsCoreModule, KeyCodes, KeyMap } fr
 
 @FormsPathMapping(
     [
-        {class: Countries, path: "/countries"},
+        Countries,
         {class: FormHeader, path: "/html/formheader"},
         {class: PageHeader, path: "/html/pageheader"},
         {class: PageFooter, path: "/html/pagefooter"},
@@ -43,7 +43,9 @@ export class FormsModule extends FormsCoreModule
         this.list = new Minimized();
 
 		this.updateKeyMap(keymap);
-        this.getApplication().showform(Countries);
+
+		if (!this.OpenURLForm())
+	        this.getApplication().showform(Countries);
     }
 }
 

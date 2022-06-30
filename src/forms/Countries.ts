@@ -22,15 +22,35 @@ export class Countries extends BaseForm
         super(content);
 		this.title = "Countries";
 		this.addEventListener(this.handle);
-		this.addEventListener(this.allevents,{field: "country_name", type: EventType.ValidateField});
+
+		this.addEventListener(this.formevents);
+		this.addEventListener(this.blockevents,{block: "countries"});
+		this.addEventListener(this.fieldevents,{field: "country_name"});
+
 		this.addEventListener(this.mouseevents,[{mouse: MouseMap.contextmenu}]);
     }
 
-	private async allevents(event:FormEvent) : Promise<boolean>
+	private async fieldevents(event:FormEvent) : Promise<boolean>
 	{
 		if (event.type == EventType.ValidateField)
-			console.log("1: "+event);
-			
+			console.log("field: "+event);
+
+		return(true);
+	}
+
+	private async blockevents(event:FormEvent) : Promise<boolean>
+	{
+		if (event.type == EventType.ValidateField)
+			console.log("block: "+event);
+
+		return(true);
+	}
+
+	private async formevents(event:FormEvent) : Promise<boolean>
+	{
+		if (event.type == EventType.ValidateField)
+			console.log("form: "+event);
+
 		return(true);
 	}
 
@@ -46,10 +66,7 @@ export class Countries extends BaseForm
 		if (event.type == EventType.PostQuery)
 			this.setValue("countries","country_id",this.rec++);
 
-		if (event.type == EventType.ValidateField)
-			console.log("2: "+event);
-
-		//if (event.type == EventType.Mouse)
+			//if (event.type == EventType.Mouse)
 			//console.log(EventType[event.type])
 
 		/*
@@ -74,6 +91,6 @@ export class Countries extends BaseForm
 
 	public test() : void
 	{
-		this.dumpInstances();
+		this.dumpFieldInstances();
 	}
 }
