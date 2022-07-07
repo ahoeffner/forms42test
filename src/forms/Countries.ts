@@ -12,7 +12,7 @@
 
 import { BaseForm } from './BaseForm';
 import content from './Countries.html';
-import { FormEvent, EventType, MouseMap } from 'forms42core';
+import { FormEvent, EventType, MouseMap, FieldProperties } from 'forms42core';
 
 
 export class Countries extends BaseForm
@@ -21,35 +21,32 @@ export class Countries extends BaseForm
     {
         super(content);
 		this.title = "Countries";
+
 		this.addEventListener(this.handle);
-
-		this.addEventListener(this.formevents);
-		this.addEventListener(this.blockevents,{block: "countries"});
 		this.addEventListener(this.fieldevents,{field: "country_name"});
-
 		this.addEventListener(this.mouseevents,[{mouse: MouseMap.contextmenu}]);
     }
 
 	private async fieldevents(event:FormEvent) : Promise<boolean>
 	{
-		if (event.type == EventType.ValidateField)
-			console.log("field: "+event);
+		if (event.type == EventType.ValidateField && event.field.id == "cr-cn1")
+		{
+			console.log(event.toString());
 
-		return(true);
-	}
+			let values:Set<string> = new Set<string>();
+			values.add("DK").add("SE").add("FI");
 
-	private async blockevents(event:FormEvent) : Promise<boolean>
-	{
-		if (event.type == EventType.ValidateField)
-			console.log("block: "+event);
+			event.field.getRecordProperties()
+				.setTag("select")
+				.setValidValues(values)
+				.setStyle("width","75px")
+				.setAttribute("size",3)
+				.apply();
 
-		return(true);
-	}
-
-	private async formevents(event:FormEvent) : Promise<boolean>
-	{
-		if (event.type == EventType.ValidateField)
-			console.log("form: "+event);
+			this.getProperties(event.blockname,"country_id")[0]
+				.setClass("purple")
+				.apply();
+		}
 
 		return(true);
 	}
@@ -91,6 +88,6 @@ export class Countries extends BaseForm
 
 	public test() : void
 	{
-		this.dumpFieldInstances();
+		console.log("Test");
 	}
 }
