@@ -12,7 +12,8 @@
 
 import { BaseForm } from './BaseForm';
 import content from './Countries.html';
-import { FormEvent, EventType, MouseMap, FieldProperties } from 'forms42core';
+import { keymap } from '../FormsModule';
+import { FormEvent, EventType, MouseMap, Field } from 'forms42core';
 
 
 export class Countries extends BaseForm
@@ -22,9 +23,14 @@ export class Countries extends BaseForm
         super(content);
 		this.title = "Countries";
 
+		//let outcome:Set<string> = new Set<string>().add("DK-45").add("SE-46");
+		//let code:Field = this.getFieldById("countries","country_code","cc1");
+		//code.getDefaultProperties().setValidValues(outcome).apply();
+
+
 		this.addEventListener(this.handle);
 		this.addEventListener(this.fieldevents,{field: "country_name"});
-		this.addEventListener(this.mouseevents,[{mouse: MouseMap.contextmenu}]);
+		//this.addEventListener(this.mouseevents,[{mouse: MouseMap.contextmenu}]);
     }
 
 	private async fieldevents(event:FormEvent) : Promise<boolean>
@@ -43,9 +49,10 @@ export class Countries extends BaseForm
 				.setAttribute("size",3)
 				.apply();
 
-			this.getProperties(event.blockname,"country_id")[0]
+			this.getDefaultProperties(event.blockname,"country_id")[0]
 				.setClass("purple")
 				.apply();
+
 		}
 
 		return(true);
@@ -63,15 +70,12 @@ export class Countries extends BaseForm
 		if (event.type == EventType.PostQuery)
 			this.setValue("countries","country_id",this.rec++);
 
-			//if (event.type == EventType.Mouse)
-			//console.log(EventType[event.type])
+		//if (event.type == EventType.Key)
+			//console.log(event.toString()+" "+(event.key == keymap.keyW))
 
 		/*
 		if (event.type == EventType.Editing)
 			console.log("Edit "+event.fieldname+" <"+event.field.getValue()+">")
-
-		if (EventType[event.type].startsWith("Pre") || EventType[event.type].startsWith("Post"))
-			console.log(EventType[event.type]+" "+this.getValue("Countries","country_id")+" field: "+event.fieldname)
 
 		if (event.type == EventType.ValidateField)
 			console.log("validate field "+event.fieldname+" <"+event.field.getValue()+">");

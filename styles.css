@@ -159,3 +159,11 @@ textarea.invalid
     border-style: solid;
 	outline: none !important;
 }
+
+.row-indicator
+{
+	width: 8px;
+	height: 8px;
+	display: block;
+	background-color: yellow;
+}

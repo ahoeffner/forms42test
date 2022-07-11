@@ -8,11 +8,16 @@
 			<div>
 				<table>
 					<tr>
+						<th></th>
 						<th>Code</th>
 						<th>Country</th>
 					</tr>
 
 					<tr foreach="row in 1..5" class="block">
+						<td>
+							<span block="countries" row="$row" type="row-indicator"></span>
+						</td>
+
 						<td>
 							<input size="10" id="cc$row" required name="country_code" block="countries" row="$row" autocomplete="do-not-autofill" format="{2A} - {2#}" placeholder="DK - 45">
 						</td>
