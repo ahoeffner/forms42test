@@ -46,13 +46,12 @@ export class Countries extends BaseForm
 				.setTag("select")
 				.setValidValues(values)
 				.setStyle("width","75px")
-				.setAttribute("size",3)
+				.setAttribute("size",1)
 				.apply();
 
 			this.getDefaultProperties(event.blockname,"country_id")[0]
 				.setClass("purple")
 				.apply();
-
 		}
 
 		return(true);
@@ -67,7 +66,7 @@ export class Countries extends BaseForm
 	private rec:number = 0;
 	public async handle(event:FormEvent) : Promise<boolean>
 	{
-		if (event.type == EventType.PostQuery)
+		if (event.type == EventType.PostFetch)
 			this.setValue("countries","country_id",this.rec++);
 
 		//if (event.type == EventType.Key)
