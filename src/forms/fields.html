@@ -5,8 +5,38 @@
 
 		<table>
 			<tr>
+				<td>Integer</td><td>:</td><td><input name="int" block="fields" size="4" integer></td>
+				<td>Decimal</td><td>:</td><td><input name="dec" block="fields" size="4" decimal></td>
+			</tr>
+			<tr><td style="height: 20px;"></td><td></td></tr>
+			<tr>
+				<td>Upper</td><td>:</td><td><input name="upper" block="fields" size="6" upper></td>
+				<td>Lower</td><td>:</td><td><input name="lower" block="fields" size="6" lower></td>
+			</tr>
+			<tr>
+				<td>Initcap</td><td>:</td><td><input name="initcap" block="fields" size="10" initcap></td>
+			</tr>
+			<tr><td style="height: 20px;"></td><td></td></tr>
+			<tr>
 				<td>Date</td><td>:</td><td><input name="date" block="fields" date></td>
 				<td>DateTime</td><td>:</td><td><input name="datetime" block="fields" datetime></td>
+			</tr>
+			<tr><td style="height: 20px;"></td><td></td></tr>
+			<tr>
+				<td>Convert Y/N</td><td>:</td><td><input name="mapper" block="fields" size="4" upper></td>
+				<td>True/False</td><td>:</td><td><input name="mapper" block="fields" size="4" lower></td>
+			</tr>
+			<tr><td style="height: 20px;"></td><td></td></tr>
+			<tr>
+				<td colspan="2">
+					<span style="display: block; width: 200px;">Radio and Checkbox</span>
+					DK: <input type="radio" name="nordics" block="fields" value="DK">
+					SE: <input type="radio" name="nordics" block="fields" value="SE">
+					NO: <input type="radio" name="nordics" block="fields" value="NO">
+					FI: <input type="radio" name="nordics" block="fields" value="FI">
+					DK ? : <input type="checkbox" name="nordics" block="fields" value="DK">
+					<input name="nordics" block="fields" size="4" upper>
+				</td>
 			</tr>
 		</table>
 
