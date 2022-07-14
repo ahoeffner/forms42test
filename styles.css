@@ -144,6 +144,12 @@ html, body
     transform: rotate(90deg);
 }
 
+.selectx
+{
+	cursor: default;
+	color: #000;
+}
+
 input.invalid
 {
     border: 2px;

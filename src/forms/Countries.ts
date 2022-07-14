@@ -11,9 +11,10 @@
  */
 
 import { BaseForm } from './BaseForm';
-import content from './Countries.html';
+import content from './countries.html';
 import { keymap } from '../FormsModule';
 import { FormEvent, EventType, MouseMap, Field } from 'forms42core';
+import { Employees } from '../data/Employees';
 
 
 export class Countries extends BaseForm
@@ -22,6 +23,7 @@ export class Countries extends BaseForm
     {
         super(content);
 		this.title = "Countries";
+		let emp:any[][] = Employees.data;
 
 		//let outcome:Set<string> = new Set<string>().add("DK-45").add("SE-46");
 		//let code:Field = this.getFieldById("countries","country_code","cc1");
@@ -33,11 +35,15 @@ export class Countries extends BaseForm
 		//this.addEventListener(this.mouseevents,[{mouse: MouseMap.contextmenu}]);
     }
 
+	private done:boolean = false;
 	private async fieldevents(event:FormEvent) : Promise<boolean>
 	{
 		if (event.type == EventType.ValidateField && event.field.id == "cr-cn1")
 		{
 			console.log(event.toString());
+			if (this.done) return(true);
+
+			//this.done = true;
 
 			let values:Set<string> = new Set<string>();
 			values.add("DK").add("SE").add("FI");
@@ -66,6 +72,8 @@ export class Countries extends BaseForm
 	private rec:number = 0;
 	public async handle(event:FormEvent) : Promise<boolean>
 	{
+		console.log(EventType[event.type]);
+
 		if (event.type == EventType.PostFetch)
 			this.setValue("countries","country_id",this.rec++);
 
