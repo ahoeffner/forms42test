@@ -10,27 +10,26 @@
  * accompanied this code).
  */
 
-import { DataConverter, Tier } from "forms42core";
+import { DataMapper, Tier } from "forms42core";
 
-export class TestConverter implements DataConverter
+//Demo: Convert backend boolean to Y/N flag
+export class TrueFalseMapper implements DataMapper
 {
 	private value:{frontend:string, backend:string} = {frontend: null, backend: null};
 
-	private static b2f:Map<string,string> = new Map<string,string>
+	private static back2front:Map<string,string> = new Map<string,string>
 	(
 		[
-			["DK","Denmark"],
-			["SE","Sweden"],
-			["NO","Norway"],
+			["true","Y"],
+			["false","N"]
 		]
 	)
 
-	private static f2b:Map<string,string> = new Map<string,string>
+	private static front2back:Map<string,string> = new Map<string,string>
 	(
 		[
-			["Denmark","DK"],
-			["Sweden","SE"],
-			["Norway","NO"],
+			["Y","true"],
+			["N","false"]
 		]
 	)
 
@@ -45,12 +44,12 @@ export class TestConverter implements DataConverter
 		if (tier == Tier.Frontend)
 		{
 			this.value.frontend = value;
-			this.value.backend = TestConverter.f2b.get(value);
+			this.value.backend = TrueFalseMapper.front2back.get(value);
 		}
 		else
 		{
 			this.value.backend = value;
-			this.value.frontend = TestConverter.b2f.get(value);
+			this.value.frontend = TrueFalseMapper.back2front.get(value);
 		}
 	}
 
@@ -65,12 +64,12 @@ export class TestConverter implements DataConverter
 		if (tier == Tier.Backend)
 		{
 			this.value.backend = value;
-			this.value.frontend = TestConverter.b2f.get(value);
+			this.value.frontend = TrueFalseMapper.back2front.get(value);
 		}
 		else
 		{
 			this.value.frontend = value;
-			this.value.backend = TestConverter.f2b.get(value);
+			this.value.backend = TrueFalseMapper.front2back.get(value);
 		}
 	}
 

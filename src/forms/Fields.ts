@@ -18,6 +18,6 @@ export class Fields extends BaseForm
 	constructor()
 	{
 		super(content);
-		this.title = "Countries";
+		this.title = "Fieldtypes";
 	}
 }

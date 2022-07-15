@@ -1,48 +1,62 @@
 <include src="/html/formheader"></include>
 
-<div style="min-width: 500px; min-height: 200px;">
+<div style="min-width: 600px; margin-bottom: 20px;">
 	<form action="javascript:alert('Do nothing')">
 
-		<table>
-			<tr>
-				<td>Integer</td><td>:</td><td><input name="int" block="fields" size="4" integer></td>
-				<td>Decimal</td><td>:</td><td><input name="dec" block="fields" size="4" decimal></td>
-			</tr>
-		</table>
+		<fieldset style="margin-top: 20px; width: 80%; margin-left: 5%;">
+			<legend>Numbers</legend>
+			<table>
+				<tr>
+					<td>Integer</td><td>:</td><td><input name="int" block="fields" size="4" integer></td>
+					<td style="padding-left: 20px;">Decimal</td><td>:</td><td><input name="dec" block="fields" size="4" decimal></td>
+				</tr>
+			</table>
+		</fieldset>
 
-		<table style="margin-top: 20px;">
-			<tr>
-				<td>Upper</td><td>:</td><td><input name="upper" block="fields" size="6" upper></td>
-				<td>Lower</td><td>:</td><td><input name="lower" block="fields" size="6" lower></td>
-				<td>Initcap</td><td>:</td><td><input name="initcap" block="fields" size="10" initcap></td>
-			</tr>
-		</table>
+		<fieldset style="margin-top: 20px; width: 80%; margin-left: 5%;">
+			<legend>Text case</legend>
+			<table>
+				<tr>
+					<td>Upper</td><td>:</td><td><input name="upper" block="fields" size="6" upper></td>
+					<td style="padding-left: 20px;">Lower</td><td>:</td><td><input name="lower" block="fields" size="6" lower></td>
+					<td style="padding-left: 20px;">Initcap</td><td>:</td><td><input name="initcap" block="fields" size="12" initcap></td>
+				</tr>
+			</table>
+		</fieldset>
 
-		<table style="margin-top: 20px;">
-			<tr>
-				<td>Date</td><td>:</td><td><input name="date" block="fields" date></td>
-				<td>DateTime</td><td>:</td><td><input name="datetime" block="fields" datetime></td>
-			</tr>
-		</table>
+		<fieldset style="margin-top: 20px; width: 80%; margin-left: 5%;">
+			<legend>Date</legend>
+			<table>
+				<tr>
+					<td>Date</td><td>:</td><td><input name="date" block="fields" date></td>
+					<td style="padding-left: 20px;">DateTime</td><td>:</td><td><input name="datetime" block="fields" datetime></td>
+				</tr>
+			</table>
+		</fieldset>
 
-		<table style="margin-top: 20px;">
-			<td>Convert Y/N</td><td>:</td><td><input name="mapper" block="fields" size="4" upper></td>
-			<td>True/False</td><td>:</td><td><input name="mapper" block="fields" size="4" lower></td>
-		</table>
+		<fieldset style="margin-top: 20px; width: 80%; margin-left: 5%;">
+			<legend>Data mapper</legend>
+			<table>
+				<td>Convert Y/N</td><td>:</td><td><input name="mapper" block="fields" size="4" upper mapper="/mappers/truefalse"></td>
+				<td style="padding-left: 20px;">True/False</td><td>:</td><td><input name="mapper" block="fields" size="4" lower></td>
+			</table>
+		</fieldset>
 
-		<table style="margin-top: 20px;">
-			<tr>
-				<td style="display: inline-block; width: 150px;">Radio and Checkbox</td>
-				<td><input name="nordics" block="fields" size="4" upper></td>
-				<td style="display: inline-block; width: 50px;"></td>
-				<td>DK:</td>
-				<td><input type="checkbox" name="nordics" block="fields" value="DK"></td>
-			</tr>
-			<tr><td></td><td></td><td></td><td>DK:</td><td><input type="radio" name="nordics" block="fields" value="DK"></td></tr>
-			<tr><td></td><td></td><td></td><td>SE:</td><td><input type="radio" name="nordics" block="fields" value="SE"></td></tr>
-			<tr><td></td><td></td><td></td><td>NO:</td><td><input type="radio" name="nordics" block="fields" value="NO"></td></tr>
-			<tr><td></td><td></td><td></td><td>FI:</td><td><input type="radio" name="nordics" block="fields" value="FI"></td></tr>
-		</table>
+		<fieldset style="margin-top: 20px; width: 80%; margin-left: 5%;">
+			<legend>Radio and Checkbox</legend>
+			<table>
+				<tr>
+					<td><input name="nordics" block="fields" size="4" upper></td>
+					<td style="display: inline-block; width: 50px;"></td>
+					<td>DK:</td>
+					<td><input type="checkbox" name="nordics" block="fields" value="DK"></td>
+				</tr>
+				<tr><td></td><td></td><td>DK:</td><td><input type="radio" name="nordics" block="fields" value="DK"></td></tr>
+				<tr><td></td><td></td><td>SE:</td><td><input type="radio" name="nordics" block="fields" value="SE"></td></tr>
+				<tr><td></td><td></td><td>NO:</td><td><input type="radio" name="nordics" block="fields" value="NO"></td></tr>
+				<tr><td></td><td></td><td>FI:</td><td><input type="radio" name="nordics" block="fields" value="FI"></td></tr>
+			</table>
+		</fieldset>
 
 	</form>
 </div>
