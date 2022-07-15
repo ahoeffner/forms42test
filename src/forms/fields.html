@@ -7,19 +7,19 @@
 			<legend>Numbers</legend>
 			<table>
 				<tr>
-					<td>Integer</td><td>:</td><td><input name="int" block="fields" size="4" integer></td>
-					<td style="padding-left: 20px;">Decimal</td><td>:</td><td><input name="dec" block="fields" size="4" decimal></td>
+					<td>Integer : </td><td><input name="int" block="fields" size="4" integer></td>
+					<td style="padding-left: 20px;">Decimal : </td><td><input name="dec" block="fields" size="4" decimal></td>
 				</tr>
 			</table>
 		</fieldset>
 
 		<fieldset style="margin-top: 20px; width: 80%; margin-left: 5%;">
-			<legend>Text case</legend>
+			<legend>Text Case</legend>
 			<table>
 				<tr>
-					<td>Upper</td><td>:</td><td><input name="upper" block="fields" size="6" upper></td>
-					<td style="padding-left: 20px;">Lower</td><td>:</td><td><input name="lower" block="fields" size="6" lower></td>
-					<td style="padding-left: 20px;">Initcap</td><td>:</td><td><input name="initcap" block="fields" size="12" initcap></td>
+					<td>Upper : </td><td><input name="upper" block="fields" size="6" upper></td>
+					<td style="padding-left: 20px;">Lower : </td><td><input name="lower" block="fields" size="6" lower></td>
+					<td style="padding-left: 20px;">Initcap : </td><td><input name="initcap" block="fields" size="20" initcap></td>
 				</tr>
 			</table>
 		</fieldset>
@@ -28,17 +28,19 @@
 			<legend>Date</legend>
 			<table>
 				<tr>
-					<td>Date</td><td>:</td><td><input name="date" block="fields" date></td>
-					<td style="padding-left: 20px;">DateTime</td><td>:</td><td><input name="datetime" block="fields" datetime></td>
+					<td>Date : </td><td><input name="date" block="fields" date></td>
+					<td style="padding-left: 20px;">DateTime : </td><td><input name="datetime" block="fields" datetime></td>
 				</tr>
 			</table>
 		</fieldset>
 
 		<fieldset style="margin-top: 20px; width: 80%; margin-left: 5%;">
-			<legend>Data mapper</legend>
+			<legend>Data Mapper</legend>
 			<table>
-				<td>Convert Y/N</td><td>:</td><td><input name="mapper" block="fields" size="4" upper mapper="/mappers/truefalse"></td>
-				<td style="padding-left: 20px;">True/False</td><td>:</td><td><input name="mapper" block="fields" size="4" lower></td>
+				<tr>
+					<td>Y/N : </td><td><input name="mapper" block="fields" size="4" upper mapper="/mappers/truefalse"></td>
+					<td style="padding-left: 20px;">True/False : </td><td><input name="mapper" block="fields" size="4" lower></td>
+				</tr>
 			</table>
 		</fieldset>
 
@@ -55,6 +57,34 @@
 				<tr><td></td><td></td><td>SE:</td><td><input type="radio" name="nordics" block="fields" value="SE"></td></tr>
 				<tr><td></td><td></td><td>NO:</td><td><input type="radio" name="nordics" block="fields" value="NO"></td></tr>
 				<tr><td></td><td></td><td>FI:</td><td><input type="radio" name="nordics" block="fields" value="FI"></td></tr>
+			</table>
+		</fieldset>
+
+		<fieldset style="margin-top: 20px; width: 80%; margin-left: 5%;">
+			<legend>Drop Down Lists</legend>
+			<table>
+				<tr>
+					<td>
+						Country :
+						<select name="single" block="fields" size="1">
+							<option value="DK">Denmark</option>
+							<option value="SE">Sweden</option>
+							<option value="NO">Norway</option>
+						</select>
+					</td>
+					<td style="padding-left: 20px;">Code : </td><td><input name="single" block="fields" size="4" upper></td>
+				</tr>
+				<tr>
+					<td>
+						Country :
+						<select style="width: 100px; margin-top: 20px" name="multi" block="fields" size="4" multiple>
+							<option value="DK">Denmark</option>
+							<option value="SE">Sweden</option>
+							<option value="NO">Norway</option>
+						</select>
+					</td>
+					<td style="padding-left: 20px;">Code : </td><td><input name="multi" block="fields" size="8" upper></td>
+				</tr>
 			</table>
 		</fieldset>
 
