@@ -17,6 +17,7 @@ import { Countries } from './forms/Countries';
 import { FormHeader } from './html/FormHeader';
 import { PageHeader } from './html/PageHeader';
 import { PageFooter } from './html/PageFooter';
+import { LinkMapper } from './forms/LinkMapper';
 import { TrueFalseMapper } from './forms/TrueFalseMapper';
 import { FormsPathMapping, FormsModule as FormsCoreModule, KeyCodes, KeyMap } from 'forms42core';
 
@@ -26,6 +27,7 @@ import { FormsPathMapping, FormsModule as FormsCoreModule, KeyCodes, KeyMap } fr
         {class: FormHeader, path: "/html/formheader"},
         {class: PageHeader, path: "/html/pageheader"},
         {class: PageFooter, path: "/html/pagefooter"},
+        {class: LinkMapper, path: "/mappers/linkmapper"},
         {class: TrueFalseMapper, path: "/mappers/truefalse"},
     ]
 )

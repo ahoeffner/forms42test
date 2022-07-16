@@ -77,7 +77,7 @@
 						<legend>Data Mapper</legend>
 						<table>
 							<tr>
-								<td>Y/N : </td><td><input name="mapper" block="fields" size="1" maxlength="1" upper mapper="/mappers/truefalse"></td>
+								<td>Y/N : </td><td><input type="text" name="mapper" block="fields" size="1" maxlength="1" upper mapper="/mappers/truefalse"></td>
 								<td style="padding-left: 20px;">True/False : </td><td><input name="mapper" block="fields" size="4" lower></td>
 							</tr>
 						</table>
@@ -115,6 +115,17 @@
 									</select>
 								</td>
 								<td style="padding-left: 20px;">Code : </td><td><input name="multi" block="fields" size="8" upper></td>
+							</tr>
+						</table>
+					</fieldset>
+
+					<fieldset style="margin-top: 30px; width: 80%; margin-left: 5%;">
+						<legend>Any html</legend>
+						<table>
+							<tr>
+								<td>Text : </td><td><input type="text" name="any" block="fields" size="12"></td>
+								<td style="padding-left: 20px;"></td><td><span name="any" block="fields"></span></td>
+								<td style="padding-left: 20px;"></td><td><span name="any" block="fields" mapper="/mappers/linkmapper"></span></td>
 							</tr>
 						</table>
 					</fieldset>
