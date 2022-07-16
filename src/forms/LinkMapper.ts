@@ -12,14 +12,14 @@
 
 import { DataMapper, Tier } from "forms42core";
 
-//Demo: Convert backend boolean to Y/N flag
 export class LinkMapper implements DataMapper
 {
-	private link:HTMLAnchorElement = document.createElement("a");
+	private value:any = null;
+	private link:HTMLAnchorElement = this.createLink();
 
 	public getValue(tier:Tier) : any
 	{
-		if (tier == Tier.Backend) return(null);
+		if (tier == Tier.Backend) return(this.value);
 		else					  return(this.link);
 	}
 
@@ -27,11 +27,8 @@ export class LinkMapper implements DataMapper
 	{
 		if (tier == Tier.Backend)
 		{
+			this.value = value;
 			if (value == null) value = "";
-
-			if (!this.link.firstChild)
-				this.link.append(document.createTextNode(""))
-
 			let text:Node = this.link.firstChild;
 
 			this.link.title = value;
@@ -48,5 +45,13 @@ export class LinkMapper implements DataMapper
 	public setIntermediateValue(tier:Tier, value:string) : void
 	{
 		this.setValue(tier,value);
+	}
+
+	private createLink() : HTMLAnchorElement
+	{
+		let link:HTMLAnchorElement = document.createElement("a");
+		link.append(document.createTextNode(""));
+		link.target = "_blank";
+		return(link);
 	}
 }
