@@ -10,7 +10,7 @@
  * accompanied this code).
  */
 
-import { Denmark } from './menu/Denmark';
+import { Forms } from './menu/Forms';
 import { MenuHandler } from 'forms42core';
 
 export class Menu
@@ -26,8 +26,15 @@ export class Menu
         let container:HTMLElement = document.getElementById("main-menu");
 
 		this.menuelem = container.appendChild(this.menuelem);
-		this.handler = new MenuHandler(new Denmark(), this.menuelem);
+		this.handler = new MenuHandler(new Forms(this), this.menuelem);
     }
+
+	public hide() : void
+	{
+		this.menu = false;
+		this.handler.hide();
+		this.menuelem.style.display = "none";
+	}
 
     public showmenu() : void
     {

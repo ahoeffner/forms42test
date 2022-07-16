@@ -12,14 +12,16 @@
 
 import { Menu } from './Menu';
 import { Minimized } from './Minimized';
-import { Fields } from './forms/Fields';
 import { Countries } from './forms/Countries';
 import { FormHeader } from './html/FormHeader';
 import { PageHeader } from './html/PageHeader';
 import { PageFooter } from './html/PageFooter';
-import { LinkMapper } from './forms/LinkMapper';
-import { TrueFalseMapper } from './forms/TrueFalseMapper';
-import { FormsPathMapping, FormsModule as FormsCoreModule, KeyCodes, KeyMap } from 'forms42core';
+
+import { Fields } from './forms/fields/Fields';
+import { LinkMapper } from './forms/fields/LinkMapper';
+import { TrueFalseMapper } from './forms/fields/TrueFalseMapper';
+
+import { FormsPathMapping, FormsModule as FormsCoreModule, KeyCodes, KeyMap, Logger } from 'forms42core';
 
 @FormsPathMapping(
     [

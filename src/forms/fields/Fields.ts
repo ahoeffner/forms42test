@@ -11,7 +11,7 @@
  */
 
 import content from './fields.html';
-import { BaseForm } from './BaseForm';
+import { BaseForm } from '../BaseForm';
 
 export class Fields extends BaseForm
 {
