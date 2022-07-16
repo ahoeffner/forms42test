@@ -15,12 +15,13 @@ import { DataMapper, Tier } from "forms42core";
 export class LinkMapper implements DataMapper
 {
 	private value:any = null;
+	private ivalue:string = null;
 	private link:HTMLAnchorElement = this.createLink();
 
 	public getValue(tier:Tier) : any
 	{
-		if (tier == Tier.Backend) return(this.value);
-		else					  return(this.link);
+		if (tier == Tier.Frontend) return(this.link);
+		else					   return(this.value);
 	}
 
 	public setValue(tier:Tier, value:any) : void
@@ -39,11 +40,13 @@ export class LinkMapper implements DataMapper
 
 	public getIntermediateValue(tier:Tier) : string
 	{
-		return(this.getValue(tier)+"");
+		if (tier == Tier.Frontend) return(this.ivalue);
+		else					   return(this.value+"");
 	}
 
 	public setIntermediateValue(tier:Tier, value:string) : void
 	{
+		this.ivalue = value;
 		this.setValue(tier,value);
 	}
 
