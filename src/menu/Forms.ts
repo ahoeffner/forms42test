@@ -1,6 +1,6 @@
-import { FormsModule, StaticMenu, StaticMenuEntry } from "forms42core";
-import { Fields } from "../forms/fields/Fields";
 import { Menu } from "../Menu";
+import { Fields } from "../forms/fields/Fields";
+import { FormsModule, StaticMenu, StaticMenuEntry } from "forms42core";
 
 export class Forms extends StaticMenu
 {
@@ -11,8 +11,8 @@ export class Forms extends StaticMenu
 
 	public async execute(path: string): Promise<boolean>
 	{
-		console.log("choose <"+path+">");
-		await FormsModule.get().getApplication().showform(Fields);
+		let pos:number = path.lastIndexOf('/');
+		await FormsModule.get().showform(path.substring(pos+1));
 		this.handler.hide();
 		return(false);
 	}

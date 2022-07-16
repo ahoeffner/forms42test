@@ -25,6 +25,7 @@ import { FormsPathMapping, FormsModule as FormsCoreModule, KeyCodes, KeyMap, Log
 
 @FormsPathMapping(
     [
+		Fields,
         Countries,
         {class: FormHeader, path: "/html/formheader"},
         {class: PageHeader, path: "/html/pageheader"},
@@ -49,10 +50,8 @@ export class FormsModule extends FormsCoreModule
         this.menu = new Menu();
         this.list = new Minimized();
 
+		this.OpenURLForm();
 		this.updateKeyMap(keymap);
-
-		if (!this.OpenURLForm())
-	        this.getApplication().showform(Fields);
     }
 }
 
