@@ -1,23 +1,26 @@
 <include src="/html/formheader"></include>
 
-<table>
-	<tr>
-		<td colspan="3">
-			<span class="phonebook-search"><input name="filter" block="search"></span>
-		</td>
-	</tr>
+<div style="display: flex; min-width: 500px; min-height: 200px; width: 100%; height: 100%; justify-content: center;">
+	<table>
+		<tr>
+			<td></td>
+			<td colspan="2">
+				<span class="phonebook-search"><input name="filter" block="search"></span>
+			</td>
+		</tr>
 
-	<tr foreach="row in 1..5">
-		<td>
-			<span block="employees" row="$row" type="row-indicator"></span>
-		</td>
+		<tr foreach="row in 1..5">
+			<td>
+				<span block="employees" row="$row" type="row-indicator"></span>
+			</td>
 
-		<td>
-			<input size="10" name="first_name" block="employees" row="$row" initcap required autocomplete="do-not-autofill">
-		</td>
+			<td>
+				<input size="10" name="first_name" block="employees" row="$row" initcap required autocomplete="do-not-autofill">
+			</td>
 
-		<td>
-			<input size="10" name="last_name"  block="employees" row="$row" initcap required autocomplete="do-not-autofill">
-		</td>
-	</tr>
-</table>
+			<td>
+				<input size="10" name="last_name"  block="employees" row="$row" initcap required autocomplete="do-not-autofill">
+			</td>
+		</tr>
+	</table>
+</div>
