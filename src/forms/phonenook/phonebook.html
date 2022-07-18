@@ -1,0 +1,24 @@
+<include src="/html/formheader"></include>
+
+<table>
+	<tr>
+		<td class="phonebook-search" colspan="3">
+			<input name="filter" block="search">
+		</td>
+	</tr>
+
+	<tr foreach="row in 1..5">
+		<td>
+			<span block="employees" row="$row" type="row-indicator"></span>
+		</td>
+
+		<td>
+			<input size="10" name="first_name" block="employees" row="$row" initcap required autocomplete="do-not-autofill">
+		</td>
+
+		<td>
+			<input size="10" name="last_name"  block="employees" row="$row" initcap required autocomplete="do-not-autofill">
+		</td>
+	</tr>
+
+</table>

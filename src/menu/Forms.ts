@@ -27,8 +27,13 @@ export class Forms extends StaticMenu
             entries:
             [
                 {
+                    id: "phonebook",
+                    text: "1 Phone Book",
+					command: "/forms/PhoneBook"
+				},
+                {
                     id: "fields",
-                    text: "1 Fields",
+                    text: "2 Fields",
 					command: "/forms/Fields"
 				}
 			]

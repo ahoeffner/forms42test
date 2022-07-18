@@ -173,3 +173,11 @@ textarea.invalid
 	display: block;
 	background-color: yellow;
 }
+
+.phonebook-search
+{
+	width: 100%;
+    display: flex;
+	background-color: yellow;
+	justify-content: center;
+}

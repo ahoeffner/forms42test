@@ -12,12 +12,14 @@
 
 import { Menu } from './Menu';
 import { Minimized } from './Minimized';
-import { Countries } from './forms/Countries';
 import { FormHeader } from './html/FormHeader';
 import { PageHeader } from './html/PageHeader';
 import { PageFooter } from './html/PageFooter';
 
+import { Countries } from './forms/Countries';
 import { Fields } from './forms/fields/Fields';
+import { PhoneBook } from './forms/phonenook/PhoneBook';
+
 import { LinkMapper } from './forms/fields/LinkMapper';
 import { TrueFalseMapper } from './forms/fields/TrueFalseMapper';
 
@@ -27,6 +29,7 @@ import { FormsPathMapping, FormsModule as FormsCoreModule, KeyCodes, KeyMap, Log
     [
 		Fields,
         Countries,
+		PhoneBook,
         {class: FormHeader, path: "/html/formheader"},
         {class: PageHeader, path: "/html/pageheader"},
         {class: PageFooter, path: "/html/pagefooter"},
