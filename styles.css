@@ -178,6 +178,5 @@ textarea.invalid
 {
 	width: 100%;
     display: flex;
-	background-color: yellow;
 	justify-content: center;
 }
