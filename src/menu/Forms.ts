@@ -33,7 +33,7 @@ export class Forms extends StaticMenu
 				},
                 {
                     id: "fields",
-                    text: "2 Fields",
+                    text: "2 Fields with extensions",
 					command: "/forms/Fields"
 				}
 			]
