@@ -72,7 +72,7 @@ export class Countries extends BaseForm
 	private rec:number = 0;
 	public async handle(event:FormEvent) : Promise<boolean>
 	{
-		console.log(EventType[event.type]);
+		console.log("Countries: "+EventType[event.type]);
 
 		if (event.type == EventType.PostFetch)
 			this.setValue("countries","country_id",this.rec++);
