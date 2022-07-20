@@ -1,7 +1,7 @@
-
+import { Hook } from 'forms42core';
 import content from './phonebook.html';
 import { BaseForm } from '../BaseForm';
-import { EventType } from 'forms42core';
+import { Employees } from '../../datasources/memory/Employees';
 
 export class PhoneBook extends BaseForm
 {
@@ -9,12 +9,14 @@ export class PhoneBook extends BaseForm
 	{
 		super(content);
 		this.title = "PhoneBook";
-		this.addEventListener(this.initPhoneBook,{type: EventType.PostViewInit});
+		this.setDataSource("employees",new Employees());
+		this.addRuntimeHook(this.start,Hook.AfterCreate);
 	}
 
-	public async initPhoneBook() : Promise<boolean>
+	public async start() : Promise<boolean>
 	{
-		//this.getBlock("Employees").executeQuery()
+		this.focus();
+		await this.getBlock("Employees").executeQuery();
 		return(true);
 	}
 }
