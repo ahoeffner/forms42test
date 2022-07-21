@@ -38,7 +38,7 @@ export class Countries extends BaseForm
 	private done:boolean = false;
 	private async fieldevents(event:FormEvent) : Promise<boolean>
 	{
-		if (event.type == EventType.ValidateField && event.field.id == "cr-cn1")
+		if (event.type == EventType.WhenValidateField && event.field.id == "cr-cn1")
 		{
 			console.log(event.toString());
 			if (this.done) return(true);
@@ -74,7 +74,7 @@ export class Countries extends BaseForm
 	{
 		console.log("Countries: "+EventType[event.type]);
 
-		if (event.type == EventType.PostFetch)
+		if (event.type == EventType.OnFetch)
 			this.setValue("countries","country_id",this.rec++);
 
 		//if (event.type == EventType.Key)
