@@ -12,7 +12,7 @@
 
 import content from './phonebook.html';
 import { BaseForm } from '../BaseForm';
-import { EventType } from 'forms42core';
+import { EventType, FormEvent } from 'forms42core';
 import { Employees } from '../../datasources/memory/Employees';
 
 export class PhoneBook extends BaseForm
@@ -22,8 +22,9 @@ export class PhoneBook extends BaseForm
 		super(content);
 		this.title = "PhoneBook";
 		this.setDataSource("employees",new Employees());
+		this.addEventListener(this.fetch,{type: EventType.OnFetch});
 		this.addEventListener(this.start,{type: EventType.PostViewInit});
-		this.addEventListener(this.search,{type: EventType.OnEditing, block: "search", field: "filter"});
+		this.addEventListener(this.search,{type: EventType.OnTyping, block: "search", field: "filter"});
 	}
 
 	public async start() : Promise<boolean>
@@ -36,6 +37,24 @@ export class PhoneBook extends BaseForm
 	public async search() : Promise<boolean>
 	{
 		console.log("search "+this.getValue("search","filter"))
+		return(true);
+	}
+
+	public async fetch(event:FormEvent) : Promise<boolean>
+	{
+		let fname:string = this.getValue("Employees","first_name");
+
+		//console.log("fetch "+fname);
+		//this.getFieldById()
+
+		/*
+		this.getRecordProperties("Employees","first_name").forEach((props) =>
+		{
+			if (fname == "Lex")
+				props.setClass("green").apply();
+		});
+		*/
+
 		return(true);
 	}
 }

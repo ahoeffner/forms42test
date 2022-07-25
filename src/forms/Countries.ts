@@ -45,6 +45,7 @@ export class Countries extends BaseForm
 
 			//this.done = true;
 
+			/*
 			let values:Set<string> = new Set<string>();
 			values.add("DK").add("SE").add("FI");
 
@@ -58,6 +59,8 @@ export class Countries extends BaseForm
 			this.getDefaultProperties(event.blockname,"country_id")[0]
 				.setClass("purple")
 				.apply();
+
+			*/
 		}
 
 		return(true);

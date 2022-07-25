@@ -29,7 +29,7 @@ export class BaseForm extends Form
 		this.addEventListener(this.oninit,{type: EventType.PostViewInit});
     }
 
-    public oninit() : void
+    public async oninit() : Promise<boolean>
     {
         let px:number = 16;
         let off:number = BaseForm.forms % 8;
@@ -45,6 +45,7 @@ export class BaseForm extends Form
         this.canvas.getContent().addEventListener("focus",this.handler);
 
 		this.setTitle(this.title);
+		return(true);
     }
 
     public toggle() : void
