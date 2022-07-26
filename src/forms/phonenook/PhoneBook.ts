@@ -36,13 +36,15 @@ export class PhoneBook extends BaseForm
 
 	public async search() : Promise<boolean>
 	{
-		console.log("search "+this.getValue("search","filter"))
+		console.log("search "+this.getValue("search","filter",true));
 		return(true);
 	}
 
 	public async fetch(event:FormEvent) : Promise<boolean>
 	{
-		let fname:string = this.getValue("Employees","first_name");
+		console.log("fetch "+event.block)
+		//let fname:string = this.getValue("Employees","first_name");
+		//this.getBlock("Employees").getRecord();
 
 		//console.log("fetch "+fname);
 		//this.getFieldById()

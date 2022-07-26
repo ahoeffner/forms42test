@@ -38,7 +38,7 @@ export class Countries extends BaseForm
 	private done:boolean = false;
 	private async fieldevents(event:FormEvent) : Promise<boolean>
 	{
-		if (event.type == EventType.WhenValidateField && event.field.id == "cr-cn1")
+		if (event.type == EventType.WhenValidateField)
 		{
 			console.log(event.toString());
 			if (this.done) return(true);
@@ -68,7 +68,7 @@ export class Countries extends BaseForm
 
 	private async mouseevents(event:FormEvent) : Promise<boolean>
 	{
-		console.log(event.fieldname+" "+EventType[event.type]+" "+MouseMap[event.mouse]);
+		console.log(event.field+" "+EventType[event.type]+" "+MouseMap[event.mouse]);
 		return(true);
 	}
 
