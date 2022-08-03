@@ -38,7 +38,6 @@ export class PhoneBook extends BaseForm
 		this.managerprops = new FieldProperties(this.nameprops);
 		this.managerprops.setClass("green");
 
-		console.log("props: "+this.nameprops)
 		await this.getBlock("Employees").executeQuery();
 		return(true);
 	}
@@ -53,7 +52,8 @@ export class PhoneBook extends BaseForm
 	{
 		if (event.block == "employees")
 		{
-			let fname:string = this.getBlock(this.emp).getValue("first_name");
+			let fname:string = this.emp.getValue("first_name");
+			if (fname == "Lex") this.emp.getRecord().setProperties(this.managerprops,"first_name");
 			console.log(fname);
 		}
 
