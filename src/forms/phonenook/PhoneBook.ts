@@ -12,16 +12,19 @@
 
 import content from './phonebook.html';
 import { BaseForm } from '../BaseForm';
-import { EventType, FormEvent } from 'forms42core';
-import { Employees } from '../../datasources/memory/Employees';
+import { Employees } from './Employees';
+import { EventType, FormEvent, DefaultProperties, FieldProperties } from 'forms42core';
 
 export class PhoneBook extends BaseForm
 {
+	private nameprops:DefaultProperties = null;
+	private managerprops:FieldProperties = null;
+	private emp:Employees = new Employees(this,"employees");
+
 	constructor()
 	{
 		super(content);
 		this.title = "PhoneBook";
-		this.setDataSource("employees",new Employees());
 		this.addEventListener(this.fetch,{type: EventType.OnFetch});
 		this.addEventListener(this.start,{type: EventType.PostViewInit});
 		this.addEventListener(this.search,{type: EventType.OnTyping, block: "search", field: "filter"});
@@ -30,6 +33,12 @@ export class PhoneBook extends BaseForm
 	public async start() : Promise<boolean>
 	{
 		this.focus();
+
+		this.nameprops = this.getBlock("Employees").getFieldById("first_name","fn1")?.getDefaultProperties();
+		this.managerprops = new FieldProperties(this.nameprops);
+		this.managerprops.setClass("green");
+
+		console.log("props: "+this.nameprops)
 		await this.getBlock("Employees").executeQuery();
 		return(true);
 	}
@@ -42,20 +51,11 @@ export class PhoneBook extends BaseForm
 
 	public async fetch(event:FormEvent) : Promise<boolean>
 	{
-		console.log("fetch "+event.block)
-		//let fname:string = this.getValue("Employees","first_name");
-		//this.getBlock("Employees").getRecord();
-
-		//console.log("fetch "+fname);
-		//this.getFieldById()
-
-		/*
-		this.getRecordProperties("Employees","first_name").forEach((props) =>
+		if (event.block == "employees")
 		{
-			if (fname == "Lex")
-				props.setClass("green").apply();
-		});
-		*/
+			let fname:string = this.getBlock(this.emp).getValue("first_name");
+			console.log(fname);
+		}
 
 		return(true);
 	}
