@@ -145,10 +145,9 @@ html, body
     transform: rotate(90deg);
 }
 
-.selectx
+.green
 {
-	cursor: default;
-	color: #000;
+	color: green;
 }
 
 input.invalid
