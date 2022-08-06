@@ -15,15 +15,15 @@
 
 					<tr foreach="row in 1..5" class="block">
 						<td>
-							<span block="countries" row="$row" type="row-indicator"></span>
+							<span bind="countries" row="$row" type="row-indicator"></span>
 						</td>
 
 						<td>
-							<input size="10" id="cc$row" required name="country_code" block="countries" row="$row" autocomplete="do-not-autofill" format="{2A} - {2#}" placeholder="DK - 45">
+							<input size="10" id="cc$row" required name="country_code" bind="countries" row="$row" autocomplete="do-not-autofill" format="{2A} - {2#}" placeholder="DK - 45">
 						</td>
 
 						<td>
-							<input size="10" id="cn$row" name="country_name" block="countries" row="$row" initcap required autocomplete="do-not-autofill">
+							<input size="10" id="cn$row" name="country_name" bind="countries" row="$row" initcap required autocomplete="do-not-autofill">
 						</td>
 					</tr>
 				</table>
@@ -40,7 +40,7 @@
 							<b>Id : </b>
 						</td>
 						<td>
-							<input size="2" id="cr-id1" name="country_id" block="countries" integer required placeholder="##">
+							<input size="2" id="cr-id1" name="country_id" bind="countries" integer required placeholder="##">
 						</td>
 					</tr>
 
@@ -49,7 +49,7 @@
 							<b>Code : </b>
 						</td>
 						<td>
-							<input size="10" id="cr-cc1" name="country_code" block="countries" autocomplete="do-not-autofill" format="{2A} - {2#}" placeholder="DK - 45" required>
+							<input size="10" id="cr-cc1" name="country_code" bind="countries" autocomplete="do-not-autofill" format="{2A} - {2#}" placeholder="DK - 45" required>
 						</td>
 					</tr>
 
@@ -58,7 +58,7 @@
 							<b>Shortname : </b>
 						</td>
 						<td>
-							<input type="text" size="2" style="width: 30px;" id="cr-cn1" name="country_name" block="countries" upper autocomplete="do-not-autofill">
+							<input type="text" size="2" style="width: 30px;" id="cr-cn1" name="country_name" bind="countries" upper autocomplete="do-not-autofill">
 						</td>
 					</tr>
 
@@ -67,7 +67,7 @@
 							<b>Date : </b>
 						</td>
 						<td>
-							<input size="10" id="cr-cd1" name="country_date" block="countries" date>
+							<input size="10" id="cr-cd1" name="country_date" bind="countries" date>
 						</td>
 					</tr>
 
@@ -76,7 +76,7 @@
 							<b>DateTime : </b>
 						</td>
 						<td>
-							<input id="cr-cd2" name="country_date" block="countries" datetime>
+							<input id="cr-cd2" name="country_date" bind="countries" datetime>
 						</td>
 					</tr>
 
@@ -85,7 +85,7 @@
 							<b>Shortlist : </b>
 						</td>
 						<td>
-							<input id="cr-cn2" list="list" name="country_name" block="countries" required placeholder="AA">
+							<input id="cr-cn2" list="list" name="country_name" bind="countries" required placeholder="AA">
 
 							<datalist id="list">
 								<option>DK</option>
@@ -100,7 +100,7 @@
 							<b>Country : </b>
 						</td>
 						<td>
-							<select id="cr-cn3" style="min-width: 80px" name="country_name" id="pn" block="countries" multiple>
+							<select id="cr-cn3" style="min-width: 80px" name="country_name" id="pn" bind="countries" multiple>
 								<option value="DK">Denmark</option>
 								<option value="SE">Sweden</option>
 								<option value="NO">Norway</option>
@@ -111,24 +111,24 @@
 					<tr>
 						<td>
 							<b>Denmark : </b>
-							<input type="checkbox" id="ig" name="country_name" block="countries" value="DK">
+							<input type="checkbox" id="ig" name="country_name" bind="countries" value="DK">
 						</td>
 					</tr>
 
 					<tr>
 						<td>
 							<b>Denmark : </b>
-							<input type="radio" id="ig" name="country_name" block="countries" value="DK">
+							<input type="radio" id="ig" name="country_name" bind="countries" value="DK">
 						</td>
 
 						<td>
 							<b>Norway : </b>
-							<input type="radio" id="ig" name="country_name" block="countries" value="NO">
+							<input type="radio" id="ig" name="country_name" bind="countries" value="NO">
 						</td>
 
 						<td>
 							<b>Sweden : </b>
-							<input type="radio" id="ig" name="country_name" block="countries" value="SE">
+							<input type="radio" id="ig" name="country_name" bind="countries" value="SE">
 						</td>
 					</tr>
 
@@ -137,14 +137,14 @@
 							<b>Text : </b>
 						</td>
 						<td>
-							<textarea id="cr-cd1" name="country_desc" block="countries">
+							<textarea id="cr-cd1" name="country_desc" bind="countries">
 						</td>
 					</tr>
 
 					<tr>
 						<td>
 							<b>Text : </b>
-							<span id="ig" name="country_name" block="countries"></span>
+							<span id="ig" name="country_name" bind="countries"></span>
 						</td>
 					</tr>
 				</table>

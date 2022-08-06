@@ -9,8 +9,8 @@
 						<legend>Numbers</legend>
 						<table>
 							<tr>
-								<td>Integer : </td><td><input name="int" block="fields" size="4" integer></td>
-								<td style="padding-left: 20px;">Decimal : </td><td><input name="dec" block="fields" size="4" decimal></td>
+								<td>Integer : </td><td><input name="int" bind="fields" size="4" integer></td>
+								<td style="padding-left: 20px;">Decimal : </td><td><input name="dec" bind="fields" size="4" decimal></td>
 							</tr>
 						</table>
 					</fieldset>
@@ -19,9 +19,9 @@
 						<legend>Text Case</legend>
 						<table>
 							<tr>
-								<td>Upper : </td><td><input name="upper" block="fields" size="6" upper></td>
-								<td style="padding-left: 20px;">Lower : </td><td><input name="lower" block="fields" size="6" lower></td>
-								<td style="padding-left: 20px;">Initcap : </td><td><input name="initcap" block="fields" size="20" initcap></td>
+								<td>Upper : </td><td><input name="upper" bind="fields" size="6" upper></td>
+								<td style="padding-left: 20px;">Lower : </td><td><input name="lower" bind="fields" size="6" lower></td>
+								<td style="padding-left: 20px;">Initcap : </td><td><input name="initcap" bind="fields" size="20" initcap></td>
 							</tr>
 						</table>
 					</fieldset>
@@ -30,8 +30,8 @@
 						<legend>Date</legend>
 						<table>
 							<tr>
-								<td>Date : </td><td><input name="date" block="fields" date></td>
-								<td style="padding-left: 20px;">DateTime : </td><td><input name="datetime" block="fields" datetime></td>
+								<td>Date : </td><td><input name="date" bind="fields" date></td>
+								<td style="padding-left: 20px;">DateTime : </td><td><input name="datetime" bind="fields" datetime></td>
 							</tr>
 						</table>
 					</fieldset>
@@ -40,15 +40,15 @@
 						<legend>Radio and Checkbox</legend>
 						<table>
 							<tr>
-								<td><input name="nordics" block="fields" size="4" upper></td>
+								<td><input name="nordics" bind="fields" size="4" upper></td>
 								<td style="display: inline-block; width: 50px;"></td>
 								<td>DK:</td>
-								<td><input type="checkbox" name="nordics" block="fields" value="DK"></td>
+								<td><input type="checkbox" name="nordics" bind="fields" value="DK"></td>
 							</tr>
-							<tr><td></td><td></td><td>DK:</td><td><input type="radio" name="nordics" block="fields" value="DK"></td></tr>
-							<tr><td></td><td></td><td>SE:</td><td><input type="radio" name="nordics" block="fields" value="SE"></td></tr>
-							<tr><td></td><td></td><td>NO:</td><td><input type="radio" name="nordics" block="fields" value="NO"></td></tr>
-							<tr><td></td><td></td><td>FI:</td><td><input type="radio" name="nordics" block="fields" value="FI"></td></tr>
+							<tr><td></td><td></td><td>DK:</td><td><input type="radio" name="nordics" bind="fields" value="DK"></td></tr>
+							<tr><td></td><td></td><td>SE:</td><td><input type="radio" name="nordics" bind="fields" value="SE"></td></tr>
+							<tr><td></td><td></td><td>NO:</td><td><input type="radio" name="nordics" bind="fields" value="NO"></td></tr>
+							<tr><td></td><td></td><td>FI:</td><td><input type="radio" name="nordics" bind="fields" value="FI"></td></tr>
 						</table>
 					</fieldset>
 				</td>
@@ -59,7 +59,7 @@
 							<tr>
 								<td>
 									Piece :
-									<select style="width: 100px;" name="piece" block="fields" size="1">
+									<select style="width: 100px;" name="piece" bind="fields" size="1">
 										<option value="King">King</option>
 										<option value="Queen">Queen</option>
 										<option value="Rook">Rook</option>
@@ -68,7 +68,7 @@
 										<option value="Pawn">Pawn</option>
 									</select>
 								</td>
-								<td style="padding-left: 20px;">Move : <input name="move" block="fields" format="{[A-H]}{[1-8]} -> {[A-H]}{[1-8]}" placeholder="C2 -> C3">&nbsp;&nbsp;&nbsp;[A-H][1-8]</td>
+								<td style="padding-left: 20px;">Move : <input name="move" bind="fields" format="{[A-H]}{[1-8]} -> {[A-H]}{[1-8]}" placeholder="C2 -> C3">&nbsp;&nbsp;&nbsp;[A-H][1-8]</td>
 							</tr>
 						</table>
 					</fieldset>
@@ -77,8 +77,8 @@
 						<legend>Data Mapper</legend>
 						<table>
 							<tr>
-								<td>Y/N : </td><td><input type="text" name="mapper" block="fields" size="1" maxlength="1" upper mapper="/mappers/truefalse"></td>
-								<td style="padding-left: 20px;">True/False : </td><td><input name="mapper" block="fields" size="4" lower></td>
+								<td>Y/N : </td><td><input type="text" name="mapper" bind="fields" size="1" maxlength="1" upper mapper="/mappers/truefalse"></td>
+								<td style="padding-left: 20px;">True/False : </td><td><input name="mapper" bind="fields" size="4" lower></td>
 							</tr>
 						</table>
 					</fieldset>
@@ -91,14 +91,14 @@
 									Single :
 								</td>
 								<td>
-									<select style="width: 100px;" name="single" block="fields" size="1">
+									<select style="width: 100px;" name="single" bind="fields" size="1">
 										<option value="DK">Denmark</option>
 										<option value="SE">Sweden</option>
 										<option value="NO">Norway</option>
 										<option value="FI">Finland</option>
 									</select>
 								</td>
-								<td style="padding-left: 20px;">Code : </td><td><input name="single" block="fields" size="4" upper></td>
+								<td style="padding-left: 20px;">Code : </td><td><input name="single" bind="fields" size="4" upper></td>
 							</tr>
 						</table>
 						<table style="margin-top: 20px;">
@@ -107,14 +107,14 @@
 									Multiple :
 								</td>
 								<td>
-									<select style="width: 100px;" name="multi" block="fields" size="5" multiple>
+									<select style="width: 100px;" name="multi" bind="fields" size="5" multiple>
 										<option value="DK">Denmark</option>
 										<option value="SE">Sweden</option>
 										<option value="NO">Norway</option>
 										<option value="FI">Finland</option>
 									</select>
 								</td>
-								<td style="padding-left: 20px;">Code : </td><td><input name="multi" block="fields" size="8" upper></td>
+								<td style="padding-left: 20px;">Code : </td><td><input name="multi" bind="fields" size="8" upper></td>
 							</tr>
 						</table>
 					</fieldset>
@@ -123,9 +123,9 @@
 						<legend>Any html</legend>
 						<table>
 							<tr>
-								<td>Text : <input type="text" name="any" block="fields" size="16"></td>
-								<td style="padding-left: 20px;"></td><td><b name="any" block="fields"></b></td>
-								<td style="padding-left: 20px;"></td><td><span name="any" block="fields" mapper="/mappers/linkmapper"></span></td>
+								<td>Text : <input type="text" name="any" bind="fields" size="16"></td>
+								<td style="padding-left: 20px;"></td><td><b name="any" bind="fields"></b></td>
+								<td style="padding-left: 20px;"></td><td><span name="any" bind="fields" mapper="/mappers/linkmapper"></span></td>
 							</tr>
 						</table>
 					</fieldset>

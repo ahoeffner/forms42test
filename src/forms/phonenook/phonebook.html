@@ -5,21 +5,21 @@
 		<tr>
 			<td></td>
 			<td colspan="2">
-				<span class="phonebook-search"><input name="filter" block="search"></span>
+				<span class="phonebook-search"><input name="filter" bind="search"></span>
 			</td>
 		</tr>
 
 		<tr foreach="row in 1..10">
 			<td>
-				<span block="employees" row="$row" type="row-indicator"></span>
+				<span bind="employees" row="$row" type="row-indicator"></span>
 			</td>
 
 			<td>
-				<input id="fn$row" size="10" name="first_name" block="employees" row="$row" initcap required autocomplete="do-not-autofill">
+				<input id="fn$row" size="10" name="first_name" bind="employees" row="$row" initcap required autocomplete="do-not-autofill">
 			</td>
 
 			<td>
-				<input size="10" name="last_name"  block="employees" row="$row" initcap required autocomplete="do-not-autofill">
+				<input size="10" name="last_name"  bind="employees" row="$row" initcap required autocomplete="do-not-autofill">
 			</td>
 		</tr>
 	</table>
@@ -28,15 +28,15 @@
 		<tr></tr>
 		<tr>
 			<td>First Name</td><td>:</td>
-			<td><input size="10" name="first_name" block="employees" initcap required autocomplete="do-not-autofill"></td>
+			<td><input size="10" name="first_name" bind="employees" initcap required autocomplete="do-not-autofill"></td>
 		</tr>
 		<tr>
 			<td>Last Name</td><td>:</td>
-			<td><input size="10" name="last_name" block="employees" initcap required autocomplete="do-not-autofill"></td>
+			<td><input size="10" name="last_name" bind="employees" initcap required autocomplete="do-not-autofill"></td>
 		</tr>
 		<tr>
 			<td>Phone</td><td>:</td>
-			<td><input size="20" name="phone_number" block="employees" required autocomplete="do-not-autofill"></td>
+			<td><input size="20" name="phone_number" bind="employees" required autocomplete="do-not-autofill"></td>
 		</tr>
 	</table>
 </div>
