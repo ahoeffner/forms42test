@@ -13,10 +13,11 @@
 import content from './phonebook.html';
 import { BaseForm } from '../BaseForm';
 import { Employees } from './Employees';
-import { EventType, FormEvent, DefaultProperties, FieldProperties } from 'forms42core';
+import { EventType, FormEvent, DefaultProperties, FieldProperties, Contains } from 'forms42core';
 
 export class PhoneBook extends BaseForm
 {
+	private filter:Contains = null;
 	private nameprops:DefaultProperties = null;
 	private managerprops:FieldProperties = null;
 	private emp:Employees = new Employees(this,"employees");
@@ -25,6 +26,8 @@ export class PhoneBook extends BaseForm
 	{
 		super(content);
 		this.title = "PhoneBook";
+		this.filter = new Contains(["first_name","last_name"]);
+
 		this.addEventListener(this.test,{block: "employees"});
 		this.addEventListener(this.start,{type: EventType.PostViewInit});
 		this.addEventListener(this.fetch,{type: EventType.OnFetch, block: "employees"});
@@ -46,12 +49,14 @@ export class PhoneBook extends BaseForm
 
 	public async test(event:FormEvent) : Promise<boolean>
 	{
-		console.log(EventType[event.type]+" fname "+this.getValue("employees","first_name"));
+		//console.log(EventType[event.type]+" fname "+this.getValue("employees","first_name"));
 		return(true);
 	}
 
 	public async search() : Promise<boolean>
 	{
+		this.filter.value = this.getValue("search","filter");
+		await this.getBlock("Employees").executeQuery(this.filter);
 		return(true);
 	}
 
