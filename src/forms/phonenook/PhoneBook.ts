@@ -25,9 +25,11 @@ export class PhoneBook extends BaseForm
 	{
 		super(content);
 		this.title = "PhoneBook";
-		this.addEventListener(this.fetch,{type: EventType.OnFetch});
+		this.addEventListener(this.test,{block: "employees"});
 		this.addEventListener(this.start,{type: EventType.PostViewInit});
+		this.addEventListener(this.fetch,{type: EventType.OnFetch, block: "employees"});
 		this.addEventListener(this.search,{type: EventType.OnTyping, block: "search", field: "filter"});
+		this.addEventListener(this.validate,{type: EventType.WhenValidateField, block: "employees", field: "first_name"});
 	}
 
 	public async start() : Promise<boolean>
@@ -42,21 +44,29 @@ export class PhoneBook extends BaseForm
 		return(true);
 	}
 
-	public async search() : Promise<boolean>
+	public async test(event:FormEvent) : Promise<boolean>
 	{
-		console.log("search "+this.getValue("search","filter",true));
+		console.log(EventType[event.type]+" fname "+this.getValue("employees","first_name"));
 		return(true);
 	}
 
-	public async fetch(event:FormEvent) : Promise<boolean>
+	public async search() : Promise<boolean>
 	{
-		if (event.block == "employees")
-		{
-			let fname:string = this.emp.getValue("first_name");
-			if (fname == "Lex") this.emp.getRecord().setProperties(this.managerprops,"first_name");
-			console.log(fname);
-		}
+		return(true);
+	}
 
+	public async fetch() : Promise<boolean>
+	{
+		let fname:string = this.emp.getValue("first_name");
+		if (fname == "Lex") this.emp.getRecord().setProperties(this.managerprops,"first_name");
+		return(true);
+	}
+
+	public async validate() : Promise<boolean>
+	{
+		let fname:string = this.emp.getValue("first_name");
+		if (fname != "Lex") this.emp.getRecord().setProperties(null,"first_name");
+		else				this.emp.getRecord().setProperties(this.managerprops,"first_name");
 		return(true);
 	}
 }
