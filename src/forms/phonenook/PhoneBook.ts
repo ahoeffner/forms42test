@@ -70,8 +70,11 @@ export class PhoneBook extends BaseForm
 	public async validate() : Promise<boolean>
 	{
 		let fname:string = this.emp.getValue("first_name");
+		console.log("fname: "+fname)
+
 		if (fname != "Lex") this.emp.getRecord().setProperties(null,"first_name");
 		else				this.emp.getRecord().setProperties(this.managerprops,"first_name");
+
 		return(true);
 	}
 }
