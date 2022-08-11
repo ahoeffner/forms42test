@@ -28,11 +28,11 @@ export class PhoneBook extends BaseForm
 		this.title = "PhoneBook";
 		this.filter = new Contains(["first_name","last_name"]);
 
-		this.addEventListener(this.test,{block: "employees"});
+		//this.addEventListener(this.test,{block: "employees"});
 		this.addEventListener(this.start,{type: EventType.PostViewInit});
 		this.addEventListener(this.fetch,{type: EventType.OnFetch, block: "employees"});
 		this.addEventListener(this.search,{type: EventType.OnTyping, block: "search", field: "filter"});
-		this.addEventListener(this.validate,{type: EventType.WhenValidateField, block: "employees", field: "first_name"});
+		this.addEventListener(this.validate,{type: EventType.WhenValidateField, block: "employees"});
 	}
 
 	public async start() : Promise<boolean>
@@ -70,7 +70,6 @@ export class PhoneBook extends BaseForm
 	public async validate() : Promise<boolean>
 	{
 		let fname:string = this.emp.getValue("first_name");
-		console.log("fname: "+fname)
 
 		if (fname != "Lex") this.emp.getRecord().setProperties(null,"first_name");
 		else				this.emp.getRecord().setProperties(this.managerprops,"first_name");
