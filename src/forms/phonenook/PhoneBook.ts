@@ -28,7 +28,7 @@ export class PhoneBook extends BaseForm
 		this.title = "PhoneBook";
 		this.filter = new Contains(["first_name","last_name"]);
 
-		//this.addEventListener(this.test,{block: "employees"});
+		this.addEventListener(this.test,{block: "employees"});
 		this.addEventListener(this.start,{type: EventType.PostViewInit});
 		this.addEventListener(this.fetch,{type: EventType.OnFetch, block: "employees"});
 		this.addEventListener(this.search,{type: EventType.OnTyping, block: "search", field: "filter"});
