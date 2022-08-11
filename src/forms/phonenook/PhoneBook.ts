@@ -39,6 +39,8 @@ export class PhoneBook extends BaseForm
 	{
 		this.focus();
 
+		this.getBlock("Employees").getFieldById("first_name","fn1").getInsertProperties().setEnabled(false).apply();
+
 		this.nameprops = this.getBlock("Employees").getFieldById("first_name","fn1")?.getDefaultProperties();
 		this.managerprops = new FieldProperties(this.nameprops);
 		this.managerprops.setClass("green");
