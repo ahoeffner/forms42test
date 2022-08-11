@@ -15,7 +15,17 @@ import { Employees as EmployeesData } from "../../data/Employees";
 
 export class Employees extends MemoryTable
 {
-	constructor()
+	private static table:Employees = null;
+
+	public static get() : Employees
+	{
+		if (Employees.table == null)
+			Employees.table = new Employees();
+
+		return(Employees.table);
+	}
+
+	private constructor()
 	{
 		super(EmployeesData.columns,EmployeesData.data);
 	}
