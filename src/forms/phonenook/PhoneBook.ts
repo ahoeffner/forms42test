@@ -13,12 +13,11 @@
 import content from './phonebook.html';
 import { BaseForm } from '../BaseForm';
 import { Employees } from './Employees';
-import { EventType, FormEvent, DefaultProperties, FieldProperties, Contains } from 'forms42core';
+import { EventType, FormEvent, FieldProperties, Contains } from 'forms42core';
 
 export class PhoneBook extends BaseForm
 {
 	private filter:Contains = null;
-	private nameprops:DefaultProperties = null;
 	private managerprops:FieldProperties = null;
 	private emp:Employees = new Employees(this,"employees");
 
@@ -39,10 +38,17 @@ export class PhoneBook extends BaseForm
 	{
 		this.focus();
 
-		this.getBlock("Employees").getFieldById("first_name","fn1").getInsertProperties().setEnabled(false).apply();
+		console.log("disable")
+		
+		let insprops:FieldProperties = this.getBlock("Employees").getInsertPropertiesById("first_name","fn2").setEnabled(false);
+		this.emp.setInsertProperties(insprops,"first_name","table");
 
-		this.nameprops = this.getBlock("Employees").getFieldById("first_name","fn1")?.getDefaultProperties();
-		this.managerprops = new FieldProperties(this.nameprops);
+		insprops = this.getBlock("Employees").getInsertPropertiesById("last_name","fn2").setEnabled(false);
+		this.emp.setInsertProperties(insprops,"last_name","table");
+
+		console.log("disabled")
+
+		this.managerprops = this.getBlock("Employees").getDefaultPropertiesById("first_name","fn1");
 		this.managerprops.setClass("green");
 
 		await this.getBlock("Employees").executeQuery();
