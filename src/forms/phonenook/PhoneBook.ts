@@ -38,15 +38,11 @@ export class PhoneBook extends BaseForm
 	{
 		this.focus();
 
-		console.log("disable")
-		
-		let insprops:FieldProperties = this.getBlock("Employees").getInsertPropertiesById("first_name","fn2").setEnabled(false);
+		let insprops:FieldProperties = this.getBlock("Employees").getInsertPropertiesById("first_name","fn2").setReadOnly(true);
 		this.emp.setInsertProperties(insprops,"first_name","table");
 
-		insprops = this.getBlock("Employees").getInsertPropertiesById("last_name","fn2").setEnabled(false);
+		insprops = this.getBlock("Employees").getInsertPropertiesById("last_name","ln2").setReadOnly(true);
 		this.emp.setInsertProperties(insprops,"last_name","table");
-
-		console.log("disabled")
 
 		this.managerprops = this.getBlock("Employees").getDefaultPropertiesById("first_name","fn1");
 		this.managerprops.setClass("green");
