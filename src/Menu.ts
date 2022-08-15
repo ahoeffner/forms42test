@@ -18,14 +18,13 @@ export class Menu
     private menu:boolean = false;
 	private handler:MenuHandler = null;
     private menuelem:HTMLElement = null;
-
+	private container:HTMLElement = null;
     constructor()
     {
 		this.menuelem = document.createElement("div");
 		this.menuelem.classList.value = "left-menu-container";
-        let container:HTMLElement = document.getElementById("main-menu");
-
-		this.menuelem = container.appendChild(this.menuelem);
+    	this.container= document.getElementById("main-menu");
+		this.menuelem = this.container.appendChild(this.menuelem);
 		this.handler = new MenuHandler(new Forms(this), this.menuelem);
     }
 
@@ -45,6 +44,7 @@ export class Menu
 		}
         else
 		{
+			
 			this.handler.show();
 			this.menuelem.style.display = "block";
 		}

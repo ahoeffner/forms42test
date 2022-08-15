@@ -1,42 +1,27 @@
 <include src="/html/formheader"></include>
 
-<div style="display: flex; min-width: 500px; min-height: 200px; width: 100%; height: 100%; justify-content: center;">
-	<table>
-		<tr>
-			<td></td>
-			<td colspan="2">
-				<span class="phonebook-search"><input name="filter" bind="search"></span>
-			</td>
-		</tr>
+<div class="phonebook">
 
-		<tr foreach="row in 1..10">
-			<td>
-				<span bind="employees" row="$row" type="row-indicator"></span>
-			</td>
+		<div class="phonebook_colunm">
+				<span class="phonebook_search"><input name="filter" bind="search"></span>
+	
+			<div class="phonebook_info" foreach="row in 1..10">
+					<div class="phonebook_indicator"><span bind="employees" row="$row" type="row-indicator"></span></div>
 
-			<td>
-				<input id="fn$row" size="10" name="first_name" bind="employees" row="$row" initcap required autocomplete="do-not-autofill">
-			</td>
-
-			<td>
-				<input size="10" name="last_name"  bind="employees" row="$row" initcap required autocomplete="do-not-autofill">
-			</td>
-		</tr>
-	</table>
-
-	<table style="height: fit-content; margin-top: 50px; margin-left: 30px;">
-		<tr></tr>
-		<tr>
-			<td>First Name</td><td>:</td>
-			<td><input size="10" name="first_name" bind="employees" initcap required autocomplete="do-not-autofill"></td>
-		</tr>
-		<tr>
-			<td>Last Name</td><td>:</td>
-			<td><input size="10" name="last_name" bind="employees" initcap required autocomplete="do-not-autofill"></td>
-		</tr>
-		<tr>
-			<td>Phone</td><td>:</td>
-			<td><input size="20" name="phone_number" bind="employees" required autocomplete="do-not-autofill"></td>
-		</tr>
-	</table>
+					<input id="fn$row" size="10" name="first_name" bind="employees" row="$row" initcap required autocomplete="do-not-autofill">
+				
+					<input size="10" name="last_name"  bind="employees" row="$row" initcap required autocomplete="do-not-autofill">
+			</div>
+		</div>
+			<div class="phonebook_input">
+					<label><span>First Name</span>:&nbsp;
+					<input size="10" name="first_name" bind="employees" initcap required autocomplete="do-not-autofill">
+					</label>
+					<label><span>Last Name</span>:&nbsp;
+					<input size="10" name="last_name" bind="employees" initcap required autocomplete="do-not-autofill">
+				</label>
+					<label><span>Phone</span>:&nbsp;
+					<input size="20" name="phone_number" bind="employees" required autocomplete="do-not-autofill">
+				</label>
+			</div>
 </div>
