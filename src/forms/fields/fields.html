@@ -1,57 +1,51 @@
 <include src="/html/formheader"></include>
 
 <div class="field">
-	<form action="javascript:alert('Do nothing')">
+	<!-- <form style="display:flex" action="javascript:alert('Do nothing')"> -->
 		<!-- <div style="width: 100%;"> -->
-			<div class="field_columen">
+			<div class="field_row">
 					<fieldset class="fieldset">
 						<legend>Numbers</legend>
-						<table>
-							<tr>
-								<td>Integer : </td><td><input name="int" bind="fields" size="4" integer></td>
-								<td style="padding-left: 20px;">Decimal : </td><td><input name="dec" bind="fields" size="4" decimal></td>
-							</tr>
-						</table>
+						<div class="field_columen">
+								<span>Integer</span> : <input name="int" bind="fields" size="4" integer>
+								<!-- <td style="padding-left: 20px;"></td> -->
+								<span>Decimal</span> : <input name="dec" bind="fields" size="4" decimal>
+						</div>
 					</fieldset>
 
 					<fieldset  class="fieldset">
 						<legend>Text Case</legend>
-						<table>
-							<tr>
-								<td>Upper : </td><td><input name="upper" bind="fields" size="6" upper></td>
-								<td style="padding-left: 20px;">Lower : </td><td><input name="lower" bind="fields" size="6" lower></td>
-								<td style="padding-left: 20px;">Initcap : </td><td><input name="initcap" bind="fields" size="20" initcap></td>
-							</tr>
-						</table>
+						<div class="field_columen">
+							<span>Upper</span>:&nbsp;<input name="upper" bind="fields" size="6" upper>
+							<span>Lower</span>:&nbsp;<input name="lower" bind="fields" size="6" lower>
+							<span>Initcap</span>:&nbsp;<input name="initcap" bind="fields" size="20" initcap>
+						</div>
+							
 					</fieldset>
 
 					<fieldset  class="fieldset">
 						<legend>Date</legend>
-						<table>
-							<tr>
-								<td>Date : </td><td><input name="date" bind="fields" date></td>
-								<td style="padding-left: 20px;">DateTime : </td><td><input name="datetime" bind="fields" datetime></td>
-							</tr>
-						</table>
+							<div class="field_columen">
+								<span>Date</span> : <input name="date" bind="fields" date>
+								<span>DateTime</span> : <input name="datetime" bind="fields" datetime>
+							</div>
 					</fieldset>
 
 					<fieldset  class="fieldset">
 						<legend>Radio and Checkbox</legend>
-						<table>
-							<tr>
-								<td><input name="nordics" bind="fields" size="4" upper></td>
-								<td style="display: inline-block; width: 50px;"></td>
+							<input name="nordics" bind="fields" size="4" upper>
+								<td style="display: inline-block; width: 50px;">
 								<td>DK:</td>
-								<td><input type="checkbox" name="nordics" bind="fields" value="DK"></td>
-							</tr>
-							<tr><td></td><td></td><td>DK:</td><td><input type="radio" name="nordics" bind="fields" value="DK"></td></tr>
-							<tr><td></td><td></td><td>SE:</td><td><input type="radio" name="nordics" bind="fields" value="SE"></td></tr>
-							<tr><td></td><td></td><td>NO:</td><td><input type="radio" name="nordics" bind="fields" value="NO"></td></tr>
-							<tr><td></td><td></td><td>FI:</td><td><input type="radio" name="nordics" bind="fields" value="FI"></td></tr>
+								<td><input type="checkbox" name="nordics" bind="fields" value="DK">
+						
+							DK:<input type="radio" name="nordics" bind="fields" value="DK">
+							SE:<input type="radio" name="nordics" bind="fields" value="SE">
+							NO:<input type="radio" name="nordics" bind="fields" value="NO">
+							FI:<input type="radio" name="nordics" bind="fields" value="FI">
 						</table>
 					</fieldset>
 			</div>
-			<div class="field_columen">
+			<div class="field_row">
 					<fieldset class="fieldset">
 						<legend>Formatted Input (Chess Move)</legend>
 						<table>
@@ -132,5 +126,5 @@
 			
 		<!-- </div> -->
 
-	</form>
+	<!-- </form> -->
 </div>

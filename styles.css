@@ -176,6 +176,7 @@ textarea.invalid
 
 
 .phonebook{
+    margin-top:20px;
     display: grid;
     min-width: 100%;
     row-gap: 2px;
@@ -251,8 +252,9 @@ textarea.invalid
 .field{
     display:grid;
    min-width: 100%; 
-   row-gap: 2px;
-   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+   row-gap: 10px;
+   grid-template-columns:repeat(auto-fit,minmax(550px,1fr));
+   padding: 10px 20px;
 
 }
 
@@ -263,10 +265,21 @@ textarea.invalid
 }
 
 
-.field  .field_columen{
-    /* height: fit-content; */
-    margin:50px 30px;
+.field  .field_row{
+    height: fit-content;
     display:grid;
     justify-content: center;
     align-content: center;
+    margin:20px 30px;
+}
+
+.field .field_row .field_columen{
+    padding-left:5px;
+    display:inline-flex;
+}
+
+.field .field_row .field_columen span{
+    width:70px;
+    display:inline-block;
+    padding-left: 5px;
 }
