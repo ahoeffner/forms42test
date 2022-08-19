@@ -53,7 +53,7 @@ export class PhoneBook extends BaseForm
 
 	public async test(event:FormEvent) : Promise<boolean>
 	{
-		//console.log(EventType[event.type]+" fname "+this.getValue("employees","first_name"));
+		console.log(EventType[event.type]+" "+event.field+" "+this.emp.getValue(event.field))
 		return(true);
 	}
 
@@ -71,7 +71,7 @@ export class PhoneBook extends BaseForm
 		return(true);
 	}
 
-	public async validate() : Promise<boolean>
+	public async validate(event:FormEvent) : Promise<boolean>
 	{
 		let fname:string = this.emp.getValue("first_name");
 
