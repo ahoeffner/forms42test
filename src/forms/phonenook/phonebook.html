@@ -1,8 +1,5 @@
 <include src="/html/formheader"></include>
 
-Hello
-<button onClick="this.emp.insert()">Insert</button>
-
 <div class="phonebook">
 		<div class="phonebook_colunm">
 			<div class="phone_button">
@@ -13,21 +10,21 @@ Hello
 			<div class="phonebook_info" foreach="row in 1..10">
 					<div class="phonebook_indicator"><span bind="employees" row="$row" type="row-indicator"></span></div>
 
-					<input id="fn$row" size="10" name="first_name" bind="employees" row="$row" initcap required autocomplete="do-not-autofill">
+					<input id="fn$row" size="10" name="first_name" class="table" bind="employees" row="$row" initcap required autocomplete="do-not-autofill">
 
-					<input  id="ln$row" size="10" name="last_name"  bind="employees" row="$row" initcap required autocomplete="do-not-autofill">
+					<input  id="ln$row" size="10" name="last_name" class="table"  bind="employees" row="$row" initcap required autocomplete="do-not-autofill">
 			</div>
 		</div>
 
 		<div class="phonebook_input">
 			<label><span>First Name</span>:&nbsp;
-				<input size="10" name="first_name" bind="employees" initcap required autocomplete="do-not-autofill">
+				<input size="10" name="first_name" class="detail" bind="employees" initcap required autocomplete="do-not-autofill">
 				</label>
 				<label><span>Last Name</span>:&nbsp;
-				<input size="10" name="last_name" bind="employees" initcap required autocomplete="do-not-autofill">
+				<input size="10" name="last_name" class="detail" bind="employees" initcap required autocomplete="do-not-autofill">
 			</label>
 				<label><span>Phone</span>:&nbsp;
-				<input size="20" name="phone_number" bind="employees" required autocomplete="do-not-autofill">
+				<input size="20" name="phone_number" class="detail" bind="employees" required autocomplete="do-not-autofill">
 			</label>
 		</div>
 </div>

@@ -145,27 +145,6 @@ html, body
     transform: rotate(90deg);
 }
 
-.green
-{
-	color: green;
-}
-
-input.invalid
-{
-    border: 2px;
-    border-color:red;
-    border-style: solid;
-	outline: none !important;
-}
-
-textarea.invalid
-{
-    border: 2px;
-    border-color:red;
-    border-style: solid;
-	outline: none !important;
-}
-
 .row-indicator
 {
 	width: 8px;
@@ -174,16 +153,15 @@ textarea.invalid
 	background-color: yellow;
 }
 
-
-.phonebook{
+.phonebook
+{
+	width: 400px;
     margin-top:20px;
     display: grid;
     min-width: 100%;
     row-gap: 2px;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); 
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 }
-
-
 
 .phonebook .phonebook_colunm
 {
@@ -191,7 +169,7 @@ textarea.invalid
     gap:2px;
     justify-content: center;
     align-content: center;
-    
+
 }
 
 .phonebook .phonebook_heading .phonebook_search
@@ -203,102 +181,108 @@ textarea.invalid
 
 
 
-.phonebook  .phonebook_input{
+.phonebook  .phonebook_input
+{
     margin:50px 30px;
     display:grid;
     align-content: center;
 }
 
- 
-.phonebook .phonebook_input label{
+
+.phonebook .phonebook_input label
+{
     margin:2px;
     display:inline-flex;
 }
 
-.phonebook  .phonebook_input label span{
+.phonebook  .phonebook_input label span
+{
     display:inline-block;
     width:80px;
 }
 
-
-.phonebook .phonebook_info{
+.phonebook .phonebook_info
+{
     display:inline-flex;
-
 }
-.phonebook  .phonebook_colunm .phonebook_search{
+
+.phonebook  .phonebook_colunm .phonebook_search
+{
     margin-left: 30px;
 }
 
-.phonebook  .phonebook_colunm .phone_button{
+.phonebook  .phonebook_colunm .phone_button
+{
     margin-bottom: 10px;
     align-items: center;
     justify-content: center;
     display:flex;
 }
 
-
-.phonebook .phonebook_colunm .phonebook_info input{
+.phonebook .phonebook_colunm .phonebook_info input
+{
     display:inline;
     margin:2px 1px;
 }
 
-
-
-.phonebook .phonebook_colunm .phonebook_info .phonebook_indicator{
+.phonebook .phonebook_colunm .phonebook_info .phonebook_indicator
+{
     display:grid;
     align-items: center;
     justify-content: center;
     width:10px;
 }
 
-.phonebook  .phonebook_colunm .phonebook_info .phonebook_indicator span{
-    
+.phonebook  .phonebook_colunm .phonebook_info .phonebook_indicator span
+{
     width:10px;
     height: 10px;
 }
 
-.field{
+.field
+{
     display:grid;
-   min-width: 100%; 
+   min-width: 100%;
    row-gap: 10px;
    grid-template-columns:repeat(auto-fit,minmax(550px,1fr));
    padding: 10px 20px;
 
 }
 
-.field .field_columen .field_fieldset{
+.field .field_columen .field_fieldset
+{
     margin-top: 30px;
-    width: 80%; 
+    width: 80%;
     margin-left: 5%;
 }
 
 
-.field .field_columen_radio{
-    display: inline-block; 
+.field .field_columen_radio
+{
     width:80px;
-    vertical-align: top;
     margin: 2px 4px;
     position: relative;
-
+    vertical-align: top;
+    display: inline-block;
 }
 
-
-
-.field .field_columen_radio label{
-     width:30px;
-    display:inline-block;
-    margin-right:10px;
+.field .field_columen_radio label
+{
+	width:30px;
+	margin-right:10px;
+	display:inline-block;
 }
 
-.field .field_columen_radio .field_radio{
-    
+.field .field_columen_radio .field_radio
+{
     position: absolute;
     right:4px;
     display:inline-flex;
 }
 
 
-.field  .field_row{
+.field .field_row
+{
     height: fit-content;
     display:grid;
     justify-content: center;
@@ -306,76 +290,96 @@ textarea.invalid
     margin:20px 30px;
 }
 
-.field .field_row .field_columen{
-     padding:2px 5px; 
-    display:block;
+.field .field_row .field_columen
+{
+	padding:2px 5px;
+	display:block;
 }
 
-.field .field_row .field_columen span{
+.field .field_row .field_columen span
+{
     width:70px;
     display:inline-block;
     padding-left: 5px;
 }
 
-button {
-    display: inline-block;
-    border: 0.16em solid rgba(#000, 0);
-    border-radius: 20px;
-    text-decoration: none;
-    padding: 4px;
-    text-align: center;
-    transition: all 0.2s;
-    cursor: pointer;
-    position: relative;
-    font-size: 12px;
-  }
+button
+{
+	display: inline-block;
+	border: 0.16em solid rgba(#000, 0);
+	border-radius: 20px;
+	text-decoration: none;
+	padding: 4px;
+	text-align: center;
+	transition: all 0.2s;
+	cursor: pointer;
+	position: relative;
+	font-size: 12px;
+}
 
-  .btn{
-    font-weight: bold;
-    color: #000;
-    text-shadow: 0 0.04em 0.04em rgba(#000, 0.35);
-    padding: 7px 14px;
-    width:80px;
-    font-size: 12px;
-  }
+.btn
+{
+	font-weight: bold;
+	color: #000;
+	text-shadow: 0 0.04em 0.04em rgba(#000, 0.35);
+	padding: 7px 14px;
+	width:80px;
+	font-size: 12px;
+}
 
-  .btn:hover {
-    transform: scale(1.05);
-    box-shadow: 2px 2px 2px rgba(#000, 0.2);
-  }
+.btn:hover
+{
+	transform: scale(1.05);
+	box-shadow: 2px 2px 2px rgba(#000, 0.2);
+}
 
-  .btn:active {
-    background-color: rgba(#000, 5);
-  }
+.btn:active
+{
+	background-color: rgba(#000, 5);
+}
 
-  input:enabled,
-  input[enabled=enabled]
-   {
-  border: none;
-  font-weight: normal;
-  margin:0px 7px 0px 10px;
-  font-size: 14px;
-  color: #222;
-  background-color: transparent;
-  transition: all 0.18s ease;
-  border-bottom: 2px solid #000;
+input:enabled,
+input[enabled=enabled]
+{
+	border: none;
+	font-weight: normal;
+	margin:0px 7px 0px 10px;
+	font-size: 14px;
+	transition: all 0.18s ease;
+	border-bottom: 2px solid #000;
 }
 
 input:disabled,
-input[disabled=disabled] {
-  border: none;
-  font-weight: normal;
-  padding: 8px;
-  font-size: 16px;
-  color: #222;
-  background-color: transparent;
-  transition: all 0.18s ease;
-  border-bottom: 2px dotted #000;
+input[disabled=disabled]
+{
+	border: none;
+	font-weight: normal;
+	padding: 8px;
+	font-size: 16px;
+	color: #222;
+	background-color: transparent;
+	transition: all 0.18s ease;
+	border-bottom: 2px dotted #000;
 }
 
+input.invalid
+{
+	border-bottom: 2px solid red;
+}
 
-select {
-    border: none;
-    border-bottom: 2px solid #000;
-    background-color: transparent;
-  }
+textarea.invalid
+{
+	border-bottom: 2px solid red;
+}
+
+select
+{
+	border: none;
+	border-bottom: 2px solid #000;
+	background-color: transparent;
+}
+
+.green
+{
+	color: green;
+}

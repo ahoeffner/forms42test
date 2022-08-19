@@ -4,7 +4,7 @@
   "type": "module",
   "description": "Test suite for forms42core",
   "scripts": {
-	"test" : "cd dist && ls",
+    "test": "cd dist && ls",
     "server": "live-server --port=5500 --open=./dist/index.html &",
     "build": "webpack --mode production && cp index.html styles.css dist && cp -R images dist"
   },

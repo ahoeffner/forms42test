@@ -42,7 +42,7 @@ export class PhoneBook extends BaseForm
 		this.emp.setInsertProperties(insprops,"first_name","table");
 
 		insprops = this.getBlock("Employees").getInsertPropertiesById("last_name","ln2").setReadOnly(true);
-		this.emp.setInsertProperties(insprops,"last_name","table");
+		this.emp.setInsertProperties(insprops,"last_name","detail");
 
 		this.managerprops = this.getBlock("Employees").getDefaultPropertiesById("first_name","fn1");
 		this.managerprops.setClass("green");
@@ -53,7 +53,7 @@ export class PhoneBook extends BaseForm
 
 	public async test(event:FormEvent) : Promise<boolean>
 	{
-		console.log(EventType[event.type]+" "+event.field+" "+this.emp.getValue(event.field))
+		//console.log(EventType[event.type]+" "+event.field+" "+this.emp.getValue(event.field))
 		return(true);
 	}
 
@@ -67,7 +67,7 @@ export class PhoneBook extends BaseForm
 	public async fetch() : Promise<boolean>
 	{
 		let fname:string = this.emp.getValue("first_name");
-		if (fname == "Lex") this.emp.getRecord().setProperties(this.managerprops,"first_name");
+		//if (fname == "Lex") this.emp.getRecord().setProperties(this.managerprops,"first_name");
 		return(true);
 	}
 
