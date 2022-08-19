@@ -204,9 +204,11 @@ textarea.invalid
 
 
 .phonebook  .phonebook_input{
-    margin:50px 30px;
+    margin: 50px 30px;
     display:grid;
-    align-content: center;
+    align-items: center;
+    justify-content: center;
+    align-content: center; 
 }
 
  
@@ -275,7 +277,7 @@ textarea.invalid
 
 .field .field_columen_radio{
     display: inline-block; 
-    width:80px;
+    width:90px;
     vertical-align: top;
     margin: 2px 4px;
     position: relative;
@@ -285,13 +287,12 @@ textarea.invalid
 
 
 .field .field_columen_radio label{
-     width:30px;
+     width:40px;
     display:inline-block;
     margin-right:10px;
 }
 
 .field .field_columen_radio .field_radio{
-    
     position: absolute;
     right:4px;
     display:inline-flex;
