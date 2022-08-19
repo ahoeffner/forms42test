@@ -26,23 +26,26 @@
 					<fieldset  class="fieldset">
 						<legend>Date</legend>
 							<div class="field_columen">
-								<span>Date</span> : <input name="date" bind="fields" date>
-								<span>DateTime</span> : <input name="datetime" bind="fields" datetime>
+								<span>Date</span>:&nbsp;<input name="date" bind="fields" date>
+								<span>DateTime</span>:&nbsp;<input name="datetime" bind="fields" datetime>
 							</div>
 					</fieldset>
 
 					<fieldset  class="fieldset">
 						<legend>Radio and Checkbox</legend>
+						<div class="field_columen_radio">
 							<input name="nordics" bind="fields" size="4" upper>
-								<td style="display: inline-block; width: 50px;">
-								<td>DK:</td>
-								<td><input type="checkbox" name="nordics" bind="fields" value="DK">
-						
-							DK:<input type="radio" name="nordics" bind="fields" value="DK">
-							SE:<input type="radio" name="nordics" bind="fields" value="SE">
-							NO:<input type="radio" name="nordics" bind="fields" value="NO">
-							FI:<input type="radio" name="nordics" bind="fields" value="FI">
-						</table>
+						</div>
+							<div class="field_columen_radio">
+									<!-- <td > -->
+									<label>DK</label>:
+									<input type="checkbox" name="nordics" bind="fields" value="DK" class="field_radio" >
+							
+								<label>DK</label>:<input type="radio" name="nordics" bind="fields" value="DK">
+								<label>SE</label>:<input type="radio" name="nordics" bind="fields" value="SE">
+								<label>NO</label>:<input type="radio" name="nordics" bind="fields" value="NO">
+								<label>FI</label>:<input type="radio" name="nordics" bind="fields" value="FI">
+							</div>
 					</fieldset>
 			</div>
 			<div class="field_row">

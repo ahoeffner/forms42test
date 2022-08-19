@@ -273,6 +273,31 @@ textarea.invalid
 }
 
 
+.field .field_columen_radio{
+    display: inline-block; 
+    width:70px;
+    vertical-align: top;
+    margin: 2px 4px;
+    position: relative;
+
+}
+
+
+
+.field .field_columen_radio label{
+     width:30px;
+    display:inline-block;
+    margin-right:10px;
+}
+
+.field .field_columen_radio .field_radio{
+    
+    position: absolute;
+    right:4px;
+    display:inline-flex;
+}
+
+
 .field  .field_row{
     height: fit-content;
     display:grid;
