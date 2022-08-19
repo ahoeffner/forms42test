@@ -70,59 +70,50 @@
 
 					<fieldset  class="fieldset">
 						<legend>Data Mapper</legend>
-						<table>
-							<tr>
-								<td>Y/N : </td><td><input type="text" name="mapper" bind="fields" size="1" maxlength="1" upper mapper="/mappers/truefalse"></td>
-								<td style="padding-left: 20px;">True/False : </td><td><input name="mapper" bind="fields" size="4" lower></td>
-							</tr>
-						</table>
+					<div class="field_columen">
+							<span> Y/N</span> :<input type="text" name="mapper" bind="fields" size="1" maxlength="1" upper mapper="/mappers/truefalse">
+							<span>True/False</span>:<input name="mapper" bind="fields" size="4" lower>
+					</div>
 					</fieldset>
 
 					<fieldset class="fieldset">
 						<legend>Drop Down Lists</legend>
-						<table>
-							<tr>
-								<td style="width: 75px;">
-									Single :
-								</td>
-								<td>
+						<div class="field_columen">
+								
+									<span>Single :</span>
+								
 									<select style="width: 100px;" name="single" bind="fields" size="1">
 										<option value="DK">Denmark</option>
 										<option value="SE">Sweden</option>
 										<option value="NO">Norway</option>
 										<option value="FI">Finland</option>
 									</select>
-								</td>
-								<td style="padding-left: 20px;">Code : </td><td><input name="single" bind="fields" size="4" upper></td>
-							</tr>
-						</table>
-						<table style="margin-top: 20px;">
-							<tr>
-								<td style="width: 75px;">
-									Multiple :
-								</td>
-								<td>
+								
+								<span>Code</span> :  <input name="single" bind="fields" size="4" upper>
+						</div>
+						<div class="field_columen" style="margin-top: 20px;">
+						
+									<span>Multiple :</span>
+								
 									<select style="width: 100px;" name="multi" bind="fields" size="5" multiple>
 										<option value="DK">Denmark</option>
 										<option value="SE">Sweden</option>
 										<option value="NO">Norway</option>
 										<option value="FI">Finland</option>
 									</select>
-								</td>
-								<td style="padding-left: 20px;">Code : </td><td><input name="multi" bind="fields" size="8" upper></td>
-							</tr>
-						</table>
+								<span> Code</span> :<input name="multi" bind="fields" size="8" upper>
+						</div>
 					</fieldset>
 
 					<fieldset  class="fieldset">
 						<legend>Any html</legend>
-						<table>
-							<tr>
-								<td>Text : <input type="text" name="any" bind="fields" size="16"></td>
-								<td style="padding-left: 20px;"></td><td><b name="any" bind="fields"></b></td>
-								<td style="padding-left: 20px;"></td><td><span name="any" bind="fields" mapper="/mappers/linkmapper"></span></td>
-							</tr>
-						</table>
+						<div class="field_columen">
+						
+							<span>Text</span> : <input type="text" name="any" bind="fields" size="16">
+							<b name="any" bind="fields"></b>
+								<span name="any" bind="fields" mapper="/mappers/linkmapper"></span>
+							
+						</div>
 					</fieldset>
 			</div>
 </div>

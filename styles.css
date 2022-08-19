@@ -310,6 +310,7 @@ textarea.invalid
 .field .field_row .field_columen{
      padding:2px 5px; 
     display:block;
+    overflow: hidden;
 }
 
 .field .field_row .field_columen span{
@@ -364,14 +365,14 @@ button {
 
 input:disabled,
 input[disabled=disabled] {
-  border: none;
-  font-weight: normal;
-  padding: 8px;
-  font-size: 16px;
-  color: #222;
-  background-color: transparent;
-  transition: all 0.18s ease;
-  border-bottom: 2px dotted #000;
+    border: none;
+    font-weight: normal;
+    margin:0px 7px 0px 10px;
+    font-size: 14px;
+    color: #222;
+    background-color: transparent;
+    transition: all 0.18s ease;
+    border-bottom: 2px dotted #000;
 }
 
 
