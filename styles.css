@@ -130,7 +130,7 @@ html, body
 {
     content: '\00a0';
     font-size: 13px;
-    color: black;
+    /* color: black; */
     display:inline-block;
     margin-right: 13px;
 }
@@ -279,8 +279,8 @@ textarea.invalid
 
 
 .field .field_columen_radio{
-    display: inline-block; 
-    width:90px;
+    display: inline; 
+    /* width:90px; */
     vertical-align: top;
     margin: 2px 4px;
     position: relative;
@@ -307,7 +307,7 @@ textarea.invalid
     display:grid;
     justify-content: center;
     align-content: center;
-    margin:30px 15px;
+    margin: 10px;
 }
 
 .field .field_row .field_columen{
@@ -364,8 +364,8 @@ button {
   font-weight: normal;
   margin:0px 7px 0px 10px;
   font-size: 14px;
-  color: #222;
-  background-color: transparent;
+  /* color: #222; */
+  /* background-color: transparent; */
   transition: all 0.18s ease;
   border-bottom: 2px solid #000;
 }

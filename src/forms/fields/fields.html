@@ -8,7 +8,6 @@
 						<legend>Numbers</legend>
 						<div class="field_columen">
 								<span>Integer</span> : <input name="int" bind="fields" size="4" integer>
-								<!-- <td style="padding-left: 20px;"></td> -->
 								<span>Decimal</span> : <input name="dec" bind="fields" size="4" decimal>
 						</div>
 					</fieldset>
@@ -46,7 +45,7 @@
 								
 									<div class="field_columen_radio">
 											
-										<label>DK</label>:<input type="checkbox" name="nordics" bind="fields" value="DK" class="field_radio" >
+										<label>DK</label>:<input type="checkbox" name="nordics" bind="fields" value="DK">
 									
 										<label>DK</label>:<input type="radio" name="nordics" bind="fields" value="DK">
 										<label>SE</label>:<input type="radio" name="nordics" bind="fields" value="SE">
@@ -113,13 +112,13 @@
 
 					<fieldset  class="fieldset">
 						<legend>Any html</legend>
-						<div class="field_columen">
-						
-							<span>Text</span> : <input type="text" name="any" bind="fields" size="16">
-							<b name="any" bind="fields"></b>
-								<span name="any" bind="fields" mapper="/mappers/linkmapper"></span>
+							<div class="field_columen">
 							
-						</div>
+								<span>Text</span> : <input type="text" name="any" bind="fields" size="16">
+								<b name="any" bind="fields"></b>
+									<span name="any" bind="fields" mapper="/mappers/linkmapper"></span>
+								
+							</div>
 					</fieldset>
-			</div>
+		</div>
 </div>
