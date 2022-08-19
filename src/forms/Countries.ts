@@ -13,7 +13,7 @@
 import { BaseForm } from './BaseForm';
 import content from './countries.html';
 import { keymap } from '../FormsModule';
-import { FormEvent, EventType, MouseMap, Field } from 'forms42core';
+import { FormEvent, EventType, MouseMap } from 'forms42core';
 import { Employees } from '../data/Employees';
 
 

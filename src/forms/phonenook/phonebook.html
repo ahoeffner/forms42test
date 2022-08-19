@@ -1,8 +1,10 @@
 <include src="/html/formheader"></include>
 
 <div class="phonebook">
-
 		<div class="phonebook_colunm">
+			<div class="phone_button">
+					<button onClick="this.emp.insert()" class="btn" >Insert</button>
+			</div>
 				<span class="phonebook_search"><input name="filter" bind="search"></span>
 	
 			<div class="phonebook_info" foreach="row in 1..10">
@@ -10,11 +12,13 @@
 
 					<input id="fn$row" size="10" name="first_name" bind="employees" row="$row" initcap required autocomplete="do-not-autofill">
 				
-					<input size="10" name="last_name"  bind="employees" row="$row" initcap required autocomplete="do-not-autofill">
+					<input  id="ln$row" size="10" name="last_name"  bind="employees" row="$row" initcap required autocomplete="do-not-autofill">
 			</div>
 		</div>
 			<div class="phonebook_input">
-					<label><span>First Name</span>:&nbsp;
+
+				
+				<label><span>First Name</span>:&nbsp;
 					<input size="10" name="first_name" bind="employees" initcap required autocomplete="do-not-autofill">
 					</label>
 					<label><span>Last Name</span>:&nbsp;
