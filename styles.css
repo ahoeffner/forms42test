@@ -275,7 +275,7 @@ textarea.invalid
 
 .field .field_columen_radio{
     display: inline-block; 
-    width:70px;
+    width:80px;
     vertical-align: top;
     margin: 2px 4px;
     position: relative;
@@ -307,8 +307,8 @@ textarea.invalid
 }
 
 .field .field_row .field_columen{
-    padding-left:5px;
-    display:inline-flex;
+     padding:2px 5px; 
+    display:block;
 }
 
 .field .field_row .field_columen span{
@@ -346,4 +346,36 @@ button {
 
   .btn:active {
     background-color: rgba(#000, 5);
+  }
+
+  input:enabled,
+  input[enabled=enabled]
+   {
+  border: none;
+  font-weight: normal;
+  margin:0px 7px 0px 10px;
+  font-size: 14px;
+  color: #222;
+  background-color: transparent;
+  transition: all 0.18s ease;
+  border-bottom: 2px solid #000;
+}
+
+input:disabled,
+input[disabled=disabled] {
+  border: none;
+  font-weight: normal;
+  padding: 8px;
+  font-size: 16px;
+  color: #222;
+  background-color: transparent;
+  transition: all 0.18s ease;
+  border-bottom: 2px dotted #000;
+}
+
+
+select {
+    border: none;
+    border-bottom: 2px solid #000;
+    background-color: transparent;
   }

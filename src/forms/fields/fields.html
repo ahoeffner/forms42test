@@ -16,9 +16,9 @@
 					<fieldset  class="fieldset">
 						<legend>Text Case</legend>
 						<div class="field_columen">
-							<span>Upper</span>:&nbsp;<input name="upper" bind="fields" size="6" upper>
-							<span>Lower</span>:&nbsp;<input name="lower" bind="fields" size="6" lower>
-							<span>Initcap</span>:&nbsp;<input name="initcap" bind="fields" size="20" initcap>
+							<span>Upper</span>:&nbsp;<input name="upper" bind="fields"  size="6" upper>
+							<span>Lower</span>:&nbsp;<input name="lower" bind="fields"  size="6" lower>
+							<span>Initcap</span>:&nbsp;<input name="initcap" bind="fields"  size="15" initcap>
 						</div>
 							
 					</fieldset>
@@ -26,36 +26,36 @@
 					<fieldset  class="fieldset">
 						<legend>Date</legend>
 							<div class="field_columen">
-								<span>Date</span>:&nbsp;<input name="date" bind="fields" date>
+								<span>Date</span>:&nbsp;<input name="date"  bind="fields" date>
 								<span>DateTime</span>:&nbsp;<input name="datetime" bind="fields" datetime>
 							</div>
 					</fieldset>
 
 					<fieldset  class="fieldset">
 						<legend>Radio and Checkbox</legend>
-						<div class="field_columen_radio">
-							<input name="nordics" bind="fields" size="4" upper>
+						<div class="field_columen">
+								<div class="field_columen_radio">
+									<input name="nordics" bind="fields" size="4" upper>
+								</div>
+								
+									<div class="field_columen_radio">
+											
+										<label>DK</label>:<input type="checkbox" name="nordics" bind="fields" value="DK" class="field_radio" >
+									
+										<label>DK</label>:<input type="radio" name="nordics" bind="fields" value="DK">
+										<label>SE</label>:<input type="radio" name="nordics" bind="fields" value="SE">
+										<label>NO</label>:<input type="radio" name="nordics" bind="fields" value="NO">
+										<label>FI</label>:<input type="radio" name="nordics" bind="fields" value="FI">
+									</div>
 						</div>
-							<div class="field_columen_radio">
-									<!-- <td > -->
-									<label>DK</label>:
-									<input type="checkbox" name="nordics" bind="fields" value="DK" class="field_radio" >
-							
-								<label>DK</label>:<input type="radio" name="nordics" bind="fields" value="DK">
-								<label>SE</label>:<input type="radio" name="nordics" bind="fields" value="SE">
-								<label>NO</label>:<input type="radio" name="nordics" bind="fields" value="NO">
-								<label>FI</label>:<input type="radio" name="nordics" bind="fields" value="FI">
-							</div>
 					</fieldset>
 			</div>
 			<div class="field_row">
 					<fieldset class="fieldset">
 						<legend>Formatted Input (Chess Move)</legend>
-						<table>
-							<tr>
-								<td>
-									Piece :
-									<select style="width: 100px;" name="piece" bind="fields" size="1">
+						<div class="field_columen">
+									<span>Piece</span> :
+									<select style="margin: 0px 10px"  name="piece" bind="fields" size="1">
 										<option value="King">King</option>
 										<option value="Queen">Queen</option>
 										<option value="Rook">Rook</option>
@@ -64,9 +64,8 @@
 										<option value="Pawn">Pawn</option>
 									</select>
 								</td>
-								<td style="padding-left: 20px;">Move : <input name="move" bind="fields" format="{[A-H]}{[1-8]} -> {[A-H]}{[1-8]}" placeholder="C2 -> C3">&nbsp;&nbsp;&nbsp;[A-H][1-8]</td>
-							</tr>
-						</table>
+								<span>Move</span> : <input style="margin: 0px 10px"name="move" bind="fields" format="{[A-H]}{[1-8]} -> {[A-H]}{[1-8]}" placeholder="C2 -> C3">[A-H][1-8]
+							</div>
 					</fieldset>
 
 					<fieldset  class="fieldset">
@@ -126,8 +125,4 @@
 						</table>
 					</fieldset>
 			</div>
-			
-		<!-- </div> -->
-
-	<!-- </form> -->
 </div>
