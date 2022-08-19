@@ -231,7 +231,8 @@ textarea.invalid
 
 }
 .phonebook  .phonebook_colunm .phonebook_search{
-    margin-left: 30px;
+    margin: 10px 15px;
+
 }
 
 .phonebook  .phonebook_colunm .phone_button{
@@ -376,8 +377,8 @@ input[disabled=disabled] {
     font-weight: normal;
     margin:0px 7px 0px 10px;
     font-size: 14px;
-    color: #222;
-    background-color: transparent;
+    /* color: #222; */
+    /* background-color: transparent; */
     transition: all 0.18s ease;
     border-bottom: 2px dotted #000;
 }
