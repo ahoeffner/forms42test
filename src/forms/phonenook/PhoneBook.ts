@@ -73,6 +73,11 @@ export class PhoneBook extends BaseForm
 
 	public async validate(event:FormEvent) : Promise<boolean>
 	{
+		console.log(EventType[event.type]+" "+event.field+" "+this.emp.getValue(event.field));
+
+		if (event.field == "first_name" && this.emp.getValue("first_name") == "Alex")
+			return(false);
+
 		let fname:string = this.emp.getValue("first_name");
 
 		if (fname != "Lex") this.emp.getRecord().setProperties(null,"first_name");

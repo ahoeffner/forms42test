@@ -140,7 +140,7 @@ html, body
     color: hwb(0 2% 98% / 0.582);
 }
 
-.caret-down:before
+.menu-open:before
 {
     transform: rotate(90deg);
 }

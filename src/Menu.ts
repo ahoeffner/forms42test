@@ -19,6 +19,7 @@ export class Menu
 	private handler:MenuHandler = null;
     private menuelem:HTMLElement = null;
 	private container:HTMLElement = null;
+	
     constructor()
     {
 		this.menuelem = document.createElement("div");
@@ -44,7 +45,7 @@ export class Menu
 		}
         else
 		{
-			
+
 			this.handler.show();
 			this.menuelem.style.display = "block";
 		}
