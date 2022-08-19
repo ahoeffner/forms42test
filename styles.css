@@ -179,15 +179,12 @@ html, body
     margin:2px;
 }
 
-
-
 .phonebook  .phonebook_input
 {
     margin:50px 30px;
     display:grid;
     align-content: center;
 }
-
 
 .phonebook .phonebook_input label
 {
@@ -279,7 +276,6 @@ html, body
     right:4px;
     display:inline-flex;
 }
-
 
 .field .field_row
 {

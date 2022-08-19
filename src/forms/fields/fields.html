@@ -8,7 +8,6 @@
 						<legend>Numbers</legend>
 						<div class="field_columen">
 								<span>Integer</span> : <input name="int" bind="fields" size="4" integer>
-								<!-- <td style="padding-left: 20px;"></td> -->
 								<span>Decimal</span> : <input name="dec" bind="fields" size="4" decimal>
 						</div>
 					</fieldset>
@@ -16,9 +15,15 @@
 					<fieldset  class="fieldset">
 						<legend>Text Case</legend>
 						<div class="field_columen">
-							<span>Upper</span>:&nbsp;<input name="upper" bind="fields"  size="6" upper>
-							<span>Lower</span>:&nbsp;<input name="lower" bind="fields"  size="6" lower>
-							<span>Initcap</span>:&nbsp;<input name="initcap" bind="fields"  size="15" initcap>
+							<label>
+								<span>Upper</span>:<input name="upper" bind="fields"  size="6" upper>
+							</label>
+							<label>
+								<span>Lower</span>:<input name="lower" bind="fields"  size="6" lower>
+							</label>
+							<label>
+								<span>Initcap</span>:<input name="initcap" bind="fields"  size="15" initcap>
+							</label>
 						</div>
 							
 					</fieldset>
@@ -26,8 +31,8 @@
 					<fieldset  class="fieldset">
 						<legend>Date</legend>
 							<div class="field_columen">
-								<span>Date</span>:&nbsp;<input name="date"  bind="fields" date>
-								<span>DateTime</span>:&nbsp;<input name="datetime" bind="fields" datetime>
+								<span>Date</span>:<input name="date"  bind="fields" date>
+								<span>DateTime</span>:<input name="datetime" bind="fields" datetime>
 							</div>
 					</fieldset>
 
@@ -35,7 +40,7 @@
 						<legend>Radio and Checkbox</legend>
 						<div class="field_columen">
 								<div class="field_columen_radio">
-									<input name="nordics" bind="fields" size="4" upper>
+									<input name="nordics" bind="fields" size="4" upper>:
 								</div>
 								
 									<div class="field_columen_radio">
@@ -64,65 +69,56 @@
 										<option value="Pawn">Pawn</option>
 									</select>
 								</td>
-								<span>Move</span> : <input style="margin: 0px 10px"name="move" bind="fields" format="{[A-H]}{[1-8]} -> {[A-H]}{[1-8]}" placeholder="C2 -> C3">[A-H][1-8]
+								<span>Move</span>:<input style="margin: 0px 10px"name="move" bind="fields" format="{[A-H]}{[1-8]} -> {[A-H]}{[1-8]}" placeholder="C2 -> C3">[A-H][1-8]
 							</div>
 					</fieldset>
 
 					<fieldset  class="fieldset">
 						<legend>Data Mapper</legend>
-						<table>
-							<tr>
-								<td>Y/N : </td><td><input type="text" name="mapper" bind="fields" size="1" maxlength="1" upper mapper="/mappers/truefalse"></td>
-								<td style="padding-left: 20px;">True/False : </td><td><input name="mapper" bind="fields" size="4" lower></td>
-							</tr>
-						</table>
+					<div class="field_columen">
+							<span> Y/N</span> :<input type="text" name="mapper" bind="fields" size="1" maxlength="1" upper mapper="/mappers/truefalse">
+							<span>True/False</span>:<input name="mapper" bind="fields" size="4" lower>
+					</div>
 					</fieldset>
 
 					<fieldset class="fieldset">
 						<legend>Drop Down Lists</legend>
-						<table>
-							<tr>
-								<td style="width: 75px;">
-									Single :
-								</td>
-								<td>
+						<div class="field_columen">
+								
+									<span>Single :</span>
+								
 									<select style="width: 100px;" name="single" bind="fields" size="1">
 										<option value="DK">Denmark</option>
 										<option value="SE">Sweden</option>
 										<option value="NO">Norway</option>
 										<option value="FI">Finland</option>
 									</select>
-								</td>
-								<td style="padding-left: 20px;">Code : </td><td><input name="single" bind="fields" size="4" upper></td>
-							</tr>
-						</table>
-						<table style="margin-top: 20px;">
-							<tr>
-								<td style="width: 75px;">
-									Multiple :
-								</td>
-								<td>
+								
+								<span>Code</span> :  <input name="single" bind="fields" size="4" upper>
+						</div>
+						<div class="field_columen" style="margin-top: 20px;">
+						
+									<span>Multiple :</span>
+								
 									<select style="width: 100px;" name="multi" bind="fields" size="5" multiple>
 										<option value="DK">Denmark</option>
 										<option value="SE">Sweden</option>
 										<option value="NO">Norway</option>
 										<option value="FI">Finland</option>
 									</select>
-								</td>
-								<td style="padding-left: 20px;">Code : </td><td><input name="multi" bind="fields" size="8" upper></td>
-							</tr>
-						</table>
+								<span> Code</span> :<input name="multi" bind="fields" size="8" upper>
+						</div>
 					</fieldset>
 
 					<fieldset  class="fieldset">
 						<legend>Any html</legend>
-						<table>
-							<tr>
-								<td>Text : <input type="text" name="any" bind="fields" size="16"></td>
-								<td style="padding-left: 20px;"></td><td><b name="any" bind="fields"></b></td>
-								<td style="padding-left: 20px;"></td><td><span name="any" bind="fields" mapper="/mappers/linkmapper"></span></td>
-							</tr>
-						</table>
+							<div class="field_columen">
+							
+								<span>Text</span> : <input type="text" name="any" bind="fields" size="16">
+								<b name="any" bind="fields"></b>
+									<span name="any" bind="fields" mapper="/mappers/linkmapper"></span>
+								
+							</div>
 					</fieldset>
-			</div>
+		</div>
 </div>
