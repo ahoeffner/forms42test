@@ -23,7 +23,7 @@ import { PhoneBook } from './forms/phonenook/PhoneBook';
 import { LinkMapper } from './forms/fields/LinkMapper';
 import { TrueFalseMapper } from './forms/fields/TrueFalseMapper';
 
-import { FormsPathMapping, FormsModule as FormsCoreModule, KeyCodes, KeyMap, Logger } from 'forms42core';
+import { FormsPathMapping, FormsModule as FormsCoreModule, KeyCodes, KeyMap, FormEvent, EventType } from 'forms42core';
 
 @FormsPathMapping(
     [
@@ -43,6 +43,9 @@ export class FormsModule extends FormsCoreModule
     public menu:Menu = null;
     public list:Minimized = null;
 
+	private fields:KeyMap = new KeyMap({key: 'f', ctrl: true})
+	private phonebook:KeyMap = new KeyMap({key: 'p', ctrl: true})
+
     public static load() : void {new FormsModule();}
 
     constructor()
@@ -55,7 +58,19 @@ export class FormsModule extends FormsCoreModule
 
 		this.OpenURLForm();
 		this.updateKeyMap(keymap);
+		this.addEventListener(this.open, [{type:EventType.Key,key:this.phonebook},{type:EventType.Key,key:this.phonebook}]);
     }
+
+	public async open(event:FormEvent) : Promise<boolean>
+	{
+		if (event.key == this.fields)
+			this.showform(Fields);
+
+		if (event.key == this.phonebook)
+			this.showform(PhoneBook);
+
+		return(true);
+	}
 }
 
 export class keymap extends KeyMap
