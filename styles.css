@@ -352,10 +352,8 @@ input[disabled=disabled]
 {
 	border: none;
 	font-weight: normal;
-	padding: 8px;
-	font-size: 16px;
-	color: #222;
-	background-color: transparent;
+	margin:0px 7px 0px 10px;
+	font-size: 14px;
 	transition: all 0.18s ease;
 	border-bottom: 2px dotted #000;
 }
