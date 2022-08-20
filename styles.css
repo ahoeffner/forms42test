@@ -44,6 +44,7 @@ html, body
     position: relative;
 }
 
+
 .form-header
 {
     width: 100%;
@@ -155,21 +156,22 @@ html, body
 
 .phonebook
 {
-	width: 600px;
-	height: 350px;
-    margin-top:20px;
+    padding: 10px 20px;
+    width:600px;
+    margin:10px;
     display: grid;
     min-width: 100%;
+    /* justify-content: center; */
+    align-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(249px, 1fr));
 
-    row-gap: 2px;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 }
 
 .phonebook .phonebook_colunm
 {
     display:grid;
     gap:2px;
-    justify-content: center;
+    /* justify-content: center; */
     align-content: center;
 
 }
@@ -183,7 +185,7 @@ html, body
 
 .phonebook  .phonebook_input
 {
-    margin:50px 30px;
+    margin:10px;
     display:grid;
     align-content: center;
 }
@@ -207,15 +209,16 @@ html, body
 
 .phonebook  .phonebook_colunm .phonebook_search
 {
-    margin-left: 30px;
+    margin-left: 20px;
 }
 
 .phonebook  .phonebook_colunm .phone_button
 {
     margin-bottom: 10px;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
     display:flex;
+    margin-left: 70px;
 }
 
 .phonebook .phonebook_colunm .phonebook_info input
@@ -241,10 +244,11 @@ html, body
 .field
 {
     display:grid;
-   min-width: 100%;
+   min-width: 100%; 
    row-gap: 10px;
    grid-template-columns:repeat(auto-fit,minmax(550px,1fr));
    padding: 10px 20px;
+   width:1150px;
 
 }
 
@@ -358,12 +362,12 @@ input[disabled=disabled]
 	border-bottom: 2px dotted #000;
 }
 
-input.invalid
+input:invalid
 {
 	border-bottom: 2px solid red;
 }
 
-textarea.invalid
+textarea:invalid
 {
 	border-bottom: 2px solid red;
 }
