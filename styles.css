@@ -130,7 +130,7 @@ html, body
 {
     content: '\00a0';
     font-size: 13px;
-    /* color: black; */
+    color: black;
     display:inline-block;
     margin-right: 13px;
 }
@@ -140,30 +140,9 @@ html, body
     color: hwb(0 2% 98% / 0.582);
 }
 
-.caret-down:before
+.menu-open:before
 {
     transform: rotate(90deg);
-}
-
-.green
-{
-	color: green;
-}
-
-input.invalid
-{
-    border: 2px;
-    border-color:red;
-    border-style: solid;
-	outline: none !important;
-}
-
-textarea.invalid
-{
-    border: 2px;
-    border-color:red;
-    border-style: solid;
-	outline: none !important;
 }
 
 .row-indicator
@@ -174,19 +153,17 @@ textarea.invalid
 	background-color: yellow;
 }
 
-.phonebook{
-    margin:20px;
+.phonebook
+{
+	width: 600px;
+	height: 350px;
+    margin-top:20px;
     display: grid;
     min-width: 100%;
-    grid-gap: 1rem;
-    justify-content: center;
-    align-content: center;
-    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-    width:625px;
-    
+
+    row-gap: 2px;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 }
-
-
 
 .phonebook .phonebook_colunm
 {
@@ -194,7 +171,7 @@ textarea.invalid
     gap:2px;
     justify-content: center;
     align-content: center;
-    
+
 }
 
 .phonebook .phonebook_heading .phonebook_search
@@ -204,192 +181,203 @@ textarea.invalid
     margin:2px;
 }
 
-
-
-.phonebook  .phonebook_input{
-    margin: 50px 30px;
+.phonebook  .phonebook_input
+{
+    margin:50px 30px;
     display:grid;
-    align-items: center;
-    justify-content: center;
-    align-content: center; 
+    align-content: center;
 }
 
- 
-.phonebook .phonebook_input label{
+.phonebook .phonebook_input label
+{
     margin:2px;
     display:inline-flex;
 }
 
-.phonebook  .phonebook_input label span{
+.phonebook  .phonebook_input label span
+{
     display:inline-block;
     width:80px;
 }
 
-
-
-
-
-.phonebook .phonebook_info{
+.phonebook .phonebook_info
+{
     display:inline-flex;
-
-}
-.phonebook  .phonebook_colunm .phonebook_search{
-    margin: 10px 15px;
-
 }
 
-.phonebook  .phonebook_colunm .phone_button{
+.phonebook  .phonebook_colunm .phonebook_search
+{
+    margin-left: 30px;
+}
+
+.phonebook  .phonebook_colunm .phone_button
+{
     margin-bottom: 10px;
     align-items: center;
     justify-content: center;
     display:flex;
 }
 
-
-.phonebook .phonebook_colunm .phonebook_info input{
+.phonebook .phonebook_colunm .phonebook_info input
+{
     display:inline;
     margin:2px 1px;
 }
 
-
-
-.phonebook .phonebook_colunm .phonebook_info .phonebook_indicator{
+.phonebook .phonebook_colunm .phonebook_info .phonebook_indicator
+{
     display:grid;
     align-items: center;
     justify-content: center;
     width:10px;
 }
 
-.phonebook  .phonebook_colunm .phonebook_info .phonebook_indicator span{
-    
+.phonebook  .phonebook_colunm .phonebook_info .phonebook_indicator span
+{
     width:10px;
     height: 10px;
 }
 
-.field{
+.field
+{
     display:grid;
-   min-width: 100%; 
+   min-width: 100%;
    row-gap: 10px;
-   grid-template-columns:repeat(auto-fit,minmax(525px,1fr));
+   grid-template-columns:repeat(auto-fit,minmax(550px,1fr));
    padding: 10px 20px;
-   width:1150px;
 
 }
 
-.field .field_columen .field_fieldset{
+.field .field_columen .field_fieldset
+{
     margin-top: 30px;
-    width: 80%; 
+    width: 80%;
     margin-left: 5%;
 }
 
 
-.field .field_columen_radio{
-    display: inline-block; 
-    width:90px;
-    vertical-align: top;
+.field .field_columen_radio
+{
+    width:80px;
     margin: 2px 4px;
     position: relative;
-
+    vertical-align: top;
+    display: inline-block;
 }
 
-
-
-.field .field_columen_radio label{
-     width:40px;
-    display:inline-block;
-    margin-right:10px;
+.field .field_columen_radio label
+{
+	width:30px;
+	margin-right:10px;
+	display:inline-block;
 }
 
-.field .field_columen_radio .field_radio{
+.field .field_columen_radio .field_radio
+{
     position: absolute;
     right:4px;
     display:inline-flex;
 }
 
-
-.field  .field_row{
+.field .field_row
+{
     height: fit-content;
     display:grid;
     justify-content: center;
     align-content: center;
-    margin: 10px;
+    margin:20px 30px;
 }
 
-.field .field_row .field_columen{
-     padding:2px 5px; 
-    display:block;
-    overflow: hidden;
+.field .field_row .field_columen
+{
+	padding:2px 5px;
+	display:block;
 }
 
-.field .field_row .field_columen span{
+.field .field_row .field_columen span
+{
     width:70px;
     display:inline-block;
     padding-left: 5px;
 }
 
-.field .field_row .field_columen label{
-    display:inline-flex;
+button
+{
+	display: inline-block;
+	border: 0.16em solid rgba(#000, 0);
+	border-radius: 20px;
+	text-decoration: none;
+	padding: 4px;
+	text-align: center;
+	transition: all 0.2s;
+	cursor: pointer;
+	position: relative;
+	font-size: 12px;
 }
 
-button {
-    display: inline-block;
-    border: 0.16em solid rgba(#000, 0);
-    border-radius: 20px;
-    text-decoration: none;
-    padding: 4px;
-    text-align: center;
-    transition: all 0.2s;
-    cursor: pointer;
-    position: relative;
-    font-size: 12px;
-  }
+.btn
+{
+	font-weight: bold;
+	color: #000;
+	text-shadow: 0 0.04em 0.04em rgba(#000, 0.35);
+	padding: 7px 14px;
+	width:80px;
+	font-size: 12px;
+}
 
-  .btn{
-    font-weight: bold;
-    color: #000;
-    text-shadow: 0 0.04em 0.04em rgba(#000, 0.35);
-    padding: 7px 14px;
-    width:80px;
-    font-size: 12px;
-  }
+.btn:hover
+{
+	transform: scale(1.05);
+	box-shadow: 2px 2px 2px rgba(#000, 0.2);
+}
 
-  .btn:hover {
-    transform: scale(1.05);
-    box-shadow: 2px 2px 2px rgba(#000, 0.2);
-  }
+.btn:active
+{
+	background-color: rgba(#000, 5);
+}
 
-  .btn:active {
-    background-color: rgba(#000, 5);
-  }
-
-  input:enabled,
-  input[enabled=enabled]
-   {
-  border: none;
-  font-weight: normal;
-  margin:0px 7px 0px 10px;
-  font-size: 14px;
-  /* color: #222; */
-  /* background-color: transparent; */
-  transition: all 0.18s ease;
-  border-bottom: 2px solid #000;
+input:enabled,
+input[enabled=enabled]
+{
+	border: none;
+	font-weight: normal;
+	margin:0px 7px 0px 10px;
+	font-size: 14px;
+	transition: all 0.18s ease;
+	border-bottom: 2px solid #000;
 }
 
 input:disabled,
-input[disabled=disabled] {
-    border: none;
-    font-weight: normal;
-    margin:0px 7px 0px 10px;
-    font-size: 14px;
-    /* color: #222; */
-    /* background-color: transparent; */
-    transition: all 0.18s ease;
-    border-bottom: 2px dotted #000;
+input[disabled=disabled]
+{
+	border: none;
+	font-weight: normal;
+	padding: 8px;
+	font-size: 16px;
+	color: #222;
+	background-color: transparent;
+	transition: all 0.18s ease;
+	border-bottom: 2px dotted #000;
 }
 
+input.invalid
+{
+	border-bottom: 2px solid red;
+}
 
-select {
-    border: none;
-    border-bottom: 2px solid #000;
-    background-color: transparent;
-  }
+textarea.invalid
+{
+	border-bottom: 2px solid red;
+}
+
+select
+{
+	border: none;
+	border-bottom: 2px solid #000;
+	background-color: transparent;
+}
+
+.green
+{
+	color: green;
+}
