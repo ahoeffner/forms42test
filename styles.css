@@ -179,8 +179,10 @@ textarea.invalid
     display: grid;
     min-width: 100%;
     grid-gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    width:650px;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    width:625px;
     
 }
 
