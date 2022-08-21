@@ -156,7 +156,7 @@ html, body
 .phonebook
 {
 	width: 600px;
-	height: 350px;
+	height: 400px;
     margin-top:20px;
     display: grid;
     min-width: 100%;

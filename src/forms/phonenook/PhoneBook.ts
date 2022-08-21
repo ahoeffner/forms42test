@@ -11,15 +11,15 @@
  */
 
 import content from './phonebook.html';
+
 import { BaseForm } from '../BaseForm';
-import { Employees } from './Employees';
-import { EventType, FormEvent, FieldProperties, Contains } from 'forms42core';
+import { Employees } from "../../datasources/memory/Employees";
+import { EventType, FormEvent, Contains, Block, Alert } from 'forms42core';
 
 export class PhoneBook extends BaseForm
 {
+	public emp:Block = null;
 	private filter:Contains = null;
-	private managerprops:FieldProperties = null;
-	private emp:Employees = new Employees(this,"employees");
 
 	constructor()
 	{
@@ -27,9 +27,7 @@ export class PhoneBook extends BaseForm
 		this.title = "PhoneBook";
 		this.filter = new Contains(["first_name","last_name"]);
 
-		this.addEventListener(this.test);
 		this.addEventListener(this.start,{type: EventType.PostViewInit});
-		this.addEventListener(this.fetch,{type: EventType.OnFetch, block: "employees"});
 		this.addEventListener(this.search,{type: EventType.OnTyping, block: "search", field: "filter"});
 		this.addEventListener(this.validate,{type: EventType.WhenValidateField, block: "employees"});
 	}
@@ -37,50 +35,34 @@ export class PhoneBook extends BaseForm
 	public async start() : Promise<boolean>
 	{
 		this.focus();
-
-		let insprops:FieldProperties = this.getBlock("Employees").getInsertPropertiesById("first_name","fn2").setReadOnly(true);
-		this.emp.setInsertProperties(insprops,"first_name","table");
-
-		insprops = this.getBlock("Employees").getInsertPropertiesById("last_name","ln2").setReadOnly(true);
-		this.emp.setInsertProperties(insprops,"last_name","detail");
-
-		this.managerprops = this.getBlock("Employees").getDefaultPropertiesById("first_name","fn1");
-		this.managerprops.setClass("green");
-
-		await this.getBlock("Employees").executeQuery();
-		return(true);
-	}
-
-	public async test(event:FormEvent) : Promise<boolean>
-	{
-		//console.log(EventType[event.type]+" "+event.field+" "+this.emp.getValue(event.field))
+		this.emp = this.getBlock("Employees");
+		this.emp.datasource = Employees.get();
+		this.addEventListener(this.test);
+		await this.emp.executeQuery();
 		return(true);
 	}
 
 	public async search() : Promise<boolean>
 	{
 		this.filter.value = this.getValue("search","filter");
-		await this.getBlock("Employees").executeQuery(this.filter);
-		return(true);
-	}
-
-	public async fetch() : Promise<boolean>
-	{
-		let fname:string = this.emp.getValue("first_name");
-		if (fname == "Lex") this.emp.getRecord().setProperties(this.managerprops,"first_name");
+		await this.emp.executeQuery(this.filter);
 		return(true);
 	}
 
 	public async validate(event:FormEvent) : Promise<boolean>
 	{
 		if (event.field == "last_name" && this.emp.getValue(event.field) == "Putin")
+		{
+			Alert.warning("Putin family is 'personae non gratae'","Validation Error")
 			return(false);
-
-		let fname:string = this.emp.getValue("first_name");
-
-		if (fname != "Lex") this.emp.getRecord().setProperties(null,"first_name");
-		else				this.emp.getRecord().setProperties(this.managerprops,"first_name");
+		}
 
 		return(true);
 	}
-}
+
+	public async test(event:FormEvent) : Promise<boolean>
+	{
+		if (event.type == EventType.OnFetch)
+			console.log(EventType[event.type]+" "+event.field+" "+this.emp.getValue("first_name"))
+		return(true);
+	}}
