@@ -58,7 +58,7 @@ export class FormsModule extends FormsCoreModule
 
 		this.OpenURLForm();
 		this.updateKeyMap(keymap);
-		this.addEventListener(this.open, [{type:EventType.Key,key:this.phonebook},{type:EventType.Key,key:this.phonebook}]);
+		this.addEventListener(this.open, [{type:EventType.Key,key:this.phonebook},{type:EventType.Key,key:this.fields}]);
     }
 
 	public async open(event:FormEvent) : Promise<boolean>
