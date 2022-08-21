@@ -14,9 +14,9 @@
 		<span class="phonebook_search" ><input name="filter" bind="search" placeholder="search"></span>
 
 		<div class="phonebook_info" foreach="row in 1..10">
-				<div class="phonebook_indicator"><span bind="employees" row="$row" type="row-indicator"></span></div>
-				<input id="fn$row" size="10" name="first_name" class="table" bind="employees" row="$row" initcap required insert="false" query="false" autocomplete="do-not-autofill">
-				<input  id="ln$row" size="10" name="last_name" class="table"  bind="employees" row="$row" initcap required insert="false" query="false" autocomplete="do-not-autofill">
+			<div class="phonebook_indicator"><span bind="employees" row="$row" type="row-indicator"></span></div>
+			<input id="fn$row" size="10" name="first_name" class="table" bind="employees" row="$row" initcap insert="false" query="false" autocomplete="do-not-autofill">
+			<input  id="ln$row" size="10" name="last_name" class="table"  bind="employees" row="$row" initcap insert="false" query="false" autocomplete="do-not-autofill">
 		</div>
 	</div>
 
