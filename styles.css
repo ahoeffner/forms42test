@@ -11,6 +11,7 @@ html, body
     border: 1px solid black;
 }
 
+
 .form-area
 {
     width: 100%;
@@ -154,20 +155,23 @@ html, body
 
 .container-2
 {
+
 	display:grid;
 	row-gap: 2px;
 	min-width: 100%;
 	grid-template-columns:repeat(auto-fit,minmax(550px,1fr));
+
+    
 }
 
 .container-5
 {
     row-gap: 2px;
-    display: grid;
     resize: both; 
-    overflow: hidden;
+    display: grid;
     min-width: 100%;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    overflow: hidden;
+    grid-template-columns:repeat(auto-fit,minmax(325px,1fr));
 }
 
  .container_colum

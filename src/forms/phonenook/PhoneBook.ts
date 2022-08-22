@@ -27,6 +27,7 @@ export class PhoneBook extends BaseForm
 		this.title = "PhoneBook";
 		this.filter = new Contains(["first_name","last_name"]);
 
+		this.addEventListener(this.test);
 		this.addEventListener(this.start,{type: EventType.PostViewInit});
 		this.addEventListener(this.search,{type: EventType.OnTyping, block: "search", field: "filter"});
 		this.addEventListener(this.validate,{type: EventType.WhenValidateField, block: "employees"});
@@ -34,10 +35,8 @@ export class PhoneBook extends BaseForm
 
 	public async start() : Promise<boolean>
 	{
-		this.focus();
 		this.emp = this.getBlock("Employees");
 		this.emp.datasource = Employees.get();
-		this.addEventListener(this.test);
 		await this.emp.executeQuery();
 		return(true);
 	}
@@ -62,7 +61,7 @@ export class PhoneBook extends BaseForm
 
 	public async test(event:FormEvent) : Promise<boolean>
 	{
-		if (event.type == EventType.OnFetch)
-			console.log(EventType[event.type]+" "+event.field+" "+this.emp.getValue("first_name"))
+		//if (event.type == EventType.OnFetch)
+			//console.log(EventType[event.type]+" "+event.block+" "+event.field+" "+this.emp.getValue("first_name"))
 		return(true);
 	}}
