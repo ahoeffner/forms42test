@@ -155,9 +155,7 @@ html, body
 
 .phonebook
 {
-	width: 625px;
     row-gap: 2px;
-	height: 400px;
     display: grid;
     margin-top:20px;
     min-width: 100%;
@@ -170,7 +168,6 @@ html, body
     display:grid;
     align-content: center;
     justify-content: center;
-
 }
 
 .phonebook .phonebook_heading .phonebook_search
