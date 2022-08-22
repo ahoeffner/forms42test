@@ -81,7 +81,6 @@ html, body
 .left-menu-container
 {
 	margin: 5px;
-	color: #000;
 	padding: 10px;
 	display: none;
 	cursor: pointer;
@@ -153,63 +152,68 @@ html, body
 	background-color: yellow;
 }
 
-.phonebook
+.container-2
 {
-	width: 625px;
-    row-gap: 2px;
-	height: 400px;
-    display: grid;
-    margin-top:20px;
-    min-width: 100%;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+	display:grid;
+	row-gap: 2px;
+	min-width: 100%;
+	grid-template-columns:repeat(auto-fit,minmax(550px,1fr));
 }
 
-.phonebook .phonebook_colunm
+.container-5
+{
+    row-gap: 2px;
+    display: grid;
+    resize: both; 
+    overflow: hidden;
+    min-width: 100%;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+}
+
+ .container_colum
 {
     gap:2px;
     display:grid;
+    margin:20px 30px;
+    align-items: center;
     align-content: center;
     justify-content: center;
-
 }
 
-.phonebook .phonebook_heading .phonebook_search
+.columen_heading
 {
 	width: 100%;
-    margin:2px;
+    margin:2px 30px;
 	justify-content: center;
 }
 
-.phonebook .phonebook_input
-{
-    display:grid;
-    margin:50px 30px;
-    align-content: center;
-}
-
-.phonebook .phonebook_input label
+.container_colum p
 {
     margin:2px;
     display:inline-flex;
 }
 
-.phonebook .phonebook_input label span
+.container_colum p span
 {
     width:80px;
     display:inline-block;
 }
 
-.phonebook .phonebook_info
+.columen_table
 {
     display:inline-flex;
 }
 
-.phonebook .phonebook_colunm .phonebook_search
+
+
+.columen_table input
 {
-    margin-left: 30px;
+    display:inline;
+    margin:2px 1px;
 }
 
-.phonebook .phonebook_colunm .phone_button
+
+.container .button
 {
     display:flex;
     margin-bottom: 10px;
@@ -217,13 +221,7 @@ html, body
     justify-content: center;
 }
 
-.phonebook .phonebook_colunm .phonebook_info input
-{
-    display:inline;
-    margin:2px 1px;
-}
-
-.phonebook .phonebook_colunm .phonebook_info .phonebook_indicator
+.indicator
 {
     width:10px;
     display:grid;
@@ -231,30 +229,21 @@ html, body
     justify-content: center;
 }
 
-.phonebook .phonebook_colunm .phonebook_info .phonebook_indicator span
+.indicator span
 {
     width:10px;
     height: 10px;
 }
 
-.field
-{
-	display:grid;
-	row-gap: 10px;
-	min-width: 100%;
-	padding: 10px 20px;
-	grid-template-columns:repeat(auto-fit,minmax(550px,1fr));
-}
 
-.field .field_columen .field_fieldset
+.container_colum .field_fieldset
 {
     width: 80%;
     margin-left: 5%;
     margin-top: 30px;
 }
 
-
-.field .field_columen_radio
+.columen_radio
 {
     width:80px;
     margin: 2px 4px;
@@ -263,36 +252,27 @@ html, body
     display: inline-block;
 }
 
-.field .field_columen_radio label
+.columen_radio p
 {
 	width:30px;
 	margin-right:10px;
 	display:inline-block;
 }
 
-.field .field_columen_radio .field_radio
+.columen_radio .radio
 {
     right:4px;
     position: absolute;
     display:inline-flex;
 }
 
-.field .field_row
-{
-    display:grid;
-    margin:20px 30px;
-    height: fit-content;
-    align-content: center;
-    justify-content: center;
-}
-
-.field .field_row .field_columen
+.container_colum .columen
 {
 	display:block;
 	padding:2px 5px;
 }
 
-.field .field_row .field_columen span
+.container_colum .columen span
 {
     width:70px;
     padding-left: 5px;
@@ -310,28 +290,27 @@ button
 	transition: all 0.2s;
 	display: inline-block;
 	text-decoration: none;
-	border: 0.16em solid rgba(#000, 0);
+	border: 0.16em solid rgba(black, 0);
 }
 
 .btn
 {
 	width:80px;
-	color: #000;
 	font-size: 12px;
 	font-weight: bold;
 	padding: 7px 14px;
-	text-shadow: 0 0.04em 0.04em rgba(#000, 0.35);
+	text-shadow: 0 0.04em 0.04em rgba(black, 0.35);
 }
 
 .btn:hover
 {
 	transform: scale(1.05);
-	box-shadow: 2px 2px 2px rgba(#000, 0.2);
+	box-shadow: 2px 2px 2px rgba(black, 0.2);
 }
 
 .btn:active
 {
-	background-color: rgba(#000, 5);
+	background-color: rgba(black, 5);
 }
 
 input:enabled,
@@ -342,20 +321,18 @@ input[enabled=enabled]
 	font-weight: normal;
 	margin:0px 7px 0px 10px;
 	transition: all 0.18s ease;
-	border-bottom: 2px solid #000;
+	border-bottom: 2px solid black;
 }
 
 input:disabled,
 input[disabled=disabled]
 {
 	border: none;
-	padding: 8px;
-	color: #222;
-	font-size: 16px;
+	font-size: 14px;
 	font-weight: normal;
+	margin:0px 7px 0px 10px;
 	transition: all 0.18s ease;
-	background-color: transparent;
-	border-bottom: 2px dotted #000;
+	border-bottom: 2px dotted black;
 }
 
 input.invalid
@@ -372,7 +349,7 @@ select
 {
 	border: none;
 	background-color: transparent;
-	border-bottom: 2px solid #000;
+	border-bottom: 2px solid black;
 }
 
 .green
