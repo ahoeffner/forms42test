@@ -14,12 +14,13 @@ import content from './phonebook.html';
 
 import { BaseForm } from '../BaseForm';
 import { Employees } from "../../datasources/memory/Employees";
-import { EventType, FormEvent, Contains, Block, Alert } from 'forms42core';
+import { EventType, FormEvent, Contains, Block, Alert, FieldProperties } from 'forms42core';
 
 export class PhoneBook extends BaseForm
 {
 	public emp:Block = null;
 	private filter:Contains = null;
+	private warning:FieldProperties = null;
 
 	constructor()
 	{
@@ -31,12 +32,21 @@ export class PhoneBook extends BaseForm
 		this.addEventListener(this.start,{type: EventType.PostViewInit});
 		this.addEventListener(this.search,{type: EventType.OnTyping, block: "search", field: "filter"});
 		this.addEventListener(this.validate,{type: EventType.WhenValidateField, block: "employees"});
+		this.addEventListener(this.onfetch,{type: EventType.OnFetch, block: "employees"});
+	}
+
+	public sort(column:string) : void
+	{
+		this.emp.datasource.sorting = column;
+		this.emp.executeQuery(this.emp.filters);
 	}
 
 	public async start() : Promise<boolean>
 	{
 		this.emp = this.getBlock("Employees");
 		this.emp.datasource = Employees.get();
+		this.warning = this.emp.getDefaultPropertiesById("first_name","fn1").setClass("warning");
+
 		await this.emp.executeQuery();
 		return(true);
 	}
@@ -48,8 +58,19 @@ export class PhoneBook extends BaseForm
 		return(true);
 	}
 
+	public async onfetch() : Promise<boolean>
+	{
+		if (this.emp.getValue("first_name") == "Vladimir")
+			this.emp.getRecord().setProperties(this.warning,"first_name");
+
+		return(true);
+	}
+
 	public async validate(event:FormEvent) : Promise<boolean>
 	{
+		if (event.field == "first_name" && this.emp.getValue(event.field) == "Vladimir")
+			this.emp.getRecord().setProperties(this.warning,"first_name");
+
 		if (event.field == "last_name" && this.emp.getValue(event.field) == "Putin")
 		{
 			Alert.warning("Putin family is 'personae non gratae'","Validation Error")

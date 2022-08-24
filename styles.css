@@ -160,14 +160,14 @@ html, body
 	min-width: 100%;
 	grid-template-columns:repeat(auto-fit,minmax(550px,1fr));
 
-    
+
 }
 
 .container-5
 {
     width:650px;
     row-gap: 2px;
-    resize: both; 
+    resize: both;
     display: grid;
     min-width: 100%;
     overflow: hidden;
@@ -352,7 +352,8 @@ select
 	border-bottom: 2px solid black;
 }
 
-.green
+.warning
 {
-	color: green;
+	font-style: italic;
+	color: lightcoral;
 }

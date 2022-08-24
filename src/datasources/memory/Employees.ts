@@ -28,5 +28,6 @@ export class Employees extends MemoryTable
 	private constructor()
 	{
 		super(EmployeesData.columns,EmployeesData.data);
+		this.sorting = "last_name, first_name";
 	}
 }
