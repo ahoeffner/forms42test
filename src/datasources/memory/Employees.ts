@@ -11,7 +11,7 @@
  */
 
 import { MemoryTable } from "forms42core";
-import { Employees as EmployeesData } from "../../data/Employees";
+import { Employees as EmployeesData } from "../../data/Test";
 
 export class Employees extends MemoryTable
 {
