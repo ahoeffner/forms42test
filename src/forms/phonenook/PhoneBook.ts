@@ -83,6 +83,6 @@ export class PhoneBook extends BaseForm
 	public async test(event:FormEvent) : Promise<boolean>
 	{
 		//if (event.type == EventType.OnFetch)
-			//console.log(EventType[event.type]+" "+event.block+" "+event.field+" "+this.emp.getValue("first_name"))
+			console.log(EventType[event.type]+" "+event.block+" "+event.field+" "+this.getBlock(event.block)?.getValue(event.field))
 		return(true);
 	}}

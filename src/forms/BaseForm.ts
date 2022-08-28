@@ -20,7 +20,6 @@ export class BaseForm extends Form
     private view:View = null;
 	public title:string = null;
     private static forms:number = 0;
-    private handler:EventHandler = new EventHandler(this);
 
     constructor(content:string)
     {
@@ -39,10 +38,6 @@ export class BaseForm extends Form
 
         this.canvas.getElement().style.top = posY + "px";
         this.canvas.getElement().style.left = posX + "px";
-
-        this.canvas.getContent().tabIndex = -1;
-        this.canvas.getContent().addEventListener("blur",this.handler);
-        this.canvas.getContent().addEventListener("focus",this.handler);
 
 		this.setTitle(this.title);
 		return(true);
@@ -90,22 +85,5 @@ export class BaseForm extends Form
     {
         let header:HTMLElement = this.getView().querySelector("[name='title']");
         header.appendChild(document.createTextNode(title));
-    }
-}
-
-
-class EventHandler implements EventListenerObject
-{
-	private static zindex:number = 0;
-
-    constructor(private form:BaseForm) {}
-
-    public handleEvent(event:Event): void
-    {
-		if (event.type == "focus")
-		{
-			EventHandler.zindex++;
-			this.form.canvas.zindex = EventHandler.zindex;
-		}
     }
 }
