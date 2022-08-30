@@ -26,40 +26,40 @@ import { TrueFalseMapper } from './forms/fields/TrueFalseMapper';
 import { FormsPathMapping, FormsModule as FormsCoreModule, KeyCodes, KeyMap, FormEvent, EventType } from 'forms42core';
 
 @FormsPathMapping(
-    [
+	[
 		Fields,
-        Countries,
+		Countries,
 		PhoneBook,
-        {class: FormHeader, path: "/html/formheader"},
-        {class: PageHeader, path: "/html/pageheader"},
-        {class: PageFooter, path: "/html/pagefooter"},
-        {class: LinkMapper, path: "/mappers/linkmapper"},
-        {class: TrueFalseMapper, path: "/mappers/truefalse"},
-    ]
+		{class: FormHeader, path: "/html/formheader"},
+		{class: PageHeader, path: "/html/pageheader"},
+		{class: PageFooter, path: "/html/pagefooter"},
+		{class: LinkMapper, path: "/mappers/linkmapper"},
+		{class: TrueFalseMapper, path: "/mappers/truefalse"},
+	]
 )
 
 export class FormsModule extends FormsCoreModule
 {
-    public menu:Menu = null;
-    public list:Minimized = null;
+	public menu:Menu = null;
+	public list:Minimized = null;
 
 	private fields:KeyMap = new KeyMap({key: 'f', ctrl: true})
 	private phonebook:KeyMap = new KeyMap({key: 'p', ctrl: true})
 
-    public static load() : void {new FormsModule();}
+	public static load() : void {new FormsModule();}
 
-    constructor()
-    {
-        super();
+	constructor()
+	{
+		super();
 
-        this.parse();
-        this.menu = new Menu();
-        this.list = new Minimized();
+		this.parse();
+		this.menu = new Menu();
+		this.list = new Minimized();
 
 		this.OpenURLForm();
 		this.updateKeyMap(keymap);
 		this.addEventListener(this.open, [{type:EventType.Key,key:this.phonebook},{type:EventType.Key,key:this.fields}]);
-    }
+	}
 
 	public async open(event:FormEvent) : Promise<boolean>
 	{
