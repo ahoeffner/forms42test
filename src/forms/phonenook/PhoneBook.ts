@@ -14,11 +14,13 @@ import content from './phonebook.html';
 
 import { BaseForm } from '../BaseForm';
 import { Employees } from "../../datasources/memory/Employees";
-import { EventType, Filters, Filter, Block } from 'forms42core';
+import { EventType, Filters, Filter, Block, block, datasource, formevent } from 'forms42core';
+
+@datasource("Employees",Employees)
 
 export class PhoneBook extends BaseForm
 {
-	//@datasource(Employees)
+	@block("employees")
 	public emp:Block = null;
 	private filter:Filter = null;
 
@@ -27,9 +29,6 @@ export class PhoneBook extends BaseForm
 		super(content);
 		this.title = "PhoneBook";
 		this.filter = Filters.Contains("first_name, last_name");
-
-		this.addEventListener(this.start,{type: EventType.PostViewInit});
-		this.addEventListener(this.search,{type: EventType.OnTyping, block: "search", field: "filter"});
 	}
 
 	public sort(column:string) : void
@@ -38,18 +37,17 @@ export class PhoneBook extends BaseForm
 		this.emp.executeQuery(this.emp.filters);
 	}
 
+	@formevent({type: EventType.PostViewInit})
 	public async start() : Promise<boolean>
 	{
-		this.emp = this.getBlock("Employees");
-		this.emp.datasource = Employees.get();
-
 		await this.emp.executeQuery();
 		return(true);
 	}
 
+	@formevent({type: EventType.OnTyping, block: "search", field: "filter"})
 	public async search() : Promise<boolean>
 	{
-		this.filter.contraint = this.getValue("search","filter");
+		this.filter.constraint = this.getValue("search","filter");
 		await this.emp.executeQuery(this.filter);
 		return(true);
 	}
