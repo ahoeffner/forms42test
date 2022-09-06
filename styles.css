@@ -167,7 +167,7 @@ html, body
     grid-template-columns:repeat(auto-fit,minmax(325px,1fr));
 }
 
- .container_colum
+.container_colum
 {
     gap:2px;
     display:grid;
