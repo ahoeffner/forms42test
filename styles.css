@@ -160,7 +160,6 @@ html, body
 {
     width:650px;
     row-gap: 2px;
-    resize: both;
     display: grid;
     min-width: 100%;
     overflow: hidden;
