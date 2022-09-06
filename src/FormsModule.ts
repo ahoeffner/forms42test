@@ -16,6 +16,7 @@ import { FormHeader } from './html/FormHeader';
 import { PageHeader } from './html/PageHeader';
 import { PageFooter } from './html/PageFooter';
 
+import { Jonas } from './forms/jonas/jonas';
 import { Countries } from './forms/Countries';
 import { Fields } from './forms/fields/Fields';
 import { PhoneBook } from './forms/phonenook/PhoneBook';
@@ -27,6 +28,7 @@ import { FormsPathMapping, FormsModule as FormsCoreModule, KeyCodes, KeyMap, For
 
 @FormsPathMapping(
 	[
+		Jonas,
 		Fields,
 		Countries,
 		PhoneBook,
@@ -43,6 +45,7 @@ export class FormsModule extends FormsCoreModule
 	public menu:Menu = null;
 	public list:Minimized = null;
 
+	private jonas:KeyMap = new KeyMap({key: 'j', ctrl: true})
 	private fields:KeyMap = new KeyMap({key: 'f', ctrl: true})
 	private phonebook:KeyMap = new KeyMap({key: 'p', ctrl: true})
 
@@ -58,11 +61,20 @@ export class FormsModule extends FormsCoreModule
 
 		this.OpenURLForm();
 		this.updateKeyMap(keymap);
-		this.addEventListener(this.open, [{type:EventType.Key,key:this.phonebook},{type:EventType.Key,key:this.fields}]);
+
+		this.addEventListener(this.open,
+		[
+			{type:EventType.Key,key:this.phonebook},
+			{type:EventType.Key,key:this.fields},
+			{type:EventType.Key,key:this.jonas}
+		]);
 	}
 
 	public async open(event:FormEvent) : Promise<boolean>
 	{
+		if (event.key == this.jonas)
+			this.showform(Jonas);
+
 		if (event.key == this.fields)
 			this.showform(Fields);
 

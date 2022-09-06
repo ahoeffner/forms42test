@@ -10,7 +10,7 @@
  * accompanied this code).
  */
 
-import content from './phonebook.html';
+import content from './jonas.html';
 
 import { BaseForm } from '../BaseForm';
 import { Employees } from "../../datasources/memory/Employees";
@@ -18,7 +18,7 @@ import { EventType, Filters, Filter, Block, block, datasource, formevent } from 
 
 @datasource("Employees",Employees)
 
-export class PhoneBook extends BaseForm
+export class Jonas extends BaseForm
 {
 	@block("employees")
 	public emp:Block = null;
