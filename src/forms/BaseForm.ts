@@ -34,7 +34,7 @@ export class BaseForm extends Form
 		let off:number = BaseForm.forms % 8;
 
 		let posX:number = off*px;
-		let posY:number = off*px;
+		let posY:number = off*px + 20;
 
 		this.canvas.getElement().style.top = posY + "px";
 		this.canvas.getElement().style.left = posX + "px";
