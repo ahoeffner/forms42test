@@ -23,6 +23,7 @@ export class PhoneBook extends BaseForm
 	@block("employees")
 	public emp:Block = null;
 	private filter:Filter = null;
+	private sorting:{column?:string, asc?:boolean} = {}
 
 	constructor()
 	{
@@ -31,10 +32,22 @@ export class PhoneBook extends BaseForm
 		this.filter = Filters.Contains("first_name, last_name");
 	}
 
-	public sort(column:string) : void
+	public async sort(column:string)
 	{
-		this.emp.datasource.sorting = column;
-		this.emp.executeQuery(this.emp.filters);
+		let asc:boolean = this.sorting.asc;
+		let toogle:boolean = column == this.sorting.column;
+
+		if (!toogle) asc = true;
+		else asc = !this.sorting.asc;
+
+		this.sorting.asc = asc;
+		this.sorting.column = column;
+
+		this.emp.datasource.sorting =
+			column+" "+(this.sorting.asc ? "asc" : "desc");
+
+		this.sorting.column = column;
+		this.emp.executeQuery(true);
 	}
 
 	@formevent({type: EventType.PostViewInit})
@@ -44,11 +57,18 @@ export class PhoneBook extends BaseForm
 		return(true);
 	}
 
+	@formevent({type: EventType.PreQuery, block: "employees"})
+	public async setFilter() : Promise<boolean>
+	{
+		this.emp.filter.and(this.filter)
+		return(true);
+	}
+
 	@formevent({type: EventType.OnEdit, block: "search", field: "filter"})
 	public async search() : Promise<boolean>
 	{
 		this.filter.constraint = this.getValue("search","filter");
-		await this.emp.executeQuery(this.filter);
+		await this.emp.executeQuery(true);
 		return(true);
 	}
 }
