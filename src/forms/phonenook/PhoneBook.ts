@@ -67,7 +67,6 @@ export class PhoneBook extends BaseForm
 	@formevent({type: EventType.OnEdit, block: "search", field: "filter"})
 	public async search() : Promise<boolean>
 	{
-		console.log("search")
 		this.filter.constraint = this.getValue("search","filter");
 		await this.emp.executeQuery(true);
 		return(true);
