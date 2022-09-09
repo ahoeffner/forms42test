@@ -72,6 +72,7 @@ export class BaseForm extends Form
 	 public show() : void
 	 {
 		this.canvas.restore();
+		this.focus();
 	 }
 
 	 public minimize() : void
