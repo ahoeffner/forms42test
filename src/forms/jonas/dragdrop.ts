@@ -72,25 +72,24 @@ export class dragDropTable implements DragDropOptions, EventListenerObject
              this.mouseUpHandler()
     
         }
-    }
+   }
 
-    set Rows(value: string){
-        this.rows = value;
-    }
-
-    set Heading(value: string){
-
-        this.heading = value;
-    }
-    set Cells(value:string){
-
-        this.cells = value;
-    }
-
-    set Drag(value: string){
-
-        this.drag = value;
-    }
+   set Rows(value: string)
+   {
+       this.rows = value;
+   }     
+   set Heading(value: string)
+   {     
+       this.heading = value;
+   }
+   set Cells(value:string)
+   {     
+       this.cells = value;
+   }     
+   set Drag(value: string)
+   {     
+       this.drag = value;
+   }
 
    public mouseDownHandler(object: Event):void
    {
@@ -110,7 +109,8 @@ export class dragDropTable implements DragDropOptions, EventListenerObject
             document.addEventListener('mousemove',this);
             document.addEventListener('mouseup', this);
         
-    }
+   }
+
    private mouseUpHandler() : void
    {
         if( this.placeholder && this.placeholder !== null)
