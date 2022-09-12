@@ -58,10 +58,14 @@ export class Jonas extends BaseForm
 			const column:HTMLTableElement = document.querySelector(".columen_table")
 			column.addEventListener('mousedown', (event) => new dragDropTable(column,
 			{
-				setCells:".columen_cell",
-				setHeading: ".columen_heading",
-				setRows:".columen_rows",
-				setClick: ".columen_heading"
+				// Cells:".columen_cell",
+				Cells:".columen_cell",
+				// Heading: ".columen_heading",
+				Heading:".columen_heading",
+				// Rows:".columen_rows",
+				Rows:".columen_rows",
+				// Click: ".columen_heading"
+				Drag: ".columen_heading"
 			}).mouseDownHandler(event));
 
 		await this.emp.executeQuery();

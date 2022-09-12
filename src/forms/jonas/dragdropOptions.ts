@@ -2,8 +2,14 @@
 
 export interface DragDropOptions{
     
-    setRows: any,
-    setHeading: any,
-    setCells: any,
-    setClick: any,
+    Rows: string,
+    Heading: string,
+    Cells: string,
+    Drag: string,
+    classes?:{
+        dragging?:string
+        cloneTable?:string
+        cloneList?:string
+        draggable?: string
+    }
 }
