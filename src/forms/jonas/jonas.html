@@ -3,32 +3,45 @@
 <div class="container-5">
 
 	<div class="container_colum">
-		<button onclick="this.sort('last_name')">Lastname</button>
-		<button onclick="this.sort('first_name')">Firstname</button>
 
-		<span class="columen_heading">
-			<input name="filter" bind="search" placeholder="search">
+		<span class="search">
+			<input name="filter" from="search" placeholder="search">
 		</span>
+		<div class="columen_table">
+			<div class="columen_rows">
+				<div></div>
+				<div  class="columen_heading">
+					<label for="firstname" onclick="this.sort('first_name')" >Firstname</label>
+				</div>
+				<div  class="columen_heading">
+					<label for="lastname" onclick="this.sort('last_name')">Lastname</label>
+				</div>
+			</div>
 
-		<div class="columen_table" foreach="row in 1..10">
-			<div class="indicator"><span bind="employees" row="$row" type="row-indicator"></span></div>
-			<input id="fn$row" size="10" name="first_name" class="table" bind="employees" row="$row" initcap insert="false" query="false" autocomplete="do-not-autofill">
-			<input  id="ln$row" size="10" name="last_name" class="table"  bind="employees" row="$row" initcap insert="false" query="false" autocomplete="do-not-autofill">
+			<div class="columen_rows" foreach="row in 1..10">
+				<div class="indicator"><span from="employees" row="$row" type="row-indicator"></span></div>
+				<div class="columen_cell">
+					<input id="fn$row" size="10" name="first_name" class="table" from="employees" row="$row" initcap insert="false" query="false" autocomplete="do-not-autofill">
+				</div>
+				<div class="columen_cell">
+					<input  id="ln$row" size="10" name="last_name" class="table"  from="employees" row="$row" initcap insert="false" query="false" autocomplete="do-not-autofill">
+				</div>
+			</div>
 		</div>
 	</div>
 
 	<div class="container_colum">
 		<p>
 			<span>First Name</span>:
-			<input size="10" name="first_name" class="detail" bind="employees" initcap required autocomplete="do-not-autofill">
+			<input size="10" name="first_name" class="detail" from="employees" initcap required autocomplete="do-not-autofill">
 		</p>
 		<p>
 			<span>Last Name</span>:
-			<input size="10" name="last_name" class="detail" bind="employees" initcap required autocomplete="do-not-autofill">
+			<input size="10" name="last_name" class="detail" from="employees" initcap required autocomplete="do-not-autofill">
 		</p>
 		<p>
 			<span>Phone</span>:
-			<input size="20" name="phone_number" class="detail" bind="employees" required derived autocomplete="do-not-autofill">
+			<input size="20" name="phone_number" class="detail" from="employees" required derived autocomplete="do-not-autofill">
 		</p>
 	</div>
 

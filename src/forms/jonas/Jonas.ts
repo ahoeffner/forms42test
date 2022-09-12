@@ -9,17 +9,18 @@
  * version 2 for more details (a copy is included in the LICENSE file that
  * accompanied this code).
  */
-
 import content from './jonas.html';
 
 import { BaseForm } from '../BaseForm';
 import { Employees } from "../../datasources/memory/Employees";
 import { EventType, Filters, Filter, Block, block, datasource, formevent } from 'forms42core';
+import { dragDropTable } from './dragdrop';
 
 @datasource("Employees",Employees)
 
 export class Jonas extends BaseForm
 {
+
 	@block("employees")
 	public emp:Block = null;
 	private filter:Filter = null;
@@ -52,7 +53,17 @@ export class Jonas extends BaseForm
 
 	@formevent({type: EventType.PostViewInit})
 	public async start() : Promise<boolean>
-	{
+	{	
+
+			const column:HTMLTableElement = document.querySelector(".columen_table")
+			column.addEventListener('mousedown', (event) => new dragDropTable(column,
+			{
+				setCells:".columen_cell",
+				setHeading: ".columen_heading",
+				setRows:".columen_rows",
+				setClick: ".columen_heading"
+			}).mouseDownHandler(event));
+
 		await this.emp.executeQuery();
 		return(true);
 	}
