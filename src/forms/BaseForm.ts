@@ -36,8 +36,8 @@ export class BaseForm extends Form
 		let posX:number = off*px;
 		let posY:number = off*px + 20;
 
-		this.canvas.getElement().style.top = posY + "px";
-		this.canvas.getElement().style.left = posX + "px";
+		this.canvas.getView().style.top = posY + "px";
+		this.canvas.getView().style.left = posX + "px";
 
 		this.setTitle(this.title);
 		return(true);
@@ -47,19 +47,19 @@ export class BaseForm extends Form
 	{
 		if (this.view == null)
 		{
-			this.view = this.canvas.getView();
-			let avail:View = this.canvas.getParentView();
+			this.view = this.canvas.getViewPort();
+			let avail:View = this.canvas.getParentViewPort();
 
 			avail.x = 0;
 			avail.y = 0;
 			avail.width = +avail.width - 2;
 			avail.height = +avail.height - 2;
 
-			this.canvas.setView(avail);
+			this.canvas.setViewPort(avail);
 		}
 		else
 		{
-			this.canvas.setView(this.view);
+			this.canvas.setViewPort(this.view);
 			this.view = null;
 		}
 	}
