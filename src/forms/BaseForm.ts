@@ -36,8 +36,8 @@ export class BaseForm extends Form
 		let posX:number = off*px;
 		let posY:number = off*px + 20;
 
-		this.canvas.getView().style.top = posY + "px";
-		this.canvas.getView().style.left = posX + "px";
+		this.getView().style.top = posY + "px";
+		this.getView().style.left = posX + "px";
 
 		this.setTitle(this.title);
 		return(true);
@@ -47,44 +47,33 @@ export class BaseForm extends Form
 	{
 		if (this.view == null)
 		{
-			this.view = this.canvas.getViewPort();
-			let avail:View = this.canvas.getParentViewPort();
+			this.view = this.getViewPort();
+			let avail:View = this.getParentViewPort();
 
 			avail.x = 0;
 			avail.y = 0;
 			avail.width = +avail.width - 2;
 			avail.height = +avail.height - 2;
 
-			this.canvas.setViewPort(avail);
+			this.setViewPort(avail);
 		}
 		else
 		{
-			this.canvas.setViewPort(this.view);
+			this.setViewPort(this.view);
 			this.view = null;
 		}
 	}
 
-	 public hide() : void
-	 {
-		this.canvas.remove();
-	 }
-
-	 public show() : void
-	 {
-		this.canvas.restore();
-		this.focus();
-	 }
-
-	 public minimize() : void
-	 {
+	public minimize() : void
+	{
 		let forms:FormsModule = FormsModule.get() as FormsModule;
 		forms.list.add(this);
 		this.hide();
-	 }
+	}
 
-	 public setTitle(title:string) : void
-	 {
+	public setTitle(title:string) : void
+	{
 		let header:HTMLElement = this.getView().querySelector("[name='title']");
 		header.appendChild(document.createTextNode(title));
-	 }
+	}
 }

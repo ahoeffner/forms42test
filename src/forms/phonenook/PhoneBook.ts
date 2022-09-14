@@ -14,8 +14,7 @@ import content from './phonebook.html';
 
 import { BaseForm } from '../BaseForm';
 import { Employees } from "../../datasources/memory/Employees";
-import { EventType, Filters, Filter, Block, block, datasource, formevent, FormEvent } from 'forms42core';
-import { keymap } from '../../FormsModule';
+import { EventType, Filters, Filter, Block, block, datasource, formevent } from 'forms42core';
 
 @datasource("Employees",Employees)
 
@@ -49,21 +48,6 @@ export class PhoneBook extends BaseForm
 
 		this.sorting.column = column;
 		this.emp.executeQuery(true);
-	}
-
-	@formevent({type: EventType.Key})
-	public async call(event:FormEvent) : Promise<boolean>
-	{
-		if (event.key == keymap.nextblock)
-			this.callform("nocode")
-		return(true);
-	}
-
-	@formevent({type: EventType.WhenValidateField})
-	public async test(event:FormEvent) : Promise<boolean>
-	{
-		console.log(EventType[event.type]+" "+event.field)
-		return(true);
 	}
 
 	@formevent({type: EventType.PostViewInit})
