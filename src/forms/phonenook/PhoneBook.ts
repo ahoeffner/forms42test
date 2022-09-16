@@ -14,7 +14,7 @@ import content from './phonebook.html';
 
 import { BaseForm } from '../BaseForm';
 import { Employees } from "../../datasources/memory/Employees";
-import { EventType, Filters, Filter, Block, block, datasource, formevent } from 'forms42core';
+import { EventType, Filters, Filter, Block, block, datasource, formevent, Form } from 'forms42core';
 
 @datasource("Employees",Employees)
 
@@ -70,5 +70,10 @@ export class PhoneBook extends BaseForm
 		this.filter.constraint = this.getValue("search","filter");
 		await this.emp.executeQuery(true);
 		return(true);
+	}
+
+	public callback(form:Form) : void
+	{
+		console.log("callform "+form.name+" returned");
 	}
 }
