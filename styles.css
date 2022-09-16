@@ -202,10 +202,10 @@ html, body
 
 .columen_heading
 {
+	padding: 2px 4px;
 	font-weight: bold;
 	text-align: center;
 	display: table-cell;
-	padding: 2px 4px;
 	line-height: 1.42857143;
 }
 
@@ -303,13 +303,13 @@ html, body
 
 button
 {
-	padding: 4px;
+	padding: 4px 8px;
 	font-size: 12px;
 	cursor: pointer;
 	border:1px solid;
 	position: relative;
 	text-align: center;
-	border-radius: 20px;
+	border-radius: 15px;
 	transition: all 0.2s;
 	display: inline-block;
 	text-decoration: none;
