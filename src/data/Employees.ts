@@ -15,10 +15,10 @@ import { dates } from "forms42core";
 export class Employees
 {
 	public static columns:string[] =
-		[
-			"employee_id", "first_name", "last_name","email","phone_number",
-			"hire_date","job_id","salary","commission_pct","manager_id","department_id"
-		];
+	[
+		"employee_id", "first_name", "last_name","email","phone_number",
+		"hire_date","job_id","salary","commission_pct","manager_id","department_id"
+	];
 
 	private static converted:boolean = false;
 
@@ -34,7 +34,6 @@ export class Employees
 
 		return(Employees.rawdata);
 	}
-
 
 	private static rawdata:any[][] =
 	[
