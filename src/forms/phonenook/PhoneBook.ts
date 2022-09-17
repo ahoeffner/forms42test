@@ -71,9 +71,4 @@ export class PhoneBook extends BaseForm
 		await this.emp.executeQuery(true);
 		return(true);
 	}
-
-	public callback(form:Form) : void
-	{
-		console.log("callform "+form.name+" returned");
-	}
 }
