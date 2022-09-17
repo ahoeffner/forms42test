@@ -21,6 +21,7 @@ import { Countries } from './forms/Countries';
 import { Fields } from './forms/fields/Fields';
 import { Nocode } from './forms/nocode/Nocode';
 import { PhoneBook } from './forms/phonenook/PhoneBook';
+import { MasterDetail } from './forms/masterdetail/MasterDetail';
 
 import { LinkMapper } from './forms/fields/LinkMapper';
 import { TrueFalseMapper } from './forms/fields/TrueFalseMapper';
@@ -34,6 +35,7 @@ import { FormsPathMapping, FormsModule as FormsCoreModule, KeyCodes, KeyMap, For
 		Nocode,
 		Countries,
 		PhoneBook,
+		MasterDetail,
 		{class: FormHeader, path: "/html/formheader"},
 		{class: PageHeader, path: "/html/pageheader"},
 		{class: PageFooter, path: "/html/pagefooter"},
@@ -51,6 +53,7 @@ export class FormsModule extends FormsCoreModule
 	private nocode:KeyMap = new KeyMap({key: 'n', ctrl: true})
 	private fields:KeyMap = new KeyMap({key: 'f', ctrl: true})
 	private phonebook:KeyMap = new KeyMap({key: 'p', ctrl: true})
+	private masterdetail:KeyMap = new KeyMap({key: 'm', ctrl: true})
 
 	public static load() : void {new FormsModule();}
 
@@ -70,7 +73,8 @@ export class FormsModule extends FormsCoreModule
 			{type:EventType.Key,key:this.jonas},
 			{type:EventType.Key,key:this.fields},
 			{type:EventType.Key,key:this.nocode},
-			{type:EventType.Key,key:this.phonebook}
+			{type:EventType.Key,key:this.phonebook},
+			{type:EventType.Key,key:this.masterdetail}
 		]);
 	}
 
@@ -87,6 +91,9 @@ export class FormsModule extends FormsCoreModule
 
 		if (event.key == this.phonebook)
 			this.showform(PhoneBook);
+
+		if (event.key == this.masterdetail)
+			this.showform(MasterDetail);
 
 		return(true);
 	}

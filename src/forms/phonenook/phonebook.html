@@ -2,17 +2,17 @@
 
 <div class="container" style="width: 650px;">
 	<div class="container_colum">
-
+		<button onClick="this.message('message','title')">message</button>
 		<span class="search">
 			<input name="filter" from="search" placeholder="search">
 		</span>
 		<div class="columen_table">
 			<div class="columen_rows">
 				<div></div>
-				<div  class="columen_heading">
+				<div class="columen_heading">
 					<label for="firstname" onclick="this.sort('first_name')">Firstname</label>
 				</div>
-				<div  class="columen_heading">
+				<div class="columen_heading">
 					<label for="lastname" onclick="this.sort('last_name')">Lastname</label>
 				</div>
 			</div>
@@ -23,7 +23,7 @@
 					<input id="fn$row" size="10" name="first_name" from="employees" class="table" row="$row" initcap insert="false" query="false">
 				</div>
 				<div class="columen_cell">
-					<input  id="ln$row" size="10" name="last_name" from="employees" class="table" row="$row" initcap insert="false" query="false">
+					<input id="ln$row" size="10" name="last_name" from="employees" class="table" row="$row" initcap insert="false" query="false">
 				</div>
 			</div>
 		</div>

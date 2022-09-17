@@ -10,24 +10,20 @@
  * accompanied this code).
  */
 
-import { MemoryTable } from "forms42core";
-import { Departments as DepartmentsData } from "../../data/Departments";
+import content from './masterdetail.html';
 
-export class Departments extends MemoryTable
+import { BaseForm } from '../BaseForm';
+import { Departments } from "../../datasources/memory/Departments";
+import { EventType, Filters, Filter, Block, block, datasource, formevent, Form } from 'forms42core';
+
+@datasource("Departments",Departments)
+
+export class MasterDetail extends BaseForm
 {
-	private static table:Departments = null;
-
-	public static get() : Departments
-	{
-		if (Departments.table == null)
-			Departments.table = new Departments();
-
-		return(Departments.table);
-	}
-
 	constructor()
 	{
-		super(DepartmentsData.columns,DepartmentsData.data);
-		this.sorting = "department_id";
+		super(content);
+		this.title = "Master Detail";
 	}
+
 }

@@ -1,0 +1,27 @@
+<include src="/html/formheader"></include>
+
+<div class="container" style="width: 650px;">
+	<div class="container_colum">
+		<div class="columen_table">
+			<div class="columen_rows">
+				<div></div>
+				<div class="columen_heading">
+					<label>Id</label>
+				</div>
+				<div  class="columen_heading">
+					<label>Department</label>
+				</div>
+			</div>
+
+			<div class="columen_rows" foreach="row in 1..3">
+				<div class="indicator"><span from="departments" row="$row" type="row-indicator"></span></div>
+				<div class="columen_cell">
+					<input size="4" name="department_id" from="departments" class="table" row="$row">
+				</div>
+				<div class="columen_cell">
+					<input id="ln$row" size="10" name="department_name" from="departments" class="table" row="$row" initcap>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
