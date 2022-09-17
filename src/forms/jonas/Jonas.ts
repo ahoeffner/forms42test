@@ -53,9 +53,9 @@ export class Jonas extends BaseForm
 
 	@formevent({type: EventType.PostViewInit})
 	public async start() : Promise<boolean>
-	{	
+	{
 
-			const column:HTMLTableElement = document.querySelector(".columen_table")
+			const column:HTMLTableElement = document.querySelector(".table")
 			column.addEventListener('mousedown', (event) => new dragDropTable(column,
 			{
 				// Cells:".columen_cell",

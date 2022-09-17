@@ -17,7 +17,6 @@ import { PageHeader } from './html/PageHeader';
 import { PageFooter } from './html/PageFooter';
 
 import { Jonas } from './forms/jonas/jonas';
-import { Countries } from './forms/Countries';
 import { Fields } from './forms/fields/Fields';
 import { Nocode } from './forms/nocode/Nocode';
 import { PhoneBook } from './forms/phonenook/PhoneBook';
@@ -33,7 +32,6 @@ import { FormsPathMapping, FormsModule as FormsCoreModule, KeyCodes, KeyMap, For
 		Jonas,
 		Fields,
 		Nocode,
-		Countries,
 		PhoneBook,
 		MasterDetail,
 		{class: FormHeader, path: "/html/formheader"},

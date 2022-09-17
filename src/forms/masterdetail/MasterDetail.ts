@@ -13,9 +13,11 @@
 import content from './masterdetail.html';
 
 import { BaseForm } from '../BaseForm';
+import { Employees } from "../../datasources/memory/Employees";
 import { Departments } from "../../datasources/memory/Departments";
 import { EventType, Filters, Filter, Block, block, datasource, formevent, Form } from 'forms42core';
 
+@datasource("Employees",Employees)
 @datasource("Departments",Departments)
 
 export class MasterDetail extends BaseForm

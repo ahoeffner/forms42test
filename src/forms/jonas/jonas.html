@@ -7,23 +7,23 @@
 		<span class="search">
 			<input name="filter" from="search" placeholder="search">
 		</span>
-		<div class="columen_table">
-			<div class="columen_rows">
+		<div class="table">
+			<div class="row">
 				<div class="indicator_heading"></div>
-				<div  class="columen_heading">
+				<div  class="heading">
 					<label for="firstname" onclick="this.sort('first_name')" >Firstname</label>
 				</div>
-				<div  class="columen_heading">
+				<div  class="heading">
 					<label for="lastname" onclick="this.sort('last_name')">Lastname</label>
 				</div>
 			</div>
 
-			<div class="columen_rows" foreach="row in 1..10">
+			<div class="row" foreach="row in 1..10">
 				<div class="indicator"><span from="employees" row="$row" type="row-indicator"></span></div>
-				<div class="columen_cell">
+				<div class="cell">
 					<input id="fn$row" size="10" name="first_name" class="table" from="employees" row="$row" initcap insert="false" query="false" autocomplete="do-not-autofill">
 				</div>
-				<div class="columen_cell">
+				<div class="cell">
 					<input  id="ln$row" size="10" name="last_name" class="table"  from="employees" row="$row" initcap insert="false" query="false" autocomplete="do-not-autofill">
 				</div>
 			</div>

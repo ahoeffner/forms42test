@@ -2,24 +2,24 @@
 
 <div class="container" style="width: 650px;">
 	<div class="container_colum">
-		<div class="columen_table">
-			<div class="columen_rows">
+		<div class="table">
+			<div class="row">
 				<div></div>
-				<div  class="columen_heading">
-					<label for="firstname">Firstname</label>
+				<div class="heading">
+					<label >Firstname</label>
 				</div>
-				<div  class="columen_heading">
-					<label for="lastname">Lastname</label>
+				<div class="heading">
+					<label>Lastname</label>
 				</div>
 			</div>
 
-			<div class="columen_rows" foreach="row in 1..10">
+			<div class="row" foreach="row in 1..10">
 				<div class="indicator"><span from="employees" row="$row" type="row-indicator"></span></div>
-				<div class="columen_cell">
-					<input id="fn$row" size="10" name="first_name" from="employees" class="table" row="$row" initcap insert="false" query="false">
+				<div class="cell">
+					<input size="10" name="first_name" from="employees" class="table" row="$row" initcap insert="false" query="false">
 				</div>
-				<div class="columen_cell">
-					<input  id="ln$row" size="10" name="last_name" from="employees" class="table" row="$row" initcap insert="false" query="false">
+				<div class="cell">
+					<input size="10" name="last_name" from="employees" class="table" row="$row" initcap insert="false" query="false">
 				</div>
 			</div>
 		</div>

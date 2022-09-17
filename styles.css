@@ -146,6 +146,7 @@ html, body
 	background-color: yellow;
 }
 
+/* Why container ??? */
 .container
 {
 	display:grid;
@@ -163,13 +164,6 @@ html, body
 	justify-content: center;
 }
 
-.search
-{
-	width: 100%;
-	justify-content: center;
-	margin: 2px 0px 2px 30px;
-}
-
 .container_colum p
 {
 	margin:2px;
@@ -182,55 +176,6 @@ html, body
 	display:inline-block;
 }
 
-.columen_table
-{
-	width:100%;
-	display:table;
-}
-
-.columen_rows
-{
-	display: table-row;
-}
-
-.columen_cell
-{
-  display: table-cell;
-  line-height: 1.42857143;
-  padding: 0px 4px;
-}
-
-.columen_heading
-{
-	padding: 2px 4px;
-	font-weight: bold;
-	text-align: center;
-	display: table-cell;
-	line-height: 1.42857143;
-}
-
-.columen_heading label
-{
-	cursor: pointer;
-}
-
-.columen_table input
-{
-	display:inline;
-	margin:2px 1px;
-}
-
-.columen_heading:hover
-{
-	transform: scale(1.05);
-	box-shadow: 2px 2px 2px rgba(black, 0.2);
-}
-
-.columen_heading:active
-{
-	transform: scale(1.02);
-}
-
 .container .button
 {
 	display:flex;
@@ -239,9 +184,90 @@ html, body
 	justify-content: center;
 }
 
-.indicator_heading
+.container_colum .field_fieldset
 {
-	width:10px;
+	width: 80%;
+	margin-left: 5%;
+	margin-top: 30px;
+}
+
+.container_colum .column
+{
+	display:block;
+	padding:2px 5px;
+}
+
+.container_colum .column span
+{
+	width:70px;
+	padding-left: 5px;
+	display:inline-block;
+}
+
+/* search, only in phonebook ?? */
+
+.search
+{
+	width: 100%;
+	justify-content: center;
+	margin: 2px 0px 2px 30px;
+}
+
+.search:before
+{
+	content: "\002315";
+	display:inline-block;
+}
+
+/* Make div look like table */
+
+.table
+{
+	width:100%;
+	display:table;
+}
+
+.row
+{
+	display: table-row;
+}
+
+.cell
+{
+	padding: 0px 4px;
+	display: table-cell;
+	line-height: 1.42857143;
+}
+
+.table input
+{
+	display:inline;
+	margin:2px 1px;
+}
+
+.heading
+{
+	padding: 2px 4px;
+	font-weight: bold;
+	text-align: center;
+	display: table-cell;
+	line-height: 1.42857143;
+}
+
+.heading label
+{
+	cursor: pointer;
+}
+
+.heading:hover
+{
+	transform: scale(1.05);
+	box-shadow: 2px 2px 2px rgba(black, 0.2);
+}
+
+.heading:active
+{
+	transform: scale(1.02);
 }
 
 .indicator
@@ -258,14 +284,7 @@ html, body
 	height: 10px;
 }
 
-.container_colum .field_fieldset
-{
-	width: 80%;
-	margin-left: 5%;
-	margin-top: 30px;
-}
-
-.columen_radio
+.radio_button
 {
 	width:80px;
 	margin: 2px 4px;
@@ -274,31 +293,18 @@ html, body
 	display: inline-block;
 }
 
-.columen_radio p
+.radio_button p
 {
 	width:30px;
 	margin-right:10px;
 	display:inline-block;
 }
 
-.columen_radio .radio
+.radio_button .radio
 {
 	right:4px;
 	position: absolute;
 	display:inline-flex;
-}
-
-.container_colum .columen
-{
-	display:block;
-	padding:2px 5px;
-}
-
-.container_colum .columen span
-{
-	width:70px;
-	padding-left: 5px;
-	display:inline-block;
 }
 
 button
@@ -362,10 +368,49 @@ select
 	color: lightcoral;
 }
 
+/* DatePicker ???
+
+.arrow_left_right
+{
+	width:1rem;
+	user-select: none;
+	display:inline-flex;
+	margin-right:0.5rem;
+}
+
+.arrow_left_right:before
+{
+	cursor: move;
+	content: "\2194";
+	display:inline-flex;
+}
+*/
+
+/* Drag column ???
+.clone-list .cell,
+.clone-list .cell_heading
+{
+   display: table-cell;
+}
+
+.dragging
+{
+	z-index: 999;
+	background: #fff;
+	border-top: 1px solid #ccc;
+	border-left: 1px solid #ccc;
+}
+
 .draggable
 {
     cursor: move;
     user-select: none;
+}
+
+.search:before
+{
+	content: "\002315";
+	display:inline-block;
 }
 
 .placeholder
@@ -387,41 +432,7 @@ select
     border: none;
     border-collapse: collapse;
 }
-
-.arrow_left_right
-{
-	width:1rem;
-	user-select: none;
-	display:inline-flex;
-	margin-right:0.5rem;
-}
-
-.arrow_left_right:before
-{
-	cursor: move;
-	content: "\2194";
-	display:inline-flex;
-}
-
-.clone-list .cell,
-.clone-list .cell_heading
-{
-   display: table-cell;
-}
-
-.dragging
-{
-	z-index: 999;
-	background: #fff;
-	border-top: 1px solid #ccc;
-	border-left: 1px solid #ccc;
-}
-
-.search:before
-{
-	content: "\002315";
-	display:inline-block;
-}
+*/
 
 input.detail:read-only
 {
@@ -442,6 +453,7 @@ input[mode="insert"]
 	background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' class='bi bi-search' viewBox='0 0 20 20' %3E%3Cpath d='M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z'%3E%3C/path%3E%3C/svg%3E") no-repeat 5px center;
 }
 
+/*
 .date-picker
 {
 	width:210px;
@@ -506,3 +518,4 @@ input[mode="insert"]
    align-items: center;
    justify-content: center;
 }
+*/
