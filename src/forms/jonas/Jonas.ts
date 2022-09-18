@@ -54,18 +54,18 @@ export class Jonas extends BaseForm
 	@formevent({type: EventType.PostViewInit})
 	public async start() : Promise<boolean>
 	{
+
+		this.addEventListener(this.pick,
+		[
+			{type: EventType.Key, key: KeyMap.enter},
+			{type: EventType.Mouse, mouse: MouseMap.click},
+			{type: EventType.Mouse, mouse: MouseMap.dblclick}
+		])
+
 		for (let week = 2; week < 3; week++)
 		{
 			for (let day = 0; day < 7; day++)
-			{
 				this.setValue("calendar",week+""+day,"d-"+week+""+day);
-				this.addEventListener(this.pick,
-				[
-					{type: EventType.Key, key: KeyMap.enter},
-					{type: EventType.Mouse, mouse: MouseMap.click},
-					{type: EventType.Mouse, mouse: MouseMap.dblclick}
-				])
-			}
 		}
 
 		const column:HTMLTableElement = document.querySelector(".table")
