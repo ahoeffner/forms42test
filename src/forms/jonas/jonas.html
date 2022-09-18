@@ -45,5 +45,12 @@
 			<input size="20" name="phone_number" class="detail" from="employees" required derived autocomplete="do-not-autofill">
 		</p>
 	</div>
+</div>
 
+<div>
+	<div class="week" foreach="week in 1..5">
+		<div class="day" foreach="day in 1..7">
+			<span tabindex="-1" name="$week$day" from="calendar"></span>
+		</div>
+	</div>
 </div>

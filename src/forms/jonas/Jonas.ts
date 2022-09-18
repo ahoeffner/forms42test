@@ -13,7 +13,7 @@ import content from './jonas.html';
 
 import { BaseForm } from '../BaseForm';
 import { Employees } from "../../datasources/memory/Employees";
-import { EventType, Filters, Filter, Block, block, datasource, formevent } from 'forms42core';
+import { EventType, Filters, Filter, Block, block, datasource, formevent, FormEvent, KeyMap, MouseMap } from 'forms42core';
 import { dragDropTable } from './dragdrop';
 
 @datasource("Employees",Employees)
@@ -54,21 +54,40 @@ export class Jonas extends BaseForm
 	@formevent({type: EventType.PostViewInit})
 	public async start() : Promise<boolean>
 	{
-
-			const column:HTMLTableElement = document.querySelector(".table")
-			column.addEventListener('mousedown', (event) => new dragDropTable(column,
+		for (let week = 2; week < 3; week++)
+		{
+			for (let day = 0; day < 7; day++)
 			{
-				// Cells:".columen_cell",
-				Cells:".columen_cell",
-				// Heading: ".columen_heading",
-				Heading:".columen_heading",
-				// Rows:".columen_rows",
-				Rows:".columen_rows",
-				// Click: ".columen_heading"
-				Drag: ".columen_heading"
-			}).mouseDownHandler(event));
+				this.setValue("calendar",week+""+day,"d-"+week+""+day);
+				this.addEventListener(this.pick,
+				[
+					{type: EventType.Key, key: KeyMap.enter},
+					{type: EventType.Mouse, mouse: MouseMap.click},
+					{type: EventType.Mouse, mouse: MouseMap.dblclick}
+				])
+			}
+		}
+
+		const column:HTMLTableElement = document.querySelector(".table")
+		column.addEventListener('mousedown', (event) => new dragDropTable(column,
+		{
+			// Cells:".columen_cell",
+			Cells:".columen_cell",
+			// Heading: ".columen_heading",
+			Heading:".columen_heading",
+			// Rows:".columen_rows",
+			Rows:".columen_rows",
+			// Click: ".columen_heading"
+			Drag: ".columen_heading"
+		}).mouseDownHandler(event));
 
 		await this.emp.executeQuery();
+		return(true);
+	}
+
+	public async pick(event:FormEvent) : Promise<boolean>
+	{
+		console.log("Pick date: "+event.field)
 		return(true);
 	}
 
