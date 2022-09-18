@@ -27,5 +27,4 @@ export class MasterDetail extends BaseForm
 		super(content);
 		this.title = "Master Detail";
 	}
-
 }

@@ -86,4 +86,15 @@ export class Jonas extends BaseForm
 		await this.emp.executeQuery(true);
 		return(true);
 	}
+
+	public alert() : void
+	{
+		let msg:string =
+		`
+			Detter er en forholdsvis lang meddelelse
+			Med en meget lang streng xxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+		`;
+
+		this.message(msg,"Test");
+	}
 }
