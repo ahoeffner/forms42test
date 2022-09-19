@@ -54,12 +54,10 @@ export class Jonas extends BaseForm
 	@formevent({type: EventType.PostViewInit})
 	public async start() : Promise<boolean>
 	{
-
 		this.addEventListener(this.pick,
 		[
-			{type: EventType.Key, key: KeyMap.enter},
-			{type: EventType.Mouse, mouse: MouseMap.click},
-			{type: EventType.Mouse, mouse: MouseMap.dblclick}
+			{type: EventType.Key, block: "calendar", key: KeyMap.enter},
+			{type: EventType.Mouse, block: "calendar", mouse: MouseMap.dblclick}
 		])
 
 		for (let week = 2; week < 3; week++)
