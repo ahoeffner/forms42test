@@ -5,6 +5,10 @@ html, body
 	overflow: hidden;
 }
 
+.form-area{
+	position: relative;
+}
+
 .canvas
 {
 	background: white;
@@ -72,7 +76,7 @@ html, body
 	border-right: 1px solid black;
 }
 
-.left-menu-split_horizontal_min_250
+.left-menu-container 
 {
 	margin: 5px;
 	padding: 10px;
@@ -104,13 +108,13 @@ html, body
 	background: white;
 }
 
-.left-menu-split_horizontal_min_250 .menu-items
+.left-menu-container .menu-items
 {
 	padding-left:5px;
 	transition: 0.3s;
 }
 
-.left-menu-split_horizontal_min_250 .menu-item:before
+.left-menu-container  .menu-item:before
 {
 	color: black;
 	font-size: 13px;
@@ -119,7 +123,7 @@ html, body
 	display:inline-block;
 }
 
-.left-menu-split_horizontal_min_250 .link-item:before
+.left-menu-container  .link-item:before
 {
 	color: black;
 	font-size: 13px;
@@ -128,7 +132,7 @@ html, body
 	display:inline-block;
 }
 
-.left-menu-split_horizontal_min_250 a:hover
+.left-menu-container a:hover
 {
 	color: hwb(0 2% 98% / 0.582);
 }
@@ -368,9 +372,9 @@ select
 	color: lightcoral;
 }
 
-/* DatePicker ???
+/* DatePicker ??? */
 
-.arrow_left_right
+/* .arrow_left_right
 {
 	width:1rem;
 	user-select: none;
@@ -383,11 +387,12 @@ select
 	cursor: move;
 	content: "\2194";
 	display:inline-flex;
-}
-*/
+} */
 
-/* Drag column ???
-.clone-list .cell,
+
+ /* Drag column ??? */
+
+/* .clone-list .cell,
 .clone-list .cell_heading
 {
    display: table-cell;
@@ -431,8 +436,8 @@ select
 {
     border: none;
     border-collapse: collapse;
-}
-*/
+} */
+
 
 input.detail:read-only
 {
@@ -453,8 +458,8 @@ input[mode="insert"]
 	background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' class='bi bi-search' viewBox='0 0 20 20' %3E%3Cpath d='M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z'%3E%3C/path%3E%3C/svg%3E") no-repeat 5px center;
 }
 
-/*
-.date-picker
+
+/* .date-picker
 {
 	width:210px;
 }
@@ -517,5 +522,4 @@ input[mode="insert"]
    font-size: 14px;
    align-items: center;
    justify-content: center;
-}
-*/
+} */
