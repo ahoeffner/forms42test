@@ -15,7 +15,7 @@ import content from './masterdetail.html';
 import { BaseForm } from '../BaseForm';
 import { Employees } from "../../datasources/memory/Employees";
 import { Departments } from "../../datasources/memory/Departments";
-import { EventType, Filters, Filter, Block, block, datasource, formevent, Form } from 'forms42core';
+import { EventType, Filters, Filter, Block, Key, datasource, formevent, Form } from 'forms42core';
 
 @datasource("Employees",Employees)
 @datasource("Departments",Departments)
@@ -26,5 +26,10 @@ export class MasterDetail extends BaseForm
 	{
 		super(content);
 		this.title = "Master Detail";
+
+		let master:Key = new Key("pkey","Departments","department_id");
+		let detail:Key = new Key("dept_fkey","Employees","department_id");
+
+		this.link(master,detail);
 	}
 }
