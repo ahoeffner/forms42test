@@ -14,7 +14,7 @@ import content from './phonebook.html';
 
 import { BaseForm } from '../BaseForm';
 import { Employees } from "../../datasources/memory/Employees";
-import { EventType, Filters, Filter, Block, block, datasource, formevent, Form } from 'forms42core';
+import { EventType, Filters, Filter, Block, block, datasource, formevent } from 'forms42core';
 
 @datasource("Employees",Employees)
 
@@ -60,7 +60,8 @@ export class PhoneBook extends BaseForm
 	@formevent({type: EventType.PreQuery, block: "employees"})
 	public async setFilter() : Promise<boolean>
 	{
-		this.emp.filter.and(this.filter)
+		let value:any = this.getValue("search","filter");
+		if (value) this.emp.filter.and(this.filter);
 		return(true);
 	}
 

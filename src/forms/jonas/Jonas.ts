@@ -92,7 +92,8 @@ export class Jonas extends BaseForm
 	@formevent({type: EventType.PreQuery, block: "employees"})
 	public async setFilter() : Promise<boolean>
 	{
-		this.emp.filter.and(this.filter)
+		let value:any = this.getValue("search","filter");
+		if (value) this.emp.filter.and(this.filter);
 		return(true);
 	}
 
