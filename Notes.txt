@@ -1,0 +1,22 @@
+Login form
+LOV
+Subquery
+Mouse right-click
+Keytriggers på Display type
+Debug på triggers returning false
+
+tabindex -> flyt ?
+
+
+*** Jonas ***
+
+1) Menubar flytter canvas
+2) Alert box drag
+3) DatePicker
+4) Master detail
+
+fields form, dropdown
+.split_horizontal_min_250_colum
+
+
+************
