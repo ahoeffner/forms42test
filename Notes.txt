@@ -5,6 +5,8 @@ Mouse right-click
 Keytriggers på Display type
 Debug på triggers returning false
 
+FilterIndicator
+
 tabindex -> flyt ?
 
 
