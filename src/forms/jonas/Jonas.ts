@@ -70,13 +70,13 @@ export class Jonas extends BaseForm
 		column.addEventListener('mousedown', (event) => new dragDropTable(column,
 		{
 			// Cells:".columen_cell",
-			Cells:".columen_cell",
+			Cells:".cell",
 			// Heading: ".columen_heading",
-			Heading:".columen_heading",
+			Heading:".heading",
 			// Rows:".columen_rows",
-			Rows:".columen_rows",
+			Rows:".rows",
 			// Click: ".columen_heading"
-			Drag: ".columen_heading"
+			Drag: ".heading"
 		}).mouseDownHandler(event));
 
 		await this.emp.executeQuery();
