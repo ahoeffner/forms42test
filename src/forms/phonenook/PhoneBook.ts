@@ -62,6 +62,7 @@ export class PhoneBook extends BaseForm
 	{
 		let value:any = this.getValue("search","filter");
 		if (value) this.emp.filter.and(this.filter);
+		else this.emp.filter.delete(this.filter);
 		return(true);
 	}
 
