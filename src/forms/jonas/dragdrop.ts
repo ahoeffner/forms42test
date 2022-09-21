@@ -1,17 +1,16 @@
+
+
+
+
+
+import { BaseForm } from '../BaseForm';
 import { DragDropOptions } from "./DragDropOptions";
+import { Employees } from "../../datasources/memory/Employees";
+import { EventType, Filters, Filter, Block, block, datasource, formevent, Form } from 'forms42core';
 
 
 
-
-
-
-
-
-
-
-
-
-export class dragDropTable implements DragDropOptions, EventListenerObject
+export class dragDropTable implements EventListenerObject, DragDropOptions 
 {
     
     x:number = 0;
@@ -41,12 +40,13 @@ export class dragDropTable implements DragDropOptions, EventListenerObject
     constructor(tableElem: HTMLTableElement, options: DragDropOptions)
     {
         this.options = options;
+        this.tableElem = tableElem;
         if(this.options.classes == null) this.options.classes = {}
         if(this.options.classes.dragging == null) this.options.classes.dragging = "dragging";
+        if(this.options.classes.draggable == null) this.options.classes.draggable = "draggable";
         if(this.options.classes.cloneList == null) this.options.classes.cloneList = "clone-list";
         if(this.options.classes.cloneTable == null) this.options.classes.cloneTable = "clone-table";
-        if(this.options.classes.draggable == null) this.options.classes.draggable = "draggable";
-        this.tableElem = tableElem;
+
         this.mouseDownHandler = this.mouseDownHandler.bind(this);
         this.mouseMoveHandler = this.mouseMoveHandler.bind(this);
         this.update(options);
@@ -54,16 +54,15 @@ export class dragDropTable implements DragDropOptions, EventListenerObject
      handleEvent(object: Event): void 
     {   
 
-       
         if(object.type === "mousemove")
         {
             
             this.mouseMoveHandler();
+            this.x = object["clientX"] as number;
+            this.y = object["clientY"] as number;        
             this.top = this.y - object["clientY"] as number;
             this.left = this.x - object["clientX"] as number;
             this.draggingEle.style.position = 'absolute' as string;
-            this.x = object["clientX"] as number;
-            this.y = object["clientY"] as number;        
             this.draggingEle.style.top = `${this.draggingEle.offsetTop - this.top}px` as string;
             this.draggingEle.style.left = `${this.draggingEle.offsetLeft - this.left}px` as string;
           
@@ -102,9 +101,9 @@ export class dragDropTable implements DragDropOptions, EventListenerObject
         })
 
        
-           this.dragColumnIndex = [].slice.call(this.tableElem.querySelectorAll(this.drag)).indexOf(this.foundTheDrag) as number;
-           this.x =<number> object["clientX"] - object.target["offsetLeft"];
-           this.y = <number> object["clientY"] - object.target["offsetTop"];
+        this.x =<number> object["clientX"] - object.target["offsetLeft"];
+        this.y = <number> object["clientY"] - object.target["offsetTop"];
+        this.dragColumnIndex = [].slice.call(this.tableElem.querySelectorAll(this.drag)).indexOf(this.foundTheDrag) as number;
         
             document.addEventListener('mousemove',this);
             document.addEventListener('mouseup', this);
@@ -122,28 +121,31 @@ export class dragDropTable implements DragDropOptions, EventListenerObject
         }
         if(this.draggingEle)
         {
-        this.draggingEle.classList.remove(this.options.classes.dragging);
-        this.draggingEle.style.removeProperty('top');
-        this.draggingEle.style.removeProperty('left');
-        this.draggingEle.style.removeProperty('position');
+            this.draggingEle.style.removeProperty('top');
+            this.draggingEle.style.removeProperty('left');
+            this.draggingEle.style.removeProperty('position');
+            this.draggingEle.classList.remove(this.options.classes.dragging);
 
-        const endColumnIndex:number = [].slice.call(this.table.children).indexOf(this.draggingEle);
+            let endColumnIndex:number = [].slice.call(this.table.children).indexOf(this.draggingEle);
 
-        this.isDraggingStarted = false;
-        if(this.table.parentNode)
-        {
-        this.table.parentNode.removeChild(this.table);
-        }
+            this.isDraggingStarted = false;
+            if(this.table.parentNode)
+            {
+            this.table.parentNode.removeChild(this.table);
+            }
 
-        this.tableElem.querySelectorAll(this.rows).forEach((row) => 
-        {
-            const cells:Array<HTMLElement> = [].slice.call(row.querySelectorAll(`${this.heading}, ${this.cells}`));
-            if(this.dragColumnIndex > endColumnIndex) cells[endColumnIndex].parentNode.insertBefore(cells[this.dragColumnIndex],cells[endColumnIndex])
-            else cells[endColumnIndex].parentNode.insertBefore(cells[this.dragColumnIndex],cells[endColumnIndex].nextSibling);
-        });
-        this.tableElem.style.display = "block";
-        document.removeEventListener('mousemove', this);
-        document.removeEventListener('mouseup', this);
+            this.tableElem.querySelectorAll(this.rows).forEach((row) => 
+            {
+                let cells:Array<HTMLElement> = [].slice.call(row.querySelectorAll(`${this.heading}, ${this.cells}`));
+                console.log(cells)
+                if(this.dragColumnIndex > endColumnIndex) cells[endColumnIndex].parentNode.insertBefore(cells[this.dragColumnIndex],cells[endColumnIndex])
+                else cells[endColumnIndex].parentNode.insertBefore(cells[this.dragColumnIndex],cells[endColumnIndex].nextSibling);
+            });
+
+            console.log(this.tableElem)
+            this.tableElem.style.display = "block";
+            document.removeEventListener('mousemove', this);
+            document.removeEventListener('mouseup', this);
         }
     }
 
@@ -154,6 +156,7 @@ export class dragDropTable implements DragDropOptions, EventListenerObject
         {
             this.isDraggingStarted = true;
             this.table = this.cloneTable(this.table);
+            console.log(this.table);
             if(this.table.nextElementSibling){
                 this.table.nextElementSibling.remove()
             } 
@@ -200,8 +203,8 @@ export class dragDropTable implements DragDropOptions, EventListenerObject
 
     private IsOnLeft(nodeA: Element  ,nodeB : Element) : boolean
     {
-        const rectA: DOMRect = nodeA.getBoundingClientRect();
-        const rectB: DOMRect = nodeB.getBoundingClientRect();
+        let rectA: DOMRect = nodeA.getBoundingClientRect();
+        let rectB: DOMRect = nodeB.getBoundingClientRect();
         return rectA.left + rectA.width / 2 < rectB.left + rectB.width / 2;
     }
 
@@ -215,8 +218,8 @@ export class dragDropTable implements DragDropOptions, EventListenerObject
         this.tableElem.style.cssText = `display:none; position:"";`
 
         this.tableElem.parentElement.insertBefore(table,this.tableElem.nextSibling);
-        const originalCells:Array<HTMLElement> = [].slice.call(this.tableElem.querySelectorAll(this.cells));
-        const originalHeaderCells:Array<HTMLElement> = [].slice.call(this.tableElem.querySelectorAll(this.heading));
+        let originalCells:Array<HTMLElement> = [].slice.call(this.tableElem.querySelectorAll(this.cells));
+        let originalHeaderCells:Array<HTMLElement> = [].slice.call(this.tableElem.querySelectorAll(this.heading));
 
         originalHeaderCells.forEach((header:HTMLElement,headerIndex:number) => {
 
@@ -235,20 +238,19 @@ export class dragDropTable implements DragDropOptions, EventListenerObject
         newTable.appendChild(newRow);
         let cells = originalCells.filter((c,idx) => {
              return (idx - headerIndex) % originalHeaderCells.length === 0;
-        })
+        });
          cells.forEach((cell) => {
              newRow = document.createElement('div');
              newRow.classList.add(this.rows);
              let newCell:Node = cell.cloneNode(true);
              newRow.appendChild(newCell);
              newTable.appendChild(newRow);
-         })
+         });
          
          item.classList.add(this.options.classes.draggable);
          item.appendChild(newTable);
-         
          table.appendChild(item);
-         })
+         });
          return table;
     }
 
