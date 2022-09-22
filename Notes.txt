@@ -3,7 +3,8 @@ LOV
 Subquery
 Mouse right-click
 Keytriggers på Display type
-Debug på triggers returning false
+add (ensure) non derived columns to datasourec
+Debug på triggers returning false flightrecorder
 
 FilterIndicator
 
