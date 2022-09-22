@@ -2,10 +2,7 @@ Login form
 LOV
 Subquery
 Mouse right-click
-Keytriggers på Display type
 add (ensure) non derived columns to datasourec
-Debug på triggers returning false flightrecorder
-
 FilterIndicator
 
 tabindex -> flyt ?
