@@ -1,22 +1,22 @@
-Login form
 LOV
-Subquery
+Login form
+FilterEditor
+
+finish datepicker
+
+FilterIndicator
 Mouse right-click
 add (ensure) non derived columns to datasourec
-FilterIndicator
+
+refresh()
+querydetails()
+
+flush data on postform
 
 tabindex -> flyt ?
 
 
 *** Jonas ***
 
-1) Menubar flytter canvas
-2) Alert box drag
-3) DatePicker
-4) Master detail
 
-fields form, dropdown
-.split_horizontal_min_250_colum
-
-
-************
+*************
