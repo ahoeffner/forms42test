@@ -25,7 +25,7 @@ import { MasterDetail } from './forms/masterdetail/MasterDetail';
 import { LinkMapper } from './forms/fields/LinkMapper';
 import { TrueFalseMapper } from './forms/fields/TrueFalseMapper';
 
-import { FormsPathMapping, FormsModule as FormsCoreModule, KeyCodes, KeyMap, FormEvent, EventType, Connection } from 'forms42core';
+import { FormsPathMapping, FormsModule as FormsCoreModule, KeyCodes, KeyMap, FormEvent, EventType, Connections } from 'forms42core';
 
 @FormsPathMapping(
 	[
@@ -66,8 +66,7 @@ export class FormsModule extends FormsCoreModule
 		this.OpenURLForm();
 		this.updateKeyMap(keymap);
 
-		let conn:Connection = new Connection("http://localhost:9002");
-		conn.invoke("/ping");
+		Connections.create("database","http://localhost:9002");
 
 		this.addEventListener(this.open,
 		[
