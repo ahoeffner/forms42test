@@ -11,8 +11,6 @@ add (ensure) non derived columns to datasourec
 refresh()
 querydetails()
 
-flush data on postform
-
 tabindex -> flyt ?
 
 
