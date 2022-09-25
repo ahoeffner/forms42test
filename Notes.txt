@@ -16,5 +16,6 @@ tabindex -> flyt ?
 
 *** Jonas ***
 
+.split_horizontal_min_250_colum
 
 *************
