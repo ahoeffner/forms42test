@@ -1,25 +1,18 @@
-Login form
 LOV
-Subquery
-Mouse right-click
-Keytriggers på Display type
-add (ensure) non derived columns to datasourec
-Debug på triggers returning false flightrecorder
+Login form
+FilterEditor
 
-FilterIndicator
+Mouse right-click
+
+refresh()
+querydetails()
 
 tabindex -> flyt ?
 
 
 *** Jonas ***
 
-1) Menubar flytter canvas
-2) Alert box drag
-3) DatePicker
-4) Master detail
-
-fields form, dropdown
+finish datepicker
 .split_horizontal_min_250_colum
 
-
-************
+*************

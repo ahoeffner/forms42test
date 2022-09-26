@@ -76,7 +76,7 @@ html, body
 	border-right: 1px solid black;
 }
 
-.left-menu-container 
+.left-menu-container
 {
 	margin: 5px;
 	padding: 10px;
@@ -150,7 +150,14 @@ html, body
 	background-color: yellow;
 }
 
-/* Why split_horizontal_min_250 ??? */
+.filter-indicator
+{
+	width: 8px;
+	height: 8px;
+	display: block;
+	background-color: grey;
+}
+
 .split_horizontal_min_250
 {
 	display:grid;
@@ -436,7 +443,7 @@ select
 {
     border: none;
     border-collapse: collapse;
-} 
+}
 
 input.detail:read-only
 {
