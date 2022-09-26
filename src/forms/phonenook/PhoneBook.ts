@@ -32,7 +32,7 @@ export class PhoneBook extends BaseForm
 		this.filter = Filters.Contains("first_name, last_name");
 	}
 
-	public async sort(column:string)
+	public async sort(column:string) : Promise<void>
 	{
 		let asc:boolean = this.sorting.asc;
 		let toogle:boolean = column == this.sorting.column;
