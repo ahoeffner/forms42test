@@ -63,6 +63,7 @@
 			<div class="column">
 				<span>Piece</span> :
 				<select style="margin: 0px 10px" name="piece" from="fields" size="1">
+
 					<option value="King">King</option>
 					<option value="Queen">Queen</option>
 					<option value="Rook">Rook</option>
@@ -91,8 +92,8 @@
 			<div class="column">
 
 				<span>Single :</span>
-
 				<select style="width: 100px;" name="single" from="fields" size="1">
+
 					<option value="DK">Denmark</option>
 					<option value="SE">Sweden</option>
 					<option value="NO">Norway</option>
@@ -102,7 +103,6 @@
 				<span>Code</span> : <input name="single" from="fields" size="4" upper>
 			</div>
 			<div class="column" style="margin-top: 20px;">
-
 				<span>Multiple :</span>
 
 				<select style="width: 100px;" name="multi" from="fields" size="5" multiple>
@@ -118,11 +118,9 @@
 		<fieldset class="fieldset">
 			<legend>Any html</legend>
 			<div class="column">
-
 				<span>Text</span> : <input type="text" name="any" from="fields" size="16">
 				<b name="any" from="fields"></b>
 				<span name="any" from="fields" mapper="/mappers/linkmapper"></span>
-
 			</div>
 		</fieldset>
 	</div>
