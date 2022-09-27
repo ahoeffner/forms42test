@@ -25,7 +25,8 @@ import { MasterDetail } from './forms/masterdetail/MasterDetail';
 import { LinkMapper } from './forms/fields/LinkMapper';
 import { TrueFalseMapper } from './forms/fields/TrueFalseMapper';
 
-import { FormsPathMapping, FormsModule as FormsCoreModule, KeyCodes, KeyMap, FormEvent, EventType, DatabaseConnection as Connection } from 'forms42core';
+import { FormsPathMapping, FormsModule as FormsCoreModule, KeyCodes, KeyMap, FormEvent, EventType, DatabaseConnection as Connection, FormProperties } from 'forms42core';
+import { LanguageLabel } from './tags/LanguageLabels';
 
 @FormsPathMapping(
 	[
@@ -63,15 +64,19 @@ export class FormsModule extends FormsCoreModule
 		this.menu = new Menu();
 		this.list = new Minimized();
 
+		FormProperties.TagLibrary.set("bklabel",LanguageLabel);
+
 		this.OpenURLForm();
 		this.updateKeyMap(keymap);
 
+		/*
 		let conn:Connection = new Connection("database","http://localhost:9002");
 
 		conn.username = "hr";
 		conn.password = "hr";
 
 		conn.connect();
+		*/
 
 		this.addEventListener(this.open,
 		[
