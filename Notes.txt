@@ -13,6 +13,6 @@ tabindex -> flyt ?
 *** Jonas ***
 
 finish datepicker
-.split_horizontal_min_250_colum
+.split_horizontal_min_250_colum -> block
 
 *************
