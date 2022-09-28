@@ -151,14 +151,14 @@ html, body
 	background-color: grey;
 }
 
-.split_horizontal_min_250
+.container
 {
 	display:grid;
 	row-gap: 2px;
 	grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 }
 
-.split_horizontal_min_250_colum
+.block
 {
 	gap:2px;
 	display:grid;
@@ -168,19 +168,19 @@ html, body
 	justify-content: center;
 }
 
-.split_horizontal_min_250_colum p
+.block p
 {
 	margin:2px;
 	display:inline-flex;
 }
 
-.split_horizontal_min_250_colum p span
+.block p span
 {
 	width:80px;
 	display:inline-block;
 }
 
-.split_horizontal_min_250 .button
+.block .button
 {
 	display:flex;
 	margin-bottom: 10px;
@@ -188,27 +188,25 @@ html, body
 	justify-content: center;
 }
 
-.split_horizontal_min_250_colum .field_fieldset
+.block .field_fieldset
 {
 	width: 80%;
 	margin-left: 5%;
 	margin-top: 30px;
 }
 
-.split_horizontal_min_250_colum .column
+.block .column
 {
 	display:block;
 	padding:2px 5px;
 }
 
-.split_horizontal_min_250_colum .column span
+.block .column span
 {
 	width:70px;
 	padding-left: 5px;
 	display:inline-block;
 }
-
-/* search, only in phonebook ?? */
 
 .search
 {
@@ -222,8 +220,6 @@ html, body
 	content: "\002315";
 	display:inline-block;
 }
-
-/* Make div look like table */
 
 .table
 {
@@ -373,72 +369,6 @@ select
 	color: lightcoral;
 }
 
-/* DatePicker ??? */
-
-/* .arrow_left_right
-{
-	width:1rem;
-	user-select: none;
-	display:inline-flex;
-	margin-right:0.5rem;
-}
-
-.arrow_left_right:before
-{
-	cursor: move;
-	content: "\2194";
-	display:inline-flex;
-} */
-
-
- /* Drag column ??? */
-
- .clone-list .cell,
-.clone-list .cell_heading
-{
-   display: table-cell;
-}
-
-.dragging
-{
-	z-index: 999;
-	background: #fff;
-	border-top: 1px solid #ccc;
-	border-left: 1px solid #ccc;
-}
-
-.draggable
-{
-    cursor: move;
-    user-select: none;
-}
-
-.search:before
-{
-	content: "\002315";
-	display:inline-block;
-}
-
-.placeholder
-{
-    background-color: #edf2f7;
-    border: 2px dashed #cbd5e0;
-}
-
-.clone-table
-{
-	display: flex;
-    border-top: 1px solid #ccc;
-	 border-left: 1px solid #ccc;
-
-}
-
-.clone-list
-{
-    border: none;
-    border-collapse: collapse;
-}
-
 input.detail:read-only
 {
 	background: none;
@@ -470,3 +400,25 @@ input[mode="insert"]
 {
 	transform: scale(1.02);
 }
+
+p:focus-within span 
+{ 
+	font-weight: bold; 
+}
+
+div[name='day'] span
+{
+	width:100%;	
+	text-align:center;
+}
+
+div[name='day'] span:focus
+{
+	font-weight: bold; 
+}
+
+div[name='day'] span[name^="day-"]:hover
+{
+	font-weight: bold; 
+}
+

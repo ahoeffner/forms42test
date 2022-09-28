@@ -32,6 +32,11 @@ export class PhoneBook extends BaseForm
 		this.filter = Filters.Contains("first_name, last_name");
 	}
 
+	public async openCalander()
+	{
+		console.log("openCalander");
+	}
+
 	public async sort(column:string) : Promise<void>
 	{
 		let asc:boolean = this.sorting.asc;

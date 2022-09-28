@@ -1,7 +1,7 @@
 <include src="/html/formheader"></include>
 
-<div class="split_horizontal_min_250" style="width: 650px;">
-	<div class="split_horizontal_min_250_colum">
+<div class="container" style="width: 650px;">
+	<div class="block">
 		<span class="search">
 			<input name="filter" from="search" placeholder="search">
 		</span>
@@ -28,7 +28,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="split_horizontal_min_250_colum">
+	<div class="block">
 		<p>
 			<span>First Name</span>:
 			<input size="10" name="first_name" from="employees" class="detail" initcap required>
@@ -44,7 +44,7 @@
 		<p>
 			<span>Hire Date</span>:
 			<input name="hire_date" size="10" date from="employees" class="detail" required>
-			<span class="icon_calander">&#128197;</span>
+			<span class="icon_calander" onclick="this.openCalander()">&#128197;</span>
 		</p>
 	</div>
 </div>
