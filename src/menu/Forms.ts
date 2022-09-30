@@ -55,6 +55,19 @@ export class Forms extends StaticMenu
 						text: "4 Fields with extensions",
 						command: "/forms/Fields"
 					}
+					,
+					{
+						id: "database",
+						text: "Database based forms",
+						entries:
+						[
+							{
+								id: "nocode",
+								text: "nocode",
+								command: "/database/forms/Nocode"
+							}
+						]
+					}
 			]
 			});
 	 }

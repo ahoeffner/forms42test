@@ -11,9 +11,9 @@
  */
 
 import { Forms } from './Forms';
-import { MenuHandler } from 'forms42core';
+import { MenuComponent } from 'forms42core';
 
-export class Menu extends MenuHandler
+export class Menu extends MenuComponent
 {
 	private displayed:boolean = false;
 	private static menuelem:HTMLElement = null;
