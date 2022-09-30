@@ -10,7 +10,7 @@
  * accompanied this code).
  */
 
-import { Menu } from './Menu';
+import { Menu } from './menu/Menu';
 import { Minimized } from './Minimized';
 import { FormHeader } from './html/FormHeader';
 import { PageHeader } from './html/PageHeader';
@@ -22,11 +22,13 @@ import { Nocode } from './forms/nocode/Nocode';
 import { PhoneBook } from './forms/phonenook/PhoneBook';
 import { MasterDetail } from './forms/masterdetail/MasterDetail';
 
+import { LanguageLabel } from './tags/LanguageLabels';
+
 import { LinkMapper } from './forms/fields/LinkMapper';
 import { TrueFalseMapper } from './forms/fields/TrueFalseMapper';
 
 import { FormsPathMapping, FormsModule as FormsCoreModule, KeyCodes, KeyMap, FormEvent, EventType, DatabaseConnection as Connection, FormProperties } from 'forms42core';
-import { LanguageLabel } from './tags/LanguageLabels';
+import { SQLTest } from './SQLTest';
 
 @FormsPathMapping(
 	[
@@ -54,7 +56,7 @@ export class FormsModule extends FormsCoreModule
 	private phonebook:KeyMap = new KeyMap({key: 'p', ctrl: true})
 	private masterdetail:KeyMap = new KeyMap({key: 'm', ctrl: true})
 
-	public static load() : void {new FormsModule();}
+	public static bootstrap() : void {new FormsModule();}
 
 	constructor()
 	{
@@ -68,6 +70,8 @@ export class FormsModule extends FormsCoreModule
 
 		this.OpenURLForm();
 		this.updateKeyMap(keymap);
+
+		SQLTest.test();
 
 		/*
 		let conn:Connection = new Connection("database","http://localhost:9002");

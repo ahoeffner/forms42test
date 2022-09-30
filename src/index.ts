@@ -1,4 +1,4 @@
 import { FormsModule } from './FormsModule';
 
-FormsModule.load();
+FormsModule.bootstrap();
 console.log("Demo Version 1.2");

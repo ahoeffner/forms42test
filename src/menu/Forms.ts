@@ -10,7 +10,7 @@
  * accompanied this code).
  */
 
-import { Menu } from "../Menu";
+import { Menu } from "./Menu";
 import { FormsModule, StaticMenu, StaticMenuEntry } from "forms42core";
 
 export class Forms extends StaticMenu

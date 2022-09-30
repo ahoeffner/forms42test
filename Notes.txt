@@ -6,8 +6,29 @@ Mouse right-click
 
 refresh()
 querydetails()
+showDatepicker()
+Datapicker constraint
+Menu html entry
+
+Database
+function
+Procedure
+Statement
+
+freehand filter
+
+date search truncate date
+datasource insert, update, delete
 
 tabindex -> flyt ?
+
+**** Database ****
+
+handle lock
+freehand sql filter
+add insert/update/delete
+
+******************
 
 
 *** Jonas ***

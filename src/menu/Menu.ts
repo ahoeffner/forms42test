@@ -10,24 +10,24 @@
  * accompanied this code).
  */
 
-import { Forms } from './menu/Forms';
+import { Forms } from './Forms';
 import { MenuHandler } from 'forms42core';
 
 export class Menu
 {
-    private menu:boolean = false;
+	private menu:boolean = false;
 	private handler:MenuHandler = null;
-    private menuelem:HTMLElement = null;
+	private menuelem:HTMLElement = null;
 	private container:HTMLElement = null;
-	
-    constructor()
-    {
+
+	constructor()
+	{
 		this.menuelem = document.createElement("div");
 		this.menuelem.classList.value = "left-menu-container";
-    	this.container= document.getElementById("main-menu");
+		this.container= document.getElementById("main-menu");
 		this.menuelem = this.container.appendChild(this.menuelem);
 		this.handler = new MenuHandler(new Forms(this), this.menuelem);
-    }
+	}
 
 	public hide() : void
 	{
@@ -36,20 +36,20 @@ export class Menu
 		this.menuelem.style.display = "none";
 	}
 
-    public showmenu() : void
-    {
-        if (this.menu)
+	public showmenu() : void
+	{
+		if (this.menu)
 		{
 			this.handler.hide();
 			this.menuelem.style.display = "none";
 		}
-        else
+		else
 		{
 
 			this.handler.show();
 			this.menuelem.style.display = "block";
 		}
 
-        this.menu = !this.menu;
-    }
+		this.menu = !this.menu;
+	}
 }
