@@ -13,43 +13,49 @@
 import { Forms } from './Forms';
 import { MenuHandler } from 'forms42core';
 
-export class Menu
+export class Menu extends MenuHandler
 {
-	private menu:boolean = false;
-	private handler:MenuHandler = null;
-	private menuelem:HTMLElement = null;
-	private container:HTMLElement = null;
+	private displayed:boolean = false;
+	private static menuelem:HTMLElement = null;
+
+	private static setup() : HTMLElement
+	{
+		let container:HTMLElement = null;
+
+		Menu.menuelem = document.createElement("div");
+		Menu.menuelem.classList.value = "left-menu-container";
+
+		container = document.getElementById("main-menu");
+		Menu.menuelem = container.appendChild(Menu.menuelem);
+
+		return(Menu.menuelem);
+	}
 
 	constructor()
 	{
-		this.menuelem = document.createElement("div");
-		this.menuelem.classList.value = "left-menu-container";
-		this.container= document.getElementById("main-menu");
-		this.menuelem = this.container.appendChild(this.menuelem);
-		this.handler = new MenuHandler(new Forms(this), this.menuelem);
+		super(new Forms(),Menu.setup());
 	}
 
 	public hide() : void
 	{
-		this.menu = false;
-		this.handler.hide();
-		this.menuelem.style.display = "none";
+		super.hide();
+		this.displayed = false;
+		Menu.menuelem.style.display = "none";
 	}
 
 	public showmenu() : void
 	{
-		if (this.menu)
+		if (this.displayed)
 		{
-			this.handler.hide();
-			this.menuelem.style.display = "none";
+			super.hide();
+			Menu.menuelem.style.display = "none";
 		}
 		else
 		{
-
-			this.handler.show();
-			this.menuelem.style.display = "block";
+			super.show();
+			Menu.menuelem.style.display = "block";
 		}
 
-		this.menu = !this.menu;
+		this.displayed = !this.displayed;
 	}
 }

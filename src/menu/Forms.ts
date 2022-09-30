@@ -10,12 +10,11 @@
  * accompanied this code).
  */
 
-import { Menu } from "./Menu";
 import { FormsModule, StaticMenu, StaticMenuEntry } from "forms42core";
 
 export class Forms extends StaticMenu
 {
-	constructor(private handler:Menu)
+	constructor()
 	{
 		super(Forms.data());
 	}
@@ -24,8 +23,7 @@ export class Forms extends StaticMenu
 	{
 		let pos:number = path.lastIndexOf('/');
 		await FormsModule.get().showform(path.substring(pos+1));
-		this.handler.hide();
-		return(false);
+		return(true);
 	}
 
 	 private static data() : StaticMenuEntry
