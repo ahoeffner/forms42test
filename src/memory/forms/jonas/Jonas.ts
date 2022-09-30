@@ -12,7 +12,7 @@
 import content from './jonas.html';
 
 import { BaseForm } from '../BaseForm';
-import { Employees } from "../../datasources/memory/Employees";
+import { Employees } from "../../../datasources/memory/Employees";
 import { EventType, Filters, Filter, Block, block, datasource, formevent, FormEvent, KeyMap, MouseMap } from 'forms42core';
 import { dragDropTable } from './dragdrop';
 

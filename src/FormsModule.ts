@@ -16,16 +16,16 @@ import { FormHeader } from './html/FormHeader';
 import { PageHeader } from './html/PageHeader';
 import { PageFooter } from './html/PageFooter';
 
-import { Jonas } from './forms/jonas/jonas';
-import { Fields } from './forms/fields/Fields';
-import { Nocode } from './forms/nocode/Nocode';
-import { PhoneBook } from './forms/phonenook/PhoneBook';
-import { MasterDetail } from './forms/masterdetail/MasterDetail';
+import { Jonas } from './memory/forms/jonas/jonas';
+import { Fields } from './memory/forms/fields/Fields';
+import { Nocode } from './memory/forms/nocode/Nocode';
+import { PhoneBook } from './memory/forms/phonenook/PhoneBook';
+import { MasterDetail } from './memory/forms/masterdetail/MasterDetail';
 
 import { LanguageLabel } from './tags/LanguageLabels';
 
-import { LinkMapper } from './forms/fields/LinkMapper';
-import { TrueFalseMapper } from './forms/fields/TrueFalseMapper';
+import { LinkMapper } from './memory/forms/fields/LinkMapper';
+import { TrueFalseMapper } from './memory/forms/fields/TrueFalseMapper';
 
 import { FormsPathMapping, FormsModule as FormsCoreModule, KeyCodes, KeyMap, FormEvent, EventType, DatabaseConnection as Connection, FormProperties } from 'forms42core';
 import { SQLTest } from './SQLTest';

@@ -13,7 +13,7 @@
 import content from './nocode.html';
 
 import { Form, datasource } from 'forms42core';
-import { Employees } from "../../datasources/memory/Employees";
+import { Employees } from "../../../datasources/memory/Employees";
 
 @datasource("Employees",Employees)
 

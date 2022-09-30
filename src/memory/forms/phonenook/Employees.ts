@@ -11,7 +11,7 @@
  */
 
 import { Form, Block} from "forms42core";
-import { Employees as EmployeesTable } from "../../datasources/memory/Employees";
+import { Employees as EmployeesTable } from "../../../datasources/memory/Employees";
 
 export class Employees extends Block
 {

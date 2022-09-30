@@ -14,8 +14,8 @@ import content from './masterdetail.html';
 
 import { BaseForm } from '../BaseForm';
 import { Key, datasource } from 'forms42core';
-import { Employees } from "../../datasources/memory/Employees";
-import { Departments } from "../../datasources/memory/Departments";
+import { Employees } from "../../../datasources/memory/Employees";
+import { Departments } from "../../../datasources/memory/Departments";
 
 @datasource("Employees",Employees)
 @datasource("Departments",Departments)

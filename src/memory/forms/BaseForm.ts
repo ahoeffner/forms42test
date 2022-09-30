@@ -10,7 +10,7 @@
  * accompanied this code).
  */
 
-import { FormsModule } from '../FormsModule';
+import { FormsModule } from '../../FormsModule';
 import { Form, View, EventType } from 'forms42core';
 
 

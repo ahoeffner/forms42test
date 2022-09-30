@@ -5,14 +5,14 @@
 
 import { BaseForm } from '../BaseForm';
 import { DragDropOptions } from "./DragDropOptions";
-import { Employees } from "../../datasources/memory/Employees";
+import { Employees } from "../../../datasources/memory/Employees";
 import { EventType, Filters, Filter, Block, block, datasource, formevent, Form } from 'forms42core';
 
 
 
-export class dragDropTable implements EventListenerObject, DragDropOptions 
+export class dragDropTable implements EventListenerObject, DragDropOptions
 {
-    
+
     x:number = 0;
     y:number = 0;
     top:number = 0;
@@ -26,7 +26,7 @@ export class dragDropTable implements EventListenerObject, DragDropOptions
 
     nextEle: Element = null;
     prevEle: Element = null;
-    
+
     table: HTMLElement = null;
     dragColumnIndex:number = 0;
     foundTheDrag:Element = null;
@@ -51,42 +51,42 @@ export class dragDropTable implements EventListenerObject, DragDropOptions
         this.mouseMoveHandler = this.mouseMoveHandler.bind(this);
         this.update(options);
     }
-     handleEvent(object: Event): void 
-    {   
+     handleEvent(object: Event): void
+    {
 
         if(object.type === "mousemove")
         {
-            
+
             this.mouseMoveHandler();
             this.x = object["clientX"] as number;
-            this.y = object["clientY"] as number;        
+            this.y = object["clientY"] as number;
             this.top = this.y - object["clientY"] as number;
             this.left = this.x - object["clientX"] as number;
             this.draggingEle.style.position = 'absolute' as string;
             this.draggingEle.style.top = `${this.draggingEle.offsetTop - this.top}px` as string;
             this.draggingEle.style.left = `${this.draggingEle.offsetLeft - this.left}px` as string;
-          
+
         } else if(object.type == "mouseup")
-        {   
+        {
              this.mouseUpHandler()
-    
+
         }
    }
 
    set Rows(value: string)
    {
        this.rows = value;
-   }     
+   }
    set Heading(value: string)
-   {     
+   {
        this.heading = value;
    }
    set Cells(value:string)
-   {     
+   {
        this.cells = value;
-   }     
+   }
    set Drag(value: string)
-   {     
+   {
        this.drag = value;
    }
 
@@ -100,14 +100,14 @@ export class dragDropTable implements EventListenerObject, DragDropOptions
             }
         })
 
-       
+
         this.x =<number> object["clientX"] - object.target["offsetLeft"];
         this.y = <number> object["clientY"] - object.target["offsetTop"];
         this.dragColumnIndex = [].slice.call(this.tableElem.querySelectorAll(this.drag)).indexOf(this.foundTheDrag) as number;
-        
+
             document.addEventListener('mousemove',this);
             document.addEventListener('mouseup', this);
-        
+
    }
 
    private mouseUpHandler() : void
@@ -134,7 +134,7 @@ export class dragDropTable implements EventListenerObject, DragDropOptions
             this.table.parentNode.removeChild(this.table);
             }
 
-            this.tableElem.querySelectorAll(this.rows).forEach((row) => 
+            this.tableElem.querySelectorAll(this.rows).forEach((row) =>
             {
                 let cells:Array<HTMLElement> = [].slice.call(row.querySelectorAll(`${this.heading}, ${this.cells}`));
                 console.log(cells)
@@ -152,31 +152,31 @@ export class dragDropTable implements EventListenerObject, DragDropOptions
     private mouseMoveHandler() : void
     {
 
-        if (!this.isDraggingStarted) 
+        if (!this.isDraggingStarted)
         {
             this.isDraggingStarted = true;
             this.table = this.cloneTable(this.table);
             console.log(this.table);
             if(this.table.nextElementSibling){
                 this.table.nextElementSibling.remove()
-            } 
+            }
 
-            this.draggingEle = [].slice.call(this.table.children)[this.dragColumnIndex] as HTMLElement; 
+            this.draggingEle = [].slice.call(this.table.children)[this.dragColumnIndex] as HTMLElement;
 
             this.placeholder = document.createElement('div');
             this.placeholder.classList.add('placeholder');
 
-            
+
             this.draggingEle.classList.add(this.options.classes.dragging);
             this.draggingEle.parentNode.insertBefore(this.placeholder, this.draggingEle.nextSibling);
 
             this.placeholder.style.width = `${this.draggingEle.offsetWidth}px`;
         }
-         
+
         this.nextEle = this.placeholder.nextElementSibling;
         this.prevEle = this.draggingEle.previousElementSibling;
 
-        
+
         if (this.prevEle && this.IsOnLeft(this.draggingEle, this.prevEle))
         {
             this.swap(this.placeholder, this.draggingEle);
@@ -210,7 +210,7 @@ export class dragDropTable implements EventListenerObject, DragDropOptions
 
     private cloneTable(table: HTMLElement) : HTMLElement
     {
-        
+
         table = document.createElement("div");
         table.classList.add(this.options.classes.cloneTable);
 
@@ -227,11 +227,11 @@ export class dragDropTable implements EventListenerObject, DragDropOptions
         let newRow:HTMLElement = document.createElement('div');
         let newTable:HTMLElement = document.createElement('div');
         this.width = Number(window.getComputedStyle(header).width);
-            
+
         newTable.style.width = `${this.width}px`;
         newTable.classList.add(this.options.classes.cloneList);
         console.log(header)
-       
+
         let newHeader:Node = header.cloneNode(true);
         newRow.classList.add(this.rows);
         newRow.appendChild(newHeader);
@@ -246,7 +246,7 @@ export class dragDropTable implements EventListenerObject, DragDropOptions
              newRow.appendChild(newCell);
              newTable.appendChild(newRow);
          });
-         
+
          item.classList.add(this.options.classes.draggable);
          item.appendChild(newTable);
          table.appendChild(item);
@@ -256,7 +256,7 @@ export class dragDropTable implements EventListenerObject, DragDropOptions
 
     private update(options: DragDropOptions)
     {
-        Object.entries({...options}).forEach(([key,value]) => 
+        Object.entries({...options}).forEach(([key,value]) =>
         {
           this[key] = value;
         })

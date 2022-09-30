@@ -13,7 +13,7 @@
 import content from './phonebook.html';
 
 import { BaseForm } from '../BaseForm';
-import { Employees } from "../../datasources/memory/Employees";
+import { Employees } from "../../../datasources/memory/Employees";
 import { EventType, Filters, Filter, Block, block, datasource, formevent } from 'forms42core';
 
 @datasource("Employees",Employees)
