@@ -63,7 +63,7 @@ export class Forms extends StaticMenu
 						[
 							{
 								id: "nocode",
-								text: "nocode",
+								text: "<b>1 Minimal</b>",
 								command: "/database/forms/Nocode"
 							}
 						]
