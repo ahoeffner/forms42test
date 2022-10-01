@@ -27,16 +27,18 @@ import { LanguageLabel } from './tags/LanguageLabels';
 import { LinkMapper } from './memory/forms/fields/LinkMapper';
 import { TrueFalseMapper } from './memory/forms/fields/TrueFalseMapper';
 
-import { FormsPathMapping, FormsModule as FormsCoreModule, KeyCodes, KeyMap, FormEvent, EventType, DatabaseConnection as Connection, FormProperties } from 'forms42core';
-import { SQLTest } from './SQLTest';
+import { FormsPathMapping, FormsModule as FormsCoreModule, KeyCodes, KeyMap, FormEvent, EventType, DatabaseConnection as Connection, FormProperties, Filters, Filter } from 'forms42core';
 
 @FormsPathMapping(
 	[
-		Jonas,
-		Fields,
-		Nocode,
-		PhoneBook,
-		MasterDetail,
+		{class: Fields, path: "/forms/fields"},
+		{class: Jonas, path: "/forms/memory/jonas"},
+		{class: Nocode, path: "/forms/memory/nocode"},
+		{class: PhoneBook, path: "/forms/memory/phonebook"},
+		{class: MasterDetail, path: "/forms/memory/masterdetail"},
+
+		{class: Nocode, path: "/forms/database/nocode"},
+
 		{class: FormHeader, path: "/html/formheader"},
 		{class: PageHeader, path: "/html/pageheader"},
 		{class: PageFooter, path: "/html/pagefooter"},
@@ -71,16 +73,8 @@ export class FormsModule extends FormsCoreModule
 		this.OpenURLForm();
 		this.updateKeyMap(keymap);
 
-		SQLTest.test();
-
-		/*
 		let conn:Connection = new Connection("database","http://localhost:9002");
-
-		conn.username = "hr";
-		conn.password = "hr";
-
-		conn.connect();
-		*/
+		conn.connect("hr","hr");
 
 		this.addEventListener(this.open,
 		[

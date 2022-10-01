@@ -19,10 +19,9 @@ export class Forms extends StaticMenu
 		super(Forms.data());
 	}
 
-	public async execute(path: string): Promise<boolean>
+	public async execute(path:string): Promise<boolean>
 	{
-		let pos:number = path.lastIndexOf('/');
-		await FormsModule.get().showform(path.substring(pos+1));
+		await FormsModule.get().showform(path);
 		return(true);
 	}
 
@@ -31,40 +30,40 @@ export class Forms extends StaticMenu
 		  return(
 			{
 				id: "forms",
-				text: "forms",
+				display: "forms",
 
 				entries:
 				[
 					{
 						id: "nocode",
-						text: "1 Minimal",
-						command: "/forms/Nocode"
+						display: "1 Minimal",
+						command: "/forms/memory/Nocode"
 					},
 					{
 						id: "phonebook",
-						text: "2 Phone Book",
-						command: "/forms/PhoneBook"
+						display: "2 Phone Book",
+						command: "/forms/memory/PhoneBook"
 					},
 					{
 						id: "masterdetail",
-						text: "3 Master Detail",
-						command: "/forms/MasterDetail"
+						display: "3 Master Detail",
+						command: "/forms/memory/MasterDetail"
 					},
 					{
 						id: "fields",
-						text: "4 Fields with extensions",
+						display: "4 Fields with extensions",
 						command: "/forms/Fields"
 					}
 					,
 					{
 						id: "database",
-						text: "Database based forms",
+						display: "Database based forms",
 						entries:
 						[
 							{
 								id: "nocode",
-								text: "<b>1 Minimal</b>",
-								command: "/database/forms/Nocode"
+								display: "1 Minimal",
+								command: "/forms/database/Nocode"
 							}
 						]
 					}

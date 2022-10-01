@@ -10,7 +10,7 @@
  * accompanied this code).
  */
 
-import { Nocode as Base } from "../../memory/forms/nocode/Nocode";
+import { Nocode as Base } from "../../../memory/forms/nocode/Nocode";
 
 export class Nocode extends Base
 {

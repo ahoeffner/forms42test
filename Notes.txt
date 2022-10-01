@@ -18,7 +18,6 @@ Statement
 freehand filter
 
 date search truncate date
-datasource insert, update, delete
 
 tabindex -> flyt ?
 
