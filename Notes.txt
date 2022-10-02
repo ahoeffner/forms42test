@@ -8,16 +8,12 @@ refresh()
 querydetails()
 showDatepicker()
 Datapicker constraint
-Menu html entry
+freehand filter
 
 Database
 function
 Procedure
 Statement
-
-freehand filter
-
-date search truncate date
 
 tabindex -> flyt ?
 
@@ -33,6 +29,5 @@ add insert/update/delete
 *** Jonas ***
 
 finish datepicker
-.split_horizontal_min_250_colum -> block
 
 *************
