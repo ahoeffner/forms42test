@@ -10,14 +10,18 @@
  * accompanied this code).
  */
 
-import content from './fields.html';
-import { BaseForm } from '../BaseForm';
+import content from './Simple.html';
 
-export class Fields extends BaseForm
+import { datasource } from "forms42core";
+import { BaseForm } from "../../../BaseForm";
+import { Employees } from "../../../datasources/database/Employees";
+
+@datasource("Employees",Employees)
+
+export class Simple extends BaseForm
 {
 	constructor()
 	{
 		super(content);
-		this.title = "Fieldtypes";
 	}
 }

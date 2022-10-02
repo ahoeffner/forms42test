@@ -16,16 +16,17 @@ import { FormHeader } from './html/FormHeader';
 import { PageHeader } from './html/PageHeader';
 import { PageFooter } from './html/PageFooter';
 
+import { Fields } from './fields/Fields';
 import { Jonas } from './memory/forms/jonas/jonas';
-import { Fields } from './memory/forms/fields/Fields';
-import { Nocode } from './memory/forms/nocode/Nocode';
-import { PhoneBook } from './memory/forms/phonenook/PhoneBook';
-import { MasterDetail } from './memory/forms/masterdetail/MasterDetail';
+import { Simple } from './database/forms/simple/Simple';
+import { SimpleMembased } from './memory/forms/simple/SimpleMembased';
+import { PhoneBookMembased } from './memory/forms/phonenook/PhoneBookMembased';
+import { MasterDetailMembased } from './memory/forms/masterdetail/MasterDetailMembased';
 
 import { LanguageLabel } from './tags/LanguageLabels';
 
-import { LinkMapper } from './memory/forms/fields/LinkMapper';
-import { TrueFalseMapper } from './memory/forms/fields/TrueFalseMapper';
+import { LinkMapper } from './fields/LinkMapper';
+import { TrueFalseMapper } from './fields/TrueFalseMapper';
 
 import { FormsPathMapping, FormsModule as FormsCoreModule, KeyCodes, KeyMap, FormEvent, EventType, DatabaseConnection as Connection, FormProperties, Filters, Filter } from 'forms42core';
 
@@ -33,11 +34,12 @@ import { FormsPathMapping, FormsModule as FormsCoreModule, KeyCodes, KeyMap, For
 	[
 		{class: Fields, path: "/forms/fields"},
 		{class: Jonas, path: "/forms/memory/jonas"},
-		{class: Nocode, path: "/forms/memory/nocode"},
-		{class: PhoneBook, path: "/forms/memory/phonebook"},
-		{class: MasterDetail, path: "/forms/memory/masterdetail"},
+		
+		{class: SimpleMembased, path: "/forms/memory/simple"},
+		{class: PhoneBookMembased, path: "/forms/memory/phonebook"},
+		{class: MasterDetailMembased, path: "/forms/memory/masterdetail"},
 
-		{class: Nocode, path: "/forms/database/nocode"},
+		{class: Simple, path: "/forms/database/simple"},
 
 		{class: FormHeader, path: "/html/formheader"},
 		{class: PageHeader, path: "/html/pageheader"},
@@ -53,6 +55,7 @@ export class FormsModule extends FormsCoreModule
 	public list:Minimized = null;
 
 	private jonas:KeyMap = new KeyMap({key: 'j', ctrl: true})
+	private dbform:KeyMap = new KeyMap({key: 'd', ctrl: true})
 	private nocode:KeyMap = new KeyMap({key: 'n', ctrl: true})
 	private fields:KeyMap = new KeyMap({key: 'f', ctrl: true})
 	private phonebook:KeyMap = new KeyMap({key: 'p', ctrl: true})
@@ -81,6 +84,7 @@ export class FormsModule extends FormsCoreModule
 			{type:EventType.Key,key:this.jonas},
 			{type:EventType.Key,key:this.fields},
 			{type:EventType.Key,key:this.nocode},
+			{type:EventType.Key,key:this.dbform},
 			{type:EventType.Key,key:this.phonebook},
 			{type:EventType.Key,key:this.masterdetail}
 		]);
@@ -92,16 +96,19 @@ export class FormsModule extends FormsCoreModule
 			this.showform(Jonas);
 
 		if (event.key == this.nocode)
-			this.showform(Nocode);
+			this.showform(SimpleMembased);
 
 		if (event.key == this.fields)
 			this.showform(Fields);
 
 		if (event.key == this.phonebook)
-			this.showform(PhoneBook);
+			this.showform(PhoneBookMembased);
 
 		if (event.key == this.masterdetail)
-			this.showform(MasterDetail);
+			this.showform(MasterDetailMembased);
+
+		if (event.key == this.dbform)
+			this.showform(Simple);
 
 		return(true);
 	}

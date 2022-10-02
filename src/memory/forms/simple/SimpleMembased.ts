@@ -10,14 +10,17 @@
  * accompanied this code).
  */
 
-import { Form, Block} from "forms42core";
-import { Employees as EmployeesTable } from "../../../datasources/memory/Employees";
+import content from './SimpleMembased.html';
 
-export class Employees extends Block
+import { Form, datasource } from 'forms42core';
+import { Employees } from "../../../datasources/memory/Employees";
+
+@datasource("Employees",Employees)
+
+export class SimpleMembased extends Form
 {
-	constructor(form:Form, name:string)
+	constructor()
 	{
-		super(form,name);
-		this.datasource = EmployeesTable.get();
+		super(content);
 	}
 }

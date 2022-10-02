@@ -37,7 +37,7 @@ export class Forms extends StaticMenu
 					{
 						id: "nocode",
 						display: "1 Minimal",
-						command: "/forms/memory/Nocode"
+						command: "/forms/memory/simple"
 					},
 					{
 						id: "phonebook",
@@ -57,13 +57,13 @@ export class Forms extends StaticMenu
 					,
 					{
 						id: "database",
-						display: "Database based forms",
+						display: "<b>Database based forms</b>",
 						entries:
 						[
 							{
-								id: "nocode",
+								id: "simple",
 								display: "1 Minimal",
-								command: "/forms/database/Nocode"
+								command: "/forms/database/simple"
 							}
 						]
 					}

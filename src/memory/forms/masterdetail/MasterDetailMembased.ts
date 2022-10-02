@@ -10,17 +10,26 @@
  * accompanied this code).
  */
 
-import content from './nocode.html';
+import content from './MasterDetailMembased.html';
 
-import { Form, datasource } from 'forms42core';
+import { BaseForm } from '../../../BaseForm';
+import { Key, datasource } from 'forms42core';
 import { Employees } from "../../../datasources/memory/Employees";
+import { Departments } from "../../../datasources/memory/Departments";
 
 @datasource("Employees",Employees)
+@datasource("Departments",Departments)
 
-export class Nocode extends Form
+export class MasterDetailMembased extends BaseForm
 {
 	constructor()
 	{
 		super(content);
+		this.title = "Master Detail";
+
+		let master:Key = new Key("pkey","Departments","department_id");
+		let detail:Key = new Key("fkey.dept","Employees","department_id");
+
+		this.link(master,detail);
 	}
 }

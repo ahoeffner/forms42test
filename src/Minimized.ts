@@ -1,4 +1,4 @@
-import { BaseForm as Form } from './memory/forms/BaseForm';
+import { BaseForm as Form } from './BaseForm';
 
 export class Minimized implements EventListenerObject
 {

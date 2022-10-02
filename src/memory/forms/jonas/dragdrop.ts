@@ -3,7 +3,7 @@
 
 
 
-import { BaseForm } from '../BaseForm';
+import { BaseForm } from '../../../BaseForm';
 import { DragDropOptions } from "./DragDropOptions";
 import { Employees } from "../../../datasources/memory/Employees";
 import { EventType, Filters, Filter, Block, block, datasource, formevent, Form } from 'forms42core';

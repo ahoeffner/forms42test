@@ -10,13 +10,13 @@
  * accompanied this code).
  */
 
-import { Nocode as Base } from "../../../memory/forms/nocode/Nocode";
+import { Connections, DatabaseTable } from "forms42core";
 
-export class Nocode extends Base
+export class Employees extends DatabaseTable
 {
 	constructor()
 	{
-		super();
-		console.log("database form");
+		super(Connections.get("database"),"employees");
+		this.primaryKey = "employee_id";
 	}
 }
