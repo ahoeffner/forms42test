@@ -23,5 +23,6 @@ export class Simple extends BaseForm
 	constructor()
 	{
 		super(content);
+		this.title = "Employees";
 	}
 }

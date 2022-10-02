@@ -12,15 +12,17 @@
 
 import content from './SimpleMembased.html';
 
-import { Form, datasource } from 'forms42core';
+import { datasource } from 'forms42core';
+import { BaseForm } from '../../../BaseForm';
 import { Employees } from "../../../datasources/memory/Employees";
 
 @datasource("Employees",Employees)
 
-export class SimpleMembased extends Form
+export class SimpleMembased extends BaseForm
 {
 	constructor()
 	{
 		super(content);
+		this.title = "Employees";
 	}
 }
