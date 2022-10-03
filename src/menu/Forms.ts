@@ -57,7 +57,7 @@ export class Forms extends StaticMenu
 					,
 					{
 						id: "database",
-						display: "<b>Database based forms</b>",
+						display: "Database based forms",
 						entries:
 						[
 							{
