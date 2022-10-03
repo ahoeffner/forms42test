@@ -417,8 +417,16 @@ div[name='day'] span:focus
 	font-weight: bold; 
 }
 
-div[name='day'] span[name^="day-"]:hover
+span[name^="day-"]:hover,
+span[name^="day-"]:focus
 {
 	font-weight: bold; 
+	user-select: none;
 }
 
+div[name="prev"]:active,
+div[name="next"]:active
+{
+	transform: scale(1.2);
+	user-select: none;
+}
