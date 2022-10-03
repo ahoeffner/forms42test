@@ -17,6 +17,9 @@ export class Employees extends DatabaseTable
 	constructor()
 	{
 		super(Connections.get("database"),"employees");
+
 		this.primaryKey = "employee_id";
+		this.sorting = "first_name, last_name";
+		this.deleteReturnColumns = "employee_id";
 	}
 }
