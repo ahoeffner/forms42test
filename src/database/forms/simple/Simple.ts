@@ -12,9 +12,9 @@
 
 import content from './Simple.html';
 
-import { datasource } from "forms42core";
 import { BaseForm } from "../../../BaseForm";
 import { Employees } from "../../../datasources/database/Employees";
+import { Block, DatabaseResponse, datasource, EventType, FormEvent } from "forms42core";
 
 @datasource("Employees",Employees)
 
@@ -24,5 +24,14 @@ export class Simple extends BaseForm
 	{
 		super(content);
 		this.title = "Employees";
+		this.addEventListener(this.test,{type: EventType.PostDelete})
+	}
+
+	public async test(event:FormEvent) : Promise<boolean>
+	{
+		let block:Block = this.getBlock(event.block);
+		let response:DatabaseResponse = block.getRecord().response;
+		console.log("delete returned: "+response.getValue("employee_id"));
+		return(true);
 	}
 }

@@ -8,7 +8,6 @@ refresh()
 querydetails()
 showDatepicker()
 Datapicker constraint
-freehand filter
 
 Database
 function
@@ -19,15 +18,12 @@ tabindex -> flyt ?
 
 **** Database ****
 
-handle lock
-freehand sql filter
-add insert/update/delete
-
 ******************
 
 
 *** Jonas ***
 
 finish datepicker
+enter-query looks like shit
 
 *************
