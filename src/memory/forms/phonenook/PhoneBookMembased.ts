@@ -14,7 +14,7 @@ import content from './PhoneBookMembased.html';
 
 import { BaseForm } from '../../../BaseForm';
 import { Employees } from "../../../datasources/memory/Employees";
-import { EventType, Filters, Filter, Block, block, datasource, formevent } from 'forms42core';
+import { EventType, Filters, Filter, Block, block, datasource, formevent, DatePicker } from 'forms42core';
 
 @datasource("Employees",Employees)
 
@@ -34,7 +34,7 @@ export class PhoneBookMembased extends BaseForm
 
 	public async openCalander()
 	{
-		console.log("openCalander");
+		console.log(DatePicker.page);
 	}
 
 	public async sort(column:string) : Promise<void>
