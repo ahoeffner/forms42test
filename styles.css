@@ -379,7 +379,8 @@ input[mode="query"]
 	padding-left: 15px;
 	display:inline-block;
     background-size: 10px;
-	background: url(images/icons8-search-30.png) no-repeat scroll 2px;
+	background-repeat: no-repeat;
+	background-image: url(images/icons8-search-30.png);
 }
 
 input[mode="insert"]
@@ -387,7 +388,8 @@ input[mode="insert"]
 	padding-left: 15px;
 	display:inline-block;
     background-size: 10px;
-	background: url(images/icons8-insert-30.png) no-repeat scroll 2px;
+	background-repeat: no-repeat;
+	background-image: url(images/icons8-insert-30.png);
 }
 
 .icon_calander
@@ -431,4 +433,14 @@ div[name="next"]:active
 {
 	transform: scale(1.2);
 	user-select: none;
+}
+
+div[name="canvas"]
+{
+	box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
+}
+
+div.blur
+{
+	filter:blur(2px);
 }
