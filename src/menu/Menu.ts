@@ -16,31 +16,27 @@ import { MenuComponent } from 'forms42core';
 export class Menu extends MenuComponent
 {
 	private displayed:boolean = false;
-	private static menuelem:HTMLElement = null;
-
-	private static setup() : HTMLElement
-	{
-		let container:HTMLElement = null;
-
-		Menu.menuelem = document.createElement("div");
-		Menu.menuelem.classList.value = "left-menu-container";
-
-		container = document.getElementById("main-menu");
-		Menu.menuelem = container.appendChild(Menu.menuelem);
-
-		return(Menu.menuelem);
-	}
+	private menuelem:HTMLElement = null;
 
 	constructor()
 	{
-		super(new Forms(),Menu.setup());
+		super(new Forms());
+		let container:HTMLElement = null;
+
+		this.menuelem = document.createElement("div");
+		this.menuelem.classList.value = "left-menu-container";
+
+		container = document.getElementById("main-menu");
+		this.menuelem = container.appendChild(this.menuelem);
+
+		this.target = this.menuelem;
 	}
 
 	public hide() : void
 	{
 		super.hide();
 		this.displayed = false;
-		Menu.menuelem.style.display = "none";
+		this.menuelem.style.display = "none";
 	}
 
 	public showmenu() : void
@@ -48,12 +44,12 @@ export class Menu extends MenuComponent
 		if (this.displayed)
 		{
 			super.hide();
-			Menu.menuelem.style.display = "none";
+			this.menuelem.style.display = "none";
 		}
 		else
 		{
 			super.show();
-			Menu.menuelem.style.display = "block";
+			this.menuelem.style.display = "block";
 		}
 
 		this.displayed = !this.displayed;
