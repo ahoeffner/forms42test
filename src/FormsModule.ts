@@ -20,6 +20,7 @@ import { Fields } from './fields/Fields';
 import { Jonas } from './memory/forms/jonas/jonas';
 import { Simple } from './database/forms/simple/Simple';
 import { SimpleMembased } from './memory/forms/simple/SimpleMembased';
+import { MasterDetail } from './database/forms/masterdetail/MasterDetail';
 import { PhoneBookMembased } from './memory/forms/phonenook/PhoneBookMembased';
 import { MasterDetailMembased } from './memory/forms/masterdetail/MasterDetailMembased';
 
@@ -34,12 +35,13 @@ import { FormsPathMapping, FormsModule as FormsCoreModule, KeyCodes, KeyMap, For
 	[
 		{class: Fields, path: "/forms/fields"},
 		{class: Jonas, path: "/forms/memory/jonas"},
-		
+
 		{class: SimpleMembased, path: "/forms/memory/simple"},
 		{class: PhoneBookMembased, path: "/forms/memory/phonebook"},
 		{class: MasterDetailMembased, path: "/forms/memory/masterdetail"},
 
 		{class: Simple, path: "/forms/database/simple"},
+		{class: MasterDetail, path: "/forms/database/masterdetail"},
 
 		{class: FormHeader, path: "/html/formheader"},
 		{class: PageHeader, path: "/html/pageheader"},
@@ -105,7 +107,7 @@ export class FormsModule extends FormsCoreModule
 			this.showform(PhoneBookMembased);
 
 		if (event.key == this.masterdetail)
-			this.showform(MasterDetailMembased);
+			this.showform(MasterDetail);
 
 		if (event.key == this.dbform)
 			this.showform(Simple);

@@ -12,14 +12,13 @@
 
 import { Connections, DatabaseTable } from "forms42core";
 
-export class Employees extends DatabaseTable
+export class Departments extends DatabaseTable
 {
 	constructor()
 	{
-		super(Connections.get("database"),"employees");
+		super(Connections.get("database"),"departments");
 
-		this.primaryKey = "employee_id";
-		this.addDMLColumns(["email","job_id"]);
-		this.sorting = "first_name, last_name";
+		this.sorting = "department_name";
+		this.primaryKey = "department_id";
 	}
 }

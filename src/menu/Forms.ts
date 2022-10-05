@@ -64,6 +64,11 @@ export class Forms extends StaticMenu
 								id: "simple",
 								display: "1 Minimal",
 								command: "/forms/database/simple"
+							},
+							{
+								id: "masterdetail",
+								display: "2 Master Detail",
+								command: "/forms/database/MasterDetail"
 							}
 						]
 					}

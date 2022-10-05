@@ -1,0 +1,47 @@
+<include src="/html/formheader"></include>
+
+<div style="padding:20px; ">
+	<div class="table" style="width:300px; margin-left: auto; margin-right: auto;">
+		<div class="row">
+			<div style="width:10px;"></div>
+			<div class="heading">
+				<label>Id</label>
+			</div>
+			<div class="heading">
+				<label>Department</label>
+			</div>
+			<div class="indicator"><span from="departments" row="$row" type="filter-indicator"></span></div>
+		</div>
+
+		<div class="row" foreach="row in 0..2">
+			<div class="indicator"><span from="departments" row="$row" type="row-indicator"></span></div>
+			<div class="cell">
+				<input size="5" name="department_id" from="departments" integer row="$row">
+			</div>
+			<div class="cell">
+				<input id="ln$row" size="15" name="department_name" from="departments" row="$row" initcap>
+			</div>
+		</div>
+	</div>
+	<div class="table" style="width:300px; margin-top:20px; margin-left: auto; margin-right: auto;">
+		<div class="row">
+			<div style="width:10px;"></div>
+			<div class="heading">
+				<label>Firstname</label>
+			</div>
+			<div class="heading">
+				<label>Lastname</label>
+			</div>
+			<div class="indicator"><span from="employees" row="$row" type="filter-indicator"></span></div>
+		</div>
+		<div class="row" foreach="row in 0..4">
+			<div class="indicator"><span from="employees" row="$row" type="row-indicator"></span></div>
+			<div class="cell">
+				<input size="10" name="first_name" from="employees" row="$row" initcap insert="false" query="true">
+			</div>
+			<div class="cell">
+				<input size="10" name="last_name" from="employees" row="$row" initcap insert="false" query="true">
+			</div>
+		</div>
+	</div>
+</div>
