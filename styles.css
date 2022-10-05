@@ -440,7 +440,7 @@ div[name="canvas"]
 	box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
 }
 
-div.blur
+div.modal
 {
 	filter:blur(2px);
 }
