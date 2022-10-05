@@ -19,7 +19,7 @@ export class Employees extends DatabaseTable
 		super(Connections.get("database"),"employees");
 
 		this.primaryKey = "employee_id";
+		this.addDMLColumns(["email","job_id"]);
 		this.sorting = "first_name, last_name";
-		this.deleteReturnColumns = "hire_date";
 	}
 }

@@ -13,8 +13,8 @@
 import content from './Simple.html';
 
 import { BaseForm } from "../../../BaseForm";
+import { datasource, EventType } from "forms42core";
 import { Employees } from "../../../datasources/database/Employees";
-import { Block, DatabaseResponse, datasource, EventType, FormEvent } from "forms42core";
 
 @datasource("Employees",Employees)
 
@@ -24,14 +24,14 @@ export class Simple extends BaseForm
 	{
 		super(content);
 		this.title = "Employees";
-		this.addEventListener(this.test,{type: EventType.PostDelete})
+		this.addEventListener(this.preInsert,{type: EventType.PreInsert})
 	}
 
-	public async test(event:FormEvent) : Promise<boolean>
+	private async preInsert() : Promise<boolean>
 	{
-		let block:Block = this.getBlock(event.block);
-		let response:DatabaseResponse = block.getRecord().response;
-		console.log("delete returned: "+response.getValue("hire_date"));
+		this.getBlock("employees").setValue("email","TBD");
+		this.getBlock("employees").setValue("job_id","IT_PROG");
+		this.getBlock("employees").setValue("employee_id",-1);
 		return(true);
 	}
 }
