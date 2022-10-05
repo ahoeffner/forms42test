@@ -442,5 +442,5 @@ div[name="canvas"]
 
 div.modal
 {
-	filter:blur(2px);
+	backdrop-filter: blur(2px);
 }
