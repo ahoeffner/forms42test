@@ -18,7 +18,7 @@ export class Departments extends DatabaseTable
 	{
 		super(Connections.get("database"),"departments");
 
-		this.sorting = "department_name";
+		this.sorting = "department_id";
 		this.primaryKey = "department_id";
 	}
 }
