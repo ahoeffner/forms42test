@@ -31,7 +31,7 @@ export class Simple extends BaseForm
 	{
 		let block:Block = this.getBlock(event.block);
 		let response:DatabaseResponse = block.getRecord().response;
-		console.log("delete returned: "+response.getValue("employee_id"));
+		console.log("delete returned: "+response.getValue("hire_date"));
 		return(true);
 	}
 }

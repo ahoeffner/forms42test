@@ -20,9 +20,6 @@ export class Employees extends DatabaseTable
 
 		this.primaryKey = "employee_id";
 		this.sorting = "first_name, last_name";
-		this.deleteReturnColumns = "employee_id";
-
-		this.setDataType("hire_date",DataType.date);
-		this.setDataType("employee_id",DataType.int);
+		this.deleteReturnColumns = "hire_date";
 	}
 }
