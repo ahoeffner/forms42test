@@ -27,4 +27,8 @@ tabindex -> flyt ?
 finish datepicker
 enter-query looks like shit
 
+kigge på krys
+se på focus med alert box
+og lave en login som ligner alert og datepicker
+
 *************
