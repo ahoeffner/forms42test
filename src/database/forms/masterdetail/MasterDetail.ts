@@ -17,6 +17,7 @@ import { Key, datasource } from 'forms42core';
 import { Employees } from "../../../datasources/database/Employees";
 import { Departments } from "../../../datasources/database/Departments";
 
+@datasource("InDept",Employees)
 @datasource("Employees",Employees)
 @datasource("Departments",Departments)
 
@@ -27,9 +28,13 @@ export class MasterDetail extends BaseForm
 		super(content);
 		this.title = "Master Detail";
 
-		let master:Key = new Key("pkey","Departments","department_id");
-		let detail:Key = new Key("fkey.dept","Employees","department_id");
+		let dept:Key = new Key("dept","Departments","department_id");
+		let empdept:Key = new Key("empdept","Employees","department_id");
 
-		this.link(master,detail);
+		let mgr:Key = new Key("mgr","Employees","employee_id");
+		let mgremp:Key = new Key("mgremp","Employees","manager_id");
+
+		this.link(dept,empdept);
+		this.link(mgr,mgremp);
 	}
 }

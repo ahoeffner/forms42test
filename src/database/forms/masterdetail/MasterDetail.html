@@ -23,6 +23,7 @@
 			</div>
 		</div>
 	</div>
+
 	<div class="table" style="width:300px; margin-top:20px; margin-left: auto; margin-right: auto;">
 		<div class="row">
 			<div style="width:10px;"></div>
@@ -34,6 +35,7 @@
 			</div>
 			<div class="indicator"><span from="employees" row="$row" type="filter-indicator"></span></div>
 		</div>
+
 		<div class="row" foreach="row in 0..4">
 			<div class="indicator"><span from="employees" row="$row" type="row-indicator"></span></div>
 			<div class="cell">
@@ -41,6 +43,18 @@
 			</div>
 			<div class="cell">
 				<input size="10" name="last_name" from="employees" row="$row" initcap insert="false" query="true">
+			</div>
+		</div>
+
+		<span style="display: block; height: 50px"></span>
+
+		<div class="row" foreach="row in 0..4">
+			<div class="indicator"><span from="indept" row="$row" type="row-indicator"></span></div>
+			<div class="cell">
+				<input size="10" name="first_name" from="indept" row="$row" initcap insert="false" query="true">
+			</div>
+			<div class="cell">
+				<input size="10" name="last_name" from="indept" row="$row" initcap insert="false" query="true">
 			</div>
 		</div>
 	</div>
