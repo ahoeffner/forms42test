@@ -36,6 +36,7 @@ enter-query looks like shit
 
 kigge på kryds
 se på focus med alert box
+Master Detail Detail, Overskrift
 og lave en login som ligner alert og datepicker
 
 *************
