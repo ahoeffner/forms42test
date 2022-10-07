@@ -28,13 +28,13 @@ export class MasterDetail extends BaseForm
 		super(content);
 		this.title = "Master Detail";
 
-		let DeptId:Key = new Key("DeptId","Departments","department_id");
-		let EmpByDept:Key = new Key("EmpByDept","Employees","department_id");
+		let master1:Key = new Key("DeptId","Departments","department_id");
+		let detail1:Key = new Key("EmpFkey1","Employees","department_id");
 
-		let Manager:Key = new Key("Manager","Employees","employee_id");
-		let EmpByMgr:Key = new Key("EmpByMgr","Indept","manager_id");
+		let master2:Key = new Key("EmpMgr","Employees","employee_id");
+		let detail2:Key = new Key("EmpFkey2","Indept","manager_id");
 
-		this.link(DeptId,EmpByDept);
-		this.link(Manager,EmpByMgr);
+		this.link(master1,detail1);
+		this.link(master2,detail2);
 	}
 }

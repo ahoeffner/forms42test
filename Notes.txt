@@ -13,6 +13,9 @@ Datapicker constraint
 Primary Key
 Check lock result
 Cyclic master detail
+toString() på alle filtre
+
+Window move !!!!
 
 Database
 function
@@ -31,7 +34,7 @@ tabindex -> flyt ?
 finish datepicker
 enter-query looks like shit
 
-kigge på krys
+kigge på kryds
 se på focus med alert box
 og lave en login som ligner alert og datepicker
 
