@@ -14,7 +14,7 @@ import { Connection, Connections, DatabaseProcedure, DataType, ParameterType } f
 
 export class StoredProcedures
 {
-	public static async getDateProc() : Promise<string>
+	public static async getDateProc() : Promise<Date>
 	{
 		let today:Date = new Date();
 		let conn:Connection = Connections.get("database");

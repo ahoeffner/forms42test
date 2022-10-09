@@ -41,7 +41,8 @@ export class MasterDetail extends BaseForm
 
 	public async test() : Promise<boolean>
 	{
-		await StoredProcedures.getDateProc();
+		let today:Date = await StoredProcedures.getDateProc();
+		console.log(today);
 		return(true);
 	}
 }
