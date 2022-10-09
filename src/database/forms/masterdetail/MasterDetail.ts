@@ -14,9 +14,9 @@ import content from './MasterDetail.html';
 
 import { BaseForm } from '../../../BaseForm';
 import { Key, datasource } from 'forms42core';
+import { StoredProcedures } from '../../StoredProcedures';
 import { Employees } from "../../../datasources/database/Employees";
 import { Departments } from "../../../datasources/database/Departments";
-import { StoredProcedures } from '../../StoredProcedures';
 
 @datasource("InDept",Employees)
 @datasource("Employees",Employees)
