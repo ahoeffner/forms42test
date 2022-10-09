@@ -377,18 +377,20 @@ input.detail:read-only
 input[mode="query"]
 {
 	padding-left: 15px;
-	display:inline-block;
     background-size: 10px;
+	transition: all 0.18s ease;
 	background-repeat: no-repeat;
+	background-position-y: center;
 	background-image: url(images/icons8-search-30.png);
 }
 
 input[mode="insert"]
 {
 	padding-left: 15px;
-	display:inline-block;
     background-size: 10px;
+	transition: all 0.18s ease;
 	background-repeat: no-repeat;
+	background-position-y: center;
 	background-image: url(images/icons8-insert-30.png);
 }
 
