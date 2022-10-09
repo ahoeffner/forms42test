@@ -16,6 +16,7 @@ import { BaseForm } from '../../../BaseForm';
 import { Key, datasource } from 'forms42core';
 import { Employees } from "../../../datasources/database/Employees";
 import { Departments } from "../../../datasources/database/Departments";
+import { StoredProcedures } from '../../StoredProcedures';
 
 @datasource("InDept",Employees)
 @datasource("Employees",Employees)
@@ -40,7 +41,7 @@ export class MasterDetail extends BaseForm
 
 	public async test() : Promise<boolean>
 	{
-		console.log("Hello");
+		await StoredProcedures.getDateProc();
 		return(true);
 	}
 }
