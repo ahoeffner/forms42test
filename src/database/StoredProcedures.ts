@@ -24,8 +24,6 @@ export class StoredProcedures
 		proc.addParameter("today",today,DataType.date,ParameterType.inout);
 
 		await proc.execute();
-		console.log(proc.getOutParameter("today"))
-
 		return(proc.getOutParameter("today"));
 	}
 }
