@@ -37,4 +37,10 @@ export class MasterDetail extends BaseForm
 		this.link(master1,detail1);
 		this.link(master2,detail2);
 	}
+
+	public async test() : Promise<boolean>
+	{
+		console.log("Hello");
+		return(true);
+	}
 }
