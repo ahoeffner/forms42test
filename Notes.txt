@@ -1,30 +1,21 @@
 LOV
 Login form
 FilterEditor
-return columns UTC
 
 Mouse right-click
 
-refresh()
-querydetails()
 showDatepicker()
 Datapicker constraint
 
-Primary Key
-Check lock result
 Cyclic master detail
-toString() på alle filtre
-
-Window move !!!!
-
-Database
-function
-Procedure
-Statement
 
 tabindex -> flyt ?
 
 **** Database ****
+
+function
+Procedure
+Statement
 
 ******************
 
