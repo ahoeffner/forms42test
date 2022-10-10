@@ -48,7 +48,8 @@ export class MasterDetail extends BaseForm
 		//console.log("from function "+today);
 
 		let depts:any[][] = await Database.getDepartments();
-		console.log("departments: "+depts);
+		console.log("departments: "+depts.length);
+		depts.forEach((dept) => console.log("dept: "+dept))
 
 		return(true);
 	}
