@@ -377,18 +377,20 @@ input.detail:read-only
 input[mode="query"]
 {
 	padding-left: 15px;
-	display:inline-block;
     background-size: 10px;
+	transition: all 0.18s ease;
 	background-repeat: no-repeat;
+	background-position-y: center;
 	background-image: url(images/icons8-search-30.png);
 }
 
 input[mode="insert"]
 {
 	padding-left: 15px;
-	display:inline-block;
     background-size: 10px;
+	transition: all 0.18s ease;
 	background-repeat: no-repeat;
+	background-position-y: center;
 	background-image: url(images/icons8-insert-30.png);
 }
 
@@ -442,5 +444,109 @@ div[name="canvas"]
 
 div.modal
 {
-	backdrop-filter: blur(2px);
+	backdrop-filter: blur(.5px);
+}
+
+.info
+{
+	width:20px;
+	display:inline-block;
+    background-size: 20px;
+	transition: all 0.18s ease;
+	background-repeat: no-repeat;
+	background-image: url('images/icons8-info-50.png');
+	
+}
+
+.info .info-dropdown
+{
+	top: 5px;
+    right: 0px;
+    opacity: 0;
+    z-index: -1;
+	width:165px;
+    font-size: 14px;
+    list-style: none;
+    padding: 10px 5px;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 5px 30px rgb(0 0 0 / 20%);
+}
+
+.info:hover .info-dropdown
+{
+	opacity: 1;
+}
+
+.info-dropdown li
+{
+	padding: 4px 8px;
+    margin-bottom: 2px;
+	border-bottom: solid 1px rgb(0,0,0,.2);
+}
+
+.info-dropdown li:last-child
+{
+	border-bottom: none;
+}
+
+.wrapper
+{
+	z-index: 999;
+    background-color: white;
+	box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.wrapper .menu
+{
+    padding:10px 12px;
+}
+
+.item
+{
+    height: 10px;
+    display:flex;
+    cursor:pointer;
+    font-size:12px;
+    list-style: none;
+    margin-bottom: 2px;
+    border-radius: 5px;
+    padding: 0 5px 0 10px;
+	border-bottom: 1px solid rgba(0, 0, 0, .30);
+}
+
+.content .item:hover
+{
+    background: #f2f2f2;
+}
+.content .item span
+{
+    font-size: 15px;
+    margin-left: 4px;
+}
+
+.content .share
+{
+    position: relative;
+    justify-content: space-between;
+}
+
+.share .share-menu
+{
+    top:-30px;
+    opacity: 0;
+    width:200px;
+    right:-200px;
+    padding:13px;
+    position: absolute;
+    pointer-events: none;
+    transition: 0.2 ease;
+    background-color: white;
+	box-shadow: 0 5px 10px rgba(0,0,0,0.08);
+}
+
+.share:hover .share-menu
+{
+    opacity: 1;
+    pointer-events: auto;
 }

@@ -47,10 +47,45 @@
 	</div>
 </div>
 
-<div>
-	<div class="week" foreach="week in 1..5">
-		<div class="day" foreach="day in 1..7">
-			<span tabindex="-1" name="$week$day" from="calendar"></span>
-		</div>
+<div class="wrapper" style="visibility: hidden; position: fixed;">
+	<div class="content">
+		<ul class="menu">
+			<li class="item">
+				<span>Preview</span>
+			</li>
+			<li class="item share">
+				<div>
+					<span>Share</span>
+				</div>
+				<ul class="share-menu">
+					<li class="item">
+						<span>Twitter</span>
+					</li>
+					<li class="item">
+						<span>Instagram</span>
+					</li>
+					<li class="item">
+						<span>Dribble</span>
+					</li>
+					<li class="item">
+						<span>Telegram</span>
+					</li>
+				</ul>
+			</li>
+			<li class="item">
+				<span>Get Link</span>
+			</li>
+			<li class="item">
+				<span>Rename</span>
+			</li>
+			<li class="item">
+				<span>Delete</span>
+			</li>
+			<li class="item">
+				<span>setting</span>
+			</li>
+		</ul>
 	</div>
 </div>
+
+
