@@ -14,6 +14,7 @@ import content from './MasterDetail.html';
 
 import { BaseForm } from '../../../BaseForm';
 import { Key, datasource } from 'forms42core';
+import { Database } from '../../Database';
 import { Employees } from "../../../datasources/database/Employees";
 import { Departments } from "../../../datasources/database/Departments";
 
@@ -40,7 +41,15 @@ export class MasterDetail extends BaseForm
 
 	public async test() : Promise<boolean>
 	{
-		console.log("Hello");
+		let today:Date = await Database.getDateProc();
+		console.log("from procedure "+today);
+
+		//today = await Database.getDate();
+		//console.log("from function "+today);
+
+		let depts:any[][] = await Database.getDepartments();
+		console.log("departments: "+depts);
+
 		return(true);
 	}
 }
