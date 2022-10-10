@@ -10,7 +10,7 @@
  * accompanied this code).
  */
 
-import { Connection, Connections, DatabaseProcedure, DataType, ParameterType } from "forms42core";
+import { Connection, Connections, StoredProcedure, DataType, ParameterType } from "forms42core";
 
 export class StoredProcedures
 {
@@ -18,7 +18,7 @@ export class StoredProcedures
 	{
 		let today:Date = new Date();
 		let conn:Connection = Connections.get("database");
-		let proc:DatabaseProcedure = new DatabaseProcedure(conn);
+		let proc:StoredProcedure = new StoredProcedure(conn);
 
 		proc.setName("getDateProc");
 		proc.addParameter("today",today,DataType.date,ParameterType.inout);

@@ -7,6 +7,9 @@ Mouse right-click
 showDatepicker()
 Datapicker constraint
 
+Record constructor
+source ever null ??
+
 Cyclic master detail
 
 tabindex -> flyt ?
