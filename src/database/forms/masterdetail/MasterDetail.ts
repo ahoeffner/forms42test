@@ -41,15 +41,16 @@ export class MasterDetail extends BaseForm
 
 	public async test() : Promise<boolean>
 	{
-		let today:Date = await Database.getDateProc();
+		let today:Date = null;
+
+		today = await Database.getDateProc();
 		console.log("from procedure "+today);
 
-		//today = await Database.getDate();
-		//console.log("from function "+today);
+		today = await Database.getDate();
+		console.log("from function "+today);
 
 		let depts:any[][] = await Database.getDepartments();
 		console.log("departments: "+depts.length);
-		depts.forEach((dept) => console.log("dept: "+dept))
 
 		return(true);
 	}
