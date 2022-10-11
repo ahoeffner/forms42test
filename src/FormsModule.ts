@@ -29,7 +29,9 @@ import { LanguageLabel } from './tags/LanguageLabels';
 import { LinkMapper } from './fields/LinkMapper';
 import { TrueFalseMapper } from './fields/TrueFalseMapper';
 
-import { FormsPathMapping, FormsModule as FormsCoreModule, KeyCodes, KeyMap, FormEvent, EventType, DatabaseConnection as Connection, FormProperties, Filters, Filter, BuiltIns } from 'forms42core';
+import { FormsPathMapping, FormsModule as FormsCoreModule, KeyCodes, KeyMap, FormEvent, EventType, DatabaseConnection as Connection, FormProperties, BuiltIns } from 'forms42core';
+import { ListOfValues } from 'forms42core/src/application/properties/ListOfValues';
+import { Employees } from './datasources/memory/Employees';
 
 @FormsPathMapping(
 	[
@@ -74,6 +76,9 @@ export class FormsModule extends FormsCoreModule
 		this.list = new Minimized();
 
 		FormProperties.TagLibrary.set("bklabel",LanguageLabel);
+		let props:ListOfValues = new ListOfValues();
+		props.datasource = Employees.get();
+		this.showLOV(props);
 
 		this.OpenURLForm();
 		this.updateKeyMap(keymap);

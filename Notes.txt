@@ -1,5 +1,3 @@
-LOV
-Login form
 FilterEditor
 
 Mouse right-click
@@ -7,30 +5,19 @@ Mouse right-click
 showDatepicker()
 Datapicker constraint
 
-Record constructor
-source ever null ??
+remove BKLabel
+remove LOV test
 
 Cyclic master detail
 
 tabindex -> flyt ?
 
-**** Database ****
-
-function
-Procedure
-Statement
-
-******************
-
 
 *** Jonas ***
 
 finish datepicker
-enter-query looks like shit
 
-kigge på kryds
 se på focus med alert box
 Master Detail Detail, Overskrift
-og lave en login som ligner alert og datepicker
 
 *************
