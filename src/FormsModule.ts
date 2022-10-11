@@ -81,6 +81,7 @@ export class FormsModule extends FormsCoreModule
 
 		props.rows = 6;
 		props.autoquery = true;
+		props.title = "Employees";
 		props.datasource = Employees.get();
 		props.displayfields = ["first_name","last_name"];
 
