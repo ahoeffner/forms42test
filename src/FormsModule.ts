@@ -29,7 +29,7 @@ import { LanguageLabel } from './tags/LanguageLabels';
 import { LinkMapper } from './fields/LinkMapper';
 import { TrueFalseMapper } from './fields/TrueFalseMapper';
 
-import { FormsPathMapping, FormsModule as FormsCoreModule, KeyCodes, KeyMap, FormEvent, EventType, DatabaseConnection as Connection, FormProperties, BuiltIns } from 'forms42core';
+import { FormsPathMapping, FormsModule as FormsCoreModule, KeyCodes, KeyMap, FormEvent, EventType, DatabaseConnection as Connection, FormProperties, BuiltIns, Filter, Filters } from 'forms42core';
 import { ListOfValues } from 'forms42core/src/application/properties/ListOfValues';
 import { Employees } from './datasources/memory/Employees';
 
@@ -78,11 +78,14 @@ export class FormsModule extends FormsCoreModule
 		FormProperties.TagLibrary.set("bklabel",LanguageLabel);
 
 		let props:ListOfValues = new ListOfValues();
+		let filter:Filter = Filters.Contains(["first_name","last_name"]);
 
 		props.rows = 6;
 		props.autoquery = true;
 		props.title = "Employees";
 		props.datasource = Employees.get();
+		props.datasource.addFilter(filter);
+		props.bindvalue = filter.getBindValues()[0];
 		props.displayfields = ["first_name","last_name"];
 
 		this.showLOV(props);
