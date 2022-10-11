@@ -76,8 +76,14 @@ export class FormsModule extends FormsCoreModule
 		this.list = new Minimized();
 
 		FormProperties.TagLibrary.set("bklabel",LanguageLabel);
+
 		let props:ListOfValues = new ListOfValues();
+
+		props.rows = 6;
+		props.autoquery = true;
 		props.datasource = Employees.get();
+		props.displayfields = ["first_name","last_name"];
+
 		this.showLOV(props);
 
 		this.OpenURLForm();
