@@ -29,7 +29,7 @@ import { LanguageLabel } from './tags/LanguageLabels';
 import { LinkMapper } from './fields/LinkMapper';
 import { TrueFalseMapper } from './fields/TrueFalseMapper';
 
-import { FormsPathMapping, FormsModule as FormsCoreModule, KeyCodes, KeyMap, FormEvent, EventType, DatabaseConnection as Connection, FormProperties, Filters, Filter } from 'forms42core';
+import { FormsPathMapping, FormsModule as FormsCoreModule, KeyCodes, KeyMap, FormEvent, EventType, DatabaseConnection as Connection, FormProperties, Filters, Filter, BuiltIns } from 'forms42core';
 
 @FormsPathMapping(
 	[
@@ -81,6 +81,8 @@ export class FormsModule extends FormsCoreModule
 		let conn:Connection = new Connection("database","http://localhost:9002");
 		conn.connect("hr","hr");
 
+		this.addEventListener(this.login,{type: EventType.Key, key: KeyMap.login});
+
 		this.addEventListener(this.open,
 		[
 			{type:EventType.Key,key:this.jonas},
@@ -92,7 +94,7 @@ export class FormsModule extends FormsCoreModule
 		]);
 	}
 
-	public async open(event:FormEvent) : Promise<boolean>
+	private async open(event:FormEvent) : Promise<boolean>
 	{
 		if (event.key == this.jonas)
 			this.showform(Jonas);
@@ -112,6 +114,12 @@ export class FormsModule extends FormsCoreModule
 		if (event.key == this.dbform)
 			this.showform(Simple);
 
+		return(true);
+	}
+
+	private async login() : Promise<boolean>
+	{
+		BuiltIns.callUsernamePasswordForm();
 		return(true);
 	}
 }
