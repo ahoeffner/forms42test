@@ -29,8 +29,7 @@ import { LanguageLabel } from './tags/LanguageLabels';
 import { LinkMapper } from './fields/LinkMapper';
 import { TrueFalseMapper } from './fields/TrueFalseMapper';
 
-import { FormsPathMapping, FormsModule as FormsCoreModule, KeyCodes, KeyMap, FormEvent, EventType, DatabaseConnection as Connection, FormProperties, BuiltIns, Filter, Filters } from 'forms42core';
-import { ListOfValues } from 'forms42core/src/application/properties/ListOfValues';
+import { FormsPathMapping, FormsModule as FormsCoreModule, KeyCodes, KeyMap, FormEvent, EventType, DatabaseConnection as Connection, FormProperties, BuiltIns, Filter, Filters, ListOfValues } from 'forms42core';
 import { Employees } from './datasources/memory/Employees';
 
 @FormsPathMapping(
