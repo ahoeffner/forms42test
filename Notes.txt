@@ -5,6 +5,9 @@ Mouse right-click
 showDatepicker()
 Datapicker constraint
 
+Close cursor
+Cursor with sql, bindv and rownum
+
 Warning ved setView med triggere
 
 remove BKLabel
