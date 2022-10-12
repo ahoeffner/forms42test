@@ -5,6 +5,8 @@ Mouse right-click
 showDatepicker()
 Datapicker constraint
 
+Warning ved setView med triggere
+
 remove BKLabel
 remove LOV test
 
