@@ -10,17 +10,24 @@
  * accompanied this code).
  */
 
-import { QueryFunction as Type, DataSource } from "forms42core";
+import { QueryFunction as Type, DataSource, Filter, Filters, BindValue } from "forms42core";
 
 export class QueryFunction implements Type
 {
+	private filter:Filter;
+	private bind:BindValue;
+
 	constructor(source:DataSource, fields:string|string[])
 	{
+		this.filter = Filters.Contains(fields);
 
+		source.addFilter(this.filter);
+		this.bind = this.filter.getBindValues()[0];
 	}
 
 	query(criteria: string): boolean
 	{
+		this.bind.value = criteria;
 		return(true);
 	}
 }
