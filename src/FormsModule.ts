@@ -29,8 +29,9 @@ import { LanguageLabel } from './tags/LanguageLabels';
 import { LinkMapper } from './fields/LinkMapper';
 import { TrueFalseMapper } from './fields/TrueFalseMapper';
 
-import { FormsPathMapping, FormsModule as FormsCoreModule, KeyCodes, KeyMap, FormEvent, EventType, DatabaseConnection as Connection, FormProperties, BuiltIns, Filter, Filters, ListOfValues } from 'forms42core';
+import { FormsPathMapping, FormsModule as FormsCoreModule, KeyCodes, KeyMap, FormEvent, EventType, DatabaseConnection as Connection, FormProperties, BuiltIns, Filter, Filters, ListOfValues, QueryFilter } from 'forms42core';
 import { Employees } from './datasources/memory/Employees';
+import { Contains } from './lov/Contains';
 
 @FormsPathMapping(
 	[
@@ -77,14 +78,13 @@ export class FormsModule extends FormsCoreModule
 		FormProperties.TagLibrary.set("bklabel",LanguageLabel);
 
 		let props:ListOfValues = new ListOfValues();
-		let filter:Filter = Filters.Contains(["first_name","last_name"]);
+		let qflt:Contains = new Contains(Employees.get(),["first_name","last_name"]);
 
 		props.rows = 6;
+		props.query = qflt;
 		props.autoquery = true;
 		props.title = "Employees";
-		props.datasource = Employees.get();
-		props.datasource.addFilter(filter);
-		props.bindvalue = filter.getBindValues()[0];
+		props.datasource = qflt.source();
 		props.displayfields = ["first_name","last_name"];
 
 		this.showLOV(props);
