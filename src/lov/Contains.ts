@@ -10,9 +10,17 @@
  * accompanied this code).
  */
 
-import { QueryFunction as Type } from "forms42core";
+import { QueryFunction as Type, DataSource } from "forms42core";
 
-export class QueryFunction
+export class QueryFunction implements Type
 {
+	constructor(source:DataSource, fields:string|string[])
+	{
 
+	}
+
+	query(criteria: string): boolean
+	{
+		return(true);
+	}
 }
