@@ -175,8 +175,7 @@ div.block p
 	display:inline-flex;
 }
 
-div.block p span,
-div[name="login"] p label
+div.block p span
 {
 	width:80px;
 	display:inline-block;
@@ -542,4 +541,10 @@ div.modal
 {
     opacity: 1;
     pointer-events: auto;
+}
+
+div[name="login"] p label
+{
+	width:62px;
+	display:inline-block;
 }
