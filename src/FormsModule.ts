@@ -29,9 +29,7 @@ import { LanguageLabel } from './tags/LanguageLabels';
 import { LinkMapper } from './fields/LinkMapper';
 import { TrueFalseMapper } from './fields/TrueFalseMapper';
 
-import { FormsPathMapping, FormsModule as FormsCoreModule, KeyCodes, KeyMap, FormEvent, EventType, DatabaseConnection as Connection, FormProperties, BuiltIns, Filter, Filters, ListOfValues, QueryFilter } from 'forms42core';
-import { Employees } from './datasources/memory/Employees';
-import { Contains } from './lov/Contains';
+import { FormsPathMapping, FormsModule as FormsCoreModule, KeyMap, FormEvent, EventType, DatabaseConnection as Connection, FormProperties, BuiltIns } from 'forms42core';
 
 @FormsPathMapping(
 	[
@@ -77,25 +75,13 @@ export class FormsModule extends FormsCoreModule
 
 		FormProperties.TagLibrary.set("bklabel",LanguageLabel);
 
-		let props:ListOfValues = new ListOfValues();
-		let qflt:Contains = new Contains(Employees.get(),["first_name","last_name"]);
-
-		props.rows = 6;
-		props.query = qflt;
-		props.autoquery = true;
-		props.title = "Employees";
-		props.datasource = qflt.source();
-		props.displayfields = ["first_name","last_name"];
-
-		this.showLOV(props);
-
 		this.OpenURLForm();
 		this.updateKeyMap(keymap);
 
 		let conn:Connection = new Connection("database","http://localhost:9002");
 		conn.connect("hr","hr");
 
-		this.addEventListener(this.login,{type: EventType.Key, key: KeyMap.login});
+		this.addEventListener(this.login,{type: EventType.Key, key: keymap.login});
 
 		this.addEventListener(this.open,
 		[
@@ -140,5 +126,5 @@ export class FormsModule extends FormsCoreModule
 
 export class keymap extends KeyMap
 {
-	public static test:KeyMap = new KeyMap({key: KeyCodes.Enter});
+	public static login:KeyMap = new KeyMap({key: 'C', ctrl: true});
 }

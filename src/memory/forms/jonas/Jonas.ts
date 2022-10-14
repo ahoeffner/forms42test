@@ -30,7 +30,7 @@ export class Jonas extends BaseForm
 		super(content);
 		this.title = "PhoneBook";
 		this.filter = Filters.Contains("first_name, last_name");
-		
+
 		this.addEventListener(this.rightClick,{type: EventType.Mouse,mouse: MouseMap.contextmenu });
 		this.addEventListener(this.leftClick,{type: EventType.Mouse,mouse: MouseMap.click })
 	}
@@ -50,7 +50,7 @@ export class Jonas extends BaseForm
 			column+" "+(this.sorting.asc ? "asc" : "desc");
 
 		this.sorting.column = column;
-		this.emp.executeQuery(true);
+		this.emp.reQuery();
 	}
 
 	private async leftClick(event:FormEvent)
@@ -62,16 +62,16 @@ export class Jonas extends BaseForm
 	{
 		let e:MouseEventInit = window.event
 
-		
+
 		let x:number = e.clientX;
 		let y:number = e.clientY;
 
-		
+
 		this.contextMenu = document.querySelector(".wrapper");
 		this.contextMenu.style.top = y + "px";
 		this.contextMenu.style.left = x + "px";
 		this.contextMenu.style.visibility = "visible";
-	
+
 		return(true);
 	}
 
@@ -120,7 +120,7 @@ export class Jonas extends BaseForm
 	public async search() : Promise<boolean>
 	{
 		this.filter.constraint = this.getValue("search","filter");
-		await this.emp.executeQuery(true);
+		await this.emp.reQuery();
 		return(true);
 	}
 

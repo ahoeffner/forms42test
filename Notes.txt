@@ -16,6 +16,7 @@ remove LOV test
 
 Cyclic master detail
 
+tab in last field nextrow ?
 tabindex -> flyt ?
 
 

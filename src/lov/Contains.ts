@@ -10,22 +10,18 @@
  * accompanied this code).
  */
 
-import { QueryFilter as Type, DataSource, Filter, Filters, BindValue } from "forms42core";
+import { QueryFilter as Type, DataSource, Filter, Filters } from "forms42core";
 
 export class Contains implements Type
 {
 	private filter$:Filter;
-	private bind$:BindValue;
 	private source$:DataSource;
 
 	constructor(source:DataSource, fields:string|string[])
 	{
 		this.source$ = source;
 		this.filter$ = Filters.Contains(fields);
-
-		this.filter$.constraint = "";
 		this.source$.addFilter(this.filter$);
-		this.bind$ = this.filter$.getBindValue();
 	}
 
 	public source() : DataSource
@@ -33,9 +29,9 @@ export class Contains implements Type
 		return(this.source$);
 	}
 
-	query(criteria: string): boolean
+	query(criteria:string): boolean
 	{
-		this.bind$.value = criteria;
+		this.filter$.constraint = criteria;
 		return(true);
 	}
 }

@@ -52,7 +52,7 @@ export class PhoneBookMembased extends BaseForm
 			column+" "+(this.sorting.asc ? "asc" : "desc");
 
 		this.sorting.column = column;
-		this.emp.executeQuery(true);
+		this.emp.reQuery();
 	}
 
 	@formevent({type: EventType.PostViewInit})
@@ -75,7 +75,7 @@ export class PhoneBookMembased extends BaseForm
 	public async search() : Promise<boolean>
 	{
 		this.filter.constraint = this.getValue("search","filter");
-		await this.emp.executeQuery(true);
+		await this.emp.reQuery();
 		return(true);
 	}
 }
