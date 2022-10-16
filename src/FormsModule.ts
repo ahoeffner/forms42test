@@ -29,7 +29,7 @@ import { LanguageLabel } from './tags/LanguageLabels';
 import { LinkMapper } from './fields/LinkMapper';
 import { TrueFalseMapper } from './fields/TrueFalseMapper';
 
-import { FormsPathMapping, FormsModule as FormsCoreModule, KeyMap, FormEvent, EventType, DatabaseConnection as Connection, FormProperties, BuiltIns, KeyCodes, Connections } from 'forms42core';
+import { FormsPathMapping, FormsModule as FormsCoreModule, KeyMap, FormEvent, EventType, DatabaseConnection as Connection, FormProperties, BuiltIns, KeyCodes } from 'forms42core';
 
 @FormsPathMapping(
 	[
@@ -84,7 +84,7 @@ export class FormsModule extends FormsCoreModule
 
 		this.addEventListener(this.login,{type: EventType.Key, key: keymap.login});
 		this.addEventListener(this.commit,{type: EventType.Key, key: keymap.commit});
-		this.addEventListener(this.commit,{type: EventType.Key, key: keymap.rollback});
+		this.addEventListener(this.rollback,{type: EventType.Key, key: keymap.rollback});
 
 		this.addEventListener(this.open,
 		[
@@ -128,13 +128,15 @@ export class FormsModule extends FormsCoreModule
 
 	private async commit() : Promise<boolean>
 	{
-		FormsModule.DATABASE.commit();
+		let succces:boolean = await FormsModule.DATABASE.commit();
+		this.message("Transactions comitted "+succces,"Demo Application");
 		return(true);
 	}
 
 	private async rollback() : Promise<boolean>
 	{
-		FormsModule.DATABASE.commit();
+		let succces:boolean = await FormsModule.DATABASE.rollback();
+		this.message("Transactions rolled back "+succces,"Demo Application");
 		return(true);
 	}
 }
