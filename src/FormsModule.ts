@@ -29,7 +29,7 @@ import { LanguageLabel } from './tags/LanguageLabels';
 import { LinkMapper } from './fields/LinkMapper';
 import { TrueFalseMapper } from './fields/TrueFalseMapper';
 
-import { FormsPathMapping, FormsModule as FormsCoreModule, KeyMap, FormEvent, EventType, DatabaseConnection as Connection, FormProperties, BuiltIns } from 'forms42core';
+import { FormsPathMapping, FormsModule as FormsCoreModule, KeyMap, FormEvent, EventType, DatabaseConnection as Connection, FormProperties, BuiltIns, KeyCodes } from 'forms42core';
 
 @FormsPathMapping(
 	[
@@ -126,5 +126,6 @@ export class FormsModule extends FormsCoreModule
 
 export class keymap extends KeyMap
 {
+	public static commit:KeyMap = new KeyMap({key: KeyCodes.f10});
 	public static login:KeyMap = new KeyMap({key: 'C', ctrl: true});
 }
