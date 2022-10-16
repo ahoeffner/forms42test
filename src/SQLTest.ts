@@ -17,5 +17,7 @@ export class SQLTest
 
 		await source.query(filters);
 		while ((await source.fetch()).length > 0);
+
+		console.log("Succeeded")
 	}
 }
