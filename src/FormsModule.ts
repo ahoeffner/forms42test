@@ -29,7 +29,7 @@ import { LanguageLabel } from './tags/LanguageLabels';
 import { LinkMapper } from './fields/LinkMapper';
 import { TrueFalseMapper } from './fields/TrueFalseMapper';
 
-import { FormsPathMapping, FormsModule as FormsCoreModule, KeyMap, FormEvent, EventType, DatabaseConnection as Connection, FormProperties, BuiltIns, KeyCodes } from 'forms42core';
+import { FormsPathMapping, FormsModule as FormsCoreModule, KeyMap, FormEvent, EventType, DatabaseConnection as Connection, FormProperties, BuiltIns, KeyCodes, Connections } from 'forms42core';
 
 @FormsPathMapping(
 	[
@@ -56,6 +56,7 @@ export class FormsModule extends FormsCoreModule
 	public menu:Menu = null;
 	public list:Minimized = null;
 
+	private conn$:Connection = null;
 	private jonas:KeyMap = new KeyMap({key: 'j', ctrl: true})
 	private dbform:KeyMap = new KeyMap({key: 'd', ctrl: true})
 	private nocode:KeyMap = new KeyMap({key: 'n', ctrl: true})
@@ -78,10 +79,11 @@ export class FormsModule extends FormsCoreModule
 		this.OpenURLForm();
 		this.updateKeyMap(keymap);
 
-		let conn:Connection = new Connection("database","http://localhost:9002");
-		conn.connect("hr","hr");
+		this.conn$ = new Connection("database","http://localhost:9002");
+		this.conn$.connect("hr","hr");
 
 		this.addEventListener(this.login,{type: EventType.Key, key: keymap.login});
+		this.addEventListener(this.commit,{type: EventType.Key, key: keymap.commit});
 
 		this.addEventListener(this.open,
 		[
@@ -120,6 +122,12 @@ export class FormsModule extends FormsCoreModule
 	private async login() : Promise<boolean>
 	{
 		BuiltIns.callUsernamePasswordForm();
+		return(true);
+	}
+
+	private async commit() : Promise<boolean>
+	{
+		this.conn$.commit();
 		return(true);
 	}
 }
