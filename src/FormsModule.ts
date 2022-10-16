@@ -55,8 +55,8 @@ export class FormsModule extends FormsCoreModule
 {
 	public menu:Menu = null;
 	public list:Minimized = null;
+	public static DATABASE:Connection = null;
 
-	private conn$:Connection = null;
 	private jonas:KeyMap = new KeyMap({key: 'j', ctrl: true})
 	private dbform:KeyMap = new KeyMap({key: 'd', ctrl: true})
 	private nocode:KeyMap = new KeyMap({key: 'n', ctrl: true})
@@ -79,11 +79,12 @@ export class FormsModule extends FormsCoreModule
 		this.OpenURLForm();
 		this.updateKeyMap(keymap);
 
-		this.conn$ = new Connection("database","http://localhost:9002");
-		this.conn$.connect("hr","hr");
+		FormsModule.DATABASE = new Connection("database","http://localhost:9002");
+		FormsModule.DATABASE.connect("hr","hr");
 
 		this.addEventListener(this.login,{type: EventType.Key, key: keymap.login});
 		this.addEventListener(this.commit,{type: EventType.Key, key: keymap.commit});
+		this.addEventListener(this.commit,{type: EventType.Key, key: keymap.rollback});
 
 		this.addEventListener(this.open,
 		[
@@ -127,7 +128,13 @@ export class FormsModule extends FormsCoreModule
 
 	private async commit() : Promise<boolean>
 	{
-		this.conn$.commit();
+		FormsModule.DATABASE.commit();
+		return(true);
+	}
+
+	private async rollback() : Promise<boolean>
+	{
+		FormsModule.DATABASE.commit();
 		return(true);
 	}
 }
@@ -136,4 +143,5 @@ export class keymap extends KeyMap
 {
 	public static commit:KeyMap = new KeyMap({key: KeyCodes.f10});
 	public static login:KeyMap = new KeyMap({key: 'C', ctrl: true});
+	public static rollback:KeyMap = new KeyMap({key: KeyCodes.f10, shift: true});
 }
