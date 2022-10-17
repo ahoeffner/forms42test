@@ -44,6 +44,12 @@ export class MenuData extends StaticMenu
 								display: "Countries",
 								command: "/forms/database/countries"
 							}
+							,
+							{
+								id: "locations",
+								display: "Locations",
+								command: "/forms/database/locations"
+							}
 						]
 					}
 					,

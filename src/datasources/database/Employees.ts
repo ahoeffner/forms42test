@@ -11,7 +11,7 @@
  */
 
 import { FormsModule } from "../../FormsModule";
-import { BindValue, DatabaseTable, SQLStatement } from "forms42core";
+import { BindValue, DatabaseTable, DataType, SQLStatement } from "forms42core";
 
 export class Employees extends DatabaseTable
 {
@@ -36,7 +36,7 @@ export class Employees extends DatabaseTable
 			where employee_id = :employee_id
 		`;
 
-		stmt.addBindValue(new BindValue("employee_id",employee_id,"smallint"));
+		stmt.addBindValue(new BindValue("employee_id",employee_id,DataType.smallint));
 
 		let success:boolean = await stmt.execute();
 		if (success) manager = await stmt.fetch()[0];

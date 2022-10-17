@@ -10,19 +10,19 @@
  * accompanied this code).
  */
 
-import content from './Countries.html';
+import content from './Locations.html';
 
 import { datasource } from "forms42core";
 import { BaseForm } from "../../../BaseForm";
-import { Countries as Countrydata } from "../../../datasources/database/Countries";
+import { Locations as Locationdata } from "../../../datasources/database/Locations";
 
-@datasource("Countries",Countrydata)
+@datasource("Locations",Locationdata)
 
-export class Countries extends BaseForm
+export class Locations extends BaseForm
 {
 	constructor()
 	{
 		super(content);
-		this.title = "Countries";
+		this.title = "Locations";
 	}
 }

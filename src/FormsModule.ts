@@ -31,6 +31,7 @@ import { TrueFalseMapper } from './fields/TrueFalseMapper';
 
 import { FormsPathMapping, FormsModule as FormsCoreModule, KeyMap, FormEvent, EventType, DatabaseConnection as Connection, FormProperties, BuiltIns, KeyCodes } from 'forms42core';
 import { Countries } from './forms/database/countries/Countries';
+import { Locations } from './forms/database/locations/Locations';
 
 @FormsPathMapping(
 	[
@@ -45,6 +46,7 @@ import { Countries } from './forms/database/countries/Countries';
 		{class: MasterDetail, path: "/forms/database/masterdetail"},
 
 		{class: Countries, path: "/forms/database/countries"},
+		{class: Locations, path: "/forms/database/locations"},
 
 		{class: FormHeader, path: "/html/formheader"},
 		{class: PageHeader, path: "/html/pageheader"},

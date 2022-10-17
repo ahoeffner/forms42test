@@ -1,12 +1,12 @@
 <include src="/html/formheader"></include>
 
-<table style="margin: 20px;">
-	<tr>
+<table style="margin-bottom: 20px;">
+	<tr style="height: 40px;">
 		<th>Code</th>
 		<th>Country</th>
 	</tr>
 	<tr class="row" foreach="row in 1..5">
-		<td><input name="country_id" from="countries" row="$row"></td>
+		<td><input name="country_id" from="countries" row="$row" size="2" upper></td>
 		<td><input name="country_name" from="countries" row="$row"></td>
 	</tr>
 </table>
