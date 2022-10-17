@@ -10,14 +10,16 @@
  * accompanied this code).
  */
 
-import { Connections, QueryTable } from "forms42core";
+import { DatabaseTable } from "forms42core";
+import { FormsModule } from "../../FormsModule";
 
-export class EmpQuery extends QueryTable
+export class Countries extends DatabaseTable
 {
 	constructor()
 	{
-		super(Connections.get("database"));
-		this.sorting = "first_name, last_name";
-		this.sql = "select * from employees where employee_id > 100";
+		super(FormsModule.DATABASE,"countries");
+
+		this.sorting = "country_id";
+		this.primaryKey = "country_id";
 	}
 }

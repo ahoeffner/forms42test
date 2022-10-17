@@ -10,16 +10,19 @@
  * accompanied this code).
  */
 
-import { DatabaseTable } from "forms42core";
-import { FormsModule } from "../../FormsModule";
+import content from './Countries.html';
 
-export class Departments extends DatabaseTable
+import { datasource } from "forms42core";
+import { BaseForm } from "../../../BaseForm";
+import { Countries as Countrydata } from "../../../datasources/database/Countries";
+
+@datasource("Countries",Countrydata)
+
+export class Countries extends BaseForm
 {
 	constructor()
 	{
-		super(FormsModule.DATABASE,"departments");
-
-		this.sorting = "department_id";
-		this.primaryKey = "department_id";
+		super(content);
+		this.title = "Countries";
 	}
 }

@@ -10,16 +10,37 @@
  * accompanied this code).
  */
 
-import { Connections, DatabaseTable } from "forms42core";
+import { FormsModule } from "../../FormsModule";
+import { BindValue, DatabaseTable, SQLStatement } from "forms42core";
 
 export class Employees extends DatabaseTable
 {
 	constructor()
 	{
-		super(Connections.get("database"),"employees");
+		super(FormsModule.DATABASE,"employees");
 
 		this.primaryKey = "employee_id";
 		this.addDMLColumns(["email","job_id"]);
 		this.sorting = "first_name, last_name";
+	}
+
+	public static async getName(employee_id:number) : Promise<string>
+	{
+		let manager:string = null;
+		let stmt:SQLStatement = new SQLStatement(FormsModule.DATABASE);
+
+		stmt.sql =
+		`
+			select first_name||' '||last_name
+			from employees
+			where employee_id = :employee_id
+		`;
+
+		stmt.addBindValue(new BindValue("employee_id",employee_id,"smallint"));
+
+		let success:boolean = await stmt.execute();
+		if (success) manager = await stmt.fetch()[0];
+
+		return(manager);
 	}
 }

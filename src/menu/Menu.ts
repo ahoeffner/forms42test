@@ -10,7 +10,7 @@
  * accompanied this code).
  */
 
-import { Forms } from './Forms';
+import { MenuData } from './MenuData';
 import { MenuComponent } from 'forms42core';
 
 export class Menu extends MenuComponent
@@ -20,7 +20,7 @@ export class Menu extends MenuComponent
 
 	constructor()
 	{
-		super(new Forms());
+		super(new MenuData());
 		let container:HTMLElement = null;
 
 		this.menuelem = document.createElement("div");

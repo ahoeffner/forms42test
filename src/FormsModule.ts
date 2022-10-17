@@ -12,9 +12,9 @@
 
 import { Menu } from './menu/Menu';
 import { Minimized } from './Minimized';
-import { FormHeader } from './html/FormHeader';
-import { PageHeader } from './html/PageHeader';
-import { PageFooter } from './html/PageFooter';
+import { FormHeader } from './fragments/FormHeader';
+import { PageHeader } from './fragments/PageHeader';
+import { PageFooter } from './fragments/PageFooter';
 
 import { Fields } from './fields/Fields';
 import { Jonas } from './memory/forms/jonas/jonas';
@@ -30,6 +30,7 @@ import { LinkMapper } from './fields/LinkMapper';
 import { TrueFalseMapper } from './fields/TrueFalseMapper';
 
 import { FormsPathMapping, FormsModule as FormsCoreModule, KeyMap, FormEvent, EventType, DatabaseConnection as Connection, FormProperties, BuiltIns, KeyCodes } from 'forms42core';
+import { Countries } from './forms/database/countries/Countries';
 
 @FormsPathMapping(
 	[
@@ -42,6 +43,8 @@ import { FormsPathMapping, FormsModule as FormsCoreModule, KeyMap, FormEvent, Ev
 
 		{class: Simple, path: "/forms/database/simple"},
 		{class: MasterDetail, path: "/forms/database/masterdetail"},
+
+		{class: Countries, path: "/forms/database/countries"},
 
 		{class: FormHeader, path: "/html/formheader"},
 		{class: PageHeader, path: "/html/pageheader"},
