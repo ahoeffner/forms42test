@@ -13,8 +13,8 @@
 import content from './Locations.html';
 
 import { BaseForm } from "../../../BaseForm";
-import { datasource, EventType, FormEvent } from "forms42core";
 import { Countries } from '../../../datasources/database/Countries';
+import { datasource, EventType, FormEvent, ListOfValues } from "forms42core";
 import { Locations as Locationdata } from "../../../datasources/database/Locations";
 
 @datasource("Locations",Locationdata)
@@ -25,6 +25,17 @@ export class Locations extends BaseForm
 	{
 		super(content);
 		this.title = "Locations";
+
+		let lov:ListOfValues =
+		{
+			datasource: new Countries(),
+			filter: null,
+			displayfields: "country_name",
+			sourcefields: ["country_id","country_name"],
+			targetfields: ["country_id","country_name"],
+		}
+
+		this.setListOfValues("Locations","country_id",lov);
 
 		this.addEventListener(this.getCountryName,{type: EventType.OnFetch})
 		this.addEventListener(this.getCountryName,{type: EventType.WhenValidateField, field: "country_id"})
