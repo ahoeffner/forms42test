@@ -41,6 +41,7 @@ export class Employees extends DatabaseTable
 		let success:boolean = await stmt.execute();
 		if (success) row = await stmt.fetch();
 
-		return(row[0]);
+		if (row)	return(row[0]);
+		return(null);
 	}
 }

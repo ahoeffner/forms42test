@@ -13,7 +13,7 @@
 import content from './Locations.html';
 
 import { BaseForm } from "../../../BaseForm";
-import { datasource, EventType } from "forms42core";
+import { datasource, EventType, FormEvent } from "forms42core";
 import { Countries } from '../../../datasources/database/Countries';
 import { Locations as Locationdata } from "../../../datasources/database/Locations";
 
@@ -30,11 +30,21 @@ export class Locations extends BaseForm
 		this.addEventListener(this.getCountryName,{type: EventType.WhenValidateField, field: "country_id"})
 	}
 
-	public async getCountryName() : Promise<boolean>
+	public async getCountryName(event:FormEvent) : Promise<boolean>
 	{
 		let code:string = this.getValue("Locations","country_id");
 		let country:string = await Countries.getName(code);
 		this.setValue("Locations","country_name",country);
+
+		if (event.type == EventType.WhenValidateField)
+		{
+			if (country == null)
+			{
+				this.warning("Invalid country code","Validation");
+				return(false);
+			}
+		}
+
 		return(true);
 	}
 }

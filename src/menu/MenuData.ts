@@ -35,22 +35,15 @@ export class MenuData extends StaticMenu
 				entries:
 				[
 					{
-						id: "new",
-						display: "New",
-						entries:
-						[
-							{
-								id: "countries",
-								display: "Countries",
-								command: "/forms/database/countries"
-							}
-							,
-							{
-								id: "locations",
-								display: "Locations",
-								command: "/forms/database/locations"
-							}
-						]
+						id: "countries",
+						display: "Countries",
+						command: "/forms/database/countries"
+					}
+					,
+					{
+						id: "locations",
+						display: "Locations",
+						command: "/forms/database/locations"
 					}
 					,
 					{

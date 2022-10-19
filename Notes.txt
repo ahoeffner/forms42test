@@ -7,12 +7,12 @@ Datapicker constraint
 
 Close cursor
 Cursor with sql, bindv and rownum
+check if connected in describe
 SQL injection
 
 Warning ved setView med triggere
 
-remove BKLabel
-remove LOV test
+LanguageLabel
 
 Cyclic master detail
 
@@ -23,6 +23,7 @@ tabindex -> flyt ?
 *** Jonas ***
 
 finish datepicker
+Alert -> go back when closed
 
 se på focus med alert box
 Master Detail Detail, Overskrift
