@@ -27,6 +27,7 @@ export class Locations extends BaseForm
 		this.title = "Locations";
 
 		this.addEventListener(this.getCountryName,{type: EventType.OnFetch})
+		this.addEventListener(this.getCountryName,{type: EventType.WhenValidateField, field: "country_id"})
 	}
 
 	public async getCountryName() : Promise<boolean>
