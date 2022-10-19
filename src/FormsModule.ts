@@ -88,8 +88,6 @@ export class FormsModule extends FormsCoreModule
 		FormsModule.DATABASE.connect("hr","hr");
 
 		this.addEventListener(this.login,{type: EventType.Key, key: keymap.login});
-		this.addEventListener(this.commit,{type: EventType.Key, key: keymap.commit});
-		this.addEventListener(this.rollback,{type: EventType.Key, key: keymap.rollback});
 
 		this.addEventListener(this.open,
 		[
@@ -130,25 +128,9 @@ export class FormsModule extends FormsCoreModule
 		BuiltIns.callUsernamePasswordForm();
 		return(true);
 	}
-
-	private async commit() : Promise<boolean>
-	{
-		let succces:boolean = await FormsModule.DATABASE.commit();
-		this.message("Transactions comitted "+succces,"Demo Application");
-		return(true);
-	}
-
-	private async rollback() : Promise<boolean>
-	{
-		let succces:boolean = await FormsModule.DATABASE.rollback();
-		this.message("Transactions rolled back "+succces,"Demo Application");
-		return(true);
-	}
 }
 
 export class keymap extends KeyMap
 {
-	public static commit:KeyMap = new KeyMap({key: KeyCodes.f10});
 	public static login:KeyMap = new KeyMap({key: 'C', ctrl: true});
-	public static rollback:KeyMap = new KeyMap({key: KeyCodes.f10, shift: true});
 }

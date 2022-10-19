@@ -26,7 +26,7 @@ export class Employees extends DatabaseTable
 
 	public static async getName(employee_id:number) : Promise<string>
 	{
-		let manager:string = null;
+		let row:any[] = null;
 		let stmt:SQLStatement = new SQLStatement(FormsModule.DATABASE);
 
 		stmt.sql =
@@ -39,8 +39,8 @@ export class Employees extends DatabaseTable
 		stmt.addBindValue(new BindValue("employee_id",employee_id,DataType.smallint));
 
 		let success:boolean = await stmt.execute();
-		if (success) manager = await stmt.fetch()[0];
+		if (success) row = await stmt.fetch();
 
-		return(manager);
+		return(row[0]);
 	}
 }

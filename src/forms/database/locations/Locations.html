@@ -2,7 +2,6 @@
 
 <table style="margin-bottom: 20px;">
 	<tr style="height: 40px;">
-		<th>Code</th>
 		<th>Street</th>
 		<th>Zip</th>
 		<th>City</th>
@@ -10,11 +9,10 @@
 		<th></th>
 	</tr>
 	<tr class="row" foreach="row in 1..5">
-		<td><input name="loc_id" from="locations" row="$row" integer></td>
-		<td><input name="street_address" from="locations" row="$row"></td>
-		<td><input name="postal_code" from="locations" row="$row"></td>
-		<td><input name="city" from="locations" row="$row"></td>
-		<td><input name="country_id " from="locations" row="$row" upper></td>
-		<td><input name="country_name " from="locations" row="$row" derived></td>
+		<td><input name="street_address" from="locations" row="$row" size="20"></td>
+		<td><input name="postal_code" from="locations" row="$row" size="3"></td>
+		<td><input name="city" from="locations" row="$row" size="10"></td>
+		<td><input name="country_id" from="locations" row="$row" size="3" upper></td>
+		<td><input name="country_name" from="locations" row="$row" size="10" derived></td>
 	</tr>
 </table>

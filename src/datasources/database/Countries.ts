@@ -10,7 +10,7 @@
  * accompanied this code).
  */
 
-import { DatabaseTable } from "forms42core";
+import { BindValue, DatabaseTable, DataType, SQLStatement } from "forms42core";
 import { FormsModule } from "../../FormsModule";
 
 export class Countries extends DatabaseTable
@@ -22,5 +22,25 @@ export class Countries extends DatabaseTable
 		this.rowlocking = true;
 		this.sorting = "country_id";
 		this.primaryKey = "country_id";
+	}
+
+	public static async getName(code:string) : Promise<string>
+	{
+		let row:any[] = null;
+		let stmt:SQLStatement = new SQLStatement(FormsModule.DATABASE);
+
+		stmt.sql =
+		`
+			select country_name
+			from countries
+			where country_id = :code
+		`;
+
+		stmt.addBindValue(new BindValue("code",code,DataType.string));
+
+		let success:boolean = await stmt.execute();
+		if (success) row = await stmt.fetch();
+
+		return(row[0]);
 	}
 }

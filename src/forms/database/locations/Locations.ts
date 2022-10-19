@@ -12,8 +12,9 @@
 
 import content from './Locations.html';
 
-import { datasource } from "forms42core";
 import { BaseForm } from "../../../BaseForm";
+import { datasource, EventType } from "forms42core";
+import { Countries } from '../../../datasources/database/Countries';
 import { Locations as Locationdata } from "../../../datasources/database/Locations";
 
 @datasource("Locations",Locationdata)
@@ -24,5 +25,15 @@ export class Locations extends BaseForm
 	{
 		super(content);
 		this.title = "Locations";
+
+		this.addEventListener(this.getCountryName,{type: EventType.OnFetch})
+	}
+
+	public async getCountryName() : Promise<boolean>
+	{
+		let code:string = this.getValue("Locations","country_id");
+		let country:string = await Countries.getName(code);
+		this.setValue("Locations","country_name",country);
+		return(true);
 	}
 }
