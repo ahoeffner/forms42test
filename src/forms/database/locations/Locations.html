@@ -5,16 +5,13 @@
 		<th>Street</th>
 		<th>Zip</th>
 		<th>City</th>
-		<th>Country</th>
-		<th></th>
+		<th colspan="2">Country</th>
 	</tr>
 	<tr class="row" foreach="row in 1..5">
 		<td><input name="street_address" from="locations" row="$row" size="25"></td>
 		<td><input name="postal_code" from="locations" row="$row" size="5"></td>
 		<td><input name="city" from="locations" row="$row" size="10"></td>
-		<!--
 		<td><input name="country_id" from="locations" row="$row" size="3" upper></td>
-		-->
 		<td><input name="country_name" from="locations" row="$row" size="10" initcap derived readonly></td>
 	</tr>
 </table>

@@ -25,3 +25,10 @@ se på focus med alert box
 Master Detail Detail, Overskrift
 
 *************
+
+Demo:
+
+Countries: Row lock and QueryEditor
+Locations: ListOfValues
+Employess: Sorting, Dates, Row-warning for salary, query derived Field
+DeptEmp: Master Detail
