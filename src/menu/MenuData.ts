@@ -52,23 +52,14 @@ export class MenuData extends StaticMenu
 						entries:
 						[
 							{
-								id: "nocode",
-								display: "1 Minimal",
-								command: "/forms/memory/simple"
-							},
-							{
 								id: "phonebook",
-								display: "2 Phone Book",
+								display: "1 Phone Book",
 								command: "/forms/memory/PhoneBook"
-							},
-							{
-								id: "masterdetail",
-								display: "3 Master Detail",
-								command: "/forms/memory/MasterDetail"
-							},
+							}
+							,
 							{
 								id: "fields",
-								display: "4 Fields with extensions",
+								display: "2 Fields with extensions",
 								command: "/forms/Fields"
 							}
 							,

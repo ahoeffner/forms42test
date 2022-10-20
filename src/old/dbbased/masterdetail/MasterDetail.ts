@@ -14,7 +14,7 @@ import content from './MasterDetail.html';
 
 import { BaseForm } from '../../../BaseForm';
 import { Key, datasource } from 'forms42core';
-import { Database } from '../../Database';
+import { Database } from '../../../database/Database';
 import { Employees } from "../../../datasources/database/Employees";
 import { Departments } from "../../../datasources/database/Departments";
 

@@ -17,12 +17,13 @@ import { PageHeader } from './fragments/PageHeader';
 import { PageFooter } from './fragments/PageFooter';
 
 import { Fields } from './fields/Fields';
-import { Jonas } from './memory/forms/jonas/jonas';
-import { Simple } from './database/forms/simple/Simple';
-import { SimpleMembased } from './memory/forms/simple/SimpleMembased';
-import { MasterDetail } from './database/forms/masterdetail/MasterDetail';
-import { PhoneBookMembased } from './memory/forms/phonenook/PhoneBookMembased';
-import { MasterDetailMembased } from './memory/forms/masterdetail/MasterDetailMembased';
+
+import { Simple } from './old/dbbased/simple/Simple';
+import { MasterDetail } from './old/dbbased/masterdetail/MasterDetail';
+import { PhoneBookMembased } from './old/filebased/phonenook/PhoneBookMembased';
+
+import { Countries } from './forms/database/countries/Countries';
+import { Locations } from './forms/database/locations/Locations';
 
 import { LanguageLabel } from './tags/LanguageLabels';
 
@@ -30,17 +31,12 @@ import { LinkMapper } from './fields/LinkMapper';
 import { TrueFalseMapper } from './fields/TrueFalseMapper';
 
 import { FormsPathMapping, FormsModule as FormsCoreModule, KeyMap, FormEvent, EventType, DatabaseConnection as Connection, FormProperties, BuiltIns, KeyCodes } from 'forms42core';
-import { Countries } from './forms/database/countries/Countries';
-import { Locations } from './forms/database/locations/Locations';
 
 @FormsPathMapping(
 	[
 		{class: Fields, path: "/forms/fields"},
-		{class: Jonas, path: "/forms/memory/jonas"},
 
-		{class: SimpleMembased, path: "/forms/memory/simple"},
 		{class: PhoneBookMembased, path: "/forms/memory/phonebook"},
-		{class: MasterDetailMembased, path: "/forms/memory/masterdetail"},
 
 		{class: Simple, path: "/forms/database/simple"},
 		{class: MasterDetail, path: "/forms/database/masterdetail"},
@@ -62,9 +58,6 @@ export class FormsModule extends FormsCoreModule
 	public list:Minimized = null;
 	public static DATABASE:Connection = null;
 
-	private jonas:KeyMap = new KeyMap({key: 'j', ctrl: true})
-	private dbform:KeyMap = new KeyMap({key: 'd', ctrl: true})
-	private nocode:KeyMap = new KeyMap({key: 'n', ctrl: true})
 	private fields:KeyMap = new KeyMap({key: 'f', ctrl: true})
 	private phonebook:KeyMap = new KeyMap({key: 'p', ctrl: true})
 	private masterdetail:KeyMap = new KeyMap({key: 'm', ctrl: true})
@@ -79,7 +72,7 @@ export class FormsModule extends FormsCoreModule
 		this.menu = new Menu();
 		this.list = new Minimized();
 
-		FormProperties.TagLibrary.set("bklabel",LanguageLabel);
+		FormProperties.TagLibrary.set("labels",LanguageLabel);
 
 		this.OpenURLForm();
 		this.updateKeyMap(keymap);
@@ -91,10 +84,7 @@ export class FormsModule extends FormsCoreModule
 
 		this.addEventListener(this.open,
 		[
-			{type:EventType.Key,key:this.jonas},
 			{type:EventType.Key,key:this.fields},
-			{type:EventType.Key,key:this.nocode},
-			{type:EventType.Key,key:this.dbform},
 			{type:EventType.Key,key:this.phonebook},
 			{type:EventType.Key,key:this.masterdetail}
 		]);
@@ -102,12 +92,6 @@ export class FormsModule extends FormsCoreModule
 
 	private async open(event:FormEvent) : Promise<boolean>
 	{
-		if (event.key == this.jonas)
-			this.showform(Jonas);
-
-		if (event.key == this.nocode)
-			this.showform(SimpleMembased);
-
 		if (event.key == this.fields)
 			this.showform(Fields);
 
@@ -116,9 +100,6 @@ export class FormsModule extends FormsCoreModule
 
 		if (event.key == this.masterdetail)
 			this.showform(MasterDetail);
-
-		if (event.key == this.dbform)
-			this.showform(Simple);
 
 		return(true);
 	}
