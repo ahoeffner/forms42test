@@ -26,16 +26,16 @@ export class Countries extends DatabaseTable
 
 	public static getCountryLov() : ListOfValues
 	{
+		let source:Countries = null;
+		let bindvalues:BindValue[] = [];
+		let filter:FilterStructure = null;
+
 		let idflt:Filter = Filters.ILike("country_id");
 		let nameflt:Filter = Filters.ILike("country_name");
 
-		let filter:FilterStructure = new FilterStructure();
-		filter.and(idflt).or(nameflt);
+		filter = new FilterStructure().and(idflt).or(nameflt);
+		source = new Countries().addFilter(filter);
 
-		let source:Countries = new Countries();
-		source.addFilter(filter);
-
-		let bindvalues:BindValue[] = [];
 		bindvalues.push(idflt.getBindValue());
 		bindvalues.push(nameflt.getBindValue());
 
