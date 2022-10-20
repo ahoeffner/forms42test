@@ -11,7 +11,7 @@
  */
 
 import { FormsModule } from "../../FormsModule";
-import { BindValue, Case, DatabaseTable, DataType, Filters, ListOfValues, SQLStatement } from "forms42core";
+import { BindValue, Case, DatabaseTable, DataType, Filter, Filters, FilterStructure, ListOfValues, SQLStatement } from "forms42core";
 
 export class Countries extends DatabaseTable
 {
@@ -26,16 +26,29 @@ export class Countries extends DatabaseTable
 
 	public static getCountryLov() : ListOfValues
 	{
+		let idflt:Filter = Filters.ILike("country_id");
+		let nameflt:Filter = Filters.ILike("country_name");
+
+		let filter:FilterStructure = new FilterStructure();
+		filter.and(idflt).or(nameflt);
+
+		let source:Countries = new Countries();
+		source.addFilter(filter);
+
+		let bindvalues:BindValue[] = [];
+		bindvalues.push(idflt.getBindValue());
+		bindvalues.push(nameflt.getBindValue());
+
 		let lov:ListOfValues =
 		{
 			filterPostfix: "%",
-			filterCase: Case.initcap,
-			datasource: new Countries(),
+			datasource: source,
+			bindvalue: bindvalues,
 			displayfields: "country_name",
-			filter: Filters.Like("country_name"),
 			sourcefields: ["country_id","country_name"],
 			targetfields: ["country_id","country_name"],
 		}
+
 		return(lov);
 	}
 

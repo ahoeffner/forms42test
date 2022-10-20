@@ -21,5 +21,6 @@ export class Locations extends DatabaseTable
 
 		this.sorting = "loc_id";
 		this.primaryKey = "loc_id";
+		this.addColumns("country_id");
 	}
 }
