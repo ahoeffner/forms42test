@@ -14,8 +14,8 @@ import content from './Locations.html';
 
 import { BaseForm } from "../../../BaseForm";
 import { Countries } from '../../../datasources/database/Countries';
+import { datasource, EventType, FormEvent, ListOfValues } from "forms42core";
 import { Locations as Locationdata } from "../../../datasources/database/Locations";
-import { datasource, EventType, Filters, FormEvent, ListOfValues, Case } from "forms42core";
 
 @datasource("Locations",Locationdata)
 
@@ -26,24 +26,14 @@ export class Locations extends BaseForm
 		super(content);
 		this.title = "Locations";
 
-		let lov:ListOfValues =
-		{
-			filterPostfix: "%",
-			filterCase: Case.initcap,
-			datasource: new Countries(),
-			displayfields: "country_name",
-			filter: Filters.Like("country_name"),
-			sourcefields: ["country_id","country_name"],
-			targetfields: ["country_id","country_name"],
-		}
-
+		let lov:ListOfValues = Countries.getCountryLov();
 		this.setListOfValues("Locations","country_id",lov);
 
-		this.addEventListener(this.getCountryName,{type: EventType.OnFetch})
-		this.addEventListener(this.getCountryName,{type: EventType.WhenValidateField, field: "country_id"})
+		this.addEventListener(this.setCountryName,{type: EventType.OnFetch})
+		this.addEventListener(this.setCountryName,{type: EventType.WhenValidateField, field: "country_id"})
 	}
 
-	public async getCountryName(event:FormEvent) : Promise<boolean>
+	public async setCountryName(event:FormEvent) : Promise<boolean>
 	{
 		let code:string = this.getValue("Locations","country_id");
 		let country:string = await Countries.getName(code);

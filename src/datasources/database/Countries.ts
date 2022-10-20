@@ -10,8 +10,8 @@
  * accompanied this code).
  */
 
-import { BindValue, DatabaseTable, DataType, SQLStatement } from "forms42core";
 import { FormsModule } from "../../FormsModule";
+import { BindValue, Case, DatabaseTable, DataType, Filters, ListOfValues, SQLStatement } from "forms42core";
 
 export class Countries extends DatabaseTable
 {
@@ -22,6 +22,21 @@ export class Countries extends DatabaseTable
 		this.rowlocking = true;
 		this.sorting = "country_id";
 		this.primaryKey = "country_id";
+	}
+
+	public static getCountryLov() : ListOfValues
+	{
+		let lov:ListOfValues =
+		{
+			filterPostfix: "%",
+			filterCase: Case.initcap,
+			datasource: new Countries(),
+			displayfields: "country_name",
+			filter: Filters.Like("country_name"),
+			sourcefields: ["country_id","country_name"],
+			targetfields: ["country_id","country_name"],
+		}
+		return(lov);
 	}
 
 	public static async getName(code:string) : Promise<string>
