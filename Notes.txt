@@ -5,7 +5,6 @@ Mouse right-click
 showDatepicker()
 Datapicker constraint
 
-keyhandler if empty
 SQL injection
 
 Warning ved setView med triggere
@@ -14,7 +13,6 @@ LanguageLabel
 
 Cyclic master detail
 
-tab in last field nextrow ?
 tabindex -> flyt ?
 
 

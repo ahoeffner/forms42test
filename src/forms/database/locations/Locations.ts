@@ -28,6 +28,7 @@ export class Locations extends BaseForm
 
 		let lov:ListOfValues = Countries.getCountryLov();
 		this.setListOfValues("Locations","country_id",lov);
+		this.setListOfValues("Locations","country_name",lov);
 
 		this.addEventListener(this.setCountryName,{type: EventType.OnFetch})
 		this.addEventListener(this.setCountryName,{type: EventType.WhenValidateField, field: "country_id"})
