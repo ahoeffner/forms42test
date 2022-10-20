@@ -5,9 +5,7 @@ Mouse right-click
 showDatepicker()
 Datapicker constraint
 
-Close cursor
-Cursor with sql, bindv and rownum
-check if connected in describe
+keyhandler if empty
 SQL injection
 
 Warning ved setView med triggere
