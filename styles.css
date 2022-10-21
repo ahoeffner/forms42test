@@ -130,8 +130,9 @@ html, body
 {
 	color: black;
 	font-size: 13px;
-	content: '\00a0';
-	margin-right: 13px;
+	content: '\25CF';
+	margin-right: 5px;
+	margin-left: 10px;
 	display:inline-block;
 }
 
