@@ -11,10 +11,10 @@ Warning ved setView med triggere
 
 set text på KeyMap
 
-Cyclic master detail
+set focus after deleted
+implement rollback
 
-Fix bug i refresh
-if record deleted ????
+Cyclic master detail
 
 tabindex -> flyt ?
 
