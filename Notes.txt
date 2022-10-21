@@ -9,7 +9,7 @@ SQL injection
 
 Warning ved setView med triggere
 
-LanguageLabel
+set text på KeyMap
 
 Cyclic master detail
 
