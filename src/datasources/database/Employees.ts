@@ -21,7 +21,7 @@ export class Employees extends DatabaseTable
 
 		this.primaryKey = "employee_id";
 		this.addDMLColumns(["email","job_id"]);
-		this.sorting = "first_name, last_name";
+		this.sorting = "department_id, last_name, first_name";
 	}
 
 	public static async getName(employee_id:number) : Promise<string>

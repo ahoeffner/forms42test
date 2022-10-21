@@ -13,58 +13,58 @@
 import { FormsModule } from "../../FormsModule";
 import { BindValue, DatabaseTable, DataType, Filter, Filters, FilterStructure, ListOfValues, SQLStatement } from "forms42core";
 
-export class Countries extends DatabaseTable
+export class Jobs extends DatabaseTable
 {
 	constructor()
 	{
-		super(FormsModule.DATABASE,"countries");
+		super(FormsModule.DATABASE,"jobs");
 
 		this.rowlocking = true;
 		this.sorting = "country_id";
 		this.primaryKey = "country_id";
 	}
 
-	public static getCountryLov() : ListOfValues
+	public static getJobLov() : ListOfValues
 	{
-		let source:Countries = null;
+		let source:Jobs = null;
 		let bindvalues:BindValue[] = [];
 		let filter:FilterStructure = null;
 
-		let idflt:Filter = Filters.ILike("country_id");
-		let nameflt:Filter = Filters.ILike("country_name");
+		let idflt:Filter = Filters.ILike("job_id");
+		let titleflt:Filter = Filters.ILike("job_title");
 
-		filter = new FilterStructure().and(idflt).or(nameflt);
-		source = new Countries().addFilter(filter);
+		filter = new FilterStructure().and(idflt).or(titleflt);
+		source = new Jobs().addFilter(filter);
 
 		bindvalues.push(idflt.getBindValue());
-		bindvalues.push(nameflt.getBindValue());
+		bindvalues.push(titleflt.getBindValue());
 
 		let lov:ListOfValues =
 		{
 			filterPostfix: "%",
 			datasource: source,
 			bindvalue: bindvalues,
-			displayfields: "country_name",
-			sourcefields: ["country_id","country_name"],
-			targetfields: ["country_id","country_name"],
+			displayfields: "job_title",
+			sourcefields: ["job_id","job_title"],
+			targetfields: ["job_id","job_title"],
 		}
 
 		return(lov);
 	}
 
-	public static async getName(code:string) : Promise<string>
+	public static async getTitle(id:string) : Promise<string>
 	{
 		let row:any[] = null;
 		let stmt:SQLStatement = new SQLStatement(FormsModule.DATABASE);
 
 		stmt.sql =
 		`
-			select country_name
-			from countries
-			where country_id = :code
+			select job_title
+			from jobs
+			where job_id = :id
 		`;
 
-		stmt.addBindValue(new BindValue("code",code,DataType.string));
+		stmt.addBindValue(new BindValue("id",id,DataType.string));
 
 		let success:boolean = await stmt.execute();
 		if (success) row = await stmt.fetch();

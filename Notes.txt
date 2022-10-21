@@ -13,6 +13,9 @@ LanguageLabel
 
 Cyclic master detail
 
+Fix bug i refresh
+if record deleted ????
+
 tabindex -> flyt ?
 
 
@@ -21,8 +24,7 @@ tabindex -> flyt ?
 finish datepicker
 Alert -> go back when closed
 
-se på focus med alert box
-Master Detail Detail, Overskrift
+Ryd op i styles.css
 
 *************
 
@@ -30,5 +32,5 @@ Demo:
 
 Countries: Row lock and QueryEditor
 Locations: ListOfValues
-Employess: Sorting, Dates, Row-warning for salary, query derived Field
+Employess: Sorting, Dates, Row-warning for salary
 DeptEmp: Master Detail

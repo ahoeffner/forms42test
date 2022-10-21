@@ -47,6 +47,12 @@ export class MenuData extends StaticMenu
 					}
 					,
 					{
+						id: "employees",
+						display: "Employees",
+						command: "/forms/database/employees"
+					}
+					,
+					{
 						id: "old",
 						display: "Old",
 						entries:

@@ -10,8 +10,8 @@
  * accompanied this code).
  */
 
-import { DatabaseTable } from "forms42core";
 import { FormsModule } from "../../FormsModule";
+import { BindValue, DatabaseTable, DataType, Filter, Filters, FilterStructure, ListOfValues, SQLStatement } from "forms42core";
 
 export class Departments extends DatabaseTable
 {
@@ -21,5 +21,54 @@ export class Departments extends DatabaseTable
 
 		this.sorting = "department_id";
 		this.primaryKey = "department_id";
+	}
+
+	public static getDepartmentLov() : ListOfValues
+	{
+		let source:Departments = null;
+		let bindvalues:BindValue[] = [];
+		let filter:FilterStructure = null;
+
+		let idflt:Filter = Filters.ILike("job_id");
+		let titleflt:Filter = Filters.ILike("job_title");
+
+		filter = new FilterStructure().and(idflt).or(titleflt);
+		source = new Departments().addFilter(filter);
+
+		bindvalues.push(idflt.getBindValue());
+		bindvalues.push(titleflt.getBindValue());
+
+		let lov:ListOfValues =
+		{
+			filterPostfix: "%",
+			datasource: source,
+			bindvalue: bindvalues,
+			displayfields: "job_title",
+			sourcefields: ["job_id","job_title"],
+			targetfields: ["job_id","job_title"],
+		}
+
+		return(lov);
+	}
+
+	public static async getTitle(id:string) : Promise<string>
+	{
+		let row:any[] = null;
+		let stmt:SQLStatement = new SQLStatement(FormsModule.DATABASE);
+
+		stmt.sql =
+		`
+			select job_title
+			from jobs
+			where job_id = :id
+		`;
+
+		stmt.addBindValue(new BindValue("id",id,DataType.string));
+
+		let success:boolean = await stmt.execute();
+		if (success) row = await stmt.fetch();
+
+		if (row)	return(row[0]);
+		return(null);
 	}
 }

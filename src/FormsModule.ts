@@ -24,6 +24,7 @@ import { PhoneBookMembased } from './old/filebased/phonenook/PhoneBookMembased';
 
 import { Countries } from './forms/database/countries/Countries';
 import { Locations } from './forms/database/locations/Locations';
+import { Employees } from './forms/database/employees/Employees';
 
 import { LanguageLabel } from './tags/LanguageLabels';
 
@@ -43,6 +44,7 @@ import { FormsPathMapping, FormsModule as FormsCoreModule, KeyMap, FormEvent, Ev
 
 		{class: Countries, path: "/forms/database/countries"},
 		{class: Locations, path: "/forms/database/locations"},
+		{class: Employees, path: "/forms/database/employees"},
 
 		{class: FormHeader, path: "/html/formheader"},
 		{class: PageHeader, path: "/html/pageheader"},
@@ -60,6 +62,7 @@ export class FormsModule extends FormsCoreModule
 
 	private fields:KeyMap = new KeyMap({key: 'f', ctrl: true})
 	private phonebook:KeyMap = new KeyMap({key: 'p', ctrl: true})
+	private employees:KeyMap = new KeyMap({key: 'e', ctrl: true})
 	private masterdetail:KeyMap = new KeyMap({key: 'm', ctrl: true})
 
 	public static bootstrap() : void {new FormsModule();}
@@ -86,6 +89,7 @@ export class FormsModule extends FormsCoreModule
 		[
 			{type:EventType.Key,key:this.fields},
 			{type:EventType.Key,key:this.phonebook},
+			{type:EventType.Key,key:this.employees},
 			{type:EventType.Key,key:this.masterdetail}
 		]);
 	}
@@ -94,6 +98,9 @@ export class FormsModule extends FormsCoreModule
 	{
 		if (event.key == this.fields)
 			this.showform(Fields);
+
+		if (event.key == this.employees)
+			this.showform(Employees);
 
 		if (event.key == this.phonebook)
 			this.showform(PhoneBookMembased);

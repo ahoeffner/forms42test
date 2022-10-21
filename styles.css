@@ -5,18 +5,7 @@ html, body
 	overflow: hidden;
 }
 
-.form-area{
-	position: relative;
-}
-
-.canvas
-{
-	background: white;
-	border: 1px solid black;
-	box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
-}
-
-.page
+.app-page
 {
 	display: grid;
 	grid-auto-flow: column;
@@ -24,7 +13,7 @@ html, body
 	grid-template-columns: fit-content(30%);
 }
 
-.page-header
+.app-header
 {
 	width: 100%;
 	height: 20px;
@@ -35,11 +24,24 @@ html, body
 	grid-template-columns: 40px calc(100% - 80px);
 }
 
-.page-footer
+.form-area
 {
-	height: 36px;
-	display: flex;
-	border-top: 1px solid black;
+	position: relative;
+}
+
+.canvas
+{
+	background: white;
+	border: 1px solid black;
+	box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
+}
+
+.form
+{
+	margin-top: 10px;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-bottom: 20px;
 }
 
 .form-header
@@ -62,6 +64,12 @@ html, body
 .form-header-right
 {
 	cursor: default;
+}
+
+.block
+{
+	padding: 30px;
+	background-color: aliceblue;
 }
 
 .menu-left
@@ -152,63 +160,6 @@ html, body
 	background-color: grey;
 }
 
-.container
-{
-	display:grid;
-	row-gap: 2px;
-	grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-}
-
-div.block
-{
-	gap:2px;
-	display:grid;
-	margin:20px 30px;
-	align-items: center;
-	align-content: center;
-	justify-content: center;
-}
-
-div.block p
-{
-	margin:2px;
-	display:inline-flex;
-}
-
-div.block p span
-{
-	width:80px;
-	display:inline-block;
-}
-
-div.block .button
-{
-	display:flex;
-	margin-bottom: 10px;
-	align-items: center;
-	justify-content: center;
-}
-
-div.block .field_fieldset
-{
-	width: 80%;
-	margin-left: 5%;
-	margin-top: 30px;
-}
-
-.block .column
-{
-	display:block;
-	padding:2px 5px;
-}
-
-.block .column span
-{
-	width:70px;
-	padding-left: 5px;
-	display:inline-block;
-}
-
 .search
 {
 	width: 100%;
@@ -220,24 +171,6 @@ div.block .field_fieldset
 {
 	content: "\002315";
 	display:inline-block;
-}
-
-.table
-{
-	width:100%;
-	display:table;
-}
-
-.row
-{
-	display: table-row;
-}
-
-.cell
-{
-	padding: 0px 4px;
-	display: table-cell;
-	line-height: 1.42857143;
 }
 
 .table input
@@ -284,43 +217,6 @@ div.block .field_fieldset
 {
 	width:10px;
 	height: 10px;
-}
-
-.radio_button
-{
-	width:80px;
-	margin: 2px 4px;
-	position: relative;
-	vertical-align: top;
-	display: inline-block;
-}
-
-.radio_button p
-{
-	width:30px;
-	margin-right:10px;
-	display:inline-block;
-}
-
-.radio_button .radio
-{
-	right:4px;
-	position: absolute;
-	display:inline-flex;
-}
-
-button
-{
-	padding: 4px 8px;
-	font-size: 12px;
-	cursor: pointer;
-	border:1px solid;
-	position: relative;
-	text-align: center;
-	border-radius: 15px;
-	transition: all 0.2s;
-	display: inline-block;
-	text-decoration: none;
 }
 
 input:enabled,
@@ -391,7 +287,7 @@ input[mode="insert"]
 	background-image: url(images/icons8-insert-30.png);
 }
 
-.icon_calander
+.icon_calender
 {
 	width:15px;
 	color: black;
@@ -399,32 +295,32 @@ input[mode="insert"]
 	display:inline-block;
 }
 
-.icon_calander:active
+.icon_calender:active
 {
 	transform: scale(1.04);
 }
 
 p:focus-within span,
-p:focus-within label 
-{ 
-	font-weight: bold; 
+p:focus-within label
+{
+	font-weight: bold;
 }
 
 div[name='day'] span
 {
-	width:100%;	
+	width:100%;
 	text-align:center;
 }
 
 div[name='day'] span:focus
 {
-	font-weight: bold; 
+	font-weight: bold;
 }
 
 span[name^="day-"]:hover,
 span[name^="day-"]:focus
 {
-	font-weight: bold; 
+	font-weight: bold;
 	user-select: none;
 }
 
@@ -444,7 +340,7 @@ div.modal
 {
 	width:20px;
 	display:inline-block;
-    background-size: 20px;
+   background-size: 20px;
 	transition: all 0.18s ease;
 	background-repeat: no-repeat;
 	background-image: url('images/icons8-info-50.png');
@@ -453,16 +349,16 @@ div.modal
 .info .info-dropdown
 {
 	top: 5px;
-    right: 0px;
-    opacity: 0;
-    z-index: -1;
+	right: 0px;
+	opacity: 0;
+	z-index: -1;
 	width:165px;
-    font-size: 14px;
-    list-style: none;
-    padding: 10px 5px;
-    position: absolute;
-    background-color: white;
-    box-shadow: 0 5px 30px rgb(0 0 0 / 20%);
+	font-size: 14px;
+	list-style: none;
+	padding: 10px 5px;
+	position: absolute;
+	background-color: white;
+	box-shadow: 0 5px 30px rgb(0 0 0 / 20%);
 }
 
 .info:hover .info-dropdown
