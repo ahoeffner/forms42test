@@ -11,10 +11,9 @@ Warning ved setView med triggere
 
 set text på KeyMap
 
-lock before delete
-set focus after deleted
-
+undo rec, blk, frm
 connect scope transaction/none pool
+
 Cyclic master detail
 
 tabindex -> flyt ?
