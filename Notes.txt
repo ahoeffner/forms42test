@@ -3,7 +3,6 @@ FilterEditor
 Mouse right-click
 
 showDatepicker()
-Datapicker constraint
 
 SQL injection
 
@@ -12,7 +11,7 @@ Warning ved setView med triggere
 set text på KeyMap
 
 undo rec, blk, frm
-connect scope transaction/none pool
+connect to pool
 
 Cyclic master detail
 
@@ -22,8 +21,6 @@ tabindex -> flyt ?
 *** Jonas ***
 
 finish datepicker
-Alert -> go back when closed
-
 Ryd op i styles.css
 
 *************
