@@ -38,6 +38,9 @@ export class Menu extends MenuComponent
 	public hide() : void
 	{
 		super.hide();
+		this.container.style.width = "0px";
+		this.menuelem.style.display = "none";
+		
 		this.displayed = false;
 	}
 
