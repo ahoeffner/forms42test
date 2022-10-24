@@ -21,11 +21,14 @@ tabindex -> flyt ?
 finish datepicker
 Ryd op i styles.css
 
+Employess ikke helt perfekt
+Popup styling
+
 *************
 
 Demo:
 
-Countries: Row lock and QueryEditor
+Countries: QueryEditor
 Locations: ListOfValues
-Employess: Sorting, Dates, Row-warning for salary
+Employess: Sorting, Dates, Row-warning for salary, Row lock
 DeptEmp: Master Detail
