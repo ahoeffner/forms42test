@@ -76,6 +76,7 @@ html, body
 .menu-left
 {
 	height: 100%;
+	transition: 0.5s;
 	border-right: 1px solid black;
 }
 
@@ -97,6 +98,7 @@ html, body
 {
 	display: block;
 	font-size: 13px;
+	transition: 0.3s;
 	margin-top: 15px;
 	margin-left: -15px;
 	background: white;
@@ -458,3 +460,19 @@ tr td span:hover
 {
 	cursor: default;
 }
+
+@keyframes moveInLeft
+{
+	/* start */
+	0%
+	{
+		transform:translateX(-200px);
+	}
+  
+	/* end */
+	100%
+	{
+		transform: translate(0);
+	}
+}
+  

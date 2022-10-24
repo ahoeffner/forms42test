@@ -17,39 +17,51 @@ export class Menu extends MenuComponent
 {
 	private displayed:boolean = false;
 	private menuelem:HTMLElement = null;
-
+	private container:HTMLElement = null;
 	constructor()
 	{
 		super(new MenuData());
-		let container:HTMLElement = null;
 
 		this.menuelem = document.createElement("div");
 		this.menuelem.classList.value = "left-menu-container";
 
-		container = document.getElementById("main-menu");
-		this.menuelem = container.appendChild(this.menuelem);
+		this.container = document.getElementById("main-menu");
 
+	
+
+		this.menuelem = this.container.appendChild(this.menuelem);
 		this.target = this.menuelem;
+
+	
 	}
 
 	public hide() : void
 	{
 		super.hide();
 		this.displayed = false;
-		this.menuelem.style.display = "none";
 	}
 
 	public showmenu() : void
 	{
+	
 		if (this.displayed)
 		{
 			super.hide();
+			this.container.style.width = "0px";
 			this.menuelem.style.display = "none";
 		}
 		else
 		{
 			super.show();
 			this.menuelem.style.display = "block";
+			this.menuelem.style.animationDuration = "0.4s";
+			this.menuelem.style.animationName = "moveInLeft";
+			this.menuelem.style.animationTimingFunction = "ease-in";	
+
+			this.container.style.width = "120px";	
+			this.container.style.animationDuration = "0.3s";
+			this.container.style.animationName = "moveInLeft";
+			this.container.style.animationTimingFunction = "ease-in";		
 		}
 
 		this.displayed = !this.displayed;
