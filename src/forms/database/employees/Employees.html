@@ -3,8 +3,8 @@
 <!-- Start width -->
 <div style="width: 1000px;"></div>
 
-<div class="form">
-	<div  style="float:left">
+<div class="form" style="display:flex; flex-wrap: wrap;">
+	<div >
 		<table class="block">
 			<tr>
 				<th>First Name</th>
@@ -20,7 +20,7 @@
 			</tr>
 		</table>
 	</div>
-	<div>
+	<div style="display:flex; align-items: end;">
 		<table class="block">
 			<tr>
 				<td>Salary</td>
@@ -39,6 +39,7 @@
 				<td style="display:inline-flex">
 					<input name="job_id" from="Employees" size="8" upper>
 					<input name="job_title" from="Employees" size="20" derived readonly>
+					<span>&#x2807;</span>
 				</td>
 			</tr>
 			<tr>
@@ -46,6 +47,7 @@
 				<td style="display:inline-flex">
 					<input name="department_id" from="Employees" size="8" integer>
 					<input name="department_name" from="Employees" size="20" derived readonly>
+					<span>&#x2807;</span>
 				</td>
 			</tr>
 		</table>

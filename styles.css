@@ -453,3 +453,8 @@ div[name="login"] p label
 	width:62px;
 	display:inline-block;
 }
+
+tr td span:hover
+{
+	cursor: default;
+}
