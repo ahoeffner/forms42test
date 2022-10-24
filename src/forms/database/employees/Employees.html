@@ -4,7 +4,7 @@
 <div style="width: 1000px;"></div>
 
 <div class="form">
-	<div style="float: left;">
+	<div  style="float:left">
 		<table class="block">
 			<tr>
 				<th>First Name</th>
@@ -16,11 +16,10 @@
 				<td><input name="first_name" 		from="Employees" row="$row" size="10" initcap></td>
 				<td><input name="last_name" 		from="Employees" row="$row" size="10" initcap></td>
 				<td><input name="email" 			from="Employees" row="$row" size="32"></td>
-				<td><input name="phone_number" 	from="Employees" row="$row" size="12"></td>
+				<td><input name="phone_number" 		from="Employees" row="$row" size="12"></td>
 			</tr>
 		</table>
 	</div>
-
 	<div>
 		<table class="block">
 			<tr>
@@ -37,14 +36,14 @@
 			</tr>
 			<tr>
 				<td>Job</td>
-				<td>
+				<td style="display:inline-flex">
 					<input name="job_id" from="Employees" size="8" upper>
 					<input name="job_title" from="Employees" size="20" derived readonly>
 				</td>
 			</tr>
 			<tr>
 				<td>Department</td>
-				<td>
+				<td style="display:inline-flex">
 					<input name="department_id" from="Employees" size="8" integer>
 					<input name="department_name" from="Employees" size="20" derived readonly>
 				</td>

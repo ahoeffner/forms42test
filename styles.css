@@ -289,6 +289,12 @@ input[mode="insert"]
 	background-image: url(images/icons8-insert-30.png);
 }
 
+input[mode="deleted"]
+{
+	transition: all 0.18s ease;	
+	text-decoration: line-through;
+}
+
 .icon_calender
 {
 	width:15px;
@@ -321,7 +327,7 @@ div[name='day'] span:focus
 
 span[name^="day-"]:hover,
 span[name^="day-"]:focus,
-tr:focus-within td:first-child
+tr td:first-child
 {
 	font-weight: bold;
 	user-select: none;
