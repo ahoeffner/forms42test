@@ -13,9 +13,10 @@
 import content from './Employees.html';
 
 import { BaseForm } from "../../../BaseForm";
+import { Jobs } from '../../../datasources/database/Jobs';
+import { Departments } from '../../../datasources/database/Departments';
 import { datasource, EventType, FormEvent, ListOfValues } from "forms42core";
 import { Employees as Employeedata } from "../../../datasources/database/Employees";
-import { Jobs } from '../../../datasources/database/Jobs';
 
 @datasource("Employees",Employeedata)
 
@@ -26,11 +27,31 @@ export class Employees extends BaseForm
 		super(content);
 		this.title = "Employees";
 
-		this.addEventListener(this.setJobName,{type: EventType.OnFetch})
-		this.addEventListener(this.setJobName,{type: EventType.WhenValidateField, field: "job_id"})
+		this.addEventListener(this.lookups,{type: EventType.OnFetch})
+
+		this.addEventListener(this.validateJob,{type: EventType.WhenValidateField, field: "job_id"})
+		this.addEventListener(this.validateDepatment,{type: EventType.WhenValidateField, field: "department_id"})
 	}
 
-	public async setJobName(event:FormEvent) : Promise<boolean>
+	public async lookups() : Promise<boolean>
+	{
+		let code:string = null;
+		let title:string = null;
+
+		code = this.getValue("Employees","job_id");
+		title = await Jobs.getTitle(code);
+
+		this.setValue("Employees","job_title",title);
+
+		code = this.getValue("Employees","department_id");
+		title = await Departments.getTitle(code);
+
+		this.setValue("Employees","department_name",title);
+
+		return(true);
+	}
+
+	public async validateJob(event:FormEvent) : Promise<boolean>
 	{
 		let code:string = this.getValue("Employees","job_id");
 		let title:string = await Jobs.getTitle(code);
@@ -42,6 +63,25 @@ export class Employees extends BaseForm
 			if (title == null)
 			{
 				this.warning("Invalid job code","Validation");
+				return(false);
+			}
+		}
+
+		return(true);
+	}
+
+	public async validateDepatment(event:FormEvent) : Promise<boolean>
+	{
+		let code:string = this.getValue("Employees","department_id");
+		let title:string = await Departments.getTitle(code);
+
+		this.setValue("Employees","department_name",title);
+
+		if (event.type == EventType.WhenValidateField)
+		{
+			if (title == null)
+			{
+				this.warning("Invalid Depatment Id","Validation");
 				return(false);
 			}
 		}

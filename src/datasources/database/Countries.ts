@@ -43,6 +43,7 @@ export class Countries extends DatabaseTable
 		{
 			filterPostfix: "%",
 			datasource: source,
+			title: "Countries",
 			bindvalue: bindvalues,
 			displayfields: "country_name",
 			sourcefields: ["country_id","country_name"],

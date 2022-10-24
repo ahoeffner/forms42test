@@ -2,8 +2,6 @@ FilterEditor
 
 Mouse right-click
 
-showDatepicker()
-
 SQL injection
 
 Warning ved setView med triggere

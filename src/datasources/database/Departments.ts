@@ -42,6 +42,7 @@ export class Departments extends DatabaseTable
 		{
 			filterPostfix: "%",
 			datasource: source,
+			title: "Departments",
 			bindvalue: bindvalues,
 			displayfields: "job_title",
 			sourcefields: ["job_id","job_title"],
@@ -58,12 +59,12 @@ export class Departments extends DatabaseTable
 
 		stmt.sql =
 		`
-			select job_title
-			from jobs
-			where job_id = :id
+			select department_name
+			from departments
+			where department_id = :id
 		`;
 
-		stmt.addBindValue(new BindValue("id",id,DataType.string));
+		stmt.addBindValue(new BindValue("id",id,DataType.integer));
 
 		let success:boolean = await stmt.execute();
 		if (success) row = await stmt.fetch();
