@@ -19,7 +19,6 @@ export class Countries extends DatabaseTable
 	{
 		super(FormsModule.DATABASE,"countries");
 
-		this.rowlocking = true;
 		this.sorting = "country_id";
 		this.primaryKey = "country_id";
 	}

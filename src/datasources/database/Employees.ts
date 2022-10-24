@@ -19,6 +19,7 @@ export class Employees extends DatabaseTable
 	{
 		super(FormsModule.DATABASE,"employees");
 
+		this.rowlocking = true;
 		this.primaryKey = "employee_id";
 		this.addDMLColumns(["email","job_id"]);
 		this.sorting = "department_id, last_name, first_name";
