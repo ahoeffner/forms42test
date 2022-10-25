@@ -20,8 +20,8 @@ export class Jobs extends DatabaseTable
 		super(FormsModule.DATABASE,"jobs");
 
 		this.rowlocking = true;
-		this.sorting = "country_id";
-		this.primaryKey = "country_id";
+		this.sorting = "job_id";
+		this.primaryKey = "job_id";
 	}
 
 	public static getJobLov() : ListOfValues

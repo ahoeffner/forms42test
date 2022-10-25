@@ -14,8 +14,8 @@ import content from './Employees.html';
 
 import { BaseForm } from "../../../BaseForm";
 import { Jobs } from '../../../datasources/database/Jobs';
+import { datasource, EventType, FormEvent } from "forms42core";
 import { Departments } from '../../../datasources/database/Departments';
-import { datasource, EventType, FormEvent, ListOfValues } from "forms42core";
 import { Employees as Employeedata } from "../../../datasources/database/Employees";
 
 @datasource("Employees",Employeedata)
@@ -27,8 +27,10 @@ export class Employees extends BaseForm
 		super(content);
 		this.title = "Employees";
 
-		this.addEventListener(this.lookups,{type: EventType.OnFetch})
+		this.setListOfValues("Employees","job_id",Jobs.getJobLov());
+		this.setListOfValues("Employees","department_id",Departments.getDepartmentLov());
 
+		this.addEventListener(this.lookups,{type: EventType.OnFetch})
 		this.addEventListener(this.validateJob,{type: EventType.WhenValidateField, field: "job_id"})
 		this.addEventListener(this.validateDepatment,{type: EventType.WhenValidateField, field: "department_id"})
 	}

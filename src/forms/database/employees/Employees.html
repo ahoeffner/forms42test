@@ -32,7 +32,7 @@
 				<td>Hire Date</td>
 				<td>
 					<input name="hire_date" from="Employees" date>
-					<span>&#128197;</span>
+					<span onclick="this.showDatePicker('Employees','hire_date')">&#128197;</span>
 				</td>
 			</tr>
 			<tr>
@@ -40,7 +40,7 @@
 				<td style="display:inline-flex">
 					<input name="job_id" from="Employees" size="8" upper>
 					<input name="job_title" from="Employees" size="20" derived readonly>
-					<span onclick="this.showListOfValues()">&#x2807;</span>
+					<span onclick="this.showListOfValues('Employees','job_id')">&#x2807;</span>
 				</td>
 			</tr>
 			<tr>
@@ -48,7 +48,7 @@
 				<td style="display:inline-flex">
 					<input name="department_id" from="Employees" size="8" integer>
 					<input name="department_name" from="Employees" size="20" derived readonly>
-					<span onclick="this.showListOfValues()">&#x2807;</span>
+					<span onclick="this.showListOfValues('Employees','department_id')">&#x2807;</span>
 				</td>
 			</tr>
 		</table>

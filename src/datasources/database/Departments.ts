@@ -29,14 +29,14 @@ export class Departments extends DatabaseTable
 		let bindvalues:BindValue[] = [];
 		let filter:FilterStructure = null;
 
-		let idflt:Filter = Filters.ILike("job_id");
-		let titleflt:Filter = Filters.ILike("job_title");
+		let idflt:Filter = Filters.ILike("department_id");
+		let nameflt:Filter = Filters.ILike("department_name");
 
-		filter = new FilterStructure().and(idflt).or(titleflt);
+		filter = new FilterStructure().and(idflt).or(nameflt);
 		source = new Departments().addFilter(filter);
 
 		bindvalues.push(idflt.getBindValue());
-		bindvalues.push(titleflt.getBindValue());
+		bindvalues.push(nameflt.getBindValue());
 
 		let lov:ListOfValues =
 		{
@@ -45,8 +45,8 @@ export class Departments extends DatabaseTable
 			title: "Departments",
 			bindvalue: bindvalues,
 			displayfields: "job_title",
-			sourcefields: ["job_id","job_title"],
-			targetfields: ["job_id","job_title"],
+			sourcefields: ["department_id","department_name"],
+			targetfields: ["department_id","department_name"],
 		}
 
 		return(lov);
