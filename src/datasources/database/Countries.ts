@@ -46,6 +46,7 @@ export class Countries extends DatabaseTable
 			title: "Countries",
 			bindvalue: bindvalues,
 			displayfields: "country_name",
+			filterInitialValueFrom: "country_name",
 			sourcefields: ["country_id","country_name"],
 			targetfields: ["country_id","country_name"],
 		}

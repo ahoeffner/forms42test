@@ -45,6 +45,7 @@ export class Jobs extends DatabaseTable
 			datasource: source,
 			bindvalue: bindvalues,
 			displayfields: "job_title",
+			filterInitialValueFrom: "job_id",
 			sourcefields: ["job_id","job_title"],
 			targetfields: ["job_id","job_title"],
 		}

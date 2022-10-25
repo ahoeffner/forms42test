@@ -43,6 +43,7 @@ export class Departments extends DatabaseTable
 			title: "Departments",
 			bindvalue: bindvalues,
 			displayfields: "department_name",
+			filterInitialValueFrom: "department_name",
 			sourcefields: ["department_id","department_name"],
 			targetfields: ["department_id","department_name"],
 		}
