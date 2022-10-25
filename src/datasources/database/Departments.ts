@@ -44,7 +44,7 @@ export class Departments extends DatabaseTable
 			datasource: source,
 			title: "Departments",
 			bindvalue: bindvalues,
-			displayfields: "job_title",
+			displayfields: "department_name",
 			sourcefields: ["department_id","department_name"],
 			targetfields: ["department_id","department_name"],
 		}
