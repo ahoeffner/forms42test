@@ -38,6 +38,8 @@ html, body
 
 .form
 {
+	display:flex;
+	flex-wrap: wrap;
 	margin-top: 10px;
 	margin-left: 20px;
 	margin-right: 20px;
@@ -192,6 +194,18 @@ html, body
 	line-height: 1.42857143;
 	padding: 4px 0px 0px 15px;
 }
+
+.cell
+{
+	margin-left:5px;
+	font-weight: bold;
+	margin-right:auto;
+	display: table-cell;
+	line-height: 1.42857143;
+	padding: 4px 0px 0px 15px;
+}
+
+
 
 .heading label
 {
