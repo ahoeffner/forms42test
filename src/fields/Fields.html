@@ -1,7 +1,8 @@
 <include src="/html/formheader"></include>
 
-<div class="container" style="width: 1250px;">
-	<div class="block">
+<div  style="width: 1000px;"></div>
+<div class="form" style="display:flex; flex-wrap: wrap;">
+	<div class="block" >
 		<fieldset class="fieldset">
 			<legend>Numbers</legend>
 			<div class="column">
@@ -39,20 +40,19 @@
 
 		<fieldset class="fieldset">
 			<legend>Radio and Checkbox</legend>
-			<div class="column">
-				<div class="radio_button">
-					<input name="nordics" from="fields" size="4" upper>:
+			<div class="column" style="display:flex;">
+				<div class="radio_button"  style="display:inline-flex;height: 30px;">
+					<input name="nordics" from="fields" size="4" upper>
 				</div>
 
-				<div class="radio_button">
+				<div class="radio_button" style="display:inline-flex">
 
-					<p>DK</p>:<input type="checkbox" name="nordics" from="fields" value="DK"
-						class="radio">
+					<p>DK:<input type="checkbox" name="nordics" from="fields" value="DK" class="radio"></p>
 
-					<p>DK</p>:<input type="radio" name="nordics" from="fields" value="DK">
-					<p>SE</p>:<input type="radio" name="nordics" from="fields" value="SE">
-					<p>NO</p>:<input type="radio" name="nordics" from="fields" value="NO">
-					<p>FI</p>:<input type="radio" name="nordics" from="fields" value="FI">
+					<p>DK:<input type="radio" name="nordics" from="fields" value="DK"></p>
+					<p>SE:<input type="radio" name="nordics" from="fields" value="SE"></p>
+					<p>NO:<input type="radio" name="nordics" from="fields" value="NO"></p>
+					<p>FI:<input type="radio" name="nordics" from="fields" value="FI"></p>
 				</div>
 			</div>
 		</fieldset>
