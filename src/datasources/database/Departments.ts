@@ -29,13 +29,11 @@ export class Departments extends DatabaseTable
 		let bindvalues:BindValue[] = [];
 		let filter:FilterStructure = null;
 
-		let idflt:Filter = Filters.ILike("department_id");
 		let nameflt:Filter = Filters.ILike("department_name");
 
-		filter = new FilterStructure().and(idflt).or(nameflt);
+		filter = new FilterStructure().and(nameflt);
 		source = new Departments().addFilter(filter);
 
-		bindvalues.push(idflt.getBindValue());
 		bindvalues.push(nameflt.getBindValue());
 
 		let lov:ListOfValues =
