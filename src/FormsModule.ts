@@ -75,6 +75,12 @@ export class FormsModule extends FormsCoreModule
 		this.menu = new Menu();
 		this.list = new Minimized();
 
+		let keys:string[][] = KeyMap.list();
+		for (let i = 0; i < keys.length; i++)
+			console.log(keys[i][0]+": "+keys[i][1]+" ("+keys[i][2]+")")
+
+		//this.addEventListener()
+
 		FormProperties.TagLibrary.set("labels",LanguageLabel);
 
 		this.OpenURLForm();

@@ -6,8 +6,6 @@ SQL injection
 
 Warning ved setView med triggere
 
-set text på KeyMap
-
 undo rec, blk, frm
 connect to pool
 
