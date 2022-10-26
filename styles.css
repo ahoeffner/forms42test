@@ -494,4 +494,9 @@ tr td span:hover
 		transform: translate(0);
 	}
 }
+
+.icon_calander
+{
+	cursor: default;
+}
   
