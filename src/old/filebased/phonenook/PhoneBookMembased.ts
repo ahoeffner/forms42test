@@ -32,11 +32,6 @@ export class PhoneBookMembased extends BaseForm
 		this.filter = Filters.Contains("first_name, last_name");
 	}
 
-	public async openCalander()
-	{
-		console.log(DatePicker.page);
-	}
-
 	public async sort(column:string) : Promise<void>
 	{
 		let asc:boolean = this.sorting.asc;
