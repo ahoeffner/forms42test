@@ -32,3 +32,4 @@ Countries: QueryEditor
 Locations: ListOfValues
 Employess: Sorting, Dates, Row-warning for salary, Row lock
 DeptEmp: Master Detail
+WhenValidateRecord
