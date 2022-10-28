@@ -22,8 +22,8 @@ import { Input } from './tags/Input';
 import { Languaes } from './tags/Languaes';
 
 import { Simple } from './old/dbbased/simple/Simple';
-import { MasterDetail } from './forms/database/masterdetail/MasterDetail';
 import { DemoInput } from './old/filebased/demoinput/demoinput';
+import { MasterDetail } from './forms/database/masterdetail/MasterDetail';
 import { PhoneBookMembased } from './old/filebased/phonenook/PhoneBookMembased';
 
 import { Countries } from './forms/database/countries/Countries';
@@ -70,8 +70,6 @@ export class FormsModule extends FormsCoreModule
 	private employees:KeyMap = new KeyMap({key: 'e', ctrl: true})
 	private masterdetail:KeyMap = new KeyMap({key: 'm', ctrl: true})
 
-	public static bootstrap() : void {new FormsModule();}
-
 	constructor()
 	{
 		super();
@@ -99,6 +97,7 @@ export class FormsModule extends FormsCoreModule
 			{type:EventType.Key,key:this.inputdemo},
 			{type:EventType.Key,key:this.phonebook},
 			{type:EventType.Key,key:this.employees},
+			{type:EventType.Key,key:this.masterdetail},
 		]);
 	}
 

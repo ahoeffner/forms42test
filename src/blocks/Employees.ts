@@ -12,8 +12,8 @@
 
 import { Jobs } from '../datasources/database/Jobs';
 import { Departments } from '../datasources/database/Departments';
-import { Block, EventType, Form, FormEvent, Key } from "forms42core";
 import { Employees as EmployeeSource } from "../datasources/database/Employees";
+import { BindValue, Block, EventType, Filter, Filters, FilterStructure, Form, FormEvent, Key, ListOfValues } from "forms42core";
 
 export class Employees extends Block
 {
@@ -90,5 +90,34 @@ export class Employees extends Block
 		}
 
 		return(true);
+	}
+
+	public static getManagerLov() : ListOfValues
+	{
+		let source:Jobs = null;
+		let bindvalues:BindValue[] = [];
+		let filter:FilterStructure = null;
+
+		let fnameflt:Filter = Filters.ILike("first_name");
+		let lnameflt:Filter = Filters.ILike("last_name");
+
+		filter = new FilterStructure().and(fnameflt).or(lnameflt);
+		source = new EmployeeSource().addFilter(filter);
+
+		bindvalues.push(fnameflt.getBindValue());
+		bindvalues.push(lnameflt.getBindValue());
+
+		let lov:ListOfValues =
+		{
+			title: "Employees",
+			filterPostfix: "%",
+			datasource: source,
+			bindvalue: bindvalues,
+			displayfields: ["first_name","last_name"],
+			sourcefields: "employee_id",
+			targetfields: "manager_id",
+		}
+
+		return(lov);
 	}
 }

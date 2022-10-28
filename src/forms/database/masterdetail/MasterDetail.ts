@@ -29,6 +29,8 @@ export class MasterDetail extends BaseForm
 		super(content);
 		this.title = "Employees";
 
+		this.dept.setListOfValues("manager",Employees.getManagerLov());
+
 		this.emp.setListOfValues("job_id",Jobs.getJobLov());
 		this.emp.setListOfValues("department_id",Departments.getDepartmentLov());
 
@@ -43,12 +45,12 @@ export class MasterDetail extends BaseForm
 	{
 		if (event.block == "employees")
 		{
-			this.emp.lookupJob("job_title");
-			this.emp.lookupDepartment("department_name");
+			await this.emp.lookupJob("job_title");
+			await this.emp.lookupDepartment("department_name");
 		}
 		else if (event.block == "departments")
 		{
-			this.dept.lookupManager("manager");
+			await this.dept.lookupManager("manager");
 		}
 
 		return(true);

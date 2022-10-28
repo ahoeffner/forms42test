@@ -35,12 +35,12 @@ export class Departments extends Block
 	public async lookupManager(field:string) : Promise<boolean>
 	{
 		let id:number = null;
-		let title:string = null;
+		let manager:string = null;
 
 		id = this.getValue("manager_id");
-		title = await Employees.getName(id);
+		manager = await Employees.getName(id);
 
-		this.setValue(field,title);
+		this.setValue(field,manager);
 		return(true);
 	}
 
