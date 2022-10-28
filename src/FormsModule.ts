@@ -18,7 +18,11 @@ import { PageFooter } from './fragments/PageFooter';
 
 import { Fields } from './fields/Fields';
 
+import { Input } from './tags/Input';
+import { Languaes } from './tags/Languaes';
+
 import { Simple } from './old/dbbased/simple/Simple';
+import { DemoInput } from './old/filebased/demoinput/demoinput';
 import { MasterDetail } from './old/dbbased/masterdetail/MasterDetail';
 import { PhoneBookMembased } from './old/filebased/phonenook/PhoneBookMembased';
 
@@ -61,6 +65,7 @@ export class FormsModule extends FormsCoreModule
 	public static DATABASE:Connection = null;
 
 	private fields:KeyMap = new KeyMap({key: 'f', ctrl: true})
+	private inputdemo:KeyMap = new KeyMap({key: 'd', ctrl: true})
 	private phonebook:KeyMap = new KeyMap({key: 'p', ctrl: true})
 	private employees:KeyMap = new KeyMap({key: 'e', ctrl: true})
 	private masterdetail:KeyMap = new KeyMap({key: 'm', ctrl: true})
@@ -74,14 +79,14 @@ export class FormsModule extends FormsCoreModule
 		this.parse();
 		this.menu = new Menu();
 		this.list = new Minimized();
-
 		let keys:string[][] = KeyMap.list();
 		for (let i = 0; i < keys.length; i++)
 			console.log(keys[i][0]+": "+keys[i][1]+" ("+keys[i][2]+")")
+		
 
-		//this.addEventListener()
-
-		FormProperties.TagLibrary.set("labels",LanguageLabel);
+		Languaes.setLanguaes("Book1.xml");
+		
+		FormProperties.TagLibrary.set("BKinput",Input);
 
 		this.OpenURLForm();
 		this.updateKeyMap(keymap);
@@ -94,9 +99,9 @@ export class FormsModule extends FormsCoreModule
 		this.addEventListener(this.open,
 		[
 			{type:EventType.Key,key:this.fields},
+			{type:EventType.Key,key:this.inputdemo},
 			{type:EventType.Key,key:this.phonebook},
-			{type:EventType.Key,key:this.employees},
-			{type:EventType.Key,key:this.masterdetail}
+			{type:EventType.Key,key:this.employees},	
 		]);
 	}
 
@@ -113,7 +118,9 @@ export class FormsModule extends FormsCoreModule
 
 		if (event.key == this.masterdetail)
 			this.showform(MasterDetail);
-
+		
+		if (event.key == this.inputdemo)
+			this.showform(DemoInput);
 		return(true);
 	}
 
