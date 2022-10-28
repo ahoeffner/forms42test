@@ -18,8 +18,12 @@ import { PageFooter } from './fragments/PageFooter';
 
 import { Fields } from './fields/Fields';
 
+import { Input } from './tags/Input';
+import { Languaes } from './tags/Languaes';
+
 import { Simple } from './old/dbbased/simple/Simple';
 import { MasterDetail } from './forms/database/masterdetail/MasterDetail';
+import { DemoInput } from './old/filebased/demoinput/demoinput';
 import { PhoneBookMembased } from './old/filebased/phonenook/PhoneBookMembased';
 
 import { Countries } from './forms/database/countries/Countries';
@@ -61,6 +65,7 @@ export class FormsModule extends FormsCoreModule
 	public static DATABASE:Connection = null;
 
 	private fields:KeyMap = new KeyMap({key: 'f', ctrl: true})
+	private inputdemo:KeyMap = new KeyMap({key: 'd', ctrl: true})
 	private phonebook:KeyMap = new KeyMap({key: 'p', ctrl: true})
 	private employees:KeyMap = new KeyMap({key: 'e', ctrl: true})
 	private masterdetail:KeyMap = new KeyMap({key: 'm', ctrl: true})
@@ -75,7 +80,10 @@ export class FormsModule extends FormsCoreModule
 		this.menu = new Menu();
 		this.list = new Minimized();
 
+		Languaes.setLanguaes("Book1.xml");
 		FormProperties.TagLibrary.set("labels",LanguageLabel);
+
+		FormProperties.TagLibrary.set("BKinput",Input);
 
 		this.OpenURLForm();
 		this.updateKeyMap(keymap);
@@ -88,9 +96,9 @@ export class FormsModule extends FormsCoreModule
 		this.addEventListener(this.open,
 		[
 			{type:EventType.Key,key:this.fields},
+			{type:EventType.Key,key:this.inputdemo},
 			{type:EventType.Key,key:this.phonebook},
 			{type:EventType.Key,key:this.employees},
-			{type:EventType.Key,key:this.masterdetail}
 		]);
 	}
 
@@ -108,6 +116,8 @@ export class FormsModule extends FormsCoreModule
 		if (event.key == this.masterdetail)
 			this.showform(MasterDetail);
 
+		if (event.key == this.inputdemo)
+			this.showform(DemoInput);
 		return(true);
 	}
 
