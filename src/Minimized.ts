@@ -23,8 +23,9 @@ export class Minimized implements EventListenerObject
         icon.style.marginTop = "2.5px";
         icon.style.marginLeft = "1.5px";
         icon.style.marginRight = "1.5px";
+        this.list.style.display = "flex";
         icon.addEventListener("click",this);
-
+        
         this.list.appendChild(icon);
         this.forms.set(form.id,form);
     }

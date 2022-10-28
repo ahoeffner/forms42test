@@ -46,7 +46,7 @@ export class Languaes
         let parser:DOMParser = new DOMParser();
         let xmlDoc = parser.parseFromString(file,"text/xml");
         let spreadsheet = xmlDoc.querySelector("Table");
-        console.log(spreadsheet);  
+        
         let insert:Map<string,Column> = null;
       
         for (let i = 0; i < spreadsheet.children.length; i++) 
@@ -69,7 +69,6 @@ export class Languaes
             let column:Column = new Column(colname,label,hint,size);
             insert.set(colname,column);
         }
-        console.log(this.root);
     }   
 }
 
