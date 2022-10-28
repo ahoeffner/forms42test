@@ -292,7 +292,7 @@ input.detail:read-only
 
 input[mode="query"]
 {
-	padding-left: 15px;
+	text-indent: 12px;
     background-size: 10px;
 	transition: all 0.18s ease;
 	background-repeat: no-repeat;
@@ -302,7 +302,7 @@ input[mode="query"]
 
 input[mode="insert"]
 {
-	padding-left: 15px;
+	text-indent: 12px;
     background-size: 10px;
 	transition: all 0.18s ease;
 	background-repeat: no-repeat;
