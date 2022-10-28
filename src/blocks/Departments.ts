@@ -11,8 +11,9 @@
  */
 
 import { Block, Form, Key, ListOfValues } from "forms42core";
-import { Departments as DepartmentTable } from "../datasources/database/Departments";
 import { Employees } from "../datasources/database/Employees";
+import { Locations } from "../datasources/database/Locations";
+import { Departments as DepartmentTable } from "../datasources/database/Departments";
 
 export class Departments extends Block
 {
@@ -41,6 +42,18 @@ export class Departments extends Block
 		manager = await Employees.getName(id);
 
 		this.setValue(field,manager);
+		return(true);
+	}
+
+	public async lookupLocation(field:string) : Promise<boolean>
+	{
+		let id:number = null;
+		let location:string = null;
+
+		id = this.getValue("loc_id");
+		location = await Locations.getLocation(id);
+
+		this.setValue(field,location);
 		return(true);
 	}
 

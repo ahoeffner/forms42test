@@ -37,7 +37,7 @@ export class MasterDetail extends BaseForm
 		this.link(this.dept.getPrimaryKey(),this.emp.getDepartmentsForeignKey());
 
 		this.addEventListener(this.getDerivedFields,{type: EventType.OnFetch})
-		
+
 		this.addEventListener(this.validateJob,{type: EventType.WhenValidateField, block: "employees", field: "job_id"})
 		this.addEventListener(this.getDerivedFields,{type: EventType.WhenValidateField, block: "departments", field: "manager_id"})
 		this.addEventListener(this.validateDepatment,{type: EventType.WhenValidateField, block: "employees", field: "department_id"})
@@ -53,6 +53,7 @@ export class MasterDetail extends BaseForm
 		else if (event.block == "departments")
 		{
 			await this.dept.lookupManager("manager");
+			await this.dept.lookupLocation("location");
 		}
 
 		return(true);

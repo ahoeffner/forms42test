@@ -10,7 +10,7 @@
  * accompanied this code).
  */
 
-import { DatabaseTable } from "forms42core";
+import { BindValue, DatabaseTable, DataType, SQLStatement } from "forms42core";
 import { FormsModule } from "../../FormsModule";
 
 export class Locations extends DatabaseTable
@@ -22,5 +22,26 @@ export class Locations extends DatabaseTable
 		this.sorting = "loc_id";
 		this.primaryKey = "loc_id";
 		this.addColumns("country_id");
+	}
+
+	public static async getLocation(loc_id:number) : Promise<string>
+	{
+		let row:any[] = null;
+		let stmt:SQLStatement = new SQLStatement(FormsModule.DATABASE);
+
+		stmt.sql =
+		`
+			select city||' '||street_address||' '||country_id
+			from locations
+			where loc_id = :loc_id
+		`;
+
+		stmt.addBindValue(new BindValue("loc_id",loc_id,DataType.smallint));
+
+		let success:boolean = await stmt.execute();
+		if (success) row = await stmt.fetch();
+
+		if (row)	return(row[0]);
+		return(null);
 	}
 }
