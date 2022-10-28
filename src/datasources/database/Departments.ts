@@ -19,6 +19,7 @@ export class Departments extends DatabaseTable
 	{
 		super(FormsModule.DATABASE,"departments");
 
+		this.addColumns("manager_id");
 		this.sorting = "department_id";
 		this.primaryKey = "department_id";
 	}

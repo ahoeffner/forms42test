@@ -41,6 +41,7 @@ export class Jobs extends DatabaseTable
 
 		let lov:ListOfValues =
 		{
+			title: "Jobs",
 			filterPostfix: "%",
 			datasource: source,
 			bindvalue: bindvalues,
