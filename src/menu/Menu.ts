@@ -61,7 +61,7 @@ export class Menu extends MenuComponent
 			this.menuelem.style.animationName = "moveInLeft";
 			this.menuelem.style.animationTimingFunction = "ease-in";	
 
-			this.container.style.width = "120px";	
+			this.container.style.width = "140px";	
 			this.container.style.animationDuration = "0.3s";
 			this.container.style.animationName = "moveInLeft";
 			this.container.style.animationTimingFunction = "ease-in";		
