@@ -36,12 +36,14 @@ export class MasterDetail extends BaseForm
 
 		this.link(this.dept.getPrimaryKey(),this.emp.getDepartmentsForeignKey());
 
-		this.addEventListener(this.lookups,{type: EventType.OnFetch})
+		this.addEventListener(this.getDerivedFields,{type: EventType.OnFetch})
+		
 		this.addEventListener(this.validateJob,{type: EventType.WhenValidateField, block: "employees", field: "job_id"})
+		this.addEventListener(this.getDerivedFields,{type: EventType.WhenValidateField, block: "departments", field: "manager_id"})
 		this.addEventListener(this.validateDepatment,{type: EventType.WhenValidateField, block: "employees", field: "department_id"})
 	}
 
-	public async lookups(event:FormEvent) : Promise<boolean>
+	public async getDerivedFields(event:FormEvent) : Promise<boolean>
 	{
 		if (event.block == "employees")
 		{
