@@ -14,7 +14,7 @@
 		</tr>
 		<tr class="row" foreach="row in 1..3">
 			<td class="indicator"><span from="Departments" row="$row" type="row-indicator"></span></td>
-			<td><input name="department_id" 		from="Departments" row="$row" size="4"  initcap></td>
+			<td><input name="department_id" 		from="Departments" row="$row" size="4"  integer></td>
 			<td><input name="department_name" 	from="Departments" row="$row" size="20" initcap></td>
 			<td><input name="manager" 				from="Departments" row="$row" size="20" readonly derived></td>
 			<td><input name="location" 			from="Departments" row="$row" size="30" readonly derived></td>
