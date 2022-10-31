@@ -160,7 +160,8 @@ html, body
 	width: 8px;
 	height: 8px;
 	display: block;
-	background-color: yellow;
+	border-radius: 50px;
+	background-color: darkred;
 }
 
 .filter-indicator
@@ -210,8 +211,6 @@ html, body
 	padding: 4px 0px 0px 15px;
 }
 
-
-
 .heading label
 {
 	cursor: pointer;
@@ -231,7 +230,6 @@ html, body
 .indicator
 {
 	width:10px;
-	display:grid;
 	align-items: center;
 	justify-content: center;
 }
@@ -499,4 +497,3 @@ tr td span:hover
 {
 	cursor: default;
 }
-  
