@@ -1,6 +1,6 @@
 import { Column } from "./columen";
-import { Languaes } from "./Languaes";
 import { CustomTag } from "forms42core";
+import { Languaes,Utils } from "./Languaes";
 
 export class Input implements CustomTag
 {
@@ -30,17 +30,3 @@ export class Input implements CustomTag
 	}
 }
 
-export class Utils 
-{
-    constructor(){}
-
-    public static copyAttributes(fr:Element,to:Element) : void
-    {
-      if (fr == null || to == null) return;
-      let attrnames:string[] = fr.getAttributeNames();
-
-      for (let an = 0; an < attrnames.length; an++)
-        to.setAttribute(attrnames[an],fr.getAttribute(attrnames[an]));
-    }
-
-}

@@ -18,6 +18,7 @@ import { PageFooter } from './fragments/PageFooter';
 
 import { Fields } from './fields/Fields';
 
+import { Label } from './tags/Label';
 import { Input } from './tags/Input';
 import { Languaes } from './tags/Languaes';
 
@@ -79,9 +80,11 @@ export class FormsModule extends FormsCoreModule
 		this.list = new Minimized();
 
 		Languaes.setLanguaes("Book1.xml");
+		
+		FormProperties.TagLibrary.set("BKinput",Input);
+		FormProperties.TagLibrary.set("BKlabel",Label);
 		FormProperties.TagLibrary.set("labels",LanguageLabel);
 
-		FormProperties.TagLibrary.set("BKinput",Input);
 
 		this.OpenURLForm();
 		this.updateKeyMap(keymap);
