@@ -5,8 +5,19 @@ SQL injection ?
 
 Warning ved setView med triggere
 
+updateable = false
+change all fields
+
+Framework
+impl.remove only if parent
+
 undo rec, blk, frm
 connect to pool
+
+Date:
+Validate ????
+enter query -> datetime
+
 
 Cyclic master detail
 
