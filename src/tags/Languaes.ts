@@ -69,6 +69,22 @@ export class Languaes
             let column:Column = new Column(colname,label,hint,size);
             insert.set(colname,column);
         }
+        console.log(this.root)
     }   
 }
 
+
+export class Utils 
+{
+    constructor(){}
+
+    public static copyAttributes(fr:Element,to:Element) : void
+    {
+      if (fr == null || to == null) return;
+      let attrnames:string[] = fr.getAttributeNames();
+
+      for (let an = 0; an < attrnames.length; an++)
+        to.setAttribute(attrnames[an],fr.getAttribute(attrnames[an]));
+    }
+
+}

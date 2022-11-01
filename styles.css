@@ -68,7 +68,8 @@ html, body
 	justify-content: center;
 }
 
-.form-header-right
+.form-header-right,
+tr td span:hover
 {
 	cursor: default;
 }
@@ -161,7 +162,7 @@ html, body
 	height: 8px;
 	display: block;
 	border-radius: 50px;
-	background-color: darkred;
+	background-color: gray;
 }
 
 .filter-indicator
@@ -355,8 +356,8 @@ tr td:first-child
 div[name="prev"]:active,
 div[name="next"]:active
 {
-	transform: scale(1.2);
 	user-select: none;
+	transform: scale(1.2);
 }
 
 div.modal
@@ -473,11 +474,6 @@ div[name="login"] p label
 	display:inline-block;
 }
 
-tr td span:hover
-{
-	cursor: default;
-}
-
 @keyframes moveInLeft
 {
 	/* start */
@@ -493,7 +489,10 @@ tr td span:hover
 	}
 }
 
-.icon_calander
+.lov,
+div[name="date-picker"]
 {
-	cursor: default;
+	margin:10px 5px;
+	padding:10px 5px;
+	box-shadow: 0 5px 30px rgb(0 0 0 / 30%);
 }

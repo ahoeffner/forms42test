@@ -2,6 +2,9 @@
 
 <div class="form">
     <div class="block">
+        <BKLabel from="order_actions" name="ordre_label"></BKLabel>
+    </div>
+    <div class="block">
         <div foreach="row in 0..5" class="content">
             <div class="indicator"><div from="order_actions" row="$row" type="row-indicator"></div></div>
             <BKinput from="order_actions" name="actions"  size="30" row="$row"></BKinput>
