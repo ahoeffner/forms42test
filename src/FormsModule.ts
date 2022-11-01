@@ -20,7 +20,7 @@ import { Fields } from './fields/Fields';
 
 import { Label } from './tags/Label';
 import { Input } from './tags/Input';
-import { Languaes } from './tags/Languaes';
+import { Languages } from './tags/Languages';
 
 import { Simple } from './old/dbbased/simple/Simple';
 import { DemoInput } from './old/filebased/demoinput/demoinput';
@@ -79,8 +79,8 @@ export class FormsModule extends FormsCoreModule
 		this.menu = new Menu();
 		this.list = new Minimized();
 
-		Languaes.setLanguaes("Book1.xml");
-		
+		Languages.setLanguaes("Book1.xml");
+
 		FormProperties.TagLibrary.set("BKinput",Input);
 		FormProperties.TagLibrary.set("BKlabel",Label);
 		FormProperties.TagLibrary.set("labels",LanguageLabel);

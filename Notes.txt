@@ -5,19 +5,10 @@ SQL injection ?
 
 Warning ved setView med triggere
 
-updateable = false
-change all fields
-
-Framework
-impl.remove only if parent
+Fix filter clone
 
 undo rec, blk, frm
 connect to pool
-
-Date:
-Validate ????
-enter query -> datetime
-
 
 Cyclic master detail
 
@@ -28,6 +19,7 @@ tabindex -> flyt ?
 
 finish datepicker
 Ryd op i styles.css
+Hvad laver Book1.xml ?
 
 *************
 

@@ -1,5 +1,5 @@
 import { Column } from "./columen";
-import { CustomTag } from "forms42core";
+import { CustomTag } from ./Languagesre";
 import { Languaes,Utils } from "./Languaes";
 
 export class Input implements CustomTag
@@ -15,18 +15,17 @@ export class Input implements CustomTag
         if (tag.getAttribute("from")) this.table = tag.getAttribute("from").toLowerCase();
         if (tag.getAttribute("name")) this.column = tag.getAttribute("name").toLowerCase();
         if(tag.getAttribute("tabindex")) this.tabindex = tag.getAttribute("tabindex").toLowerCase();
-        
+
         let input:HTMLElement = document.createElement("input");
         let columen:Column = Languaes.getColumn(this.table,this.column);
-        
+
         Utils.copyAttributes(tag,input);
 
         input.setAttribute("from", this.table);
-        
-        if (columen) 
+
+        if (columen)
             input.setAttribute("name", columen.name);
-    
-        return(input);   
+
+        return(input);
 	}
 }
-

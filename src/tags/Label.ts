@@ -1,41 +1,44 @@
 import { Column } from "./columen";
 import { CustomTag } from "forms42core";
-import { Languaes,Utils } from "./Languaes";
+import { Languages, Utils } from "./Languages";
 
 export class Label implements CustomTag
 {
-    public column:string = null;
-    public table:string = null;
-    public columen:Column = null;
-    public titlename:string =null;
-    parse(component: any, tag: HTMLElement, attr: string): string | HTMLElement | HTMLElement[] | null
-    {
-    
-      if(tag.getAttribute("from")) this.table = tag.getAttribute("from");
-      if(tag.getAttribute("name")) this.column = tag.getAttribute("name");
+	public name:string = null;
+	public table:string = null;
+	public column:Column = null;
+	public titlename:string = null;
 
-      let label:HTMLElement = document.createElement("label");
+	parse(_component: any, tag: HTMLElement, _attr: string): string | HTMLElement | HTMLElement[] | null
+	{
+		if(tag.getAttribute("name")) this.name = tag.getAttribute("name");
+		if(tag.getAttribute("table")) this.table = tag.getAttribute("table");
 
-      Utils.copyAttributes(tag,label);
-      this.columen = Languaes.getColumn(this.table,this.column);
+		let label:HTMLElement = document.createElement("label");
 
-      if(this.columen) 
-      {
-        if(!this.columen.hint)
-        {
-          let span:HTMLElement = document.createElement("span");
-          
-          span.textContent = this.columen.hint;
-          label.setAttribute("class","tooltip");
-          span.setAttribute("class","tooltiptext-top");
-          
-          label.appendChild(span);
-        }
-        label.textContent = this.columen.label;
-      } else {
-        label.textContent = "something went wrong";
-      }
-      return(label);
-    }
+		Utils.copyAttributes(tag,label);
+		this.column = Languages.getColumn(this.table,this.name);
 
+		if(this.column)
+		{
+			if(!this.column.hint)
+			{
+				let span:HTMLElement = document.createElement("span");
+
+				span.textContent = this.column.hint;
+				label.setAttribute("class","tooltip");
+				span.setAttribute("class","tooltiptext-top");
+
+				label.appendChild(span);
+			}
+
+			label.textContent = this.column.label;
+		}
+		else
+		{
+			label.textContent = "something went wrong";
+		}
+
+		return(label);
+	}
 }
