@@ -1,4 +1,4 @@
-import { Column } from "./columen";
+import { Column } from "./Column";
 import { Connection } from "forms42core";
 
 export class Languages

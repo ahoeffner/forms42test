@@ -1,4 +1,4 @@
-import { Column } from "./columen";
+import { Column } from "./Column";
 import { CustomTag } from "forms42core";
 import { Languages, Utils } from "./Languages";
 

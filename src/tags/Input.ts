@@ -1,6 +1,6 @@
-import { Column } from "./columen";
-import { CustomTag } from ./Languagesre";
-import { Languaes,Utils } from "./Languaes";
+import { Column } from "./Column";
+import { CustomTag } from "forms42core";
+import { Languages,Utils } from "./Languages";
 
 export class Input implements CustomTag
 {
@@ -9,7 +9,7 @@ export class Input implements CustomTag
     size:string = null;
     tabindex:string = null;
 
-	parse(component: any, tag: HTMLElement, attr: string): string | HTMLElement | HTMLElement[]
+	parse(_component: any, tag: HTMLElement, _attr: string): string | HTMLElement | HTMLElement[]
 	{
         if (tag.getAttribute("size")) this.size = tag.getAttribute("size").toLowerCase();
         if (tag.getAttribute("from")) this.table = tag.getAttribute("from").toLowerCase();
@@ -17,7 +17,7 @@ export class Input implements CustomTag
         if(tag.getAttribute("tabindex")) this.tabindex = tag.getAttribute("tabindex").toLowerCase();
 
         let input:HTMLElement = document.createElement("input");
-        let columen:Column = Languaes.getColumn(this.table,this.column);
+        let columen:Column = Languages.getColumn(this.table,this.column);
 
         Utils.copyAttributes(tag,input);
 

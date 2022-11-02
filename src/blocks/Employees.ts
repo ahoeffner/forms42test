@@ -14,6 +14,7 @@ import { Jobs } from '../datasources/database/Jobs';
 import { Departments } from '../datasources/database/Departments';
 import { Employees as EmployeeSource } from "../datasources/database/Employees";
 import { BindValue, Block, EventType, Filter, Filters, FilterStructure, Form, FormEvent, Key, ListOfValues } from "forms42core";
+import { WorkDays } from '../bonus/WorkDays';
 
 export class Employees extends Block
 {
@@ -21,6 +22,7 @@ export class Employees extends Block
 	{
 		super(form,name);
 		this.datasource = new EmployeeSource();
+		this.setDateConstraint("hire_date",new WorkDays());
 	}
 
 	public getDepartmentsForeignKey() : Key
