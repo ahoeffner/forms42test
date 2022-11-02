@@ -61,13 +61,11 @@ export class MasterDetail extends BaseForm
 
 	public async validateJob(event:FormEvent) : Promise<boolean>
 	{
-		this.emp.validateJob(event,"job_title");
-		return(true);
+		return(this.emp.validateJob(event,"job_title"));
 	}
 
 	public async validateDepatment(event:FormEvent) : Promise<boolean>
 	{
-		this.emp.validateDepartment(event,"department_name");
-		return(true);
+		return(this.emp.validateDepartment(event,"department_name"));
 	}
 }
