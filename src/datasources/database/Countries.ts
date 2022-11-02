@@ -11,7 +11,7 @@
  */
 
 import { FormsModule } from "../../FormsModule";
-import { BindValue, DatabaseTable, DataType, Filter, Filters, FilterStructure, ListOfValues, SQLStatement } from "forms42core";
+import { BindValue, DatabaseTable, DataType, SQLStatement } from "forms42core";
 
 export class Countries extends DatabaseTable
 {
@@ -22,36 +22,6 @@ export class Countries extends DatabaseTable
 		this.rowlocking = true;
 		this.sorting = "country_id";
 		this.primaryKey = "country_id";
-	}
-
-	public static getCountryLov() : ListOfValues
-	{
-		let source:Countries = null;
-		let bindvalues:BindValue[] = [];
-		let filter:FilterStructure = null;
-
-		let idflt:Filter = Filters.ILike("country_id");
-		let nameflt:Filter = Filters.ILike("country_name");
-
-		filter = new FilterStructure().and(idflt).or(nameflt);
-		source = new Countries().addFilter(filter);
-
-		bindvalues.push(idflt.getBindValue());
-		bindvalues.push(nameflt.getBindValue());
-
-		let lov:ListOfValues =
-		{
-			filterPostfix: "%",
-			datasource: source,
-			title: "Countries",
-			bindvalue: bindvalues,
-			displayfields: "country_name",
-			filterInitialValueFrom: "country_name",
-			sourcefields: ["country_id","country_name"],
-			targetfields: ["country_id","country_name"],
-		}
-
-		return(lov);
 	}
 
 	public static async getName(code:string) : Promise<string>

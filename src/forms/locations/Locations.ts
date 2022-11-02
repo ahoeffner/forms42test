@@ -13,7 +13,7 @@
 import content from './Locations.html';
 
 import { BaseForm } from "../../BaseForm";
-import { Countries } from '../../datasources/database/Countries';
+import { Countries } from '../../blocks/Countries';
 import { datasource, EventType, FormEvent, ListOfValues } from "forms42core";
 import { Locations as Locationdata } from "../../datasources/database/Locations";
 
@@ -37,7 +37,7 @@ export class Locations extends BaseForm
 	public async setCountryName(event:FormEvent) : Promise<boolean>
 	{
 		let code:string = this.getValue("Locations","country_id");
-		let country:string = await Countries.getName(code);
+		let country:string = await Countries.getCountryName(code);
 		this.setValue("Locations","country_name",country);
 
 		if (event.type == EventType.WhenValidateField)
