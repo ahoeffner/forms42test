@@ -25,6 +25,8 @@ Hvad laver Book1.xml ?
 
 Demo:
 
+Searc on lookup !!
+
 Countries: QueryEditor
 Locations: ListOfValues
 Employess: Sorting, Dates, Row-warning for salary, Row lock
