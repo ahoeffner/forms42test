@@ -37,19 +37,25 @@ export class MenuData extends StaticMenu
 					{
 						id: "countries",
 						display: "Countries",
-						command: "/forms/database/countries"
+						command: "/forms/countries"
 					}
 					,
 					{
 						id: "locations",
 						display: "Locations",
-						command: "/forms/database/locations"
+						command: "/forms/locations"
 					}
 					,
 					{
 						id: "employees",
 						display: "Employees",
-						command: "/forms/database/employees"
+						command: "/forms/employees"
+					}
+					,
+					{
+						id: "masterdetail",
+						display: "MasterDetail",
+						command: "/forms/masterdetail"
 					}
 					,
 					{
@@ -60,31 +66,13 @@ export class MenuData extends StaticMenu
 							{
 								id: "phonebook",
 								display: "1 Phone Book",
-								command: "/forms/memory/PhoneBook"
+								command: "/forms/PhoneBook"
 							}
 							,
 							{
 								id: "fields",
 								display: "2 Fields with extensions",
 								command: "/forms/Fields"
-							}
-							,
-							{
-								id: "database",
-								display: "Database based forms",
-								entries:
-								[
-									{
-										id: "simple",
-										display: "1 Minimal",
-										command: "/forms/database/simple"
-									},
-									{
-										id: "masterdetail",
-										display: "2 Master Detail",
-										command: "/forms/database/MasterDetail"
-									}
-								]
 							}
 						]
 					}

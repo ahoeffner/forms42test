@@ -10,10 +10,10 @@
  * accompanied this code).
  */
 
-import { Block, Form, Key, ListOfValues } from "forms42core";
 import { Employees } from "../datasources/database/Employees";
 import { Locations } from "../datasources/database/Locations";
 import { Departments as DepartmentTable } from "../datasources/database/Departments";
+import { BindValue, Block, Filter, Filters, FilterStructure, Form, Key, ListOfValues } from "forms42core";
 
 export class Departments extends Block
 {
@@ -26,11 +26,6 @@ export class Departments extends Block
 	public getPrimaryKey() : Key
 	{
 		return(new Key("pkey",this.name,"department_id"));
-	}
-
-	public static getDepartmentLov() : ListOfValues
-	{
-		return(DepartmentTable.getDepartmentLov());
 	}
 
 	public async lookupManager(field:string) : Promise<boolean>
@@ -55,6 +50,34 @@ export class Departments extends Block
 
 		this.setValue(field,location);
 		return(true);
+	}
+
+	public static getDepartmentLov() : ListOfValues
+	{
+		let bindvalues:BindValue[] = [];
+		let filter:FilterStructure = null;
+		let source:DepartmentTable = null;
+
+		let nameflt:Filter = Filters.ILike("department_name");
+
+		filter = new FilterStructure().and(nameflt);
+		source = new DepartmentTable().addFilter(filter);
+
+		bindvalues.push(nameflt.getBindValue());
+
+		let lov:ListOfValues =
+		{
+			filterPostfix: "%",
+			datasource: source,
+			title: "Departments",
+			bindvalue: bindvalues,
+			displayfields: "department_name",
+			filterInitialValueFrom: "department_name",
+			sourcefields: ["department_id","department_name"],
+			targetfields: ["department_id","department_name"],
+		}
+
+		return(lov);
 	}
 
 	public static async getTitle(id:string) : Promise<string>

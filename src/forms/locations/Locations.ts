@@ -12,10 +12,10 @@
 
 import content from './Locations.html';
 
-import { BaseForm } from "../../../BaseForm";
-import { Countries } from '../../../datasources/database/Countries';
+import { BaseForm } from "../../BaseForm";
+import { Countries } from '../../datasources/database/Countries';
 import { datasource, EventType, FormEvent, ListOfValues } from "forms42core";
-import { Locations as Locationdata } from "../../../datasources/database/Locations";
+import { Locations as Locationdata } from "../../datasources/database/Locations";
 
 @datasource("Locations",Locationdata)
 

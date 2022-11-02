@@ -10,18 +10,18 @@
  * accompanied this code).
  */
 
+import { WorkDays } from '../bonus/WorkDays';
 import { Jobs } from '../datasources/database/Jobs';
 import { Departments } from '../datasources/database/Departments';
-import { Employees as EmployeeSource } from "../datasources/database/Employees";
+import { Employees as EmployeeTable } from "../datasources/database/Employees";
 import { BindValue, Block, EventType, Filter, Filters, FilterStructure, Form, FormEvent, Key, ListOfValues } from "forms42core";
-import { WorkDays } from '../bonus/WorkDays';
 
 export class Employees extends Block
 {
 	constructor(form:Form, name:string)
 	{
 		super(form,name);
-		this.datasource = new EmployeeSource();
+		this.datasource = new EmployeeTable();
 		this.setDateConstraint("hire_date",new WorkDays());
 	}
 
@@ -104,7 +104,7 @@ export class Employees extends Block
 		let lnameflt:Filter = Filters.ILike("last_name");
 
 		filter = new FilterStructure().and(fnameflt).or(lnameflt);
-		source = new EmployeeSource().addFilter(filter);
+		source = new EmployeeTable().addFilter(filter);
 
 		bindvalues.push(fnameflt.getBindValue());
 		bindvalues.push(lnameflt.getBindValue());

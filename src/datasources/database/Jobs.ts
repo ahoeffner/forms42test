@@ -11,7 +11,7 @@
  */
 
 import { FormsModule } from "../../FormsModule";
-import { BindValue, DatabaseTable, DataType, Filter, Filters, FilterStructure, ListOfValues, SQLStatement } from "forms42core";
+import { BindValue, DatabaseTable, DataType, SQLStatement } from "forms42core";
 
 export class Jobs extends DatabaseTable
 {
@@ -22,36 +22,6 @@ export class Jobs extends DatabaseTable
 		this.rowlocking = true;
 		this.sorting = "job_id";
 		this.primaryKey = "job_id";
-	}
-
-	public static getJobLov() : ListOfValues
-	{
-		let source:Jobs = null;
-		let bindvalues:BindValue[] = [];
-		let filter:FilterStructure = null;
-
-		let idflt:Filter = Filters.ILike("job_id");
-		let titleflt:Filter = Filters.ILike("job_title");
-
-		filter = new FilterStructure().and(idflt).or(titleflt);
-		source = new Jobs().addFilter(filter);
-
-		bindvalues.push(idflt.getBindValue());
-		bindvalues.push(titleflt.getBindValue());
-
-		let lov:ListOfValues =
-		{
-			title: "Jobs",
-			filterPostfix: "%",
-			datasource: source,
-			bindvalue: bindvalues,
-			displayfields: "job_title",
-			filterInitialValueFrom: "job_id",
-			sourcefields: ["job_id","job_title"],
-			targetfields: ["job_id","job_title"],
-		}
-
-		return(lov);
 	}
 
 	public static async getTitle(id:string) : Promise<string>

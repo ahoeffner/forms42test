@@ -22,14 +22,13 @@ import { Label } from './tags/Label';
 import { Input } from './tags/Input';
 import { Languages } from './tags/Languages';
 
-import { Simple } from './old/dbbased/simple/Simple';
 import { DemoInput } from './old/filebased/demoinput/demoinput';
-import { MasterDetail } from './forms/database/masterdetail/MasterDetail';
 import { PhoneBookMembased } from './old/filebased/phonenook/PhoneBookMembased';
 
-import { Countries } from './forms/database/countries/Countries';
-import { Locations } from './forms/database/locations/Locations';
-import { Employees } from './forms/database/employees/Employees';
+import { Countries } from './forms/countries/Countries';
+import { Locations } from './forms/locations/Locations';
+import { Employees } from './forms/employees/Employees';
+import { MasterDetail } from './forms/masterdetail/MasterDetail';
 
 import { LanguageLabel } from './tags/LanguageLabels';
 
@@ -42,14 +41,12 @@ import { FormsPathMapping, FormsModule as FormsCoreModule, KeyMap, FormEvent, Ev
 	[
 		{class: Fields, path: "/forms/fields"},
 
-		{class: PhoneBookMembased, path: "/forms/memory/phonebook"},
+		{class: Countries, path: "/forms/countries"},
+		{class: Locations, path: "/forms/locations"},
+		{class: Employees, path: "/forms/employees"},
+		{class: MasterDetail, path: "/forms/masterdetail"},
 
-		{class: Simple, path: "/forms/database/simple"},
-		{class: MasterDetail, path: "/forms/database/masterdetail"},
-
-		{class: Countries, path: "/forms/database/countries"},
-		{class: Locations, path: "/forms/database/locations"},
-		{class: Employees, path: "/forms/database/employees"},
+		{class: PhoneBookMembased, path: "/forms/phonebook"},
 
 		{class: FormHeader, path: "/html/formheader"},
 		{class: PageHeader, path: "/html/pageheader"},

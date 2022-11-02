@@ -11,7 +11,7 @@
  */
 
 import { FormsModule } from "../../FormsModule";
-import { BindValue, DatabaseTable, DataType, Filter, Filters, FilterStructure, ListOfValues, SQLStatement } from "forms42core";
+import { BindValue, DatabaseTable, DataType, SQLStatement } from "forms42core";
 
 export class Departments extends DatabaseTable
 {
@@ -22,34 +22,6 @@ export class Departments extends DatabaseTable
 		this.sorting = "department_id";
 		this.primaryKey = "department_id";
 		this.addColumns(["manager_id","loc_id"]);
-	}
-
-	public static getDepartmentLov() : ListOfValues
-	{
-		let source:Departments = null;
-		let bindvalues:BindValue[] = [];
-		let filter:FilterStructure = null;
-
-		let nameflt:Filter = Filters.ILike("department_name");
-
-		filter = new FilterStructure().and(nameflt);
-		source = new Departments().addFilter(filter);
-
-		bindvalues.push(nameflt.getBindValue());
-
-		let lov:ListOfValues =
-		{
-			filterPostfix: "%",
-			datasource: source,
-			title: "Departments",
-			bindvalue: bindvalues,
-			displayfields: "department_name",
-			filterInitialValueFrom: "department_name",
-			sourcefields: ["department_id","department_name"],
-			targetfields: ["department_id","department_name"],
-		}
-
-		return(lov);
 	}
 
 	public static async getTitle(id:string) : Promise<string>

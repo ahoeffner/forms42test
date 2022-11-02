@@ -12,11 +12,11 @@
 
 import content from './MasterDetail.html';
 
-import { BaseForm } from "../../../BaseForm";
+import { Jobs } from '../../blocks/Jobs';
+import { BaseForm } from "../../BaseForm";
 import { EventType, FormEvent } from "forms42core";
-import { Employees } from "../../../blocks/Employees";
-import { Departments } from '../../../blocks/Departments';
-import { Jobs } from '../../../datasources/database/Jobs';
+import { Employees } from "../../blocks/Employees";
+import { Departments } from '../../blocks/Departments';
 
 
 export class MasterDetail extends BaseForm
