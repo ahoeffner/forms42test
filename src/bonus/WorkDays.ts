@@ -20,5 +20,4 @@ export class WorkDays implements DateConstraint
 		let day:number = date.getDay();
 		return(day > 0 && day < 6);
 	}
-
 }

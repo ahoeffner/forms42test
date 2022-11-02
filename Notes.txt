@@ -14,6 +14,9 @@ Cyclic master detail
 
 tabindex -> flyt ?
 
+null i ListOfValues
+Invalid mangler ????
+
 
 *** Jonas ***
 
