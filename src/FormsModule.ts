@@ -17,18 +17,11 @@ import { PageHeader } from './fragments/PageHeader';
 import { PageFooter } from './fragments/PageFooter';
 
 import { Fields } from './fields/Fields';
-
-import { Label } from './tags/Label';
-import { Input } from './tags/Input';
-import { Languages } from './tags/Languages';
-
-import { DemoInput } from './old/filebased/demoinput/demoinput';
-import { PhoneBookMembased } from './old/filebased/phonenook/PhoneBookMembased';
-
 import { Countries } from './forms/countries/Countries';
 import { Locations } from './forms/locations/Locations';
 import { Employees } from './forms/employees/Employees';
 import { MasterDetail } from './forms/masterdetail/MasterDetail';
+import { PhoneBookMembased } from './forms/phonenook/PhoneBookMembased';
 
 import { LanguageLabel } from './tags/LanguageLabels';
 
@@ -63,7 +56,8 @@ export class FormsModule extends FormsCoreModule
 	public static DATABASE:Connection = null;
 
 	private fields:KeyMap = new KeyMap({key: 'f', ctrl: true})
-	private inputdemo:KeyMap = new KeyMap({key: 'd', ctrl: true})
+	private countries:KeyMap = new KeyMap({key: 'c', ctrl: true})
+	private locations:KeyMap = new KeyMap({key: 'l', ctrl: true})
 	private phonebook:KeyMap = new KeyMap({key: 'p', ctrl: true})
 	private employees:KeyMap = new KeyMap({key: 'e', ctrl: true})
 	private masterdetail:KeyMap = new KeyMap({key: 'm', ctrl: true})
@@ -76,11 +70,7 @@ export class FormsModule extends FormsCoreModule
 		this.menu = new Menu();
 		this.list = new Minimized();
 
-		Languages.setLanguaes("Book1.xml");
-
-		FormProperties.TagLibrary.set("BKinput",Input);
-		FormProperties.TagLibrary.set("BKlabel",Label);
-		FormProperties.TagLibrary.set("labels",LanguageLabel);
+		FormProperties.TagLibrary.set("translate",LanguageLabel);
 
 
 		this.OpenURLForm();
@@ -94,7 +84,8 @@ export class FormsModule extends FormsCoreModule
 		this.addEventListener(this.open,
 		[
 			{type:EventType.Key,key:this.fields},
-			{type:EventType.Key,key:this.inputdemo},
+			{type:EventType.Key,key:this.countries},
+			{type:EventType.Key,key:this.locations},
 			{type:EventType.Key,key:this.phonebook},
 			{type:EventType.Key,key:this.employees},
 			{type:EventType.Key,key:this.masterdetail},
@@ -109,14 +100,18 @@ export class FormsModule extends FormsCoreModule
 		if (event.key == this.employees)
 			this.showform(Employees);
 
+		if (event.key == this.countries)
+			this.showform(Countries);
+
+		if (event.key == this.locations)
+			this.showform(Locations);
+
 		if (event.key == this.phonebook)
 			this.showform(PhoneBookMembased);
 
 		if (event.key == this.masterdetail)
 			this.showform(MasterDetail);
 
-		if (event.key == this.inputdemo)
-			this.showform(DemoInput);
 		return(true);
 	}
 

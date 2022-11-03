@@ -59,8 +59,8 @@ export class MenuData extends StaticMenu
 					}
 					,
 					{
-						id: "old",
-						display: "Old",
+						id: "nobase",
+						display: "Database less",
 						entries:
 						[
 							{

@@ -12,8 +12,8 @@
 
 import content from './PhoneBookMembased.html';
 
-import { BaseForm } from '../../../BaseForm';
-import { Employees } from "../../../datasources/memory/Employees";
+import { BaseForm } from '../../BaseForm';
+import { Employees } from "../../datasources/memory/Employees";
 import { EventType, Filters, Filter, Block, block, datasource, formevent, DatePicker } from 'forms42core';
 
 @datasource("Employees",Employees)

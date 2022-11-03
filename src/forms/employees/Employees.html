@@ -22,7 +22,7 @@
 			</tr>
 		</table>
 	</div>
-	
+
 	<div style="display:flex; align-items: stretch;">
 		<table class="block" style="display:flex; align-items: center;">
 			<tr>
@@ -42,7 +42,7 @@
 				<td>Job</td>
 				<td style="display:inline-flex">
 					<input name="job_id" from="Employees" size="8" upper>
-					<input name="job_title" from="Employees" size="20" derived readonly>
+					<input name="job_title" from="Employees" size="20" derived readonly query="false">
 					<span onclick="this.showListOfValues('Employees','job_id')">&#x2807;</span>
 				</td>
 			</tr>
@@ -50,7 +50,7 @@
 				<td>Department</td>
 				<td style="display:inline-flex">
 					<input name="department_id" from="Employees" size="8" integer>
-					<input name="department_name" from="Employees" size="20" derived readonly>
+					<input name="department_name" from="Employees" size="20" derived readonly query="false">
 					<span onclick="this.showListOfValues('Employees','department_id')">&#x2807;</span>
 				</td>
 			</tr>
