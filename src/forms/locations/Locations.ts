@@ -14,8 +14,9 @@ import content from './Locations.html';
 
 import { BaseForm } from "../../BaseForm";
 import { Countries } from '../../blocks/Countries';
-import { datasource, EventType, FormEvent, ListOfValues } from "forms42core";
+import { Block, datasource, EventType, FormEvent, ListOfValues } from "forms42core";
 import { Locations as Locationdata } from "../../datasources/database/Locations";
+import { CountryNameFilter } from '../../bonus/CountryNameFilter';
 
 @datasource("Locations",Locationdata)
 
@@ -30,14 +31,30 @@ export class Locations extends BaseForm
 		this.setListOfValues("Locations","country_id",lov);
 		this.setListOfValues("Locations","country_name",lov);
 
+		this.addEventListener(this.preQuery,{type: EventType.PreQuery})
 		this.addEventListener(this.setCountryName,{type: EventType.OnFetch})
 		this.addEventListener(this.setCountryName,{type: EventType.WhenValidateField, field: "country_id"})
+	}
+
+	public async preQuery() : Promise<boolean>
+	{
+		let loc:Block = this.getBlock("Locations")
+		let country:string = loc.getValue("country_name");
+
+		if (country != null)
+		{
+			loc.filter.delete("country_name");
+			loc.filter.and(new CountryNameFilter("country_name").setConstraint(country));
+		}
+
+		return(true);
 	}
 
 	public async setCountryName(event:FormEvent) : Promise<boolean>
 	{
 		let code:string = this.getValue("Locations","country_id");
 		let country:string = await Countries.getCountryName(code);
+
 		this.setValue("Locations","country_name",country);
 
 		if (event.type == EventType.WhenValidateField)
