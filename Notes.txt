@@ -14,19 +14,17 @@ Cyclic master detail
 
 tabindex -> flyt ?
 
-Lov in querymode
+Lov arrow down
+Search size
 
 *** Jonas ***
 
 finish datepicker
 Ryd op i styles.css
-Hvad laver Book1.xml ?
 
 *************
 
 Demo:
-
-Searc on lookup !!
 
 Countries: QueryEditor
 Locations: ListOfValues
