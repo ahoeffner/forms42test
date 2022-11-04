@@ -28,7 +28,7 @@ import { LanguageLabel } from './tags/LanguageLabels';
 import { LinkMapper } from './fields/LinkMapper';
 import { TrueFalseMapper } from './fields/TrueFalseMapper';
 
-import { FormsPathMapping, FormsModule as FormsCoreModule, KeyMap, FormEvent, EventType, DatabaseConnection as Connection, FormProperties, BuiltIns, KeyCodes } from 'forms42core';
+import { Loading, FormsPathMapping, FormsModule as FormsCoreModule, KeyMap, FormEvent, EventType, DatabaseConnection as Connection, FormProperties, BuiltIns, KeyCodes } from 'forms42core';
 
 @FormsPathMapping(
 	[
@@ -61,6 +61,7 @@ export class FormsModule extends FormsCoreModule
 	private phonebook:KeyMap = new KeyMap({key: 'p', ctrl: true})
 	private employees:KeyMap = new KeyMap({key: 'e', ctrl: true})
 	private masterdetail:KeyMap = new KeyMap({key: 'm', ctrl: true})
+	private loading:KeyMap = new KeyMap({key: 'g', ctrl: true})
 
 	constructor()
 	{
@@ -89,6 +90,7 @@ export class FormsModule extends FormsCoreModule
 			{type:EventType.Key,key:this.phonebook},
 			{type:EventType.Key,key:this.employees},
 			{type:EventType.Key,key:this.masterdetail},
+			{type:EventType.Key,key:this.loading},
 		]);
 	}
 
@@ -111,6 +113,8 @@ export class FormsModule extends FormsCoreModule
 
 		if (event.key == this.masterdetail)
 			this.showform(MasterDetail);
+		if (event.key == this.loading)
+			this.showform(Loading);
 
 		return(true);
 	}
