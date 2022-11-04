@@ -14,9 +14,7 @@ Cyclic master detail
 
 tabindex -> flyt ?
 
-null i ListOfValues
-Invalid mangler ????
-
+Lov in querymode
 
 *** Jonas ***
 

@@ -31,9 +31,17 @@ export class Employees extends BaseForm
 		this.emp.setListOfValues("job_id",Jobs.getJobLov());
 		this.emp.setListOfValues("department_id",Departments.getDepartmentLov());
 
+		this.addEventListener(this.preQuery,{type: EventType.PreQuery})
 		this.addEventListener(this.getDerivedFields,{type: EventType.OnFetch})
 		this.addEventListener(this.validateJob,{type: EventType.WhenValidateField, field: "job_id"})
 		this.addEventListener(this.validateDepatment,{type: EventType.WhenValidateField, field: "department_id"})
+	}
+
+	public async preQuery() : Promise<boolean>
+	{
+		this.emp.filter.delete("job_title");
+		this.emp.filter.delete("department_name");
+		return(true);
 	}
 
 	public async getDerivedFields() : Promise<boolean>

@@ -14,6 +14,9 @@ import { DateConstraint } from "forms42core";
 
 export class WorkDays implements DateConstraint
 {
+	dateclazz:string = "weekend";
+	message:string = "Weekends not allowed";
+
 	valid(date:Date) : boolean
 	{
 		if (date == null) return(true);
