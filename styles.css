@@ -356,8 +356,10 @@ tr td:first-child
 div[name="prev"]:active,
 div[name="next"]:active
 {
+	color:white;
 	user-select: none;
 	transform: scale(1.2);
+	background-color: gray;
 }
 
 div.modal
@@ -493,6 +495,10 @@ div[name="login"] p label
 div[name="date-picker"]
 {
 	margin:10px 5px;
-	padding:10px 5px;
 	box-shadow: 0 5px 30px rgb(0 0 0 / 30%);
+}
+
+.weekend
+{
+	background-color: gainsboro;
 }
