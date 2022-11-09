@@ -27,7 +27,7 @@ export class Employees extends Block
 
 	public getDepartmentsForeignKey() : Key
 	{
-		return(new Key("deptfkey",this.name,"department_id"));
+		return(new Key(this.name,"department_id"));
 	}
 
 	public async lookupJob(field:string) : Promise<boolean>

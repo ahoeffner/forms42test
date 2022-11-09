@@ -25,7 +25,7 @@ export class Departments extends Block
 
 	public getPrimaryKey() : Key
 	{
-		return(new Key("pkey",this.name,"department_id"));
+		return(new Key(this.name,"department_id"));
 	}
 
 	public async lookupManager(field:string) : Promise<boolean>
