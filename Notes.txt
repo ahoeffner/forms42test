@@ -12,6 +12,9 @@ tabindex -> flyt ?
 Lov arrow down
 Search size
 
+styles ???? (datepicker)
+Delete new ???
+
 
 *** Jonas ***
 
