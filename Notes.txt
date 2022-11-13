@@ -9,13 +9,7 @@ Cyclic master detail
 
 tabindex -> flyt ?
 
-Lov arrow down
-Search size
-
-styles ???? (datepicker)
-Delete new ???
 topbar menu
-
 
 *** Jonas ***
 

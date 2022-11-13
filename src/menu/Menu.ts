@@ -27,12 +27,8 @@ export class Menu extends MenuComponent
 
 		this.container = document.getElementById("main-menu");
 
-	
-
 		this.menuelem = this.container.appendChild(this.menuelem);
 		this.target = this.menuelem;
-
-	
 	}
 
 	public hide() : void
@@ -40,13 +36,13 @@ export class Menu extends MenuComponent
 		super.hide();
 		this.container.style.width = "0px";
 		this.menuelem.style.display = "none";
-		
+
 		this.displayed = false;
 	}
 
 	public showmenu() : void
 	{
-	
+
 		if (this.displayed)
 		{
 			super.hide();
@@ -59,12 +55,12 @@ export class Menu extends MenuComponent
 			this.menuelem.style.display = "block";
 			this.menuelem.style.animationDuration = "0.4s";
 			this.menuelem.style.animationName = "moveInLeft";
-			this.menuelem.style.animationTimingFunction = "ease-in";	
+			this.menuelem.style.animationTimingFunction = "ease-in";
 
-			this.container.style.width = "140px";	
+			this.container.style.width = "140px";
 			this.container.style.animationDuration = "0.3s";
 			this.container.style.animationName = "moveInLeft";
-			this.container.style.animationTimingFunction = "ease-in";		
+			this.container.style.animationTimingFunction = "ease-in";
 		}
 
 		this.displayed = !this.displayed;

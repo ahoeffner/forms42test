@@ -14,9 +14,9 @@ import content from './Locations.html';
 
 import { BaseForm } from "../../BaseForm";
 import { Countries } from '../../blocks/Countries';
-import { Block, datasource, EventType, FormEvent, ListOfValues } from "forms42core";
-import { Locations as Locationdata } from "../../datasources/database/Locations";
 import { CountryNameFilter } from '../../bonus/CountryNameFilter';
+import { Locations as Locationdata } from "../../datasources/database/Locations";
+import { Block, datasource, EventType, FormEvent, ListOfValues } from "forms42core";
 
 @datasource("Locations",Locationdata)
 

@@ -17,6 +17,7 @@ import { PageHeader } from './fragments/PageHeader';
 import { PageFooter } from './fragments/PageFooter';
 
 import { Fields } from './fields/Fields';
+import { Jobs } from './forms/jobs/Jobs';
 import { Countries } from './forms/countries/Countries';
 import { Locations } from './forms/locations/Locations';
 import { Employees } from './forms/employees/Employees';
@@ -34,6 +35,7 @@ import { FormsPathMapping, FormsModule as FormsCoreModule, KeyMap, FormEvent, Ev
 	[
 		{class: Fields, path: "/forms/fields"},
 
+		{class: Jobs, path: "/forms/jobs"},
 		{class: Countries, path: "/forms/countries"},
 		{class: Locations, path: "/forms/locations"},
 		{class: Employees, path: "/forms/employees"},
@@ -55,12 +57,13 @@ export class FormsModule extends FormsCoreModule
 	public list:Minimized = null;
 	public static DATABASE:Connection = null;
 
-	private fields:KeyMap = new KeyMap({key: 'f', ctrl: true});
+	private jobs:KeyMap = new KeyMap({key: 'J', ctrl: true});
+	private fields:KeyMap = new KeyMap({key: 'F', ctrl: true});
 	private countries:KeyMap = new KeyMap({key: 'C', ctrl: true});
-	private locations:KeyMap = new KeyMap({key: 'l', ctrl: true});
-	private phonebook:KeyMap = new KeyMap({key: 'p', ctrl: true});
-	private employees:KeyMap = new KeyMap({key: 'e', ctrl: true});
-	private masterdetail:KeyMap = new KeyMap({key: 'm', ctrl: true});
+	private locations:KeyMap = new KeyMap({key: 'L', ctrl: true});
+	private phonebook:KeyMap = new KeyMap({key: 'P', ctrl: true});
+	private employees:KeyMap = new KeyMap({key: 'E', ctrl: true});
+	private masterdetail:KeyMap = new KeyMap({key: 'M', ctrl: true});
 
 	constructor()
 	{
@@ -75,6 +78,7 @@ export class FormsModule extends FormsCoreModule
 
 		this.OpenURLForm();
 		this.updateKeyMap(keymap);
+		this.addEventListener(this.onLogon,{type: EventType.Connect})
 
 		FormsModule.DATABASE = new Connection("database","http://localhost:9002");
 		FormsModule.DATABASE.connect("hr","hr");
@@ -83,6 +87,7 @@ export class FormsModule extends FormsCoreModule
 
 		this.addEventListener(this.open,
 		[
+			{type:EventType.Key,key:this.jobs},
 			{type:EventType.Key,key:this.fields},
 			{type:EventType.Key,key:this.countries},
 			{type:EventType.Key,key:this.locations},
@@ -94,6 +99,9 @@ export class FormsModule extends FormsCoreModule
 
 	private async open(event:FormEvent) : Promise<boolean>
 	{
+		if (event.key == this.jobs)
+			this.showform(Jobs);
+
 		if (event.key == this.fields)
 			this.showform(Fields);
 
@@ -115,6 +123,12 @@ export class FormsModule extends FormsCoreModule
 		return(true);
 	}
 
+	private async onLogon() : Promise<boolean>
+	{
+		console.log("logon");
+		return(true);
+	}
+
 	private async login() : Promise<boolean>
 	{
 		BuiltIns.callUsernamePasswordForm();
@@ -124,5 +138,5 @@ export class FormsModule extends FormsCoreModule
 
 export class keymap extends KeyMap
 {
-	public static login:KeyMap = new KeyMap({key: 'C', ctrl: true});
+	public static login:KeyMap = new KeyMap({key: 'C', alt: true});
 }
