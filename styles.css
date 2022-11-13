@@ -334,12 +334,6 @@ p:focus-within label
 	font-weight: bold;
 }
 
-div[name='day'] span
-{
-	width:100%;
-	text-align:center;
-}
-
 div[name='day'] span:focus
 {
 	font-weight: bold;
@@ -500,5 +494,6 @@ div[name="date-picker"]
 
 .weekend
 {
-	background-color: gainsboro;
+	border-radius: 10px;
+	background-color: lightgray;
 }
