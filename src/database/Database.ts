@@ -10,37 +10,33 @@
  * accompanied this code).
  */
 
-import { Connection, Connections, StoredProcedure, DataType, ParameterType, StoredFunction, SQLStatement } from "forms42core";
+import { Connection, Connections, StoredProcedure, DataType, ParameterType, SQLStatement } from "forms42core";
 
 export class Database
 {
-	public static async getDateProc() : Promise<Date>
+	public static async getSalaryLimit(job:string) : Promise<number[]>
 	{
+		let limit:number[] = [0,0];
+
 		let conn:Connection = Connections.get("database");
-		let proc:StoredProcedure = new StoredProcedure(conn);
-		let today:Date = new Date(); // InOut cannot be null in postgres
+		let func:StoredProcedure = new StoredProcedure(conn);
 
-		proc.setName("getDateProc");
-		proc.addParameter("today",today,DataType.date,ParameterType.inout);
+		func.setName("getSalaryLimit");
 
-		let success:boolean = await proc.execute();
-
-		if (!success) console.log(proc.error());
-		return(proc.getOutParameter("today"));
-	}
-
-	public static async getDate() : Promise<Date>
-	{
-		let conn:Connection = Connections.get("database");
-		let func:StoredFunction = new StoredFunction(conn);
-
-		func.setName("getDate");
-		func.setReturnType(DataType.date);
+		func.addParameter("job",job,DataType.varchar);
+		func.addParameter("min",0,DataType.integer,ParameterType.inout);
+		func.addParameter("max",0,DataType.integer,ParameterType.inout);
 
 		let success:boolean = await func.execute();
 		if (!success) console.log(func.error());
 
-		return(func.getReturnValue());
+		if (success)
+		{
+			limit[0] = func.getOutParameter("min");
+			limit[1] = func.getOutParameter("max");
+		}
+
+		return(limit);
 	}
 
 	public static async getDepartments() : Promise<any[][]>

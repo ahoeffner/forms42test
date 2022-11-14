@@ -14,8 +14,9 @@ import content from './Employees.html';
 
 import { Jobs } from '../../blocks/Jobs';
 import { BaseForm } from "../../BaseForm";
-import { EventType, FormEvent } from 'forms42core';
+import { Database } from '../../database/Database';
 import { Departments } from '../../blocks/Departments';
+import { EventType, FormEvent, RecordState } from 'forms42core';
 import { Employees as EmployeeBlock } from "../../blocks/Employees";
 
 
@@ -53,7 +54,10 @@ export class Employees extends BaseForm
 
 	public async validateJob(event:FormEvent) : Promise<boolean>
 	{
-		return(this.emp.validateJob(event,"job_title"));
+		let success:boolean = await this.emp.validateJob(event,"job_title");
+		let limit:number[] = await Database.getSalaryLimit("CEO");
+		console.log(RecordState[this.emp.getRecord().state]);
+		return(success);
 	}
 
 	public async validateDepatment(event:FormEvent) : Promise<boolean>
