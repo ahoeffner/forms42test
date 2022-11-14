@@ -47,6 +47,12 @@ export class MenuData extends StaticMenu
 					}
 					,
 					{
+						id: "jobs",
+						display: "Jobs",
+						command: "/forms/jobs"
+					}
+					,
+					{
 						id: "employees",
 						display: "Employees",
 						command: "/forms/employees"
