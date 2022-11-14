@@ -9,16 +9,9 @@ Cyclic master detail
 
 tabindex -> flyt ?
 
-topbar menu
-
 *** Jonas ***
 
 finish datepicker
-dates:
-
-public static startDays(startday: WeekDays): Array<String>
-doesn't make sense !!
-
 Ryd op i styles.css
 
 *************
