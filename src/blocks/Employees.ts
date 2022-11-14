@@ -11,6 +11,7 @@
  */
 
 import { WorkDays } from '../bonus/WorkDays';
+import { Database } from '../database/Database';
 import { Jobs } from '../datasources/database/Jobs';
 import { Departments } from '../datasources/database/Departments';
 import { Employees as EmployeeTable } from "../datasources/database/Employees";
@@ -54,24 +55,39 @@ export class Employees extends Block
 		return(true);
 	}
 
+	public async validateSalary() : Promise<boolean>
+	{
+		let code:string = this.getValue("job_id");
+		let salary:number = this.getValue("salary");
+		let limit:number[] = await Database.getSalaryLimit(code);
+
+		if (salary < limit[0] || salary > limit[1])
+			this.form.warning("Salary should be between "+limit[0]+" and "+limit[1],"Validation");
+
+		return(true);
+	}
+
 	public async validateJob(event:FormEvent, field?:string) : Promise<boolean>
 	{
+		let success:boolean = true;
 		let code:string = this.getValue("job_id");
 		let title:string = await Jobs.getTitle(code);
 
 		if (field)
 			this.setValue(field,title);
 
-		if (event.type == EventType.WhenValidateField)
+		if (event.type == EventType.WhenValidateField && !this.queryMode())
 		{
 			if (title == null)
 			{
 				this.form.warning("Invalid job code","Validation");
 				return(false);
 			}
+
+			success = await this.validateSalary();
 		}
 
-		return(true);
+		return(success);
 	}
 
 	public async validateDepartment(event:FormEvent, field?:string) : Promise<boolean>
@@ -82,7 +98,7 @@ export class Employees extends Block
 		if (field)
 			this.setValue(field,title);
 
-		if (event.type == EventType.WhenValidateField)
+		if (event.type == EventType.WhenValidateField && !this.queryMode())
 		{
 			if (title == null)
 			{

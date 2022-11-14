@@ -14,9 +14,8 @@ import content from './Employees.html';
 
 import { Jobs } from '../../blocks/Jobs';
 import { BaseForm } from "../../BaseForm";
-import { Database } from '../../database/Database';
+import { EventType, FormEvent } from 'forms42core';
 import { Departments } from '../../blocks/Departments';
-import { EventType, FormEvent, RecordState } from 'forms42core';
 import { Employees as EmployeeBlock } from "../../blocks/Employees";
 
 
@@ -35,6 +34,7 @@ export class Employees extends BaseForm
 		this.addEventListener(this.preQuery,{type: EventType.PreQuery})
 		this.addEventListener(this.getDerivedFields,{type: EventType.OnFetch})
 		this.addEventListener(this.validateJob,{type: EventType.WhenValidateField, field: "job_id"})
+		this.addEventListener(this.validateSalary,{type: EventType.WhenValidateField, field: "salary"})
 		this.addEventListener(this.validateDepatment,{type: EventType.WhenValidateField, field: "department_id"})
 	}
 
@@ -52,12 +52,14 @@ export class Employees extends BaseForm
 		return(true);
 	}
 
+	public async validateSalary() : Promise<boolean>
+	{
+		return(this.emp.validateSalary());
+	}
+
 	public async validateJob(event:FormEvent) : Promise<boolean>
 	{
-		let success:boolean = await this.emp.validateJob(event,"job_title");
-		let limit:number[] = await Database.getSalaryLimit("CEO");
-		console.log(RecordState[this.emp.getRecord().state]);
-		return(success);
+		return(this.emp.validateJob(event,"job_title"));
 	}
 
 	public async validateDepatment(event:FormEvent) : Promise<boolean>
