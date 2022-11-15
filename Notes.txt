@@ -8,6 +8,7 @@ connect to pool
 Cyclic master detail
 
 tabindex -> flyt ?
+showListof på form field required
 
 *** Jonas ***
 
