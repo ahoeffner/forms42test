@@ -28,8 +28,7 @@ export class Locations extends BaseForm
 		this.title = "Locations";
 
 		let lov:ListOfValues = Countries.getCountryLov();
-		this.setListOfValues("Locations","country_id",lov);
-		this.setListOfValues("Locations","country_name",lov);
+		this.setListOfValues(lov,"Locations",["country_id","country_name"]);
 
 		this.addEventListener(this.preQuery,{type: EventType.PreQuery})
 		this.addEventListener(this.setCountryName,{type: EventType.OnFetch})

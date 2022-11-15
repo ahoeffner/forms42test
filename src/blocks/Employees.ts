@@ -23,7 +23,7 @@ export class Employees extends Block
 	{
 		super(form,name);
 		this.datasource = new EmployeeTable();
-		this.setDateConstraint("hire_date",new WorkDays());
+		this.setDateConstraint(new WorkDays(),"hire_date");
 	}
 
 	public getDepartmentsForeignKey() : Key

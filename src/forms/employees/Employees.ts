@@ -28,8 +28,8 @@ export class Employees extends BaseForm
 		super(content);
 		this.title = "Employees";
 
-		this.emp.setListOfValues("job_id",Jobs.getJobLov());
-		this.emp.setListOfValues("department_id",Departments.getDepartmentLov());
+		this.emp.setListOfValues(Jobs.getJobLov(),["job_id","job_title"]);
+		this.emp.setListOfValues(Departments.getDepartmentLov(),["department_id","department_name"]);
 
 		this.addEventListener(this.preQuery,{type: EventType.PreQuery})
 		this.addEventListener(this.getDerivedFields,{type: EventType.OnFetch})

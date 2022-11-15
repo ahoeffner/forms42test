@@ -29,10 +29,10 @@ export class MasterDetail extends BaseForm
 		super(content);
 		this.title = "Employees";
 
-		this.dept.setListOfValues("manager",Employees.getManagerLov());
+		this.dept.setListOfValues(Employees.getManagerLov(),"manager");
 
-		this.emp.setListOfValues("job_id",Jobs.getJobLov());
-		this.emp.setListOfValues("department_id",Departments.getDepartmentLov());
+		this.emp.setListOfValues(Jobs.getJobLov(),["job_id","job_title"]);
+		this.emp.setListOfValues(Departments.getDepartmentLov(),["department_id","department_name"]);
 
 		this.link(this.dept.getPrimaryKey(),this.emp.getDepartmentsForeignKey());
 
