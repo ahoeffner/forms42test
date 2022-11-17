@@ -8,7 +8,8 @@ connect to pool
 Cyclic master detail
 
 tabindex -> flyt ?
-showListof på form field required
+showListof på form field readonly
+getRecordProperties, look at all instances after hasClass
 
 Postgres 42.5
 
