@@ -10,16 +10,15 @@
  * accompanied this code).
  */
 
-import { Connection, Connections, StoredProcedure, DataType, ParameterType, SQLStatement } from "forms42core";
+import { FormsModule } from "../FormsModule";
+import { StoredProcedure, DataType, ParameterType, SQLStatement } from "forms42core";
 
 export class Database
 {
 	public static async getSalaryLimit(job:string) : Promise<number[]>
 	{
 		let limit:number[] = [0,0];
-
-		let conn:Connection = Connections.get("database");
-		let func:StoredProcedure = new StoredProcedure(conn);
+		let func:StoredProcedure = new StoredProcedure(FormsModule.DATABASE);
 
 		func.setName("getSalaryLimit");
 
@@ -41,8 +40,7 @@ export class Database
 
 	public static async getDepartments() : Promise<any[][]>
 	{
-		let conn:Connection = Connections.get("database");
-		let stmt:SQLStatement = new SQLStatement(conn);
+		let stmt:SQLStatement = new SQLStatement(FormsModule.DATABASE);
 
 		stmt.sql = "select * from departments";
 

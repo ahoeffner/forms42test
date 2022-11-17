@@ -80,7 +80,7 @@ export class FormsModule extends FormsCoreModule
 		this.updateKeyMap(keymap);
 		this.addEventListener(this.onLogon,{type: EventType.Connect})
 
-		FormsModule.DATABASE = new Connection("database","http://localhost:9002");
+		FormsModule.DATABASE = new Connection("http://localhost:9002");
 		FormsModule.DATABASE.connect("hr","hr");
 
 		this.addEventListener(this.login,{type: EventType.Key, key: keymap.login});

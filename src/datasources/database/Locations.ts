@@ -10,8 +10,8 @@
  * accompanied this code).
  */
 
-import { BindValue, DatabaseTable, DataType, SQLStatement } from "forms42core";
 import { FormsModule } from "../../FormsModule";
+import { BindValue, DatabaseTable, DataType, SQLStatement } from "forms42core";
 
 export class Locations extends DatabaseTable
 {

@@ -15,7 +15,7 @@ import { Database } from '../database/Database';
 import { Jobs } from '../datasources/database/Jobs';
 import { Departments } from '../datasources/database/Departments';
 import { Employees as EmployeeTable } from "../datasources/database/Employees";
-import { BindValue, Block, EventType, Filter, Filters, FilterStructure, Form, FormEvent, Key, ListOfValues } from "forms42core";
+import { BindValue, Block, EventType, FieldProperties, Filter, Filters, FilterStructure, Form, FormEvent, Key, ListOfValues } from "forms42core";
 
 export class Employees extends Block
 {
@@ -62,7 +62,12 @@ export class Employees extends Block
 		let limit:number[] = await Database.getSalaryLimit(code);
 
 		if (salary < limit[0] || salary > limit[1])
+		{
 			this.form.warning("Salary should be between "+limit[0]+" and "+limit[1],"Validation");
+
+			let props:FieldProperties = this.getRecord().getProperties("first_name");
+			this.getRecord().setProperties(props.setStyle("font-weight","bold"),"first_name");
+		}
 
 		return(true);
 	}

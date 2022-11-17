@@ -10,6 +10,8 @@ Cyclic master detail
 tabindex -> flyt ?
 showListof på form field required
 
+Postgres 42.5
+
 *** Jonas ***
 
 finish datepicker
