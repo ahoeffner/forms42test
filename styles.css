@@ -121,11 +121,18 @@ tr td span:hover
 	background: white;
 }
 
+.link-item
+{
+	display:flex;
+}
+
 .left-menu-container .menu-items
 {
-	padding-left:5px;
+	padding-left:10px;
 	transition: 0.3s;
 }
+
+
 
 .left-menu-container  .menu-item:before
 {
