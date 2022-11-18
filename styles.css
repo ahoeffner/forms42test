@@ -124,6 +124,7 @@ tr td span:hover
 .link-item
 {
 	display:flex;
+	user-select: none;
 }
 
 .left-menu-container .menu-items
@@ -131,8 +132,6 @@ tr td span:hover
 	padding-left:10px;
 	transition: 0.3s;
 }
-
-
 
 .left-menu-container  .menu-item:before
 {
