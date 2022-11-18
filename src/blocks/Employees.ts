@@ -66,11 +66,20 @@ export class Employees extends Block
 			let props:FieldProperties = null;
 			this.form.warning("Salary should be between "+limit[0]+" and "+limit[1],"Validation");
 
+			props = this.getRecord().getProperties("last_name");
+			this.getRecord().setProperties(props.setStyle("font-weight","bold"),"last_name");
+
 			props = this.getRecord().getProperties("first_name");
 			this.getRecord().setProperties(props.setStyle("font-weight","bold"),"first_name");
 
 			props = this.getRecord().getProperties("salary");
 			this.getRecord().setProperties(props.setStyle("font-weight","bold"),"salary");
+		}
+		else
+		{
+			this.getRecord().clearProperties("salary");
+			this.getRecord().clearProperties("last_name");
+			this.getRecord().clearProperties("first_name");
 		}
 
 		return(true);
