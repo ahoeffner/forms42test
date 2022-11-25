@@ -18,6 +18,7 @@ export class Menu extends MenuComponent
 	private displayed:boolean = false;
 	private menuelem:HTMLElement = null;
 	private container:HTMLElement = null;
+
 	constructor()
 	{
 		super(new MenuData());
@@ -34,8 +35,8 @@ export class Menu extends MenuComponent
 	public hide() : void
 	{
 		super.hide();
-		this.container.style.width = "0px";
 		this.menuelem.style.display = "none";
+		this.container.style.minWidth = "0px";
 
 		this.displayed = false;
 	}
@@ -46,21 +47,21 @@ export class Menu extends MenuComponent
 		if (this.displayed)
 		{
 			super.hide();
-			this.container.style.width = "0px";
 			this.menuelem.style.display = "none";
+			this.container.style.minWidth = "0px";
 		}
 		else
 		{
 			super.show();
-			this.menuelem.style.display = "block";
-			this.menuelem.style.animationDuration = "0.4s";
-			this.menuelem.style.animationName = "moveInLeft";
-			this.menuelem.style.animationTimingFunction = "ease-in";
 
-			this.container.style.width = "140px";
-			this.container.style.animationDuration = "0.3s";
-			this.container.style.animationName = "moveInLeft";
+			this.container.style.minWidth = "150px";
+			this.container.style.animationDuration = "0.4s"
 			this.container.style.animationTimingFunction = "ease-in";
+
+			
+			this.menuelem.style.display = "block";
+			this.menuelem.style.animationDuration = "0.4s"
+			this.menuelem.style.animationTimingFunction = "ease-in";
 		}
 
 		this.displayed = !this.displayed;

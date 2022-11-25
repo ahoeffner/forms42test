@@ -1,4 +1,4 @@
-html, body
+ html, body
 {
 	margin: 0;
 	height: 100%;
@@ -26,7 +26,7 @@ html, body
 	grid-auto-flow: column;
 	border: 1px solid black;
 	background-color: lightgray;
-	grid-template-columns: 40px calc(100% - 80px);
+	grid-template-columns: 40px 125px 1fr 30px;
 }
 
 .form-area
@@ -97,6 +97,7 @@ tr td span:hover
 	min-width: 100px;
 	text-align: left;
 	border-radius: 0;
+	transition: all 5s ease;
 	width: fit-content;
 	text-decoration: none;
 	background: transparent;
@@ -476,19 +477,6 @@ div[name="login"] p label
 	display:inline-block;
 }
 
-@keyframes moveInLeft
-{
-	0%
-	{
-		transform:translateX(-200px);
-	}
-  
-	100%
-	{
-		transform: translate(0);
-	}
-}
-
 .lov,
 div[name="date-picker"]
 {
@@ -500,4 +488,84 @@ div[name="date-picker"]
 {
 	border-radius: 10px;
 	background-color: lightgray;
+} 
+
+.topbar
+{
+	display:flex;
+	font-size:18px;
+	cursor: default;
+	user-select: none;
+	justify-content: center;
+}
+
+.topbar .menu-item
+{
+	margin:0px;
+	display:flex;
+	position: relative;
+	background-color: transparent;
+
+}
+
+.topbar .menu-item::after
+{
+	display: flex;
+	content: "\2304";
+	margin-top: -3px;
+	margin-left: 2px;
+	
+}
+
+.topbar .menu-open::after
+{
+	margin-top:5px; 
+	transform: rotate(180deg);
+}
+
+.topbar .menu-item .menu-items
+{
+	top: 22px;
+	left: 30px;
+	height: 100%;
+	display: table;
+	min-width: 120px;
+	position: absolute;
+	transform: translateX(-50%);
+	border-top: solid 1px black;
+	background-color: rgb(240, 240, 240);
+}
+
+.topbar .link-item
+{
+	margin:0;
+	padding:0;
+	display: grid;
+	font-size: 13px;
+	text-align: center;
+	background-color: transparent;
+}
+
+.topbar .link-item a 
+{
+	padding: 5px 10px;
+	margin: 0 5px 0 10px;
+}
+
+.topbar .link-item:hover a
+{
+	color:white;
+	background-color: black;
+}
+
+@keyframes moveInLeft
+{
+	0%
+	{
+		transform:translateX(-200px);
+	}
+	100%
+	{
+		transform: translate(0);
+	}
 }
