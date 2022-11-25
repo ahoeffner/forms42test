@@ -15,9 +15,9 @@ import content from './MasterDetail.html';
 import { Jobs } from '../../blocks/Jobs';
 import { BaseForm } from "../../BaseForm";
 import { Employees } from "../../blocks/Employees";
+import { Locations } from '../../blocks/Locations';
 import { Departments } from '../../blocks/Departments';
 import { DatabaseResponse, EventType, formevent, FormEvent, KeyMap } from "forms42core";
-import { Locations } from '../../blocks/Locations';
 
 
 export class MasterDetail extends BaseForm
@@ -45,9 +45,11 @@ export class MasterDetail extends BaseForm
 		if (event.field == "manager")
 			this.dept.showListOfValues("manager");
 
+		if (event.field == "location")
+			this.dept.showListOfValues("location");
+
 		return(true);
 	}
-
 
 	@formevent({type: EventType.PreQuery, block: "employees"})
 	public async preQuery() : Promise<boolean>
@@ -78,6 +80,13 @@ export class MasterDetail extends BaseForm
 	public async validateManager() : Promise<boolean>
 	{
 		await this.dept.lookupManager("manager");
+		return(true);
+	}
+
+	@formevent({type: EventType.WhenValidateField, block: "departments", field: "loc_id"})
+	public async validateLocation() : Promise<boolean>
+	{
+		await this.dept.lookupLocation("location");
 		return(true);
 	}
 
