@@ -8,11 +8,6 @@ connect to pool
 Cyclic master detail
 
 tabindex -> flyt ?
-showListof på form field readonly
-getRecordProperties, look at all instances after hasClass
-
-Lov validate field
-Record changed by another user
 
 Postgres 42.5
 
