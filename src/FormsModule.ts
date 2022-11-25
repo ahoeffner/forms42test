@@ -10,8 +10,9 @@
  * accompanied this code).
  */
 
-import { Menu } from './menu/Menu';
 import { Minimized } from './Minimized';
+import { TopBar } from './menu/menuTop/TopBar';
+import { Menu } from './menu/menuLeft/Menu';
 import { FormHeader } from './fragments/FormHeader';
 import { PageHeader } from './fragments/PageHeader';
 import { PageFooter } from './fragments/PageFooter';
@@ -54,6 +55,8 @@ import { FormsPathMapping, FormsModule as FormsCoreModule, KeyMap, FormEvent, Ev
 export class FormsModule extends FormsCoreModule
 {
 	public menu:Menu = null;
+	public topBar:TopBar = null;
+
 	public list:Minimized = null;
 	public static DATABASE:Connection = null;
 
@@ -70,8 +73,10 @@ export class FormsModule extends FormsCoreModule
 		super();
 
 		this.parse();
-		this.menu = new Menu();
 		this.list = new Minimized();
+
+		this.topBar = new TopBar();
+		this.menu = new Menu();
 
 		// Find a way to demo
 		FormProperties.TagLibrary.set("translate",LanguageLabel);
