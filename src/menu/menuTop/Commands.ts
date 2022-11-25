@@ -35,7 +35,7 @@ export class Commands extends StaticMenu
 			[
 				{
                       id:"connection",
-                      display:`<label>Connection</label><span class='dropdown_icon'></span>`,
+                      display:`Connection`,
                       entries:
                       [
                           {
