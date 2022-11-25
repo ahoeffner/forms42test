@@ -32,9 +32,7 @@ export class MasterDetail extends BaseForm
 
 		this.dept.setListOfValues(Employees.getManagerLov(),"manager");
 		this.dept.setListOfValues(Locations.getLocationLov(),"location");
-
 		this.emp.setListOfValues(Jobs.getJobLov(),["job_id","job_title"]);
-		this.emp.setListOfValues(Departments.getDepartmentLov(),["department_id","department_name"]);
 
 		this.link(this.dept.getPrimaryKey(),this.emp.getDepartmentsForeignKey());
 	}
@@ -48,14 +46,13 @@ export class MasterDetail extends BaseForm
 		if (event.field == "location")
 			this.dept.showListOfValues("location");
 
-		return(true);
+		return(false);
 	}
 
 	@formevent({type: EventType.PreQuery, block: "employees"})
 	public async preQuery() : Promise<boolean>
 	{
 		this.emp.filter.delete("job_title");
-		this.emp.filter.delete("department_name");
 		return(true);
 	}
 
@@ -65,7 +62,6 @@ export class MasterDetail extends BaseForm
 		if (event.block == "employees")
 		{
 			await this.emp.lookupJob("job_title");
-			await this.emp.lookupDepartment("department_name");
 		}
 		else if (event.block == "departments")
 		{
@@ -100,12 +96,6 @@ export class MasterDetail extends BaseForm
 	public async validateJob(event:FormEvent) : Promise<boolean>
 	{
 		return(this.emp.validateJob(event,"job_title"));
-	}
-
-	@formevent({type: EventType.WhenValidateField, block: "employees", field: "department_id"})
-	public async validateDepatment(event:FormEvent) : Promise<boolean>
-	{
-		return(this.emp.validateDepartment(event,"department_name"));
 	}
 
 	@formevent({type: EventType.PostInsert, block: "employees"})
