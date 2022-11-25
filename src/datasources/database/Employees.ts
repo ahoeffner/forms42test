@@ -22,6 +22,7 @@ export class Employees extends DatabaseTable
 		this.rowlocking = true;
 		this.primaryKey = "employee_id";
 		this.addDMLColumns(["email","job_id"]);
+		this.insertReturnColumns = "employee_id";
 		this.sorting = "department_id, last_name, first_name";
 	}
 

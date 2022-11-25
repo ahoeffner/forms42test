@@ -37,7 +37,9 @@ export class Employees extends Block
 		let title:string = null;
 
 		code = this.getValue("job_id");
-		title = await Jobs.getTitle(code);
+
+		if (code != null)
+			title = await Jobs.getTitle(code);
 
 		this.setValue(field,title);
 		return(true);
@@ -49,7 +51,9 @@ export class Employees extends Block
 		let title:string = null;
 
 		code = this.getValue("department_id");
-		title = await Departments.getTitle(code);
+
+		if (code != null)
+			title = await Departments.getTitle(code);
 
 		this.setValue(field,title);
 		return(true);
@@ -59,6 +63,10 @@ export class Employees extends Block
 	{
 		let code:string = this.getValue("job_id");
 		let salary:number = this.getValue("salary");
+
+		if (code == null || salary == null)
+			return(true);
+
 		let limit:number[] = await Database.getSalaryLimit(code);
 
 		if (salary < limit[0] || salary > limit[1])
@@ -89,6 +97,10 @@ export class Employees extends Block
 	{
 		let success:boolean = true;
 		let code:string = this.getValue("job_id");
+
+		if (code == null)
+			return(false);
+
 		let title:string = await Jobs.getTitle(code);
 
 		if (field)
@@ -112,6 +124,9 @@ export class Employees extends Block
 	{
 		let code:string = this.getValue("department_id");
 		let title:string = await Departments.getTitle(code);
+
+		if (code == null)
+			return(false);
 
 		if (field)
 			this.setValue(field,title);

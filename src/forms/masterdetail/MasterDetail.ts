@@ -14,9 +14,10 @@ import content from './MasterDetail.html';
 
 import { Jobs } from '../../blocks/Jobs';
 import { BaseForm } from "../../BaseForm";
-import { EventType, FormEvent } from "forms42core";
 import { Employees } from "../../blocks/Employees";
 import { Departments } from '../../blocks/Departments';
+import { DatabaseResponse, EventType, formevent, FormEvent, KeyMap } from "forms42core";
+import { Locations } from '../../blocks/Locations';
 
 
 export class MasterDetail extends BaseForm
@@ -30,19 +31,33 @@ export class MasterDetail extends BaseForm
 		this.title = "Employees";
 
 		this.dept.setListOfValues(Employees.getManagerLov(),"manager");
+		this.dept.setListOfValues(Locations.getLocationLov(),"location");
 
 		this.emp.setListOfValues(Jobs.getJobLov(),["job_id","job_title"]);
 		this.emp.setListOfValues(Departments.getDepartmentLov(),["department_id","department_name"]);
 
 		this.link(this.dept.getPrimaryKey(),this.emp.getDepartmentsForeignKey());
-
-		this.addEventListener(this.getDerivedFields,{type: EventType.OnFetch})
-
-		this.addEventListener(this.validateJob,{type: EventType.WhenValidateField, block: "employees", field: "job_id"})
-		this.addEventListener(this.getDerivedFields,{type: EventType.WhenValidateField, block: "departments", field: "manager_id"})
-		this.addEventListener(this.validateDepatment,{type: EventType.WhenValidateField, block: "employees", field: "department_id"})
 	}
 
+	@formevent({type: EventType.Key, key: KeyMap.lov, block: "departments"})
+	public async forceListOfValues(event:FormEvent) : Promise<boolean>
+	{
+		if (event.field == "manager")
+			this.dept.showListOfValues("manager");
+
+		return(true);
+	}
+
+
+	@formevent({type: EventType.PreQuery, block: "employees"})
+	public async preQuery() : Promise<boolean>
+	{
+		this.emp.filter.delete("job_title");
+		this.emp.filter.delete("department_name");
+		return(true);
+	}
+
+	@formevent({type: EventType.OnFetch})
 	public async getDerivedFields(event:FormEvent) : Promise<boolean>
 	{
 		if (event.block == "employees")
@@ -59,13 +74,37 @@ export class MasterDetail extends BaseForm
 		return(true);
 	}
 
+	@formevent({type: EventType.WhenValidateField, block: "departments", field: "manager_id"})
+	public async validateManager() : Promise<boolean>
+	{
+		await this.dept.lookupManager("manager");
+		return(true);
+	}
+
+	@formevent({type: EventType.WhenValidateField, block: "employees", field: "salary"})
+	public async validateSalary() : Promise<boolean>
+	{
+		return(this.emp.validateSalary());
+	}
+
+	@formevent({type: EventType.WhenValidateField, block: "employees", field: "job_id"})
 	public async validateJob(event:FormEvent) : Promise<boolean>
 	{
 		return(this.emp.validateJob(event,"job_title"));
 	}
 
+	@formevent({type: EventType.WhenValidateField, block: "employees", field: "department_id"})
 	public async validateDepatment(event:FormEvent) : Promise<boolean>
 	{
 		return(this.emp.validateDepartment(event,"department_name"));
+	}
+
+	@formevent({type: EventType.PostInsert, block: "employees"})
+	public async setPrimaryKey() : Promise<boolean>
+	{
+		let response:DatabaseResponse = this.emp.getRecord().response;
+		this.emp.setValue("employee_id",response.getValue("employee_id"));
+		console.log("employee_id = "+this.emp.getValue("employee_id"));
+		return(true);
 	}
 }

@@ -14,9 +14,9 @@ import content from './Employees.html';
 
 import { Jobs } from '../../blocks/Jobs';
 import { BaseForm } from "../../BaseForm";
-import { EventType, FormEvent } from 'forms42core';
 import { Departments } from '../../blocks/Departments';
 import { Employees as EmployeeBlock } from "../../blocks/Employees";
+import { DatabaseResponse, EventType, formevent, FormEvent } from 'forms42core';
 
 
 export class Employees extends BaseForm
@@ -30,14 +30,9 @@ export class Employees extends BaseForm
 
 		this.emp.setListOfValues(Jobs.getJobLov(),["job_id","job_title"]);
 		this.emp.setListOfValues(Departments.getDepartmentLov(),["department_id","department_name"]);
-
-		this.addEventListener(this.preQuery,{type: EventType.PreQuery})
-		this.addEventListener(this.getDerivedFields,{type: EventType.OnFetch})
-		this.addEventListener(this.validateJob,{type: EventType.WhenValidateField, field: "job_id"})
-		this.addEventListener(this.validateSalary,{type: EventType.WhenValidateField, field: "salary"})
-		this.addEventListener(this.validateDepatment,{type: EventType.WhenValidateField, field: "department_id"})
 	}
 
+	@formevent({type: EventType.PreQuery})
 	public async preQuery() : Promise<boolean>
 	{
 		this.emp.filter.delete("job_title");
@@ -45,6 +40,7 @@ export class Employees extends BaseForm
 		return(true);
 	}
 
+	@formevent({type: EventType.OnFetch})
 	public async getDerivedFields() : Promise<boolean>
 	{
 		await this.emp.lookupJob("job_title");
@@ -52,18 +48,30 @@ export class Employees extends BaseForm
 		return(true);
 	}
 
+	@formevent({type: EventType.WhenValidateField, field: "salary"})
 	public async validateSalary() : Promise<boolean>
 	{
 		return(this.emp.validateSalary());
 	}
 
+	@formevent({type: EventType.WhenValidateField, field: "job_id"})
 	public async validateJob(event:FormEvent) : Promise<boolean>
 	{
 		return(this.emp.validateJob(event,"job_title"));
 	}
 
+	@formevent({type: EventType.WhenValidateField, field: "department_id"})
 	public async validateDepatment(event:FormEvent) : Promise<boolean>
 	{
 		return(this.emp.validateDepartment(event,"department_name"));
+	}
+
+	@formevent({type: EventType.PostInsert})
+	public async setPrimaryKey() : Promise<boolean>
+	{
+		let response:DatabaseResponse = this.emp.getRecord().response;
+		this.emp.setValue("employee_id",response.getValue("employee_id"));
+		console.log("employee_id = "+this.emp.getValue("employee_id"));
+		return(true);
 	}
 }

@@ -34,7 +34,9 @@ export class Departments extends Block
 		let manager:string = null;
 
 		id = this.getValue("manager_id");
-		manager = await Employees.getName(id);
+
+		if (id != null)
+			manager = await Employees.getName(id);
 
 		this.setValue(field,manager);
 		return(true);
@@ -46,7 +48,9 @@ export class Departments extends Block
 		let location:string = null;
 
 		id = this.getValue("loc_id");
-		location = await Locations.getLocation(id);
+
+		if (id != null)
+			location = await Locations.getLocation(id);
 
 		this.setValue(field,location);
 		return(true);
@@ -82,6 +86,7 @@ export class Departments extends Block
 
 	public static async getTitle(id:string) : Promise<string>
 	{
+		if (id == null) return(null);
 		return(DepartmentTable.getTitle(id));
 	}
 }

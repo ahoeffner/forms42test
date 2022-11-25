@@ -14,10 +14,11 @@
 		</tr>
 		<tr class="row" foreach="row in 1..3">
 			<td class="indicator"><span from="Departments" row="$row" type="row-indicator"></span></td>
+
 			<td><input name="department_id" 		from="Departments" row="$row" size="4"  integer></td>
-			<td><input name="department_name" 		from="Departments" row="$row" size="20" initcap></td>
+			<td><input name="department_name" 	from="Departments" row="$row" size="20" initcap></td>
 			<td><input name="manager" 				from="Departments" row="$row" size="20" derived readonly query="false"></td>
-			<td><input name="location" 				from="Departments" row="$row" size="30" derived readonly query="false"></td>
+			<td><input name="location" 			from="Departments" row="$row" size="30" derived readonly query="false"></td>
 		</tr>
 	</table>
 </div>
@@ -34,10 +35,11 @@
 			</tr>
 			<tr class="row" foreach="row in 1..5">
 				<td class="indicator"><span from="Employees" row="$row" type="row-indicator"></span></td>
+
 				<td><input name="first_name" 		from="Employees" row="$row" size="10" initcap></td>
 				<td><input name="last_name" 		from="Employees" row="$row" size="10" initcap></td>
 				<td><input name="email" 			from="Employees" row="$row" size="32"></td>
-				<td><input name="phone_number" 		from="Employees" row="$row" size="12"></td>
+				<td><input name="phone_number" 	from="Employees" row="$row" size="12"></td>
 			</tr>
 		</table>
 	</div>
@@ -68,7 +70,7 @@
 			<tr>
 				<td>Department</td>
 				<td style="display:inline-flex">
-					<input name="department_id" from="Employees" size="8" integer>
+					<input name="department_id" from="Employees" size="8" integer insert="false">
 					<input name="department_name" from="Employees" size="20" derived  readonly query="false">
 					<span onclick="this.showListOfValues('Employees','department_id')">&#x2807;</span>
 				</td>

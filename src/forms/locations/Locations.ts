@@ -16,7 +16,7 @@ import { BaseForm } from "../../BaseForm";
 import { Countries } from '../../blocks/Countries';
 import { CountryNameFilter } from '../../bonus/CountryNameFilter';
 import { Locations as Locationdata } from "../../datasources/database/Locations";
-import { Block, datasource, EventType, FormEvent, ListOfValues } from "forms42core";
+import { Block, datasource, EventType, formevent, FormEvent, ListOfValues } from "forms42core";
 
 @datasource("Locations",Locationdata)
 
@@ -31,8 +31,6 @@ export class Locations extends BaseForm
 		this.setListOfValues(lov,"Locations",["country_id","country_name"]);
 
 		this.addEventListener(this.preQuery,{type: EventType.PreQuery})
-		this.addEventListener(this.setCountryName,{type: EventType.OnFetch})
-		this.addEventListener(this.setCountryName,{type: EventType.WhenValidateField, field: "country_id"})
 	}
 
 	public async preQuery() : Promise<boolean>
@@ -48,6 +46,12 @@ export class Locations extends BaseForm
 
 		return(true);
 	}
+
+	@formevent
+	([
+		{type: EventType.OnFetch},
+		{type: EventType.WhenValidateField, field: "country_id"}
+	])
 
 	public async setCountryName(event:FormEvent) : Promise<boolean>
 	{
