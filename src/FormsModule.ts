@@ -85,6 +85,9 @@ export class FormsModule extends FormsCoreModule
 		this.updateKeyMap(keymap);
 		this.addEventListener(this.onLogon,{type: EventType.Connect})
 
+		Connection.TRXTIMEOUT = 240;
+		Connection.CONNTIMEOUT = 120;
+
 		FormsModule.DATABASE = new Connection("http://localhost:9002");
 		FormsModule.DATABASE.connect("hr","hr");
 
