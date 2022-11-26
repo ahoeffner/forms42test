@@ -13,15 +13,23 @@ Postgres 42.5
 
 *** Jonas ***
 
-finish datepicker
-prøve fix topmenu bar
 Ryd op i styles.css
+PhoneBook mere space mellem search og result
 
 *************
 
 Demo:
 
-Countries: QueryEditor
-Locations: ListOfValues
-Employess: Sorting, Dates, Row-warning for salary, Row lock
-DeptEmp: Master Detail
+Tags: Heading
+Countries: from=
+Locations: ListOfValues, search on countries
+
+MasterDetail:
+	Dates,
+	QueryEditor,
+	Concurrency,
+	ReturnOnInsert,
+	Row-warning for salary
+
+Employess:
+PhoneBook: Membased, Sorting
