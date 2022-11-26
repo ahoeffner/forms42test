@@ -317,7 +317,7 @@ input[mode="insert"]
 
 input[mode="deleted"]
 {
-	transition: all 0.18s ease;	
+	transition: all 0.18s ease;
 	text-decoration: line-through;
 }
 
@@ -371,7 +371,7 @@ div.modal
 {
 	width:20px;
 	display:inline-block;
-   	background-size: 20px;
+   background-size: 20px;
 	transition: all 0.18s ease;
 	background-repeat: no-repeat;
 	background-image: url('images/icons8-info-50.png');
@@ -383,7 +383,7 @@ div.modal
 	right: 0px;
 	opacity: 0;
 	z-index: -1;
-	width:165px;
+	width:185px;
 	font-size: 14px;
 	list-style: none;
 	padding: 10px 5px;
@@ -487,7 +487,7 @@ div[name="date-picker"]
 {
 	border-radius: 10px;
 	background-color: lightgray;
-} 
+}
 
 .topbar
 {
@@ -513,12 +513,12 @@ div[name="date-picker"]
 	content: "\2304";
 	margin-top: -3px;
 	margin-left: 2px;
-	
+
 }
 
 .topbar .menu-open::after
 {
-	margin-top:4px; 
+	margin-top:4px;
 	transform: rotate(180deg);
 }
 
@@ -552,7 +552,7 @@ div[name="date-picker"]
 	background-color: black;
 }
 
-.topbar .link-item a 
+.topbar .link-item a
 {
 	margin: 5px 10px;
 	padding: 5px 10px;

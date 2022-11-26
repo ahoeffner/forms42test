@@ -11,7 +11,7 @@
  */
 
 import { FormsModule } from "../../FormsModule";
-import { BindValue, DatabaseTable, DataType, SQLStatement } from "forms42core";
+import { BindValue, DatabaseTable, DataType, Like, SQLStatement } from "forms42core";
 
 export class Locations extends DatabaseTable
 {
@@ -43,5 +43,13 @@ export class Locations extends DatabaseTable
 
 		if (row)	return(row[0]);
 		return(null);
+	}
+}
+
+export class CountryNameFilter extends Like
+{
+	public asSQL() : string
+	{
+		return("country_id in (select country_id from countries where country_name like :"+this.getBindValueName()+")");
 	}
 }

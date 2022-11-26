@@ -11,8 +11,8 @@
  */
 
 import { Minimized } from './Minimized';
-import { TopBar } from './menu/menuTop/TopBar';
 import { Menu } from './menu/menuLeft/Menu';
+import { TopBar } from './menu/menuTop/TopBar';
 import { FormHeader } from './fragments/FormHeader';
 import { PageHeader } from './fragments/PageHeader';
 import { PageFooter } from './fragments/PageFooter';
@@ -25,8 +25,7 @@ import { Employees } from './forms/employees/Employees';
 import { MasterDetail } from './forms/masterdetail/MasterDetail';
 import { PhoneBookMembased } from './forms/phonenook/PhoneBookMembased';
 
-import { LanguageLabel } from './tags/LanguageLabels';
-
+import { AppHeader } from './tags/AppHeader';
 import { LinkMapper } from './fields/LinkMapper';
 import { TrueFalseMapper } from './fields/TrueFalseMapper';
 
@@ -72,14 +71,15 @@ export class FormsModule extends FormsCoreModule
 	{
 		super();
 
+		// Demo cutom tag
+		FormProperties.TagLibrary.set("AppHeader",AppHeader);
+
 		this.parse();
 		this.list = new Minimized();
 
-		this.topBar = new TopBar();
+		// Menues
 		this.menu = new Menu();
-
-		// Find a way to demo
-		FormProperties.TagLibrary.set("translate",LanguageLabel);
+		this.topBar = new TopBar();
 
 		this.OpenURLForm();
 		this.updateKeyMap(keymap);
