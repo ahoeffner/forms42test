@@ -14,6 +14,7 @@ import content from './MasterDetail.html';
 
 import { Jobs } from '../../blocks/Jobs';
 import { BaseForm } from "../../BaseForm";
+import { WorkDays } from '../../misc/WorkDays';
 import { Employees } from "../../blocks/Employees";
 import { Locations } from '../../blocks/Locations';
 import { Departments } from '../../blocks/Departments';
@@ -29,6 +30,8 @@ export class MasterDetail extends BaseForm
 	{
 		super(content);
 		this.title = "Employees";
+
+		this.emp.setDateConstraint(new WorkDays(),"hire_date");
 
 		this.emp.setListOfValues(Jobs.getJobLov(),"job_id");
 		this.dept.setListOfValues(Employees.getManagerLov(),"manager");

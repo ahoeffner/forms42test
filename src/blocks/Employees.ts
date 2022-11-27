@@ -10,7 +10,7 @@
  * accompanied this code).
  */
 
-import { WorkDays } from '../bonus/WorkDays';
+import { WorkDays } from '../misc/WorkDays';
 import { Database } from '../database/Database';
 import { Jobs } from '../datasources/database/Jobs';
 import { Departments } from '../datasources/database/Departments';
