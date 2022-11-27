@@ -14,7 +14,6 @@ import content from './Employees.html';
 
 import { Jobs } from '../../blocks/Jobs';
 import { BaseForm } from "../../BaseForm";
-import { WorkDays } from '../../misc/WorkDays';
 import { Departments } from '../../blocks/Departments';
 import { Employees as EmployeeBlock } from "../../blocks/Employees";
 import { DatabaseResponse, EventType, formevent, FormEvent } from 'forms42core';
@@ -28,8 +27,6 @@ export class Employees extends BaseForm
 	{
 		super(content);
 		this.title = "Employees";
-
-		this.emp.setDateConstraint(new WorkDays(),"hire_date");
 
 		this.emp.setListOfValues(Jobs.getJobLov(),"job_id");
 		this.emp.setListOfValues(Departments.getDepartmentLov(),"department_id");
