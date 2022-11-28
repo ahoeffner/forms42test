@@ -169,6 +169,7 @@ export class Employees extends Block
 			title: "Employees",
 			filterPostfix: "%",
 			datasource: source,
+			inReadOnlyMode: true,
 			bindvalue: bindvalues,
 			displayfields: ["first_name","last_name"],
 			sourcefields: "employee_id",

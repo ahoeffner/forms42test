@@ -37,18 +37,6 @@ export class MasterDetail extends BaseForm
 		this.link(this.dept.getPrimaryKey(),this.emp.getDepartmentsForeignKey());
 	}
 
-	@formevent({type: EventType.Key, key: KeyMap.lov, block: "departments"})
-	public async forceListOfValues(event:FormEvent) : Promise<boolean>
-	{
-		if (event.field == "manager")
-			this.dept.showListOfValues("manager");
-
-		if (event.field == "location")
-			this.dept.showListOfValues("location");
-
-		return(false);
-	}
-
 	@formevent({type: EventType.PreQuery, block: "employees"})
 	public async preQuery() : Promise<boolean>
 	{
@@ -103,7 +91,6 @@ export class MasterDetail extends BaseForm
 	{
 		let response:DatabaseResponse = this.emp.getRecord().response;
 		this.emp.setValue("employee_id",response.getValue("employee_id"));
-		console.log("employee_id = "+this.emp.getValue("employee_id"));
 		return(true);
 	}
 }
