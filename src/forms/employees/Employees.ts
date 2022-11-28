@@ -32,14 +32,6 @@ export class Employees extends BaseForm
 		this.emp.setListOfValues(Departments.getDepartmentLov(),"department_id");
 	}
 
-	@formevent({type: EventType.PreQuery})
-	public async preQuery() : Promise<boolean>
-	{
-		this.emp.filter.delete("job_title");
-		this.emp.filter.delete("department_name");
-		return(true);
-	}
-
 	@formevent({type: EventType.OnFetch})
 	public async getDerivedFields() : Promise<boolean>
 	{
@@ -71,7 +63,6 @@ export class Employees extends BaseForm
 	{
 		let response:DatabaseResponse = this.emp.getRecord().response;
 		this.emp.setValue("employee_id",response.getValue("employee_id"));
-		console.log("employee_id = "+this.emp.getValue("employee_id"));
 		return(true);
 	}
 }

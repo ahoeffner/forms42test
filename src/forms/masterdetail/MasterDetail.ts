@@ -17,7 +17,7 @@ import { BaseForm } from "../../BaseForm";
 import { Employees } from "../../blocks/Employees";
 import { Locations } from '../../blocks/Locations';
 import { Departments } from '../../blocks/Departments';
-import { DatabaseResponse, EventType, formevent, FormEvent, KeyMap } from "forms42core";
+import { DatabaseResponse, Equals, EventType, formevent, FormEvent, KeyMap } from "forms42core";
 
 
 export class MasterDetail extends BaseForm
@@ -37,10 +37,16 @@ export class MasterDetail extends BaseForm
 		this.link(this.dept.getPrimaryKey(),this.emp.getDepartmentsForeignKey());
 	}
 
-	@formevent({type: EventType.PreQuery, block: "employees"})
-	public async preQuery() : Promise<boolean>
+	// Query not included fields
+	@formevent({type: EventType.PreQuery, block: "departments"})
+	public async preQueryDepartments() : Promise<boolean>
 	{
-		this.emp.filter.delete("job_title");
+		let loc:number = this.dept.getValue("loc_id");
+		let mgr:number = this.dept.getValue("manager_id");
+
+		if (loc) this.dept.filter.and(new Equals("loc_id").setConstraint(loc));
+		if (mgr) this.dept.filter.and(new Equals("manager_id").setConstraint(mgr));
+
 		return(true);
 	}
 

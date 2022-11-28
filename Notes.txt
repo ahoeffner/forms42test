@@ -16,6 +16,7 @@ Postgres 42.5
 Ryd op i styles.css
 ListOfValues: search with magnifying glass
 PhoneBook mere space mellem search og result
+Connection, Query, Record, Transaction
 
 *************
 
