@@ -497,8 +497,8 @@ div[name="date-picker"]
 	display:flex;
 	font-size:18px;
 	cursor: default;
+	margin-left:40%;
 	user-select: none;
-	justify-content: center;
 }
 .topbar .link-item,
 .topbar .menu-item
