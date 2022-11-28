@@ -499,7 +499,7 @@ div[name="date-picker"]
 	display:flex;
 	font-size:18px;
 	cursor: default;
-	margin-left:20%;
+	margin-left:25%;
 	user-select: none;
 }
 .topbar .link-item,
