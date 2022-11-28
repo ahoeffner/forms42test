@@ -17,6 +17,8 @@ Ryd op i styles.css
 ListOfValues: search with magnifying glass
 PhoneBook mere space mellem search og result
 Connection, Query, Record, Transaction
+Date felt size
+Disable advanced query
 
 *************
 
