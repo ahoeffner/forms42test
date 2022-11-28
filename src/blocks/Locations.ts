@@ -39,7 +39,10 @@ export class Locations extends Block
 			title: "Locations",
 			filterPostfix: "%",
 			datasource: source,
+
+			inQueryMode: true,
 			inReadOnlyMode: true,
+			
 			bindvalue: bindvalues,
 			displayfields: ["city","street_address"],
 			sourcefields: "loc_id",

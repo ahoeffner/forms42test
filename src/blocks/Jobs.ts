@@ -39,6 +39,7 @@ export class Jobs extends Block
 		let lov:ListOfValues =
 		{
 			title: "Jobs",
+			inQueryMode: true,
 			filterPostfix: "%",
 			datasource: source,
 			bindvalue: bindvalues,
