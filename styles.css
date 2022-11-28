@@ -181,11 +181,13 @@ tr td span:hover
 
 .search
 {
-	width: 100%;
-	justify-content: center;
 	margin: 2px 0px 2px 30px;
 }
 
+.search input
+{
+	margin-bottom: 10px !important;
+}
 .search:before
 {
 	content: "\002315";
@@ -295,6 +297,7 @@ input.detail:read-only
 	background: none;
 }
 
+.lov label input,
 input[mode="query"]
 {
 	text-indent: 12px;
@@ -497,15 +500,21 @@ div[name="date-picker"]
 	user-select: none;
 	justify-content: center;
 }
-
+.topbar .link-item,
 .topbar .menu-item
 {
 	margin:0;
-	display:flex;
-	cursor: pointer;
+	padding:0 10px;
+	cursor: default;
 	position: relative;
+	display:inline-flex;
 	background-color: transparent;
 
+}
+
+.topbar .menu-item a
+{
+	cursor: pointer;
 }
 
 .topbar .menu-item::after
@@ -525,19 +534,20 @@ div[name="date-picker"]
 
 .topbar .menu-item .menu-items
 {
-	top: 22px;
-	left: 30px;
+	top: 17px;
+	left: 50%;
 	height: 100%;
 	z-index:9999;
 	display: table;
-	min-width: 120px;
+	cursor: pointer;
+	min-width: 100px;
 	position: absolute;
 	transform: translateX(-50%);
 	box-shadow: 0 2px 10px #666;
 	background-color: rgb(240, 240, 240);
 }
 
-.topbar .link-item
+.topbar .menu-items .menu-items .link-item
 {
 	margin:0;
 	padding:0;
@@ -548,13 +558,12 @@ div[name="date-picker"]
 	background-color: transparent;
 }
 
-.topbar .link-item:hover
+.topbar .menu-items .menu-items .link-item:hover
 {
-	color:white;
-	background-color: black;
+	background-color: #ddd;
 }
 
-.topbar .link-item a
+.topbar .menu-items .menu-items .link-item a
 {
 	margin: 5px 10px;
 	padding: 5px 10px;

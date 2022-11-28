@@ -34,6 +34,42 @@ export class Commands extends StaticMenu
 			entries:
 			[
 				{
+					id:"query",
+					display:"Query",
+					entries:
+					[
+						{
+							id:"excute",
+							display:"Excute",
+							command:"query/excute"	
+						}
+					]
+
+				},
+				{
+					id:"record",
+					display:"Record",
+					command:"record"
+
+				},
+				{
+					id: "transactions",
+					display:"Transactions",
+					entries:
+					[
+						{
+							id:"comment",
+							display:"Comment",
+							command:"transactions/comment"
+						},
+						{
+							id: "rollback",
+							display:"Rollback",
+							command:"transactions/rollback"
+						},
+					]
+				},
+				{
                     id:"connection",
                     display:`Connection`,
                     entries:
@@ -50,6 +86,7 @@ export class Commands extends StaticMenu
                         }
                     ]
         		}
+			
 			]
 		})
 	}
