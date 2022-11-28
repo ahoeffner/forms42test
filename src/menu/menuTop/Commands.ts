@@ -39,6 +39,11 @@ export class Commands extends StaticMenu
 					entries:
 					[
 						{
+							id:"enter",
+							display:"Enter",
+							command:"query/enter"
+						},
+						{
 							id:"excute",
 							display:"Excute",
 							command:"query/excute"	
@@ -49,7 +54,19 @@ export class Commands extends StaticMenu
 				{
 					id:"record",
 					display:"Record",
-					command:"record"
+					entries:
+					[
+						{
+							id:"insert",
+							display: "Insert",
+							command:"record/insert"
+						},
+						{
+							id:"delete",
+							display:"Delete",
+							command:"record/delete"
+						}
+					]
 
 				},
 				{
