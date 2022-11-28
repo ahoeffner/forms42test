@@ -502,6 +502,7 @@ div[name="date-picker"]
 {
 	margin:0;
 	display:flex;
+	cursor: pointer;
 	position: relative;
 	background-color: transparent;
 
@@ -527,6 +528,7 @@ div[name="date-picker"]
 	top: 22px;
 	left: 30px;
 	height: 100%;
+	z-index:9999;
 	display: table;
 	min-width: 120px;
 	position: absolute;
