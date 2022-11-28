@@ -43,7 +43,6 @@ export class Menu extends MenuComponent
 
 	public showmenu() : void
 	{
-
 		if (this.displayed)
 		{
 			super.hide();
@@ -58,7 +57,7 @@ export class Menu extends MenuComponent
 			this.container.style.animationDuration = "0.4s"
 			this.container.style.animationTimingFunction = "ease-in";
 
-			
+
 			this.menuelem.style.display = "block";
 			this.menuelem.style.animationDuration = "0.4s";
 			this.menuelem.style.animationName = "moveInLeft";

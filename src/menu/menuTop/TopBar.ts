@@ -15,18 +15,16 @@ import { MenuComponent } from 'forms42core';
 
 export class TopBar extends MenuComponent
 {
-    private displayed:boolean = false;
 	private menuelem:HTMLElement = null;
 
 	constructor()
-    {
-        super(new Commands());
-
+	{
+		super(new Commands());
 		this.options.skiproot = true;
 
-        this.menuelem = document.getElementById("topbar");
+		this.menuelem = document.getElementById("topbar");
 
 		this.target = this.menuelem;
-        this.show();
-    }
+      this.show();
+	}
 }

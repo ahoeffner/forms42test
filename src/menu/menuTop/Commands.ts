@@ -22,7 +22,7 @@ export class Commands extends StaticMenu
 	public async execute(path:string): Promise<boolean>
 	{
 		console.log(path);
-		return(true);
+		return(false);
 	}
 
 	public static data() : StaticMenuEntry
@@ -46,7 +46,7 @@ export class Commands extends StaticMenu
 						{
 							id:"excute",
 							display:"Excute",
-							command:"query/excute"	
+							command:"query/excute"
 						}
 					]
 
@@ -103,7 +103,7 @@ export class Commands extends StaticMenu
                         }
                     ]
         		}
-			
+
 			]
 		})
 	}
