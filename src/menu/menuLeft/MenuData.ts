@@ -31,7 +31,6 @@ export class MenuData extends StaticMenu
 		{
 			id: "demo",
 			display: "Demo",
-
 			entries:
 			[
 				{

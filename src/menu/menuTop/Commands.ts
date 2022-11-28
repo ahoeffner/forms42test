@@ -10,7 +10,7 @@
  * accompanied this code).
  */
 
-import { FormsModule, StaticMenu, StaticMenuEntry } from "forms42core";
+import { StaticMenu, StaticMenuEntry } from "forms42core";
 
 export class Commands extends StaticMenu
 {
@@ -21,11 +21,11 @@ export class Commands extends StaticMenu
 
 	public async execute(path:string): Promise<boolean>
 	{
-		await FormsModule.get().showform(path);
+		console.log(path);
 		return(true);
 	}
 
-	private static data() : StaticMenuEntry
+	public static data() : StaticMenuEntry
 	{
 		return(
 		{
@@ -34,22 +34,22 @@ export class Commands extends StaticMenu
 			entries:
 			[
 				{
-                      id:"connection",
-                      display:`Connection`,
-                      entries:
-                      [
-                          {
-                              id:"connect",
-                              display:`Connect`,
-                              command:"connection/connect"
-                          },
-                          {
-                              id:"disconnect",
-                              display:`Disconnect`,
-                              command:"connection/disconnect"
-                          }
-                      ]
-                  }
+                    id:"connection",
+                    display:`Connection`,
+                    entries:
+                    [
+                        {
+                            id:"connect",
+                            display:`Connect`,
+                            command:"connection/connect"
+                        },
+                        {
+                            id:"disconnect",
+                            display:`Disconnect`,
+                            command:"connection/disconnect"
+                        }
+                    ]
+        		}
 			]
 		})
 	}

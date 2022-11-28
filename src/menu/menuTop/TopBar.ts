@@ -15,6 +15,7 @@ import { MenuComponent } from 'forms42core';
 
 export class TopBar extends MenuComponent
 {
+    private displayed:boolean = false;
 	private menuelem:HTMLElement = null;
 
 	constructor()
@@ -23,7 +24,7 @@ export class TopBar extends MenuComponent
 
 		this.options.skiproot = true;
 
-        this.menuelem = document.querySelector(".topbar");
+        this.menuelem = document.getElementById("topbar");
 
 		this.target = this.menuelem;
         this.show();

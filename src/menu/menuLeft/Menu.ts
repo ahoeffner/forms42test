@@ -60,7 +60,8 @@ export class Menu extends MenuComponent
 
 			
 			this.menuelem.style.display = "block";
-			this.menuelem.style.animationDuration = "0.4s"
+			this.menuelem.style.animationDuration = "0.4s";
+			this.menuelem.style.animationName = "moveInLeft";
 			this.menuelem.style.animationTimingFunction = "ease-in";
 		}
 
