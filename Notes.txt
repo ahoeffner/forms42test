@@ -11,6 +11,10 @@ tabindex -> flyt ?
 
 Postgres 42.5
 
+OnConnect
+SQLStatement fetch size
+DropDown clear i enter query
+
 *** Jonas ***
 
 Ryd op i styles.css
