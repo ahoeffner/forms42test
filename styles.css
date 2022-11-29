@@ -320,6 +320,12 @@ input[mode="insert"]
 	background-image: url(images/icons8-insert-30.png);
 }
 
+input[mode="insert"][date],
+input[mode="query"][date]
+{ 
+	width:90px;
+}
+
 input[mode="deleted"]
 {
 	transition: all 0.18s ease;
