@@ -341,6 +341,11 @@ input[mode="deleted"]
 	display:inline-block;
 }
 
+th
+{
+	cursor: default;
+}
+
 .icon_calender:active
 {
 	transform: scale(1.04);
