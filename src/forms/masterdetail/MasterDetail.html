@@ -7,8 +7,8 @@
 	<table class="block">
 		<tr>
 			<th></th>
-			<th onclick="this.sortDept('id')">Id</th>
-			<th>Name</th>
+			<th onclick="this.sort('dept','department_id')">Id</th>
+			<th onclick="this.sort('dept','department_name')">Name</th>
 			<th>Manager</th>
 			<th>Location</th>
 		</tr>
@@ -28,10 +28,10 @@
 		<table class="block">
 			<tr class="row">
 				<th></th>
-				<th>First Name</th>
-				<th>Last Name</th>
-				<th>Email</th>
-				<th>Phone</th>
+				<th onclick="this.sort('emp','first_name')"   >First Name</th>
+				<th onclick="this.sort('emp','last_name')"    >Last Name</th>
+				<th onclick="this.sort('emp','email')"		    >Email</th>
+				<th onclick="this.sort('emp','phone_number')" >Phone</th>
 			</tr>
 			<tr class="row" foreach="row in 1..5">
 				<td class="indicator"><span from="Employees" row="$row" type="row-indicator"></span></td>

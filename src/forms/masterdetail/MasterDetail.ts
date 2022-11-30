@@ -25,6 +25,9 @@ export class MasterDetail extends BaseForm
 	private emp:Employees = new Employees(this,"Employees");
 	private dept:Departments = new Departments(this,"Departments");
 
+	private empsort:{column:string, asc:boolean} = {column: "last_name", asc: true};
+	private deptsort:{column:string, asc:boolean} = {column: "department_id", asc: true};
+
 	constructor()
 	{
 		super(content);
@@ -100,5 +103,25 @@ export class MasterDetail extends BaseForm
 		let response:DatabaseResponse = this.emp.getRecord().response;
 		this.emp.setValue("employee_id",response.getValue("employee_id"));
 		return(true);
+	}
+
+	public sort(block:string, field:string) : void
+	{
+		if (block == "dept" && !this.dept.empty())
+		{
+			if (field == this.deptsort.column) this.deptsort.asc = !this.deptsort.asc;
+			else 										  this.deptsort = {column: field, asc: true};
+
+			this.dept.datasource.sorting = this.deptsort.column + " " + (this.deptsort.asc ? "asc" : "desc");
+			this.dept.reQuery();
+		}
+		else if (block == "emp" && !this.emp.empty())
+		{
+			if (field == this.empsort.column) this.empsort.asc = !this.empsort.asc;
+			else 										 this.empsort = {column: field, asc: true};
+
+			this.emp.datasource.sorting = this.empsort.column + " " + (this.empsort.asc ? "asc" : "desc");
+			this.emp.reQuery();
+		}
 	}
 }
