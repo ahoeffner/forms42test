@@ -133,7 +133,6 @@ export class FormsModule extends FormsCoreModule
 
 	private async onLogon() : Promise<boolean>
 	{
-		console.log("logon");
 		return(true);
 	}
 
