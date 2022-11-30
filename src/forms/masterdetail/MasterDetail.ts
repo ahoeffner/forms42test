@@ -42,19 +42,6 @@ export class MasterDetail extends BaseForm
 		this.link(this.dept.getPrimaryKey(),this.emp.getDepartmentsForeignKey());
 	}
 
-	// Query not included fields
-	@formevent({type: EventType.PreQuery, block: "departments"})
-	public async preQueryDepartments() : Promise<boolean>
-	{
-		let loc:number = this.dept.getValue("loc_id");
-		let mgr:number = this.dept.getValue("manager_id");
-
-		if (loc) this.dept.filter.and(new Equals("loc_id").setConstraint(loc));
-		if (mgr) this.dept.filter.and(new Equals("manager_id").setConstraint(mgr));
-
-		return(true);
-	}
-
 	@formevent({type: EventType.OnFetch})
 	public async getDerivedFields(event:FormEvent) : Promise<boolean>
 	{
