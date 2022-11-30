@@ -21,18 +21,6 @@ export class Countries extends Block
 		this.datasource = new CountryTable();
 	}
 
-	public async getName(field:string) : Promise<boolean>
-	{
-		let id:string = null;
-		let manager:string = null;
-
-		id = this.getValue("country_id");
-		manager = await CountryTable.getName(id);
-
-		this.setValue(field,manager);
-		return(true);
-	}
-
 	public static async getCountryName(id:string) : Promise<string>
 	{
 		return(CountryTable.getName(id));

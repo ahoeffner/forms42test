@@ -46,4 +46,33 @@ export class Employees extends DatabaseTable
 		if (row)	return(row[0]);
 		return(null);
 	}
+
+	public static async getAllEmployees() : Promise<string[]>
+	{
+		let row:any[] = null;
+		let employees:string[] = [];
+
+		let stmt:SQLStatement = new SQLStatement(FormsModule.DATABASE);
+
+		stmt.sql =
+		`
+			select first_name||' '||last_name
+			from employees order by last_name, first_name
+		`;
+
+		stmt.arrayfetch = 32;
+		let success:boolean = await stmt.execute();
+
+		if (success)
+		{
+			while(true)
+			{
+				row = await stmt.fetch();
+				if (row == null) break;
+				employees.push(row[0]);
+			}
+		}
+
+		return(employees);
+	}
 }
