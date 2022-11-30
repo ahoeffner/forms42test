@@ -47,9 +47,18 @@ export class Commands extends StaticMenu
 							id:"excute",
 							display:"Excute",
 							command:"query/excute"
+						},
+						{
+							id:"refine",
+							display:"Refine",
+							command:"query/refine"
+						},
+						{
+							id:"advanced",
+							display:"Advanced",
+							command:"query/advanced"
 						}
 					]
-
 				},
 				{
 					id:"record",
@@ -67,7 +76,6 @@ export class Commands extends StaticMenu
 							command:"record/delete"
 						}
 					]
-
 				},
 				{
 					id: "transactions",
@@ -103,7 +111,6 @@ export class Commands extends StaticMenu
                         }
                     ]
         		}
-
 			]
 		})
 	}
