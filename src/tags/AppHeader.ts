@@ -6,8 +6,8 @@ export class AppHeader implements CustomTag
 	{
 		let heading:string =
 		`
-			<b style="position: relative; display: inline-block; height: 18px; top: 1.5px;">
-				Præsentation
+			<b style="position: absolute; display: inline-block; height: 18px; top: 12px; left: 50px">
+				Præsentation for jonas
 			</b>
 		`;
 
