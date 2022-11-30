@@ -67,6 +67,7 @@
 .form-header-middle
 {
 	display: flex;
+	cursor: default;
 	justify-content: center;
 }
 
@@ -545,7 +546,7 @@ div[name="date-picker"]
 
 .topbar .menu-item .menu-items
 {
-	top: 30px;
+	top: 27px;
 	left: 50%;
 	height: 100%;
 	z-index:9999;
