@@ -37,11 +37,10 @@ export class Menu extends MenuComponent
 		super.hide();
 		this.menuelem.style.display = "none";
 		this.container.style.minWidth = "0px";
-
 		this.displayed = false;
 	}
 
-	public showmenu() : void
+	public togglemenu() : void
 	{
 		if (this.displayed)
 		{
