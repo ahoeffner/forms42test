@@ -67,6 +67,7 @@
 .form-header-middle
 {
 	display: flex;
+	cursor: default;
 	justify-content: center;
 }
 
