@@ -24,7 +24,6 @@ export class Countries extends Block
 	public static async getCountryName(id:string) : Promise<string>
 	{
 		return(CountryTable.getName(id));
-
 	}
 
 	public static getCountryLov() : ListOfValues

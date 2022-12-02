@@ -300,8 +300,8 @@ input.detail:read-only
 	background: none;
 }
 
-.lov label input,
-input[mode="query"]
+input[mode="query"],
+.lov input[name="search"]
 {
 	text-indent: 12px;
     background-size: 10px;
