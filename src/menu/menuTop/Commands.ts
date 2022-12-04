@@ -74,6 +74,11 @@ export class Commands extends StaticMenu
 							id:"delete",
 							display:"Delete",
 							command:"record/delete"
+						},
+						{
+							id:"refresh",
+							display:"Refresh",
+							command:"record/refresh"
 						}
 					]
 				},
@@ -95,21 +100,21 @@ export class Commands extends StaticMenu
 					]
 				},
 				{
-                    id:"connection",
-                    display:`Connection`,
-                    entries:
-                    [
-                        {
-                            id:"connect",
-                            display:`Connect`,
-                            command:"connection/connect"
-                        },
-                        {
-                            id:"disconnect",
-                            display:`Disconnect`,
-                            command:"connection/disconnect"
-                        }
-                    ]
+					id:"connection",
+					display:`Connection`,
+					entries:
+					[
+						{
+								id:"connect",
+								display:`Connect`,
+								command:"connection/connect"
+						},
+						{
+								id:"disconnect",
+								display:`Disconnect`,
+								command:"connection/disconnect"
+						}
+					]
         		}
 			]
 		})

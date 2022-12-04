@@ -11,7 +11,6 @@
  */
 
 import { WorkDays } from '../dates/WorkDays';
-import { Database } from '../database/Database';
 import { Jobs } from '../datasources/database/Jobs';
 import { Departments } from '../datasources/database/Departments';
 import { Employees as EmployeeTable } from "../datasources/database/Employees";
@@ -67,7 +66,7 @@ export class Employees extends Block
 		if (code == null || salary == null)
 			return(true);
 
-		let limit:number[] = await Database.getSalaryLimit(code);
+		let limit:number[] = await Jobs.getSalaryLimit(code);
 
 		if (salary < limit[0]/2 || salary > 2*limit[1])
 		{

@@ -11,7 +11,7 @@
  */
 
 import { FormsModule } from "../../FormsModule";
-import { BindValue, DatabaseTable, DataType, SQLStatement } from "forms42core";
+import { BindValue, DatabaseTable, DataType, ParameterType, SQLStatement, StoredProcedure } from "forms42core";
 
 export class Jobs extends DatabaseTable
 {
@@ -43,5 +43,28 @@ export class Jobs extends DatabaseTable
 
 		if (row)	return(row[0]);
 		return(null);
+	}
+
+	public static async getSalaryLimit(job:string) : Promise<number[]>
+	{
+		let limit:number[] = [0,0];
+		let func:StoredProcedure = new StoredProcedure(FormsModule.DATABASE);
+
+		func.setName("getSalaryLimit");
+
+		func.addParameter("job",job,DataType.varchar);
+		func.addParameter("min",0,DataType.integer,ParameterType.inout);
+		func.addParameter("max",0,DataType.integer,ParameterType.inout);
+
+		let success:boolean = await func.execute();
+		if (!success) console.log(func.error());
+
+		if (success)
+		{
+			limit[0] = func.getOutParameter("min");
+			limit[1] = func.getOutParameter("max");
+		}
+
+		return(limit);
 	}
 }
