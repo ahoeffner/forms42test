@@ -29,7 +29,7 @@ import { AppHeader } from './tags/AppHeader';
 import { LinkMapper } from './fields/LinkMapper';
 import { TrueFalseMapper } from './fields/TrueFalseMapper';
 
-import { FormsPathMapping, FormsModule as FormsCoreModule, KeyMap, FormEvent, EventType, DatabaseConnection as Connection, FormProperties, BuiltIns, KeyCodes } from 'forms42core';
+import { FormsPathMapping, FormsModule as FormsCoreModule, KeyMap, FormEvent, EventType, DatabaseConnection as Connection, FormProperties, UsernamePassword, Form } from 'forms42core';
 
 @FormsPathMapping(
 	[
@@ -83,7 +83,6 @@ export class FormsModule extends FormsCoreModule
 
 		this.OpenURLForm();
 		this.updateKeyMap(keymap);
-		this.addEventListener(this.onLogon,{type: EventType.Connect})
 
 		Connection.TRXTIMEOUT = 240;
 		Connection.CONNTIMEOUT = 120;
@@ -131,19 +130,22 @@ export class FormsModule extends FormsCoreModule
 		return(true);
 	}
 
-	private async onLogon() : Promise<boolean>
+	private async onLogon(event:FormEvent) : Promise<boolean>
 	{
+		let form:UsernamePassword = event.form as UsernamePassword;
+		console.log("form: "+form.accepted+" "+form.username)
 		return(true);
 	}
 
 	private async login() : Promise<boolean>
 	{
-		BuiltIns.callUsernamePasswordForm();
+		let usrpwd:Form = await this.showform(UsernamePassword);
+		this.addFormEventListener(usrpwd,this.onLogon,{type: EventType.OnCloseForm})
 		return(true);
 	}
 }
 
 export class keymap extends KeyMap
 {
-	public static login:KeyMap = new KeyMap({key: 'C', alt: true});
+	public static login:KeyMap = new KeyMap({key: 'l', ctrl: true});
 }
