@@ -1,2 +1,1 @@
-cd ../core; npm run build;
-cd ../demo; npm run build;
+cd ../core; npm run build; cd ../demo; npm run build;

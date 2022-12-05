@@ -61,7 +61,7 @@
 	grid-auto-flow: column;
 	background-color: lightgray;
 	border-bottom: 1px solid black;
-	grid-template-columns: 40px calc(100% - 80px) 40px;
+	grid-template-columns: 40px 1fr 60px;
 }
 
 .form-header-middle
