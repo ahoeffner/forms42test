@@ -140,7 +140,8 @@ export class FormsModule extends FormsCoreModule
 	private async login() : Promise<boolean>
 	{
 		let usrpwd:Form = await this.showform(UsernamePassword);
-		this.addFormEventListener(usrpwd,this.onLogon,{type: EventType.OnCloseForm})
+		this.addFormEventListener(usrpwd,this.onLogon,{type: EventType.OnCloseForm});
+		console.log(this.getRunningForms());
 		return(true);
 	}
 }
