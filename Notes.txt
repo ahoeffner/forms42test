@@ -10,8 +10,8 @@ Cyclic master detail
 tabindex -> flyt ?
 
 Postgres 42.5
+autocommit on "not connected"
 
-Disable advanced query
 DropDown clear i enter query
 
 *** Jonas ***
