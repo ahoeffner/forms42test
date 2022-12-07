@@ -10,7 +10,8 @@
  * accompanied this code).
  */
 
-import { StaticMenu, StaticMenuEntry } from "forms42core";
+import { FormsModule } from "../../FormsModule";
+import { KeyMap, StaticMenu, StaticMenuEntry } from "forms42core";
 
 export class Commands extends StaticMenu
 {
@@ -21,7 +22,49 @@ export class Commands extends StaticMenu
 
 	public async execute(path:string): Promise<boolean>
 	{
-		console.log(path);
+		path = path.toLowerCase();
+		let parts:string[] = path.split("/");
+		let module:FormsModule = FormsModule.get() as FormsModule;
+
+		if (parts[0] == "query")
+		{
+			switch(parts[1])
+			{
+				case "enter" 		: module.sendkey(KeyMap.enterquery);	break;
+				case "execute" 	: module.sendkey(KeyMap.executequery);	break;
+				case "refine" 		: module.sendkey(KeyMap.lastquery);		break;
+				case "advanced" 	: module.sendkey(KeyMap.queryeditor);	break;
+			}
+		}
+
+		if (parts[0] == "record")
+		{
+			switch(parts[1])
+			{
+				case "insert" 		: module.sendkey(KeyMap.insert);		break;
+				case "delete" 		: module.sendkey(KeyMap.delete);		break;
+				case "refresh" 	: module.sendkey(KeyMap.refresh);	break;
+			}
+		}
+
+		if (parts[0] == "transaction")
+		{
+			switch(parts[1])
+			{
+				case "commit" 		: module.sendkey(KeyMap.commit);		break;
+				case "rollback" 	: module.sendkey(KeyMap.rollback);	break;
+			}
+		}
+
+		if (parts[0] == "connection")
+		{
+			switch(parts[1])
+			{
+				case "connect" 	: module.login();		break;
+				case "disconnect" : module.logout();	break;
+			}
+		}
+
 		return(true);
 	}
 

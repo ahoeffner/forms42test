@@ -88,7 +88,6 @@ export class FormsModule extends FormsCoreModule
 		Connection.CONNTIMEOUT = 120;
 
 		FormsModule.DATABASE = new Connection("http://localhost:9002");
-		FormsModule.DATABASE.connect("hr","hr");
 
 		this.addEventListener(this.login,{type: EventType.Key, key: keymap.login});
 
@@ -130,18 +129,35 @@ export class FormsModule extends FormsCoreModule
 		return(true);
 	}
 
-	private async onLogon(event:FormEvent) : Promise<boolean>
+	private logontrg:object = null;
+	public async login() : Promise<boolean>
 	{
-		let form:UsernamePassword = event.form as UsernamePassword;
-		console.log("form: "+form.accepted+" "+form.username)
+		let usrpwd:Form = await this.showform(UsernamePassword);
+		this.logontrg = this.addFormEventListener(usrpwd,this.onLogon,{type: EventType.OnCloseForm});
 		return(true);
 	}
 
-	private async login() : Promise<boolean>
+	public async logout() : Promise<boolean>
 	{
-		let usrpwd:Form = await this.showform(UsernamePassword);
-		this.addFormEventListener(usrpwd,this.onLogon,{type: EventType.OnCloseForm});
-		console.log(this.getRunningForms());
+		if (!FormsModule.DATABASE.connected())
+			return(false);
+
+		let forms:Form[] = this.getRunningForms();
+
+		for (let i = 0; i < forms.length; i++)
+			await forms[i].clear();
+
+		return(FormsModule.DATABASE.disconnect());
+	}
+
+	private async onLogon(event:FormEvent) : Promise<boolean>
+	{
+		let form:UsernamePassword = event.form as UsernamePassword;
+		this.removeEventListener(this.logontrg);
+
+		if (form.accepted && form.username && form.password)
+			FormsModule.DATABASE.connect(form.username,form.password);
+
 		return(true);
 	}
 }
