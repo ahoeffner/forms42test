@@ -407,12 +407,12 @@ div.modal
 	position: absolute;
 	background-color: white;
 	box-shadow: 0 5px 30px rgb(0 0 0 / 20%);
-}
+} 
 
-.info:hover .info-dropdown
+ .info:hover .info-dropdown
 {
 	opacity: 1;
-}
+} 
 
 .info-dropdown li
 {
@@ -487,12 +487,6 @@ div.modal
     pointer-events: auto;
 }
 
-div[name="login"] p label
-{
-	width:62px;
-	display:inline-block;
-}
-
 .lov,
 div[name="date-picker"]
 {
@@ -528,7 +522,7 @@ div[name="date-picker"]
 	background-color: transparent;
 }
 
-.topbar .menu-item a
+.topbar .menu-item a:not(.disabled)
 {
 	cursor: pointer;
 }
@@ -577,15 +571,17 @@ div[name="date-picker"]
 
 }
 
-.topbar .menu-items .menu-items .link-item:hover
+.topbar .menu-items .menu-items .link-item:hover a:not(.disabled)
 {
 	background-color: #ddd;
 }
 
 .topbar .menu-items .menu-items .link-item a
 {
-	margin: 5px 10px;
-	padding: 5px 10px;
+	width:100%;
+	height:100%;
+	text-align: left;
+	padding: 10px 15px;
 }
 
 @keyframes moveInLeft
@@ -598,4 +594,52 @@ div[name="date-picker"]
 	{
 		transform: translate(0);
 	}
+}
+
+.disabled
+{
+	filter:blur(5px);
+}
+
+label[for="username"],
+label[for="password"]
+{
+	font-weight: bold;
+	margin-bottom:5px;
+}
+
+input[name="username"],
+input[name="password"]
+{
+	margin-left:0px;
+	margin-bottom: 5px;
+	border:solid lightgray 1px;
+}
+
+input[name="username"]
+{
+	margin-bottom: 10px;
+}
+
+button
+{
+	border-radius: 15px;
+}
+
+div[name="loginimage"]
+{
+	width:15px;
+	height: 15px;
+	background-size: cover;
+	margin:0px auto 5px auto;
+	background-image: url("images/spaceship-png-icon-26.png");
+	margin-bottom: 5px;
+}
+
+div[name="loginbutton"]
+{
+	gap:3px;
+	display: flex;
+	margin-top: 10px;
+	justify-content: center;
 }
