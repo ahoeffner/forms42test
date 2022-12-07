@@ -32,34 +32,37 @@ export class HelpData extends StaticMenu
         return(
         {
             
-            id:"help",
-            display:"help",
+            id: "help",
+            display: "help",
             entries:
             [
                 {
-                    id:"insertrecord",
-                    display:"F5 Insert Record",
-                    command:"help/insertrecord"
+                    id: "insertrecord",
+                    display: "F5 Insert Record",
                 },
                 {
-                    id:"deleterecord",
+                    id: "deleterecord",
                     display:"F6 Delete Record",
                 },
                 {
-                    id:"enterquery",
-                    display:"F7 Enter Query By Example",
+                    id: "enterquery",
+                    display: "F7 Enter Query By Example",
                 },
                 {
-                    id:"excutequery",
-                    display:"F8 Excute Query",
+                    id: "excutequery",
+                    display: "F8 Excute Query",
                 },
                 {
                     id:"DataPicker",
-                    display:"F9 DataPicker",
+                    display: "F9 DataPicker",
                 },
                 {
-                    id:"record",
-                    display:"Insert Record",
+                    id: "record",
+                    display: "F10 Commit",
+                },
+                {
+                    id: "rollback",
+                    display: "F12 Rollback"
                 }
             ]
             

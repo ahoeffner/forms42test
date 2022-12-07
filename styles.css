@@ -389,8 +389,11 @@ div.modal
 .info
 {
 	width:20px;
+	height: 20px;
+	cursor: pointer;
+	position: relative;
 	display:inline-block;
-   background-size: 20px;
+   	background-size: 20px;
 	transition: all 0.18s ease;
 	background-repeat: no-repeat;
 	background-image: url('images/icons8-info-50.png');
@@ -398,32 +401,37 @@ div.modal
 
 .info .info-dropdown
 {
-	top: 20px;
+	top: 42px;
 	right: 0px;
-	opacity: 0;
-	z-index: -1;
 	width:185px;
+	display:none;
+	z-index: 99999;
+	position: fixed;
 	font-size: 14px;
 	list-style: none;
-	padding: 10px 5px;
-	position: absolute;
 	background-color: white;
 	box-shadow: 0 5px 30px rgb(0 0 0 / 20%);
 } 
 
- .info:hover .info-dropdown
+.info-dropdown .menu-items
 {
-	opacity: 1;
-} 
+	cursor: default;
+	padding: 10px 5px;
+}
 
-.info-dropdown li
+.info-dropdown .menu-item:first-child
 {
+	margin-top:0px;
+}
+.info-dropdown .menu-item
+{
+	margin-left:0px;
 	padding: 4px 8px;
 	margin-bottom: 2px;
 	border-bottom: solid 1px rgb(0,0,0,.2);
 }
 
-.info-dropdown li:last-child
+.info-dropdown .menu-item:last-child
 {
 	border-bottom: none;
 }
@@ -624,6 +632,7 @@ input[name="username"]
 
 button
 {
+	font-size: 15px;
 	border-radius: 15px;
 }
 

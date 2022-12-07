@@ -29,7 +29,6 @@ export class Help extends MenuComponent
 
 		this.container = document.getElementById("info");
 		this.menuelem = this.container.appendChild(this.menuelem);
-        console.log(this.menuelem)
 		this.target = this.menuelem;
 	}
 
@@ -37,7 +36,6 @@ export class Help extends MenuComponent
 	{
 		super.hide();
         this.menuelem.style.display = "none";
-		this.container.style.display = "none";
 		this.displayed = false;
 	}
 
@@ -47,14 +45,11 @@ export class Help extends MenuComponent
 		{
 			super.hide();
             this.menuelem.style.display = "none";
-			this.container.style.display = "none";
 		}
 		else
 		{
 			super.show();
-            this.menuelem.style.display = "block";
-			this.container.style.display = "block";
-		
+            this.menuelem.style.display = "table";
 		}
 
 		this.displayed = !this.displayed;

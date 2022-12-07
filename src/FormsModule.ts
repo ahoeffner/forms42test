@@ -12,6 +12,7 @@
 
 import { Minimized } from './Minimized';
 import { Menu } from './menu/menuLeft/Menu';
+import { Help } from './menu/menuRight/Help';
 import { TopBar } from './menu/menuTop/TopBar';
 import { FormHeader } from './fragments/FormHeader';
 import { PageHeader } from './fragments/PageHeader';
@@ -54,6 +55,7 @@ import { FormsPathMapping, FormsModule as FormsCoreModule, KeyMap, FormEvent, Ev
 export class FormsModule extends FormsCoreModule
 {
 	public menu:Menu = null;
+	public help:Help =null;
 	public topBar:TopBar = null;
 
 	public list:Minimized = null;
@@ -80,6 +82,7 @@ export class FormsModule extends FormsCoreModule
 		// Menues
 		this.menu = new Menu();
 		this.topBar = new TopBar();
+		this.help = new Help();
 
 		this.OpenURLForm();
 		this.updateKeyMap(keymap);
