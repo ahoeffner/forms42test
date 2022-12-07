@@ -126,19 +126,19 @@ export class Commands extends StaticMenu
 					]
 				},
 				{
-					id: "transactions",
-					display:"Transactions",
+					id: "transaction",
+					display:"Transaction",
 					entries:
 					[
 						{
-							id:"comment",
-							display:"Comment",
-							command:"transactions/comment"
+							id:"commit",
+							display:"Commit",
+							command:"transaction/commit"
 						},
 						{
 							id: "rollback",
 							display:"Rollback",
-							command:"transactions/rollback"
+							command:"transaction/rollback"
 						},
 					]
 				},
