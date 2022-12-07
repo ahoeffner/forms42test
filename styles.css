@@ -15,6 +15,8 @@
 
 .canvas-handle
 {
+	cursor: default;
+	user-select: none;
 	background-color: lightgray;
 }
 
@@ -604,11 +606,11 @@ div[name="date-picker"]
 label[for="username"],
 label[for="password"]
 {
+	user-select: none;
 	font-weight: bold;
 	margin-bottom:5px;
 }
 
-input[name="username"],
 input[name="password"]
 {
 	margin-left:0px;
@@ -617,6 +619,7 @@ input[name="password"]
 
 input[name="username"]
 {
+	margin-left:0px;
 	margin-bottom: 10px;
 }
 
@@ -629,10 +632,10 @@ div[name="loginimage"]
 {
 	width:15px;
 	height: 15px;
+	margin-bottom: 5px;
 	background-size: cover;
 	margin:0px auto 5px auto;
 	background-image: url("images/spaceship-png-icon-26.png");
-	margin-bottom: 5px;
 }
 
 div[name="loginbutton"]

@@ -12,7 +12,6 @@
 
 import { Minimized } from './Minimized';
 import { Menu } from './menu/menuLeft/Menu';
-import { Help } from './menu/menuRight/Help';
 import { TopBar } from './menu/menuTop/TopBar';
 import { FormHeader } from './fragments/FormHeader';
 import { PageHeader } from './fragments/PageHeader';
