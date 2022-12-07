@@ -140,12 +140,15 @@ export class FormsModule extends FormsCoreModule
 	public async logout() : Promise<boolean>
 	{
 		if (!FormsModule.DATABASE.connected())
-			return(false);
+			return(true);
 
 		let forms:Form[] = this.getRunningForms();
 
 		for (let i = 0; i < forms.length; i++)
-			await forms[i].clear();
+		{
+			if (!await forms[i].clear())
+				return(false);
+		}
 
 		return(FormsModule.DATABASE.disconnect());
 	}

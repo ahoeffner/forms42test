@@ -87,9 +87,9 @@ export class Commands extends StaticMenu
 							command:"query/enter"
 						},
 						{
-							id:"excute",
-							display:"Excute",
-							command:"query/excute"
+							id:"execute",
+							display:"Execute",
+							command:"query/execute"
 						},
 						{
 							id:"refine",
