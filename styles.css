@@ -613,7 +613,6 @@ input[name="password"]
 {
 	margin-left:0px;
 	margin-bottom: 5px;
-	border:solid lightgray 1px;
 }
 
 input[name="username"]
