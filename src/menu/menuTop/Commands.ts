@@ -154,6 +154,7 @@ export class Commands extends StaticMenu
 						},
 						{
 								id:"disconnect",
+								disabled: true,
 								display:`Disconnect`,
 								command:"connection/disconnect"
 						}
