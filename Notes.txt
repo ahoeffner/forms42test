@@ -8,6 +8,7 @@ connect to pool
 Cyclic master detail
 
 tabindex -> flyt ?
+Blocks without fields
 
 *** Jonas ***
 
