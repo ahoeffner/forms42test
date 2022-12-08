@@ -636,20 +636,15 @@ button
 	border-radius: 15px;
 }
 
-div[name="loginimage"]
-{
-	width:15px;
-	height: 15px;
-	margin-bottom: 5px;
-	background-size: cover;
-	margin:0px auto 5px auto;
-	background-image: url("images/spaceship-png-icon-26.png");
-}
-
 div[name="loginbutton"]
 {
 	gap:3px;
 	display: flex;
 	margin-top: 10px;
 	justify-content: center;
+}
+
+div[name="login"]
+{
+	margin:0 20px;
 }
