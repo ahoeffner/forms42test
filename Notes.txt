@@ -14,10 +14,9 @@ Close window key
 
 *** Jonas ***
 
-Ryd op i styles.css
-ListOfValues: search with magnifying glass
-PhoneBook mere space mellem search og result
-Connection, Query, Record, Transaction
+size ud af UsernamePassword
+relative i left menu
+Non transparent windows
 
 *************
 
