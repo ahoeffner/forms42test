@@ -9,6 +9,8 @@ Cyclic master detail
 
 tabindex -> flyt ?
 Blocks without fields
+Escape when new/inserted
+Close window key
 
 *** Jonas ***
 
