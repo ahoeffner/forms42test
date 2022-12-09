@@ -1,16 +1,11 @@
 FilterEditor
 
-Warning ved setView med triggere
-
-undo rec, blk, frm
-connect to pool
+Preauthenticated
+connect to pool, set pool secret
 
 Cyclic master detail
 
 tabindex -> flyt ?
-Blocks without fields
-Escape when new/inserted
-Close window key
 
 *** Jonas ***
 

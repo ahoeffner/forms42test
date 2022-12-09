@@ -17,7 +17,7 @@ import { BaseForm } from "../../BaseForm";
 import { Employees } from "../../blocks/Employees";
 import { Locations } from '../../blocks/Locations';
 import { Departments } from '../../blocks/Departments';
-import { DatabaseResponse, Equals, EventType, formevent, FormEvent, KeyMap } from "forms42core";
+import { DatabaseResponse, EventType, formevent, FormEvent } from "forms42core";
 
 
 export class MasterDetail extends BaseForm
