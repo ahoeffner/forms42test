@@ -40,6 +40,13 @@ export class Employees extends BaseForm
 		return(true);
 	}
 
+	@formevent({type: EventType.OnNewRecord})
+	public async setDefaults() : Promise<boolean>
+	{
+		this.emp.setValue("hire_date",new Date());
+		return(true);
+	}
+
 	@formevent({type: EventType.WhenValidateField, field: "salary"})
 	public async validateSalary() : Promise<boolean>
 	{
