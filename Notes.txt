@@ -1,7 +1,6 @@
 FilterEditor
 
 Preauthenticated
-DateInterval
 connect to pool, set pool secret
 
 Cyclic master detail
