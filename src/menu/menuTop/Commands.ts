@@ -78,6 +78,7 @@ export class Commands extends StaticMenu
 			[
 				{
 					id:"query",
+					disabled: true,
 					display:"Query",
 					entries:
 					[
@@ -105,6 +106,7 @@ export class Commands extends StaticMenu
 				},
 				{
 					id:"record",
+					disabled: true,
 					display:"Record",
 					entries:
 					[
@@ -126,6 +128,7 @@ export class Commands extends StaticMenu
 					]
 				},
 				{
+					disabled: true,
 					id: "transaction",
 					display:"Transaction",
 					entries:
@@ -153,6 +156,7 @@ export class Commands extends StaticMenu
 								command:"connection/connect"
 						},
 						{
+								disabled: true,
 								id:"disconnect",
 								display:`Disconnect`,
 								command:"connection/disconnect"

@@ -11,7 +11,7 @@
  */
 
 import { Commands } from './Commands';
-import { MenuComponent } from 'forms42core';
+import { EventType, formevent, FormsModule, MenuComponent, MenuEntry } from 'forms42core';
 
 export class TopBar extends MenuComponent
 {
@@ -26,5 +26,49 @@ export class TopBar extends MenuComponent
 
 		this.target = this.menuelem;
       this.show();
+	}
+
+	@formevent({type: EventType.Connect})
+	public async onConnect() : Promise<boolean>
+	{
+		let entry:MenuEntry = await this.findEntry("/topbar/connection/connect");
+		if (entry) entry.disabled = true;
+
+		entry = await this.findEntry("/topbar/connection/disconnect");
+		if (entry) entry.disabled = false;
+
+		if (FormsModule.get().getRunningForms().length > 0)
+		{
+			entry = await this.findEntry("/topbar/query");
+			if (entry) entry.disabled = false;
+
+			entry = await this.findEntry("/topbar/record");
+			if (entry) entry.disabled = false;
+		}
+
+		this.show();
+		return(true);
+	}
+
+	@formevent({type: EventType.Disconnect})
+	public async onDisConnect() : Promise<boolean>
+	{
+		let entry:MenuEntry = await this.findEntry("/topbar/connection/disconnect");
+		if (entry) entry.disabled = true;
+
+		entry = await this.findEntry("/topbar/connection/connect");
+		if (entry) entry.disabled = false;
+
+		entry = await this.findEntry("/topbar/query");
+		if (entry) entry.disabled = true;
+
+		entry = await this.findEntry("/topbar/record");
+		if (entry) entry.disabled = true;
+
+		entry = await this.findEntry("/topbar/transaction");
+		if (entry) entry.disabled = true;
+
+		this.show();
+		return(true);
 	}
 }

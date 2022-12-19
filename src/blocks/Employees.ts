@@ -14,7 +14,7 @@ import { WorkDays } from '../dates/WorkDays';
 import { Jobs } from '../datasources/database/Jobs';
 import { Departments } from '../datasources/database/Departments';
 import { Employees as EmployeeTable } from "../datasources/database/Employees";
-import { BindValue, Block, EventType, FieldProperties, Filter, Filters, FilterStructure, Form, FormEvent, Key, ListOfValues } from "forms42core";
+import { BindValue, Block, EventType, FieldProperties, Filter, Filters, FilterStructure, Form, formevent, FormEvent, Key, ListOfValues } from "forms42core";
 
 export class Employees extends Block
 {
@@ -23,11 +23,19 @@ export class Employees extends Block
 		super(form,name);
 		this.datasource = new EmployeeTable();
 		this.setDateConstraint(new WorkDays(),"hire_date");
+		this.addEventListener(this.xxx,{type: EventType.WhenValidateField, field: "salary"})
 	}
 
 	public getDepartmentsForeignKey() : Key
 	{
 		return(new Key(this.name,"department_id"));
+	}
+
+	@formevent({type: EventType.WhenValidateField, field: "salary"})
+	public async xxx(event:FormEvent) : Promise<boolean>
+	{
+		console.log("blimey II "+EventType[event.type]);
+		return(true);
 	}
 
 	public async lookupJob(field:string) : Promise<boolean>
