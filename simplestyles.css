@@ -72,12 +72,15 @@
 .canvas
 {
 	border: 1px solid black;
+	background-color: white;
 }
 
 .form-header
 {
 	width: 100%;
 	height: 20px;
+	cursor: default;
+	user-select: none;
 	display: inline-grid;
 	grid-auto-flow: column;
 	border-bottom: 1px solid black;
@@ -153,11 +156,6 @@
 	font-size: 13px;
 	margin-top: 15px;
 	user-select: none;
-}
-
-.left-menu-container .menu-items
-{
-	padding-left:10px;
 }
 
 .row-indicator
