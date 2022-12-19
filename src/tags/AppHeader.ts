@@ -6,7 +6,7 @@ export class AppHeader implements CustomTag
 	{
 		let heading:string =
 		`
-			<b style="position: absolute; display: inline-block; height: 18px; top: 12px; left: 50px; user-select: none; cursor:default">
+			<b class="logo" style="position: absolute; display: inline-block; height: 18px; top: 12px; left: 50px; user-select: none; cursor:default">
 				FutureForms
 			</b>
 		`;
