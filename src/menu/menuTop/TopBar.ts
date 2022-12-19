@@ -11,7 +11,7 @@
  */
 
 import { Commands } from './Commands';
-import { EventType, formevent, FormsModule, MenuComponent, MenuEntry } from 'forms42core';
+import { EventType, FormEvent, formevent, FormsModule, MenuComponent, MenuEntry } from 'forms42core';
 
 export class TopBar extends MenuComponent
 {
@@ -31,7 +31,9 @@ export class TopBar extends MenuComponent
 	@formevent({type: EventType.Connect})
 	public async onConnect() : Promise<boolean>
 	{
-		let entry:MenuEntry = await this.findEntry("/topbar/connection/connect");
+		let entry:MenuEntry = null;
+
+		entry = await this.findEntry("/topbar/connection/connect");
 		if (entry) entry.disabled = true;
 
 		entry = await this.findEntry("/topbar/connection/disconnect");
@@ -53,7 +55,9 @@ export class TopBar extends MenuComponent
 	@formevent({type: EventType.Disconnect})
 	public async onDisConnect() : Promise<boolean>
 	{
-		let entry:MenuEntry = await this.findEntry("/topbar/connection/disconnect");
+		let entry:MenuEntry = null;
+
+		entry = await this.findEntry("/topbar/connection/disconnect");
 		if (entry) entry.disabled = true;
 
 		entry = await this.findEntry("/topbar/connection/connect");
@@ -66,6 +70,53 @@ export class TopBar extends MenuComponent
 		if (entry) entry.disabled = true;
 
 		entry = await this.findEntry("/topbar/transaction");
+		if (entry) entry.disabled = true;
+
+		this.show();
+		return(true);
+	}
+
+	@formevent({type: EventType.PostViewInit})
+	public async onFormOpen(event:FormEvent) : Promise<boolean>
+	{
+		let entry:MenuEntry = null;
+
+		if (event.form.constructor.name == "UsernamePassword")
+			return(false);
+
+		entry = await this.findEntry("/topbar/query");
+		if (entry) entry.disabled = false;
+
+		entry = await this.findEntry("/topbar/record");
+		if (entry) entry.disabled = false;
+
+		this.show();
+		return(true);
+	}
+
+	@formevent({type: EventType.OnCloseForm})
+	public async onFormClose() : Promise<boolean>
+	{
+		let entry:MenuEntry = null;
+
+		if (FormsModule.get().getRunningForms().length == 1)
+		{
+			entry = await this.findEntry("/topbar/query");
+			if (entry) entry.disabled = true;
+
+			entry = await this.findEntry("/topbar/record");
+			if (entry) entry.disabled = true;
+		}
+
+		this.show();
+		return(true);
+	}
+
+	@formevent({type: EventType.OnLockRecord})
+	public async onTransactionStart() : Promise<boolean>
+	{
+		let entry:MenuEntry = null;
+		entry = await this.findEntry("/topbar/query");
 		if (entry) entry.disabled = true;
 
 		this.show();
