@@ -37,7 +37,7 @@
 	position: relative;
 	background-size: cover;
 	background-position: top;
-	border-top:#7676c8 10px solid;
+	border-top:#6060F0 10px solid;
 	clip-path: polygon(0% 0%,100% 0%,100% 90%, 0% 100%);
 	background-image:linear-gradient(to right bottom, rgba(97, 112, 227, 0.8),rgba(100, 101, 179, 0.8)) , url(https://nextmapping.com/wp-content/uploads/2019/10/FutureisnowIstockphoto.jpg);	
 }
@@ -96,6 +96,7 @@ tr td span:hover
 
 .menu-left
 {
+	width:30px;
 	height: 100%;
 	color:white;
 	transition: 0.5s;
@@ -105,26 +106,22 @@ tr td span:hover
 
 .left-menu-container
 {
-	margin: 5px;
-	padding: 10px;
-	display: none;
+
+	display: block;
 	cursor: pointer;
-	min-width: 100px;
 	text-align: left;
 	border-radius: 0;
-	transition: all 5s ease;
 	width: fit-content;
 	text-decoration: none;
 	background: transparent;
+	transition: all 5s ease left;
 }
 
 .menu-item
 {
-	display: block;
-	font-size: 13px;
 	transition: 0.3s;
 	margin-top: 15px;
-	margin-left: -15px;
+	display: inline-flex;
 }
 
 .link-item
@@ -143,32 +140,36 @@ tr td span:hover
 
 .left-menu-container .menu-items
 {
-	padding-left:10px;
+	font-size:18px; 
 	transition: 0.3s;
+	padding-left:10px;
 }
 
 .left-menu-container  .menu-item:before
 {
 	color: black;
 	font-size: 13px;
-	content: '\25B6';
+	content: '\01F3E0';
 	margin-right: 5px;
 	display:inline-block;
 }
 
+/* 
 .left-menu-container  .link-item:before
 {
+	padding:10px;
 	color: black;
 	font-size: 13px;
-	content: '\25CF';
+	content: '\01F3E0';
 	margin-right: 5px;
 	margin-left: 10px;
 	display:inline-block;
-}
+} */
 
-.left-menu-container a:hover
+.left-menu-container .menu-item:hover
 {
-	color: hwb(0 2% 98% / 0.582);
+	background-color:#424549;
+	border-left: 3px solid #6060F0;
 }
 
 .menu-open:before
@@ -536,6 +537,7 @@ div[name="date-picker"]
 .topbar .menu-item
 {
 	margin:0;
+	font-size:13px;
 	padding:0 10px;
 	cursor: default;
 	font-weight: bold;

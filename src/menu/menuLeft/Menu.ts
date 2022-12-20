@@ -30,12 +30,16 @@ export class Menu extends MenuComponent
 
 		this.menuelem = this.container.appendChild(this.menuelem);
 		this.target = this.menuelem;
+		super.show();
+
 	}
 
 	public hide() : void
 	{
-		super.hide();
-		this.menuelem.style.display = "none";
+		// super.hide();
+		// this.menuelem.style.display = "none";
+		// this.container.style.minWidth = "0px";
+		// this.menuelem.style.animationName = "moveInLeft";
 		this.container.style.minWidth = "0px";
 		this.displayed = false;
 	}
@@ -44,23 +48,11 @@ export class Menu extends MenuComponent
 	{
 		if (this.displayed)
 		{
-			super.hide();
-			this.menuelem.style.display = "none";
 			this.container.style.minWidth = "0px";
 		}
 		else
 		{
-			super.show();
-
 			this.container.style.minWidth = "150px";
-			this.container.style.animationDuration = "0.4s"
-			this.container.style.animationTimingFunction = "ease-in";
-
-
-			this.menuelem.style.display = "block";
-			this.menuelem.style.animationDuration = "0.4s";
-			this.menuelem.style.animationName = "moveInLeft";
-			this.menuelem.style.animationTimingFunction = "ease-in";
 		}
 
 		this.displayed = !this.displayed;

@@ -14,6 +14,12 @@
 	grid-template-columns: fit-content(30%);
 }
 
+.form-area
+{
+	position: relative;
+	background-color: white;
+}
+
 .app-header
 {
 	width: 100%;
@@ -45,7 +51,7 @@
 	position: relative;
 	display:inline-flex;
 	align-items: center;
-	background-color: transparent;
+	background-color: white;
 }
 
 .topbar .menu-item .menu-items
@@ -126,21 +132,19 @@
 
 .menu-left
 {
+	width:0px;
 	height: 100%;
 	border-right: 1px solid black;
 }
 
 .left-menu-container
 {
-	margin: 5px;
-	padding: 10px;
-	display: none;
+	display: block;
 	cursor: default;
-	min-width: 100px;
+	margin-left:15px;
 	text-align: left;
-	border-radius: 0;
-	width: fit-content;
 	text-decoration: none;
+	background: transparent;
 }
 
 .menu-item
