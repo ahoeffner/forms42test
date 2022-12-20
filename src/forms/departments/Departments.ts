@@ -10,27 +10,27 @@
  * accompanied this code).
  */
 
-import content from './Employees.html';
+import content from './Departments.html';
 
 import { BaseForm } from "../../BaseForm";
 import { Sorter } from '../../utils/Sorter';
-import { Employees as EmployeeBlock } from "../../blocks/Employees";
+import { Departments as DepartmentBlock } from "../../blocks/Departments";
 
 
-export class Employees extends BaseForm
+export class Departments extends BaseForm
 {
 	private sorter:Sorter = null;
-	private emp:EmployeeBlock = new EmployeeBlock(this,"Employees");
+	private dept:DepartmentBlock = new DepartmentBlock(this,"Departments");
 
 	constructor()
 	{
 		super(content);
-		this.title = "Employees";
+		this.title = "Departments";
 
-		this.sorter = new Sorter(this.emp,"last_name");
+		this.dept.setManagerLov("manager");
+		this.dept.setLocationLov("location");
 
-		this.emp.setJobLov(["job_id","job_title"]);
-		this.emp.setDepartmentLov(["department_id","department_name"]);
+		this.sorter = new Sorter(this.dept,"department_id");
 	}
 
 	public sort(field:string) : void

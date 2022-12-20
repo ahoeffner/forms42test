@@ -84,7 +84,7 @@ export class TopBar extends MenuComponent
 		if (event.form.constructor.name == "UsernamePassword")
 			return(true);
 
-		if (FormsModule.get().getRunningForms().length == 0)
+		if (FormsModule.get().getRunningForms().length == 1)
 		{
 			entry = await this.findEntry("/topbar/query");
 			if (entry) entry.disabled = false;

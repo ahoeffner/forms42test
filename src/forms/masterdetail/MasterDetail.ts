@@ -12,12 +12,10 @@
 
 import content from './MasterDetail.html';
 
-import { Jobs } from '../../blocks/Jobs';
 import { BaseForm } from "../../BaseForm";
-import { Employees } from "../../blocks/Employees";
-import { Locations } from '../../blocks/Locations';
-import { Departments } from '../../blocks/Departments';
 import { Sorter } from '../../utils/Sorter';
+import { Employees } from "../../blocks/Employees";
+import { Departments } from '../../blocks/Departments';
 
 
 export class MasterDetail extends BaseForm
@@ -25,19 +23,19 @@ export class MasterDetail extends BaseForm
 	private emp:Employees = new Employees(this,"Employees");
 	private dept:Departments = new Departments(this,"Departments");
 
-	private empsort:Sorter = new Sorter(this.emp,"last_name")
+	private empsort:Sorter = new Sorter(this.emp,"last_name");
 	private deptsort:Sorter = new Sorter(this.dept,"department_id");
 
 	constructor()
 	{
 		super(content);
-		this.title = "Employees";
+		this.title = "Departments/Employees";
 
-		this.dept.setListOfValues(Employees.getManagerLov(),"manager");
-		this.dept.setListOfValues(Locations.getLocationLov(),"location");
+		this.dept.setManagerLov("manager");
+		this.dept.setLocationLov("location");
 
-		this.emp.setListOfValues(Jobs.getJobLov(),["job_id","job_title"]);
-		this.emp.setListOfValues(Departments.getDepartmentLov(),["department_id","department_name"]);
+		this.emp.setJobLov(["job_id","job_title"]);
+		this.emp.setDepartmentLov(["department_id","department_name"]);
 
 		this.link(this.dept.getPrimaryKey(),this.emp.getDepartmentsForeignKey());
 	}

@@ -63,7 +63,7 @@ export class Locations extends BaseForm
 		{
 			if (country == null)
 			{
-				this.warning("Invalid country code","Validation");
+				this.warning("Invalid country code","Countries");
 				return(false);
 			}
 		}

@@ -23,6 +23,7 @@ import { Jobs } from './forms/jobs/Jobs';
 import { Countries } from './forms/countries/Countries';
 import { Locations } from './forms/locations/Locations';
 import { Employees } from './forms/employees/Employees';
+import { Departments } from './forms/departments/Departments';
 import { MasterDetail } from './forms/masterdetail/MasterDetail';
 import { PhoneBookMembased } from './forms/phonenook/PhoneBookMembased';
 
@@ -40,6 +41,7 @@ import { FormsPathMapping, FormsModule as FormsCoreModule, KeyMap, FormEvent, Ev
 		{class: Countries, path: "/forms/countries"},
 		{class: Locations, path: "/forms/locations"},
 		{class: Employees, path: "/forms/employees"},
+		{class: Departments, path: "/forms/departments"},
 		{class: MasterDetail, path: "/forms/masterdetail"},
 
 		{class: PhoneBookMembased, path: "/forms/phonebook"},
@@ -67,6 +69,7 @@ export class FormsModule extends FormsCoreModule
 	private locations:KeyMap = new KeyMap({key: 'L', ctrl: true});
 	private phonebook:KeyMap = new KeyMap({key: 'P', ctrl: true});
 	private employees:KeyMap = new KeyMap({key: 'E', ctrl: true});
+	private departments:KeyMap = new KeyMap({key: 'D', ctrl: true});
 	private masterdetail:KeyMap = new KeyMap({key: 'M', ctrl: true});
 
 	constructor()
@@ -102,6 +105,7 @@ export class FormsModule extends FormsCoreModule
 			{type:EventType.Key,key:this.locations},
 			{type:EventType.Key,key:this.phonebook},
 			{type:EventType.Key,key:this.employees},
+			{type:EventType.Key,key:this.departments},
 			{type:EventType.Key,key:this.masterdetail}
 		]);
 	}
@@ -116,6 +120,9 @@ export class FormsModule extends FormsCoreModule
 
 		if (event.key == this.employees)
 			this.showform(Employees);
+
+		if (event.key == this.departments)
+			this.showform(Departments);
 
 		if (event.key == this.countries)
 			this.showform(Countries);

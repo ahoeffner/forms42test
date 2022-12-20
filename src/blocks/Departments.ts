@@ -10,9 +10,10 @@
  * accompanied this code).
  */
 
-import { Employees as EmployeesBlock } from "./Employees";
-import { Employees as EmployeesTable} from "../datasources/database/Employees";
-import { Locations as LocationsTable } from "../datasources/database/Locations";
+import { Locations as LocationBlock } from "./Locations";
+import { Employees as EmployeeBlock } from "./Employees";
+import { Employees as EmployeeTable} from "../datasources/database/Employees";
+import { Locations as LocationTable } from "../datasources/database/Locations";
 import { Departments as DepartmentTable } from "../datasources/database/Departments";
 import { BindValue, Block, EventType, Filter, Filters, FilterStructure, Form, formevent, Key, ListOfValues } from "forms42core";
 
@@ -43,7 +44,7 @@ export class Departments extends Block
 			id = this.getValue("manager_id");
 
 			if (id != null)
-				manager = await EmployeesTable.getName(id);
+				manager = await EmployeeTable.getName(id);
 
 			this.setValue(field,manager);
 		}
@@ -54,7 +55,7 @@ export class Departments extends Block
 			id = this.getValue("loc_id");
 
 			if (id != null)
-				location = await LocationsTable.getLocation(id);
+				location = await LocationTable.getLocation(id);
 
 			this.setValue(field,location);
 		}
@@ -73,7 +74,7 @@ export class Departments extends Block
 
 		if (id != null)
 		{
-			manager = await EmployeesTable.getName(id);
+			manager = await EmployeeTable.getName(id);
 
 			if (this.getFieldNames().includes(field))
 				this.setValue(field,manager);
@@ -104,7 +105,7 @@ export class Departments extends Block
 
 		if (id != null)
 		{
-			location = await LocationsTable.getLocation(id);
+			location = await LocationTable.getLocation(id);
 
 			if (this.getFieldNames().includes(field))
 				this.setValue(field,location);
@@ -124,17 +125,16 @@ export class Departments extends Block
 		return(true);
 	}
 
-	@formevent({type: EventType.PostViewInit})
-	public async setLovs() : Promise<boolean>
+	public setLocationLov(fields:string|string[]) : void
 	{
-		if (this.getFieldNames().includes("manager_id"))
-			this.setListOfValues(EmployeesBlock.getManagerLov(),"manager");
-
-		if (this.getFieldNames().includes("manager"))
-			this.setListOfValues(EmployeesBlock.getManagerLov(),"manager");
-
-		return(true);
+		this.setListOfValues(LocationBlock.getLocationLov(),fields);
 	}
+
+	public setManagerLov(fields:string|string[]) : void
+	{
+		this.setListOfValues(EmployeeBlock.getManagerLov(),fields);
+	}
+
 
 	public static getDepartmentLov() : ListOfValues
 	{

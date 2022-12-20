@@ -10,10 +10,12 @@
  * accompanied this code).
  */
 
+import { Jobs as JobBlock} from "./Jobs";
 import { WorkDays } from '../dates/WorkDays';
-import { Jobs } from '../datasources/database/Jobs';
-import { Departments } from '../datasources/database/Departments';
+import { Departments as DepartmentBlock} from "./Departments";
+import { Jobs as JobTable } from '../datasources/database/Jobs';
 import { Employees as EmployeeTable } from "../datasources/database/Employees";
+import { Departments as DepartmentTable } from '../datasources/database/Departments';
 import { BindValue, Block, DatabaseResponse, EventType, FieldProperties, Filter, Filters, FilterStructure, Form, formevent, FormEvent, Key, ListOfValues } from "forms42core";
 
 export class Employees extends Block
@@ -51,7 +53,7 @@ export class Employees extends Block
 			code = this.getValue("job_id");
 
 			if (code != null)
-				title = await Jobs.getTitle(code);
+				title = await JobTable.getTitle(code);
 
 			this.setValue(field,title);
 		}
@@ -63,7 +65,7 @@ export class Employees extends Block
 			code = this.getValue("department_id");
 
 			if (code != null)
-				title = await Departments.getTitle(code);
+				title = await DepartmentTable.getTitle(code);
 
 			this.setValue(field,title);
 		}
@@ -80,7 +82,7 @@ export class Employees extends Block
 		if (code == null || salary == null)
 			return(true);
 
-		let limit:number[] = await Jobs.getSalaryLimit(code);
+		let limit:number[] = await JobTable.getSalaryLimit(code);
 
 		if (salary < limit[0]*0.75 || salary > 1.25*limit[1])
 		{
@@ -122,7 +124,7 @@ export class Employees extends Block
 		if (code == null)
 			return(false);
 
-		let title:string = await Jobs.getTitle(code);
+		let title:string = await JobTable.getTitle(code);
 
 		if (this.getFieldNames().includes(field))
 			this.setValue(field,title);
@@ -146,7 +148,7 @@ export class Employees extends Block
 	{
 		let field:string = "department_name";
 		let code:string = this.getValue("department_id");
-		let title:string = await Departments.getTitle(code);
+		let title:string = await DepartmentTable.getTitle(code);
 
 		if (code == null)
 			return(false);
@@ -174,9 +176,19 @@ export class Employees extends Block
 		return(true);
 	}
 
+	public setJobLov(fields:string|string[]) : void
+	{
+		this.setListOfValues(JobBlock.getJobLov(),fields);
+	}
+
+	public setDepartmentLov(fields:string|string[]) : void
+	{
+		this.setListOfValues(DepartmentBlock.getDepartmentLov(),fields);
+	}
+
 	public static getManagerLov() : ListOfValues
 	{
-		let source:Jobs = null;
+		let source:JobTable = null;
 		let bindvalues:BindValue[] = [];
 		let filter:FilterStructure = null;
 
