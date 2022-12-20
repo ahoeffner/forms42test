@@ -593,16 +593,15 @@ div[name="date-picker"]
 	padding: 10px 15px;
 }
 
-
 .disabled
 {
-	color: #dddddd;
+	color: #ababab;
 }
 
-/* .disabled < .menu-item 
+button[name="ok"]
 {
-	color: #dddddd;
-} */
+	width:100px;
+}
 
 label[for="username"],
 label[for="password"]
