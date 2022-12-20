@@ -36,10 +36,6 @@ export class Menu extends MenuComponent
 
 	public hide() : void
 	{
-		// super.hide();
-		// this.menuelem.style.display = "none";
-		// this.container.style.minWidth = "0px";
-		// this.menuelem.style.animationName = "moveInLeft";
 		this.container.style.minWidth = "0px";
 		this.displayed = false;
 	}
