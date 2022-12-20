@@ -17,7 +17,6 @@
 {
 	cursor: default;
 	user-select: none;
-	background-color: lightgray;
 }
 
 .app-header
@@ -29,8 +28,7 @@
 	align-items: center;
 	display: inline-grid;
 	grid-auto-flow: column;
-	border: 1px solid black;
-	background-color: #509166;
+	background-color: #36393e;
 	grid-template-columns: 40px calc(100% - 80px) 40px;
 }
 
@@ -39,7 +37,9 @@
 	position: relative;
 	background-size: cover;
 	background-position: top;
-	background-image:linear-gradient(to right bottom, rgba(230, 230, 230, 0.8),rgba(78, 111, 78, 0.8)) , url(https://nextmapping.com/wp-content/uploads/2019/10/FutureisnowIstockphoto.jpg);	
+	border-top:#7676c8 10px solid;
+	clip-path: polygon(0% 0%,100% 0%,100% 90%, 0% 100%);
+	background-image:linear-gradient(to right bottom, rgba(97, 112, 227, 0.8),rgba(100, 101, 179, 0.8)) , url(https://nextmapping.com/wp-content/uploads/2019/10/FutureisnowIstockphoto.jpg);	
 }
 
 .canvas
@@ -57,15 +57,19 @@
 	margin-left: 20px;
 	margin-right: 20px;
 	margin-bottom: 20px;
+	background-color: yellow;
+	clip-path: polygon(0% 0%, 100% 2%, 100% 86%, 86% 100%, 0% 100%);
+
 }
 
 .form-header
 {
 	width: 100%;
 	height: 20px;
+	color:white;
 	display: inline-grid;
 	grid-auto-flow: column;
-	background-color: lightgray;
+	background-color: #6060F0;
 	border-bottom: 1px solid black;
 	grid-template-columns: 40px 1fr 60px;
 }
@@ -93,7 +97,9 @@ tr td span:hover
 .menu-left
 {
 	height: 100%;
+	color:white;
 	transition: 0.5s;
+	background-color:#36393e;
 	border-right: 1px solid black;
 }
 
@@ -119,7 +125,6 @@ tr td span:hover
 	transition: 0.3s;
 	margin-top: 15px;
 	margin-left: -15px;
-	background: white;
 }
 
 .link-item
@@ -401,6 +406,7 @@ div.modal
 	transition: all 0.18s ease;
 	background-repeat: no-repeat;
 	background-image: url('images/icons8-info-50.png');
+	filter: invert(98%) sepia(100%) saturate(0%) hue-rotate(23deg) brightness(105%) contrast(101%);
 }
 
 .info .info-dropdown
@@ -664,4 +670,9 @@ div[name="login"]
 .hamburger
 {
 	border-bottom: solid white 2px !important;
+}
+
+.toggle
+{
+	border:solid white 1.5px !important;
 }
