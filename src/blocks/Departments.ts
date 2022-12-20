@@ -13,7 +13,7 @@
 import { Employees } from "../datasources/database/Employees";
 import { Locations } from "../datasources/database/Locations";
 import { Departments as DepartmentTable } from "../datasources/database/Departments";
-import { BindValue, Block, Filter, Filters, FilterStructure, Form, Key, ListOfValues } from "forms42core";
+import { BindValue, Block, EventType, Filter, Filters, FilterStructure, Form, FormEvent, formevent, Key, ListOfValues } from "forms42core";
 
 export class Departments extends Block
 {
@@ -28,31 +28,98 @@ export class Departments extends Block
 		return(new Key(this.name,"department_id"));
 	}
 
-	public async lookupManager(field:string) : Promise<boolean>
+	@formevent({type: EventType.OnFetch})
+	public async getDerivedFields() : Promise<boolean>
+	{
+		let id:number = null;
+		let field:string = null;
+		let manager:string = null;
+		let location:string = null;
+
+		field = "manager";
+		if (this.getFieldNames().includes(field))
+		{
+			id = this.getValue("manager_id");
+
+			if (id != null)
+				manager = await Employees.getName(id);
+
+			this.setValue(field,manager);
+		}
+
+		field = "location";
+		if (this.getFieldNames().includes(field))
+		{
+			id = this.getValue("loc_id");
+
+			if (id != null)
+				location = await Locations.getLocation(id);
+
+			this.setValue(field,location);
+		}
+
+		return(true);
+	}
+
+	@formevent({type: EventType.WhenValidateField, field: "manager_id"})
+	public async validateManager() : Promise<boolean>
 	{
 		let id:number = null;
 		let manager:string = null;
+		let field:string = "manager";
 
 		id = this.getValue("manager_id");
 
 		if (id != null)
+		{
 			manager = await Employees.getName(id);
 
-		this.setValue(field,manager);
+			if (this.getFieldNames().includes(field))
+				this.setValue(field,manager);
+
+			if (manager == null && !this.queryMode())
+			{
+				this.warning("Invalid manager id","Departments");
+				return(false);
+			}
+		}
+		else
+		{
+			if (this.getFieldNames().includes(field))
+				this.setValue(field,manager);
+		}
+
 		return(true);
 	}
 
-	public async lookupLocation(field:string) : Promise<boolean>
+	@formevent({type: EventType.WhenValidateField, field: "loc_id"})
+	public async validateLocation() : Promise<boolean>
 	{
 		let id:number = null;
 		let location:string = null;
+		let field:string = "location";
 
 		id = this.getValue("loc_id");
 
 		if (id != null)
+		{
 			location = await Locations.getLocation(id);
 
-		this.setValue(field,location);
+			if (this.getFieldNames().includes(field))
+				this.setValue(field,location);
+
+			if (location == null && !this.queryMode())
+			{
+				this.warning("Invalid location id","Departments");
+				return(false);
+			}
+		}
+		else
+		{
+			if (this.getFieldNames().includes(field))
+				this.setValue(field,location);
+		}
+
 		return(true);
 	}
 
@@ -82,11 +149,5 @@ export class Departments extends Block
 		}
 
 		return(lov);
-	}
-
-	public static async getTitle(id:string) : Promise<string>
-	{
-		if (id == null) return(null);
-		return(DepartmentTable.getTitle(id));
 	}
 }

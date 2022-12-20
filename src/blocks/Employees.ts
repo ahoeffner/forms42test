@@ -14,7 +14,7 @@ import { WorkDays } from '../dates/WorkDays';
 import { Jobs } from '../datasources/database/Jobs';
 import { Departments } from '../datasources/database/Departments';
 import { Employees as EmployeeTable } from "../datasources/database/Employees";
-import { BindValue, Block, EventType, FieldProperties, Filter, Filters, FilterStructure, Form, formevent, FormEvent, Key, ListOfValues } from "forms42core";
+import { BindValue, Block, DatabaseResponse, EventType, FieldProperties, Filter, Filters, FilterStructure, Form, formevent, FormEvent, Key, ListOfValues } from "forms42core";
 
 export class Employees extends Block
 {
@@ -23,7 +23,6 @@ export class Employees extends Block
 		super(form,name);
 		this.datasource = new EmployeeTable();
 		this.setDateConstraint(new WorkDays(),"hire_date");
-		this.addEventListener(this.xxx,{type: EventType.WhenValidateField, field: "salary"})
 	}
 
 	public getDepartmentsForeignKey() : Key
@@ -31,41 +30,48 @@ export class Employees extends Block
 		return(new Key(this.name,"department_id"));
 	}
 
+	@formevent({type: EventType.OnNewRecord})
+	public async setDefaults() : Promise<boolean>
+	{
+		this.setValue("hire_date",new Date());
+		return(true);
+	}
+
+	@formevent({type: EventType.OnFetch})
+	public async getDerivedFields() : Promise<boolean>
+	{
+		let code:string = null;
+		let title:string = null;
+		let field:string = null;
+
+		field = "job_title";
+
+		if (this.getFieldNames().includes(field))
+		{
+			code = this.getValue("job_id");
+
+			if (code != null)
+				title = await Jobs.getTitle(code);
+
+			this.setValue(field,title);
+		}
+
+		field = "department_name";
+
+		if (this.getFieldNames().includes(field))
+		{
+			code = this.getValue("department_id");
+
+			if (code != null)
+				title = await Departments.getTitle(code);
+
+			this.setValue(field,title);
+		}
+
+		return(true);
+	}
+
 	@formevent({type: EventType.WhenValidateField, field: "salary"})
-	public async xxx(event:FormEvent) : Promise<boolean>
-	{
-		console.log("blimey II "+EventType[event.type]);
-		return(true);
-	}
-
-	public async lookupJob(field:string) : Promise<boolean>
-	{
-		let code:string = null;
-		let title:string = null;
-
-		code = this.getValue("job_id");
-
-		if (code != null)
-			title = await Jobs.getTitle(code);
-
-		this.setValue(field,title);
-		return(true);
-	}
-
-	public async lookupDepartment(field:string) : Promise<boolean>
-	{
-		let code:string = null;
-		let title:string = null;
-
-		code = this.getValue("department_id");
-
-		if (code != null)
-			title = await Departments.getTitle(code);
-
-		this.setValue(field,title);
-		return(true);
-	}
-
 	public async validateSalary() : Promise<boolean>
 	{
 		let code:string = this.getValue("job_id");
@@ -76,9 +82,9 @@ export class Employees extends Block
 
 		let limit:number[] = await Jobs.getSalaryLimit(code);
 
-		if (salary < limit[0]/2 || salary > 2*limit[1])
+		if (salary < limit[0]*0.75 || salary > 1.25*limit[1])
 		{
-			this.warning("Salary is out of range ("+(limit[0]/2)+" - "+(2*limit[1])+" ) ","Validate Salary");
+			this.warning("Salary is out of range ("+(limit[0]*0.75)+" - "+(1.25*limit[1])+" ) ","Validate Salary");
 			return(false);
 		}
 
@@ -106,9 +112,11 @@ export class Employees extends Block
 		return(true);
 	}
 
-	public async validateJob(event:FormEvent, field?:string) : Promise<boolean>
+	@formevent({type: EventType.WhenValidateField, field: "job_id"})
+	public async validateJob(event:FormEvent) : Promise<boolean>
 	{
 		let success:boolean = true;
+		let field:string = "job_title";
 		let code:string = this.getValue("job_id");
 
 		if (code == null)
@@ -116,14 +124,14 @@ export class Employees extends Block
 
 		let title:string = await Jobs.getTitle(code);
 
-		if (field)
+		if (this.getFieldNames().includes(field))
 			this.setValue(field,title);
 
 		if (event.type == EventType.WhenValidateField && !this.queryMode())
 		{
 			if (title == null)
 			{
-				this.form.warning("Invalid job code","Validation");
+				this.form.warning("Invalid job code","Employees");
 				return(false);
 			}
 
@@ -133,26 +141,36 @@ export class Employees extends Block
 		return(success);
 	}
 
-	public async validateDepartment(event:FormEvent, field?:string) : Promise<boolean>
+	@formevent({type: EventType.WhenValidateField, field: "department_id"})
+	public async validateDepartment(event:FormEvent) : Promise<boolean>
 	{
+		let field:string = "department_name";
 		let code:string = this.getValue("department_id");
 		let title:string = await Departments.getTitle(code);
 
 		if (code == null)
 			return(false);
 
-		if (field)
+		if (this.getFieldNames().includes(field))
 			this.setValue(field,title);
 
 		if (event.type == EventType.WhenValidateField && !this.queryMode())
 		{
 			if (title == null)
 			{
-				this.form.warning("Invalid Depatment Id","Validation");
+				this.form.warning("Invalid Department Id","Employees");
 				return(false);
 			}
 		}
 
+		return(true);
+	}
+
+	@formevent({type: EventType.PostInsert})
+	public async setPrimaryKey() : Promise<boolean>
+	{
+		let response:DatabaseResponse = this.getRecord().response;
+		this.setValue("employee_id",response.getValue("employee_id"));
 		return(true);
 	}
 

@@ -76,30 +76,34 @@ export class TopBar extends MenuComponent
 		return(true);
 	}
 
-	@formevent({type: EventType.PostViewInit})
+	@formevent({type: EventType.onNewForm})
 	public async onFormOpen(event:FormEvent) : Promise<boolean>
 	{
 		let entry:MenuEntry = null;
 
 		if (event.form.constructor.name == "UsernamePassword")
-			return(false);
+			return(true);
 
-		entry = await this.findEntry("/topbar/query");
-		if (entry) entry.disabled = false;
+		if (FormsModule.get().getRunningForms().length == 0)
+		{
+			entry = await this.findEntry("/topbar/query");
+			if (entry) entry.disabled = false;
 
-		entry = await this.findEntry("/topbar/record");
-		if (entry) entry.disabled = false;
+			entry = await this.findEntry("/topbar/record");
+			if (entry) entry.disabled = false;
 
-		this.show();
+			this.show();
+		}
+
 		return(true);
 	}
 
-	@formevent({type: EventType.OnCloseForm})
+	@formevent({type: EventType.PostCloseForm})
 	public async onFormClose() : Promise<boolean>
 	{
 		let entry:MenuEntry = null;
 
-		if (FormsModule.get().getRunningForms().length == 1)
+		if (FormsModule.get().getRunningForms().length == 0)
 		{
 			entry = await this.findEntry("/topbar/query");
 			if (entry) entry.disabled = true;
@@ -116,7 +120,20 @@ export class TopBar extends MenuComponent
 	public async onTransactionStart() : Promise<boolean>
 	{
 		let entry:MenuEntry = null;
-		entry = await this.findEntry("/topbar/query");
+
+		entry = await this.findEntry("/topbar/transaction");
+		if (entry) entry.disabled = false;
+
+		this.show();
+		return(true);
+	}
+
+	@formevent([{type: EventType.PostCommit},{type: EventType.PostRollback}])
+	public async onTransactionEnd() : Promise<boolean>
+	{
+		let entry:MenuEntry = null;
+
+		entry = await this.findEntry("/topbar/transaction");
 		if (entry) entry.disabled = true;
 
 		this.show();

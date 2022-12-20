@@ -17,7 +17,6 @@ import { BaseForm } from "../../BaseForm";
 import { Employees } from "../../blocks/Employees";
 import { Locations } from '../../blocks/Locations';
 import { Departments } from '../../blocks/Departments';
-import { DatabaseResponse, EventType, formevent, FormEvent } from "forms42core";
 
 
 export class MasterDetail extends BaseForm
@@ -40,63 +39,6 @@ export class MasterDetail extends BaseForm
 		this.emp.setListOfValues(Departments.getDepartmentLov(),["department_id","department_name"]);
 
 		this.link(this.dept.getPrimaryKey(),this.emp.getDepartmentsForeignKey());
-	}
-
-	@formevent({type: EventType.OnFetch})
-	public async getDerivedFields(event:FormEvent) : Promise<boolean>
-	{
-		if (event.block == "employees")
-		{
-			await this.emp.lookupJob("job_title");
-		}
-		else if (event.block == "departments")
-		{
-			await this.dept.lookupManager("manager");
-			await this.dept.lookupLocation("location");
-		}
-
-		return(true);
-	}
-
-	@formevent({type: EventType.WhenValidateField, block: "departments", field: "manager_id"})
-	public async validateManager() : Promise<boolean>
-	{
-		await this.dept.lookupManager("manager");
-		return(true);
-	}
-
-	@formevent({type: EventType.WhenValidateField, block: "departments", field: "loc_id"})
-	public async validateLocation() : Promise<boolean>
-	{
-		await this.dept.lookupLocation("location");
-		return(true);
-	}
-
-	@formevent({type: EventType.OnNewRecord, block: "employees"})
-	public async setDefaults() : Promise<boolean>
-	{
-		this.emp.setValue("hire_date",new Date());
-		return(true);
-	}
-
-	@formevent({type: EventType.WhenValidateField, block: "employees", field: "salary"})
-	public async validateSalary() : Promise<boolean>
-	{
-		return(this.emp.validateSalary());
-	}
-
-	@formevent({type: EventType.WhenValidateField, block: "employees", field: "job_id"})
-	public async validateJob(event:FormEvent) : Promise<boolean>
-	{
-		return(this.emp.validateJob(event,"job_title"));
-	}
-
-	@formevent({type: EventType.PostInsert, block: "employees"})
-	public async setPrimaryKey() : Promise<boolean>
-	{
-		let response:DatabaseResponse = this.emp.getRecord().response;
-		this.emp.setValue("employee_id",response.getValue("employee_id"));
-		return(true);
 	}
 
 	public sort(block:string, field:string) : void
