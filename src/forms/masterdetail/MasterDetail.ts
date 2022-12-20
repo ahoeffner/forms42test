@@ -17,6 +17,7 @@ import { BaseForm } from "../../BaseForm";
 import { Employees } from "../../blocks/Employees";
 import { Locations } from '../../blocks/Locations';
 import { Departments } from '../../blocks/Departments';
+import { Sorter } from '../../utils/Sorter';
 
 
 export class MasterDetail extends BaseForm
@@ -24,8 +25,8 @@ export class MasterDetail extends BaseForm
 	private emp:Employees = new Employees(this,"Employees");
 	private dept:Departments = new Departments(this,"Departments");
 
-	private empsort:{column:string, asc:boolean} = {column: "last_name", asc: true};
-	private deptsort:{column:string, asc:boolean} = {column: "department_id", asc: true};
+	private empsort:Sorter = new Sorter(this.emp,"last_name")
+	private deptsort:Sorter = new Sorter(this.dept,"department_id");
 
 	constructor()
 	{
@@ -43,21 +44,7 @@ export class MasterDetail extends BaseForm
 
 	public sort(block:string, field:string) : void
 	{
-		if (block == "dept" && !this.dept.empty())
-		{
-			if (field == this.deptsort.column) this.deptsort.asc = !this.deptsort.asc;
-			else 										  this.deptsort = {column: field, asc: true};
-
-			this.dept.datasource.sorting = this.deptsort.column + " " + (this.deptsort.asc ? "asc" : "desc");
-			this.dept.reQuery();
-		}
-		else if (block == "emp" && !this.emp.empty())
-		{
-			if (field == this.empsort.column) this.empsort.asc = !this.empsort.asc;
-			else 										 this.empsort = {column: field, asc: true};
-
-			this.emp.datasource.sorting = this.empsort.column + " " + (this.empsort.asc ? "asc" : "desc");
-			this.emp.reQuery();
-		}
+		if (block == "emp") this.empsort.column = field;
+		if (block == "dept") this.deptsort.column = field;
 	}
 }
