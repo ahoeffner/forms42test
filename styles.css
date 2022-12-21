@@ -598,11 +598,6 @@ div[name="date-picker"]
 	color: #ababab;
 }
 
-button[name="ok"]
-{
-	width:100px;
-}
-
 label[for="username"],
 label[for="password"]
 {
