@@ -612,7 +612,7 @@ div[name="date-picker"]
 
 .topbar .menu-items .menu-items .link-item:hover a:not(.disabled)
 {
-	background-color: rgb(34, 3, 158);
+	background-color: #6060F0;
 }
 
 .topbar .menu-items .menu-items .link-item a
