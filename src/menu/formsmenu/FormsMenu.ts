@@ -82,7 +82,22 @@ export class TopBar extends MenuComponent
 		let entry:MenuEntry = null;
 
 		if (event.form.constructor.name == "UsernamePassword")
+		{
+			entry = await this.findEntry("/topbar/query");
+			if (entry) entry.disabled = true;
+
+			entry = await this.findEntry("/topbar/record");
+			if (entry) entry.disabled = true;
+
+			entry = await this.findEntry("/topbar/transaction");
+			if (entry) entry.disabled = true;
+
+			entry = await this.findEntry("/topbar/connection");
+			if (entry) entry.disabled = true;
+
+			this.show();
 			return(true);
+		}
 
 		if (FormsModule.get().getRunningForms().length == 1)
 		{
@@ -99,9 +114,15 @@ export class TopBar extends MenuComponent
 	}
 
 	@formevent({type: EventType.PostCloseForm})
-	public async onFormClose() : Promise<boolean>
+	public async onFormClose(event:FormEvent) : Promise<boolean>
 	{
 		let entry:MenuEntry = null;
+
+		if (event.form.constructor.name == "UsernamePassword")
+		{
+			entry = await this.findEntry("/topbar/connection");
+			if (entry) entry.disabled = false;
+		}
 
 		if (FormsModule.get().getRunningForms().length == 0)
 		{

@@ -13,7 +13,7 @@
 import { Minimized } from './Minimized';
 import { Menu } from './menu/menuLeft/Menu';
 import { Help } from './menu/menuRight/Help';
-import { TopBar } from './menu/menuTop/TopBar';
+import { TopBar } from './menu/formsmenu/FormsMenu';
 import { FormHeader } from './fragments/FormHeader';
 import { PageHeader } from './fragments/PageHeader';
 import { PageFooter } from './fragments/PageFooter';
