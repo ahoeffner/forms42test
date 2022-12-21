@@ -155,8 +155,9 @@ tr td span:hover
 
 .left-menu-container .menu-items
 {
-	font-size:15px; 
+	width: 100%;
 	display:table;
+	font-size:15px; 
 	transition: 0.3s;
 }
 
@@ -586,9 +587,14 @@ div[name="date-picker"]
 	cursor: pointer;
 	min-width: 100px;
 	position: absolute;
+	background-color: #36393e;
 	transform: translateX(-50%);
 	box-shadow: 0 2px 10px #666;
-	background-color: rgb(240, 240, 240);
+}
+
+.disabled
+{
+	color:#83868c;
 }
 
 .topbar .menu-items .menu-items .link-item
@@ -606,7 +612,7 @@ div[name="date-picker"]
 
 .topbar .menu-items .menu-items .link-item:hover a:not(.disabled)
 {
-	background-color: #ddd;
+	background-color: rgb(34, 3, 158);
 }
 
 .topbar .menu-items .menu-items .link-item a
@@ -626,11 +632,6 @@ div[name="date-picker"]
 	{
 		transform: translate(0);
 	}
-}
-
-.disabled
-{
-	color: #dddddd;
 }
 
 label[for="username"],
