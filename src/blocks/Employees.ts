@@ -35,7 +35,10 @@ export class Employees extends Block
 	@formevent({type: EventType.OnNewRecord})
 	public async setDefaults() : Promise<boolean>
 	{
-		this.setValue("hire_date",new Date());
+		let today:Date = new Date();
+		today.setHours(0,0,0,0);
+
+		this.setValue("hire_date",today);
 		return(true);
 	}
 

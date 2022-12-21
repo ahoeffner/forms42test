@@ -137,7 +137,12 @@ export class TopBar extends MenuComponent
 		return(true);
 	}
 
-	@formevent({type: EventType.OnLockRecord})
+	@formevent([
+		{type: EventType.PreInsert},
+		{type: EventType.PreUpdate},
+		{type: EventType.PreDelete},
+		{type: EventType.OnLockRecord}
+	])
 	public async onTransactionStart() : Promise<boolean>
 	{
 		let entry:MenuEntry = null;
