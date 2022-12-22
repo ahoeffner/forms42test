@@ -662,7 +662,7 @@ button
 
 div[name="loginbutton"]
 {
-	gap:3px;
+	gap:15px;
 	display: flex;
 	margin-top: 10px;
 	justify-content: center;
@@ -670,7 +670,10 @@ div[name="loginbutton"]
 
 div[name="login"]
 {
+	padding:20px;
 	margin:0 20px;
+	border-radius: 10px;
+	background-color: white;
 }
 
 .logo
@@ -687,3 +690,101 @@ div[name="login"]
 {
 	border:solid white 1.5px !important;
 }
+
+div[name="popup-body"]
+{
+	background-color: #36393e;
+	backdrop-filter: blur(10px);
+	box-shadow: 0 0 40px rgba(8,7,16,0.6);
+}
+
+
+div[name="loginimage"]
+{
+	width: 50px;
+	height: 50px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	border-radius: 50px;
+	margin: 0 auto 10px auto;
+	background-size: contain;
+	background-repeat: no-repeat;
+	filter: invert(100%) sepia(1%) saturate(4058%) hue-rotate(223deg) brightness(117%) contrast(100%);
+	background-image: url(https://www.clipartmax.com/png/small/15-153139_big-image-login-icon-with-transparent-background.png);
+	background-color: #36393e;
+}
+
+div[name="popup-body"] button
+{
+	z-index: 0;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	padding: 10px 25px;
+	user-select: none;
+	position: relative;
+	border-radius: 10px;
+	touch-action: manipulation;
+	color: rgb(255, 255, 255);
+	background-color: #222;
+}
+
+div[name="popup-body"] button:before 
+{
+	content: "";
+	background: linear-gradient(
+	  45deg,
+	  #8391ec,
+	  #7f51e3,
+	  #7b57f0,
+	  #7974fa,
+	  #7d7aea,
+	  #002bff,
+	  #7a00ff,
+	  #6551fa,
+	  #645ec0
+	);
+	position: absolute;
+	top: -2px;
+	left: -2px;
+	background-size: 400%;
+	z-index: -1;
+	filter: blur(5px);
+	border-radius: 10px;
+	width: calc(100% + 4px);
+	height: calc(100% + 4px);
+	transition: opacity 0.3s ease-in-out;
+	animation: glowing-button 20s linear infinite;
+  }
+
+  @keyframes glowing-button
+  {
+	0% {
+	  background-position: 0 0;
+	}
+	50% {
+	  background-position: 400% 0;
+	}
+	100% {
+	  background-position: 0 0;
+	}
+  }
+  
+  div[name="popup-body"] button:after 
+  {
+	top: 0;
+	left: 0;
+	z-index: -1;
+	content: "";
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	border-radius: 10px;
+	background-color: #222;
+  }
+  
+
+  div[name="popup-body"] button:after:hover 
+  {
+	background-color: rgb(175, 175, 175);
+  }
