@@ -45,7 +45,7 @@ div[name="close"]:hover,
 	position: relative;
 	background-size: cover;
 	background-position: bottom;
-	border-top:#6060F0 10px solid;
+	/* border-top:#6060F0 10px solid; */
 	background-image:linear-gradient(to right bottom, rgba(97, 112, 227, 0.8),rgba(100, 101, 179, 0.8)) , url(https://nextmapping.com/wp-content/uploads/2019/10/FutureisnowIstockphoto.jpg);	
 }
 
