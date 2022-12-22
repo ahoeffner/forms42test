@@ -122,7 +122,6 @@ tr td span:hover
 
 .menu-item
 {
-	display: block;
 	transition: 0.3s;
 	margin-top: 15px;
 }
@@ -130,15 +129,22 @@ tr td span:hover
 .left-menu-container .menu-item
 {
 	width:100%;
+}
+
+.left-menu-container .menu-item a
+{
+	width:100%;
+	margin-left:25px;
+	padding-left:5px;
+	display:table-cell;
+	height: fit-content;
 	border-left: 3px solid #36393e;
 }
 
 .link-item
 {
 	display: block;
-	font-size: 13px;
 	margin-top: 15px;
-	margin-left: -15px;
 }
 
 .link-item
@@ -149,31 +155,36 @@ tr td span:hover
 
 .left-menu-container .menu-items
 {
-	font-size:18px; 
+	width: 100%;
+	display:table;
+	font-size:15px; 
 	transition: 0.3s;
 }
 
 .left-menu-container .menu-item .menu-items
 {
-	margin-top:10px;
+	width:100%;
+	margin-top:-3px;
 }
 
-.left-menu-container  .menu-item:first-child:before
+.left-menu-container  .menu-item:before
 {
 	color: white;
-	margin-left:5px;
 	font-size: 20px;
-	content: '\002302';
+	margin-left:5px;
 	margin-right:15px;
-	display:inline-block;
+	padding-right:5px;
+	padding-left:10px;
+	content: '\002302';
+	display:table-cell;
 }
 
-.left-menu-container .menu-item:hover
+
+.left-menu-container .menu-item a:hover
 {
 	background-color:#424549;
 	border-left: 3px solid #6060F0;
 }
-
 
 .row-indicator
 {
@@ -576,9 +587,14 @@ div[name="date-picker"]
 	cursor: pointer;
 	min-width: 100px;
 	position: absolute;
+	background-color: #36393e;
 	transform: translateX(-50%);
 	box-shadow: 0 2px 10px #666;
-	background-color: rgb(240, 240, 240);
+}
+
+.disabled
+{
+	color:#83868c;
 }
 
 .topbar .menu-items .menu-items .link-item
@@ -596,7 +612,7 @@ div[name="date-picker"]
 
 .topbar .menu-items .menu-items .link-item:hover a:not(.disabled)
 {
-	background-color: #ddd;
+	background-color: #6060F0;
 }
 
 .topbar .menu-items .menu-items .link-item a
@@ -616,11 +632,6 @@ div[name="date-picker"]
 	{
 		transform: translate(0);
 	}
-}
-
-.disabled
-{
-	color: #dddddd;
 }
 
 label[for="username"],
