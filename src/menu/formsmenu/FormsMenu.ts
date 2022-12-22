@@ -101,6 +101,9 @@ export class TopBar extends MenuComponent
 
 		if (FormsModule.get().getRunningForms().length == 1)
 		{
+			entry = await this.findEntry("/topbar/form");
+			if (entry) entry.disabled = false;
+
 			entry = await this.findEntry("/topbar/query");
 			if (entry) entry.disabled = false;
 
@@ -126,6 +129,9 @@ export class TopBar extends MenuComponent
 
 		if (FormsModule.get().getRunningForms().length == 0)
 		{
+			entry = await this.findEntry("/topbar/form");
+			if (entry) entry.disabled = true;
+
 			entry = await this.findEntry("/topbar/query");
 			if (entry) entry.disabled = true;
 

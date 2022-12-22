@@ -26,6 +26,15 @@ export class Commands extends StaticMenu
 		let parts:string[] = path.split("/");
 		let module:FormsModule = FormsModule.get() as FormsModule;
 
+		if (parts[0] == "form")
+		{
+			switch(parts[1])
+			{
+				case "clear" : module.sendkey(KeyMap.enterquery);	break;
+				case "close" : module.close();							break;
+			}
+		}
+
 		if (parts[0] == "query")
 		{
 			switch(parts[1])
@@ -77,6 +86,24 @@ export class Commands extends StaticMenu
 			entries:
 			[
 				{
+					id:"form",
+					disabled: true,
+					display:"Form",
+					entries:
+					[
+						{
+							id:"clear",
+							display:"Clear shift-F4",
+							command:"form/clear"
+						},
+						{
+							id:"close",
+							display:"Close ctrl-w",
+							command:"form/close"
+						}
+					]
+				},
+				{
 					id:"query",
 					disabled: true,
 					display:"Query",
@@ -84,22 +111,22 @@ export class Commands extends StaticMenu
 					[
 						{
 							id:"enter",
-							display:"Enter",
+							display:"Enter F7",
 							command:"query/enter"
 						},
 						{
 							id:"execute",
-							display:"Execute",
+							display:"Execute F8",
 							command:"query/execute"
 						},
 						{
 							id:"refine",
-							display:"Refine",
+							display:"Refine shift-F7",
 							command:"query/refine"
 						},
 						{
 							id:"advanced",
-							display:"Advanced",
+							display:"Advanced ctrl-F7",
 							command:"query/advanced"
 						}
 					]
@@ -112,17 +139,17 @@ export class Commands extends StaticMenu
 					[
 						{
 							id:"insert",
-							display: "Insert",
+							display: "Insert F5",
 							command:"record/insert"
 						},
 						{
 							id:"delete",
-							display:"Delete",
+							display:"Delete F6",
 							command:"record/delete"
 						},
 						{
 							id:"refresh",
-							display:"Refresh",
+							display:"Requery/Undo ctrl-u",
 							command:"record/refresh"
 						}
 					]
@@ -135,12 +162,12 @@ export class Commands extends StaticMenu
 					[
 						{
 							id:"commit",
-							display:"Commit",
+							display:"Commit F10",
 							command:"transaction/commit"
 						},
 						{
 							id: "rollback",
-							display:"Rollback",
+							display:"Rollback F12",
 							command:"transaction/rollback"
 						},
 					]

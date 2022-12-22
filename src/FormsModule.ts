@@ -163,6 +163,13 @@ export class FormsModule extends FormsCoreModule
 		return(FormsModule.DATABASE.disconnect());
 	}
 
+	public async close() : Promise<boolean>
+	{
+		let form:Form = this.getCurrentForm();
+		if (form != null) return(form.close());
+		return(true);
+	}
+
 	private async onLogon(event:FormEvent) : Promise<boolean>
 	{
 		let form:UsernamePassword = event.form as UsernamePassword;
@@ -177,5 +184,6 @@ export class FormsModule extends FormsCoreModule
 
 export class keymap extends KeyMap
 {
+	public static close:KeyMap = new KeyMap({key: 'w', ctrl: true});
 	public static login:KeyMap = new KeyMap({key: 'l', ctrl: true});
 }
