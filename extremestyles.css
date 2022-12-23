@@ -576,6 +576,35 @@ div[name="date-picker"]
 	background-color: transparent;
 }
 
+.topbar .menu-items .menu-items .link-item .hint-text
+{
+	width:30px;
+	right: -30px;
+	padding: 5px;
+	position: absolute;
+	text-align: center;
+	visibility: hidden;
+	background-color: black;
+}
+
+.topbar .menu-items .menu-items .link-item .hint-text:after
+{
+	top: 30%;
+	right: 100%;
+	content: '';
+	display: block;
+	margin-left: -5px;
+	border-width: 5px;
+	position: absolute;
+	border-style: solid;
+	border-color: transparent black transparent transparent;
+}
+
+.topbar .menu-items .menu-items .link-item:hover .hint-text
+{
+	visibility: visible;
+}
+
 .topbar .menu-item a:not(.disabled)
 {
 	cursor: pointer;
@@ -605,7 +634,7 @@ div[name="date-picker"]
 	z-index:9999;
 	display: table;
 	cursor: pointer;
-	min-width: 125px;
+	min-width: 110px;
 	position: absolute;
 	background-color: #36393e;
 	transform: translateX(-50%);
