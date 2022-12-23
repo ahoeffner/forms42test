@@ -86,107 +86,118 @@ export class Commands extends StaticMenu
 			entries:
 			[
 				{
-					id:"form",
+					id: "form",
 					disabled: true,
-					display:"Form",
+					display: "Form",
 					entries:
 					[
 						{
-							id:"clear",
-							display:"Clear shift-F4",
-							command:"form/clear"
+							id: "clear",
+							display: "Clear",
+							hinttext: "shift-F4",
+							command :"form/clear"
 						},
 						{
-							id:"close",
-							display:"Close ctrl-w",
-							command:"form/close"
+							id: "close",
+							display: "Close",
+							hinttext: "ctrl-w",
+							command: "form/close"
 						}
 					]
 				},
 				{
-					id:"query",
+					id: "query",
 					disabled: true,
-					display:"Query",
+					display: "Query",
 					entries:
 					[
 						{
-							id:"enter",
-							display:"Enter F7",
-							command:"query/enter"
+							id: "enter",
+							display: "Enter",
+							hinttext: "F7",
+							command: "query/enter"
 						},
 						{
-							id:"execute",
-							display:"Execute F8",
-							command:"query/execute"
+							id: "execute",
+							display: "Execute",
+							hinttext: "F8",
+							command: "query/execute"
 						},
 						{
-							id:"refine",
-							display:"Refine shift-F7",
-							command:"query/refine"
+							id: "refine",
+							display: "Refine",
+							hinttext: "shift-F7",
+							command: "query/refine"
 						},
 						{
-							id:"advanced",
-							display:"Advanced ctrl-F7",
-							command:"query/advanced"
+							id: "advanced",
+							display: "Advanced",
+							hinttext: "ctrl-F7",
+							command: "query/advanced"
 						}
 					]
 				},
 				{
-					id:"record",
+					id: "record",
 					disabled: true,
-					display:"Record",
+					display: "Record",
 					entries:
 					[
 						{
-							id:"insert",
-							display: "Insert F5",
-							command:"record/insert"
+							id: "insert",
+							display: "Insert",
+							hinttext: "F5",
+							command: "record/insert"
 						},
 						{
-							id:"delete",
-							display:"Delete F6",
-							command:"record/delete"
+							id: "delete",
+							display: "Delete",
+							hinttext: "F6",
+							command: "record/delete"
 						},
 						{
-							id:"refresh",
-							display:"Requery/Undo ctrl-u",
-							command:"record/refresh"
+							id: "refresh",
+							display: "Requery/Undo",
+							hinttext: "ctrl-u",
+							command: "record/refresh"
 						}
 					]
 				},
 				{
 					disabled: true,
 					id: "transaction",
-					display:"Transaction",
+					display: "Transaction",
 					entries:
 					[
 						{
-							id:"commit",
-							display:"Commit F10",
-							command:"transaction/commit"
+							id: "commit",
+							display: "Commit",
+							hinttext: "F10",
+							command: "transaction/commit"
 						},
 						{
 							id: "rollback",
-							display:"Rollback F12",
-							command:"transaction/rollback"
+							display: "Rollback",
+							hinttext: "F12",
+							command: "transaction/rollback"
 						},
 					]
 				},
 				{
-					id:"connection",
+					id: "connection",
 					display:`Connection`,
 					entries:
 					[
 						{
-								id:"connect",
-								display:`Connect`,
-								command:"connection/connect"
+								id: "connect",
+								display: "Connect",
+								command: "connection/connect"
 						},
 						{
 								disabled: true,
-								id:"disconnect",
-								display:`Disconnect`,
-								command:"connection/disconnect"
+								id: "disconnect",
+								display:"Disconnect",
+								command: "connection/disconnect"
 						}
 					]
         		}
