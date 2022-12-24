@@ -101,7 +101,7 @@ tr td span:hover
 	margin:5px;
 	padding: 30px;
 	border-radius: 10px;
-	background-color: #f7f79c;
+	background-color: #ffffff;
 	box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
 }
 
@@ -579,7 +579,7 @@ div[name="date-picker"]
 .topbar .menu-items .menu-items .link-item .hint-text
 {
 	width:30px;
-	right: -30px;
+	right: -40px;
 	padding: 5px;
 	position: absolute;
 	text-align: center;
