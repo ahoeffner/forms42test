@@ -12,11 +12,11 @@
 
 import content from './MasterDetail.html';
 
+import { Key } from 'forms42core';
 import { BaseForm } from "../../BaseForm";
 import { Sorter } from '../../utils/Sorter';
 import { Employees } from "../../blocks/Employees";
 import { Departments } from '../../blocks/Departments';
-import { Key } from 'forms42core';
 
 
 export class MasterDetail extends BaseForm
