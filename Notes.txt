@@ -10,9 +10,22 @@ tabindex -> flyt ?
 
 *** Jonas ***
 
-size ud af UsernamePassword
-relative i left menu
-Non transparent windows
+UsernamePassword
+	buttons to close
+
+ListOfValues:
+	space after queryfield
+
+styles:
+	hinttext
+
+extremestyles:
+	Advanced Query !!
+	Alert OK position: right
+
+simplestyles :
+	hinttext
+	Minimized area to small
 
 *************
 
