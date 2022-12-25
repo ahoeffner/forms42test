@@ -15,7 +15,7 @@ import { Employees as EmployeeBlock } from "./Employees";
 import { Employees as EmployeeTable} from "../datasources/database/Employees";
 import { Locations as LocationTable } from "../datasources/database/Locations";
 import { Departments as DepartmentTable } from "../datasources/database/Departments";
-import { BindValue, Block, EventType, Filter, Filters, FilterStructure, Form, formevent, Key, ListOfValues } from "forms42core";
+import { BindValue, Block, EventType, Filter, Filters, FilterStructure, Form, formevent, ListOfValues } from "forms42core";
 
 export class Departments extends Block
 {
@@ -23,11 +23,6 @@ export class Departments extends Block
 	{
 		super(form,name);
 		this.datasource = new DepartmentTable();
-	}
-
-	public getPrimaryKey() : Key
-	{
-		return(new Key(this.name,"department_id"));
 	}
 
 	@formevent({type: EventType.OnFetch})

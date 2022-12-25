@@ -16,7 +16,7 @@ import { Departments as DepartmentBlock} from "./Departments";
 import { Jobs as JobTable } from '../datasources/database/Jobs';
 import { Employees as EmployeeTable } from "../datasources/database/Employees";
 import { Departments as DepartmentTable } from '../datasources/database/Departments';
-import { BindValue, Block, DatabaseResponse, EventType, FieldProperties, Filter, Filters, FilterStructure, Form, formevent, FormEvent, Key, ListOfValues } from "forms42core";
+import { BindValue, Block, DatabaseResponse, EventType, FieldProperties, Filter, Filters, FilterStructure, Form, formevent, FormEvent, ListOfValues } from "forms42core";
 
 export class Employees extends Block
 {
@@ -25,11 +25,6 @@ export class Employees extends Block
 		super(form,name);
 		this.datasource = new EmployeeTable();
 		this.setDateConstraint(new WorkDays(),"hire_date");
-	}
-
-	public getDepartmentsForeignKey() : Key
-	{
-		return(new Key(this.name,"department_id"));
 	}
 
 	@formevent({type: EventType.OnNewRecord})

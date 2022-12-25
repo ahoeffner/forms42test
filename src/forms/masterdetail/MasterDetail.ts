@@ -16,6 +16,7 @@ import { BaseForm } from "../../BaseForm";
 import { Sorter } from '../../utils/Sorter';
 import { Employees } from "../../blocks/Employees";
 import { Departments } from '../../blocks/Departments';
+import { Key } from 'forms42core';
 
 
 export class MasterDetail extends BaseForm
@@ -37,7 +38,10 @@ export class MasterDetail extends BaseForm
 		this.emp.setJobLov(["job_id","job_title"]);
 		this.emp.setDepartmentLov(["department_id","department_name"]);
 
-		this.link(this.dept.getPrimaryKey(),this.emp.getDepartmentsForeignKey());
+		let empkey:Key = new Key("employees","department_id");
+		let deptkey:Key = new Key("departments","department_id");
+
+		this.link(deptkey,empkey);
 	}
 
 	public sort(block:string, field:string) : void
