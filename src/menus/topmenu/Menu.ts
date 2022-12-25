@@ -13,7 +13,7 @@
 import { Commands } from './Commands';
 import { EventType, FormEvent, formevent, FormsModule, MenuComponent, MenuEntry } from 'forms42core';
 
-export class TopBar extends MenuComponent
+export class Menu extends MenuComponent
 {
 	private menuelem:HTMLElement = null;
 

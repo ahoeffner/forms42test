@@ -11,12 +11,13 @@
  */
 
 import { Minimized } from './Minimized';
-import { Menu } from './menu/menuLeft/Menu';
-import { Help } from './menu/menuRight/Help';
-import { TopBar } from './menu/formsmenu/FormsMenu';
+
 import { FormHeader } from './fragments/FormHeader';
 import { PageHeader } from './fragments/PageHeader';
 import { PageFooter } from './fragments/PageFooter';
+
+import { Menu as TopMenu } from './menus/topmenu/Menu';
+import { Menu as LeftMenu } from './menus/leftmenu/Menu';
 
 import { Fields } from './fields/Fields';
 import { Jobs } from './forms/jobs/Jobs';
@@ -56,9 +57,8 @@ import { FormsPathMapping, FormsModule as FormsCoreModule, KeyMap, FormEvent, Ev
 
 export class FormsModule extends FormsCoreModule
 {
-	public menu:Menu = null;
-	public help:Help =null;
-	public topBar:TopBar = null;
+	public topmenu:TopMenu = null;
+	public leftmenu:LeftMenu = null;
 
 	public list:Minimized = null;
 	public static DATABASE:Connection = null;
@@ -83,9 +83,8 @@ export class FormsModule extends FormsCoreModule
 		this.list = new Minimized();
 
 		// Menues
-		this.menu = new Menu();
-		this.topBar = new TopBar();
-		this.help = new Help();
+		this.topmenu = new TopMenu();
+		this.leftmenu = new LeftMenu();
 
 		this.OpenURLForm();
 		this.updateKeyMap(keymap);

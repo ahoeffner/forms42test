@@ -10,10 +10,10 @@
  * accompanied this code).
  */
 
-import { HelpData } from './HelpData';
+import { FormList } from './FormList';
 import { MenuComponent } from 'forms42core';
 
-export class Help extends MenuComponent
+export class Menu extends MenuComponent
 {
 	private displayed:boolean = false;
 	private menuelem:HTMLElement = null;
@@ -21,21 +21,22 @@ export class Help extends MenuComponent
 
 	constructor()
 	{
-		super(new HelpData());
+		super(new FormList());
 
-        this.options.skiproot = true;
 		this.menuelem = document.createElement("div");
-		this.menuelem.classList.value = "info-dropdown";
+		this.menuelem.classList.value = "left-menu-container";
 
-		this.container = document.getElementById("info");
+		this.container = document.getElementById("main-menu");
+
 		this.menuelem = this.container.appendChild(this.menuelem);
 		this.target = this.menuelem;
+		super.show();
+
 	}
 
 	public hide() : void
 	{
-		super.hide();
-        this.menuelem.style.display = "none";
+		this.container.style.minWidth = "0px";
 		this.displayed = false;
 	}
 
@@ -43,13 +44,11 @@ export class Help extends MenuComponent
 	{
 		if (this.displayed)
 		{
-			super.hide();
-            this.menuelem.style.display = "none";
+			this.container.style.minWidth = "0px";
 		}
 		else
 		{
-			super.show();
-            this.menuelem.style.display = "table";
+			this.container.style.minWidth = "150px";
 		}
 
 		this.displayed = !this.displayed;

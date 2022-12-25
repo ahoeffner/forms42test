@@ -12,11 +12,11 @@
 
 import { FormsModule, StaticMenu, StaticMenuEntry } from "forms42core";
 
-export class MenuData extends StaticMenu
+export class FormList extends StaticMenu
 {
 	constructor()
 	{
-		super(MenuData.data());
+		super(FormList.data());
 	}
 
 	public async execute(path:string): Promise<boolean>
