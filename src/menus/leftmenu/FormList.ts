@@ -82,7 +82,7 @@ export class FormList extends StaticMenu
 						,
 						{
 							id: "fields",
-							display: "2 Fields with extensions",
+							display: "2 Fieldtypes",
 							command: "/forms/Fields"
 						}
 					]
