@@ -1,12 +1,5 @@
 FilterEditor
-
-Preauthenticated
-addListener på block & menu
-connect to pool, set pool secret
-
 Cyclic master detail
-
-tabindex -> flyt ?
 
 *** Jonas ***
 
