@@ -10,11 +10,12 @@ ListOfValues:
 	space after queryfield
 
 styles:
-	hinttext
+	hinttext til menu
 
 extremestyles:
 	Advanced Query !!
-	Alert OK position: right
+	Alert Login/cancel position: right + spacing above and between
+	LeftMenu indentations
 
 simplestyles :
 	hinttext
