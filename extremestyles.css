@@ -49,7 +49,7 @@ div[name="close"]:hover,
 
 .canvas
 {
-	background-color: lightgray;
+	background-color: #424549;
 	animation-fill-mode: backwards;
 	box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
 }
@@ -203,7 +203,7 @@ tr td span:hover
 .left-menu-container .menu-item a:hover
 {
 	background-color:#424549;
-	border-left: 3px solid #6060F0;
+	border-right: 3px solid #6060F0;
 }
 
 .row-indicator
@@ -345,7 +345,8 @@ input[mode="query"],
 .lov input[name="search"]
 {
 	text-indent: 12px;
-    background-size: 10px;
+	margin-bottom: 15px;
+   background-size: 10px;
 	transition: all 0.18s ease;
 	background-repeat: no-repeat;
 	background-position-y: center;
@@ -541,6 +542,7 @@ div.modal
 div[name="date-picker"]
 {
 	margin:10px 5px;
+	background-color: white;
 	box-shadow: 0 5px 30px rgb(0 0 0 / 30%);
 }
 
@@ -711,15 +713,17 @@ button
 
 div[name="loginbutton"]
 {
-	gap:15px;
+	gap:5px;
 	display: flex;
-	margin-top: 10px;
-	justify-content: center;
+	margin-right:20px;
+	justify-content: right;
+	margin-top: 15px !important;
 }
 
 div[name="msg"],
 div[name="lov"],
 div[name="login"],
+div[name="query"],
 div[name="date-picker"]
 {
 	padding:20px;
@@ -740,15 +744,14 @@ div[name="date-picker"]
 
 div[name="popup-body"]
 {
-	background-color: #36393e;
 	backdrop-filter: blur(10px);
 	box-shadow: 0 0 40px rgba(8,7,16,0.6);
 }
 
 div[name="loginimage"]
 {
-	width: 50px;
-	height: 50px;
+	width: 40px;
+	height: 40px;
 	margin-top: 0px;
 	margin-bottom: 0px;
 	border-radius: 50px;
@@ -826,7 +829,7 @@ div[name="popup-body"] button:before
 	height: 100%;
 	position: absolute;
 	border-radius: 10px;
-	background-color: #222;
+	background-color: rgb(72, 72, 72);
   }
   
 

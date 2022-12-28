@@ -68,6 +68,11 @@
 	transform: translateX(-50%);
 }
 
+.topbar .menu-items .menu-items .link-item 
+{
+	display:flex;
+}
+
 .topbar .menu-items .menu-items .link-item a
 {
 	width:100%;
