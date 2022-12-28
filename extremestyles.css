@@ -49,7 +49,7 @@ div[name="close"]:hover,
 
 .canvas
 {
-	background-color: lightgray;
+	background-color: #424549;
 	animation-fill-mode: backwards;
 	box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
 }
