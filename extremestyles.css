@@ -49,8 +49,8 @@ div[name="close"]:hover,
 
 .canvas
 {
-	background-color: lightgray;
 	animation-fill-mode: backwards;
+	background-color: rgb(209, 206, 232);
 	box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
 }
 
