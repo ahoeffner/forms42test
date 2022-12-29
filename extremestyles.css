@@ -347,12 +347,16 @@ input[mode="query"],
 .lov input[name="search"]
 {
 	text-indent: 12px;
-	margin-bottom: 15px;
    background-size: 10px;
 	transition: all 0.18s ease;
 	background-repeat: no-repeat;
 	background-position-y: center;
 	background-image: url(images/icons8-search-30.png);
+}
+
+.lov input[name="search"]
+{
+	margin-bottom: 15px;
 }
 
 input[mode="insert"]
