@@ -122,7 +122,7 @@ tr td span:hover
 
 .left-menu-container
 {
-
+	margin-top:7px;
 	display: block;
 	cursor: pointer;
 	text-align: left;
@@ -144,8 +144,8 @@ tr td span:hover
 
 .menu-item
 {
+	margin-top:8px;
 	transition: 0.3s;
-	margin-top: 15px;
 }
 
 .left-menu-container .menu-item
@@ -183,10 +183,11 @@ tr td span:hover
 	transition: 0.3s;
 }
 
-.left-menu-container .menu-item .menu-items
+.left-menu-container .menu-item .menu-items a
 {
 	width:100%;
 	margin-top:-3px;
+	padding-left:10px;
 }
 
 .left-menu-container  .menu-item:before
@@ -201,11 +202,25 @@ tr td span:hover
 	display:table-cell;
 }
 
+.left-menu-container  .menu-item:not(:first-child)::before
+{
+	margin-left: -10px;
+}
+
+.left-menu-container  .menu-item:not(:first-child) a
+{
+	padding-left: -10px;
+}
+
+.left-menu-container .menu-items .menu-items .menu-items a
+{
+	padding-left:20px;
+} 
 
 .left-menu-container .menu-item a:hover
 {
 	background-color:#424549;
-	border-right: 3px solid #6060F0;
+	border-left: 3px solid #6060F0;
 }
 
 .row-indicator
@@ -439,7 +454,7 @@ div.modal
 	cursor: pointer;
 	position: relative;
 	display:inline-block;
-   	background-size: 20px;
+   background-size: 20px;
 	transition: all 0.18s ease;
 	background-repeat: no-repeat;
 	background-image: url('images/icons8-info-50.png');
@@ -497,14 +512,14 @@ div.modal
 
 .item
 {
-    height: 10px;
-    display:flex;
-    cursor:pointer;
-    font-size:12px;
-    list-style: none;
-    margin-bottom: 2px;
-    border-radius: 5px;
-    padding: 0 5px 0 10px;
+	height: 10px;
+   display:flex;
+   cursor:pointer;
+   font-size:12px;
+   list-style: none;
+   margin-bottom: 2px;
+   border-radius: 5px;
+   padding: 0 5px 0 10px;
 	border-bottom: 1px solid rgba(0, 0, 0, .30);
 }
 
@@ -526,22 +541,22 @@ div.modal
 
 .share .share-menu
 {
-    top:-30px;
-    opacity: 0;
-    width:200px;
-    right:-200px;
-    padding:13px;
-    position: absolute;
-    pointer-events: none;
-    transition: 0.2 ease;
-    background-color: white;
+   top:-30px;
+   opacity: 0;
+   width:200px;
+   right:-200px;
+   padding:13px;
+   position: absolute;
+   pointer-events: none;
+   transition: 0.2 ease;
+   background-color: white;
 	box-shadow: 0 5px 10px rgba(0,0,0,0.08);
 }
 
 .share:hover .share-menu
 {
-    opacity: 1;
-    pointer-events: auto;
+   opacity: 1;
+   pointer-events: auto;
 }
 
 .lov,
