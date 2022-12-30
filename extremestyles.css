@@ -49,8 +49,8 @@ div[name="close"]:hover,
 
 .canvas
 {
-	background-color: #424549;
 	animation-fill-mode: backwards;
+	background-color: rgb(209, 206, 232);
 	box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
 }
 
@@ -96,6 +96,11 @@ tr td span:hover
 	cursor: default;
 }
 
+.form-header-right div div:hover:not(:last-child)
+{
+	background-color: rgb(127, 127, 127);
+}
+
 .block
 {
 	margin:5px;
@@ -122,7 +127,7 @@ tr td span:hover
 
 .left-menu-container
 {
-
+	margin-top:7px;
 	display: block;
 	cursor: pointer;
 	text-align: left;
@@ -137,13 +142,15 @@ tr td span:hover
 	width:100%;
 	height: 100%;
 	display:flex;
-	background: #36393e;
+	background: #1b1c1e;
+	border-top: solid 1px white;
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 
 .menu-item
 {
+	margin-top:8px;
 	transition: 0.3s;
-	margin-top: 15px;
 }
 
 .left-menu-container .menu-item
@@ -154,7 +161,7 @@ tr td span:hover
 .left-menu-container .menu-item a
 {
 	width:100%;
-	margin-left:25px;
+	margin-left:27px;
 	padding-left:5px;
 	display:table-cell;
 	height: fit-content;
@@ -181,10 +188,12 @@ tr td span:hover
 	transition: 0.3s;
 }
 
-.left-menu-container .menu-item .menu-items
+.left-menu-container .menu-item .menu-items a
 {
 	width:100%;
+	height: 22px;
 	margin-top:-3px;
+	padding-left:10px;
 }
 
 .left-menu-container  .menu-item:before
@@ -199,11 +208,25 @@ tr td span:hover
 	display:table-cell;
 }
 
+.left-menu-container  .menu-item:not(:first-child)::before
+{
+	margin-left: -10px;
+}
+
+.left-menu-container  .menu-item:not(:first-child) a
+{
+	padding-left: -10px;
+}
+
+.left-menu-container .menu-items .menu-items .menu-items a
+{
+	padding-left:20px;
+}
 
 .left-menu-container .menu-item a:hover
 {
 	background-color:#424549;
-	border-right: 3px solid #6060F0;
+	border-left: 3px solid #6060F0;
 }
 
 div[name="drag-fields"]
@@ -351,12 +374,16 @@ input[mode="query"],
 .lov input[name="search"]
 {
 	text-indent: 12px;
-	margin-bottom: 15px;
    background-size: 10px;
 	transition: all 0.18s ease;
 	background-repeat: no-repeat;
 	background-position-y: center;
 	background-image: url(images/icons8-search-30.png);
+}
+
+.lov input[name="search"]
+{
+	margin-bottom: 15px;
 }
 
 input[mode="insert"]
@@ -439,7 +466,7 @@ div.modal
 	cursor: pointer;
 	position: relative;
 	display:inline-block;
-   	background-size: 20px;
+   background-size: 20px;
 	transition: all 0.18s ease;
 	background-repeat: no-repeat;
 	background-image: url('images/icons8-info-50.png');
@@ -497,14 +524,14 @@ div.modal
 
 .item
 {
-    height: 10px;
-    display:flex;
-    cursor:pointer;
-    font-size:12px;
-    list-style: none;
-    margin-bottom: 2px;
-    border-radius: 5px;
-    padding: 0 5px 0 10px;
+	height: 10px;
+   display:flex;
+   cursor:pointer;
+   font-size:12px;
+   list-style: none;
+   margin-bottom: 2px;
+   border-radius: 5px;
+   padding: 0 5px 0 10px;
 	border-bottom: 1px solid rgba(0, 0, 0, .30);
 }
 
@@ -526,22 +553,22 @@ div.modal
 
 .share .share-menu
 {
-    top:-30px;
-    opacity: 0;
-    width:200px;
-    right:-200px;
-    padding:13px;
-    position: absolute;
-    pointer-events: none;
-    transition: 0.2 ease;
-    background-color: white;
+   top:-30px;
+   opacity: 0;
+   width:200px;
+   right:-200px;
+   padding:13px;
+   position: absolute;
+   pointer-events: none;
+   transition: 0.2 ease;
+   background-color: white;
 	box-shadow: 0 5px 10px rgba(0,0,0,0.08);
 }
 
 .share:hover .share-menu
 {
-    opacity: 1;
-    pointer-events: auto;
+   opacity: 1;
+   pointer-events: auto;
 }
 
 .lov,
@@ -721,9 +748,8 @@ div[name="loginbutton"]
 {
 	gap:5px;
 	display: flex;
-	margin-right:20px;
 	justify-content: right;
-	margin-top: 15px !important;
+	margin:15px 20px 0 20px !important;
 }
 
 div[name="msg"],
@@ -750,6 +776,10 @@ div[name="date-picker"]
 
 div[name="popup-body"]
 {
+	padding:10px 0 !important;
+	width:100%;
+	height: 100%;
+	background: #424549;
 	backdrop-filter: blur(10px);
 	box-shadow: 0 0 40px rgba(8,7,16,0.6);
 }
@@ -804,6 +834,7 @@ div[name="popup-body"] button:before
 	left: -2px;
 	z-index: -1;
 	filter: blur(5px);
+	user-select: none;
 	border-radius: 10px;
 	background-size: 400%;
 	width: calc(100% + 4px);
@@ -812,47 +843,57 @@ div[name="popup-body"] button:before
 	animation: glowing-button 20s linear infinite;
   }
 
-  @keyframes glowing-button
-  {
-	0% {
+@keyframes glowing-button
+{
+	0%
+	{
 	  background-position: 0 0;
 	}
-	50% {
+	50%
+	{
 	  background-position: 400% 0;
 	}
-	100% {
+	100%
+	{
 	  background-position: 0 0;
 	}
   }
 
-  div[name="popup-body"] button:after
-  {
+
+div[name="popup-body"] button:after
+{
 	top: 0;
 	left: 0;
 	z-index: -1;
 	content: "";
 	width: 100%;
 	height: 100%;
+	user-select: none;
 	position: absolute;
 	border-radius: 10px;
 	background-color: rgb(72, 72, 72);
   }
 
 
-  div[name="popup-body"] button:after:hover
-  {
+div[name="popup-body"] button:after:hover
+{
 	background-color: rgb(175, 175, 175);
-  }
+}
 
-  div[name="lowerright"]
-  {
-	padding-top:0px;
-	margin-top: 20px;
-	margin-right: 10px;
+div[name="lowerright"]
+{
+	height: 25px;
 	position: relative;
-  }
+	margin:5px 20px 10px;
+	padding-top:0px !important;
+}
 
 .toggle
 {
 	border:solid 1.5px white !important;
+}
+
+div[name="buttonarea"]
+{
+	margin:0 !important
 }
