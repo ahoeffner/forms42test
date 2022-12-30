@@ -44,7 +44,7 @@ div[name="close"]:hover,
 	position: relative;
 	background-size: cover;
 	background-position: bottom;
-	background-image:linear-gradient(to right bottom, rgba(97, 112, 227, 0.8),rgba(100, 101, 179, 0.8)) , url(https://nextmapping.com/wp-content/uploads/2019/10/FutureisnowIstockphoto.jpg);	
+	background-image:linear-gradient(to right bottom, rgba(97, 112, 227, 0.8),rgba(100, 101, 179, 0.8)) , url(https://nextmapping.com/wp-content/uploads/2019/10/FutureisnowIstockphoto.jpg);
 }
 
 .canvas
@@ -177,7 +177,7 @@ tr td span:hover
 {
 	width: 100%;
 	display:table;
-	font-size:15px; 
+	font-size:15px;
 	transition: 0.3s;
 }
 
@@ -206,6 +206,11 @@ tr td span:hover
 	border-right: 3px solid #6060F0;
 }
 
+div[name="drag-fields"]
+{
+	border: 1px dotted black;
+}
+
 .row-indicator
 {
 	width: 8px;
@@ -232,6 +237,7 @@ tr td span:hover
 {
 	margin-bottom: 10px !important;
 }
+
 .search:before
 {
 	content: "\002315";
@@ -452,7 +458,7 @@ div.modal
 	list-style: none;
 	background-color: white;
 	box-shadow: 0 5px 30px rgb(0 0 0 / 20%);
-} 
+}
 
 .info-dropdown .menu-items
 {
@@ -561,7 +567,7 @@ div[name="date-picker"]
 	user-select: none;
 	align-items: center;
 	justify-content: center;
-	
+
 }
 
 .topbar .link-item,
@@ -778,7 +784,7 @@ div[name="popup-body"] button
 	background-color: #222;
 }
 
-div[name="popup-body"] button:before 
+div[name="popup-body"] button:before
 {
 	content: "";
 	background: linear-gradient(
@@ -818,8 +824,8 @@ div[name="popup-body"] button:before
 	  background-position: 0 0;
 	}
   }
-  
-  div[name="popup-body"] button:after 
+
+  div[name="popup-body"] button:after
   {
 	top: 0;
 	left: 0;
@@ -831,9 +837,9 @@ div[name="popup-body"] button:before
 	border-radius: 10px;
 	background-color: rgb(72, 72, 72);
   }
-  
 
-  div[name="popup-body"] button:after:hover 
+
+  div[name="popup-body"] button:after:hover
   {
 	background-color: rgb(175, 175, 175);
   }

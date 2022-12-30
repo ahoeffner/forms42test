@@ -94,6 +94,7 @@ export class FormsModule extends FormsCoreModule
 
 		FormsModule.DATABASE = new Connection("http://localhost:9002");
 
+		this.addEventListener(this.close,{type: EventType.Key, key: keymap.close});
 		this.addEventListener(this.login,{type: EventType.Key, key: keymap.login});
 
 		this.addEventListener(this.open,
