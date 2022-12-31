@@ -11,7 +11,8 @@
  */
 
 import { Commands } from './Commands';
-import { EventType, FormEvent, formevent, FormsModule, MenuComponent, MenuEntry } from 'forms42core';
+import { FormsModule } from '../../FormsModule';
+import { EventType, FormEvent, formevent, MenuComponent, MenuEntry } from 'forms42core';
 
 export class Menu extends MenuComponent
 {
@@ -104,11 +105,14 @@ export class Menu extends MenuComponent
 			entry = await this.findEntry("/topbar/form");
 			if (entry) entry.disabled = false;
 
-			entry = await this.findEntry("/topbar/query");
-			if (entry) entry.disabled = false;
+			if (FormsModule.DATABASE.connected())
+			{
+				entry = await this.findEntry("/topbar/query");
+				if (entry) entry.disabled = false;
 
-			entry = await this.findEntry("/topbar/record");
-			if (entry) entry.disabled = false;
+				entry = await this.findEntry("/topbar/record");
+				if (entry) entry.disabled = false;
+			}
 
 			this.show();
 		}
