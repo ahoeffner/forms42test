@@ -1,25 +1,15 @@
 FilterEditor
 Cyclic master detail
 
+UsernamePassword
+	Failed to login -> show again
+
 *** Jonas ***
 
-UsernamePassword
-	buttons to close
-
-ListOfValues:
-	space after queryfield
-
-styles:
-	hinttext til menu
-
 extremestyles:
-	Advanced Query !!
+	Form background color
 	Alert Login/cancel position: right + spacing above and between
 	LeftMenu indentations
-
-simplestyles :
-	hinttext
-	Minimized area to small
 
 *************
 
