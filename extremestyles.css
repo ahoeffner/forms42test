@@ -49,8 +49,8 @@ div[name="close"]:hover,
 
 .canvas
 {
+	background-color: #424549;
 	animation-fill-mode: backwards;
-	background-color: rgb(209, 206, 232);
 	box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
 }
 
@@ -113,11 +113,25 @@ tr td span:hover
 
 .menu-left
 {
-	width:30px;
+	width:20px;
 	height: 100%;
 	color:white;
 	transition: 0.5s;
+	position: relative;
 	background-color:#36393e;
+}
+
+.menu-left::after
+{
+	top: 40%;
+	left: 100%;
+	content: '';
+	z-index: 9999;
+	display: block;
+	border-width: 20px;
+	position: absolute;
+	border-style: solid;
+	border-color: transparent transparent transparent #36393e;
 }
 
 .menu-left:hover
@@ -161,7 +175,7 @@ tr td span:hover
 .left-menu-container .menu-item a
 {
 	width:100%;
-	margin-left:27px;
+	margin-left:15px;
 	padding-left:5px;
 	display:table-cell;
 	height: fit-content;
@@ -193,34 +207,26 @@ tr td span:hover
 	width:100%;
 	height: 22px;
 	margin-top:-3px;
-	padding-left:10px;
 }
 
-.left-menu-container  .menu-item:before
+.left-menu-container .menu-item:before
 {
 	color: white;
 	font-size: 20px;
 	margin-left:5px;
+	padding-left:3px;
 	margin-right:15px;
-	padding-right:5px;
-	padding-left:10px;
 	content: '\002302';
 	display:table-cell;
 }
 
+.left-menu-container .menu-item .menu-item
+{
+	margin-left:20px;
+}
 .left-menu-container  .menu-item:not(:first-child)::before
 {
-	margin-left: -10px;
-}
-
-.left-menu-container  .menu-item:not(:first-child) a
-{
-	padding-left: -10px;
-}
-
-.left-menu-container .menu-items .menu-items .menu-items a
-{
-	padding-left:20px;
+	margin-left: 10px;
 }
 
 .left-menu-container .menu-item a:hover
@@ -231,8 +237,55 @@ tr td span:hover
 
 div[name="drag-fields"]
 {
-	border: 1px dotted black;
+	display:flex;
+	position: relative;
+	background: white;
 }
+
+div[name="drag-fields"]::before {
+	z-index: -1;
+	content: "";
+	position: absolute;
+	top: calc(-1 * 3px);
+	left: calc(-1 * 3px);
+	width: calc(100% + 3px * 2);
+   height: calc(100% + 3px * 2);
+	background: linear-gradient(
+	  45deg,
+	  #8391ec,
+	  #7f51e3,
+	  #7b57f0,
+	  #7974fa,
+	  #7d7aea,
+	  #002bff,
+	  #7a00ff,
+	  #6551fa,
+	  #645ec0
+	);
+	background-size: 300% 300%;
+	background-position: 0 50%;
+	animation: moveGradient 4s alternate infinite;
+}
+
+div[name="drag-fields"]::after
+{
+	z-index: -1;
+	top: 0;
+	left: 0;
+	content: "";
+	width: 100%;
+	height: 100%;
+	user-select: none;
+	position: absolute;
+	background-color: white;
+}
+
+@keyframes moveGradient {
+ 50% {
+	background-position: 100% 50%;
+ }
+}
+
 
 .row-indicator
 {
@@ -749,7 +802,7 @@ div[name="loginbutton"]
 	gap:5px;
 	display: flex;
 	justify-content: right;
-	margin:15px 20px 0 20px !important;
+	margin:15px 20px 20 20px !important;
 }
 
 div[name="msg"],
@@ -777,11 +830,8 @@ div[name="date-picker"]
 div[name="popup-body"]
 {
 	padding:10px 0 !important;
-	width:100%;
-	height: 100%;
 	background: #424549;
 	backdrop-filter: blur(10px);
-	box-shadow: 0 0 40px rgba(8,7,16,0.6);
 }
 
 div[name="loginimage"]
@@ -799,7 +849,7 @@ div[name="loginimage"]
 	background-color: #36393e;
 }
 
-div[name="popup-body"] button
+button
 {
 	z-index: 0;
 	border: none;
@@ -814,7 +864,7 @@ div[name="popup-body"] button
 	background-color: #222;
 }
 
-div[name="popup-body"] button:before
+button:before
 {
 	content: "";
 	background: linear-gradient(
@@ -860,7 +910,7 @@ div[name="popup-body"] button:before
   }
 
 
-div[name="popup-body"] button:after
+button:after
 {
 	top: 0;
 	left: 0;
@@ -875,7 +925,7 @@ div[name="popup-body"] button:after
   }
 
 
-div[name="popup-body"] button:after:hover
+button:after:hover
 {
 	background-color: rgb(175, 175, 175);
 }
@@ -883,8 +933,7 @@ div[name="popup-body"] button:after:hover
 div[name="lowerright"]
 {
 	height: 25px;
-	position: relative;
-	margin:5px 20px 10px;
+	margin:5px 10px 5px 10px;
 	padding-top:0px !important;
 }
 
@@ -895,5 +944,5 @@ div[name="lowerright"]
 
 div[name="buttonarea"]
 {
-	margin:0 !important
+	margin:10px !important
 }
