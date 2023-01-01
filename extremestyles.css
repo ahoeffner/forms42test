@@ -222,7 +222,7 @@ tr td span:hover
 
 .left-menu-container .menu-item .menu-item
 {
-	margin-left:20px;
+	margin-left:17px;
 }
 .left-menu-container  .menu-item:not(:first-child)::before
 {
@@ -237,55 +237,24 @@ tr td span:hover
 
 div[name="drag-fields"]
 {
-	display:flex;
-	position: relative;
-	background: white;
-}
-
-div[name="drag-fields"]::before {
-	z-index: -1;
-	content: "";
-	position: absolute;
-	top: calc(-1 * 3px);
-	left: calc(-1 * 3px);
-	width: calc(100% + 3px * 2);
-   height: calc(100% + 3px * 2);
-	background: linear-gradient(
-	  45deg,
-	  #8391ec,
-	  #7f51e3,
-	  #7b57f0,
-	  #7974fa,
-	  #7d7aea,
-	  #002bff,
-	  #7a00ff,
-	  #6551fa,
-	  #645ec0
-	);
-	background-size: 300% 300%;
-	background-position: 0 50%;
-	animation: moveGradient 4s alternate infinite;
-}
-
-div[name="drag-fields"]::after
-{
-	z-index: -1;
-	top: 0;
-	left: 0;
-	content: "";
-	width: 100%;
-	height: 100%;
-	user-select: none;
-	position: absolute;
+	background: 
+	linear-gradient(90deg, #7d7aea 50%, transparent 0) repeat-x,
+	linear-gradient(90deg, #7d7aea 50%, transparent 0) repeat-x,
+	linear-gradient(0deg, #7d7aea 50%, transparent 0) repeat-y,
+	linear-gradient(0deg, #7d7aea 50%, transparent 0) repeat-y;
+	
+	padding:2px;
+	border: none;
 	background-color: white;
+	background-position: 0 0, 0 100%, 0 0, 100% 0;
+	animation: linearGradientMove .3s infinite linear;
+	background-size: 4px 2px, 4px 2px, 2px 4px, 2px 4px;
 }
-
-@keyframes moveGradient {
- 50% {
-	background-position: 100% 50%;
- }
+@keyframes linearGradientMove {
+	100% {
+		 background-position: 4px 0, -4px 100%, 0 -4px, 100% 4px;
+	}
 }
-
 
 .row-indicator
 {
