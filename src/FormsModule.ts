@@ -178,20 +178,7 @@ export class FormsModule extends FormsCoreModule
 		if (form.accepted && form.username && form.password)
 		{
 			if (!await FormsModule.DATABASE.connect(form.username,form.password))
-			{
-				setTimeout(() =>
-				{
-					this.login();
-
-					let running:Form[] = this.getRunningForms();
-					for (let i = 0; i < running.length; i++)
-					{
-						if (running[i].name.startsWith("alert"))
-							running[i].close();
-					}
-
-				},3000);
-			}
+				this.login();
 		}
 
 		return(true);
