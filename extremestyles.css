@@ -131,12 +131,18 @@ tr td span:hover
 	border-width: 20px;
 	position: absolute;
 	border-style: solid;
+	transition: all 5s ease left;
 	border-color: transparent transparent transparent #36393e;
 }
 
 .menu-left:hover
 {
 	width:150px;
+}
+.menu-left.menu-left-open:after,
+.menu-left:hover::after
+{
+	display: none;
 }
 
 .left-menu-container
@@ -245,6 +251,7 @@ div[name="drag-fields"]
 	
 	padding:2px;
 	border: none;
+	opacity: 0.8;
 	background-color: white;
 	background-position: 0 0, 0 100%, 0 0, 100% 0;
 	animation: linearGradientMove .3s infinite linear;
@@ -828,9 +835,9 @@ button
 	user-select: none;
 	position: relative;
 	border-radius: 10px;
+	/* background-color: #222; */
 	touch-action: manipulation;
 	color: rgb(255, 255, 255);
-	background-color: #222;
 }
 
 button:before
@@ -879,7 +886,7 @@ button:before
   }
 
 
-button:after
+button::after
 {
 	top: 0;
 	left: 0;
@@ -890,19 +897,19 @@ button:after
 	user-select: none;
 	position: absolute;
 	border-radius: 10px;
+	
 	background-color: rgb(72, 72, 72);
-  }
+}
 
-
-button:after:hover
+button:hover:after
 {
-	background-color: rgb(175, 175, 175);
+	background-color: rgb(93, 93, 93);
 }
 
 div[name="lowerright"]
 {
 	height: 25px;
-	margin:5px 10px 5px 10px;
+	margin:10px 10px 5px 10px;
 	padding-top:0px !important;
 }
 
@@ -913,5 +920,5 @@ div[name="lowerright"]
 
 div[name="buttonarea"]
 {
-	margin:10px !important
+	margin:10px 10px 10px 10px !important
 }

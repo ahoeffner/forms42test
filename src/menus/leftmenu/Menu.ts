@@ -36,8 +36,9 @@ export class Menu extends MenuComponent
 
 	public hide() : void
 	{
-		this.container.style.minWidth = "0px";
 		this.displayed = false;
+		this.container.style.minWidth = "0px";
+		this.container.classList.remove("menu-left-open");
 	}
 
 	public togglemenu() : void
@@ -45,10 +46,12 @@ export class Menu extends MenuComponent
 		if (this.displayed)
 		{
 			this.container.style.minWidth = "0px";
+			this.container.classList.remove("menu-left-open");
 		}
 		else
 		{
 			this.container.style.minWidth = "150px";
+			this.container.classList.add("menu-left-open");
 		}
 
 		this.displayed = !this.displayed;
