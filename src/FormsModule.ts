@@ -176,7 +176,23 @@ export class FormsModule extends FormsCoreModule
 		this.removeEventListener(this.logontrg);
 
 		if (form.accepted && form.username && form.password)
-			FormsModule.DATABASE.connect(form.username,form.password);
+		{
+			if (!await FormsModule.DATABASE.connect(form.username,form.password))
+			{
+				setTimeout(() =>
+				{
+					this.login();
+
+					let running:Form[] = this.getRunningForms();
+					for (let i = 0; i < running.length; i++)
+					{
+						if (running[i].name.startsWith("alert"))
+							running[i].close();
+					}
+
+				},3000);
+			}
+		}
 
 		return(true);
 	}
