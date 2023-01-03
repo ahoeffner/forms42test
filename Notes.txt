@@ -4,11 +4,6 @@ find . -name '*.php' | xargs wc -l
 
 *** Jonas ***
 
-extremestyles:
-	Form background color
-	Alert Login/cancel position: right + spacing above and between
-	LeftMenu indentations
-
 *************
 
 Demo:
