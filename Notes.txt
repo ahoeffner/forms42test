@@ -1,8 +1,6 @@
 FilterEditor
 Cyclic master detail
 
-getValue -> Dates i SQLStatement
-
 UsernamePassword
 	Failed to login -> show againfind . -name '*.php' | xargs wc -l
 
