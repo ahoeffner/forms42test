@@ -11,7 +11,7 @@
  */
 
 import { FormsModule } from "../../FormsModule";
-import { BindValue, DatabaseTable, DataType, SQLStatement } from "forms42core";
+import { BindValue, DatabaseTable, DataType, LockMode, SQLStatement } from "forms42core";
 
 export class Countries extends DatabaseTable
 {
@@ -19,9 +19,9 @@ export class Countries extends DatabaseTable
 	{
 		super(FormsModule.DATABASE,"countries");
 
-		this.rowlocking = true;
 		this.sorting = "country_id";
 		this.primaryKey = "country_id";
+		this.rowlocking = LockMode.Pessimistic;
 	}
 
 	public static async getName(code:string) : Promise<string>

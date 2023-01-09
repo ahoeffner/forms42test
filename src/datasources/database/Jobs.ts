@@ -19,7 +19,6 @@ export class Jobs extends DatabaseTable
 	{
 		super(FormsModule.DATABASE,"jobs");
 
-		this.rowlocking = true;
 		this.sorting = "job_id";
 		this.primaryKey = "job_id";
 	}

@@ -19,7 +19,6 @@ export class Employees extends DatabaseTable
 	{
 		super(FormsModule.DATABASE,"employees");
 
-		this.rowlocking = true;
 		this.primaryKey = "employee_id";
 		this.insertReturnColumns = "employee_id";
 		this.addDMLColumns(["job_id","department_id"]);
