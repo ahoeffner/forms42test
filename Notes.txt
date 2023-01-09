@@ -4,7 +4,6 @@ find . -name '*.php' | xargs wc -l
 
 *** Jonas ***
 
-mode=insert in QueryEditor
 
 *************
 

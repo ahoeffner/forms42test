@@ -27,7 +27,6 @@ export class BaseForm extends Form
 		super(content);
 		this.id = "f" + ++BaseForm.forms;
 		this.addEventListener(this.oninit,{type: EventType.PostViewInit});
-		this.addEventListener(this.close,{type: EventType.Key, key: BaseForm.keyclose});
 	}
 
 	public async oninit() : Promise<boolean>
