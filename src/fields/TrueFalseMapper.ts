@@ -17,9 +17,11 @@
   FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
-import { DataMapper, Tier } from "forms42core";
 
 //Demo: Convert backend boolean to Y/N flag
+
+import { DataMapper, Tier } from "forms42core";
+
 export class TrueFalseMapper implements DataMapper
 {
 	private value:{frontend:string, backend:string} = {frontend: null, backend: null};
@@ -43,7 +45,7 @@ export class TrueFalseMapper implements DataMapper
 	public getValue(tier:Tier) : any
 	{
 		if (tier == Tier.Backend) return(this.value.backend);
-		else					  return(this.value.frontend);
+		else					  		  return(this.value.frontend);
 	}
 
 	public setValue(tier:Tier, value:any) : void
@@ -63,7 +65,7 @@ export class TrueFalseMapper implements DataMapper
 	public getIntermediateValue(tier:Tier) : string
 	{
 		if (tier == Tier.Backend) return(this.value.backend);
-		else 					  return(this.value.frontend);
+		else 					  		  return(this.value.frontend);
 	}
 
 	public setIntermediateValue(tier:Tier, value:string) : void
