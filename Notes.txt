@@ -2,6 +2,8 @@ FilterEditor
 Cyclic master detail
 find . -name '*.php' | xargs wc -l
 
+After refresh trigger
+
 *** Jonas ***
 
 
