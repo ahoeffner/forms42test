@@ -160,6 +160,7 @@ export class Menu extends MenuComponent
 		{type: EventType.PreInsert},
 		{type: EventType.PreUpdate},
 		{type: EventType.PreDelete},
+		{type: EventType.OnTransaction},
 		{type: EventType.OnRecordLocked}
 	])
 	public async onTransactionStart(event:FormEvent) : Promise<boolean>
