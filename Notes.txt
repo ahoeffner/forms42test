@@ -2,8 +2,6 @@ FilterEditor
 Cyclic master detail
 find . -name '*.php' | xargs wc -l
 
-Menu onTransaction
-
 *** Jonas ***
 
 
