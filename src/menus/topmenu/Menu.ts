@@ -167,7 +167,7 @@ export class Menu extends MenuComponent
 	{
 		let entry:MenuEntry = null;
 
-		if (event.form.getBlock(event.block)?.isControlBlock())
+		if (event.form?.getBlock(event.block)?.isControlBlock())
 			return(true);
 
 		entry = await this.findEntry("/topbar/transaction");
