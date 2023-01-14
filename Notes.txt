@@ -2,6 +2,8 @@ FilterEditor
 Cyclic master detail
 find . -name '*.php' | xargs wc -l
 
+Record has been deleted in master
+
 *** Jonas ***
 
 
