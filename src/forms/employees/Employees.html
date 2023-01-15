@@ -4,8 +4,9 @@
 <div style="width: 1000px;"></div>
 
 <div class="form" style="display:flex; flex-wrap: wrap;">
-	<div >
-		<table class="block">
+	<div class="block">
+		<div class="needle red"></div>
+		<table>
 			<tr>
 				<th></th>
 				<th onclick="this.sort('first_name')"   >First Name</th>
@@ -24,36 +25,39 @@
 	</div>
 
 	<div style="display:flex; align-items: stretch;">
-		<table class="block" style="display:flex; align-items: center;">
-			<tr>
-				<td>Salary</td>
-				<td>
-					<input name="salary" from="Employees" size="8" integer>
-				</td>
-			</tr>
-			<tr>
-				<td>Hire Date</td>
-				<td>
-					<input name="hire_date" from="Employees" date>
-					<span onclick="this.showDatePicker('Employees','hire_date')">&#128197;</span>
-				</td>
-			</tr>
-			<tr>
-				<td>Job</td>
-				<td style="display:inline-flex">
-					<input name="job_id" from="Employees" size="8" upper>
-					<input name="job_title" from="Employees" size="20" derived readonly query="false">
-					<span onclick="this.showListOfValues('Employees','job_id')">&#x2807;</span>
-				</td>
-			</tr>
-			<tr>
-				<td>Department</td>
-				<td style="display:inline-flex">
-					<input name="department_id" from="Employees" size="10" integer>
-					<input name="department_name" from="Employees" size="20" derived readonly query="false">
-					<span onclick="this.showListOfValues('Employees','department_id')">&#x2807;</span>
-				</td>
-			</tr>
-		</table>
+		<div class="block">
+			<div class="needle green"></div>
+			<table style="display:flex; align-items: center;">
+				<tr>
+					<td>Salary</td>
+					<td>
+						<input name="salary" from="Employees" size="8" integer>
+					</td>
+				</tr>
+				<tr>
+					<td>Hire Date</td>
+					<td>
+						<input name="hire_date" from="Employees" date>
+						<span onclick="this.showDatePicker('Employees','hire_date')">&#128197;</span>
+					</td>
+				</tr>
+				<tr>
+					<td>Job</td>
+					<td style="display:inline-flex">
+						<input name="job_id" from="Employees" size="8" upper>
+						<input name="job_title" from="Employees" size="20" derived readonly query="false">
+						<span onclick="this.showListOfValues('Employees','job_id')">&#x2807;</span>
+					</td>
+				</tr>
+				<tr>
+					<td>Department</td>
+					<td style="display:inline-flex">
+						<input name="department_id" from="Employees" size="10" integer>
+						<input name="department_name" from="Employees" size="20" derived readonly query="false">
+						<span onclick="this.showListOfValues('Employees','department_id')">&#x2807;</span>
+					</td>
+				</tr>
+			</table>
+		</div>
 	</div>
 </div>

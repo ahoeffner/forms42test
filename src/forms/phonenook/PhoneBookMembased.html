@@ -3,6 +3,7 @@
 <div  style="width: 650px;"></div>
 <div class="form" style="display: flex; flex-wrap: wrap;">
 	<div class="block">
+		<div class="needle green"></div>
 		<div class="search" style="margin-left:20px; margin-bottom:10px">
 			<input name="filter" from="search" placeholder="search">
 		</div>
@@ -15,7 +16,6 @@
 				<th>
 					<label for="lastname" onclick="this.sort('last_name')">Lastname</label>
 				</th>
-				<!-- <th class="indicator"><span from="employees" row="$row" type="filter-indicator"></span></th> -->
 			</tr>
 
 			<tr  foreach="row in 1..10">
@@ -30,6 +30,7 @@
 		</table>
 	</div>
 	<div class="block" style="display:inline-block;margin-top:auto; margin-bottom: auto;">
+		<div class="needle red"></div>
 		<p style="margin-top:0px; margin-bottom: 5px;">
 			<span style="display:inline-block; width:100px;">First Name</span>:
 			<input size="10" name="first_name" from="employees" class="detail" initcap required>
