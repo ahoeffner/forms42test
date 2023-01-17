@@ -1,9 +1,8 @@
 FilterEditor
 Cyclic master detail
-find . -name '*.php' | xargs wc -l
+find ../core/src -name '*.ts' | xargs wc -l
 
 failed ?
-- NaN
 
 *** Jonas ***
 
