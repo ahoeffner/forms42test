@@ -3,6 +3,7 @@ Cyclic master detail
 find ../core/src -name '*.ts' | xargs wc -l
 
 failed ?
+refresh async
 
 *** Jonas ***
 
