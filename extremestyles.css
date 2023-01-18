@@ -774,10 +774,10 @@ div[name="login"],
 div[name="query"],
 div[name="date-picker"]
 {
-	padding:20px;
 	margin:0 20px;
 	border-radius: 10px;
 	background-color: white;
+	padding: 5px 20px 20px 20px;
 }
 
 .logo
