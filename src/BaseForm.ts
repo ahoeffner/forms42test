@@ -29,7 +29,6 @@ export class BaseForm extends Form
 	private view:View = null;
 	public title:string = null;
 	private static forms:number = 0;
-	private static keyclose:KeyMap = new KeyMap({key: 'w', ctrl: true});
 
 	constructor(content:string)
 	{
