@@ -227,6 +227,12 @@ tr td span:hover
 	border-left: 3px solid #6060F0;
 }
 
+
+th label[draggable="true"]
+{
+	cursor: move;
+}
+
 div[name="drag-fields"]
 {
 	background: 
@@ -238,6 +244,7 @@ div[name="drag-fields"]
 	padding:2px;
 	border: none;
 	opacity: 0.8;
+	
 	background-color: white;
 	background-position: 0 0, 0 100%, 0 0, 100% 0;
 	animation: linearGradientMove .3s infinite linear;
