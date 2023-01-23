@@ -95,7 +95,6 @@ export class FormsModule extends FormsCoreModule
 		this.topmenu = new TopMenu();
 		this.leftmenu = new LeftMenu();
 
-		this.OpenURLForm();
 		this.updateKeyMap(keymap);
 
 		Connection.TRXTIMEOUT = 240;
@@ -118,6 +117,8 @@ export class FormsModule extends FormsCoreModule
 			{type:EventType.Key,key:this.departments},
 			{type:EventType.Key,key:this.masterdetail}
 		]);
+
+		this.OpenURLForm();
 	}
 
 	private async open(event:FormEvent) : Promise<boolean>
