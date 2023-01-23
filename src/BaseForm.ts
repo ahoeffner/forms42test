@@ -36,7 +36,6 @@ export class BaseForm extends Form
 
 		this.moveable = true;
 		this.resizable = true;
-		this.navigable = false;
 
 		this.id = "f" + ++BaseForm.forms;
 		this.addEventListener(this.oninit,{type: EventType.PostViewInit});
