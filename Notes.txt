@@ -11,7 +11,7 @@ failed ?
 CloseCursor Non Exists
 GoBlock
 
-DataMapper change attr
+Disconnect in menu
 
 *** Jonas ***
 
