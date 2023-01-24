@@ -2,16 +2,8 @@ FilterEditor
 Cyclic master detail
 find ../core/src -name '*.ts' | xargs wc -l
 
-BK
-
-Search on date -> ignore date-range
-Shift F7 GoBlock address, enterQuery
-
 failed ?
 CloseCursor Non Exists
-GoBlock
-
-Disconnect in menu
 
 *** Jonas ***
 
