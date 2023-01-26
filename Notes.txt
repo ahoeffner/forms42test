@@ -3,7 +3,9 @@ Cyclic master detail
 find ../core/src -name '*.ts' | xargs wc -l
 
 failed ?
-CloseCursor Non Exists
+filter set datatype
+bind.type string|datatype
+
 
 *** Jonas ***
 
