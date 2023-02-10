@@ -1058,3 +1058,10 @@ div[name="buttonarea"]
 	border-radius: 10px;
 	background-color: white;
 }
+
+.page-footer-icon
+{
+	border-radius: 15px;
+	color: white !important;
+	background-color: #65696e !important;
+}
