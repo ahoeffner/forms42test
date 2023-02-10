@@ -5,6 +5,11 @@
 	overflow: hidden;
 }
 
+body
+{
+	position: relative;
+}
+
 .app-page
 {
 	display: grid;
@@ -993,4 +998,55 @@ div[name="buttonarea"]
 .green::after
 {
 	background:green;
+}
+
+
+.rightclick
+{
+   width: 150px;
+	z-index: 9999;
+   visibility: hidden;
+   position: absolute;
+   border-radius: 10px;
+   background-color: white;
+   box-shadow: 0 12px 35px rgba(0,0,0,0.1);
+}
+
+.rightclick .menu-items
+{
+	display:flex;
+	flex-wrap: wrap;
+	padding: 10px 12px;
+}
+
+.rightclick .menu-item
+{
+	width:100%;
+   height: 25px;
+   display:flex;
+   font-size: 15px;
+	cursor: default;
+	user-select: none;
+	margin-bottom: 2px;
+	white-space: nowrap;
+   align-items: center;
+   padding: 0 5px 0 10px;
+}
+.rightclick .menu-item:hover
+{
+	background: #f2f2f2;
+}
+
+.rightclick .menu-item.disabled::after
+{
+	display:flex;
+	content: '\01F6AB';
+}
+
+.rightclick .menu-items .menu-items
+{
+	left:100px;
+	position: absolute;
+	border-radius: 10px;
+	background-color: white;
 }

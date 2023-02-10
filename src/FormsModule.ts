@@ -27,6 +27,7 @@ import { PageFooter } from './fragments/PageFooter';
 
 import { Menu as TopMenu } from './menus/topmenu/Menu';
 import { Menu as LeftMenu } from './menus/leftmenu/Menu';
+import { Menu as RightClick } from './menus/rightclick/Menu';
 
 import { Fields } from './fields/Fields';
 import { Jobs } from './forms/jobs/Jobs';
@@ -104,7 +105,11 @@ export class FormsModule extends FormsCoreModule
 
 		this.addEventListener(this.close,{type: EventType.Key, key: keymap.close});
 		this.addEventListener(this.login,{type: EventType.Key, key: keymap.login});
-		this.addEventListener(this.rightmenu,{type: EventType.Mouse, mouse: MouseMap.contextmenu});
+		this.addEventListener(this.rightmenu,
+		[
+			{type: EventType.Mouse, mouse: MouseMap.contextmenu},
+			// {type: EventType.Mouse, mouse: MouseMap.click}
+		]);
 
 		this.addEventListener(this.open,
 		[
@@ -195,9 +200,10 @@ export class FormsModule extends FormsCoreModule
 		return(true);
 	}
 
-	private async rightmenu(event:FormEvent) : Promise<boolean>
+	private async rightmenu() : Promise<boolean>
 	{
-		console.log("rightmenu "+event.form?.name+" "+event.block+"."+event.field);
+		let mouseevent: MouseEvent = this.getJSEvent() as MouseEvent;
+		new RightClick(mouseevent);
 		return(true);
 	}
 }
