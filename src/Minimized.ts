@@ -24,28 +24,44 @@ import { BaseForm as Form } from './BaseForm';
 export class Minimized implements EventListenerObject
 {
     private list:HTMLElement = null;
-    private icon:HTMLImageElement = null;
+    // private icon:HTMLImageElement = null;
+    private span:HTMLSpanElement = null;
     private forms:Map<string,Form> = new Map<string,Form>();
 
     constructor()
     {
         this.list = document.getElementById("form-list");
-        this.icon = this.list.querySelector("img");
+        // this.icon = this.list.querySelector("img");
+        this.span = this.list.querySelector("#entry");
+        this.span.remove();
     }
 
     public add(form:Form) : void
     {
-        let icon:HTMLImageElement = this.icon.cloneNode() as HTMLImageElement;
+        // let icon:HTMLImageElement = this.icon.cloneNode() as HTMLImageElement;
+        let span:HTMLElement = this.span.cloneNode(true) as HTMLElement;
+        let icon:HTMLImageElement = span.children.item(0) as HTMLImageElement;
 
         icon.id = form.id;
+
+        icon.textContent = form.title.substring(0,3);
+
         icon.style.width = "32px";
         icon.style.height = "32px";
         icon.style.display = "flex";
-        icon.style.marginTop = "2.5px";
+        icon.style.marginTop = "3px";
+        icon.style.cursor = "default";
+        icon.style.fontWeight = "bold";
+        icon.style.background = "white";
         icon.style.marginLeft = "1.5px";
         icon.style.marginRight = "1.5px";
-        this.list.style.display = "flex";
+        icon.style.alignItems = "center";
+        icon.style.justifyContent = "center";
+        icon.style.border = "solid 1px black";
+        
         icon.addEventListener("click",this);
+        
+        this.list.style.display = "flex";
 
         this.list.appendChild(icon);
         this.forms.set(form.id,form);
