@@ -40,41 +40,105 @@ export class Minimized implements EventListenerObject
     {
         // let icon:HTMLImageElement = this.icon.cloneNode() as HTMLImageElement;
         let span:HTMLElement = this.span.cloneNode(true) as HTMLElement;
-        let icon:HTMLImageElement = span.children.item(0) as HTMLImageElement;
 
+        let icon:HTMLElement = span.children.item(0) as HTMLElement;
+        let label:HTMLLabelElement = span.children?.item(1) as HTMLLabelElement;
+
+        span.id = form.id;
         icon.id = form.id;
-
+        
+        label.textContent = form.title;
         icon.textContent = form.title.substring(0,3);
 
-        icon.style.width = "32px";
-        icon.style.height = "32px";
-        icon.style.display = "flex";
-        icon.style.marginTop = "3px";
-        icon.style.cursor = "default";
-        icon.style.fontWeight = "bold";
-        icon.style.background = "white";
-        icon.style.marginLeft = "1.5px";
-        icon.style.marginRight = "1.5px";
-        icon.style.alignItems = "center";
-        icon.style.justifyContent = "center";
-        icon.style.border = "solid 1px black";
+        icon.style.cssText = PageFooterStyle.IconStyle;	
+        span.style.cssText = PageFooterStyle.TooltipsStyle
+        this.list.style.cssText = PageFooterStyle.ListStyle;
+        label.style.cssText = PageFooterStyle.TooltipstextStyle;
         
-        icon.addEventListener("click",this);
+        span.addEventListener("click",this);
+        span.addEventListener("mouseover",this);
         
-        this.list.style.display = "flex";
 
-        this.list.appendChild(icon);
+        this.list.appendChild(span);
         this.forms.set(form.id,form);
     }
 
-    public handleEvent(event:Event): void
+    public handleEvent(event:MouseEvent): void
     {
-        let icon:Element = event.target as Element;
-        let form:Form = this.forms.get(icon.id);
+        let entry:HTMLElement = event.target as HTMLElement;
+        let label:HTMLLabelElement = entry.children?.item(1) as HTMLLabelElement;
+        
+        if (label == null) 
+        {
+            label = entry.parentElement?.children?.item(1) as HTMLLabelElement;
+            if (label == null) return;
+        }
 
-        form.show();
-        icon.remove();
 
-        this.forms.delete(icon.id);
+        if (event.type == "click")
+        {
+            let form:Form = this.forms.get(entry.id);
+
+            form.show();
+            entry.remove();
+    
+            this.forms.delete(entry.id);    
+        }
+
+        if (event.type == "mouseover")
+        {
+            let labelrect:DOMRectReadOnly = label.getBoundingClientRect();
+            let listrect:DOMRectReadOnly = this.list.getBoundingClientRect();
+
+            if (labelrect.x < listrect.x)
+                label.style.left = (listrect.x + labelrect.width/2)+"px";
+
+        }
     }
+}
+
+
+export class PageFooterStyle
+{
+    public static IconStyle:string =
+	`
+        height:32px;
+        display: flex;
+        cursor: default;
+        margin-top: 3px;
+        font-weight: bold;
+        background: white;
+        margin-left: 1.5px;
+        margin-right: 1.5px;
+        align-items:  center;
+        border: solid 1px black;
+        justify-content: center;
+    `;
+
+    public static TooltipstextStyle:string =
+    `
+        left:45%;
+        z-index: 1;
+        bottom:100%;
+        color: #fff;
+        display:flex;
+        padding: 5px;
+        font-size: 15px;
+        text-align: center;
+        position: absolute;
+        visibility: hidden;
+        border-radius: 4px;
+        background-color: black;
+        transform: translateX(-50%);
+    `
+
+    public static TooltipsStyle =
+    `
+        position: relative;
+    `
+
+    public static ListStyle =
+    `
+        display:flex;
+    `;
 }
