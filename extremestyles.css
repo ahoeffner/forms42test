@@ -128,12 +128,6 @@ tr td span:hover
 	background-color:#36393e;
 }
 
-.menu-left:hover
-{
-	width:150px;
-}
-
-
 .left-menu-container
 {
 	margin-top:7px;
@@ -1004,8 +998,8 @@ div[name="buttonarea"]
 .rightclick
 {
    width: 150px;
+   display:none;
 	z-index: 9999;
-   visibility: hidden;
    position: absolute;
    border-radius: 10px;
    background-color: white;
@@ -1031,17 +1025,31 @@ div[name="buttonarea"]
 	white-space: nowrap;
    align-items: center;
    padding: 0 5px 0 10px;
+	justify-content: space-between;
 }
-.rightclick .menu-item:hover
+.rightclick .menu-item:not(.disabled):after
 {
 	background: #f2f2f2;
 }
 
 .rightclick .menu-item.disabled::after
 {
-	display:flex;
+	width: 8px;
+	height: 20px;
+	font-size: 10px;
 	content: '\01F6AB';
+	filter: saturate(0%) grayscale(100%) brightness(69%) contrast(1000%);
 }
+
+.rightclick .menu-item:not(.disabled):after
+{
+	width: 5px;
+	height: 5px;
+	content: "";
+	transform: rotate(45deg);
+	border-top: 2px solid black;
+	border-right: 2px solid black;
+} 
 
 .rightclick .menu-items .menu-items
 {

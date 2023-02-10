@@ -34,7 +34,7 @@ export class Menu extends MenuComponent
    private displayed:boolean = false;
 	private menuelem:HTMLElement = null;
 
-   constructor(event:MouseEvent)
+   constructor(mouseevent:MouseEvent,event:FormEvent)
    {
       super(new Context());
 
@@ -51,19 +51,22 @@ export class Menu extends MenuComponent
          this.menuelem = this.body.appendChild(this.menuelem);
       } 
 
-      
+      console.log(event);
+
       this.target = this.menuelem;
-      this.placeManagement(event);
+      this.placeManagement(mouseevent);
 
       super.show();
    }
 
    hide(): void {
-      
+      document.addEventListener("click", () => this.menuelem.style.display ="none");
    }
 
    placeManagement(event:MouseEvent): void
    {
+    
+      
       let x:number = event.offsetX;
       let y:number = event.offsetY;
       let winWidth:number = window.innerWidth;
@@ -78,9 +81,7 @@ export class Menu extends MenuComponent
 
       this.menuelem.style.top = y + "px";
       this.menuelem.style.left = x + "px";
-      this.menuelem.style.visibility = "visible";
+      this.menuelem.style.display = "block";
+
    }
-
-
-
 }
