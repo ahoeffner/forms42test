@@ -420,7 +420,7 @@ input[mode="insert"]
 	transition: all 0.18s ease;
 	background-repeat: no-repeat;
 	background-position-y: center;
-	background-image: url(images/icons8-insert-30.png);
+	background-image: url(images/insert.png);
 }
 
 input[mode="insert"][date],

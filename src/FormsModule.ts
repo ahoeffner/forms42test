@@ -105,11 +105,7 @@ export class FormsModule extends FormsCoreModule
 
 		this.addEventListener(this.close,{type: EventType.Key, key: keymap.close});
 		this.addEventListener(this.login,{type: EventType.Key, key: keymap.login});
-		this.addEventListener(this.rightmenu,
-		[
-			{type: EventType.Mouse, mouse: MouseMap.contextmenu},
-			// {type: EventType.Mouse, mouse: MouseMap.click}
-		]);
+		// this.addEventListener(this.rightmenu,{type: EventType.Mouse, mouse: MouseMap.contextmenu},);
 
 		this.addEventListener(this.open,
 		[
