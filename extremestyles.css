@@ -1061,9 +1061,9 @@ div[name="buttonarea"]
 
 .page-footer-icon
 {
-	border-radius: 15px;
+	padding:2px;
 	color: white !important;
-	background-color: #65696e !important;
+	background: linear-gradient(0deg, rgba(29,29,29,1) 0%, rgba(79,79,79,1) 100%) !important;
 }
 
 .page-footer-pos:hover .footer-tooltiptext-top
