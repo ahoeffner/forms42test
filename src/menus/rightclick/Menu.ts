@@ -29,25 +29,31 @@ import { Context } from "./Context";
 export class Menu extends MenuComponent
 {
 
-   private rightclick = null;
+   private rightmenu = null;
 	private body:HTMLElement = null;
-   private displayed:boolean = false;
 	private menuelem:HTMLElement = null;
 
    constructor(mouseevent:MouseEvent,event:FormEvent)
    {
       super(new Context());
 
+      // if(event.form)
+      // {
+      //    console.log(event.form);
+      //    console.log(event.form.getViewPort());
+      // }
+ 
+
       this.options.skiproot = true;
-      this.rightclick = "rightclick";
+      this.rightmenu = "rightmenu";
       this.body = document.querySelector("body");
       
-      this.menuelem = this.body.querySelector("." + this.rightclick) ?  
-      this.body.querySelector("." + this.rightclick): document.createElement("div");
+      this.menuelem = this.body.querySelector("." + this.rightmenu) ?  
+      this.body.querySelector("." + this.rightmenu): document.createElement("div");
       
-      if (!this.menuelem.classList.contains(this.rightclick))
+      if (!this.menuelem.classList.contains(this.rightmenu))
       {
-         this.menuelem.classList.value = this.rightclick;
+         this.menuelem.classList.value = this.rightmenu;
          this.menuelem = this.body.appendChild(this.menuelem);
       } 
       
