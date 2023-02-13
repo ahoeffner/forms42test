@@ -11,6 +11,8 @@ expose Loading
 
 *** Jonas ***
 
+kigge på text typer.
+kigge på rightclick.
 
 *************
 
