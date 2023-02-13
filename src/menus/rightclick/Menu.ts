@@ -41,7 +41,7 @@ export class Menu extends MenuComponent
       this.options.skiproot = true;
       this.rightclick = "rightclick";
       this.body = document.querySelector("body");
-
+      
       this.menuelem = this.body.querySelector("." + this.rightclick) ?  
       this.body.querySelector("." + this.rightclick): document.createElement("div");
       
@@ -50,9 +50,7 @@ export class Menu extends MenuComponent
          this.menuelem.classList.value = this.rightclick;
          this.menuelem = this.body.appendChild(this.menuelem);
       } 
-
-      console.log(event);
-
+      
       this.target = this.menuelem;
       this.placeManagement(mouseevent);
 
@@ -65,8 +63,6 @@ export class Menu extends MenuComponent
 
    placeManagement(event:MouseEvent): void
    {
-    
-      
       let x:number = event.offsetX;
       let y:number = event.offsetY;
       let winWidth:number = window.innerWidth;
@@ -74,8 +70,6 @@ export class Menu extends MenuComponent
       let cmWidth:number = this.menuelem.offsetWidth;
       let cmHeight:number = this.menuelem.offsetHeight;
 
-
-   
       x = x > winWidth - cmWidth ? winWidth - cmWidth : x;
       y = y > winHeight - cmHeight ? winHeight - cmHeight : y;
 
