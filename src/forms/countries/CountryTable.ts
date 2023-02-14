@@ -19,7 +19,7 @@
   FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
-import { DatabaseTable } from "forms42core";
+import { DatabaseTable, LockMode } from "forms42core";
 import { FormsModule } from "../../FormsModule";
 
 export class CountryTable extends DatabaseTable
@@ -30,5 +30,6 @@ export class CountryTable extends DatabaseTable
 
 		this.sorting = "country_id";
 		this.primaryKey = "country_id";
+		this.rowlocking = LockMode.Pessimistic;
 	}
 }
