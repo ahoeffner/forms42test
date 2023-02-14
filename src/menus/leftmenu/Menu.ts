@@ -36,7 +36,7 @@ export class Menu extends MenuComponent
 		this.menuelem.classList.value = "left-menu-container";
 
 		this.container = document.getElementById("main-menu");
-
+		
 		this.menuelem = this.container.appendChild(this.menuelem);
 		this.target = this.menuelem;
 		super.show();

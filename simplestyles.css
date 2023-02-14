@@ -205,3 +205,8 @@ input[disabled=disabled]
 	user-select: none;
 	justify-content: center;
 }
+
+.page-footer-pos:hover .footer-tooltiptext-top
+{
+	visibility: visible !important;
+}

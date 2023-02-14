@@ -665,3 +665,8 @@ div[name="login"]
 {
 	margin:0 20px;
 }
+
+.page-footer-pos:hover .footer-tooltiptext-top
+{
+	visibility: visible !important;
+}
