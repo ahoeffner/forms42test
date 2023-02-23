@@ -6,6 +6,7 @@ filter force datatype ?
 setLastQuery
 close cursor when 2 lovs
 grep -iR "no available" ../core/src
+getRecord().getProps returns previous row
 
 *** Jonas ***
 
