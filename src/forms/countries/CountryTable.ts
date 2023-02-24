@@ -19,8 +19,8 @@
   FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
-import { DatabaseTable, LockMode } from "forms42core";
 import { FormsModule } from "../../FormsModule";
+import { DatabaseTable, LockMode } from "forms42core";
 
 export class CountryTable extends DatabaseTable
 {
