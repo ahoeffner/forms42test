@@ -57,6 +57,12 @@ export class Locations extends DatabaseTable
 
 export class CountryNameFilter extends Like
 {
+	constructor(column:string)
+	{
+		super(column);
+		this.setDataType("string");
+	}
+
 	public asSQL() : string
 	{
 		return("country_id in (select country_id from countries where country_name like :"+this.getBindValueName()+")");

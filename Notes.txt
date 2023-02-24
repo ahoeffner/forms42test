@@ -4,7 +4,6 @@ find ../core/src -name '*.ts' | xargs wc -l
 
 filter force datatype ?
 grep -iR "no available" ../core/src
-onRecord after query (set form query inst)
 
 
 *** Jonas ***
