@@ -3,10 +3,9 @@ Cyclic master detail
 find ../core/src -name '*.ts' | xargs wc -l
 
 filter force datatype ?
-setLastQuery
-close cursor when 2 lovs
 grep -iR "no available" ../core/src
-getRecord().getProps returns previous row
+onRecord after query (set form query inst)
+
 
 *** Jonas ***
 
