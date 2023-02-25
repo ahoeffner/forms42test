@@ -43,7 +43,7 @@ export class Departments extends Block
 		let location:string = null;
 
 		field = "manager";
-		if (this.getFieldNames().includes(field))
+		if (this.hasField(field))
 		{
 			id = this.getValue("manager_id");
 
@@ -54,7 +54,7 @@ export class Departments extends Block
 		}
 
 		field = "location";
-		if (this.getFieldNames().includes(field))
+		if (this.hasField(field))
 		{
 			id = this.getValue("loc_id");
 
@@ -80,7 +80,7 @@ export class Departments extends Block
 		{
 			manager = await EmployeeTable.getName(id);
 
-			if (this.getFieldNames().includes(field))
+			if (this.hasField(field))
 				this.setValue(field,manager);
 
 			if (manager == null && !this.queryMode())
@@ -91,7 +91,7 @@ export class Departments extends Block
 		}
 		else
 		{
-			if (this.getFieldNames().includes(field))
+			if (this.hasField(field))
 				this.setValue(field,manager);
 		}
 
@@ -111,7 +111,7 @@ export class Departments extends Block
 		{
 			location = await LocationTable.getLocation(id);
 
-			if (this.getFieldNames().includes(field))
+			if (this.hasField(field))
 				this.setValue(field,location);
 
 			if (location == null && !this.queryMode())
@@ -122,7 +122,7 @@ export class Departments extends Block
 		}
 		else
 		{
-			if (this.getFieldNames().includes(field))
+			if (this.hasField(field))
 				this.setValue(field,location);
 		}
 

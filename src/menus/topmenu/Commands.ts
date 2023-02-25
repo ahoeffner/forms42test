@@ -62,6 +62,8 @@ export class Commands extends StaticMenu
 				case "insert" 		: module.sendkey(KeyMap.insert);		break;
 				case "delete" 		: module.sendkey(KeyMap.delete);		break;
 				case "refresh" 	: module.sendkey(KeyMap.refresh);	break;
+				case "scrollup" 	: module.sendkey(KeyMap.pageup);		break;
+				case "scrolldown" : module.sendkey(KeyMap.pagedown);	break;
 			}
 		}
 
@@ -169,6 +171,18 @@ export class Commands extends StaticMenu
 							display: "Requery/Undo",
 							hinttext: "ctrl-u",
 							command: "record/refresh"
+						},
+						{
+							id: "scrollup",
+							display: "Scroll up",
+							hinttext: "shift up",
+							command: "record/scrollup"
+						},
+						{
+							id: "scrolldown",
+							display: "Scroll dowm",
+							hinttext: "shift down",
+							command: "record/scrolldown"
 						}
 					]
 				},

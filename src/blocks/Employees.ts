@@ -55,7 +55,7 @@ export class Employees extends Block
 
 		field = "job_title";
 
-		if (this.getFieldNames().includes(field))
+		if (this.hasField(field))
 		{
 			code = this.getValue("job_id");
 
@@ -67,7 +67,7 @@ export class Employees extends Block
 
 		field = "department_name";
 
-		if (this.getFieldNames().includes(field))
+		if (this.hasField(field))
 		{
 			code = this.getValue("department_id");
 
@@ -133,7 +133,7 @@ export class Employees extends Block
 
 		let title:string = await JobTable.getTitle(code);
 
-		if (this.getFieldNames().includes(field))
+		if (this.hasField(field))
 			this.setValue(field,title);
 
 		if (event.type == EventType.WhenValidateField && !this.queryMode())
@@ -160,7 +160,7 @@ export class Employees extends Block
 		if (code == null)
 			return(false);
 
-		if (this.getFieldNames().includes(field))
+		if (this.hasField(field))
 			this.setValue(field,title);
 
 		if (event.type == EventType.WhenValidateField && !this.queryMode())
