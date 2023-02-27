@@ -105,6 +105,10 @@ export class FormsModule extends FormsCoreModule
 
 		this.addEventListener(this.close,{type: EventType.Key, key: keymap.close});
 		this.addEventListener(this.login,{type: EventType.Key, key: keymap.login});
+
+		this.addEventListener(this.showTopMenu,{type: EventType.Key, key: keymap.topmenu});
+		this.addEventListener(this.showLeftMenu,{type: EventType.Key, key: keymap.leftmenu});
+
 		// this.addEventListener(this.rightmenu,{type: EventType.Mouse, mouse: MouseMap.contextmenu},);
 
 		this.addEventListener(this.open,
@@ -196,9 +200,22 @@ export class FormsModule extends FormsCoreModule
 		return(true);
 	}
 
+	public async showTopMenu() : Promise<boolean>
+	{
+		this.topmenu.focus();
+		return(true);
+	}
+
+	public async showLeftMenu() : Promise<boolean>
+	{
+		this.leftmenu.display();
+		this.leftmenu.focus();
+		return(true);
+	}
+
 	private async rightmenu(event: FormEvent) : Promise<boolean>
 	{
-		
+
 		let mouseevent: MouseEvent = this.getJSEvent() as MouseEvent;
 
 		new RightClick(mouseevent,event);
@@ -210,4 +227,6 @@ export class keymap extends KeyMap
 {
 	public static close:KeyMap = new KeyMap({key: 'w', ctrl: true});
 	public static login:KeyMap = new KeyMap({key: 'l', ctrl: true});
+	public static topmenu:KeyMap = new KeyMap({key: 'm', ctrl: true});
+	public static leftmenu:KeyMap = new KeyMap({key: 'f', ctrl: true});
 }

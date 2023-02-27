@@ -20,15 +20,12 @@
 */
 
 
-import { FormEvent, MenuComponent } from "forms42core";
 import { Context } from "./Context";
-
-
+import { FormEvent, MenuComponent } from "forms42core";
 
 
 export class Menu extends MenuComponent
 {
-
    private rightmenu = null;
 	private body:HTMLElement = null;
 	private menuelem:HTMLElement = null;
@@ -37,37 +34,31 @@ export class Menu extends MenuComponent
    {
       super(new Context());
 
-      // if(event.form)
-      // {
-      //    console.log(event.form);
-      //    console.log(event.form.getViewPort());
-      // }
- 
-
       this.options.skiproot = true;
       this.rightmenu = "rightmenu";
       this.body = document.querySelector("body");
-      
-      this.menuelem = this.body.querySelector("." + this.rightmenu) ?  
+
+      this.menuelem = this.body.querySelector("." + this.rightmenu) ?
       this.body.querySelector("." + this.rightmenu): document.createElement("div");
-      
+
       if (!this.menuelem.classList.contains(this.rightmenu))
       {
          this.menuelem.classList.value = this.rightmenu;
          this.menuelem = this.body.appendChild(this.menuelem);
-      } 
-      
+      }
+
       this.target = this.menuelem;
       this.placeManagement(mouseevent);
 
       super.show();
    }
 
-   hide(): void {
+   public async hide(): Promise<void>
+	{
       document.addEventListener("click", () => this.menuelem.style.display ="none");
    }
 
-   placeManagement(event:MouseEvent): void
+   private placeManagement(event:MouseEvent): void
    {
       let x:number = event.offsetX;
       let y:number = event.offsetY;
@@ -82,6 +73,5 @@ export class Menu extends MenuComponent
       this.menuelem.style.top = y + "px";
       this.menuelem.style.left = x + "px";
       this.menuelem.style.display = "block";
-
    }
 }

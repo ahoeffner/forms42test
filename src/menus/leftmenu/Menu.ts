@@ -36,18 +36,24 @@ export class Menu extends MenuComponent
 		this.menuelem.classList.value = "left-menu-container";
 
 		this.container = document.getElementById("main-menu");
-		
+
 		this.menuelem = this.container.appendChild(this.menuelem);
 		this.target = this.menuelem;
 		super.show();
 
 	}
 
-	public hide() : void
+	public async hide() : Promise<void>
 	{
 		this.displayed = false;
 		this.container.style.minWidth = "0px";
 		this.container.classList.remove("menu-left-open");
+	}
+
+	public display() : void
+	{
+		this.container.style.minWidth = "150px";
+		this.container.classList.add("menu-left-open");
 	}
 
 	public togglemenu() : void
