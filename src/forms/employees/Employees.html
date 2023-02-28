@@ -31,7 +31,7 @@
 				<tr>
 					<td>Salary</td>
 					<td>
-						<input name="salary" from="Employees" size="8" integer>
+						<input name="salary" from="Employees" size="8" integer>&euro;
 					</td>
 				</tr>
 				<tr>
@@ -44,7 +44,7 @@
 				<tr>
 					<td>Job</td>
 					<td style="display:inline-flex">
-						<input name="job_id" from="Employees" size="8" upper>
+						<input name="job_id" from="Employees" size="10" upper>
 						<input name="job_title" from="Employees" size="20" derived readonly query="false">
 						<span onclick="this.showListOfValues('Employees','job_id')">&#x2807;</span>
 					</td>
