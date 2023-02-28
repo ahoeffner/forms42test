@@ -45,7 +45,6 @@ export class Menu extends MenuComponent
 
 	public async hide() : Promise<void>
 	{
-		console.log("hide doesn't work")
 		this.displayed = false;
 		this.container.style.minWidth = "0px";
 		this.container.classList.remove("menu-left-open");
