@@ -31,14 +31,12 @@ export class Minimized implements EventListenerObject
     constructor()
     {
         this.list = document.getElementById("form-list");
-        // this.icon = this.list.querySelector("img");
         this.span = this.list.querySelector("#entry");
         this.span.remove();
     }
 
     public add(form:Form) : void
     {
-        // let icon:HTMLImageElement = this.icon.cloneNode() as HTMLImageElement;
         let span:HTMLElement = this.span.cloneNode(true) as HTMLElement;
 
         let icon:HTMLElement = span.children.item(0) as HTMLElement;
