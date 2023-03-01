@@ -77,8 +77,9 @@ export class BaseForm extends Form
 		}
 	}
 
-	public minimize() : void
+	public async minimize() : Promise<void>
 	{
+		if (!await this.validate()) return;
 		let forms:FormsModule = FormsModule.get() as FormsModule;
 		forms.list.add(this);
 		this.hide();

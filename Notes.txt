@@ -3,7 +3,6 @@ Cyclic master detail
 find ../core/src -name '*.ts' | xargs wc -l
 
 delete newly inserted goes to database though not posted
-canvas.activate should fire postform
 
 
 *** Jonas ***
