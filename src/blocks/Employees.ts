@@ -91,6 +91,12 @@ export class Employees extends Block
 
 		let limit:number[] = await JobTable.getSalaryLimit(code);
 
+		if (limit[0] != null)
+		{
+			this.setValid("salary",true);
+			this.setValid("job_id",true);
+		}
+
 		if (salary < limit[0]*0.75 || salary > 1.25*limit[1])
 		{
 			this.warning("Salary is out of range ("+(limit[0]*0.75)+" - "+(1.25*limit[1])+" ) ","Validate Salary");
@@ -129,7 +135,12 @@ export class Employees extends Block
 		let code:string = this.getValue("job_id");
 
 		if (code == null)
-			return(false);
+		{
+			if (this.hasField(field))
+				this.setValue(field,null);
+
+			return(true);
+		}
 
 		let title:string = await JobTable.getTitle(code);
 
@@ -155,10 +166,16 @@ export class Employees extends Block
 	{
 		let field:string = "department_name";
 		let code:string = this.getValue("department_id");
-		let title:string = await DepartmentTable.getTitle(code);
 
 		if (code == null)
-			return(false);
+		{
+			if (this.hasField(field))
+				this.setValue(field,null);
+
+			return(true);
+		}
+
+		let title:string = await DepartmentTable.getTitle(code);
 
 		if (this.hasField(field))
 			this.setValue(field,title);

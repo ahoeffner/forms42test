@@ -2,9 +2,7 @@ FilterEditor
 Cyclic master detail
 find ../core/src -name '*.ts' | xargs wc -l
 
-grep -iR "no available" ../core/src
-
-insert in employees need to mark field valid
+delete newly inserted goes to database though not posted
 canvas.activate should fire postform
 
 
