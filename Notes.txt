@@ -3,6 +3,8 @@ Cyclic master detail
 find ../core/src -name '*.ts' | xargs wc -l
 
 block.insertMode
+LOV lock screen
+Record toString()
 wasCalled must hold the form
 record set/remove Attribute setClass
 delete newly inserted goes to database though not posted
