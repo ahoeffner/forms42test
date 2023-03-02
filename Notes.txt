@@ -2,6 +2,7 @@ FilterEditor
 Cyclic master detail
 find ../core/src -name '*.ts' | xargs wc -l
 
+record set/remove Attribute setClass
 delete newly inserted goes to database though not posted
 
 
