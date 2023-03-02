@@ -4,6 +4,7 @@ find ../core/src -name '*.ts' | xargs wc -l
 
 block.insertMode
 LOV lock screen
+LOV setFilter/deleteFilter
 Record toString()
 wasCalled must hold the form
 record set/remove Attribute setClass
