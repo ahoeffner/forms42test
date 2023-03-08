@@ -2,13 +2,13 @@ FilterEditor
 Cyclic master detail
 find ../core/src -name '*.ts' | xargs wc -l
 
-block.insertMode
+undo/save -> still transaction
+
+insert="inherit"
+update="inherit"
+
+RecordStateIndicator
 LOV lock screen
-LOV setFilter/deleteFilter
-Record toString()
-wasCalled must hold the form
-record set/remove Attribute setClass
-delete newly inserted goes to database though not posted
 
 
 *** Jonas ***

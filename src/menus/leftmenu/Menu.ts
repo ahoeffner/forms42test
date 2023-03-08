@@ -40,11 +40,11 @@ export class Menu extends MenuComponent
 		this.menuelem = this.container.appendChild(this.menuelem);
 		this.target = this.menuelem;
 		super.show();
-
 	}
 
 	public async hide() : Promise<void>
 	{
+		super.hide();
 		this.displayed = false;
 		this.container.style.minWidth = "0px";
 		this.container.classList.remove("menu-left-open");

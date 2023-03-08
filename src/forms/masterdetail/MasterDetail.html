@@ -64,10 +64,10 @@
 			<tr class="row" foreach="row in 0..4">
 				<td class="indicator"><span from="Employees" row="$row" type="row-indicator"></span></td>
 
-				<td><input id="fn$row" 	name="first_name" 	from="Employees" row="$row" size="10" initcap></td>
-				<td><input id="ln$row" 	name="last_name" 		from="Employees" row="$row" size="10" initcap></td>
-				<td><input id="em$row" 	name="email" 			from="Employees" row="$row" size="32"></td>
-				<td><input id="ph$row" 	name="phone_number" 	from="Employees" row="$row" size="12"></td>
+				<td><input id="fn$row" 	name="first_name" 	from="Employees" row="$row" size="10" initcap required></td>
+				<td><input id="ln$row" 	name="last_name" 		from="Employees" row="$row" size="10" initcap required></td>
+				<td><input id="em$row" 	name="email" 			from="Employees" row="$row" size="32" required></td>
+				<td><input id="ph$row" 	name="phone_number" 	from="Employees" row="$row" size="12" required></td>
 			</tr>
 		</table>
 	</div>
@@ -78,13 +78,13 @@
 			<tr>
 				<td>Salary</td>
 				<td>
-					<input name="salary" from="Employees" size="8" integer>&euro;
+					<input name="salary" from="Employees" size="8" required integer>&euro;
 				</td>
 			</tr>
 			<tr>
 				<td>Hire Date</td>
 				<td>
-					<input name="hire_date" from="Employees" date>
+					<input name="hire_date" from="Employees" date required>
 					<span onclick="this.showDatePicker('Employees','hire_date')">&#128197;</span>
 				</td>
 			</tr>
