@@ -2,7 +2,8 @@ FilterEditor
 Cyclic master detail
 find ../core/src -name '*.ts' | xargs wc -l
 
-undo/save -> still transaction
+Date invalid during typing
+Only move to "called" if previously match
 
 insert="inherit"
 update="inherit"
@@ -16,6 +17,7 @@ LOV lock screen
 LeftMenu hide doesn't work
 kigge på text typer.
 kigge på rightclick.
+css is fucked up
 
 *************
 
