@@ -3,13 +3,11 @@ Cyclic master detail
 find ../core/src -name '*.ts' | xargs wc -l
 
 Date invalid during typing
-Only move to "called" if previously match
 
 insert="inherit"
 update="inherit"
 
 RecordStateIndicator
-LOV lock screen
 
 
 *** Jonas ***
