@@ -7,10 +7,10 @@ Custom tags:
 include  			: include html
 
 
-Custom types:
+Custom types for "from=" :
 
-row-indicator		: set class row-indicator
-filter-indicator	: set class filter-indicator
+row-indicator		: set class row-indicator for current row
+filter-indicator	: set class filter-indicator for blocks with search-constraints
 
 
 
