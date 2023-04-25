@@ -1,0 +1,45 @@
+Field:
+
+<tag name="column" from="datasource"></tag>
+
+Custom tags:
+
+include  			: include html
+
+
+Custom types:
+
+row-indicator		: set class row-indicator
+filter-indicator	: set class filter-indicator
+
+
+
+Custom attributes:
+
+foreach  : loop
+
+
+hidden   : used in navigation
+required : used when validating
+readonly : also works with select, radio and checkbox
+enabled  : used in navigation
+
+row      : binds to displayed row
+query    : whether to be used with QBE
+insert	 : open for input in insert mode
+derived  : no binding to datasource
+advquery : allow advanced query
+mapper   : use two-way mapper on values
+
+date     : custom date-field
+datetime : custom datetime-field
+
+integer  : allow only integer values (QBE)
+decimal  : allow only decimal values (QBE)
+boolean  : allow only boolean values (QBE)
+
+upper    : uppercase, can be done in css as well
+lower    : lowercase, can be done in css as well
+initcap  : initcap like in names Alex Høffner
+
+format   : special field defined by regexp 
