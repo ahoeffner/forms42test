@@ -42,7 +42,7 @@ import { AppHeader } from './tags/AppHeader';
 import { LinkMapper } from './fields/LinkMapper';
 import { TrueFalseMapper } from './fields/TrueFalseMapper';
 
-import { FormsPathMapping, FormsModule as FormsCoreModule, KeyMap, FormEvent, EventType, DatabaseConnection as Connection, FormProperties, UsernamePassword, Form, AlertForm } from 'forms42core';
+import { KeyMapPage, FormsPathMapping, FormsModule as FormsCoreModule, KeyMap, FormEvent, EventType, DatabaseConnection as Connection, FormProperties, UsernamePassword, Form, AlertForm } from 'forms42core';
 
 @FormsPathMapping(
 	[
@@ -102,6 +102,11 @@ export class FormsModule extends FormsCoreModule
 		Connection.CONNTIMEOUT = 120;
 
 		FormsModule.DATABASE = new Connection("http://localhost:9002");
+
+		
+		let infomation:HTMLElement = document.querySelector(".infomation");
+
+		infomation.appendChild(KeyMapPage.show());
 
 		this.addEventListener(this.close,{type: EventType.Key, key: keymap.close});
 		this.addEventListener(this.login,{type: EventType.Key, key: keymap.login});
