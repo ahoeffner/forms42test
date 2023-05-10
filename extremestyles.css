@@ -643,7 +643,7 @@ div[name="date-picker"]
 	display:flex;
 	position: relative;
 }
-.topbar .menu-items .menu-items .link-item .hint-text
+.topbar .top-menu li[type="menu"] li[type="link"] div
 {
 	width:30px;
 	right: -40px;
@@ -654,7 +654,7 @@ div[name="date-picker"]
 	background-color: black;
 }
 
-.topbar .menu-items .menu-items .link-item .hint-text:after
+.topbar .top-menu li[type="menu"] li[type="link"] div:after
 {
 	top: 30%;
 	right: 100%;
@@ -667,7 +667,7 @@ div[name="date-picker"]
 	border-color: transparent black transparent transparent;
 }
 
-.topbar .menu-items .menu-items .link-item:hover .hint-text
+.topbar .top-menu li[type="menu"] li[type="link"]:hover div
 {
 	visibility: visible;
 }
