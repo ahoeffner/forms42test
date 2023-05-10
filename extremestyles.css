@@ -189,6 +189,7 @@ tr td span:hover
 	padding:0px;
 	display:table;
 	font-size:15px;
+	margin-top:0px;
 	margin-left:5px;
 	list-style: none;
 	transition: 0.3s;
@@ -231,7 +232,6 @@ tr td span:hover
 	background-color:#424549;
 	border-left: 3px solid #6060F0;
 }
-
 
 th label[draggable="true"]
 {
