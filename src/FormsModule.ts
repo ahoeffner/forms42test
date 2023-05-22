@@ -233,7 +233,6 @@ export class FormsModule extends FormsCoreModule
 	private async rightmenu() : Promise<boolean>
 	{
 		let mouseevent: MouseEvent = this.getJSEvent() as MouseEvent;
-		console.log("rightmenu")
 		new RightClick(mouseevent);
 		return(true);
 	}
