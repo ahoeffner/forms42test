@@ -2,10 +2,7 @@ FilterEditor
 Cyclic master detail
 find ../core/src -name '*.ts' | xargs wc -l
 
-top div i page
 table optional in DatabaseTable
-WhenValidatorRecord after form close
-
 
 insert="inherit"
 update="inherit"
