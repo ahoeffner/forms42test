@@ -54,6 +54,29 @@ export class Menu extends MenuComponent
       super.show();
    }
 
+   private placeManagement(event:MouseEvent): void
+   {
+      let x:number = event.offsetX;
+      let y:number = event.offsetY;
+      let winWidth:number = window.innerWidth;
+      let winHeight:number= window.innerHeight;
+      let cmWidth:number = this.menuelem.offsetWidth;
+      let cmHeight:number = this.menuelem.offsetHeight;
+
+      x = x > winWidth - cmWidth ? winWidth - cmWidth : x;
+      y = y > winHeight - cmHeight ? winHeight - cmHeight : y;
+
+      this.menuelem.style.top = y + "px";
+      this.menuelem.style.left = x + "px";
+      this.menuelem.style.display = "block";
+   }
+
+   public async hide(): Promise<void>
+	{
+
+      document.addEventListener("click", () => this.menuelem.style.display ="none");
+   }
+
    @formevent({type: EventType.Connect})
 	public async onConnect() : Promise<boolean>
 	{
@@ -200,25 +223,4 @@ export class Menu extends MenuComponent
 		this.show();
 		return(true);
 	}
-
-   public async hide(): Promise<void>
-	{
-   }
-
-   private placeManagement(event:MouseEvent): void
-   {
-      let x:number = event.offsetX;
-      let y:number = event.offsetY;
-      let winWidth:number = window.innerWidth;
-      let winHeight:number= window.innerHeight;
-      let cmWidth:number = this.menuelem.offsetWidth;
-      let cmHeight:number = this.menuelem.offsetHeight;
-
-      x = x > winWidth - cmWidth ? winWidth - cmWidth : x;
-      y = y > winHeight - cmHeight ? winHeight - cmHeight : y;
-
-      this.menuelem.style.top = y + "px";
-      this.menuelem.style.left = x + "px";
-      this.menuelem.style.display = "block";
-   }
 }
