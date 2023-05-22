@@ -1002,12 +1002,12 @@ div[name="buttonarea"]
 .rightmenu menu[name="right-click"] li[type="menu"]
 {
 	width:100%;
+	margin:0px;
    height: 28px;
    display:flex;
    font-size: 15px;
 	cursor: default;
 	user-select: none;
-	margin-bottom: 2px;
 	position: relative;
 	white-space: nowrap;
    align-items: center;
@@ -1016,9 +1016,10 @@ div[name="buttonarea"]
 .rightmenu menu[name="right-click"] li[type="menu"] a
 {
 	width:100%;
+	height: 100%;
 	display:flex;
-	align-items: center;
 	padding: 0px 10px;
+	align-items: center;
 	justify-content: space-between;
 }
 
@@ -1067,12 +1068,12 @@ div[name="buttonarea"]
 .rightmenu menu[name="right-click"] li[type="menu"] menu[name="right-click"] li
 {
 	width:100%;
+	margin:0px;
    height: 28px;
    display:flex;
    font-size: 15px;
 	cursor: default;
 	user-select: none;
-	margin-bottom: 2px;
 	position: relative;
 	white-space: nowrap;
    align-items: center;
@@ -1081,6 +1082,7 @@ div[name="buttonarea"]
 .rightmenu menu[name="right-click"] li[type="menu"] menu[name="right-click"] li a
 {
 	width:100%;
+	height: 100%;
 	display:flex;
 	align-items: center;
 	padding: 0 5px 0 10px;
