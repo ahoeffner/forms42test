@@ -42,7 +42,7 @@ div[name="close"]:hover,
 	display: inline-grid;
 	grid-auto-flow: column;
 	background-color: #36393e;
-	grid-template-columns: 40px 1fr 60px;
+	grid-template-columns: 40px 1fr 50px;
 }
 
 .form-area
@@ -1117,8 +1117,9 @@ div[name="buttonarea"]
 {
 	width:30px;
 	height: 30px;
+	margin-top:5px;
 	cursor: default;
-	background-size: 30px;
+	background-size: 25px;
 	background-repeat: no-repeat;
 	background-image: url(../../images/info.png);
 	filter: invert(100%) sepia(6%) saturate(0%) hue-rotate(3deg) brightness(108%) contrast(105%);
