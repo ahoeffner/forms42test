@@ -15,8 +15,6 @@ RecordStateIndicator
 
 *** Jonas ***
 
-LeftMenu hide doesn't work
-kigge på text typer.
 kigge på rightclick.
 css is fucked up
 
