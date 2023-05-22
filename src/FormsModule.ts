@@ -230,12 +230,12 @@ export class FormsModule extends FormsCoreModule
 		return(true);
 	}
 
-	private async rightmenu(event: FormEvent) : Promise<boolean>
+	private async rightmenu() : Promise<boolean>
 	{
 
 		let mouseevent: MouseEvent = this.getJSEvent() as MouseEvent;
 
-		new RightClick(mouseevent,event);
+		new RightClick(mouseevent);
 		return(true);
 	}
 }
