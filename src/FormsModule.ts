@@ -103,7 +103,7 @@ export class FormsModule extends FormsCoreModule
 
 		FormsModule.DATABASE = new Connection("http://localhost:9002");
 
-		
+
 		let infomation:HTMLElement = document.querySelector(".infomation");
 
 		infomation.appendChild(KeyMapPage.show());

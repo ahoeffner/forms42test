@@ -2,7 +2,10 @@ FilterEditor
 Cyclic master detail
 find ../core/src -name '*.ts' | xargs wc -l
 
-Date invalid during typing
+top div i page
+table optional in DatabaseTable
+WhenValidatorRecord after form close
+
 
 insert="inherit"
 update="inherit"

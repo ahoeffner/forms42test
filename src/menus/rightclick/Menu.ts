@@ -32,7 +32,7 @@ export class Menu extends MenuComponent
 
    constructor(mouseevent:MouseEvent,event:FormEvent)
    {
-      super(new Context());
+      super("right-click",new Context());
 
       this.options.skiproot = true;
       this.rightmenu = "rightmenu";
