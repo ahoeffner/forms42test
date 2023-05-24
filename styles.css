@@ -105,55 +105,56 @@ tr td span:hover
 	background: transparent;
 }
 
-.menu-item
+.left-menu-container menu[name="left-menu"]
 {
-	font-size: 13px;
+	width:100%;
+	padding:0px;
+	display:table;
+	margin-top:8px;
+	font-size:17px;
+	margin-top:0px;
+	margin-left:0px;
 	transition: 0.3s;
-	margin-top: 15px;
-	user-select: none;
-	margin-left: -15px;
-	background: white;
-	display: inline-block;
+	list-style: none;
+	transition: 0.3s;
 }
 
-.link-item
-{
-	display: block;
-	font-size: 13px;
-	margin-top: 15px;
-	user-select: none;
-	margin-left: -15px;
-}
-
-.link-item
+.left-menu-container li[type="menu"]
 {
 	display:flex;
+	display: block;
+	font-weight: 400;
+	margin-top: 15px;
 	user-select: none;
 }
 
-.left-menu-container .menu-items
+
+.left-menu-container menu[name="left-menu"] li a
 {
-	transition: 0.3s;
-	margin-left:10px;
-	padding-left:10px;
+	padding:5px;
 }
 
-.left-menu-container  .menu-item:before
+.left-menu-container  li[type="menu"]:before
 {
 	color: black;
-	font-size: 13px;
 	content: '\25B6';
+	margin-left:5px;
 	margin-right: 5px;
 	display:inline-block;
 }
 
-.left-menu-container  .link-item:before
+.left-menu-container  li[type="link"]
+{
+	list-style: none;
+}
+
+
+.left-menu-container  li[type="link"]:before
 {
 	color: black;
-	font-size: 13px;
 	content: '\25CF';
 	margin-right: 5px;
-	margin-left: 10px;
+	margin-left: 20px;
 	display:inline-block;
 }
 
