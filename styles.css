@@ -129,10 +129,10 @@ tr td span:hover
 }
 
 
-.left-menu-container menu[name="left-menu"] li a
+/* .left-menu-container menu[name="left-menu"] li a
 {
 	padding:5px;
-}
+} */
 
 .left-menu-container  li[type="menu"]:before
 {
@@ -145,6 +145,7 @@ tr td span:hover
 
 .left-menu-container  li[type="link"]
 {
+	padding:5px 3px;
 	list-style: none;
 }
 
