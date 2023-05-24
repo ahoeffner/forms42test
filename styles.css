@@ -128,12 +128,6 @@ tr td span:hover
 	user-select: none;
 }
 
-
-/* .left-menu-container menu[name="left-menu"] li a
-{
-	padding:5px;
-} */
-
 .left-menu-container  li[type="menu"]:before
 {
 	color: black;
