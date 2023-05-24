@@ -210,3 +210,8 @@ input[disabled=disabled]
 {
 	visibility: visible !important;
 }
+
+.infomation	.infommationKeyMap
+{
+	display:none;
+}
