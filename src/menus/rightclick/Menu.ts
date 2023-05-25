@@ -30,7 +30,6 @@ export class Menu extends MenuComponent
    private rightmenu = null;
 	private body:HTMLElement = null;
 	private menuelem:HTMLElement = null;
-
    constructor(mouseevent:MouseEvent)
    {
       super("right-click",new Context());
@@ -46,6 +45,7 @@ export class Menu extends MenuComponent
       {
          this.menuelem.classList.value = this.rightmenu;
          this.menuelem = this.body.appendChild(this.menuelem);
+			
       }
 
       this.target = this.menuelem;
@@ -56,12 +56,21 @@ export class Menu extends MenuComponent
 
    private placeManagement(event:MouseEvent): void
    {
+		
       let x:number = event.offsetX;
       let y:number = event.offsetY;
       let winWidth:number = window.innerWidth;
       let winHeight:number= window.innerHeight;
       let cmWidth:number = this.menuelem.offsetWidth;
       let cmHeight:number = this.menuelem.offsetHeight;
+		
+		// if ( x > (winWidth - cmWidth - shareMenu.offsetWidth))
+		// shareMenu.style.left = "-200px";
+		// else
+		// {
+		// 	shareMenu.style.left = "";
+		// 	shareMenu.style.right = "-200px";
+		// }
 
       x = x > winWidth - cmWidth ? winWidth - cmWidth : x;
       y = y > winHeight - cmHeight ? winHeight - cmHeight : y;
@@ -73,8 +82,18 @@ export class Menu extends MenuComponent
 
    public async hide(): Promise<void>
 	{
+		this.body.addEventListener("click", (event:MouseEvent) => {
 
-      document.addEventListener("click", () => this.menuelem.style.display ="none");
+			let target = event.target as HTMLElement;
+			var parent:Element = target.parentElement.parentElement;
+
+			let menu = document.querySelector("menu[name='right-click']");
+			console.log(parent)
+			console.log(menu)
+			if(menu == parent){}
+			else this.menuelem.style.display ="none"
+		
+		})	
    }
 
    @formevent({type: EventType.Connect})
