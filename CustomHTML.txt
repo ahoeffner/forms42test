@@ -22,7 +22,7 @@ foreach  : loop
 hidden   : used in navigation
 required : used when validating
 readonly : also works with select, radio and checkbox
-disabled  : used in navigation
+disabled : used in navigation
 
 row      : binds to displayed row
 query    : whether to be used with QBE
