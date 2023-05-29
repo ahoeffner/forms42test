@@ -1,1 +1,1 @@
-cd ../core; npm run build; cd ../demo; npm run build;
+ECHO cd ../core; npm run build; cd ../demo; npm run build;

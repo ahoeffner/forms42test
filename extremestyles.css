@@ -152,15 +152,18 @@ tr td span:hover
 	transition: all 5s ease left;
 }
 
-menu[name="left-menu"]
-{
-	margin-top:8px;
-	transition: 0.3s;
-}
-
 .left-menu-container menu[name="left-menu"]
 {
 	width:100%;
+	margin-top:8px;
+	padding:0px;
+	display:table;
+	font-size:15px;
+	margin-top:0px;
+	margin-left:5px;
+	transition: 0.3s;
+	list-style: none;
+	transition: 0.3s;
 }
 
 .left-menu-container menu[name="left-menu"] a
@@ -172,17 +175,6 @@ menu[name="left-menu"]
 	border-left: 3px solid #36393e;
 }
 
-.left-menu-container menu[name="left-menu"]
-{
-	width: 100%;
-	padding:0px;
-	display:table;
-	font-size:15px;
-	margin-top:0px;
-	margin-left:5px;
-	list-style: none;
-	transition: 0.3s;
-}
 
 .left-menu-container menu[name="left-menu"] li a
 {
@@ -211,6 +203,7 @@ menu[name="left-menu"]
 {
 	margin-left:17px;
 }
+
 .left-menu-container  .menu[name="left-menu"]:not(:first-child)::before
 {
 	margin-left: 10px;
