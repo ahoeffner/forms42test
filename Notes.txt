@@ -9,6 +9,10 @@ update="inherit"
 
 RecordStateIndicator
 
+if (before)	this.view.refresh(record);
+else success = await this.view.nextrecord();
+
+Make sure row is clean after delete
 
 *** Jonas ***
 
