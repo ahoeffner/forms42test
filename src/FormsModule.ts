@@ -200,7 +200,7 @@ export class FormsModule extends FormsCoreModule
 		{
 			if (!await FormsModule.DATABASE.connect(form.username,form.password))
 			{
-				await FormsModule.DATABASE.sleep(2000);
+				await FormsModule.sleep(2000);
 
 				let forms:Form[] = this.getRunningForms();
 
