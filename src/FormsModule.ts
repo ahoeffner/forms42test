@@ -19,6 +19,7 @@
   FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
+import { BaseForm } from './BaseForm';
 import { Minimized } from './Minimized';
 
 import { FormHeader } from './fragments/FormHeader';
@@ -212,6 +213,7 @@ export class FormsModule extends FormsCoreModule
 
 				await this.login();
 			}
+			BaseForm.connectNeddle();
 		}
 
 		return(true);

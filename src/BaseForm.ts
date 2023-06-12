@@ -49,6 +49,7 @@ export class BaseForm extends Form
 		let posX:number = off*px;
 		let posY:number = off*px + 20;
 
+		BaseForm.connectNeddle();
 		this.getView().style.top = posY + "px";
 		this.getView().style.left = posX + "px";
 
@@ -90,4 +91,30 @@ export class BaseForm extends Form
 		let header:HTMLElement = this.getView().querySelector("[name='title']");
 		header?.appendChild(document.createTextNode(title));
 	}
+
+	public static async connectNeddle() : Promise<boolean>
+	{
+		let connect:boolean = FormsModule.DATABASE.connected();
+		let needle:NodeListOf<HTMLElement> = document.querySelectorAll(".needle");
+
+		if(needle.length == 0)
+			return(true);
+
+		for (let i = 0; i < needle.length; i++) 
+		{
+				if(connect)
+				{
+					needle[i].classList.add("green");
+					needle[i].classList.remove("red");
+				}
+				else 
+				{
+					needle[i].classList.add("red");
+					needle[i].classList.remove("green");
+
+				}
+		}
+		return(true);
+	}
+
 }
