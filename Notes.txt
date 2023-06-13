@@ -15,7 +15,7 @@ Framework 436, queue event
 *** Jonas ***
 
 kigge på rightclick.
-css is fucked up
+Alert cannot resize horizontally
 
 *************
 
