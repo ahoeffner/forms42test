@@ -211,7 +211,7 @@ export class FormsModule extends FormsCoreModule
 						await forms[i].close(true);
 				}
 
-				setTimeout(() => {this.login();},100);
+				this.login();
 				return(false);
 			}
 
