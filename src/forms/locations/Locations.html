@@ -5,12 +5,14 @@
 		<div class="needle red"></div>
 		<table>
 			<tr>
+				<th></th>
 				<th>City</th>
 				<th>Street</th>
 				<th>Zip</th>
 				<th colspan="2">Country</th>
 			</tr>
 			<tr class="row" foreach="row in 1..5">
+				<td class="indicator"><span from="locations" row="$row" type="row-indicator"></span></td>
 				<td><input name="city" from="locations" row="$row" size="10"></td>
 				<td><input name="street_address" from="locations" row="$row" size="25"></td>
 				<td><input name="postal_code" from="locations" row="$row" size="5"></td>
