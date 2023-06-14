@@ -211,7 +211,8 @@ export class FormsModule extends FormsCoreModule
 						await forms[i].close(true);
 				}
 
-				await this.login();
+				setTimeout(() => {this.login();},100);
+				return(false);
 			}
 
 			BaseForm.connectNeddle();
