@@ -2,14 +2,11 @@ FilterEditor
 Cyclic master detail
 find ../core/src -name '*.ts' | xargs wc -l
 
-table optional in DatabaseTable
-
 insert="inherit"
 update="inherit"
 
+Disconnect trigger from keepalive
 RecordStateIndicator
-
-Framework 436, queue event
 
 
 *** Jonas ***

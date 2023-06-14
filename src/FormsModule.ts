@@ -213,6 +213,7 @@ export class FormsModule extends FormsCoreModule
 
 				await this.login();
 			}
+
 			BaseForm.connectNeddle();
 		}
 
