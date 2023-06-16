@@ -171,6 +171,26 @@ export class Commands extends StaticMenu
 									display: "Above",
 									hinttext: "Shift-F5",
 									command: "record/insert"
+								},
+								{
+									id: "test",
+									display: "test",
+									hinttext: "sub2",
+									entries:
+									[
+										{
+											id: "test1",
+											display: "test1",
+											hinttext: "F5",
+											command: "record/insert"
+										},
+										{
+											id: "test2",
+											display: "test2",
+											hinttext: "Shift-F5",
+											command: "record/insert"
+										}
+									]
 								}
 							]
 						},
