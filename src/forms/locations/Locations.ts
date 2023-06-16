@@ -79,4 +79,11 @@ export class Locations extends BaseForm
 
 		return(true);
 	}
+
+	public async listCountries(row:number) : Promise<boolean>
+	{
+		console.log("row: "+row);
+		this.showListOfValues("locations","country_id");
+		return(true);
+	}
 }
