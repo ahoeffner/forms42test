@@ -152,7 +152,7 @@ tr td span:hover
 	transition: all 5s ease left;
 }
 
-.left-menu-container menu[name="left-menu"]
+.left-menu-container .left-menu
 {
 	width:100%;
 	margin-top:8px;
@@ -166,7 +166,7 @@ tr td span:hover
 	transition: 0.3s;
 }
 
-.left-menu-container menu[name="left-menu"] a
+.left-menu-container .left-menu a
 {
 	width:100%;
 	padding-left:5px;
@@ -176,7 +176,7 @@ tr td span:hover
 }
 
 
-.left-menu-container menu[name="left-menu"] li a
+.left-menu-container .left-menu li a
 {
 	width:200px;
 	padding:5px 3px;
@@ -187,7 +187,7 @@ tr td span:hover
 	width:100%;
 }
 
-.left-menu-container menu[name="left-menu"] li[type="menu"]:before
+.left-menu-container .left-menu li[type="menu"]:before
 {
 	color: white;
 	font-size: 20px;
@@ -199,17 +199,22 @@ tr td span:hover
 	display:table-cell;
 }
 
-.left-menu-container menu[name="left-menu"] menu[name="left-menu"]
+.left-menu.level-2
+{
+	margin-left:18px;
+}
+
+.left-menu-container .left-menu.level-1
 {
 	margin-left:21px;
 }
 
-.left-menu-container  .menu[name="left-menu"]:not(:first-child)::before
+.left-menu-container  .left-menu:not(:first-child)::before
 {
 	margin-left: 10px;
 }
 
-.left-menu-container menu[name="left-menu"] a:hover
+.left-menu-container .left-menu a:hover
 {
 	background-color:#424549;
 	border-left: 3px solid #6060F0;
@@ -606,7 +611,7 @@ div[name="date-picker"]
 }
 
 .topbar .link-item,
-.topbar menu[name="top-menu"]
+.topbar .top-menu
 {
 	gap:10px;
 	margin:0;
@@ -625,9 +630,10 @@ div[name="date-picker"]
 	display:flex;
 	position: relative;
 }
-.topbar menu[name="top-menu"] li[type="menu"] li[type="link"] div
+.topbar .top-menu li[type="menu"] li[type="link"] div,
+.topbar  .top-menu li[type="menu"] li[type="menu"] div
 {
-	width:30px;
+	width:45px;
 	right: -40px;
 	padding: 5px;
 	position: absolute;
@@ -636,7 +642,10 @@ div[name="date-picker"]
 	background-color: black;
 }
 
-.topbar menu[name="top-menu"] li[type="menu"] li[type="link"] div:after
+.top-menu
+
+.topbar .top-menu li[type="menu"] li[type="link"] div:after,
+.topbar .top-menu li[type="menu"] li[type="menu"] div:after
 {
 	top: 30%;
 	right: 100%;
@@ -649,7 +658,8 @@ div[name="date-picker"]
 	border-color: transparent black transparent transparent;
 }
 
-.topbar menu[name="top-menu"] li[type="menu"] li[type="link"]:hover div
+.topbar .top-menu li[type="menu"] li[type="link"]:hover div,
+.topbar .top-menu li[type="menu"] li[type="menu"]:hover div
 {
 	visibility: visible;
 }
@@ -659,7 +669,7 @@ div[name="date-picker"]
 	cursor: pointer;
 }
 
-.topbar menu[name="top-menu"] menu[name="top-menu"]
+.topbar .top-menu.level-1
 {
 	top: 27px;
 	left: 50%;
@@ -679,7 +689,7 @@ div[name="date-picker"]
 	color:#83868c;
 }
 
-.topbar menu[name="top-menu"] li li
+.topbar .top-menu li li
 {
 	margin:0;
 	padding:0;
@@ -692,28 +702,25 @@ div[name="date-picker"]
 
 }
 
-.topbar menu[name="top-menu"] li li:hover a:not([disabled])
+.topbar .top-menu li li:hover a:not([disabled])
 {
 	background-color: #6060F0;
 }
 
-.topbar menu[name="top-menu"] li li a
+.topbar .top-menu li li a
 {
 	width:100%;
 	height:100%;
 	padding: 10px 15px;
 }
 
-@keyframes moveInLeft
+.top-menu.level-2
 {
-	0%
-	{
-		transform:translateX(-200px);
-	}
-	100%
-	{
-		transform: translate(0);
-	}
+	left: 100%;
+	display: block;
+	position: absolute;
+	background: black;
+	background-color: #36393e;
 }
 
 label[for="username"],
@@ -886,16 +893,6 @@ div[name="lowerright"]
 	height: 25px;
 	margin:10px 10px 5px 10px;
 	padding-top:0px !important;
-}
-
-.toggle
-{
-	top:6px; 
-	height: 6px; 
-	position: absolute;
-	display: inline-block; 
-	border:solid 1.5px white !important;
-	width: 6px; border: 1.5px solid black; 
 }
 
 div[name="buttonarea"]

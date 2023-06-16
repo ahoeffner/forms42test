@@ -196,16 +196,6 @@ input[disabled=disabled]
 	border-bottom: 2px solid black;
 }
 
-.toggle
-{
-	top:6px; 
-	height: 6px; 
-	width: 6px; 
-	position: absolute;
-	display: inline-block; 
-	border: 1.5px solid black; 
-}
-
 .warning
 {
 	font-style: italic;
