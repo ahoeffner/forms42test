@@ -658,8 +658,8 @@ div[name="date-picker"]
 	border-color: transparent black transparent transparent;
 }
 
-.topbar .top-menu li[type="menu"] li[type="link"]:hover div,
-.topbar .top-menu li[type="menu"] li[type="menu"]:hover div
+.topbar .top-menu li[type="menu"] li[type="link"] a:hover ~ div,
+.topbar .top-menu li[type="menu"] li[type="menu"] a:hover ~ div
 {
 	visibility: visible;
 }
@@ -707,6 +707,7 @@ div[name="date-picker"]
 	background-color: #6060F0;
 }
 
+
 .topbar .top-menu li li a
 {
 	width:100%;
@@ -714,13 +715,27 @@ div[name="date-picker"]
 	padding: 10px 15px;
 }
 
-.top-menu.level-2
+.top-menu.level-2,
+.top-menu.level-3
 {
+	padding:0;
 	left: 100%;
+	z-index:-1;
 	display: block;
 	position: absolute;
-	background: black;
 	background-color: #36393e;
+}
+
+.top-menu.level-2 li,
+.top-menu.level-3 li
+{
+	padding:0;
+}
+
+.top-menu.level-2 li a,
+.top-menu.level-3 li a
+{
+	padding:10px 25px !important;
 }
 
 label[for="username"],
