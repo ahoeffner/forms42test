@@ -8,6 +8,10 @@ update="inherit"
 Disconnect trigger from keepalive
 RecordStateIndicator
 
+goRow
+Loading Running cmd, stop when failed.
+Propagate rightclick
+
 
 *** Jonas ***
 
