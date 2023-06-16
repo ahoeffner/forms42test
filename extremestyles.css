@@ -702,7 +702,7 @@ div[name="date-picker"]
 
 }
 
-.topbar .top-menu li li:hover a:not([disabled])
+.topbar .top-menu li li a:not([disabled]):hover
 {
 	background-color: #6060F0;
 }
