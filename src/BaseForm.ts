@@ -59,10 +59,19 @@ export class BaseForm extends Form
 
 	public toggle() : void
 	{
+
+		let window:HTMLElement = this.getView();
+		let toggle:HTMLElement = window.querySelector(".view_toggle");
+		
+		toggle.innerHTML = "";
+
 		if (this.view == null)
 		{
 			this.view = this.getViewPort();
 			let avail:View = this.getParentViewPort();
+
+			
+			toggle.innerHTML = "&#10697;" 
 
 			avail.x = 0;
 			avail.y = 0;
@@ -73,6 +82,11 @@ export class BaseForm extends Form
 		}
 		else
 		{
+			let div:HTMLElement = document.createElement("div");
+
+			div.classList.add("toggle");
+			
+			toggle.appendChild(div);
 			this.setViewPort(this.view);
 			this.view = null;
 		}
