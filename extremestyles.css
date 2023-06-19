@@ -630,8 +630,9 @@ div[name="date-picker"]
 	display:flex;
 	position: relative;
 }
+
 .topbar .top-menu li[type="menu"] li[type="link"] div,
-.topbar  .top-menu li[type="menu"] li[type="menu"] div
+.topbar .top-menu li[type="menu"] li[type="menu"] div
 {
 	width:45px;
 	right: -40px;
@@ -641,8 +642,6 @@ div[name="date-picker"]
 	visibility: hidden;
 	background-color: black;
 }
-
-.top-menu
 
 .topbar .top-menu li[type="menu"] li[type="link"] div:after,
 .topbar .top-menu li[type="menu"] li[type="menu"] div:after
@@ -664,10 +663,24 @@ div[name="date-picker"]
 	visibility: visible;
 }
 
-.topbar menu[name="top-menu"] a:not([disabled])
+.topbar .top-menu  a:not([disabled])
 {
 	cursor: pointer;
 }
+
+
+.topbar .top-menu.level-1 li[type="menu"] a
+{
+	display:flex;
+}
+
+.topbar .top-menu.level-1 li[type="menu"] a:after
+{
+	display:flex;	
+	color:white;
+	content: "\203A";
+}
+
 
 .topbar .top-menu.level-1
 {
