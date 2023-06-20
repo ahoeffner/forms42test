@@ -5,9 +5,12 @@ find ../core/src -name '*.ts' | xargs wc -l
 insert="inherit"
 update="inherit"
 
+Menu options
+
 Disconnect trigger from keepalive
 RecordStateIndicator
 
+RestDB start from the right
 goRow
 Loading Running cmd, stop when failed.
 Propagate rightclick
