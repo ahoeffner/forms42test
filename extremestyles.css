@@ -51,7 +51,7 @@ div[name="close"]:hover,
 	background-size: cover;
 	backface-visibility: hidden;
 	background-position: bottom;
-	background-image:linear-gradient(to right bottom, rgba(97, 112, 227, 0.8),rgba(100, 101, 179, 0.8)) , url(https://nextmapping.com/wp-content/uploads/2019/10/FutureisnowIstockphoto.jpg);
+	background-image:linear-gradient(to right bottom, rgba(97, 112, 227, 0.8),rgba(100, 101, 179, 0.8)) , url(images/background.jpg);
 }
 
 .canvas
@@ -218,6 +218,11 @@ tr td span:hover
 {
 	background-color:#424549;
 	border-left: 3px solid #6060F0;
+}
+
+.left-menu-container .left-menu a:after:hover
+{
+	border-right:25px solid red
 }
 
 th label[draggable="true"]
@@ -483,7 +488,7 @@ div.modal
    background-size: 20px;
 	transition: all 0.18s ease;
 	background-repeat: no-repeat;
-	background-image: url('images/icons8-info-50.png');
+	background-image: url(images/icons8-info-50.png);
 	filter: invert(98%) sepia(100%) saturate(0%) hue-rotate(23deg) brightness(105%) contrast(101%);
 }
 
@@ -630,8 +635,9 @@ div[name="date-picker"]
 	display:flex;
 	position: relative;
 }
+
 .topbar .top-menu li[type="menu"] li[type="link"] div,
-.topbar  .top-menu li[type="menu"] li[type="menu"] div
+.topbar .top-menu li[type="menu"] li[type="menu"] div
 {
 	width:45px;
 	right: -40px;
@@ -641,8 +647,6 @@ div[name="date-picker"]
 	visibility: hidden;
 	background-color: black;
 }
-
-.top-menu
 
 .topbar .top-menu li[type="menu"] li[type="link"] div:after,
 .topbar .top-menu li[type="menu"] li[type="menu"] div:after
@@ -664,10 +668,24 @@ div[name="date-picker"]
 	visibility: visible;
 }
 
-.topbar menu[name="top-menu"] a:not([disabled])
+.topbar .top-menu  a:not([disabled])
 {
 	cursor: pointer;
 }
+
+
+.topbar .top-menu.level-1 li[type="menu"] a
+{
+	display:flex;
+}
+
+.topbar .top-menu.level-1 li[type="menu"] a:after
+{
+	display:flex;	
+	color:white;
+	content: "\203A";
+}
+
 
 .topbar .top-menu.level-1
 {
@@ -814,7 +832,7 @@ div[name="loginimage"]
 	background-size: contain;
 	background-color: #36393e;
 	background-repeat: no-repeat;
-	background-image: url(../images/login.jpg);
+	background-image: url(images/login.jpg);
 	filter: invert(100%) sepia(1%) saturate(4058%) hue-rotate(223deg) brightness(117%) contrast(100%);
 }
 
@@ -1125,7 +1143,7 @@ div[name="buttonarea"]
 	cursor: default;
 	background-size: 25px;
 	background-repeat: no-repeat;
-	background-image: url(../../images/info.png);
+	background-image: url(images/info.png);
 	filter: invert(100%) sepia(6%) saturate(0%) hue-rotate(3deg) brightness(108%) contrast(105%);
 }
 .infomation	.infommationKeyMap
