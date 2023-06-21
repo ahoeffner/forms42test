@@ -665,7 +665,9 @@ div[name="date-picker"]
 }
 
 .topbar .top-menu li[type="menu"] li[type="link"] a:hover ~ div,
-.topbar .top-menu li[type="menu"] li[type="menu"] a:hover ~ div
+.topbar .top-menu li[type="menu"] li[type="menu"] a:hover ~ div,
+.topbar .top-menu li[type="menu"] li[type="link"] a:focus ~ div,
+.topbar .top-menu li[type="menu"] li[type="menu"] a:focus ~ div
 {
 	visibility: visible;
 }
@@ -722,7 +724,8 @@ div[name="date-picker"]
 
 }
 
-.topbar .top-menu li li a:not([disabled]):hover
+.topbar .top-menu li li a:not([disabled]):hover,
+.topbar .top-menu li li a:not([disabled]):focus
 {
 	background-color: #6060F0;
 }
