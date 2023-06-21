@@ -220,8 +220,10 @@ tr td span:hover
 	border-left: 3px solid #6060F0;
 }
 
-.left-menu-container .left-menu a:after:hover
+.left-menu-container .left-menu a:hover:after
 {
+	content: "";
+	display:flex;
 	border-right:25px solid red
 }
 
@@ -1130,7 +1132,7 @@ div[name="buttonarea"]
 	align-items: center;
 }
 
-.infomation:hover .infommationKeyMap
+.infomation:hover .InformationKeyMap
 {
 	display:table;
 }
@@ -1146,7 +1148,7 @@ div[name="buttonarea"]
 	background-image: url(images/info.png);
 	filter: invert(100%) sepia(6%) saturate(0%) hue-rotate(3deg) brightness(108%) contrast(105%);
 }
-.infomation	.infommationKeyMap
+.infomation	.InformationKeyMap
 {
 	top:100%;
 	right:-10px;
