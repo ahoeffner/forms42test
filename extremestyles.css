@@ -643,7 +643,7 @@ div[name="date-picker"]
 .topbar .top-menu li[type="menu"] .top-menu li[type="link"] div
 {
 	width:45px;
-	right: -40px;
+	left: 100%;
 	padding: 5px;
 	position: absolute;
 	text-align: center;
@@ -665,7 +665,6 @@ div[name="date-picker"]
 /* hint-text */
 .topbar .top-menu li[type="menu"] li[type="link"] div:after,
 .topbar .top-menu li[type="menu"] .top-menu li[type="link"] div:after
-
 {
 	top: 50%;
 	right: 100%;
