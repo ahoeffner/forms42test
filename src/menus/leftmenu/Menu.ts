@@ -20,7 +20,7 @@
 */
 
 import { FormList } from './FormList';
-import { EventType,MenuComponent, MenuEvent } from 'forms42core';
+import { EventType, MenuComponent, MenuEvent } from 'forms42core';
 
 export class Menu extends MenuComponent
 {
