@@ -214,7 +214,8 @@ tr td span:hover
 	margin-left: 10px;
 }
 
-.left-menu-container .left-menu a:hover
+.left-menu-container .left-menu a:hover,
+.left-menu-container .left-menu a:focus
 {
 	background-color:#424549;
 	border-left: 3px solid #6060F0;
