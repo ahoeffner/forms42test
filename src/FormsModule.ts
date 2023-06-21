@@ -229,7 +229,6 @@ export class FormsModule extends FormsCoreModule
 
 	public async showLeftMenu() : Promise<boolean>
 	{
-		this.leftmenu.display();
 		this.leftmenu.focus();
 		return(true);
 	}
