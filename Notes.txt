@@ -8,7 +8,8 @@ update="inherit"
 RecordStateIndicator
 Menu options (openroot)
 
-Navigable ????
+Undo: register dirty at onEdit
+Navigable: register in FormsModule
 
 Propagate rightclick
 
