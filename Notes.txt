@@ -8,7 +8,7 @@ update="inherit"
 RecordStateIndicator
 Menu options (openroot)
 
-goRow
+Navigable ????
 
 Propagate rightclick
 
