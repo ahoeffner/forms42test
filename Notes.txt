@@ -8,9 +8,7 @@ update="inherit"
 RecordStateIndicator
 Menu options (openroot)
 
-Undo: register dirty at onEdit
-Navigable: register in FormsModule
-
+Remove forms-area
 Propagate rightclick
 
 

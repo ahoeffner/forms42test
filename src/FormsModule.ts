@@ -89,6 +89,7 @@ export class FormsModule extends FormsCoreModule
 
 		// Demo cutom tag
 		FormProperties.TagLibrary.set("AppHeader",AppHeader);
+		this.setRootElement(document.body.querySelector("#forms"));
 
 		this.parse();
 		this.list = new Minimized();
