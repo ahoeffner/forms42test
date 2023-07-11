@@ -25,7 +25,7 @@ import { Departments as DepartmentBlock} from "./Departments";
 import { Jobs as JobTable } from '../datasources/database/Jobs';
 import { Employees as EmployeeTable } from "../datasources/database/Employees";
 import { Departments as DepartmentTable } from '../datasources/database/Departments';
-import { BindValue, Block, DatabaseResponse, EventType, FieldProperties, Filter, Filters, FilterStructure, Form, formevent, FormEvent, ListOfValues } from "forms42core";
+import { BindValue, Block, DatabaseResponse, EventType, Filter, Filters, FilterStructure, Form, formevent, FormEvent, ListOfValues } from "forms42core";
 
 export class Employees extends Block
 {
