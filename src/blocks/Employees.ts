@@ -80,9 +80,12 @@ export class Employees extends Block
 		return(true);
 	}
 
-	@formevent({type: EventType.WhenValidateField, field: "salary"})
-	public async validateSalary() : Promise<boolean>
+	@formevent({type: EventType.WhenValidateField})
+	public async validateSalary(event:FormEvent) : Promise<boolean>
 	{
+		if (event.field != "salary" && event.field != "job_id")
+			return(true);
+
 		let code:string = this.getValue("job_id");
 		let salary:number = this.getValue("salary");
 
@@ -105,17 +108,9 @@ export class Employees extends Block
 
 		if (salary < limit[0] || salary > limit[1])
 		{
-			let props:FieldProperties = null;
-			this.form.warning("Salary should be between "+limit[0]+" and "+limit[1],"Validation");
-
-			props = this.getRecord().getProperties("last_name");
-			this.getRecord().setProperties(props.setStyle("color","deeppink"),"last_name");
-
-			props = this.getRecord().getProperties("first_name");
-			this.getRecord().setProperties(props.setStyle("color","deeppink"),"first_name");
-
-			props = this.getRecord().getProperties("salary");
-			this.getRecord().setProperties(props.setStyle("color","deeppink"),"salary");
+			this.getRecord().setStyle("salary","color","deeppink");
+			this.getRecord().setStyle("last_name","color","deeppink");
+			this.getRecord().setStyle("first_name","color","deeppink");
 		}
 		else
 		{

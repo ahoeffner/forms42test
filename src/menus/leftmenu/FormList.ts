@@ -79,6 +79,25 @@ export class FormList extends StaticMenu
 				}
 				,
 				{
+					id: "lessons",
+					display: "Lessons",
+					entries:
+					[
+						{
+							id: "lesson01",
+							display: "Lesson01",
+							command: "/forms/lesson01"
+						}
+						,
+						{
+							id: "lesson02",
+							display: "Lesson02",
+							command: "/forms/lesson02"
+						}
+					]
+				}
+				,
+				{
 					id: "nobase",
 					display: "Database less",
 					entries:
