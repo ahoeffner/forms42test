@@ -80,12 +80,9 @@ export class Employees extends Block
 		return(true);
 	}
 
-	@formevent({type: EventType.WhenValidateField})
-	public async validateSalary(event:FormEvent) : Promise<boolean>
+	@formevent({type: EventType.WhenValidateField, field: "salary"})
+	public async validateSalary() : Promise<boolean>
 	{
-		if (event.field != "salary" && event.field != "job_id")
-			return(true);
-
 		let code:string = this.getValue("job_id");
 		let salary:number = this.getValue("salary");
 

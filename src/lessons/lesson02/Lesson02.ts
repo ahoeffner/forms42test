@@ -50,6 +50,8 @@ export class Lesson02 extends Form
 	@formevent({type: EventType.WhenValidateField, block: "employees", field: "job_id"})
 	public async validateJob() : Promise<boolean>
 	{
+		console.log("Validate Job");
+
 		let jobid:string = this.emp.getValue("job_id");
 		let title:string = await Jobs.getTitle(jobid);
 
@@ -70,6 +72,8 @@ export class Lesson02 extends Form
 	{
 		if (event.field != "salary" && event.field != "job_id")
 			return(true);
+
+		console.log("Validate Salary");
 
 		let code:string = this.emp.getValue("job_id");
 		let salary:number = this.emp.getValue("salary");

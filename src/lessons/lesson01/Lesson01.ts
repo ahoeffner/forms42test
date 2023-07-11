@@ -19,13 +19,17 @@ export class Lesson01 extends Form
     }
 
 
-    @formevent({type: EventType.PostViewInit})
-    public async init() : Promise<boolean>
-    {
-        this.getView().style.top = "30px";
-			this.getView().style.left = "30px";
-        return(true);
-    }
+	@formevent({type: EventType.PostViewInit})
+	public async init() : Promise<boolean>
+	{
+		this.getView().style.top = "30px";
+		this.getView().style.left = "30px";
+
+		this.getBlock("employees").qbeallowed = false;
+		this.getBlock("employees").queryallowed = false;
+
+		return(true);
+	}
 
 
     private last:string = null;
