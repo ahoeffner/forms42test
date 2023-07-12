@@ -40,8 +40,8 @@ export class Menu extends MenuComponent
 		this.menuelem = this.container.appendChild(this.menuelem);
 		this.target = this.menuelem;
 
-		this.addEventListener(this.hideSideBar,{type: EventType.OnMenuBlur})
-		this.addEventListener(this.showSideBar,{type: EventType.OnMenuFocus})
+		this.addEventListener(this.hideSideBar,{type: EventType.WhenMenuBlur})
+		this.addEventListener(this.showSideBar,{type: EventType.WhenMenuFocus})
 
 		super.show();
 	}

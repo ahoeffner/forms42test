@@ -26,6 +26,17 @@ export class Lesson02 extends Form
 	}
 
 
+	@formevent()
+	public async showAllEvents(event:FormEvent) : Promise<boolean>
+	{
+		let dest:string = "";
+		if (event.block) dest = " "+event.block;
+		if (event.field) dest += "."+event.field;
+		console.log(EventType[event.type]+dest);
+		return(true);
+	}
+
+
 	@formevent({type: EventType.PostViewInit})
 	public async init(): Promise<boolean>
 	{
@@ -44,6 +55,8 @@ export class Lesson02 extends Form
 	{
 		let response:DatabaseResponse = this.emp.getRecord().response;
 		this.emp.setValue("employee_id",response.getValue("employee_id"));
+
+		console.log("setPrimaryKey "+this.emp.getValue("employee_id"));
 		return(true);
 	}
 
