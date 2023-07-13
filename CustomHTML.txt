@@ -26,7 +26,7 @@ disabled : used in navigation
 
 row      : binds to displayed row
 query    : whether to be used with QBE
-insert	 : open for input in insert mode
+insert	: open for input in insert mode
 derived  : no binding to datasource
 advquery : allow advanced query
 mapper   : use two-way mapper on values
@@ -42,4 +42,4 @@ upper    : uppercase, can be done in css as well
 lower    : lowercase, can be done in css as well
 initcap  : initcap like in names Alex Høffner
 
-format   : special field defined by regexp 
+format   : special field defined by regexp
