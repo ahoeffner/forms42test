@@ -105,6 +105,8 @@ export class Employees extends Block
 
 		if (salary < limit[0] || salary > limit[1])
 		{
+			this.warning("Salary should be between "+limit[0]+" and "+limit[1],"Validate Salary");
+
 			this.getRecord().setStyle("salary","color","deeppink");
 			this.getRecord().setStyle("last_name","color","deeppink");
 			this.getRecord().setStyle("first_name","color","deeppink");

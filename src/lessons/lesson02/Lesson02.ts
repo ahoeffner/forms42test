@@ -26,7 +26,7 @@ export class Lesson02 extends Form
 	}
 
 
-	@formevent()
+	//@formevent()
 	public async showAllEvents(event:FormEvent) : Promise<boolean>
 	{
 		let dest:string = "";
