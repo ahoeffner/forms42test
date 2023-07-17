@@ -113,8 +113,7 @@ export class FormsModule extends FormsCoreModule
 
 
 		let infomation:HTMLElement = document.querySelector(".infomation");
-
-		infomation.appendChild(KeyMapPage.show());
+		infomation.appendChild(KeyMapPage.show(keymap));
 
 		this.addEventListener(this.close,{type: EventType.Key, key: keymap.close});
 		this.addEventListener(this.login,{type: EventType.Key, key: keymap.login});
@@ -250,8 +249,8 @@ export class FormsModule extends FormsCoreModule
 
 export class keymap extends KeyMap
 {
-	public static close:KeyMap = new KeyMap({key: 'w', ctrl: true});
-	public static login:KeyMap = new KeyMap({key: 'l', ctrl: true});
-	public static topmenu:KeyMap = new KeyMap({key: 'm', ctrl: true});
-	public static leftmenu:KeyMap = new KeyMap({key: 'f', ctrl: true});
+	public static close:KeyMap = new KeyMap({key: 'w', ctrl: true},"close","close window");
+	public static login:KeyMap = new KeyMap({key: 'l', ctrl: true},"login","show login form");
+	public static topmenu:KeyMap = new KeyMap({key: 'm', ctrl: true},"top-menu","go to top menu");
+	public static leftmenu:KeyMap = new KeyMap({key: 'f', ctrl: true},"left-menu","go to left menu");
 }
