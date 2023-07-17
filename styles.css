@@ -475,15 +475,15 @@ div.modal
 
 .share .share-menu
 {
-    top:-30px;
-    opacity: 0;
-    width:200px;
-    right:-200px;
-    padding:13px;
-    position: absolute;
-    pointer-events: none;
-    transition: 0.2 ease;
-    background-color: white;
+   top:-30px;
+   opacity: 0;
+   width:200px;
+   right:-200px;
+   padding:13px;
+   position: absolute;
+   pointer-events: none;
+   transition: 0.2 ease;
+   background-color: white;
 	box-shadow: 0 5px 10px rgba(0,0,0,0.08);
 }
 
@@ -552,7 +552,7 @@ div[name="date-picker"]
 	background-color: rgb(240, 240, 240);
 }
 
-.topbar .top-menu li[type="menu"] li[type="link"]:hover div
+.topbar .top-menu li li[type="link"]:hover div
 {
 	visibility: visible;
 }
@@ -610,6 +610,30 @@ div[name="date-picker"]
 	width:100%;
 	height:100%;
 	padding: 10px 15px;
+}
+
+.topbar .top-menu li li div,
+.topbar .top-menu li .top-menu li[type="link"] div
+{
+	width:45px;
+	left: 100%;
+	padding: 5px;
+	color:white;
+	position: absolute;
+	text-align: center;
+	visibility: hidden;
+	background-color: black;
+}
+
+.topbar .top-menu li .level-2
+{
+	top:0;
+	left:125%;
+}
+
+.topbar .top-menu li li:hover div
+{
+	visibility: visible !important;
 }
 
 [disabled]
