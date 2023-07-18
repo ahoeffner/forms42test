@@ -1188,6 +1188,7 @@ div[name="buttonarea"]
 	background-image: url(images/info.png);
 	filter: invert(100%) sepia(6%) saturate(0%) hue-rotate(3deg) brightness(108%) contrast(105%);
 }
+
 .infomation	.InformationKeyMap
 {
 	top:100%;

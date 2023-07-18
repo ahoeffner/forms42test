@@ -740,9 +740,35 @@ div[name="login"]
 	visibility: visible !important;
 }
 
+.infomation
+{
+	width:auto;
+	height: 100%;
+	display:flex;
+	margin-right: 5px;
+	position: relative;
+	align-items: center;
+}
+
+.infomation:hover .InformationKeyMap
+{
+	display:table;
+}
+
+.infomation	.img
+{
+	width:30px;
+	height: 30px;
+	margin-top:5px;
+	cursor: default;
+	background-size: 25px;
+	background-repeat: no-repeat;
+	background-image: url(images/info.png);
+}
+
 .infomation	.InformationKeyMap
 {
-	top:100%;
+	top:40px;
 	right:-10px;
 	width:300px;
 	color:black;
@@ -754,4 +780,18 @@ div[name="login"]
 	transition: ease 0.3 all;
 	background-color:white;
 	box-shadow:  0 2px 10px #666;
+}
+
+.infomation	li
+{
+	display:grid;
+	flex-wrap: nowrap;
+	padding: 4px 6px;
+	border-bottom: solid #dedede 1px;
+	grid-template-columns: 150px 1fr;
+}
+
+.infomation	li:last-child
+{
+	border-bottom: none;
 }
