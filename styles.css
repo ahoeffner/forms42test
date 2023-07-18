@@ -612,8 +612,8 @@ div[name="date-picker"]
 	padding: 10px 15px;
 }
 
-.topbar .top-menu li li div,
-.topbar .top-menu li .top-menu li[type="link"] div
+.topbar .top-menu li[type="menu"] li[type="link"] div,
+.topbar .top-menu li[type="menu"] .top-menu li[type="link"] div
 {
 	width:45px;
 	left: 100%;
@@ -625,10 +625,38 @@ div[name="date-picker"]
 	background-color: black;
 }
 
+.topbar .top-menu li[type="menu"] li[type="menu"] div
+{
+	width:45px;
+	right: 100%;
+	padding: 5px;
+	color:white;
+	position: absolute;
+	text-align: center;
+	visibility: hidden;
+	background-color: black;
+}
+
+.topbar .top-menu .top-menu li[type="menu"] a:after
+{
+	top: 30%;
+	left: 75%;
+	display: flex;
+	content: '\27A5';
+	font-weight: bold;
+	position: absolute;
+}
+
+.topbar .top-menu .top-menu li[type="link"] a:after
+{
+	content:'';
+}
+
 .topbar .top-menu li .level-2
 {
-	top:0;
-	left:125%;
+	top: 0; 
+	left: 148%;
+   box-shadow: 3px 3px 10px 0px #666;
 }
 
 .topbar .top-menu li li:hover div
