@@ -679,6 +679,11 @@ div[name="date-picker"]
    box-shadow: 3px 3px 10px 0px #666;
 }
 
+.top-menu.level-0
+{
+	gap:10px;
+}
+
 .topbar .top-menu li[type="menu"] li[type="link"] a:hover ~ div,
 .topbar .top-menu li[type="menu"] li[type="menu"] a:hover ~ div,
 .topbar .top-menu li[type="menu"] li[type="link"] a:focus ~ div
