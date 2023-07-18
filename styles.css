@@ -757,9 +757,8 @@ div[name="login"]
 
 .infomation	.img
 {
-	width:30px;
-	height: 30px;
-	margin-top:5px;
+	width:25px;
+	height: 25px;
 	cursor: default;
 	background-size: 25px;
 	background-repeat: no-repeat;
@@ -768,7 +767,7 @@ div[name="login"]
 
 .infomation	.InformationKeyMap
 {
-	top:40px;
+	top:33px;
 	right:-10px;
 	width:300px;
 	color:black;
@@ -787,8 +786,8 @@ div[name="login"]
 	display:grid;
 	flex-wrap: nowrap;
 	padding: 4px 6px;
-	border-bottom: solid #dedede 1px;
 	grid-template-columns: 150px 1fr;
+	border-bottom: solid #dedede 1px;
 }
 
 .infomation	li:last-child
