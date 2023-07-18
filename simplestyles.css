@@ -41,7 +41,6 @@
 	justify-content: center;
 }
 
-
 .topbar .top-menu
 {
 	margin:0;
@@ -55,7 +54,6 @@
 	align-items: center;
 	background-color: white;
 }
-
 
 .topbar .top-menu .top-menu
 {
@@ -76,6 +74,8 @@
 	display:flex;
 	padding:0 10px;
 	position: relative;
+	align-items: center;
+	justify-content: center;
 }
 
 .topbar .top-menu li div
@@ -148,7 +148,7 @@
 .topbar .top-menu li .level-2
 {
 	top:0;
-	left:150%;
+	left:146%;
 }
 
 .menu-left
