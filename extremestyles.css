@@ -149,7 +149,6 @@ tr td span:hover
 	border-radius: 0;
 	text-decoration: none;
 	background: transparent;
-	transition: all 5s ease left;
 }
 
 .left-menu-container .left-menu
@@ -323,7 +322,6 @@ div[name="drag-fields"]
 .heading:hover
 {
 	transform: scale(1.05);
-	box-shadow: 2px 2px 2px rgba(black, 0.2);
 }
 
 .heading:active
@@ -582,7 +580,6 @@ div.modal
    padding:13px;
    position: absolute;
    pointer-events: none;
-   transition: 0.2 ease;
    background-color: white;
 	box-shadow: 0 5px 10px rgba(0,0,0,0.08);
 }
@@ -692,8 +689,7 @@ div[name="date-picker"]
 
 .topbar .top-menu li[type="menu"] li[type="link"] a:hover ~ div,
 .topbar .top-menu li[type="menu"] li[type="menu"] a:hover ~ div,
-.topbar .top-menu li[type="menu"] li[type="link"] a:focus ~ div,
-.topbar .top-menu li[type="menu"] li[type="menu"] a:focus ~ div
+.topbar .top-menu li[type="menu"] li[type="link"] a:focus ~ div
 {
 	visibility: visible;
 }
@@ -772,7 +768,6 @@ div[name="date-picker"]
 	background-color: #6060F0;
 }
 
-
 .topbar .top-menu li li a
 {
 	width:100%;
@@ -835,7 +830,6 @@ div[name="loginbutton"]
 	gap:5px;
 	display: flex;
 	justify-content: right;
-	margin:15px 20px 20 20px !important;
 }
 
 div[name="msg"],
@@ -1190,6 +1184,7 @@ div[name="buttonarea"]
 	background-image: url(images/info.png);
 	filter: invert(100%) sepia(6%) saturate(0%) hue-rotate(3deg) brightness(108%) contrast(105%);
 }
+
 .infomation	.InformationKeyMap
 {
 	top:100%;
@@ -1201,7 +1196,6 @@ div[name="buttonarea"]
 	margin-top:0px;
 	list-style: none;
 	position: absolute;
-	transition: ease 0.3 all;
 	background-color:white;
 	box-shadow:  0 2px 10px #666;
 }
@@ -1218,4 +1212,9 @@ div[name="buttonarea"]
 .infomation	li:last-child
 {
 	border-bottom: none;
+}
+
+div[name="close-button"]
+{
+	line-height: 15px;
 }

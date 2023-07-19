@@ -144,7 +144,7 @@ tr td span:hover
 }
 
 
-.left-menu-container  li[type="link"]:before
+.left-menu-container li[type="link"]:before
 {
 	color: black;
 	content: '\25CF';
@@ -156,6 +156,12 @@ tr td span:hover
 .left-menu-container a:hover
 {
 	color: hwb(0 2% 98% / 0.582);
+}
+
+.left-menu-container li[type="menu"] li[type="menu"]
+{
+	margin-top: 8px;
+	margin-left: 18px;
 }
 
 .menu-open:before
@@ -389,7 +395,7 @@ div.modal
 	cursor: pointer;
 	position: relative;
 	display:inline-block;
-   	background-size: 20px;
+   background-size: 20px;
 	transition: all 0.18s ease;
 	background-repeat: no-repeat;
 	background-image: url(images/icons8-info-50.png);
@@ -446,14 +452,14 @@ div.modal
 
 .item
 {
-    height: 10px;
-    display:flex;
-    cursor:pointer;
-    font-size:12px;
-    list-style: none;
-    margin-bottom: 2px;
-    border-radius: 5px;
-    padding: 0 5px 0 10px;
+   height: 10px;
+   display:flex;
+   cursor:pointer;
+   font-size:12px;
+   list-style: none;
+   margin-bottom: 2px;
+   border-radius: 5px;
+   padding: 0 5px 0 10px;
 	border-bottom: 1px solid rgba(0, 0, 0, .30);
 }
 
@@ -517,6 +523,8 @@ div[name="date-picker"]
 	justify-content: center;
 }
 
+
+
 .topbar .top-menu,
 .topbar .link-item
 {
@@ -552,11 +560,6 @@ div[name="date-picker"]
 	background-color: rgb(240, 240, 240);
 }
 
-.topbar .top-menu li li[type="link"]:hover div
-{
-	visibility: visible;
-}
-
 .topbar .top-menu li
 {
 	display:flex;
@@ -575,9 +578,10 @@ div[name="date-picker"]
 	background-color: transparent;
 }
 
-.topbar .top-menu li[type="menu"] li[type="link"] div:after
+.topbar .top-menu li[type="menu"] li[type="link"] div:after,
+.topbar .top-menu li[type="menu"] li[type="menu"] li[type="link"] div:after
 {
-	top: 30%;
+	top: 40%;
 	right: 100%;
 	content: '';
 	display: block;
@@ -586,6 +590,19 @@ div[name="date-picker"]
 	position: absolute;
 	border-style: solid;
 	border-color: transparent black transparent transparent;
+}
+
+.topbar .top-menu li[type="menu"] li[type="menu"] div:after
+{
+	top: 40%;
+	right: -9px;
+	content: '';
+	display: block;
+	border-width: 5px;
+	position: absolute;
+	border-style: solid;
+	transform: translateY(-50%);
+	border-color: transparent transparent transparent black;
 }
 
 .topbar .top-menu li li
@@ -600,7 +617,7 @@ div[name="date-picker"]
 	background-color: transparent;
 }
 
-.topbar .top-menu li li:hover a:not([disabled])
+.topbar .top-menu li li a:hover:not([disabled])
 {
 	background-color: #ddd;
 }
@@ -612,9 +629,10 @@ div[name="date-picker"]
 	padding: 10px 15px;
 }
 
-.topbar .top-menu li li div,
-.topbar .top-menu li .top-menu li[type="link"] div
+.topbar .top-menu li[type="menu"] li[type="link"] div,
+.topbar .top-menu li[type="menu"] .top-menu li[type="link"] div
 {
+	top:50%;
 	width:45px;
 	left: 100%;
 	padding: 5px;
@@ -623,17 +641,54 @@ div[name="date-picker"]
 	text-align: center;
 	visibility: hidden;
 	background-color: black;
+	transform: translateY(-50%);
+}
+
+.topbar .top-menu li[type="menu"] li[type="menu"] div
+{
+	width:45px;
+	right: 100%;
+	padding: 5px;
+	color:white;
+	position: absolute;
+	text-align: center;
+	visibility: hidden;
+	background-color: black;
+}
+
+.topbar .top-menu .top-menu li[type="menu"] a:after
+{
+	top: 13%;
+	left: 80%;
+	display: flex;
+	font-size: 20px;
+	content: "\203A";
+	position: absolute;
+}
+
+.topbar .top-menu .top-menu li[type="link"] a:after
+{
+	content:'';
 }
 
 .topbar .top-menu li .level-2
 {
-	top:0;
-	left:125%;
+	top: 0; 
+	z-index:-1;
+	left: 148%;
+   box-shadow: 3px 3px 10px 0px #666;
 }
 
-.topbar .top-menu li li:hover div
+.top-menu.level-0
 {
-	visibility: visible !important;
+	gap:10px;
+}
+
+.topbar .top-menu li[type="menu"] li[type="link"] a:hover ~ div,
+.topbar .top-menu li[type="menu"] li[type="menu"] a:hover ~ div,
+.topbar .top-menu li[type="menu"] li[type="link"] a:focus ~ div
+{
+	visibility: visible;
 }
 
 [disabled]
@@ -685,9 +740,34 @@ div[name="login"]
 	visibility: visible !important;
 }
 
+.infomation
+{
+	width:auto;
+	height: 100%;
+	display:flex;
+	margin-right: 5px;
+	position: relative;
+	align-items: center;
+}
+
+.infomation:hover .InformationKeyMap
+{
+	display:table;
+}
+
+.infomation	.img
+{
+	width:25px;
+	height: 25px;
+	cursor: default;
+	background-size: 25px;
+	background-repeat: no-repeat;
+	background-image: url(images/info.png);
+}
+
 .infomation	.InformationKeyMap
 {
-	top:100%;
+	top:33px;
 	right:-10px;
 	width:300px;
 	color:black;
@@ -699,4 +779,18 @@ div[name="login"]
 	transition: ease 0.3 all;
 	background-color:white;
 	box-shadow:  0 2px 10px #666;
+}
+
+.infomation	li
+{
+	display:grid;
+	flex-wrap: nowrap;
+	padding: 4px 6px;
+	grid-template-columns: 150px 1fr;
+	border-bottom: solid #dedede 1px;
+}
+
+.infomation	li:last-child
+{
+	border-bottom: none;
 }
