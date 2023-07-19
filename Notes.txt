@@ -7,11 +7,7 @@ update="inherit"
 
 RecordStateIndicator
 Menu options (openroot)
-Menu class="focus"
 
-getNumberOfLocks()
-
-Remove forms-area
 Propagate rightclick
 
 
