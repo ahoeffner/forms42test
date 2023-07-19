@@ -216,8 +216,7 @@ tr td span:hover
 .left-menu-container .left-menu a:hover,
 .left-menu-container .left-menu a:focus
 {
-	background-color:#424549;
-	border-left: 3px solid #6060F0;
+	background-color:#6060F0;
 }
 
 .left-menu-container .left-menu a:hover:after
@@ -618,7 +617,6 @@ div[name="date-picker"]
 .topbar .link-item,
 .topbar .top-menu
 {
-	gap:10px;
 	margin:0;
 	font-size:13px;
 	padding:0 13px;
@@ -731,7 +729,7 @@ div[name="date-picker"]
 
 .topbar .top-menu.level-1
 {
-	top: 27px;
+	top: 100%;
 	left: 50%;
 	height: 100%;
 	z-index:9999;
@@ -770,9 +768,12 @@ div[name="date-picker"]
 
 .topbar .top-menu li li a
 {
+	margin:0;
 	width:100%;
 	height:100%;
-	padding: 10px 15px;
+	padding: 13px 0;
+	align-items: center;
+	justify-content: center;
 }
 
 .top-menu.level-2,
@@ -790,12 +791,6 @@ div[name="date-picker"]
 .top-menu.level-3 li
 {
 	padding:0;
-}
-
-.top-menu.level-2 li a,
-.top-menu.level-3 li a
-{
-	padding:10px 25px !important;
 }
 
 label[for="username"],
@@ -935,6 +930,28 @@ button:before
 	}
 }
 
+menu[name="top-menu"] li
+{
+	padding:0;
+	margin:0;
+	height: 100%;
+}
+
+menu[name="top-menu"]  li a
+{
+
+	display:flex;
+	min-width: 110px;
+	align-items: center;
+	justify-content: center;
+}
+
+menu[name="top-menu"]  li a:hover:not([disabled]),
+menu[name="top-menu"]  li a:focus:not([disabled])
+{
+	background-color: #6060F0;
+}
+
 button::after
 {
 	top: 0;
@@ -946,7 +963,6 @@ button::after
 	user-select: none;
 	position: absolute;
 	border-radius: 10px;
-	
 	background-color: rgb(72, 72, 72);
 }
 
