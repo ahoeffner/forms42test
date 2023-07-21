@@ -828,10 +828,10 @@ div[name="loginbutton"]
 	justify-content: right;
 }
 
-div[name="msg"],
 div[name="lov"],
 div[name="login"],
 div[name="query"],
+div[name="popup-alert"],
 div[name="date-picker"]
 {
 	margin:0 20px;
