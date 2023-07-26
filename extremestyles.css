@@ -42,7 +42,7 @@ div[name="close"]:hover,
 	display: inline-grid;
 	grid-auto-flow: column;
 	background-color: #36393e;
-	grid-template-columns: 40px 1fr 125px;
+	grid-template-columns: 40px 1fr 155px;
 }
 
 .form-area
@@ -987,10 +987,22 @@ menu[name="top-menu"]  li a
 	justify-content: center;
 }
 
+.infomation a:hover,
 menu[name="top-menu"]  li a:hover:not([disabled]),
 menu[name="top-menu"]  li a:focus:not([disabled])
 {
 	background-color: #6060F0;
+}
+
+.infomation .tutorial
+{
+	height: 100%;
+	display:flex;
+}
+
+.infomation .tutorial a
+{
+	padding: 13px 20px 0 20px;
 }
 
 button::after
