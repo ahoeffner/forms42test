@@ -6,9 +6,15 @@ insert="inherit"
 update="inherit"
 
 InitCap inject regexp
+Fields clear (ctrl block), also check roolback
+
+Weekdays should also be included in WhenValidate
+
+Demo knapper på Lessons
+
+Load data from file
 
 RecordStateIndicator
-Menu options (openroot)
 
 Propagate rightclick
 
