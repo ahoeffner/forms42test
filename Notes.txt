@@ -5,6 +5,8 @@ find ../core/src -name '*.ts' | xargs wc -l
 insert="inherit"
 update="inherit"
 
+InitCap inject regexp
+
 RecordStateIndicator
 Menu options (openroot)
 

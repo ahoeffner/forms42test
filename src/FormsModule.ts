@@ -93,7 +93,10 @@ export class FormsModule extends FormsCoreModule
 	{
 		super();
 
-		// Demo cutom tag
+		// Be aware of FormProperties
+		FormProperties.DateFormat = "DD-MM-YYYY";
+
+		// Demo custom tag
 		FormProperties.TagLibrary.set("AppHeader",AppHeader);
 		this.setRootElement(document.body.querySelector("#forms"));
 

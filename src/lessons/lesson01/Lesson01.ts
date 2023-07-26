@@ -34,7 +34,7 @@ export class Lesson01 extends Form
 
     private last:string = null;
     @formevent({type: EventType.OnEdit, block: "ctrl", field: "name"})
-    public async postchange() : Promise<boolean>
+    public async onedit() : Promise<boolean>
     {
         setTimeout(() =>
         {
