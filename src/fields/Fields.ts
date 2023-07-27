@@ -29,9 +29,4 @@ export class Fields extends BaseForm
 		super(content);
 		this.title = "Fieldtypes";
 	}
-
-	public test() : void
-	{
-		this.clear();
-	}
 }
