@@ -6,9 +6,6 @@ insert="inherit"
 update="inherit"
 
 InitCap inject regexp
-Fields clear (ctrl block), also check roolback
-
-Weekdays should also be included in WhenValidate
 
 Demo knapper på Lessons
 
