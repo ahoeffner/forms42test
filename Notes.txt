@@ -9,8 +9,6 @@ InitCap inject regexp
 
 Demo knapper på Lessons
 
-Load data from file
-
 RecordStateIndicator
 
 Propagate rightclick
@@ -19,7 +17,7 @@ Propagate rightclick
 *** Jonas ***
 
 kigge på rightclick.
-Alert cannot resize horizontally
+Alert, QueryEditor, ListOfValues does not work without styling
 
 *************
 
