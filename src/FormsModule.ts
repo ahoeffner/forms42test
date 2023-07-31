@@ -46,7 +46,7 @@ import { AppHeader } from './tags/AppHeader';
 import { LinkMapper } from './fields/LinkMapper';
 import { TrueFalseMapper } from './fields/TrueFalseMapper';
 
-import { KeyMapPage, FormsPathMapping, FormsModule as FormsCoreModule, KeyMap, FormEvent, EventType, DatabaseConnection as Connection, FormProperties, UsernamePassword, Form, AlertForm } from 'forms42core';
+import { KeyMapPage, FormsPathMapping, FormsModule as FormsCoreModule, KeyMap, FormEvent, EventType, DatabaseConnection as Connection, FormProperties, UsernamePassword, Form, AlertForm, InternalFormsConfig } from 'forms42core';
 
 @FormsPathMapping(
 	[
@@ -92,6 +92,9 @@ export class FormsModule extends FormsCoreModule
 	constructor()
 	{
 		super();
+
+		// Be aware of InternalFormsConfig
+		InternalFormsConfig.close = "&#215;";
 
 		// Be aware of FormProperties
 		FormProperties.DateFormat = "DD-MM-YYYY";
