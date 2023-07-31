@@ -711,13 +711,7 @@ div[name="date-picker"]
 	justify-content: center;
 }
 
-.topbar .top-menu.level-1 li[type="link"] a:after
-{
-	content:"" !important;
-	display:flex !important;
-}
-
-.topbar .top-menu.level-1 li[type="menu"] a:after
+.topbar .top-menu.level-1 li[type="menu"]:after
 {
 	top:4px;
 	left:85%;
@@ -761,10 +755,73 @@ div[name="date-picker"]
 
 }
 
-.topbar .top-menu li li a:not([disabled]):hover,
-.topbar .top-menu li li a:not([disabled]):focus
+.topbar menu[name="top-menu"] li
 {
+	padding:0;
+	margin:0;
+	height: 100%;
+}
+
+.topbar menu[name="top-menu"]  li a
+{
+	z-index: 1;
+	display:flex;
+	height: 90%;
+	min-width: 110px;
+	align-items: center;
+	justify-content: center;
+}
+
+.topbar menu[name="top-menu"] li a:before
+{
+	top: 0;
+	left: 0;
+	opacity: 0;
+	width: 100%;
+	content: '';
+	height: 100%;
+	transition: .3s;
+	user-select: none;
+	position: absolute;
+	transform: scaleY(2);
+	pointer-events: none; 
+	border-top: 2px solid #6060F0;
+	border-bottom: 2px solid #6060F0;
+}
+
+.topbar menu[name="top-menu"]  li a:after
+{
+	left: 0;
+	top: 2px;
+	opacity: 0;
+	z-index: -1;
+	content: '';
+	width: 100%;
+	height: 100%;
+	transition: .3s;
+	user-select: none;
+	position: absolute;
+	transform: scale(0);
+	pointer-events: none; 
 	background-color: #6060F0;
+}
+
+/* .infomation a:hover, */
+.topbar menu[name="top-menu"]  li a:focus:not([disabled]),
+.topbar menu[name="top-menu"]  li a:hover:not([disabled])
+{
+	color:white
+}
+
+/* .infomation a:hover:after,
+.infomation a:hover:before, */
+.topbar  li a:hover:not([disabled]):after,
+.topbar menu[name="top-menu"]  li a:focus:not([disabled]):after,
+.topbar menu[name="top-menu"]  li a:hover:not([disabled]):before,
+.topbar menu[name="top-menu"]  li a:focus:not([disabled]):before
+{
+	opacity: 1;
+	transform: scaleY(1);
 }
 
 .topbar .top-menu li li a
@@ -969,29 +1026,6 @@ button:before
 	{
 	  background-position: 0 0;
 	}
-}
-
-menu[name="top-menu"] li
-{
-	padding:0;
-	margin:0;
-	height: 100%;
-}
-
-menu[name="top-menu"]  li a
-{
-
-	display:flex;
-	min-width: 110px;
-	align-items: center;
-	justify-content: center;
-}
-
-.infomation a:hover,
-menu[name="top-menu"]  li a:hover:not([disabled]),
-menu[name="top-menu"]  li a:focus:not([disabled])
-{
-	background-color: #6060F0;
 }
 
 .infomation .tutorial
