@@ -765,64 +765,6 @@ div[name="date-picker"]
 	justify-content: center;
 }
 
-.left-menu-container .left-menu a:before,
-.topbar menu[name="top-menu"] li a:before
-{
-	top: 0;
-	left: 0;
-	opacity: 0;
-	width: 100%;
-	content: '';
-	height: 100%;
-	transition: .3s;
-	user-select: none;
-	position: absolute;
-	transform: scaleY(2);
-	pointer-events: none; 
-	border-top: 2px solid #6060F0;
-	border-bottom: 2px solid #6060F0;
-}
-
-.left-menu-container .left-menu a:after,
-.topbar menu[name="top-menu"]  li a:after
-{
-	left: 0;
-	top: 2px;
-	opacity: 0;
-	z-index: -1;
-	content: '';
-	width: 100%;
-	height: 100%;
-	transition: .3s;
-	user-select: none;
-	position: absolute;
-	transform: scale(0);
-	pointer-events: none; 
-	background-color: #6060F0;
-}
-
-/* .infomation a:hover, */
-.left-menu-container .left-menu a:focus,
-.left-menu-container .left-menu a:hover,
-.topbar menu[name="top-menu"]  li a:focus:not([disabled]),
-.topbar menu[name="top-menu"]  li a:hover:not([disabled])
-{
-	color:white
-}
-
-.topbar  li a:hover:not([disabled]):after,
-.topbar  li a:focus:not([disabled]):after,
-.topbar  li a:hover:not([disabled]):before,
-.topbar  li a:focus:not([disabled]):before,
-.left-menu-container .left-menu a:hover:after,
-.left-menu-container .left-menu a:hover:before,
-.left-menu-container .left-menu a:focus:after,
-.left-menu-container .left-menu a:focus:before
-{
-	opacity: 1;
-	transform: scaleY(1);
-}
-
 .topbar .top-menu li li a
 {
 	margin:0;
@@ -1031,11 +973,14 @@ button:before
 {
 	height: 100%;
 	display:flex;
+	
 }
 
 .infomation .tutorial a
 {
-	padding: 10px 20px 0 20px;
+	z-index: 1;
+	position: relative;
+	padding: 12px 20px 0 20px;
 }
 
 button::after
@@ -1328,4 +1273,70 @@ div[name="buttonarea"]
 div[name="close-button"]
 {
 	line-height: 15px;
+}
+
+.infomation .tutorial a:before,
+.left-menu-container .left-menu a:before,
+.topbar menu[name="top-menu"] li a:before
+{
+	top: 0;
+	left: 0;
+	opacity: 0;
+	width: 100%;
+	content: '';
+	height: 100%;
+	transition: .3s;
+	user-select: none;
+	position: absolute;
+	transform: scaleY(2);
+	pointer-events: none; 
+	border-top: 2px solid #6060F0;
+	border-bottom: 2px solid #6060F0;
+}
+
+.infomation .tutorial a:after,
+.left-menu-container .left-menu a:after,
+.topbar menu[name="top-menu"]  li a:after
+{
+	left: 0;
+	top: 2px;
+	opacity: 0;
+	z-index: -1;
+	content: '';
+	width: 100%;
+	height: 100%;
+	transition: .3s;
+	user-select: none;
+	position: absolute;
+	transform: scale(0);
+	pointer-events: none; 
+	background-color: #6060F0;
+}
+
+/* .infomation a:hover, */
+.infomation .tutorial a:focus,
+.infomation .tutorial a:hover,
+.left-menu-container .left-menu a:focus,
+.left-menu-container .left-menu a:hover,
+.topbar menu[name="top-menu"]  li a:focus:not([disabled]),
+.topbar menu[name="top-menu"]  li a:hover:not([disabled])
+{
+	color:white
+}
+
+.infomation .tutorial a:hover:after,
+.infomation .tutorial a:focus:after,
+.infomation .tutorial a:focus:before,
+.infomation .tutorial a:hover:before,
+.topbar  li a:hover:not([disabled]):after,
+.topbar  li a:focus:not([disabled]):after,
+.topbar  li a:hover:not([disabled]):before,
+.topbar  li a:focus:not([disabled]):before,
+.left-menu-container .left-menu a:hover:after,
+.left-menu-container .left-menu a:hover:before,
+.left-menu-container .left-menu a:focus:after,
+.left-menu-container .left-menu a:focus:before
+{
+	opacity: 1;
+	transform: scaleY(1);
 }
