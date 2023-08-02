@@ -1339,3 +1339,8 @@ div[name="close-button"]
 	opacity: 1;
 	transform: scaleY(1);
 }
+
+.middle
+{
+	justify-content: center;
+}
