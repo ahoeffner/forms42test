@@ -23,14 +23,14 @@
 .app-header
 {
 	width: 100%;
-	height: 40px;
-	padding:0 10px;
-	display: inline-grid;
-	align-content: center;
-	grid-auto-flow: column;
+   height: 40px;
+   padding: 0 10px;
+   align-items: center;
+   display: inline-grid;
+   grid-auto-flow: column;
 	border: 1px solid black;
 	background-color: lightgray;
-	grid-template-columns: 40px 1fr 125px;
+   grid-template-columns: 40px 1fr 155px
 }
 
 .form-area
@@ -464,7 +464,8 @@ div.modal
 	border-bottom: 1px solid rgba(0, 0, 0, .30);
 }
 
-.content .item:hover
+.content .item:hover,
+.content .item:focus
 {
     background: #f2f2f2;
 }
@@ -543,7 +544,9 @@ div[name="date-picker"]
 
 .topbar .top-menu a:not(.disabled)
 {
+	display:flex;
 	cursor: pointer;
+	align-items: center;
 }
 
 .topbar .top-menu .top-menu
@@ -564,6 +567,8 @@ div[name="date-picker"]
 .topbar .top-menu li
 {
 	display:flex;
+	height: 100%;
+	padding:0 10px;
 	position: relative;
 }
 
@@ -618,9 +623,11 @@ div[name="date-picker"]
 	background-color: transparent;
 }
 
-.topbar .top-menu li li a:hover:not([disabled])
+.topbar .top-menu li a:focus:not([disabled]),
+.topbar .top-menu li a:hover:not([disabled])
 {
-	background-color: #ddd;
+	color:white;
+	background-color: #313131;
 }
 
 .topbar .top-menu li li a
