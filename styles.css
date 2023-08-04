@@ -542,26 +542,29 @@ div[name="date-picker"]
 	background-color: transparent;
 }
 
-.topbar .top-menu a:not(.disabled)
+.topbar .top-menu a
 {
 	display:flex;
 	cursor: pointer;
+	padding: 10px 15px;
 	align-items: center;
+	justify-content: center;
 }
 
 .topbar .top-menu .top-menu
 {
-	top: 30px;
+	top: 100%;
 	left: 50%;
 	height: 100%;
 	z-index:9999;
 	display: table;
 	cursor: pointer;
-	min-width: 100px;
+	min-width: 110px;
 	position: absolute;
 	transform: translateX(-50%);
 	box-shadow: 0 2px 10px #666;
 	background-color: rgb(240, 240, 240);
+	
 }
 
 .topbar .top-menu li
@@ -609,6 +612,7 @@ div[name="date-picker"]
 	border-style: solid;
 	transform: translateY(-50%);
 	border-color: transparent transparent transparent black;
+	
 }
 
 .topbar .top-menu li li
