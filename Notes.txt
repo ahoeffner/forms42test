@@ -5,6 +5,8 @@ find ../core/src -name '*.ts' | xargs wc -l
 insert="inherit"
 update="inherit"
 
+Check focusable on display fields (tabIndex)
+
 InitCap inject regexp
 
 Demo knapper på Lessons
