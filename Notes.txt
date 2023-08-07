@@ -5,6 +5,8 @@ find ../core/src -name '*.ts' | xargs wc -l
 insert="inherit"
 update="inherit"
 
+Forms menu, multi
+
 Check pattern setValue with pre and postfix
 Check focusable on display fields (tabIndex)
 
@@ -20,6 +22,7 @@ Propagate rightclick
 *** Jonas ***
 
 kigge på rightclick.
+Top menu virker ikke ved record (deep)
 Alert, QueryEditor, ListOfValues does not work without styling
 
 *************
