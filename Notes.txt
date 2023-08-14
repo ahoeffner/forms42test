@@ -5,8 +5,6 @@ find ../core/src -name '*.ts' | xargs wc -l
 insert="inherit"
 update="inherit"
 
-Forms menu, multi
-
 Inject simple formatter
 
 Lov as class ie lov="lovs/emp"
