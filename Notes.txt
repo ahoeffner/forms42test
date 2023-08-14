@@ -7,12 +7,9 @@ update="inherit"
 
 Forms menu, multi
 
-bonusstuff
-Check pattern setValue with pre and postfix
-Check focusable on display fields (tabIndex)
+Inject simple formatter
 
-InitCap inject regexp
-
+Lov as class ie lov="lovs/emp"
 Demo knapper på Lessons
 
 RecordStateIndicator
