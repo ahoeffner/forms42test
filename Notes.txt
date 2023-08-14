@@ -8,6 +8,8 @@ update="inherit"
 
 Inject simple formatter
 
+Connect in demo (no harcoded url)
+
 Lov as class ie lov="lovs/emp"
 Demo knapper på Lessons
 
