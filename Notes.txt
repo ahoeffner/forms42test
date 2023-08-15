@@ -20,6 +20,11 @@ Propagate rightclick
 
 *** Jonas ***
 
+Fields:
+
+Title på date & datetime - Press F9 for datepicker + Press ctrl-space for current date
+Title på drop-down - Press ctrl click for multiple choices
+
 kigge på rightclick.
 Top menu virker ikke ved record (deep)
 Alert, QueryEditor, ListOfValues does not work without styling
