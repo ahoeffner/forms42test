@@ -22,6 +22,8 @@ Propagate rightclick
 
 Fields:
 
+Ekstra 2 rows under chess move
+
 Title på date & datetime - Press F9 for datepicker + Press ctrl-space for current date
 Title på drop-down - Press ctrl click for multiple choices
 
