@@ -1354,3 +1354,9 @@ div[name="close-button"]
 {
 	justify-content: center;
 }
+
+button[name="login"],
+button[name="cancel"]
+{
+	width:60px;
+}
