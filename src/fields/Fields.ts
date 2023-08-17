@@ -21,6 +21,7 @@
 
 import content from './Fields.html';
 import { BaseForm } from '../BaseForm';
+import { EventType, FormEvent, formevent } from 'forms42core';
 
 export class Fields extends BaseForm
 {
@@ -28,5 +29,12 @@ export class Fields extends BaseForm
 	{
 		super(content);
 		this.title = "Fieldtypes";
+	}
+
+	@formevent()
+	public async test(event:FormEvent) : Promise<boolean>
+	{
+		console.log(EventType[event.type]+" "+event.block+"."+event.field)
+		return(true);
 	}
 }
