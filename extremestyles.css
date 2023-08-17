@@ -29,7 +29,7 @@ div[name="close"]:hover,
 .canvas-handle div[name="close-button"]:hover
 {
 	color:white;
-	background-color: red;
+	background-color: rgb(255, 94, 94);
 }
 
 .app-header
@@ -1359,4 +1359,23 @@ button[name="login"],
 button[name="cancel"]
 {
 	width:60px;
+}
+
+legend
+{
+	font-weight: bold;
+}
+
+textarea 
+{
+	border:none;
+	resize: none;
+	box-shadow: none;
+	border-bottom: 2px solid black;
+}
+
+textarea:required
+{
+	outline: none;
+	box-shadow: none;
 }

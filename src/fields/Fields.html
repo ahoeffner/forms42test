@@ -32,7 +32,7 @@
 
 		<fieldset class="fieldset">
 			<legend>Date</legend>
-			<div class="column">
+			<div class="column" title="Press F9 for datepicker + Press ctrl-space for current date" >
 				<span>Date</span>:<input name="date" from="fields" date>
 				<span>DateTime</span>:<input name="datetime" from="fields" datetime>
 			</div>
@@ -61,7 +61,7 @@
 		<fieldset class="fieldset">
 			<legend>Formatted Input (Chess Move)</legend>
 			<div class="column">
-				<span>Piece</span> :
+				<span>Piece</span>:
 				<select style="margin: 0px 10px" name="piece" from="fields" size="1">
 
 					<option value="King">King</option>
@@ -75,6 +75,13 @@
 				<span>Move</span>:
 				<input style="margin: 0px 10px" name="move" from="fields" format="{[A-H]}{[1-8]} -> {[A-H]}{[1-8]}" placeholder="C2 -> C3">
 				<span style="width:80px">[A-H][1-8]</span>
+			</div>
+			<div class="column">
+				<span>Move one</span>:
+				<input name="moveone" from="fields" size="8">
+
+				<span>Move two</span>:
+				<input name="movetwo" from="fields" size="8">
 			</div>
 		</fieldset>
 
@@ -102,16 +109,16 @@
 
 				<span>Code</span> : <input name="single" from="fields" size="4" upper>
 			</div>
-			<div class="column" style="margin-top: 20px;">
+			<div class="column" style="margin-top: 20px;" title="Press ctrl click for multiple choices">
 				<span>Multiple :</span>
 
-				<select style="width: 100px;" name="multi" from="fields" size="5" multiple>
+				<select style="width: 100px;" name="multi" from="fields" size="5"  multiple>
 					<option value="DK">Denmark</option>
 					<option value="SE">Sweden</option>
 					<option value="NO">Norway</option>
 					<option value="FI">Finland</option>
 				</select>
-				<span> Code</span> :<input name="multi" from="fields" size="8" upper>
+				<span> Code</span> :<textarea name="multi" from="fields" style="height: 30px; width: 120px;" upper>
 			</div>
 		</fieldset>
 
