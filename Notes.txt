@@ -6,8 +6,9 @@ FilterEditor
 insert="inherit"
 update="inherit"
 
-Inject simple formatter
+StoredProcedure called twice ?
 
+Inject simple formatter
 Connect in demo (no harcoded url)
 
 Lov as class ie lov="lovs/emp"

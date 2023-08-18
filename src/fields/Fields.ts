@@ -21,7 +21,7 @@
 
 import content from './Fields.html';
 import { BaseForm } from '../BaseForm';
-import { EventType, FormEvent, formevent } from 'forms42core';
+import { EventType, FormEvent, MouseMap, formevent } from 'forms42core';
 
 export class Fields extends BaseForm
 {
@@ -34,7 +34,7 @@ export class Fields extends BaseForm
 	@formevent()
 	public async test(event:FormEvent) : Promise<boolean>
 	{
-		console.log(EventType[event.type]+" "+event.block+"."+event.field)
+		console.log(EventType[event.type]+" "+event.block+"."+event.field+" "+MouseMap[event.mouse])
 		return(true);
 	}
 }
