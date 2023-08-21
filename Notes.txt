@@ -7,6 +7,7 @@ insert="inherit"
 update="inherit"
 
 StoredProcedure called twice ?
+Click on other row while inserting
 
 Inject simple formatter
 Connect in demo (no harcoded url)
@@ -23,7 +24,7 @@ Propagate rightclick
 
 Fields:
 
-Ekstra 2 rows under chess move
+Field multiple hænger oppe i luften
 
 Title på date & datetime - Press F9 for datepicker + Press ctrl-space for current date
 Title på drop-down - Press ctrl click for multiple choices
