@@ -38,6 +38,7 @@ integer  : allow only integer values
 decimal  : allow only decimal values
 boolean  : allow only boolean values
 
+trim    	: by default fieldvalues are trimmed
 upper    : uppercase, can be done in css as well
 lower    : lowercase, can be done in css as well
 initcap  : initcap like in names Alex Høffner
