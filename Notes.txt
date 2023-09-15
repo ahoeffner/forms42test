@@ -3,20 +3,22 @@ find ../core/src -name '*.ts' | xargs wc -l
 
 FilterEditor
 
-insert="inherit"
-update="inherit"
+Add auth-methods to config
+Change scope = shared to stateless
 
-StoredProcedure called twice ?
-Click on other row while inserting
+Add Lookup
+Arrow right doesn't work in menu ?
+
+Preform return false -> focus error
+check checkEventTransaction
 
 Inject simple formatter
+Lov as class ie lov="lovs/emp"
 Connect in demo (no harcoded url)
 
-Lov as class ie lov="lovs/emp"
 Demo knapper på Lessons
 
 RecordStateIndicator
-
 Propagate rightclick
 
 

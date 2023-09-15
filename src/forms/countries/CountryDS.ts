@@ -22,7 +22,7 @@
 import { FormsModule } from "../../FormsModule";
 import { DatabaseTable, LockMode } from "forms42core";
 
-export class CountryTable extends DatabaseTable
+export class CountryDS extends DatabaseTable
 {
 	constructor()
 	{
