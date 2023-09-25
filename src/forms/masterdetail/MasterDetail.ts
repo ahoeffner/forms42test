@@ -45,7 +45,6 @@ export class MasterDetail extends BaseForm
 		this.dept.setLocationLov("location");
 
 		this.emp.setJobLov(["job_id","job_title"]);
-		this.emp.setDepartmentLov(["department_id","department_name"]);
 
 		let empkey:Key = new Key("employees","department_id");
 		let deptkey:Key = new Key("departments","department_id");

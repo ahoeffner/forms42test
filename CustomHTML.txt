@@ -13,17 +13,12 @@ row-indicator		: set class row-indicator for current row
 filter-indicator	: set class filter-indicator for blocks with search-constraints
 
 
-
 Custom attributes:
 
 foreach  : loop
 
 
-hidden   : used in navigation
-required : used when validating
-readonly : also works with select, radio and checkbox
-disabled : used in navigation
-
+lov   	: set ListOfValues
 row      : binds to displayed row
 query    : whether to be used with QBE
 insert	: open for input in insert mode
