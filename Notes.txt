@@ -4,7 +4,10 @@ find ../core/src -name '*.ts' | xargs wc -l
 FilterEditor
 
 Add auth-methods to config
-Change scope = shared to stateless
+
+DatePicker on record-readonly
+Alerts should not overlay other alerts
+Insert/Delete should not be prevented in general
 
 Add Lookup
 Arrow right doesn't work in menu ?
