@@ -3,9 +3,6 @@ import { BindValue, ListOfValues, QueryTable } from "forms42core";
 
 export class DepartmentsList implements ListOfValues
 {
-	public filterPrefix = "%";
-	public filterPostfix = "%";
-
 	public bindvalue: BindValue;
 	public datasource: Departments;
 
@@ -35,7 +32,7 @@ class Departments extends QueryTable
 		this.sql =
 		`
 			select * from departments
-			where department_name ilike :department
+			where department_name ilike '%'||:department||'%'
 		`;
 
 		this.sorting = "department_id";

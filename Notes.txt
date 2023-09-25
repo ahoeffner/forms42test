@@ -15,6 +15,7 @@ Arrow right doesn't work in menu ?
 Preform return false -> focus error
 check checkEventTransaction
 
+getListOfValues
 Inject simple formatter
 Lov as class ie lov="lovs/emp"
 Connect in demo (no harcoded url)
