@@ -8,9 +8,9 @@ export class DepartmentsList implements ListOfValues
 	public bindvalue: BindValue;
 	public datasource: Departments;
 
+	public sourcefields: string;
+	public targetfields: string;
 	public displayfields: string;
-	public sourcefields: string[];
-	public targetfields: string[];
 
 	public inQueryMode:boolean = true;
 	public inReadOnlyMode:boolean = true;
@@ -20,9 +20,9 @@ export class DepartmentsList implements ListOfValues
 		this.datasource = new Departments();
 		this.bindvalue = this.datasource.department;
 
+		this.sourcefields = "department_id";
+		this.targetfields = "department_id";
 		this.displayfields = "department_name";
-		this.sourcefields = ["department_id","department_name"];
-		this.targetfields = ["department_id","department_name"];
 	}
 }
 

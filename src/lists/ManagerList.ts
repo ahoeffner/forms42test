@@ -8,8 +8,8 @@ export class ManagerList implements ListOfValues
 	public bindvalue: BindValue;
 	public datasource: Employees;
 
-	public sourcefields: string[];
-	public targetfields: string[];
+	public sourcefields: string;
+	public targetfields: string;
 	public displayfields: string[];
 
 	public inQueryMode:boolean = true;
@@ -20,9 +20,9 @@ export class ManagerList implements ListOfValues
 		this.datasource = new Employees();
 		this.bindvalue = this.datasource.emp;
 
+		this.targetfields = "manager_id";
+		this.sourcefields = "employee_id";
 		this.displayfields = ["first_name","last_name"];
-		this.sourcefields = ["employee_id","first_name","last_name"];
-		this.targetfields = ["employee_id","first_name","last_name"];
 	}
 }
 

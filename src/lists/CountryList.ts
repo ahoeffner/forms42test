@@ -8,8 +8,8 @@ export class CountryList implements ListOfValues
 	public datasource: Countries;
 	public bindvalue: BindValue;
 
-	public sourcefields: string[];
-	public targetfields: string[];
+	public sourcefields: string;
+	public targetfields: string;
 	public displayfields: string[];
 
 	public inQueryMode:boolean = true;
@@ -20,8 +20,8 @@ export class CountryList implements ListOfValues
 		this.datasource = new Countries();
 		this.bindvalue = this.datasource.country;
 
-		this.sourcefields = ["country_id","country_name"];
-		this.targetfields = ["country_id","country_name"];
+		this.sourcefields = "country_id";
+		this.targetfields = "country_id";
 		this.displayfields = ["country_id","country_name"];
 	}
 }

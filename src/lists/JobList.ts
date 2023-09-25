@@ -8,8 +8,8 @@ export class JobList implements ListOfValues
 	public datasource: Jobs;
 	public bindvalue: BindValue;
 
-	public sourcefields: string[];
-	public targetfields: string[];
+	public sourcefields: string;
+	public targetfields: string;
 	public displayfields: string[];
 
 	public inQueryMode:boolean = true;
@@ -20,9 +20,9 @@ export class JobList implements ListOfValues
 		this.datasource = new Jobs();
 		this.bindvalue = this.datasource.job;
 
+		this.sourcefields = "job_id";
+		this.targetfields = "job_id";
 		this.displayfields = ["job_title"];
-		this.sourcefields = ["job_id","job_title"];
-		this.targetfields = ["job_id","job_title"];
 	}
 }
 

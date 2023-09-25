@@ -8,8 +8,8 @@ export class LocationList implements ListOfValues
 	public datasource: Locations;
 	public bindvalue: BindValue;
 
-	public sourcefields: string[];
-	public targetfields: string[];
+	public sourcefields: string;
+	public targetfields: string;
 	public displayfields: string[];
 
 	public inQueryMode:boolean = true;
@@ -20,8 +20,8 @@ export class LocationList implements ListOfValues
 		this.datasource = new Locations();
 		this.bindvalue = this.datasource.loc;
 
-		this.sourcefields = ["loc_id"];
-		this.targetfields = ["loc_id"];
+		this.sourcefields = "loc_id";
+		this.targetfields = "loc_id";
 		this.displayfields = ["city","street_address"];
 	}
 }
