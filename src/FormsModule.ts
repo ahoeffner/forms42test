@@ -42,6 +42,10 @@ import { PhoneBookMembased } from './forms/phonenook/PhoneBookMembased';
 import { Lesson01 } from './lessons/lesson01/Lesson01';
 import { Lesson02 } from './lessons/lesson02/Lesson02';
 
+import { JobList } from './lists/JobList';
+import { CountryList } from './lists/CountryList';
+import { ManagerList } from './lists/ManagerList';
+import { LocationList } from './lists/LocationList';
 import { DepartmentsList } from './lists/DepartmentsList';
 
 import { AppHeader } from './tags/AppHeader';
@@ -54,6 +58,10 @@ import { KeyMapPage, FormsPathMapping, FormsModule as FormsCoreModule, KeyMap, F
 	[
 		{class: Fields, path: "/forms/fields"},
 
+		{class: JobList, path: "/lovs/jobs"},
+		{class: ManagerList, path: "/lovs/managers"},
+		{class: CountryList, path: "/lovs/countries"},
+		{class: LocationList, path: "/lovs/locations"},
 		{class: DepartmentsList, path: "/lovs/departments"},
 
 		{class: Jobs, path: "/forms/jobs"},

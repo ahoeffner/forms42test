@@ -3,12 +3,17 @@ import { BindValue, ListOfValues, QueryTable } from "forms42core";
 
 export class DepartmentsList implements ListOfValues
 {
+	public title:string = "Departments";
+
 	public bindvalue: BindValue;
 	public datasource: Departments;
 
 	public displayfields: string;
 	public sourcefields: string[];
 	public targetfields: string[];
+
+	public inQueryMode:boolean = true;
+	public inReadOnlyMode:boolean = true;
 
 	constructor()
 	{
@@ -31,7 +36,7 @@ class Departments extends QueryTable
 
 		this.sql =
 		`
-			select * from departments
+			select department_id, department_name from departments
 			where department_name ilike '%'||:department||'%'
 		`;
 
