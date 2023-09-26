@@ -14,6 +14,7 @@ export class CountryList implements ListOfValues
 
 	public inQueryMode:boolean = true;
 	public inReadOnlyMode:boolean = true;
+	public filterInitialValueFrom = "country_id";
 
 	constructor()
 	{

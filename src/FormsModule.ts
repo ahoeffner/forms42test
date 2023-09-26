@@ -45,7 +45,7 @@ import { Lesson02 } from './lessons/lesson02/Lesson02';
 import { JobList } from './lists/JobList';
 import { ManagerList } from './lists/ManagerList';
 import { CountryList } from './lists/CountryList';
-import { CountryList2 } from './lists/CountryList2';
+//import { CountryList2 } from './lists/CountryList2';
 import { LocationList } from './lists/LocationList';
 import { DepartmentsList } from './lists/DepartmentsList';
 
@@ -61,7 +61,7 @@ import { KeyMapPage, FormsPathMapping, FormsModule as FormsCoreModule, KeyMap, F
 
 		{class: JobList, path: "/lovs/jobs"},
 		{class: ManagerList, path: "/lovs/managers"},
-		{class: CountryList2, path: "/lovs/countries"},
+		{class: CountryList, path: "/lovs/countries"},
 		{class: LocationList, path: "/lovs/locations"},
 		{class: DepartmentsList, path: "/lovs/departments"},
 
