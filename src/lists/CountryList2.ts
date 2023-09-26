@@ -1,12 +1,15 @@
 import { FormsModule } from "../FormsModule";
-import { BindValue, Filter, FilterStructure, Filters, ListOfValues, QueryTable } from "forms42core";
+import { BindValue, Filter, FilterStructure, Filters, ListOfValues, DatabaseTable } from "forms42core";
 
-export class CountryList implements ListOfValues
+export class CountryList2 implements ListOfValues
 {
 	public title:string = "Countries";
 
 	public datasource: Countries;
 	public bindvalue: BindValue[];
+
+	public filterPrefix:string = "%";
+	public filterPostfix:string = "%";
 
 	public sourcefields: string;
 	public targetfields: string;
@@ -37,17 +40,11 @@ export class CountryList implements ListOfValues
 	}
 }
 
-class Countries extends QueryTable
+class Countries extends DatabaseTable
 {
 	constructor()
 	{
-		super(FormsModule.DATABASE);
-
-		this.sql =
-		`
-			select country_id, country_name from countries
-		`;
-
+		super(FormsModule.DATABASE,"countries");
 		this.sorting = "country_id";
 	}
 }
