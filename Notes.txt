@@ -9,15 +9,15 @@ DatePicker on record-readonly
 Alerts should not overlay other alerts
 Insert/Delete should not be prevented in general
 
+FieldFeatureFactory mode="-"
+
 Add Lookup
 Arrow right doesn't work in menu ?
 
 Preform return false -> focus error
 check checkEventTransaction
 
-getListOfValues
 Inject simple formatter
-Lov as class ie lov="lovs/emp"
 Connect in demo (no harcoded url)
 
 Demo knapper på Lessons
