@@ -5,8 +5,8 @@ export class CountryList2 implements ListOfValues
 {
 	public title:string = "Countries";
 
-	public datasource: Countries;
-	public bindvalue: BindValue[];
+	public filter:Filter[];
+	public datasource:Countries;
 
 	public filterPrefix:string = "%";
 	public filterPostfix:string = "%";
@@ -27,17 +27,15 @@ export class CountryList2 implements ListOfValues
 		this.targetfields = "country_id";
 		this.displayfields = ["country_id","country_name"];
 
-		this.bindvalue = [];
 		let filter:FilterStructure = null;
 
-		let idflt:Filter = Filters.ILike("country_id");
-		let nameflt:Filter = Filters.ILike("country_name");
+		let filter1:Filter = Filters.ILike("country_id");
+		let filter2:Filter = Filters.ILike("country_name");
 
-		filter = new FilterStructure().and(idflt).or(nameflt);
+		filter = new FilterStructure().and(filter1).or(filter2);
 		this.datasource.addFilter(filter);
 
-		this.bindvalue.push(idflt.getBindValue());
-		this.bindvalue.push(nameflt.getBindValue());
+		this.filter = [filter1,filter2];
 	}
 }
 
