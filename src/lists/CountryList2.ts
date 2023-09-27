@@ -27,13 +27,13 @@ export class CountryList2 implements ListOfValues
 		this.targetfields = "country_id";
 		this.displayfields = ["country_id","country_name"];
 
-		let filter:FilterStructure = null;
+		let where:FilterStructure = null;
 
 		let filter1:Filter = Filters.ILike("country_id");
 		let filter2:Filter = Filters.ILike("country_name");
 
-		filter = new FilterStructure().and(filter1).or(filter2);
-		this.datasource.addFilter(filter);
+		where = new FilterStructure().and(filter1).or(filter2);
+		this.datasource.addFilter(where);
 
 		this.filter = [filter1,filter2];
 	}

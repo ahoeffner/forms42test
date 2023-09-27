@@ -3,13 +3,13 @@ find ../core/src -name '*.ts' | xargs wc -l
 
 FilterEditor
 
-Add auth-methods to config
-
-DatePicker on record-readonly
 Alerts should not overlay other alerts
-Insert/Delete should not be prevented in general
 
 FieldFeatureFactory mode="-"
+
+Dokumenter ListOfValues
+Add validate function to ListOfValues interface
+ListOfValues, DatePicker (row?:number)
 
 Add Lookup
 Arrow right doesn't work in menu ?
