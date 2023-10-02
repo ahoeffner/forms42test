@@ -129,7 +129,7 @@ export class FormsModule extends FormsCoreModule
 		Connection.CONNTIMEOUT = 120;
 
 		let port:number = +window.location.port;
-		// Hack. Test if page origins from live-server
+		// Hack. If page origins from live-server, then assume OpenRestDB is on localhost
 		let backend:string = (port >= 5500 && port < 5600) ? "http://localhost:9002" : null;
 
 		FormsModule.DATABASE = new Connection(backend);
