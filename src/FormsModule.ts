@@ -128,7 +128,11 @@ export class FormsModule extends FormsCoreModule
 		Connection.TRXTIMEOUT = 240;
 		Connection.CONNTIMEOUT = 120;
 
-		FormsModule.DATABASE = new Connection("http://localhost:9002");
+		let port:number = +window.location.port;
+		// Hack. Test if page origins from live-server
+		let backend:string = (port >= 5500 && port < 5600) ? "http://localhost:9002" : null;
+
+		FormsModule.DATABASE = new Connection(backend);
 
 		let infomation:HTMLElement = document.querySelector(".infomation");
 		infomation.appendChild(KeyMapPage.show(keymap));
