@@ -3,16 +3,13 @@ find ../core/src -name '*.ts' | xargs wc -l
 
 FilterEditor
 
-row-indicator on internal forms
 Alerts should not overlay other alerts
 
-Dokumenter ListOfValues
 Add validate function to ListOfValues interface
 
 Add Lookup ?
 Arrow right doesn't work in menu ?
 
-Preform return false -> focus error
 check checkEventTransaction
 
 Inject simple formatter
@@ -20,7 +17,6 @@ Connect in demo (no harcoded url)
 
 Demo knapper på Lessons
 
-RecordStateIndicator
 Propagate rightclick
 
 
