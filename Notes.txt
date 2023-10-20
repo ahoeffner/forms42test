@@ -3,9 +3,7 @@ find ../core/src -name '*.ts' | xargs wc -l
 
 FilterEditor
 
-Login doesn't work
-Validation on job_id
-Debug til Hans
+Fieldtype on RecordProperties
 Alerts should not overlay other alerts
 
 Add validate function to ListOfValues interface
