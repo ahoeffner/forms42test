@@ -191,7 +191,7 @@ tr td span:hover
 {
 	
 	width:200px;
-	padding:5px 3px;
+	padding:5px 0px;
 	position: relative;
 	display:table-cell;
 }
@@ -224,19 +224,15 @@ tr td span:hover
 
 .left-menu.level-2
 {
-	margin-left:26px;
+	margin-left:30px;
 	margin-bottom: 0px;
 }
 
 .left-menu-container .left-menu.level-1
 {
-	margin-left:26px;
+	margin-left:30px;
 }
 
-.left-menu.level-1 li[type="menu"]
-{
-	padding-left:3px;
-}
 
 .left-menu-container  .left-menu:not(:first-child)::before
 {
