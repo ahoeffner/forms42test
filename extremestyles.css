@@ -157,7 +157,7 @@ tr td span:hover
 
 .left-menu-container .left-menu
 {
-	padding:0px !important;
+	padding:0px !important; 
 	display:block !important;
 	font-size:15px !important;
 	transition: 0.3s !important;
@@ -226,7 +226,7 @@ tr td span:hover
 
 .left-menu.level-2
 {
-	margin-left:30px;
+	margin-left:20px;
 	margin-bottom: 0px;
 }
 
@@ -234,7 +234,6 @@ tr td span:hover
 {
 	margin-left:30px !important;
 }
-
 
 .left-menu-container  .left-menu:not(:first-child)::before
 {
