@@ -140,6 +140,7 @@ tr td span:hover
 	height: 100%;
 	color:white;
 	transition: 0.5s;
+	overflow: hidden;
 	position: relative;
 	background-color:#36393e;
 }
@@ -150,50 +151,51 @@ tr td span:hover
 	display: block;
 	cursor: pointer;
 	font-weight: 400;
-	text-align: left;
-	border-radius: 0;
-	overflow: hidden;
 	text-decoration: none;
 	background: transparent;
 }
 
 .left-menu-container .left-menu
 {
-	width:100%;
-	padding:0px;
-	display:table;
-	font-size:15px;
-	margin-top:0px;
-	margin-top:8px;
-	transition: 0.3s;
-	list-style: none;
-	transition: 0.3s;
+	padding:0px !important;
+	display:block !important;
+	font-size:15px !important;
+	transition: 0.3s !important;
+	list-style: none !important;
+	transition: 0.3s !important;
 	margin-left: 5px;
 }
 
-.left-menu-container .left-menu a
+.left-menu-container .left-menu li a
 {
 	z-index: 1;
-	width:100%;
-	overflow:hidden;
-	padding-left:5px;
+	width:200px;
+	padding:5px 0px;
+	position: relative;
 	display:table-cell;
 	height: fit-content;
-	border-left: 3px solid #36393e;
+}
+
+.infomation .tutorial a:hover:after,
+.infomation .tutorial a:focus:after,
+.infomation .tutorial a:focus:before,
+.infomation .tutorial a:hover:before,
+.topbar  li a:hover:not([disabled]):after,
+.topbar  li a:focus:not([disabled]):after,
+.topbar  li a:hover:not([disabled]):before,
+.topbar  li a:focus:not([disabled]):before,
+.left-menu-container .left-menu li a:hover:after,
+.left-menu-container .left-menu li a:hover:before,
+.left-menu-container .left-menu li a:focus:after,
+.left-menu-container .left-menu li a:focus:before
+{
+	opacity: 1;
+	transform: scaleY(1);
 }
 
 .left-menu
 {
 	margin-top:0px !important;
-}
-
-.left-menu-container .left-menu li a
-{
-	
-	width:200px;
-	padding:5px 0px;
-	position: relative;
-	display:table-cell;
 }
 
 .left-menu-container li[type="link"]
@@ -230,7 +232,7 @@ tr td span:hover
 
 .left-menu-container .left-menu.level-1
 {
-	margin-left:30px;
+	margin-left:30px !important;
 }
 
 
@@ -1347,23 +1349,6 @@ div[name="close-button"]
 .topbar menu[name="top-menu"]  li a:hover:not([disabled])
 {
 	color:white
-}
-
-.infomation .tutorial a:hover:after,
-.infomation .tutorial a:focus:after,
-.infomation .tutorial a:focus:before,
-.infomation .tutorial a:hover:before,
-.topbar  li a:hover:not([disabled]):after,
-.topbar  li a:focus:not([disabled]):after,
-.topbar  li a:hover:not([disabled]):before,
-.topbar  li a:focus:not([disabled]):before,
-.left-menu-container .left-menu a:hover:after,
-.left-menu-container .left-menu a:hover:before,
-.left-menu-container .left-menu a:focus:after,
-.left-menu-container .left-menu a:focus:before
-{
-	opacity: 1;
-	transform: scaleY(1);
 }
 
 .middle
