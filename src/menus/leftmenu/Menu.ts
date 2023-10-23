@@ -37,11 +37,11 @@ export class Menu extends MenuComponent
 		this.menuelem.classList.value = "left-menu-container";
 
 		this.container = document.getElementById("main-menu") as HTMLElement;
-		
+
 		this.menuelem = this.container.appendChild(this.menuelem);
 		this.target = this.menuelem;
 
-		
+
 		this.addEventListener(this.hideSideBar,{type: EventType.WhenMenuBlur})
 		this.addEventListener(this.showSideBar,{type: EventType.WhenMenuFocus})
 
@@ -54,8 +54,8 @@ export class Menu extends MenuComponent
 			return(true);
 
 		this.displayed = true;
-	
-		this.folder.classList.add("active");
+
+		this.folder?.classList.add("active");
 		this.container.style.minWidth = "160px";
 		this.container.classList.add("menu-left-open");
 
@@ -68,7 +68,7 @@ export class Menu extends MenuComponent
 			return(true);
 
 		this.displayed = false;
-		this.folder.classList.remove("active");
+		this.folder?.classList.remove("active");
 		this.container.style.minWidth = "0px";
 		this.container.classList.remove("menu-left-open");
 
@@ -82,14 +82,14 @@ export class Menu extends MenuComponent
 
 		if (this.displayed)
 		{
-			this.folder.classList.remove("active");
+			this.folder?.classList.remove("active");
 			this.container.style.minWidth = "0px";
 			this.container.classList.remove("menu-left-open");
 		}
 		else
 		{
-			
-			this.folder.classList.add("active");
+
+			this.folder?.classList.add("active");
 			this.container.style.minWidth = "160px";
 			this.container.classList.add("menu-left-open");
 		}

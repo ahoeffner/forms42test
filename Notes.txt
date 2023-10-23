@@ -3,6 +3,7 @@ find ../core/src -name '*.ts' | xargs wc -l
 
 FilterEditor
 
+Requery on "changed by another user"
 Fieldtype on RecordProperties
 Alerts should not overlay other alerts
 
