@@ -212,10 +212,6 @@ tr td span:hover
 	display:table-cell;
 }
 
-/* .left-menu-container .left-menu li[type="menu"]:not(.level-1):before
-{
-	padding-right:0px;
-} */
 
 .left-menu-container .left-menu li[type="menu"][open]:before
 {
@@ -224,13 +220,13 @@ tr td span:hover
 
 .left-menu.level-2
 {
-	margin-left:20px;
+	margin-left:26px;
 	margin-bottom: 0px;
 }
 
 .left-menu-container .left-menu.level-1
 {
-	margin-left:21px;
+	margin-left:26px;
 }
 
 .left-menu.level-1 li[type="menu"]
