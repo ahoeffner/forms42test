@@ -200,13 +200,18 @@ tr td span:hover
 .left-menu-container .left-menu li[type="menu"]:before
 {
 	color: white;
-	font-size: 20px;
+	font-size: 16px;
 	margin-left:5px;
-	padding-left:3px;
 	margin-right:15px;
 	padding-right:3px;
-	content: '\002302';
+	content: '\1F5C0';
 	display:table-cell;
+}
+
+.left-menu-container .left-menu li[type="menu"].focus:before,
+.left-menu-container .left-menu li[type="menu"].active:before
+{
+	content: '\1F5C1';
 }
 
 .left-menu.level-2
@@ -218,6 +223,11 @@ tr td span:hover
 .left-menu-container .left-menu.level-1
 {
 	margin-left:21px;
+}
+
+.left-menu.level-1 li[type="menu"]
+{
+	padding-left:3px;
 }
 
 .left-menu-container  .left-menu:not(:first-child)::before
@@ -837,9 +847,9 @@ div[name="loginbutton"]
 }
 
 div[name="lov"],
+div[name="msg"],
 div[name="login"],
 div[name="query"],
-div[name="msg"],
 div[name="date-picker"]
 {
 	margin:0 20px;
@@ -857,15 +867,17 @@ div[name="popup-alert"]
 #block.fatal ~ div[name="popup-body"] div[name="popup-alert"],
 #block.warning ~ div[name="popup-body"] div[name="popup-alert"]
 {
-	display:grid;
-	justify-content: end;
-	grid-auto-flow: column;
-	grid-template-columns: 30px 1fr;
+	display:grid !important;
+	justify-content: end !important;
+	grid-auto-flow: column !important;
+	grid-template-columns: 30px 1fr !important;
 }
+
 
 #block.fatal ~ div[name="popup-body"] div[name="popup-alert"] div[name="msg"],
 #block.warning ~ div[name="popup-body"] div[name="popup-alert"] div[name="msg"]
 {
+	word-break: break-all;
 	margin-left:10px !important;
 }
 
