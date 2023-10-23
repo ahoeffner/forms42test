@@ -209,14 +209,9 @@ tr td span:hover
 	color: white;
 	font-size: 16px;
 	margin-left:5px;
-	padding-right:5px;
+	padding-right:8px;
 	margin-right:15px;
 	display:table-cell;
-}
-
-.left-menu-container .left-menu:not(.level-0) li[type="menu"]:before
-{
-	padding-right:0px !important;
 }
 
 .left-menu-container .left-menu li[type="menu"][open]:before
