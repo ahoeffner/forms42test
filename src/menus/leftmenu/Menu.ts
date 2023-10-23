@@ -90,7 +90,7 @@ export class Menu extends MenuComponent
 		{
 			
 			this.folder.classList.add("active");
-			this.container.style.minWidth = "150px";
+			this.container.style.minWidth = "160px";
 			this.container.classList.add("menu-left-open");
 		}
 
