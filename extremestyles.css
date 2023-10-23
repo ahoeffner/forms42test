@@ -208,8 +208,7 @@ tr td span:hover
 	display:table-cell;
 }
 
-.left-menu-container .left-menu li[type="menu"].focus:before,
-.left-menu-container .left-menu li[type="menu"].active:before
+.left-menu-container .left-menu li[type="menu"].open:before
 {
 	content: '\1F5C1';
 }
