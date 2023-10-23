@@ -212,10 +212,10 @@ tr td span:hover
 	display:table-cell;
 }
 
-.left-menu-container .left-menu li[type="menu"]:not(.level-1):before
+/* .left-menu-container .left-menu li[type="menu"]:not(.level-1):before
 {
 	padding-right:0px;
-}
+} */
 
 .left-menu-container .left-menu li[type="menu"][open]:before
 {
