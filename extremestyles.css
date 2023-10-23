@@ -212,6 +212,10 @@ tr td span:hover
 	display:table-cell;
 }
 
+.left-menu-container .left-menu:not(.level-0) li[type="menu"]:before
+{
+	padding-right:0px !important;
+}
 
 .left-menu-container .left-menu li[type="menu"][open]:before
 {
