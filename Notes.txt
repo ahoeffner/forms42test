@@ -1,9 +1,8 @@
 Cyclic master detail
 find ../core/src -name '*.ts' | xargs wc -l
 
-FilterEditor
+Do we disconnect when inactive
 
-Requery on "changed by another user"
 Fieldtype on RecordProperties
 Alerts should not overlay other alerts
 
