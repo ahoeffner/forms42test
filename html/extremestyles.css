@@ -812,12 +812,21 @@ div[name="date-picker"]
 	padding:0;
 }
 
+label[for="scope"],
+label[for="database"],
 label[for="username"],
 label[for="password"]
 {
 	user-select: none;
 	font-weight: bold;
 	margin-bottom:5px;
+}
+
+div[name="scope"],
+div[name="database"]
+{
+	display:grid;
+	margin-top:15px !important;
 }
 
 
@@ -857,6 +866,14 @@ div[name="date-picker"]
 	background-color: white;
 	margin-top:0px !important;
 	padding: 5px 20px 20px 20px;
+}
+
+div[name="indexing"]
+{
+	gap:5px;
+	display:grid;
+	margin-top:0px !important;
+	grid-template-columns: 1fr 1fr;
 }
 
 div[name="popup-alert"]
