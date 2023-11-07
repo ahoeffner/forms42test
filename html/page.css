@@ -1,0 +1,126 @@
+html, body
+{
+	margin: 0;
+	padding:0;
+	height: 100%;
+	overflow: hidden;
+	font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+/* page */
+.app-page
+{
+	display: grid;
+	grid-auto-flow: column;
+	height: calc(100vh - 80px);
+	grid-template-columns: fit-content(30%);
+}
+
+.form-area
+{
+	position: relative;
+	background-size: cover;
+	backface-visibility: hidden;
+	background-position: bottom;
+	background-image:linear-gradient(to right bottom, rgba(97, 112, 227, 0.8),rgba(100, 101, 179, 0.8)) , url(images/background.jpg);
+}
+
+/* ------------ */
+/* page-header */
+.app-header
+{
+	width: 100%;
+	height: 40px;
+	color:white;
+	padding:0 10px;
+	align-items: center;
+	display: inline-grid;
+	grid-auto-flow: column;
+	background-color: #36393e;
+	grid-template-columns: 40px 1fr 155px;
+}
+
+/* -------------- */
+/* left-bar */
+
+.menu-left
+{
+	width:28px;
+	padding:0px;
+	height: 100%;
+	color:white;
+	transition: 0.5s;
+	overflow: hidden;
+	position: relative;
+	background-color:#36393e;
+}
+
+.left-menu-container
+{
+	margin-top:7px;
+	display: block;
+	cursor: pointer;
+	font-weight: 400;
+	text-decoration: none;
+	background: transparent;
+}
+
+.left-menu-container .left-menu
+{
+	margin-left: 5px;
+	padding:0px !important; 
+	display:block !important;
+	font-size:15px !important;
+	margin-top:0px !important;
+	transition: 0.3s !important;
+	list-style: none !important;
+	transition: 0.3s !important;
+}
+
+.left-menu-container .left-menu li a
+{
+	z-index: 1;
+	width:200px;
+	padding:5px 0px;
+	position: relative;
+	display:table-cell;
+	height: fit-content;
+}
+
+.left-menu-container .left-menu li[type="menu"]:before
+{
+	content: '📁';
+	color: white;
+	font-size: 16px;
+	margin-left:5px;
+	padding-right:8px;
+	margin-right:15px;
+	display:table-cell;
+}
+
+.topbar  li a:hover:not([disabled]):after,
+.topbar  li a:focus:not([disabled]):after,
+.topbar  li a:hover:not([disabled]):before,
+.topbar  li a:focus:not([disabled]):before,
+.left-menu-container .left-menu li a:hover:after,
+.left-menu-container .left-menu li a:hover:before,
+.left-menu-container .left-menu li a:focus:after,
+.left-menu-container .left-menu li a:focus:before
+{
+	opacity: 1;
+	transform: scaleY(1);
+}
+
+
+/* ----------------- */
+/* page-footer */
+.page-footer
+{
+	width:100%;
+	height: 40px;
+	display:flex;
+	background: #1b1c1e;
+	border-top: solid 1px white;
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+/* ---------- */
