@@ -1309,11 +1309,6 @@ div[name="buttonarea"]
 	border-bottom: none;
 }
 
-div[name="close-button"]
-{
-	line-height: 15px;
-}
-
 .infomation .tutorial a:before,
 .left-menu-container .left-menu a:before,
 .topbar menu[name="top-menu"] li a:before
