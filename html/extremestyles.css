@@ -1,15 +1,4 @@
-.topbar  li a:hover:not([disabled]):after,
-.topbar  li a:focus:not([disabled]):after,
-.topbar  li a:hover:not([disabled]):before,
-.topbar  li a:focus:not([disabled]):before,
-.left-menu-container .left-menu li a:hover:after,
-.left-menu-container .left-menu li a:hover:before,
-.left-menu-container .left-menu li a:focus:after,
-.left-menu-container .left-menu li a:focus:before
-{
-	opacity: 1;
-	transform: scaleY(1);
-}
+
 
 .left-menu-container li[type="link"]
 {

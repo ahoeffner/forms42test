@@ -47,21 +47,55 @@ div[name="close-button"]:hover
 	animation-fill-mode: backwards;
 	box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
 }
-.form
+
+form
 {
-	display:flex;
+	display:grid;
 	flex-wrap: wrap;
-   margin:10px 20px 20px 20px;
+   margin:20px;
+}
+
+.container
+{
+   gap:5px;
+   display:flex;
+   align-items: center;
 }
 
 .block
 {
-	margin:5px;
+	margin:10px;
 	padding: 30px;
+   width: max-content;
+   height: max-content;
 	position: relative;
 	border-radius: 10px;
+   display: grid;
 	background-color: #ffffff;
 	box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
 }
 
+.block p
+{
+   margin-top:0px; 
+   margin-bottom: 5px;
+}
+
+/* ------------------- */
+/* Phonebook */
+.context p span
+{
+   width:100px;
+   display:inline-block;
+}
+
+/* ------------------- */
+/*FieldTypes canvas */
+
+.column,
+.radio_button
+{
+   display:flex;
+   align-items: end;
+}
 /* ------------------- */
