@@ -1,8 +1,9 @@
 <include src="/html/formheader"></include>
 
 <!-- Start width -->
+<div style="width: 1000px;"></div>
 <form>
-	<div style="width: 1000px;"></div>
+	
 
 	<div class="block">
 		<div class="needle blue"></div>
@@ -73,22 +74,22 @@
 			<div class="needle red"></div>
 			<table>
 				<tr>
-					<td>Salary</td>
+					<td><label>Salary</label></td>
 					<td>
-						<input name="salary" from="Employees" size="8" required integer>&euro;
+						:<input name="salary" from="Employees" size="8" required integer>&euro;
 					</td>
 				</tr>
 				<tr>
-					<td>Hire Date</td>
+					<td><label>Hire Date</label></td>
 					<td>
-						<input name="hire_date" from="Employees" date required>
+						:<input name="hire_date" from="Employees" date required>
 						<span onclick="this.showDatePicker('Employees','hire_date')">&#128197;</span>
 					</td>
 				</tr>
 				<tr>
-					<td>Job</td>
+					<td><label>Job</label></td>
 					<td>
-						<input name="job_id" from="Employees" lov="/lovs/jobs" size="10" upper required>
+						:<input name="job_id" from="Employees" lov="/lovs/jobs" size="10" upper required>
 						<input name="job_title" from="Employees" lov="/lovs/jobs" size="20" derived readonly query="false">
 						<span onclick="this.showListOfValues('Employees','job_id')">&#x2807;</span>
 					</td>

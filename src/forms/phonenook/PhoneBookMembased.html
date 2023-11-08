@@ -29,25 +29,41 @@
 				</tr>
 			</table>
 		</div>
-		<div class="block context">
+		<div class="block">
 			<div class="needle red"></div>
-			<p >
-				<span>First Name</span>:
-				<input size="10" name="first_name" from="employees" class="detail" initcap required>
-			</p >
-			<p >
-				<span >Last Name</span>:
-				<input size="10" name="last_name" from="employees" class="detail" initcap required>
-			</p>
-			<p >
-				<span >Phone</span>:
-				<input size="20" name="phone_number" from="employees" class="detail" required>
-			</p>
-			<p >
-				<span>Hire Date</span>:
-				<input name="hire_date" size="10" date from="employees" class="detail" required>
-				<span class="icon_calander" onclick="this.showDatePicker('employees', 'hire_date')">&#128197;</span>
-			</p>
+			<table>
+				<tr>
+					<td><label>First Name</label></td>
+					<td>
+						:<input size="10" name="first_name" from="employees" class="detail" initcap required>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Last Name</label>
+					</td>
+					<td>
+						:<input size="10" name="last_name" from="employees" class="detail" initcap required>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Phone</label>
+					</td>
+					<td>
+						:<input size="20" name="phone_number" from="employees" class="detail" required>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Hire Date</label>
+					</td>
+					<td>
+						:<input name="hire_date" size="10" date from="employees" class="detail" required>
+						<span class="icon_calander" onclick="this.showDatePicker('employees', 'hire_date')">&#128197;</span>
+					</td>
+				</tr>
+			</table>
 		</div>
 	</div>
 </form>

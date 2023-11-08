@@ -1,5 +1,5 @@
 
-/* header popup canvas */
+/* header canvas */
 
 .form-header,
 div[name="popup-header"]
@@ -26,12 +26,54 @@ div[name="popup-header"]
 	justify-content: center;
 }
 
-.form-header-right div div:hover:not(:last-child)
+/* ---------------------------- */
+/*canvas-header right */
+.form-header-right
+{
+	display: grid; grid-auto-flow: column; height: 20px;
+}
+
+.close,
+.minimize,
+.view-toggle
+{
+	width: 20px; 
+	height: 20px; 
+	display:flex; 
+	position: relative;
+	align-items: center; 
+	justify-content: center; 
+}
+
+.minimize div
+{
+	bottom:9px; 
+	font-size: 10px;
+	position: absolute; 
+}
+
+.view-toggle div
+{
+	bottom:3px; 
+	font-size: 15px; 
+	font-weight: bold;
+	position: absolute; 
+	filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(120deg) brightness(105%) contrast(101%);
+}
+
+.form-header-right div:hover:not(:last-child)
 {
 	background-color: rgb(127, 127, 127);
 }
 
-div[name="close"]:hover,
+.close div
+{
+	bottom: 0px; 
+	font-size: 20px;
+	position: absolute; 
+}
+
+.close:hover,
 div[name="close-button"]:hover
 {
 	color:white;
@@ -50,15 +92,16 @@ div[name="close-button"]:hover
 
 form
 {
-	display:grid;
-	flex-wrap: wrap;
-   margin:20px;
+	margin:20px;
+	display:block;
+
 }
 
 .container
 {
    gap:5px;
    display:flex;
+	flex-wrap: wrap;
    align-items: center;
 }
 
@@ -74,22 +117,7 @@ form
 	background-color: #ffffff;
 	box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
 }
-
-.block p
-{
-   margin-top:0px; 
-   margin-bottom: 5px;
-}
-
-/* ------------------- */
-/* Phonebook */
-.context p span
-{
-   width:100px;
-   display:inline-block;
-}
-
-/* ------------------- */
+/* ---------------------------- */
 /*FieldTypes canvas */
 
 .column,
@@ -98,4 +126,72 @@ form
    display:flex;
    align-items: end;
 }
-/* ------------------- */
+/* ---------------------------- */
+/* table */
+td
+{
+	padding: 0 4px;
+	line-height: 1.42857143;
+}
+
+th label[draggable="true"]
+{
+	cursor: move;
+}
+
+th
+{
+	cursor: default;
+	user-select: none;
+}
+
+.indicator
+{
+	width:10px;
+	align-items: center;
+	justify-content: center;
+}
+
+.row-indicator
+{
+	width:10px;
+	height: 10px;
+	display: block;
+	border-radius: 50px;
+	background-color: gray;
+}
+
+.filter-indicator
+{
+	width: 8px;
+	height: 8px;
+	display: block;
+	background-color: grey;
+}
+
+/* ---------------------------- */
+/* search */
+
+.search
+{
+	margin: 2px 0px 5px 30px;
+}
+
+.search input
+{
+	margin-bottom: 10px !important;
+}
+
+.search:before
+{
+	content: "\002315";
+	display:inline-block;
+}
+
+
+.lov input[name="search"]
+{
+	margin-bottom: 15px;
+}
+
+/*------------------------*/
