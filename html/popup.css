@@ -1,3 +1,46 @@
+div[name="lov"],
+div[name="msg"],
+div[name="login"],
+div[name="query"],
+div[name="date-picker"]
+{
+	margin:0 20px;
+	border-radius: 10px;
+	background-color: white;
+	margin-top:0px !important;
+	padding: 5px 20px 20px 20px;
+}
+
+div[name="popup-alert"]
+{
+	margin:0 20px;
+}
+
+
+
+div[name="popup-body"]
+{
+	padding:10px 0 !important;
+	background: #424549;
+	backdrop-filter: blur(10px);
+}
+
+div[name="loginimage"]
+{
+	width: 40px;
+	height: 40px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	border-radius: 50px;
+	margin: 0 auto 10px auto;
+	background-size: contain;
+	background-color: #36393e;
+	background-repeat: no-repeat;
+	background-image: url(images/login.jpg);
+	filter: invert(100%) sepia(1%) saturate(4058%) hue-rotate(223deg) brightness(117%) contrast(100%);
+}
+
+
 .icon_calender
 {
 	width:15px;
@@ -5,6 +48,7 @@
 	cursor: default;
 	display:inline-block;
 }
+
 
 
 .icon_calender:active
@@ -46,6 +90,13 @@ input[name="password"],
 input[name="username"]
 {
 	margin-left:0px;
+}
+
+div[name="loginbutton"]
+{
+	gap:5px;
+	display: flex;
+	justify-content: right;
 }
 
 
@@ -123,10 +174,95 @@ div[name="date-picker"]
 	box-shadow: 0 5px 30px rgb(0 0 0 / 30%);
 }
 
+.infomation .tutorial a:before,
+.left-menu-container .left-menu a:before,
+.topbar menu[name="top-menu"] li a:before
+{
+	top: 0;
+	left: 0;
+	opacity: 0;
+	width: 100%;
+	content: '';
+	height: 100%;
+	transition: .3s;
+	user-select: none;
+	position: absolute;
+	transform: scaleY(2);
+	pointer-events: none; 
+	border-top: 2px solid #6060F0;
+	border-bottom: 2px solid #6060F0;
+}
+
+.infomation .tutorial a:after,
+.left-menu-container .left-menu a:after,
+.topbar menu[name="top-menu"]  li a:after
+{
+	left: 0;
+	top: 2px;
+	opacity: 0;
+	z-index: -1;
+	content: '';
+	width: 100%;
+	height: 100%;
+	transition: .3s;
+	user-select: none;
+	position: absolute;
+	transform: scale(0);
+	pointer-events: none; 
+	background-color: #6060F0;
+}
+
+.infomation .tutorial a:focus,
+.infomation .tutorial a:hover,
+.left-menu-container .left-menu a:focus,
+.left-menu-container .left-menu a:hover,
+.topbar menu[name="top-menu"]  li a:focus:not([disabled]),
+.topbar menu[name="top-menu"]  li a:hover:not([disabled])
+{
+	color:white
+}
+
 .weekend
 {
 	color:red;
 	border-radius: 10px;
 }
+
+#block.fatal ~ div[name="popup-body"] div[name="popup-alert"],
+#block.warning ~ div[name="popup-body"] div[name="popup-alert"]
+{
+	display:grid !important;
+	justify-content: end !important;
+	grid-auto-flow: column !important;
+	grid-template-columns: 30px 1fr !important;
+}
+
+
+#block.fatal ~ div[name="popup-body"] div[name="popup-alert"] div[name="msg"],
+#block.warning ~ div[name="popup-body"] div[name="popup-alert"] div[name="msg"]
+{
+	word-break: break-all;
+	margin-left:10px !important;
+}
+
+#block  ~ div[name="popup-body"] div[name="alertlogo"]
+{
+	width: 100%;
+	height: 75%;
+	background-size: 30px;	
+	background-repeat: no-repeat;
+	filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(324deg) brightness(104%) contrast(101%);
+}
+
+#block.fatal  ~ div[name="popup-body"] div[name="alertlogo"]
+{
+	background-image: url(images/fatal.png);
+}
+
+#block.warning  ~ div[name="popup-body"] div[name="alertlogo"]
+{
+	background-image: url(images/warning.png);
+}
+
 
 /*---------------*/
