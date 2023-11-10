@@ -248,3 +248,23 @@ button:hover:after
 }
 
 /*-------------------------------*/
+/*textarea*/
+
+textarea 
+{
+	border:none;
+	resize: none;
+	box-shadow: none;
+	border-bottom: 2px solid black;
+}
+
+textarea:required
+{
+	outline: none;
+	box-shadow: none;
+}
+
+legend
+{
+	font-weight: bold;
+}

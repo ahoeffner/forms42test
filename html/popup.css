@@ -174,43 +174,9 @@ div[name="date-picker"]
 	box-shadow: 0 5px 30px rgb(0 0 0 / 30%);
 }
 
-.infomation .tutorial a:before,
-.left-menu-container .left-menu a:before,
-.topbar menu[name="top-menu"] li a:before
-{
-	top: 0;
-	left: 0;
-	opacity: 0;
-	width: 100%;
-	content: '';
-	height: 100%;
-	transition: .3s;
-	user-select: none;
-	position: absolute;
-	transform: scaleY(2);
-	pointer-events: none; 
-	border-top: 2px solid #6060F0;
-	border-bottom: 2px solid #6060F0;
-}
 
-.infomation .tutorial a:after,
-.left-menu-container .left-menu a:after,
-.topbar menu[name="top-menu"]  li a:after
-{
-	left: 0;
-	top: 2px;
-	opacity: 0;
-	z-index: -1;
-	content: '';
-	width: 100%;
-	height: 100%;
-	transition: .3s;
-	user-select: none;
-	position: absolute;
-	transform: scale(0);
-	pointer-events: none; 
-	background-color: #6060F0;
-}
+
+
 
 .infomation .tutorial a:focus,
 .infomation .tutorial a:hover,
@@ -266,3 +232,9 @@ div[name="date-picker"]
 
 
 /*---------------*/
+/*multi-value*/
+
+.multi-value
+{
+	margin-left:0px;
+}
