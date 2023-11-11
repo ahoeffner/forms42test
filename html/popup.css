@@ -1,0 +1,174 @@
+/*popup-body */
+div[name="popup-body"]
+{
+	padding:10px 0 !important;
+	background: #424549;
+	backdrop-filter: blur(10px);
+}
+
+
+div[name="lov"],
+div[name="msg"],
+div[name="login"],
+div[name="query"],
+div[name="date-picker"]
+{
+	margin:0 20px;
+	border-radius: 10px;
+	background-color: white;
+	margin-top:0px !important;
+	padding: 5px 20px 20px 20px;
+}
+
+/*------------------*/
+/* login */
+div[name="loginimage"]
+{
+	width: 40px;
+	height: 40px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	border-radius: 50px;
+	margin: 0 auto 10px auto;
+	background-size: contain;
+	background-color: #36393e;
+	background-repeat: no-repeat;
+	background-image: url(images/login.jpg);
+	filter: invert(100%) sepia(1%) saturate(4058%) hue-rotate(223deg) brightness(117%) contrast(100%);
+}
+
+input[name="password"],
+input[name="username"]
+{
+	margin-left:0px;
+}
+
+div[name="loginbutton"]
+{
+	gap:5px;
+	display: flex;
+	justify-content: right;
+}
+
+div[name="buttonarea"]
+{
+	margin:10px 10px 10px 10px !important
+}
+
+div[name="lowerright"]
+{
+	height: 25px;
+	margin:10px 10px 5px 10px;
+	padding-top:0px !important;
+}
+
+label[for="username"],
+label[for="password"]
+{
+	user-select: none;
+	font-weight: bold;
+	margin-bottom:5px;
+}
+
+/*------------------*/
+/* calculator  */
+div[name='day'] span:focus
+{
+	font-weight: bold;
+}
+
+span[name^="day-"]:hover,
+span[name^="day-"]:focus
+{
+	font-weight: bold;
+	user-select: none;
+}
+
+div[name="prev"]:active,
+div[name="next"]:active
+{
+	color:white;
+	user-select: none;
+	transform: scale(1.2);
+	background-color: gray;
+}
+
+.weekend
+{
+	color:red;
+	border-radius: 10px;
+}
+
+/*------------------*/
+
+.item
+{
+	height: 10px;
+   display:flex;
+   cursor:pointer;
+   font-size:12px;
+   list-style: none;
+   margin-bottom: 2px;
+   border-radius: 5px;
+   padding: 0 5px 0 10px;
+	border-bottom: 1px solid rgba(0, 0, 0, .30);
+}
+
+.content .item:hover
+{
+    background: #f2f2f2;
+}
+.content .item span
+{
+    font-size: 15px;
+    margin-left: 4px;
+}
+
+.content .share
+{
+    position: relative;
+    justify-content: space-between;
+}
+
+.share .share-menu
+{
+   top:-30px;
+   opacity: 0;
+   width:200px;
+   right:-200px;
+   padding:13px;
+   position: absolute;
+   pointer-events: none;
+   background-color: white;
+	box-shadow: 0 5px 10px rgba(0,0,0,0.08);
+}
+
+.share:hover .share-menu
+{
+   opacity: 1;
+   pointer-events: auto;
+}
+
+.lov,
+div[name="date-picker"]
+{
+	margin:10px 5px;
+	background-color: white;
+	box-shadow: 0 5px 30px rgb(0 0 0 / 30%);
+}
+
+/*---------------*/
+/*multi-value*/
+
+.multi-value
+{
+	margin-left:0px;
+}
+
+
+/* alert */
+div[name="popup-alert"]
+{
+	margin:0 20px;
+}
+/*---------------*/

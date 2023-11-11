@@ -1,0 +1,155 @@
+input
+{
+	border: none;
+	font-size: 14px;
+	font-weight: normal;
+	margin:0px 0px 0px 10px;
+	transition: all 0.18s ease;
+	background-color: transparent;
+	border-bottom: 2px solid black;
+}
+
+input.invalid,
+textarea.invalid
+{
+	border-bottom: 2px solid red;
+}
+
+input[date]
+{
+	width:90px;
+}
+
+input[mode="query"],
+input[name="search"]
+{
+	text-indent: 12px;
+   background-size: 10px;
+	transition: all 0.18s ease;
+	background-repeat: no-repeat;
+	background-position-y: center;
+	background-image: url(images/icons8-search-30.png);
+}
+
+input[mode="insert"]
+{
+	text-indent: 12px;
+	background-size: 10px;
+	transition: all 0.18s ease;
+	background-repeat: no-repeat;
+	background-position-y: center;
+	background-image: url(images/insert.png);
+}
+
+input[mode="deleted"]
+{
+	transition: all 0.18s ease;
+	text-decoration: line-through;
+}
+
+.warning
+{
+	font-style: italic;
+	color: lightcoral;
+}
+
+input.detail:read-only
+{
+	background: none;
+}
+
+/*textarea*/
+
+textarea 
+{
+	border:none;
+	resize: none;
+	box-shadow: none;
+	border-bottom: 2px solid black;
+}
+
+textarea:required
+{
+	outline: none;
+	box-shadow: none;
+}
+
+/*-----------------------------*/
+/* neddle */
+
+.needle
+{
+	left: 45%;
+	width: 4px;
+	height: 7px;
+	bottom: 90%;
+	position: absolute;
+	border-radius: 10px;
+	transform: translateX(-50%) rotate(-15deg);;
+}
+
+.needle::before
+{
+	left: 50%;
+	width: 6px;
+	z-index: 1;
+	height: 5px;
+	content: '';
+	bottom: 90%;
+	position: absolute;
+	border-radius: 50%;
+	transform: translateX(-50%);
+	border: solid 1px rgba(10, 5, 5, 30%);
+}
+
+.needle::after
+{
+	left: 50%;
+	bottom: 0%;
+	width: 8px;
+	z-index: 0;
+	height: 5px;
+	content: '';
+	position: absolute;
+	background: red;
+	border-radius: 50%;
+	transform: translateX(-50%);
+	box-shadow: 0 3px 4px rgba(0, 0, 0, 0.8);
+}
+
+.red
+{
+	background: linear-gradient(to right, red, rgb(155, 0, 0),red);
+}
+
+.red::before,
+.red::after
+{
+	background: red;
+}
+
+.blue
+{
+	background: linear-gradient(to right, blue, rgb(0, 0, 155),blue);
+}
+
+.blue:before,
+.blue::after
+{
+	background:blue;
+}
+
+.green
+{
+	background: linear-gradient(to right, green, rgb(0, 90, 0),green);
+}
+
+.green:before,
+.green::after
+{
+	background:green;
+}
+
+/*-------------------------------*/
+
+
