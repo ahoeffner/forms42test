@@ -18,6 +18,8 @@ Propagate rightclick
 
 *** Jonas ***
 
+MasterDetail center ?
+Fieldtypes looks like shit
 Alert wraps in middle of words
 
 Fields:
