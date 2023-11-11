@@ -1,10 +1,6 @@
 Cyclic master detail
 find ../core/src -name '*.ts' | xargs wc -l
 
-Do we disconnect when inactive
-
-Spaceship
-
 Fieldtype on RecordProperties
 Alerts should not overlay other alerts
 
@@ -21,6 +17,8 @@ Propagate rightclick
 
 
 *** Jonas ***
+
+Alert wraps in middle of words
 
 Fields:
 
