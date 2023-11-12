@@ -21,7 +21,8 @@ input[date]
 }
 
 input[mode="query"],
-input[name="search"]
+input[name="search"],
+div[name="search"] input
 {
 	text-indent: 12px;
    background-size: 10px;
@@ -57,7 +58,7 @@ input.detail:read-only
 {
 	background: none;
 }
-
+/*----------------------------*/
 /*textarea*/
 
 textarea 
