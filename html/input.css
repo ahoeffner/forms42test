@@ -96,6 +96,15 @@ input[type="checkbox"]
 	border: 2px solid #000000;
  }
 
+ input[type="radio"]:hover,
+ input[type="radio"]:focus,
+ input[type="checkbox"]:hover,
+ input[type="checkbox"]:focus
+ {
+	transform: scale(1.06);
+ }
+
+
 input[type="radio"]
 {
 	border-radius: 50%;
@@ -106,11 +115,10 @@ input[type="checkbox"]
 	border-radius: 5px;
 }
 
-
 input[type="checkbox"]::before {
 	top: 40%;
 	left: 50%;
-	font-size: 14px;
+	font-size: 16px;
 	content: '\2713'; 
 	color: #000000;
 	position: absolute;
