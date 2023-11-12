@@ -4,6 +4,12 @@ span
 	cursor: default;
 }
 
+p
+{
+  margin:0;
+  cursor: default;
+}
+
 legend
 {
 	font-weight: bold;
@@ -106,45 +112,5 @@ button:hover:after
 	background-color: rgb(93, 93, 93);
 }
 
+
 /*----------------*/
-
-
-input[type="checkbox"] 
-{
-	top:4px;
-	right:5px;
-	width: 20px;
-	height: 20px;
-	outline: none; 
-	cursor: pointer;
-	appearance: none;
-	border-radius: 5px;
-	position: relative;
-	-moz-appearance: none;
-	-webkit-appearance: none;
-	background-color: #fff;
-	border: 2px solid #000000;
- }
-
- /* Style the checkmark inside the custom checkbox */
- input[type="checkbox"]::before {
-	content: '\2713'; /* Unicode checkmark character */
-	font-size: 14px;
-	color: #000000;
-	position: absolute;
-	top: 40%;
-	left: 50%;
-	transform: translate(-50%, -50%) scale(0);
-	transition: transform 0.2s ease-in-out;
- }
-
- input[type="checkbox"]:checked::before {
-	color:white;
-	transform: translate(-50%, -50%) scale(1);
- }
-
- input[type="checkbox"]:checked {
-	background-color: #000000;
-	border-color: #000000;
-	color: #fff;
- }

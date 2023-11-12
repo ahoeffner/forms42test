@@ -76,81 +76,78 @@ textarea:required
 }
 
 /*-----------------------------*/
-/* neddle */
+/*checkbox and radio */
 
-.needle
+input[type="radio"],
+input[type="checkbox"]
 {
-	left: 45%;
-	width: 4px;
-	height: 7px;
-	bottom: 90%;
-	position: absolute;
-	border-radius: 10px;
-	transform: translateX(-50%) rotate(-15deg);;
-}
+	top:4px;
+	right:5px;
+	width: 20px;
+	height: 20px;
+	outline: none; 
+	cursor: pointer;
+	appearance: none;
+	border-radius: 5px;
+	position: relative;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	background-color: #fff;
+	border: 2px solid #000000;
+ }
 
-.needle::before
+input[type="radio"]
 {
-	left: 50%;
-	width: 6px;
-	z-index: 1;
-	height: 5px;
-	content: '';
-	bottom: 90%;
-	position: absolute;
 	border-radius: 50%;
-	transform: translateX(-50%);
-	border: solid 1px rgba(10, 5, 5, 30%);
 }
 
-.needle::after
+input[type="checkbox"]
 {
+	border-radius: 5px;
+}
+
+
+input[type="checkbox"]::before {
+	top: 40%;
 	left: 50%;
-	bottom: 0%;
-	width: 8px;
-	z-index: 0;
-	height: 5px;
-	content: '';
+	font-size: 14px;
+	content: '\2713'; 
+	color: #000000;
 	position: absolute;
-	background: red;
-	border-radius: 50%;
-	transform: translateX(-50%);
-	box-shadow: 0 3px 4px rgba(0, 0, 0, 0.8);
+	transition: transform 0.2s ease-in-out;
+   transform: translate(-50%, -50%) scale(0);
 }
 
-.red
+input[type="radio"]::before {
+ 	top: 50%;
+ 	left: 50%;
+ 	font-size: 20px;
+ 	content: '\2022'; 
+ 	color: #000000;
+ 	position: absolute;
+ 	transform: translate(-50%, -50%) scale(0);
+ 	transition: transform 0.2s ease-in-out;
+}
+
+input[type="radio"]:checked::before ,
+input[type="checkbox"]:checked::before {
+	color:white;
+	transform: translate(-50%, -50%) scale(1);
+}
+ 
+input[type="checkbox"]:checked 
 {
-	background: linear-gradient(to right, red, rgb(155, 0, 0),red);
+	background-color: #000000;
+	border-color: #000000;
+	color: #fff;
 }
 
-.red::before,
-.red::after
+input[type="radio"]:checked,
+input[type="checkbox"]:checked  
 {
-	background: red;
+	background-color: #000000;
+	border-color: #000000;
+	color: #fff;
 }
 
-.blue
-{
-	background: linear-gradient(to right, blue, rgb(0, 0, 155),blue);
-}
-
-.blue:before,
-.blue::after
-{
-	background:blue;
-}
-
-.green
-{
-	background: linear-gradient(to right, green, rgb(0, 90, 0),green);
-}
-
-.green:before,
-.green::after
-{
-	background:green;
-}
-
-/*-------------------------------*/
-
-
+/*---------------------------*/
