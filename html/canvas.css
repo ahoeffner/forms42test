@@ -17,6 +17,12 @@ div[name="popup-header"]
 	grid-template-columns: 40px 1fr 60px;
 }
 
+.canvas-handle
+{
+	cursor: default;
+	user-select: none;
+}
+
 div[name="title"],
 span[name="title"]
 {
