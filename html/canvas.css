@@ -9,13 +9,18 @@ div[name="popup-header"]
    cursor: default;
 	display: inline-grid;
 	grid-auto-flow: column;
+	
+}
+
+.canvas-header
+{
 	grid-template-columns: 40px 1fr 60px;
 }
 
-div[name="title"]
+div[name="title"],
+span[name="title"]
 {
 	display: flex;
-   user-select: none;
 	justify-content: center;
 }
 
@@ -40,7 +45,7 @@ div[name="minimize"]
 	justify-content: center;
 }
 
-div[name="view-toggle"]
+div[name="toggle"]
 {
 	top: 0px;
 	right: 35%;

@@ -147,8 +147,6 @@ export class FormsModule extends FormsCoreModule
 		this.addEventListener(this.showTopMenu,{type: EventType.Key, key: keymap.topmenu});
 		this.addEventListener(this.showLeftMenu,{type: EventType.Key, key: keymap.leftmenu});
 
-		// this.addEventListener(this.rightmenu,{type: EventType.Mouse, mouse: MouseMap.contextmenu});
-
 		this.addEventListener(this.open,
 		[
 			{type:EventType.Key,key:this.jobs},
