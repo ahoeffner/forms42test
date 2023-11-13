@@ -127,10 +127,18 @@ form
 }
 /* ---------------------------- */
 /* table */
-td
+
+
+table
 {
-	padding: 0 4px;
-	line-height: 1.42857143;
+	border-collapse: collapse;
+	box-shadow: 0 0 20px #0000001a;
+}
+
+th
+{
+	cursor: default;
+	user-select: none;
 }
 
 th label[draggable="true"]
@@ -138,10 +146,21 @@ th label[draggable="true"]
 	cursor: move;
 }
 
-th
+th label
 {
-	cursor: default;
-	user-select: none;
+	cursor: pointer;
+}
+
+th.sort:after 
+{
+	content: "\2193";
+	font-weight: bold;
+}
+
+td
+{
+	padding: 0 4px;
+	line-height: 1.42857143;
 }
 
 .indicator

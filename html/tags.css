@@ -102,15 +102,18 @@ button::after
 	background-color: rgb(72, 72, 72);
 }
 
-button:hover
-{
+button:hover {
 	font-weight: bold;
-}
-
-button:hover:after
-{
-	background-color: rgb(93, 93, 93);
-}
-
+	background-color: #0c0707; 
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+ }
+ 
+ button:hover:before {
+	opacity: 0; 
+ }
+ 
+ button:hover::after {
+	background-color: #333;
+ }
 
 /*----------------*/
