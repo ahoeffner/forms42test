@@ -96,7 +96,6 @@ div[name="next"]:active
 .weekend
 {
 	color:red;
-	border-radius: 10px;
 }
 
 /*------------------*/
@@ -165,7 +164,6 @@ div[name="date-picker"]
 {
 	margin-left:0px;
 }
-
 
 /* alert */
 div[name="popup-alert"]

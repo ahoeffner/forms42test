@@ -1,0 +1,28 @@
+
+/* color */
+div[name="popup-header"]
+{
+   background-color: #424549;
+   border-bottom: 1px white solid;
+}
+
+div[name="toggle"]
+{
+   filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(120deg) brightness(105%) contrast(101%);
+}
+
+
+/*---------------------*/
+/* hover */
+
+div[name="form-header-right"] div:hover:not(:last-child)
+{
+	background-color: rgb(127, 127, 127);
+}
+
+div[name="close-button"]:hover
+{
+	color:white;
+	background-color: rgb(255, 94, 94);
+}
+/*-----------------------*/
