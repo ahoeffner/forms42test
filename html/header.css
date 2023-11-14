@@ -3,19 +3,14 @@
 {
 	width: 100%;
 	height: 40px;
-	color:white;
 	padding:0 10px;
 	align-items: center;
 	display: inline-grid;
 	grid-auto-flow: column;
-	background-color: #36393e;
 	grid-template-columns: 40px 1fr 40px;
 }
 
-.logo
-{
-	color:white;
-}
+
 
 /*topbar left Hamburger*/
 .hamburger
@@ -27,13 +22,12 @@
 	position: relative; 
 }
 
-.hamburger div
+.hamburger-context
 {
 	margin: 0; 
 	padding: 0;
 	width: 16px; 
 	height: 3px; 
-	border-bottom: solid white 2px;
 }
 
 
@@ -44,7 +38,6 @@
 	height: 100%;
 	display:flex;
 	font-size:18px;
-	color: white;
 	cursor: default;
 	user-select: none;
 	justify-content: center;
@@ -111,7 +104,6 @@
 	top:4px;
 	left:85%;
 	display:flex;	
-	color:white;
    z-index: 1000;
 	font-size: 20px;
 	content: "\203A";
@@ -128,7 +120,7 @@
 	display: table;
 	min-width: 110px;
 	position: absolute;
-	background-color: #36393e;
+	/* background-color: #36393e; */
 	transform: translateX(-50%);
 	box-shadow: 0 2px 10px #666;
 }
@@ -142,7 +134,7 @@
 	position: relative;
 	text-align: center;
 	font-weight: normal;
-	background-color: transparent;
+	/* background-color: transparent; */
 }
 
 .topbar menu[name="top-menu"] li
@@ -211,7 +203,7 @@
 	text-decoration: none;
 }
 
-.infomation	.img
+.infomation-img
 {
 	width:30px;
 	height: 30px;
@@ -220,21 +212,21 @@
 	background-size: 25px;
 	background-repeat: no-repeat;
 	background-image: url(images/info.png);
-	filter: invert(100%) sepia(6%) saturate(0%) hue-rotate(3deg) brightness(108%) contrast(105%);
+	
 }
 
-.infomation	.InformationKeyMap
+.InformationKeyMap
 {
 	top:100%;
 	right:-10px;
 	width:300px;
-	color:black;
+	
 	display:none;
 	z-index: 9999;
 	margin-top:0px;
 	list-style: none;
 	position: absolute;
-	background-color:white;
+	
 	box-shadow:  0 2px 10px #666;
 }
 

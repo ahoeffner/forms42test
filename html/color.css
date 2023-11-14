@@ -1,5 +1,45 @@
 
 /* color */
+
+
+/*------------------*/
+/* header */
+
+.app-header
+{
+   color:white;
+   background-color: #36393e;
+}
+
+.logo
+{
+	color:white;
+}
+
+.hamburger-context
+{
+   border-bottom: solid white 2px;
+}
+
+.top-menu
+{
+   background-color: #36393e;
+}
+
+/* used https://codepen.io/sosuke/pen/Pjoqqp if you need change color for filter*/
+.Information-img
+{
+   filter: invert(100%) sepia(6%) saturate(0%) hue-rotate(3deg) brightness(108%) contrast(105%);
+}
+
+.InformationKeyMap
+{
+   color:black;
+   background-color:white;
+}
+
+/*-------------------*/
+/* canvas */
 div[name="popup-header"]
 {
    background-color: #424549;
@@ -9,6 +49,21 @@ div[name="popup-header"]
 div[name="toggle"]
 {
    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(120deg) brightness(105%) contrast(101%);
+}
+
+.canvas
+{
+   background-color: #424549;
+}
+
+.block 
+{
+   background-color: #ffff;
+}
+
+.row-indicator
+{
+   background-color: gray;
 }
 
 
@@ -22,7 +77,6 @@ div[name="form-header-right"] div:hover:not(:last-child)
 
 div[name="close-button"]:hover
 {
-	color:white;
 	background-color: rgb(255, 94, 94);
 }
 /*-----------------------*/

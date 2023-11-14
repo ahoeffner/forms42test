@@ -84,7 +84,6 @@ div[name="close-button"]
 
 .canvas
 {
-	background-color: #424549;
 	animation-fill-mode: backwards;
 	box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
 }
@@ -107,12 +106,11 @@ form
 {
 	margin:10px;
 	padding: 30px;
+   display: grid;
+	position: relative;
    width: max-content;
    height: max-content;
-	position: relative;
 	border-radius: 10px;
-   display: grid;
-	background-color: #ffffff;
 	box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
 }
 /* ---------------------------- */
@@ -174,7 +172,6 @@ td
 	height: 10px;
 	display: block;
 	border-radius: 50px;
-	background-color: gray;
 }
 
 /* ---------------------------- */
