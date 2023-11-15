@@ -2,16 +2,14 @@
 div[name="popup-body"]
 {
 	padding:10px 0 !important;
-	background: #424549;
-	backdrop-filter: blur(10px);
 }
 
 
-div[name="lov"],
-div[name="msg"],
-div[name="login"],
-div[name="query"],
-div[name="date-picker"]
+div[name="popup-body"] div[name="lov"],
+div[name="popup-body"] div[name="msg"],
+div[name="popup-body"] div[name="login"],
+div[name="popup-body"] div[name="query"],
+div[name="popup-body"] div[name="date-picker"]
 {
 	margin:0 20px;
 	border-radius: 10px;
@@ -31,10 +29,8 @@ div[name="loginimage"]
 	border-radius: 50px;
 	margin: 0 auto 10px auto;
 	background-size: contain;
-	background-color: #36393e;
 	background-repeat: no-repeat;
 	background-image: url(images/login.jpg);
-	filter: invert(100%) sepia(1%) saturate(4058%) hue-rotate(223deg) brightness(117%) contrast(100%);
 }
 
 input[name="password"],
@@ -200,9 +196,9 @@ div[name="popup-alert"]
 #block.fatal ~ div[name="popup-body"] div[name="popup-alert"],
 #block.warning ~ div[name="popup-body"] div[name="popup-alert"]
 {
-	display:grid !important;
-	justify-content: end !important;
-	grid-auto-flow: column !important;
-	grid-template-columns: 30px 1fr !important;
+	display:grid;
+	justify-content: end;
+	grid-auto-flow: column;
+	grid-template-columns: 30px 1fr;
 }
 /*---------------*/

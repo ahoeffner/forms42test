@@ -9,12 +9,6 @@ input
 	border-bottom: 2px solid black;
 }
 
-input.invalid,
-textarea.invalid
-{
-	border-bottom: 2px solid red;
-}
-
 input[date]
 {
 	width:90px;
@@ -109,11 +103,6 @@ input[type="radio"]
 	border-radius: 50%;
 }
 
-input[type="checkbox"]
-{
-	border-radius: 5px;
-}
-
 input[type="checkbox"]::before {
 	top: 40%;
 	left: 50%;
@@ -126,7 +115,7 @@ input[type="checkbox"]::before {
 }
 
 input[type="radio"]::before {
- 	top: 50%;
+ 	top: 40%;
  	left: 50%;
  	font-size: 20px;
  	content: '\2022'; 
@@ -144,9 +133,9 @@ input[type="checkbox"]:checked::before {
  
 input[type="checkbox"]:checked 
 {
-	background-color: #000000;
-	border-color: #000000;
 	color: #fff;
+	border-color: #000000;
+	background-color: #000000;
 }
 
 input[type="radio"]:checked,
@@ -158,3 +147,70 @@ input[type="checkbox"]:checked
 }
 
 /*---------------------------*/
+/* muti choice */
+select[name="multi"] 
+{
+	padding: 2px;
+	outline: none;
+	margin-top:10px;
+	cursor: pointer;
+	font-size: 12px;
+	appearance: none;
+	overflow: hidden;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	background-color: transparent;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+ }
+ 
+ select[name="multi"] option
+ {
+	padding:2px;
+ }
+
+ select[name="multi"] option:checked 
+ {
+	 color:white;
+	 background-color: #6c7076;
+ }
+ 
+ select[name="multi"] option:hover 
+ {
+	color:white;
+	background-color: #7b8086;
+ }
+
+/*-------------*/
+/* fieldset */
+ .fieldset 
+ {
+	border: 2px solid #000;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	padding: 10px;
+}
+
+.fieldset legend 
+{
+	display:flex;
+	padding: 0 10px;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 10px;
+	justify-content: center;
+	border: solid 2px black;
+}
+
+.fieldset:nth-child(odd),
+.fieldset:nth-child(odd) legend 
+{
+	background-color: rgb(212, 255, 212);
+}
+
+.fieldset:nth-child(even),
+.fieldset:nth-child(even) legend 
+{
+	background-color: rgb(212, 244, 255);
+}
+
+/*-------------*/

@@ -27,7 +27,7 @@
 }
 
 /* used https://codepen.io/sosuke/pen/Pjoqqp if you need change color for filter*/
-.Information-img
+.infomation-img
 {
    filter: invert(100%) sepia(6%) saturate(0%) hue-rotate(3deg) brightness(108%) contrast(105%);
 }
@@ -85,17 +85,38 @@ div[name="toggle"]
    background-color: gray;
 }
 
-
 /*---------------------*/
-/* hover */
-
-div[name="form-header-right"] div:hover:not(:last-child)
+/*canvas  hover and focus */
+div[name="form-header-right"] div:hover:not(:last-child),
+div[name="form-header-right"] div:focus:not(:last-child)
 {
 	background-color: rgb(127, 127, 127);
 }
 
-div[name="close-button"]:hover
+div[name="close-button"]:hover,
+div[name="close-button"]:focus
 {
 	background-color: rgb(255, 94, 94);
 }
 /*-----------------------*/
+/* popup */
+
+/* used https://codepen.io/sosuke/pen/Pjoqqp if you need change color for filter*/
+div[name="loginimage"]
+{ 
+   background-color: #36393e;
+   filter: invert(100%) sepia(1%) saturate(4058%) hue-rotate(223deg) brightness(117%) contrast(100%);
+}
+
+
+div[name="popup-body"]
+{
+   background: #424549;
+}
+
+/* input */
+input.invalid,
+textarea.invalid
+{
+	border-bottom: 2px solid red;
+}
