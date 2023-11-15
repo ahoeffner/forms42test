@@ -1,9 +1,8 @@
 /*popup-body */
 div[name="popup-body"]
 {
-	padding:10px 0 !important;
+	padding:10px 0;
 }
-
 
 div[name="popup-body"] div[name="lov"],
 div[name="popup-body"] div[name="msg"],
@@ -13,8 +12,6 @@ div[name="popup-body"] div[name="date-picker"]
 {
 	margin:0 20px;
 	border-radius: 10px;
-	background-color: white;
-	margin-top:0px !important;
 	padding: 5px 20px 20px 20px;
 }
 
@@ -46,16 +43,11 @@ div[name="loginbutton"]
 	justify-content: right;
 }
 
-div[name="buttonarea"]
-{
-	margin:10px 10px 10px 10px !important
-}
-
 div[name="lowerright"]
 {
-	height: 25px;
+	height: 100%;
+	padding-top:0px;
 	margin:10px 10px 5px 10px;
-	padding-top:0px !important;
 }
 
 label[for="username"],
@@ -80,77 +72,10 @@ span[name^="day-"]:focus
 	user-select: none;
 }
 
-div[name="prev"]:active,
-div[name="next"]:active
+div[name="prev"],
+div[name="next"]
 {
-	color:white;
 	user-select: none;
-	transform: scale(1.2);
-	background-color: gray;
-}
-
-.weekend
-{
-	color:red;
-}
-
-/*------------------*/
-
-.item
-{
-	height: 10px;
-   display:flex;
-   cursor:pointer;
-   font-size:12px;
-   list-style: none;
-   margin-bottom: 2px;
-   border-radius: 5px;
-   padding: 0 5px 0 10px;
-	border-bottom: 1px solid rgba(0, 0, 0, .30);
-}
-
-.content .item:hover
-{
-    background: #f2f2f2;
-}
-.content .item span
-{
-    font-size: 15px;
-    margin-left: 4px;
-}
-
-.content .share
-{
-    position: relative;
-    justify-content: space-between;
-}
-
-.share .share-menu
-{
-   top:-30px;
-   opacity: 0;
-   width:200px;
-   right:-200px;
-   padding:13px;
-   position: absolute;
-   pointer-events: none;
-   background-color: white;
-	box-shadow: 0 5px 10px rgba(0,0,0,0.08);
-}
-
-.share:hover .share-menu
-{
-   opacity: 1;
-   pointer-events: auto;
-
-}
-
-.lov,
-div[name="date-picker"]
-{
-	margin:10px 5px;
-	background-color: white;
-	box-shadow: 0 5px 30px rgb(0 0 0 / 30%);
 }
 
 /*---------------*/
@@ -170,8 +95,8 @@ div[name="popup-alert"]
 #block.fatal ~ div[name="popup-body"] div[name="popup-alert"] div[name="msg"],
 #block.warning ~ div[name="popup-body"] div[name="popup-alert"] div[name="msg"]
 {
+	margin-left:10px;
 	word-break: break-all;
-	margin-left:10px !important;
 }
 
 #block  ~ div[name="popup-body"] div[name="alertlogo"]
@@ -202,3 +127,5 @@ div[name="popup-alert"]
 	grid-template-columns: 30px 1fr;
 }
 /*---------------*/
+
+

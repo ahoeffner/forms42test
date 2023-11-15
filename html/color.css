@@ -1,8 +1,4 @@
 
-/* color */
-
-
-/*------------------*/
 /* header */
 
 .app-header
@@ -114,6 +110,39 @@ div[name="popup-body"]
    background: #424549;
 }
 
+div[name="popup-body"] div[name="lov"],
+div[name="popup-body"] div[name="msg"],
+div[name="popup-body"] div[name="login"],
+div[name="popup-body"] div[name="query"],
+div[name="popup-body"] div[name="date-picker"]
+{
+   background-color: white;
+}
+
+/*-----------------------*/
+/* calculator */
+
+div[name="prev"]:hover,
+div[name="next"]:hover,
+div[name="next"]:focus,
+div[name="prev"]:focus
+{
+	background-color: rgb(205, 205, 205);
+}
+
+div[name="prev"]:active,
+div[name="next"]:active
+{
+	color:white;
+	background-color: gray;
+}
+
+.weekend
+{
+	color:red;
+}
+
+/*-----------------------*/
 /* input */
 input.invalid,
 textarea.invalid
