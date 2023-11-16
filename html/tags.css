@@ -27,14 +27,65 @@ select
 	border-bottom: 2px solid black;
 }
 
+/* textarea */
+
+textarea 
+{
+	border:none;
+	resize: none;
+	box-shadow: none;
+
+}
+
+textarea:required
+{
+	outline: none;
+	box-shadow: none;
+}
+/*-------------------*/
+/* muti choice */
+select[name="multi"] 
+{
+	padding: 2px;
+	outline: none;
+	margin-top:10px;
+	cursor: pointer;
+	font-size: 12px;
+	appearance: none;
+	overflow: hidden;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	background-color: transparent;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+ }
+ 
+ select[name="multi"] option
+ {
+	padding:2px;
+ }
+
+ select[name="multi"] option:checked 
+ {
+	 color:white;
+	 background-color: #6c7076;
+ }
+ 
+ select[name="multi"] option:hover 
+ {
+	color:white;
+	background-color: #7b8086;
+ }
+
+/*-------------*/
 /* button */
 button
 {
 	z-index: 0;
-	width:60px;
+	width:70px;
 	border: none;
 	outline: none;
 	cursor: pointer;
+	font-weight: bold;
 	padding: 5px 10px;
 	user-select: none;
 	position: relative;

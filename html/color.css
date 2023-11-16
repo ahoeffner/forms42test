@@ -17,9 +17,15 @@
    border-bottom: solid white 2px;
 }
 
+/*show keymap text*/
+.topbar .top-menu li li div
+{
+   background-color: black;
+}
+
 .top-menu
 {
-   background-color: #36393e !important;
+   background-color: #36393e;
 }
 
 /* used https://codepen.io/sosuke/pen/Pjoqqp if you need change color for filter*/
@@ -57,9 +63,11 @@
 /* canvas */
 div[name="popup-header"]
 {
+   color:white;
    background-color: #424549;
    border-bottom: 1px white solid;
 }
+
 
 div[name="toggle"]
 {
@@ -79,6 +87,12 @@ div[name="toggle"]
 .row-indicator
 {
    background-color: gray;
+}
+
+.fieldset,
+.fieldset legend 
+{
+	border: 2px solid #000;
 }
 
 /*---------------------*/
@@ -144,8 +158,52 @@ div[name="next"]:active
 
 /*-----------------------*/
 /* input */
-input.invalid,
-textarea.invalid
+input.invalid
 {
 	border-bottom: 2px solid red;
+}
+
+input[type="checkbox"]::before,
+input[type="radio"]::before 
+{
+	color: black;
+}
+
+input[type="radio"]:checked::before ,
+input[type="checkbox"]:checked::before
+{
+	color:white;
+}
+
+.warning
+{
+   color: lightcoral;
+}
+
+input[type="checkbox"]:checked 
+{
+	color: #fff;
+	border-color: #000000;
+	background-color: #000000;
+}
+
+input[type="radio"]:checked,
+input[type="checkbox"]:checked  
+{
+   color: #fff;
+	border-color: #000000;
+	background-color: #000000;
+}
+
+
+/*---------------------*/
+/* Tags */
+
+textarea
+{
+   border-bottom: 2px solid black;
+}
+textarea.invalid
+{
+   border-bottom: 2px solid red;
 }

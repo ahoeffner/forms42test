@@ -262,13 +262,6 @@ export class FormsModule extends FormsCoreModule
 		this.leftmenu.focus();
 		return(true);
 	}
-
-	private async rightmenu() : Promise<boolean>
-	{
-		let mouseevent: MouseEvent = this.getJSEvent() as MouseEvent;
-		new RightClick(mouseevent);
-		return(true);
-	}
 }
 
 export class keymap extends KeyMap

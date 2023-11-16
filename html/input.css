@@ -5,7 +5,6 @@ input
 	font-weight: normal;
 	margin:0px 0px 0px 10px;
 	transition: all 0.18s ease;
-	background-color: transparent;
 	border-bottom: 2px solid black;
 }
 
@@ -45,29 +44,8 @@ input[mode="deleted"]
 .warning
 {
 	font-style: italic;
-	color: lightcoral;
 }
 
-input.detail:read-only
-{
-	background: none;
-}
-/*----------------------------*/
-/*textarea*/
-
-textarea 
-{
-	border:none;
-	resize: none;
-	box-shadow: none;
-	border-bottom: 2px solid black;
-}
-
-textarea:required
-{
-	outline: none;
-	box-shadow: none;
-}
 
 /*-----------------------------*/
 /*checkbox and radio */
@@ -108,109 +86,38 @@ input[type="checkbox"]::before {
 	left: 50%;
 	font-size: 16px;
 	content: '\2713'; 
-	color: #000000;
 	position: absolute;
 	transition: transform 0.2s ease-in-out;
    transform: translate(-50%, -50%) scale(0);
 }
 
-input[type="radio"]::before {
+input[type="checkbox"]::before,
+input[type="radio"]::before 
+{
+	color: black;
+}
+
+input[type="radio"]:checked::before ,
+input[type="checkbox"]:checked::before
+{
+	color:white;
+}
+
+input[type="radio"]::before 
+{
  	top: 40%;
  	left: 50%;
  	font-size: 20px;
  	content: '\2022'; 
- 	color: #000000;
  	position: absolute;
- 	transform: translate(-50%, -50%) scale(0);
  	transition: transform 0.2s ease-in-out;
+ 	transform: translate(-50%, -50%) scale(0);
 }
 
 input[type="radio"]:checked::before ,
-input[type="checkbox"]:checked::before {
-	color:white;
+input[type="checkbox"]:checked::before 
+{
 	transform: translate(-50%, -50%) scale(1);
-}
- 
-input[type="checkbox"]:checked 
-{
-	color: #fff;
-	border-color: #000000;
-	background-color: #000000;
-}
-
-input[type="radio"]:checked,
-input[type="checkbox"]:checked  
-{
-	background-color: #000000;
-	border-color: #000000;
-	color: #fff;
 }
 
 /*---------------------------*/
-/* muti choice */
-select[name="multi"] 
-{
-	padding: 2px;
-	outline: none;
-	margin-top:10px;
-	cursor: pointer;
-	font-size: 12px;
-	appearance: none;
-	overflow: hidden;
-	border-radius: 5px;
-	border: 1px solid #ccc;
-	background-color: transparent;
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
- }
- 
- select[name="multi"] option
- {
-	padding:2px;
- }
-
- select[name="multi"] option:checked 
- {
-	 color:white;
-	 background-color: #6c7076;
- }
- 
- select[name="multi"] option:hover 
- {
-	color:white;
-	background-color: #7b8086;
- }
-
-/*-------------*/
-/* fieldset */
- .fieldset 
- {
-	border: 2px solid #000;
-	border-radius: 5px;
-	margin-bottom: 10px;
-	padding: 10px;
-}
-
-.fieldset legend 
-{
-	display:flex;
-	padding: 0 10px;
-	margin-left: auto;
-	margin-right: auto;
-	border-radius: 10px;
-	justify-content: center;
-	border: solid 2px black;
-}
-
-.fieldset:nth-child(odd),
-.fieldset:nth-child(odd) legend 
-{
-	background-color: rgb(212, 255, 212);
-}
-
-.fieldset:nth-child(even),
-.fieldset:nth-child(even) legend 
-{
-	background-color: rgb(212, 244, 255);
-}
-
-/*-------------*/

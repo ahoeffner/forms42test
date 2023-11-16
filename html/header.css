@@ -55,9 +55,9 @@
 	list-style: none;
 	display:inline-flex;
 	align-items: center;
-	/* background-color: transparent; */
 }
 
+/*show keymap text */
 .topbar .top-menu li li div
 {
    width:45px;
@@ -65,9 +65,8 @@
 	position: absolute;
 	text-align: center;
 	visibility: hidden;
-   background-color: black;
-}
 
+}
 
 .topbar .top-menu li li:not([type="menu"]) div
 {
@@ -120,7 +119,6 @@
 	display: table;
 	min-width: 110px;
 	position: absolute;
-	/* background-color: #36393e; */
 	transform: translateX(-50%);
 	box-shadow: 0 2px 10px #666;
 }
@@ -134,7 +132,6 @@
 	position: relative;
 	text-align: center;
 	font-weight: normal;
-	background-color: transparent;
 }
 
 .topbar menu[name="top-menu"] li
@@ -174,7 +171,6 @@
 	z-index:-1;
 	display: block;
 	position: absolute;
-	background-color: #36393e;
 }
 
 
