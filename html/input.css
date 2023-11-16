@@ -64,8 +64,7 @@ input[type="checkbox"]
 	position: relative;
 	-moz-appearance: none;
 	-webkit-appearance: none;
-	background-color: #fff;
-	border: 2px solid #000000;
+
  }
 
  input[type="radio"]:hover,
@@ -89,18 +88,6 @@ input[type="checkbox"]::before {
 	position: absolute;
 	transition: transform 0.2s ease-in-out;
    transform: translate(-50%, -50%) scale(0);
-}
-
-input[type="checkbox"]::before,
-input[type="radio"]::before 
-{
-	color: black;
-}
-
-input[type="radio"]:checked::before ,
-input[type="checkbox"]:checked::before
-{
-	color:white;
 }
 
 input[type="radio"]::before 

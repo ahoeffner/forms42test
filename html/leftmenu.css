@@ -20,11 +20,11 @@
 	width:28px;
 	padding:0px;
 	height: 100%;
-	color:white;
+
 	transition: 0.5s;
 	overflow: hidden;
 	position: relative;
-	background-color:#36393e;
+	
 }
 
 .left-menu-container
@@ -34,7 +34,6 @@
 	cursor: pointer;
 	font-weight: 400;
 	text-decoration: none;
-	background: transparent;
 }
 
 .left-menu-container .left-menu
@@ -62,7 +61,6 @@
 .left-menu-container .left-menu li[type="menu"]:before
 {
 	content: '📁';
-	color: white;
 	font-size: 16px;
 	margin-left:5px;
 	padding-right:8px;
