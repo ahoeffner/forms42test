@@ -941,12 +941,11 @@ div[name="loginimage"]
 	margin-top: 0px;
 	margin-bottom: 0px;
 	border-radius: 50px;
+	background-size: cover;
 	margin: 0 auto 10px auto;
-	background-size: contain;
 	background-color: #36393e;
 	background-repeat: no-repeat;
-	background-image: url(images/login.jpg);
-	filter: invert(100%) sepia(1%) saturate(4058%) hue-rotate(223deg) brightness(117%) contrast(100%);
+	background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNsaXBQYXRoIGlkPSJteUNsaXAiIGNsaXBQYXRoVW5pdHM9Im9iamVjdEJvdW5kaW5nQm94Ij4KICA8Y2lyY2xlIGN4PSIuNSIgY3k9IjAuMDUiIHI9Ii41IiAvPgo8L2NsaXBQYXRoPgo8Y2lyY2xlIGlkPSJiZWhpbmQiIHN0eWxlPSJmaWxsOndoaXRlOyBzdHJva2Utd2lkdGg6MCIgY3g9IjUwIiBjeT0iNTAiIHI9IjQ2Ii8+CjxjaXJjbGUgaWQ9ImhlYWQiIHN0eWxlPSJmaWxsOmJsYWNrOyBzdHJva2Utd2lkdGg6MCIgY3g9IjUwIiBjeT0iMzgiIHI9IjE3Ii8+CjxjaXJjbGUgaWQ9ImJvZHkiIHN0eWxlPSJmaWxsOmJsYWNrOyBzdHJva2Utd2lkdGg6MCIgY3g9IjUwIiBjeT0iOTUiIHI9IjM0IiBjbGlwLXBhdGg9InVybCgjbXlDbGlwKSIvPgo8Y2lyY2xlIGlkPSJlZGdlIiBzdHlsZT0iZmlsbDpub25lOyBzdHJva2Utd2lkdGg6Njsgc3Ryb2tlOndoaXRlIiBjeD0iNTAiIGN5PSI1MCIgcj0iNDYiLz4KPC9zdmc+Cg==");
 }
 
 button
