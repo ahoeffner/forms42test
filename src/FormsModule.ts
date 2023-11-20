@@ -123,6 +123,7 @@ export class FormsModule extends FormsCoreModule
 		this.topmenu = new TopMenu();
 		this.leftmenu = new LeftMenu();
 
+		this.warning("hello");
 		this.updateKeyMap(keymap);
 
 		Connection.TRXTIMEOUT = 240;
