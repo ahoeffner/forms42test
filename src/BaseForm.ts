@@ -86,7 +86,6 @@ export class BaseForm extends Form
 		}
 		else
 		{
-			
 			image.src = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbD0iYmxhY2siIHN0cm9rZT0iYmxhY2siIHN0cm9rZS13aWR0aD0iMCIgZD0iTSAwIDYwCnY0MGg0MGwtMTYtMTZsMjItMjJsLTgtOGwtMjIgMjJaCm02MC02MGg0MHY0MGwtMTYtMTZsLTIyIDIybC04LThsMjItMjJaIi8+Cjwvc3ZnPgo=";
 			this.setViewPort(this.view);
 			this.view = null;
