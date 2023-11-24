@@ -147,8 +147,6 @@ export class FormsModule extends FormsCoreModule
 		this.addEventListener(this.showTopMenu,{type: EventType.Key, key: keymap.topmenu});
 		this.addEventListener(this.showLeftMenu,{type: EventType.Key, key: keymap.leftmenu});
 
-		// this.addEventListener(this.rightmenu,{type: EventType.Mouse, mouse: MouseMap.contextmenu});
-
 		this.addEventListener(this.open,
 		[
 			{type:EventType.Key,key:this.jobs},
@@ -262,13 +260,6 @@ export class FormsModule extends FormsCoreModule
 	public async showLeftMenu() : Promise<boolean>
 	{
 		this.leftmenu.focus();
-		return(true);
-	}
-
-	private async rightmenu() : Promise<boolean>
-	{
-		let mouseevent: MouseEvent = this.getJSEvent() as MouseEvent;
-		new RightClick(mouseevent);
 		return(true);
 	}
 }

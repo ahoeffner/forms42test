@@ -3,13 +3,11 @@
 	width:100%;
 }
 
-
-
 .left-menu.level-1,
 .left-menu.level-2
 {
 	margin-bottom: 0px;
-	margin-left:40px !important;
+	margin-left:35px !important;
 }
 
 .left-menu-container  .left-menu:not(:first-child)::before
@@ -17,17 +15,16 @@
 	margin-left: 10px;
 }
 
-
 .menu-left
 {
 	width:28px;
 	padding:0px;
 	height: 100%;
-	color:white;
+
 	transition: 0.5s;
 	overflow: hidden;
 	position: relative;
-	background-color:#36393e;
+	
 }
 
 .left-menu-container
@@ -37,7 +34,6 @@
 	cursor: pointer;
 	font-weight: 400;
 	text-decoration: none;
-	background: transparent;
 }
 
 .left-menu-container .left-menu
@@ -56,16 +52,15 @@
 {
 	z-index: 1;
 	width:200px;
-	padding:5px 0px;
 	position: relative;
 	display:table-cell;
 	height: fit-content;
+	padding:5px 0px 5px 5px;
 }
 
 .left-menu-container .left-menu li[type="menu"]:before
 {
 	content: '📁';
-	color: white;
 	font-size: 16px;
 	margin-left:5px;
 	padding-right:8px;

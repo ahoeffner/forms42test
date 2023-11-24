@@ -5,14 +5,7 @@ input
 	font-weight: normal;
 	margin:0px 0px 0px 10px;
 	transition: all 0.18s ease;
-	background-color: transparent;
 	border-bottom: 2px solid black;
-}
-
-input.invalid,
-textarea.invalid
-{
-	border-bottom: 2px solid red;
 }
 
 input[date]
@@ -21,7 +14,8 @@ input[date]
 }
 
 input[mode="query"],
-input[name="search"]
+input[name="search"],
+div[name="search"] input
 {
 	text-indent: 12px;
    background-size: 10px;
@@ -50,106 +44,67 @@ input[mode="deleted"]
 .warning
 {
 	font-style: italic;
-	color: lightcoral;
 }
 
-input.detail:read-only
-{
-	background: none;
-}
-
-/*textarea*/
-
-textarea 
-{
-	border:none;
-	resize: none;
-	box-shadow: none;
-	border-bottom: 2px solid black;
-}
-
-textarea:required
-{
-	outline: none;
-	box-shadow: none;
-}
 
 /*-----------------------------*/
-/* neddle */
+/*checkbox and radio */
 
-.needle
+input[type="radio"],
+input[type="checkbox"]
 {
-	left: 45%;
-	width: 4px;
-	height: 7px;
-	bottom: 90%;
-	position: absolute;
-	border-radius: 10px;
-	transform: translateX(-50%) rotate(-15deg);;
-}
+	top:4px;
+	right:5px;
+	width: 20px;
+	height: 20px;
+	outline: none; 
+	cursor: pointer;
+	appearance: none;
+	border-radius: 5px;
+	position: relative;
+	-moz-appearance: none;
+	-webkit-appearance: none;
 
-.needle::before
+ }
+
+ input[type="radio"]:hover,
+ input[type="radio"]:focus,
+ input[type="checkbox"]:hover,
+ input[type="checkbox"]:focus
+ {
+	transform: scale(1.06);
+ }
+
+input[type="radio"]
 {
-	left: 50%;
-	width: 6px;
-	z-index: 1;
-	height: 5px;
-	content: '';
-	bottom: 90%;
-	position: absolute;
 	border-radius: 50%;
-	transform: translateX(-50%);
-	border: solid 1px rgba(10, 5, 5, 30%);
 }
 
-.needle::after
-{
+input[type="checkbox"]::before {
+	top: 40%;
 	left: 50%;
-	bottom: 0%;
-	width: 8px;
-	z-index: 0;
-	height: 5px;
-	content: '';
+	font-size: 16px;
+	content: '\2713'; 
 	position: absolute;
-	background: red;
-	border-radius: 50%;
-	transform: translateX(-50%);
-	box-shadow: 0 3px 4px rgba(0, 0, 0, 0.8);
+	transition: transform 0.2s ease-in-out;
+   transform: translate(-50%, -50%) scale(0);
 }
 
-.red
+input[type="radio"]::before 
 {
-	background: linear-gradient(to right, red, rgb(155, 0, 0),red);
+ 	top: 40%;
+ 	left: 50%;
+ 	font-size: 20px;
+ 	content: '\2022'; 
+ 	position: absolute;
+ 	transition: transform 0.2s ease-in-out;
+ 	transform: translate(-50%, -50%) scale(0);
 }
 
-.red::before,
-.red::after
+input[type="radio"]:checked::before ,
+input[type="checkbox"]:checked::before 
 {
-	background: red;
+	transform: translate(-50%, -50%) scale(1);
 }
 
-.blue
-{
-	background: linear-gradient(to right, blue, rgb(0, 0, 155),blue);
-}
-
-.blue:before,
-.blue::after
-{
-	background:blue;
-}
-
-.green
-{
-	background: linear-gradient(to right, green, rgb(0, 90, 0),green);
-}
-
-.green:before,
-.green::after
-{
-	background:green;
-}
-
-/*-------------------------------*/
-
-
+/*---------------------------*/

@@ -1,22 +1,17 @@
 /*popup-body */
 div[name="popup-body"]
 {
-	padding:10px 0 !important;
-	background: #424549;
-	backdrop-filter: blur(10px);
+	padding:10px 0;
 }
 
-
-div[name="lov"],
-div[name="msg"],
-div[name="login"],
-div[name="query"],
-div[name="date-picker"]
+div[name="popup-body"] div[name="lov"],
+div[name="popup-body"] div[name="msg"],
+div[name="popup-body"] div[name="login"],
+div[name="popup-body"] div[name="query"],
+div[name="popup-body"] div[name="date-picker"]
 {
 	margin:0 20px;
 	border-radius: 10px;
-	background-color: white;
-	margin-top:0px !important;
 	padding: 5px 20px 20px 20px;
 }
 
@@ -24,17 +19,15 @@ div[name="date-picker"]
 /* login */
 div[name="loginimage"]
 {
-	width: 40px;
-	height: 40px;
+	width: 60px;
+	height: 60px;
 	margin-top: 0px;
 	margin-bottom: 0px;
 	border-radius: 50px;
 	margin: 0 auto 10px auto;
 	background-size: contain;
-	background-color: #36393e;
 	background-repeat: no-repeat;
 	background-image: url(images/login.jpg);
-	filter: invert(100%) sepia(1%) saturate(4058%) hue-rotate(223deg) brightness(117%) contrast(100%);
 }
 
 input[name="password"],
@@ -50,16 +43,11 @@ div[name="loginbutton"]
 	justify-content: right;
 }
 
-div[name="buttonarea"]
-{
-	margin:10px 10px 10px 10px !important
-}
-
 div[name="lowerright"]
 {
-	height: 25px;
+	height: 100%;
+	padding-top:0px;
 	margin:10px 10px 5px 10px;
-	padding-top:0px !important;
 }
 
 label[for="username"],
@@ -84,77 +72,10 @@ span[name^="day-"]:focus
 	user-select: none;
 }
 
-div[name="prev"]:active,
-div[name="next"]:active
+div[name="prev"],
+div[name="next"]
 {
-	color:white;
 	user-select: none;
-	transform: scale(1.2);
-	background-color: gray;
-}
-
-.weekend
-{
-	color:red;
-	border-radius: 10px;
-}
-
-/*------------------*/
-
-.item
-{
-	height: 10px;
-   display:flex;
-   cursor:pointer;
-   font-size:12px;
-   list-style: none;
-   margin-bottom: 2px;
-   border-radius: 5px;
-   padding: 0 5px 0 10px;
-	border-bottom: 1px solid rgba(0, 0, 0, .30);
-}
-
-.content .item:hover
-{
-    background: #f2f2f2;
-}
-.content .item span
-{
-    font-size: 15px;
-    margin-left: 4px;
-}
-
-.content .share
-{
-    position: relative;
-    justify-content: space-between;
-}
-
-.share .share-menu
-{
-   top:-30px;
-   opacity: 0;
-   width:200px;
-   right:-200px;
-   padding:13px;
-   position: absolute;
-   pointer-events: none;
-   background-color: white;
-	box-shadow: 0 5px 10px rgba(0,0,0,0.08);
-}
-
-.share:hover .share-menu
-{
-   opacity: 1;
-   pointer-events: auto;
-}
-
-.lov,
-div[name="date-picker"]
-{
-	margin:10px 5px;
-	background-color: white;
-	box-shadow: 0 5px 30px rgb(0 0 0 / 30%);
 }
 
 /*---------------*/
@@ -165,10 +86,45 @@ div[name="date-picker"]
 	margin-left:0px;
 }
 
-
 /* alert */
 div[name="popup-alert"]
 {
 	margin:0 20px;
 }
+
+#block.fatal ~ div[name="popup-body"] div[name="popup-alert"] div[name="msg"],
+#block.warning ~ div[name="popup-body"] div[name="popup-alert"] div[name="msg"]
+{
+	margin-left:10px;
+	word-break: break-all;
+}
+
+#block  ~ div[name="popup-body"] div[name="alertlogo"]
+{
+	width: 100%;
+	height: 75%;
+	background-size: 30px;	
+	background-repeat: no-repeat;
+}
+
+#block.fatal  ~ div[name="popup-body"] div[name="alertlogo"]
+{
+	background-image: url(images/fatal.png);
+}
+
+#block.warning  ~ div[name="popup-body"] div[name="alertlogo"]
+{
+	background-image: url(images/warning.png);
+}
+
+#block.fatal ~ div[name="popup-body"] div[name="popup-alert"],
+#block.warning ~ div[name="popup-body"] div[name="popup-alert"]
+{
+	display:grid;
+	justify-content: end;
+	grid-auto-flow: column;
+	grid-template-columns: 30px 1fr;
+}
 /*---------------*/
+
+

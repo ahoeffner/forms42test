@@ -4,54 +4,82 @@ span
 	cursor: default;
 }
 
+p
+{
+  margin:0;
+  cursor: default;
+}
+
 legend
 {
 	font-weight: bold;
 }
 
-[disabled]
-{
-	color:#83868c;
-}
 
 select
 {
 	border: none;
-	background-color: transparent;
-	border-bottom: 2px solid black;
 }
 
+/* textarea */
+
+textarea 
+{
+	border:none;
+	resize: none;
+	box-shadow: none;
+
+}
+
+textarea:required
+{
+	outline: none;
+	box-shadow: none;
+}
+/*-------------------*/
+/* muti choice */
+select[name="multi"] 
+{
+	padding: 2px;
+	outline: none;
+	margin-top:10px;
+	cursor: pointer;
+	font-size: 12px;
+	appearance: none;
+	overflow: hidden;
+	border-radius: 5px;
+
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+ }
+ 
+ select[name="multi"] option
+ {
+	padding:2px;
+ }
+
+
+
+/*-------------*/
 /* button */
 button
 {
 	z-index: 0;
-	width:60px;
+	width:70px;
 	border: none;
 	outline: none;
 	cursor: pointer;
+
+	font-weight: bold;
 	padding: 5px 10px;
 	user-select: none;
 	position: relative;
 	border-radius: 10px;
 	touch-action: manipulation;
-	color: rgb(255, 255, 255);
 }
 
 button:before
 {
 	content: "";
-	background: linear-gradient(
-	  45deg,
-	  #8391ec,
-	  #7f51e3,
-	  #7b57f0,
-	  #7974fa,
-	  #7d7aea,
-	  #002bff,
-	  #7a00ff,
-	  #6551fa,
-	  #645ec0
-	);
 	position: absolute;
 	top: -2px;
 	left: -2px;
@@ -93,17 +121,18 @@ button::after
 	user-select: none;
 	position: absolute;
 	border-radius: 10px;
-	background-color: rgb(72, 72, 72);
+
 }
 
-button:hover
-{
+button:hover {
 	font-weight: bold;
-}
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+ }
+ 
+ button:hover:before {
+	opacity: 0; 
+ }
+ 
 
-button:hover:after
-{
-	background-color: rgb(93, 93, 93);
-}
 
 /*----------------*/

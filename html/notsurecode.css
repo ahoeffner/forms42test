@@ -61,38 +61,53 @@
     padding:10px 12px;
 }
 
-#block.fatal ~ div[name="popup-body"] div[name="popup-alert"],
-#block.warning ~ div[name="popup-body"] div[name="popup-alert"]
+
+
+.item
 {
-	display:grid !important;
-	justify-content: end !important;
-	grid-auto-flow: column !important;
-	grid-template-columns: 30px 1fr !important;
+	height: 10px;
+   display:flex;
+   cursor:pointer;
+   font-size:12px;
+   list-style: none;
+   margin-bottom: 2px;
+   border-radius: 5px;
+   padding: 0 5px 0 10px;
+	border-bottom: 1px solid rgba(0, 0, 0, .30);
 }
 
-
-#block.fatal ~ div[name="popup-body"] div[name="popup-alert"] div[name="msg"],
-#block.warning ~ div[name="popup-body"] div[name="popup-alert"] div[name="msg"]
+.content .item:hover
 {
-	word-break: break-all;
-	margin-left:10px !important;
+    background: #f2f2f2;
+}
+.content .item span
+{
+    font-size: 15px;
+    margin-left: 4px;
 }
 
-#block  ~ div[name="popup-body"] div[name="alertlogo"]
+.content .share
 {
-	width: 100%;
-	height: 75%;
-	background-size: 30px;	
-	background-repeat: no-repeat;
-	filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(324deg) brightness(104%) contrast(101%);
+    position: relative;
+    justify-content: space-between;
 }
 
-#block.fatal  ~ div[name="popup-body"] div[name="alertlogo"]
+.share .share-menu
 {
-	background-image: url(images/fatal.png);
+   top:-30px;
+   opacity: 0;
+   width:200px;
+   right:-200px;
+   padding:13px;
+   position: absolute;
+   pointer-events: none;
+   background-color: white;
+	box-shadow: 0 5px 10px rgba(0,0,0,0.08);
 }
 
-#block.warning  ~ div[name="popup-body"] div[name="alertlogo"]
+.share:hover .share-menu
 {
-	background-image: url(images/warning.png);
+   opacity: 1;
+   pointer-events: auto;
+
 }
