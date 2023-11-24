@@ -37,27 +37,27 @@ div[name="popup-header"]
 .minimize,
 .view-toggle
 {
-	width: 20px; 
-	height: 20px; 
-	display:flex; 
+	width: 20px;
+	height: 20px;
+	display:flex;
 	position: relative;
-	align-items: center; 
-	justify-content: center; 
+	align-items: center;
+	justify-content: center;
 }
 
 .minimize div
 {
-	bottom:9px; 
+	bottom:9px;
 	font-size: 10px;
-	position: absolute; 
+	position: absolute;
 }
 
 .view-toggle div
 {
-	bottom:3px; 
-	font-size: 15px; 
+	bottom:3px;
+	font-size: 15px;
 	font-weight: bold;
-	position: absolute; 
+	position: absolute;
 	filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(120deg) brightness(105%) contrast(101%);
 }
 
@@ -68,9 +68,9 @@ div[name="popup-header"]
 
 .close div
 {
-	bottom: 0px; 
+	bottom: 0px;
 	font-size: 20px;
-	position: absolute; 
+	position: absolute;
 }
 
 .close:hover,
@@ -153,6 +153,15 @@ th
 }
 
 .row-indicator
+{
+	width:10px;
+	height: 10px;
+	display: block;
+	border-radius: 50px;
+	background-color: gray;
+}
+
+[type="row-indicator"].active
 {
 	width:10px;
 	height: 10px;

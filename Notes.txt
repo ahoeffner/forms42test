@@ -1,6 +1,8 @@
 Cyclic master detail
 find ../core/src -name '*.ts' | xargs wc -l
 
+flush_strategy row|block
+
 Fieldtype on RecordProperties
 Alerts should not overlay other alerts
 

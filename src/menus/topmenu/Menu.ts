@@ -157,18 +157,13 @@ export class Menu extends MenuComponent
 	}
 
 	@formevent([
+		{type: EventType.PreDelete},
 		{type: EventType.OnTransaction},
 		{type: EventType.OnCreateRecord}
 	])
 	public async onTransactionStart(event:FormEvent) : Promise<boolean>
 	{
 		let entry:MenuEntry = null;
-
-		if (event.type == EventType.OnCreateRecord)
-		{
-			if (!event.form?.getBlock(event.block)?.datasource.transactional)
-				return(true);
-		}
 
 		if (event.form?.getBlock(event.block)?.isControlBlock())
 			return(true);
