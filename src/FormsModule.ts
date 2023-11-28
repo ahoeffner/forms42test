@@ -28,7 +28,6 @@ import { PageFooter } from './fragments/PageFooter';
 
 import { Menu as TopMenu } from './menus/topmenu/Menu';
 import { Menu as LeftMenu } from './menus/leftmenu/Menu';
-import { Menu as RightClick } from './menus/rightclick/Menu';
 
 import { Fields } from './fields/Fields';
 import { Jobs } from './forms/jobs/Jobs';
@@ -114,16 +113,16 @@ export class FormsModule extends FormsCoreModule
 
 		// Demo custom tag
 		FormProperties.TagLibrary.set("AppHeader",AppHeader);
-		this.setRootElement(document.body.querySelector("#forms"));
+		FormsModule.setRootElement(document.body.querySelector("#forms"));
 
-		this.parse();
+		FormsModule.parse();
 		this.list = new Minimized();
 
 		// Menues
 		this.topmenu = new TopMenu();
 		this.leftmenu = new LeftMenu();
 
-		this.updateKeyMap(keymap);
+		FormsModule.updateKeyMap(keymap);
 
 		Connection.TRXTIMEOUT = 240;
 		Connection.CONNTIMEOUT = 120;
@@ -159,34 +158,34 @@ export class FormsModule extends FormsCoreModule
 			{type:EventType.Key,key:this.masterdetail}
 		]);
 
-		this.OpenURLForm();
+		FormsModule.OpenURLForm();
 	}
 
 	private async open(event:FormEvent) : Promise<boolean>
 	{
 		if (event.key == this.jobs)
-			this.showform(Jobs);
+			FormsModule.showform(Jobs);
 
 		if (event.key == this.fields)
-			this.showform(Fields);
+			FormsModule.showform(Fields);
 
 		if (event.key == this.employees)
-			this.showform(Employees);
+			FormsModule.showform(Employees);
 
 		if (event.key == this.departments)
-			this.showform(Departments);
+			FormsModule.showform(Departments);
 
 		if (event.key == this.countries)
-			this.showform(Countries);
+			FormsModule.showform(Countries);
 
 		if (event.key == this.locations)
-			this.showform(Locations);
+			FormsModule.showform(Locations);
 
 		if (event.key == this.phonebook)
-			this.showform(PhoneBookMembased);
+			FormsModule.showform(PhoneBookMembased);
 
 		if (event.key == this.masterdetail)
-			this.showform(MasterDetail);
+			FormsModule.showform(MasterDetail);
 
 		return(true);
 	}
@@ -194,7 +193,7 @@ export class FormsModule extends FormsCoreModule
 	private logontrg:object = null;
 	public async login() : Promise<boolean>
 	{
-		let usrpwd:Form = await this.showform(UsernamePassword);
+		let usrpwd:Form = await FormsModule.showform(UsernamePassword);
 		this.logontrg = this.addFormEventListener(usrpwd,this.connect,{type: EventType.OnCloseForm});
 		return(true);
 	}
@@ -204,7 +203,7 @@ export class FormsModule extends FormsCoreModule
 		if (!FormsModule.DATABASE.connected())
 			return(true);
 
-		let forms:Form[] = this.getRunningForms();
+		let forms:Form[] = FormsModule.getRunningForms();
 
 		for (let i = 0; i < forms.length; i++)
 		{
@@ -217,7 +216,7 @@ export class FormsModule extends FormsCoreModule
 
 	public async close() : Promise<boolean>
 	{
-		let form:Form = this.getCurrentForm();
+		let form:Form = FormsModule.getCurrentForm();
 		if (form != null) return(form.close());
 		return(true);
 	}
@@ -225,7 +224,7 @@ export class FormsModule extends FormsCoreModule
 	private async connect(event:FormEvent) : Promise<boolean>
 	{
 		let form:UsernamePassword = event.form as UsernamePassword;
-		this.removeEventListener(this.logontrg);
+		FormsModule.removeEventListener(this.logontrg);
 
 		if (form.accepted && form.username && form.password)
 		{
@@ -233,7 +232,7 @@ export class FormsModule extends FormsCoreModule
 			{
 				await FormsModule.sleep(2000);
 
-				let forms:Form[] = this.getRunningForms();
+				let forms:Form[] = FormsModule.getRunningForms();
 
 				for (let i = 0; i < forms.length; i++)
 				{
