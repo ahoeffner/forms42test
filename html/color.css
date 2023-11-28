@@ -65,16 +65,10 @@
    background-color:white;
 }
 
-.topbar li a:before,
-.left-menu-container a:before
-{
-   border-top: 2px solid #6060F0;
-	border-bottom: 2px solid #6060F0;
-}
-
-
-.topbar li a:after,
-.left-menu-container a:after
+.topbar li a:not([disabled]):focus,
+.topbar li a:not([disabled]):hover,
+.left-menu-container a:not([disabled]):hover,
+.left-menu-container a:not([disabled]):focus
 {
    background-color: #6060F0;
 }

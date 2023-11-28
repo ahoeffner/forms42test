@@ -80,6 +80,25 @@ div[name="next"]
 }
 
 /*---------------*/
+/* search */
+
+.search
+{
+	margin: 2px 0px 5px 30px;
+}
+
+.search input
+{
+	margin-bottom: 10px !important;
+}
+
+.search:before
+{
+	content: "\002315";
+	display:inline-block;
+}
+
+/*------------------------*/
 /*multi-value*/
 
 .multi-value
@@ -97,7 +116,7 @@ div[name="popup-alert"]
 #block.warning ~ div[name="popup-body"] div[name="popup-alert"] div[name="msg"]
 {
 	margin-left:10px;
-	word-break: break-all;
+	/* word-break: break-all; */
 }
 
 #block  ~ div[name="popup-body"] div[name="alertlogo"]

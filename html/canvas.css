@@ -79,7 +79,7 @@ div[name="close-button"]
 }
 
 /* ---------------------------- */
-/* canvas form */
+/* canvas*/
 
 .canvas
 {
@@ -87,31 +87,6 @@ div[name="close-button"]
 	box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
 }
 
-form
-{
-	display:block;
-	margin:5px 20px 20px 20px;
-}
-
-.container
-{
-   gap:5px;
-   display:flex;
-	flex-wrap: wrap;
-   align-items: center;
-}
-
-.block
-{
-	margin:10px;
-	padding: 30px;
-   display: grid;
-	position: relative;
-   width: max-content;
-   height: max-content;
-	border-radius: 10px;
-	box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
-}
 /* ---------------------------- */
 /*FieldTypes canvas */
 
@@ -122,78 +97,6 @@ form
    align-items: end;
 }
 /* ---------------------------- */
-/* table */
-
-
-table
-{
-	border-collapse: collapse;
-}
-
-th
-{
-	cursor: default;
-	user-select: none;
-}
-
-th label[draggable="true"]
-{
-	cursor: move;
-}
-
-th label
-{
-	cursor: pointer;
-}
-
-th.sort:after
-{
-	content: "\2193";
-	font-weight: bold;
-}
-
-td
-{
-	padding: 0 4px;
-	line-height: 1.42857143;
-}
-
-.indicator
-{
-	width:10px;
-	align-items: center;
-	justify-content: center;
-}
-
-[type="row-indicator"].active
-{
-	width:10px;
-	height: 10px;
-	display: block;
-	border-radius: 50px;
-	background-color: gray;
-}
-
-/* ---------------------------- */
-/* search */
-
-.search
-{
-	margin: 2px 0px 5px 30px;
-}
-
-.search input
-{
-	margin-bottom: 10px !important;
-}
-
-.search:before
-{
-	content: "\002315";
-	display:inline-block;
-}
-
-/*------------------------*/
 /* fieldset */
 .fieldset
 {
