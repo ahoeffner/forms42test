@@ -22,7 +22,7 @@
 import { BaseForm } from './BaseForm';
 import { Minimized } from './Minimized';
 
-import { FormHeader } from './fragments/FormHeader';
+import { CanvasHeader } from './fragments/CanvasHeader';
 import { PageHeader } from './fragments/PageHeader';
 import { PageFooter } from './fragments/PageFooter';
 
@@ -76,7 +76,7 @@ import { KeyMapPage, FormsPathMapping, FormsModule as FormsCoreModule, KeyMap, F
 		{class: Lesson01, path: "/forms/lesson01"},
 		{class: Lesson02, path: "/forms/lesson02"},
 
-		{class: FormHeader, path: "/html/formheader"},
+		{class: CanvasHeader, path: "/html/formheader"},
 		{class: PageHeader, path: "/html/pageheader"},
 		{class: PageFooter, path: "/html/pagefooter"},
 		{class: LinkMapper, path: "/mappers/linkmapper"},

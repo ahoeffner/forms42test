@@ -31,7 +31,7 @@ span[name="title"]
 
 /* ---------------------------- */
 /*canvas-header right */
-div[name="form-header-right"]
+div[name="canvas-header-right"]
 {
 	display: grid;
 	height: 20px;
@@ -89,6 +89,7 @@ div[name="close-button"]
 
 /* ---------------------------- */
 /*FieldTypes canvas */
+/* Move to fields.css */
 
 .column,
 .radio_button
@@ -98,6 +99,7 @@ div[name="close-button"]
 }
 /* ---------------------------- */
 /* fieldset */
+/* Move to blocks.css */
 .fieldset
 {
 	padding: 10px;
