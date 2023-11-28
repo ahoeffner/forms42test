@@ -32,7 +32,7 @@ input[mode="insert"]
 	transition: all 0.18s ease;
 	background-repeat: no-repeat;
 	background-position-y: center;
-	background-image: url(images/insert.png);
+	background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAwMDAiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMyAxNXY0YzAgMS4xLjkgMiAyIDJoMTRhMiAyIDAgMCAwIDItMnYtNE0xNyA5bC01IDUtNS01TTEyIDEyLjhWMi41Ii8+PC9zdmc+");
 }
 
 input[mode="deleted"]
