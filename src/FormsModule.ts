@@ -115,7 +115,7 @@ export class FormsModule extends FormsCoreModule
 		FormProperties.TagLibrary.set("AppHeader",AppHeader);
 		FormsModule.setRootElement(document.body.querySelector("#forms"));
 
-		FormsModule.parse();
+		this.parse();
 		this.list = new Minimized();
 
 		// Menues
