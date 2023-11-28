@@ -1,83 +1,81 @@
 
 /* header canvas */
 
-.form-header,
 div[name="popup-header"]
 {
 	width: 100%;
 	height: 20px;
-	color:white;
    cursor: default;
 	display: inline-grid;
 	grid-auto-flow: column;
-	background-color: #424549;
-   border-bottom: 1px white solid;
+	
 }
 
-.form-header
+.canvas-header
 {
-   grid-template-columns: 40px 1fr 60px;
+	grid-template-columns: 40px 1fr 60px;
 }
 
-.form-header-middle
+.canvas-handle
+{
+	cursor: default;
+	user-select: none;
+}
+
+div[name="title"],
+span[name="title"]
 {
 	display: flex;
-   user-select: none;
 	justify-content: center;
 }
 
 /* ---------------------------- */
 /*canvas-header right */
-.form-header-right
+div[name="form-header-right"]
 {
-	display: grid; grid-auto-flow: column; height: 20px;
+	display: grid;
+	height: 20px;
+	position: relative; 
+	grid-auto-flow: column;
 }
 
-.close,
-.minimize,
-.view-toggle
+div[name="minimize"]
 {
-	width: 20px;
-	height: 20px;
+	top:0;
+	width:20px;
+	height: 20px; 
 	display:flex;
-	position: relative;
+	font-size: 10px;
+	position: absolute; 
+	justify-content: center;
+}
+
+div[name="toggle"]
+{
+	top: 0px;
+	right: 35%;
+	width:20px;
+	height: 20px; 
+	display:flex;
+	font-size: 15px; 
+	font-weight: bold;
+	position: absolute; 
 	align-items: center;
 	justify-content: center;
 }
 
-.minimize div
+div[name="close-button"]
 {
-	bottom:9px;
-	font-size: 10px;
-	position: absolute;
-}
-
-.view-toggle div
-{
-	bottom:3px;
-	font-size: 15px;
-	font-weight: bold;
-	position: absolute;
-	filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(120deg) brightness(105%) contrast(101%);
-}
-
-.form-header-right div:hover:not(:last-child)
-{
-	background-color: rgb(127, 127, 127);
-}
-
-.close div
-{
-	bottom: 0px;
+	top: 0px;
+	right: 0px;
+	width: 20px;
+	height: 20px;
+	display: flex;
 	font-size: 20px;
+	cursor: default;
+	line-height: 15px;
 	position: absolute;
-}
-
-.close:hover,
-div[name="close-button"]:hover
-{
-	color:white;
-	background-color: rgb(255, 94, 94);
+	justify-content: center;
 }
 
 /* ---------------------------- */
@@ -85,16 +83,14 @@ div[name="close-button"]:hover
 
 .canvas
 {
-	background-color: #424549;
 	animation-fill-mode: backwards;
 	box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
 }
 
 form
 {
-	margin:20px;
 	display:block;
-
+	margin:5px 20px 20px 20px;
 }
 
 .container
@@ -109,12 +105,11 @@ form
 {
 	margin:10px;
 	padding: 30px;
+   display: grid;
+	position: relative;
    width: max-content;
    height: max-content;
-	position: relative;
 	border-radius: 10px;
-   display: grid;
-	background-color: #ffffff;
 	box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
 }
 /* ---------------------------- */
@@ -128,10 +123,17 @@ form
 }
 /* ---------------------------- */
 /* table */
-td
+
+
+table
 {
-	padding: 0 4px;
-	line-height: 1.42857143;
+	border-collapse: collapse;
+}
+
+th
+{
+	cursor: default;
+	user-select: none;
 }
 
 th label[draggable="true"]
@@ -139,10 +141,21 @@ th label[draggable="true"]
 	cursor: move;
 }
 
-th
+th label
 {
-	cursor: default;
-	user-select: none;
+	cursor: pointer;
+}
+
+th.sort:after 
+{
+	content: "\2193";
+	font-weight: bold;
+}
+
+td
+{
+	padding: 0 4px;
+	line-height: 1.42857143;
 }
 
 .indicator
@@ -158,24 +171,6 @@ th
 	height: 10px;
 	display: block;
 	border-radius: 50px;
-	background-color: gray;
-}
-
-[type="row-indicator"].active
-{
-	width:10px;
-	height: 10px;
-	display: block;
-	border-radius: 50px;
-	background-color: gray;
-}
-
-.filter-indicator
-{
-	width: 8px;
-	height: 8px;
-	display: block;
-	background-color: grey;
 }
 
 /* ---------------------------- */
@@ -197,10 +192,23 @@ th
 	display:inline-block;
 }
 
-
-.lov input[name="search"]
+/*------------------------*/
+/* fieldset */
+.fieldset 
 {
-	margin-bottom: 15px;
+	padding: 10px;
+	border-radius: 5px;
+	margin-bottom: 10px;
 }
 
-/*------------------------*/
+.fieldset legend 
+{
+  display:flex;
+  padding: 0 10px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  justify-content: center;
+}
+
+/*-------------*/
