@@ -31,7 +31,7 @@ span[name="title"]
 
 /* ---------------------------- */
 /*canvas-header right */
-div[name="form-header-right"]
+div[name="canvas-header-right"]
 {
 	display: grid;
 	height: 20px;
