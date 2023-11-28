@@ -21,7 +21,8 @@ Propagate rightclick
 *** Jonas ***
 
 Alert wraps in middle of words
-Menu must fucking be left aligned !!!!
+
+css forms & blocks
 
 Fields:
 
