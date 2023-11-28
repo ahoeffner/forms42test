@@ -48,13 +48,12 @@ select[name="multi"]
 	appearance: none;
 	overflow: hidden;
 	border-radius: 5px;
-
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
  }
  
  select[name="multi"] option
  {
-	padding:2px;
+	padding:2px 15px 2px 2px;
  }
 
 

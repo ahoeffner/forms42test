@@ -260,14 +260,12 @@ select[name="multi"]
 
 select[name="multi"] option:checked 
 {
-   color:white;
-   background-color: #6c7076;
+   background-color: #f2f2f2;
 }
 
 select[name="multi"] option:hover 
 {
-  color:white;
-  background-color: #7b8086;
+   background-color: #f2f2f2;
 }
 
 button
