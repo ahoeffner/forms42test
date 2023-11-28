@@ -20,9 +20,8 @@ Propagate rightclick
 
 *** Jonas ***
 
-MasterDetail center ?
-Fieldtypes looks like shit
 Alert wraps in middle of words
+Menu must fucking be left aligned !!!!
 
 Fields:
 
@@ -32,8 +31,6 @@ Title på date & datetime - Press F9 for datepicker + Press ctrl-space for curre
 Title på drop-down - Press ctrl click for multiple choices
 
 kigge på rightclick.
-Top menu virker ikke ved record (deep)
-Alert, QueryEditor, ListOfValues does not work without styling
 
 *************
 
