@@ -60,13 +60,19 @@
 
 .left-menu-container .left-menu li[type="menu"]:before
 {
-	content: '📁';
-	font-size: 16px;
 	margin-left:5px;
+	user-select: none;
 	padding-right:8px;
 	margin-right:15px;
 	display:table-cell;
+	vertical-align: middle;
+	filter: invert(100%) sepia(0%) saturate(4465%) hue-rotate(152deg) brightness(110%) contrast(92%);
+	content: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAwMDAiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMTEgMjFINGEyIDIgMCAwIDEtMi0yVjVjMC0xLjEuOS0yIDItMmg1bDIgM2g5YTIgMiAwIDAgMSAyIDJ2Mk0xNiAxOGg2Ii8+PC9zdmc+");
 }
+
+.left-menu-container .left-menu li[type="menu"][open]:before
+{
+	content: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAwMDAiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMTEgMjFINGEyIDIgMCAwIDEtMi0yVjVjMC0xLjEuOS0yIDItMmg1bDIgM2g5YTIgMiAwIDAgMSAyIDJ2Mk0xOSAxNXY2TTE2IDE4aDYiLz48L3N2Zz4=");}
 
 
 .left-menu-container .left-menu li a:hover:after,

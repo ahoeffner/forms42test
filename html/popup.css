@@ -19,15 +19,16 @@ div[name="popup-body"] div[name="date-picker"]
 /* login */
 div[name="loginimage"]
 {
-	width: 60px;
-	height: 60px;
+	width: 40px;
+	height: 40px;
 	margin-top: 0px;
 	margin-bottom: 0px;
 	border-radius: 50px;
+	background-size: cover;
 	margin: 0 auto 10px auto;
-	background-size: contain;
+	background-color: #36393e;
 	background-repeat: no-repeat;
-	background-image: url(images/login.jpg);
+	background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNsaXBQYXRoIGlkPSJteUNsaXAiIGNsaXBQYXRoVW5pdHM9Im9iamVjdEJvdW5kaW5nQm94Ij4KICA8Y2lyY2xlIGN4PSIuNSIgY3k9IjAuMDUiIHI9Ii41IiAvPgo8L2NsaXBQYXRoPgo8Y2lyY2xlIGlkPSJiZWhpbmQiIHN0eWxlPSJmaWxsOndoaXRlOyBzdHJva2Utd2lkdGg6MCIgY3g9IjUwIiBjeT0iNTAiIHI9IjQ2Ii8+CjxjaXJjbGUgaWQ9ImhlYWQiIHN0eWxlPSJmaWxsOmJsYWNrOyBzdHJva2Utd2lkdGg6MCIgY3g9IjUwIiBjeT0iMzgiIHI9IjE3Ii8+CjxjaXJjbGUgaWQ9ImJvZHkiIHN0eWxlPSJmaWxsOmJsYWNrOyBzdHJva2Utd2lkdGg6MCIgY3g9IjUwIiBjeT0iOTUiIHI9IjM0IiBjbGlwLXBhdGg9InVybCgjbXlDbGlwKSIvPgo8Y2lyY2xlIGlkPSJlZGdlIiBzdHlsZT0iZmlsbDpub25lOyBzdHJva2Utd2lkdGg6Njsgc3Ryb2tlOndoaXRlIiBjeD0iNTAiIGN5PSI1MCIgcj0iNDYiLz4KPC9zdmc+Cg==");
 }
 
 input[name="password"],
@@ -109,12 +110,12 @@ div[name="popup-alert"]
 
 #block.fatal  ~ div[name="popup-body"] div[name="alertlogo"]
 {
-	background-image: url(images/fatal.png);
+	background-image: url("data:image/svg+xml;base64,IDxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzAwMDAwMCIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPgogICAgICA8cGF0aCBkPSJNNSAxMi41NWExMSAxMSAwIDAgMSAxNC4wOCAwIj48L3BhdGg+CiAgICAgIDxwYXRoIGQ9Ik0xLjQyIDlhMTYgMTYgMCAwIDEgMjEuMTYgMCI+CiAgICAgIDwvcGF0aD48cGF0aCBkPSJNOC41MyAxNi4xMWE2IDYgMCAwIDEgNi45NSAwIj4KICAgICAgPC9wYXRoPgogICAgICA8bGluZSB4MT0iNSIgeTE9IjIwIiB4Mj0iMjAiIHkyPSIzIj48L2xpbmU+CiAgICAgIDxsaW5lIHgxPSIxMiIgeTE9IjIwIiB4Mj0iMTIuMDEiIHkyPSIyMCI+CiAgICAgIDwvbGluZT4KICAgPC9zdmc+");
 }
 
 #block.warning  ~ div[name="popup-body"] div[name="alertlogo"]
 {
-	background-image: url(images/warning.png);
+	background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIzIiBoZWlnaHQ9Ijk4IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTY1LjQ1LDEuOTcybDU1LjU5NCw4Ny4zMjNjMS42NzMsMi42MywzLjExNyw4LjAxNiwwLDguMDE2SDEuODM3IGMtMy4xMTgsMC0xLjY3Ni01LjM4NiwwLTguMDE2TDU3LjQzMSwxLjk3MkM1OS4xMDYtMC42NTgsNjMuNzc0LTAuNjU2LDY1LjQ1LDEuOTcyTDY1LjQ1LDEuOTcyeiBNNTYuNTc4LDc0LjE0Nmg5LjY4MnY4LjU2MSBoLTkuNjgyVjc0LjE0Nkw1Ni41NzgsNzQuMTQ2eiBNNjYuMjU0LDY4LjIxN0g1Ni41OGMtMC45NjQtMTEuNzU2LTIuOTgyLTE5LjIxNi0yLjk4Mi0zMC45NTVjMC00LjMzMSwzLjUxLTcuODQyLDcuODQxLTcuODQyIGM0LjMzMiwwLDcuODQyLDMuNTExLDcuODQyLDcuODQyQzY5LjI4Miw0OC45OTYsNjcuMjM2LDU2LjQ3MSw2Ni4yNTQsNjguMjE3TDY2LjI1NCw2OC4yMTd6Ij4KPHRpdGxlPldhcm5pbmc8L3RpdGxlPgo8L3BhdGg+PC9zdmc+Cg==");
 }
 
 #block.fatal ~ div[name="popup-body"] div[name="popup-alert"],

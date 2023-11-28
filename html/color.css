@@ -140,12 +140,6 @@ div[name="close-button"]:focus
 /* popup */
 
 /* used https://codepen.io/sosuke/pen/Pjoqqp if you need change color for filter*/
-div[name="loginimage"]
-{ 
-   background-color: #36393e;
-   filter: invert(100%) sepia(1%) saturate(4058%) hue-rotate(223deg) brightness(117%) contrast(100%);
-}
-
 
 div[name="popup-body"]
 {
