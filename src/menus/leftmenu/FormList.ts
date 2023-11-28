@@ -30,7 +30,7 @@ export class FormList extends StaticMenu
 
 	public async execute(path:string): Promise<boolean>
 	{
-		await FormsModule.get().showform(path);
+		await FormsModule.showform(path);
 		return(true);
 	}
 
