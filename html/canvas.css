@@ -8,7 +8,7 @@ div[name="popup-header"]
    cursor: default;
 	display: inline-grid;
 	grid-auto-flow: column;
-	
+
 }
 
 .canvas-header
@@ -35,7 +35,7 @@ div[name="form-header-right"]
 {
 	display: grid;
 	height: 20px;
-	position: relative; 
+	position: relative;
 	grid-auto-flow: column;
 }
 
@@ -43,10 +43,10 @@ div[name="minimize"]
 {
 	top:0;
 	width:20px;
-	height: 20px; 
+	height: 20px;
 	display:flex;
 	font-size: 10px;
-	position: absolute; 
+	position: absolute;
 	justify-content: center;
 }
 
@@ -55,11 +55,11 @@ div[name="toggle"]
 	top: 0px;
 	right: 35%;
 	width:20px;
-	height: 20px; 
+	height: 20px;
 	display:flex;
-	font-size: 15px; 
+	font-size: 15px;
 	font-weight: bold;
-	position: absolute; 
+	position: absolute;
 	align-items: center;
 	justify-content: center;
 }
@@ -146,7 +146,7 @@ th label
 	cursor: pointer;
 }
 
-th.sort:after 
+th.sort:after
 {
 	content: "\2193";
 	font-weight: bold;
@@ -165,12 +165,13 @@ td
 	justify-content: center;
 }
 
-.row-indicator
+[type="row-indicator"].active
 {
 	width:10px;
 	height: 10px;
 	display: block;
 	border-radius: 50px;
+	background-color: gray;
 }
 
 /* ---------------------------- */
@@ -194,14 +195,14 @@ td
 
 /*------------------------*/
 /* fieldset */
-.fieldset 
+.fieldset
 {
 	padding: 10px;
 	border-radius: 5px;
 	margin-bottom: 10px;
 }
 
-.fieldset legend 
+.fieldset legend
 {
   display:flex;
   padding: 0 10px;
