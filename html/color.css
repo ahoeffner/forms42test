@@ -119,8 +119,8 @@ div[name="toggle"]
 
 /*---------------------*/
 /*canvas topbar  hover and focus */
-div[name="form-header-right"] div:hover:not(:last-child),
-div[name="form-header-right"] div:focus:not(:last-child)
+div[name="canvas-header-right"] div:hover:not(:last-child),
+div[name="canvas-header-right"] div:focus:not(:last-child)
 {
 	background-color: rgb(127, 127, 127);
 }
