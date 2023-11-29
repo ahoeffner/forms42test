@@ -53,6 +53,7 @@ import { LinkMapper } from './fields/LinkMapper';
 import { TrueFalseMapper } from './fields/TrueFalseMapper';
 
 import { KeyMapPage, FormsPathMapping, FormsModule as FormsCoreModule, KeyMap, FormEvent, EventType, DatabaseConnection as Connection, FormProperties, UsernamePassword, Form, AlertForm, InternalFormsConfig, ConnectionScope } from 'forms42core';
+import { FlushStrategy } from 'forms42core/src/application/FormsModule';
 
 @FormsPathMapping(
 	[
@@ -136,6 +137,8 @@ export class FormsModule extends FormsCoreModule
 
 		FormsModule.DATABASE = new Connection(backend);
 		FormsModule.DATABASE.scope = ConnectionScope.transactional;
+
+		FormsModule.defaultFlushStrategy = FlushStrategy.Block;
 
 		let infomation:HTMLElement = document.querySelector(".infomation");
 		infomation.appendChild(KeyMapPage.show(keymap));
