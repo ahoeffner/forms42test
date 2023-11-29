@@ -116,14 +116,14 @@ div[name="popup-alert"]
 #block.warning ~ div[name="popup-body"] div[name="popup-alert"] div[name="msg"]
 {
 	margin-left:10px;
-	/* word-break: break-all; */
 }
 
 #block  ~ div[name="popup-body"] div[name="alertlogo"]
 {
 	width: 100%;
-	height: 75%;
+	height: 50%;
 	background-size: 30px;	
+	margin-top: 0px !important;
 	background-repeat: no-repeat;
 }
 
@@ -141,6 +141,7 @@ div[name="popup-alert"]
 #block.warning ~ div[name="popup-body"] div[name="popup-alert"]
 {
 	display:grid;
+	align-items: center;
 	justify-content: end;
 	grid-auto-flow: column;
 	grid-template-columns: 30px 1fr;

@@ -122,7 +122,6 @@ export class FormsModule extends FormsCoreModule
 		// Menues
 		this.topmenu = new TopMenu();
 		this.leftmenu = new LeftMenu();
-
 		FormsModule.updateKeyMap(keymap);
 
 		Connection.TRXTIMEOUT = 240;
