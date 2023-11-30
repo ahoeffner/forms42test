@@ -1,9 +1,7 @@
 Cyclic master detail
 find ../core/src -name '*.ts' | xargs wc -l
 
-Do we disconnect when inactive
-
-Spaceship
+flush_strategy row|block
 
 Fieldtype on RecordProperties
 Alerts should not overlay other alerts
@@ -22,6 +20,10 @@ Propagate rightclick
 
 *** Jonas ***
 
+Alert wraps in middle of words
+
+css forms & blocks
+
 Fields:
 
 Field multiple hænger oppe i luften
@@ -30,8 +32,6 @@ Title på date & datetime - Press F9 for datepicker + Press ctrl-space for curre
 Title på drop-down - Press ctrl click for multiple choices
 
 kigge på rightclick.
-Top menu virker ikke ved record (deep)
-Alert, QueryEditor, ListOfValues does not work without styling
 
 *************
 
