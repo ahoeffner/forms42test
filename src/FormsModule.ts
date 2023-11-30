@@ -77,7 +77,7 @@ import { FlushStrategy } from 'forms42core/src/application/FormsModule';
 		{class: Lesson01, path: "/forms/lesson01"},
 		{class: Lesson02, path: "/forms/lesson02"},
 
-		{class: CanvasHeader, path: "/html/formheader"},
+		{class: CanvasHeader, path: "/html/canvasheader"},
 		{class: PageHeader, path: "/html/pageheader"},
 		{class: PageFooter, path: "/html/pagefooter"},
 		{class: LinkMapper, path: "/mappers/linkmapper"},
