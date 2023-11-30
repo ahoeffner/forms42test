@@ -15,7 +15,6 @@ legend
 	font-weight: bold;
 }
 
-
 select
 {
 	border: none;
@@ -28,7 +27,6 @@ textarea
 	border:none;
 	resize: none;
 	box-shadow: none;
-
 }
 
 textarea:required
@@ -64,7 +62,6 @@ button
 	border: none;
 	outline: none;
 	cursor: pointer;
-
 	font-weight: bold;
 	padding: 5px 10px;
 	user-select: none;
@@ -120,15 +117,15 @@ button::after
 
 }
 
-button:hover {
+button:hover 
+{
 	font-weight: bold;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
  }
  
- button:hover:before {
+ button:hover:before 
+ {
 	opacity: 0; 
  }
  
-
-
 /*----------------*/
