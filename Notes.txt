@@ -1,13 +1,15 @@
 Cyclic master detail
 find ../core/src -name '*.ts' | xargs wc -l
 
-flush_strategy row|block
+last-ping update on call,....
+inaktive, stop ping and release
 
-Fieldtype on RecordProperties
+release after rollback requeries
+
+primary/secondary
+
 Alerts should not overlay other alerts
-
 Add validate function to ListOfValues interface
-
 check checkEventTransaction
 
 Inject simple formatter
