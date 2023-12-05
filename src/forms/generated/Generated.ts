@@ -21,17 +21,16 @@
 
 import content from './Generated.html';
 
-import { BaseForm } from "../../BaseForm";
-import { datasource } from 'forms42core';
 import { GeneratedDS } from './GeneratedDS';
+import { Form, datasource } from 'forms42core';
+
 
 @datasource("employees",GeneratedDS)
 
-export class Generated extends BaseForm
+export class Generated extends Form
 {
 	constructor()
 	{
 		super(content);
-		this.title = "Generated";
 	}
 }
