@@ -54,6 +54,7 @@ import { TrueFalseMapper } from './fields/TrueFalseMapper';
 
 import { KeyMapPage, FormsPathMapping, FormsModule as FormsCoreModule, KeyMap, FormEvent, EventType, DatabaseConnection as Connection, FormProperties, UsernamePassword, Form, AlertForm, InternalFormsConfig, ConnectionScope } from 'forms42core';
 import { FlushStrategy } from 'forms42core/src/application/FormsModule';
+import { Generated } from './forms/generated/Generated';
 
 @FormsPathMapping(
 	[
@@ -69,6 +70,7 @@ import { FlushStrategy } from 'forms42core/src/application/FormsModule';
 		{class: Countries, path: "/forms/countries"},
 		{class: Locations, path: "/forms/locations"},
 		{class: Employees, path: "/forms/employees"},
+		{class: Generated, path: "/forms/generated"},
 		{class: Departments, path: "/forms/departments"},
 		{class: MasterDetail, path: "/forms/masterdetail"},
 

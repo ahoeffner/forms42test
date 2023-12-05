@@ -79,6 +79,12 @@ export class FormList extends StaticMenu
 				}
 				,
 				{
+					id: "generated",
+					display: "Generated",
+					command: "/forms/generated"
+				}
+				,
+				{
 					id: "lessons",
 					display: "Lessons",
 					entries:
