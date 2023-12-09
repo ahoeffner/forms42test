@@ -72,9 +72,7 @@ export class BaseForm extends Form
 			this.view = this.getViewPort();
 			let avail:View = this.getParentViewPort();
 
-
 			image.src = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgICAgPHBhdGggZmlsbD0iYmxhY2siIHN0cm9rZS13aWR0aD0iMCIgZD0iTSA1MCAxMAogICAgICB2NDBoNDBsLTE2LTE2bDIyLTIybC04LThsLTIyIDIyWiBtLTQwIDQwIGg0MHY0MGwtMTYtMTZsLTIyIDIybC04LThsMjItMjJaIi8+CiAgPC9zdmc+";
-
 
 			avail.x = 0;
 			avail.y = 0;
