@@ -185,6 +185,13 @@ export class Employees extends Block
 		return(true);
 	}
 
+	@formevent({type: EventType.OnFetch})
+	public async onfetch() : Promise<boolean>
+	{
+		this.getRecord().clearProperties();
+		return(true);
+	}
+
 	@formevent({type: EventType.PostInsert})
 	public async setPrimaryKey() : Promise<boolean>
 	{
