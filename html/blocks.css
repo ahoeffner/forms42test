@@ -37,22 +37,3 @@
 }
 
 /*-------------*/
-.indicator .failed:before
-{
-  top: 50%;
-  left: 50%;
-  z-index: 1;
-  width: 5px;
-  content: "";
-  height: 5px;
-  display: grid;
-  border-radius: 50%;
-  position: absolute;
-  background-color: red;
-  transform: translate(-50%,-50%);
-}
-
-.indicator
-{
-	position: relative;
-}
