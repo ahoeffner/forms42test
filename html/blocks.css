@@ -4,7 +4,6 @@
    display:flex;
 	flex-wrap: wrap;
    width: max-content;
-   align-items: center;
 }
 
 fieldset.container
@@ -12,6 +11,11 @@ fieldset.container
    gap:20px;
    display:grid;
    background-color: white;
+}
+
+fieldset.section
+{
+   width: max-content;
 }
 
 fieldset.container.flex
@@ -35,7 +39,6 @@ fieldset.container.flex
 fieldset
 {
    padding: 10px;
-   width: max-content;
 	border-radius: 5px;
 	margin-bottom: 10px;
 }
