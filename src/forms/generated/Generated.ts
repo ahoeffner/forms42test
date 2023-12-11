@@ -33,7 +33,7 @@ export class Generated extends BaseForm
 	constructor()
 	{
 		super(content);
-		this.title = "Employees";
+		this.title = "Generated";
 	}
 
 	@formevent({type: EventType.OnFetch})

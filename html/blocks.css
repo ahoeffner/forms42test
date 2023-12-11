@@ -6,6 +6,11 @@
    align-items: center;
 }
 
+fieldset.container
+{
+   background-color: white;
+}
+
 .block
 {
 	margin:10px;
