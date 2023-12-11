@@ -6,6 +6,20 @@
    width: max-content;
 }
 
+.block
+{
+	margin:10px;
+	padding: 30px;
+   display: grid;
+	position: relative;
+   width: max-content;
+   height: max-content;
+	border-radius: 10px;
+	box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
+}
+
+/* fieldset */
+
 fieldset.container
 {
    gap:20px;
@@ -23,19 +37,6 @@ fieldset.container.flex
    display:flex;
 }
 
-.block
-{
-	margin:10px;
-	padding: 30px;
-   display: grid;
-	position: relative;
-   width: max-content;
-   height: max-content;
-	border-radius: 10px;
-	box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
-}
-
-/* fieldset */
 fieldset
 {
    padding: 10px;
