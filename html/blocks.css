@@ -3,7 +3,8 @@
    gap:5px;
    display:flex;
 	flex-wrap: wrap;
-   width: max-content;
+   margin-left:auto;
+   margin-right:auto;
 }
 
 .block
