@@ -97,7 +97,7 @@ export class Employees extends Block
 
 		if (salary < limit[0]*0.75 || salary > 1.25*limit[1])
 		{
-			this.warning("Salary is out of range ("+(limit[0]*0.75)+" - "+(1.25*limit[1])+" ) ","Validate Salary");
+			this.warning("Salary is out of standard range. Approval needed","Validate Salary");
 			return(false);
 		}
 
