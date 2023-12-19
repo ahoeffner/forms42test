@@ -1,11 +1,6 @@
 Cyclic master detail
 find ../core/src -name '*.ts' | xargs wc -l
 
-last-ping update on call,....
-inaktive, stop ping and release
-
-title på forms
-clean id's up tp a-z0-9- in FieldDrag
 release after rollback requeries
 
 primary/secondary

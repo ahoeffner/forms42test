@@ -5,6 +5,7 @@ Field:
 Custom tags:
 
 include  			: include html
+FutureForms  		: include form
 
 
 Custom types for "from=" :
