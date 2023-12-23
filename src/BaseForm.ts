@@ -83,7 +83,7 @@ export class BaseForm extends Form
 		}
 		else
 		{
-			image.classList.add("min"); 
+			image.classList.add("min");
 			this.setViewPort(this.view);
 			this.view = null;
 		}
