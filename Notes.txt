@@ -1,6 +1,7 @@
 Cyclic master detail
 find ../core/src -name '*.ts' | xargs wc -l
 
+datepicker allow double-click
 release after rollback requeries
 
 primary/secondary
