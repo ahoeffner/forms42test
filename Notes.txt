@@ -20,13 +20,8 @@ Propagate rightclick
 
 *** Jonas ***
 
-Alert wraps in middle of words
-
-css forms & blocks
-
-Fields:
-
-Field multiple hænger oppe i luften
+Form canvas position absolute
+All css needed for popup, alert, datepicker, listofvalues
 
 Title på date & datetime - Press F9 for datepicker + Press ctrl-space for current date
 Title på drop-down - Press ctrl click for multiple choices
