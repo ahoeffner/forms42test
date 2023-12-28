@@ -38,9 +38,6 @@ import { Departments } from './forms/departments/Departments';
 import { MasterDetail } from './forms/masterdetail/MasterDetail';
 import { PhoneBookMembased } from './forms/phonenook/PhoneBookMembased';
 
-import { Lesson01 } from './lessons/lesson01/Lesson01';
-import { Lesson02 } from './lessons/lesson02/Lesson02';
-
 import { JobList } from './lists/JobList';
 import { ManagerList } from './lists/ManagerList';
 import { CountryList } from './lists/CountryList';
@@ -74,9 +71,6 @@ import { Generated } from './forms/generated/Generated';
 		{class: MasterDetail, path: "/forms/masterdetail"},
 
 		{class: PhoneBookMembased, path: "/forms/phonebook"},
-
-		{class: Lesson01, path: "/forms/lesson01"},
-		{class: Lesson02, path: "/forms/lesson02"},
 
 		{class: CanvasHeader, path: "/html/canvasheader"},
 		{class: PageHeader, path: "/html/pageheader"},
