@@ -101,9 +101,6 @@ export class FormsModule extends FormsCoreModule
 	{
 		super();
 
-		// Best choice for canvas type apps
-		FormsModule.setFormPositionAbsolute();
-
 		// Be aware of InternalFormsConfig
 		InternalFormsConfig.close = "&#215;";
 

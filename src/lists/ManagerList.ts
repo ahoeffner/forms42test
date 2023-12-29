@@ -18,7 +18,7 @@ export class ManagerList extends ListOfValues
 	constructor()
 	{
 		super();
-		
+
 		this.datasource = new Employees();
 		this.bindvalue = this.datasource.emp;
 
