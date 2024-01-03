@@ -54,8 +54,13 @@ Jonas beskriver alle ændring
 
 
 check calendar if needs too at. 
+
 login needs too setup diffrent for now.
+
+color and popup css:
 change name from query-editor too advanced-query.
+
+color and popup css:
 put list-of-values under popup-body too fix that.
 
 
