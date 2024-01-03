@@ -45,17 +45,19 @@ div[name="button-area"]
 	gap:5px;
 	height: 100%;
 	display: flex;
-	margin-top: 5px;
-	align-items: start;
-	flex-direction: row-reverse;
+	justify-content: end;
 }
 
 div[name="lower-right"],
 div[name="lowerright"]
 {
-	height: 100%;
 	padding-top:0px;
-	margin:10px 10px 5px 10px;
+	margin:10px 10px 0px 10px;
+}
+
+div[name="popup-footer"]
+{
+	display:none;
 }
 
 label[for="username"],
