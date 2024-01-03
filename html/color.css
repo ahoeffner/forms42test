@@ -67,8 +67,8 @@
 
 .topbar li a:not([disabled]):focus,
 .topbar li a:not([disabled]):hover,
-.left-menu-container a:not([disabled]):hover,
-.left-menu-container a:not([disabled]):focus
+.left-menu-container li a:not([disabled]):hover,
+.left-menu-container li  a:not([disabled]):focus
 {
    background-color: #6060F0;
 }
