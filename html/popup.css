@@ -11,7 +11,7 @@ div[name="popup-body"] div[name="date-picker"],
 div[name="popup-body"] div[name="list-of-values"],
 div[name="popup-body"] div[name="advanced-query"]
 {
-	gap:10px;
+	display:grid;
 	margin:0 20px;
 	border-radius: 10px;
 	padding: 5px 20px 20px 20px;
@@ -39,14 +39,19 @@ input[name="username"]
 	margin-left:0px;
 }
 
-div[name="loginbutton"]
+div[name="loginbutton"],
+div[name="button-area"]
 {
 	gap:5px;
+	height: 100%;
 	display: flex;
-	justify-content: right;
+	margin-top: 5px;
+	align-items: start;
+	flex-direction: row-reverse;
 }
 
-div[name="lower-right"]
+div[name="lower-right"],
+div[name="lowerright"]
 {
 	height: 100%;
 	padding-top:0px;
@@ -140,16 +145,21 @@ div[name="week"]:not(:last-child) div[name="day"]
 	display:inline-block;
 }
 
-div[name="lov"] > div[name="search"] > input
+div[name="search"] > input
 {
 	margin: 4px;
 	margin-bottom: 8px;
 }
 
-div[name="lov"] > div[name="results"] > div[name="row"] > input
+div[name="results"] > div[name="row"] > input
 {
 	margin: 4px;
 	cursor: default;
+}
+
+div[name="results"]
+{
+	margin-top:10px;
 }
 
 /*------------------------*/
@@ -164,7 +174,7 @@ div[name="multi-value"],
 div[name="range-values"],
 div[name="single-value"]
 {
-	margin-top:10px;
+	margin:10px auto 0px auto;
 }
 
 /* alert */
