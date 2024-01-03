@@ -49,9 +49,10 @@
 {
 	z-index: 1;
 	display:flex;
+	margin-left:5px;
 	position: relative;
 	height: fit-content;
-	padding:5px 0px 5px 5px;
+	padding:5px 0px 5px 0px;
 }
 
 .left-menu-container .left-menu li a:before
