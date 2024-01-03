@@ -12,9 +12,10 @@ check checkEventTransaction
 Inject simple formatter
 Connect in demo (no harcoded url)
 
-Demo knapper på Lessons
-
 Propagate rightclick
+
+*******
+Alert <div name="msg" from="alert"></div> needs margin
 
 
 *** Jonas ***
@@ -42,3 +43,11 @@ MasterDetail:
 
 Employess:
 PhoneBook: Membased
+
+
+
+
+
+**********************************************
+
+Jonas beskriver alle ændring
