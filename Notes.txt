@@ -53,8 +53,9 @@ PhoneBook: Membased
 Jonas beskriver alle ændring
 
 
-change name from query-editor too advanced-query
-put list-of-values under popup-body too fix that.
 check calendar if needs too at. 
-login needs too setup diffrent for now
+login needs too setup diffrent for now.
+change name from query-editor too advanced-query.
+put list-of-values under popup-body too fix that.
+
 

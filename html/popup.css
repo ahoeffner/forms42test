@@ -157,10 +157,6 @@ div[name="results"] > div[name="row"] > input
 	cursor: default;
 }
 
-div[name="results"]
-{
-	margin-top:10px;
-}
 
 /*------------------------*/
 /*Advanced query multi-value*/
