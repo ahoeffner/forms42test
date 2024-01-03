@@ -7,7 +7,7 @@ div[name="popup-body"]
 div[name="popup-body"] div[name="lov"],
 div[name="popup-body"] div[name="msg"],
 div[name="popup-body"] div[name="login"],
-div[name="popup-body"] div[name="query-editor"],
+div[name="popup-body"] div[name="advanced-query"],
 div[name="popup-body"] div[name="date-picker"]
 {
 	gap:10px;
@@ -45,7 +45,7 @@ div[name="loginbutton"]
 	justify-content: right;
 }
 
-div[name="lowerright"]
+div[name="lower-right"]
 {
 	height: 100%;
 	padding-top:0px;

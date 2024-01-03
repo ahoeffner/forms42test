@@ -51,3 +51,7 @@ PhoneBook: Membased
 **********************************************
 
 Jonas beskriver alle ændring
+
+
+change name from query-editor too advanced-query fix the ListOfValues
+

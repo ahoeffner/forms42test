@@ -143,7 +143,7 @@ div[name="popup-body"]
 div[name="popup-body"] div[name="lov"],
 div[name="popup-body"] div[name="msg"],
 div[name="popup-body"] div[name="login"],
-div[name="popup-body"] div[name="query-editor"],
+div[name="popup-body"] div[name="advanced-query"],
 div[name="popup-body"] div[name="date-picker"]
 {
    background-color: white;
