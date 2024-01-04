@@ -133,7 +133,7 @@ div[name="search"]
 {
   display:flex;
   border-radius: 10px;
-  padding: 0 10px 0 10px;
+  padding: 5px 10px 0 10px;
   border: 1px solid #d1d1d1;
   box-shadow: inset 0px 1px 8px rgba(0, 0, 0, 0.2);
 }
