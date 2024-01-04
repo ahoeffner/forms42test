@@ -131,25 +131,12 @@ div[name="week"] div[name="day"]
 /* ListOfValues  */
 div[name="search"]
 {
-  padding: 0 10px 0 10px;
+  display:flex;
   border-radius: 10px;
+  padding: 0 10px 0 10px;
   border: 1px solid #d1d1d1;
   box-shadow: inset 0px 1px 8px rgba(0, 0, 0, 0.2);
 }
-
-/* div[name="search"]::after
-{
-	top: 2px;
-	padding: 3px;
-	color: white;
-	font-size: 8px;
-	font-size: 10px;
-	font-weight: 600;
-	content: "List";
-	position: relative;
-	border-radius: 10px;
-	background: #6060F0;
-} */
 
 .search
 {
@@ -159,16 +146,6 @@ div[name="search"]
 div[name="results"]
 {
 	margin:0 auto;
-}
-
-div[name="results"] > div[name="row"] > input:valid
-{
-	cursor: pointer
-}
-
-div[name="results"] > div[name="row"] > input::not(:placeholder-shown)
-{
-	cursor: default 
 }
 
 .search input
@@ -191,7 +168,7 @@ div[name="search"] > input
 div[name="results"] > div[name="row"] > input
 {
 	margin: 4px;
-	/* cursor: default; */
+	cursor: default;
 }
 
 

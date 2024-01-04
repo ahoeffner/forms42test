@@ -8,6 +8,11 @@ input
 	border-bottom: 2px solid black;
 }
 
+input:focus-visible
+{
+	border-radius: 4px;
+}
+
 input[date]
 {
 	width:90px;

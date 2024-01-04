@@ -49,10 +49,12 @@
 {
 	z-index: 1;
 	display:flex;
-	margin-left:5px;
+	margin-left:2px;
 	position: relative;
 	height: fit-content;
-	padding:5px 0px 5px 0px;
+	padding:5px 0px 5px 3px;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
 }
 
 .left-menu-container .left-menu li a:before
