@@ -162,6 +162,13 @@ div[name="results"] > div[name="row"] > input
 /*------------------------*/
 /*Advanced query multi-value*/
 
+
+div[name="type"]
+{
+	display:flex;
+	justify-content: center;
+}
+
 .multi-value
 {
 	margin-left:0px;
@@ -172,6 +179,11 @@ div[name="range-values"],
 div[name="single-value"]
 {
 	margin:10px auto 0px auto;
+}
+
+div[name="single-value"] td
+{
+	padding:0 8px;
 }
 
 /* alert */
