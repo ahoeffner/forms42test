@@ -131,7 +131,6 @@ export class FormsModule extends FormsCoreModule
 
 		FormsModule.DATABASE = new Connection(backend);
 		FormsModule.DATABASE.scope = ConnectionScope.transactional;
-		FormsModule.DATABASE.connect("hr","hr");
 		FormsModule.defaultFlushStrategy = FlushStrategy.Block;
 		let infomation:HTMLElement = document.querySelector(".infomation");
 		infomation.appendChild(KeyMapPage.show(keymap));
@@ -141,7 +140,7 @@ export class FormsModule extends FormsCoreModule
 
 		this.addEventListener(this.showTopMenu,{type: EventType.Key, key: keymap.topmenu});
 		this.addEventListener(this.showLeftMenu,{type: EventType.Key, key: keymap.leftmenu});
-		
+
 		this.addEventListener(this.open,
 		[
 			{type:EventType.Key,key:this.jobs},
