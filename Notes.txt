@@ -5,7 +5,6 @@ release after rollback requeries
 
 5000-000
 Describe cache
-Clear ClientInfo
 Add return-value type
 
 primary/secondary
