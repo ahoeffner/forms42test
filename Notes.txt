@@ -4,8 +4,9 @@ find ../core/src -name '*.ts' | xargs wc -l
 release after rollback requeries
 
 5000-000
-setClientInfo
 Describe cache
+Clear ClientInfo
+Add return-value type
 
 primary/secondary
 
@@ -13,13 +14,9 @@ Alerts should not overlay other alerts
 Add validate function to ListOfValues interface
 check checkEventTransaction
 
-Inject simple formatter
-Connect in demo (no harcoded url)
+Demo - Inject simple formatter
 
 Propagate rightclick
-
-*******
-Alert <div name="msg" from="alert"></div> needs margin
 
 
 *** Jonas ***
