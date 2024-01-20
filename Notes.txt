@@ -3,6 +3,10 @@ find ../core/src -name '*.ts' | xargs wc -l
 
 release after rollback requeries
 
+5000-000
+setClientInfo
+Describe cache
+
 primary/secondary
 
 Alerts should not overlay other alerts
@@ -53,7 +57,7 @@ PhoneBook: Membased
 Jonas beskriver alle ændring
 
 
-check calendar if needs too at. 
+check calendar if needs too at.
 
 login needs too setup diffrent for now.
 
