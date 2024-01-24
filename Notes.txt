@@ -1,0 +1,66 @@
+Cyclic master detail
+find ../core/src -name '*.ts' | xargs wc -l
+
+release after rollback requeries
+
+5000-000
+Describe cache
+Add return-value type
+
+primary/secondary
+
+Alerts should not overlay other alerts
+Add validate function to ListOfValues interface
+check checkEventTransaction
+
+Demo - Inject simple formatter
+
+Propagate rightclick
+
+
+*** Jonas ***
+
+Style ListOfValues in demo
+datepicker allow double-click
+kigge på rightclick.
+
+*************
+
+Demo:
+
+Tags: Heading
+Countries: from=
+Locations: ListOfValues, search on countries
+
+MasterDetail:
+	Dates,
+	Sorting,
+	Swap Fields,
+	QueryEditor,
+	Concurrency,
+	ReturnOnInsert,
+	Row-warning for salary
+
+Employess:
+PhoneBook: Membased
+
+
+
+
+
+**********************************************
+
+Jonas beskriver alle ændring
+
+
+check calendar if needs too at.
+
+login needs too setup diffrent for now.
+
+color and popup css:
+change name from query-editor too advanced-query.
+
+color and popup css:
+put list-of-values under popup-body too fix that.
+
+
