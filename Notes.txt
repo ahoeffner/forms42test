@@ -3,10 +3,6 @@ find ../core/src -name '*.ts' | xargs wc -l
 
 release after rollback requeries
 
-5000-000
-Describe cache
-Add return-value type
-
 primary/secondary
 
 Alerts should not overlay other alerts
