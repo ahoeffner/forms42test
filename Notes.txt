@@ -5,6 +5,7 @@ release after rollback requeries
 
 primary/secondary
 
+Alert cannot press ok-button
 Alerts should not overlay other alerts
 Add validate function to ListOfValues interface
 check checkEventTransaction
