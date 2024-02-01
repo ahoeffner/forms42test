@@ -12,7 +12,7 @@ div[name="popup-body"] div[name="list-of-values"],
 div[name="popup-body"] div[name="advanced-query"]
 {
 	display:grid;
-	margin:0 20px;
+	margin:0 40px;
 	border-radius: 10px;
 	padding: 5px 20px 20px 20px;
 }
@@ -43,14 +43,16 @@ div[name="loginbutton"],
 div[name="button-area"]
 {
 	gap:5px;
-	height: 100%;
-	display: flex;
-	justify-content: end;
+	right: 0px;
+	bottom: 0px;
+	margin: 10px;
+	position: absolute;
 }
 
 div[name="lower-right"],
 div[name="lowerright"]
 {
+	height: 30px;
 	padding-top:0px;
 	margin:10px 10px 0px 10px;
 }
