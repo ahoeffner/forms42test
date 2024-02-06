@@ -2,6 +2,7 @@ Cyclic master detail
 find ../core/src -name '*.ts' | xargs wc -l
 
 release after rollback requeries
+versions# i status
 
 primary/secondary
 
