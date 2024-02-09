@@ -51,6 +51,7 @@ import { TrueFalseMapper } from './fields/TrueFalseMapper';
 
 import { KeyMapPage, FormsPathMapping, FormsModule as FormsCoreModule, FlushStrategy, KeyMap, FormEvent, EventType, DatabaseConnection as Connection, FormProperties, UsernamePassword, Form, AlertForm, InternalFormsConfig, ConnectionScope } from 'forms42core';
 import { Generated } from './forms/generated/Generated';
+import { MDD } from './Test/MDD';
 
 @FormsPathMapping(
 	[
@@ -153,7 +154,9 @@ export class FormsModule extends FormsCoreModule
 			{type:EventType.Key,key:this.masterdetail}
 		]);
 
-		FormsModule.OpenURLForm();
+		FormsModule.DATABASE.connect("hr","hr");
+		FormsModule.showform(MDD);
+		//FormsModule.OpenURLForm();
 	}
 
 	private async open(event:FormEvent) : Promise<boolean>
