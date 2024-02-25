@@ -1,12 +1,15 @@
 Cyclic master detail
 find ../core/src -name '*.ts' | xargs wc -l
 
+Remove stmt & bindvalues from Cursor
+
+FormsModule.saveAll()
+
 release after rollback requeries
 versions# i status
 
 primary/secondary
 
-Alert cannot press ok-button
 Alerts should not overlay other alerts
 Add validate function to ListOfValues interface
 check checkEventTransaction

@@ -1,9 +1,9 @@
 import content from './MDD.html';
 
-import { Form, Key, datasource } from "forms42core";
-import { Countries } from "../datasources/database/Countries";
-import { Locations } from "../datasources/database/Locations";
-import { Departments } from "../datasources/database/Departments";
+import { Countries } from "./Countries";
+import { Locations } from './Locations';
+import { Departments } from './Departments';
+import { Form, datasource, Key } from "forms42core";
 
 @datasource("Countries",Countries)
 @datasource("Locations",Locations)
