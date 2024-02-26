@@ -132,7 +132,9 @@ export class FormsModule extends FormsCoreModule
 
 		FormsModule.DATABASE = new Connection(backend);
 		FormsModule.DATABASE.scope = ConnectionScope.transactional;
+
 		FormsModule.defaultFlushStrategy = FlushStrategy.Block;
+
 		let infomation:HTMLElement = document.querySelector(".infomation");
 		infomation.appendChild(KeyMapPage.show(keymap));
 
