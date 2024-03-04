@@ -3,7 +3,8 @@ import content from './MDD.html';
 import { Countries } from "./Countries";
 import { Locations } from './Locations';
 import { Departments } from './Departments';
-import { Form, datasource, Key } from "forms42core";
+import { FormsModule } from '../FormsModule';
+import { Form, datasource, Key, Function, DataType, ParameterType } from "forms42core";
 
 @datasource("Countries",Countries)
 @datasource("Locations",Locations)
@@ -27,5 +28,19 @@ export class MDD extends Form
 		dkey = new Key("Departments","loc_id");
 
 		this.link(mkey,dkey);
+	}
+
+
+	public async testcall() : Promise<void>
+	{
+		let job:string = "SNRCONS";
+		let func:Function = new Function(FormsModule.DATABASE,"getSalaryLimit");
+
+		func.addParameter("job",job,DataType.varchar);
+		func.addParameter("min",0,DataType.integer,ParameterType.inout);
+		func.addParameter("max",0,DataType.integer,ParameterType.inout);
+
+		let success:boolean = await func.execute();
+		console.log(success);
 	}
 }
