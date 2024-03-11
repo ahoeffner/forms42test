@@ -64,7 +64,7 @@ import { MDD } from './Test/MDD';
 		{class: DepartmentsList, path: "/lovs/departments"},
 
 		{class: Jobs, path: "/forms/jobs"},
-		{class: Countries, path: "/forms/countries"},
+		{class: Countries, path: "/forms/countries", navigable: true},
 		{class: Locations, path: "/forms/locations"},
 		{class: Employees, path: "/forms/employees"},
 		{class: Generated, path: "/forms/generated"},

@@ -4,7 +4,7 @@ import { Countries } from "./Countries";
 import { Locations } from './Locations';
 import { Departments } from './Departments';
 import { FormsModule } from '../FormsModule';
-import { Form, datasource, Key, Function, DataType, ParameterType } from "forms42core";
+import { Form, datasource, Key, Function, DataType, ParameterType, Procedure } from "forms42core";
 
 @datasource("Countries",Countries)
 @datasource("Locations",Locations)
@@ -34,13 +34,24 @@ export class MDD extends Form
 	public async testcall() : Promise<void>
 	{
 		let job:string = "SNRCONS";
-		let func:Function = new Function(FormsModule.DATABASE,"getSalaryLimit");
+		let proc:Procedure = new Procedure(FormsModule.DATABASE,"getSalaryLimit");
 
-		func.addParameter("job",job,DataType.varchar);
-		func.addParameter("min",0,DataType.integer,ParameterType.inout);
-		func.addParameter("max",0,DataType.integer,ParameterType.inout);
+		proc.addParameter("job",job,DataType.varchar);
+		proc.addParameter("MIN",0,DataType.integer,ParameterType.inout);
+		proc.addParameter("max",0,DataType.integer,ParameterType.inout);
 
-		let success:boolean = await func.execute();
-		console.log(success);
+		let success:boolean = await proc.execute();
+		console.log(success+" "+proc.getValue("mIn")+" "+proc.getValue("max"));
+
+		let func:Function = new Function(FormsModule.DATABASE,"getCountry");
+
+		func.addParameter("id","DK",DataType.varchar);
+		func.addParameter("name","NA",DataType.varchar,ParameterType.inout);
+		func.addOutParameter("date",DataType.date);
+
+		func.returns("retval","date");
+		success = await func.execute();
+
+		console.log(success+" "+func.getValue("name")+" "+func.getValue("date")+" "+func.getReturnValue());
 	}
 }
