@@ -1,5 +1,5 @@
 import { FormsModule } from "../FormsModule";
-import { BindValue, ListOfValues, QueryTable } from "forms42core";
+import { BindValue, ListOfValues, DatabaseSource, Custom } from "forms42core";
 
 export class JobList extends ListOfValues
 {
@@ -28,21 +28,19 @@ export class JobList extends ListOfValues
 	}
 }
 
-class Jobs extends QueryTable
+class Jobs extends DatabaseSource
 {
 	public job:BindValue = new BindValue("job","");
 
 	constructor()
 	{
-		super(FormsModule.DATABASE);
+		super(FormsModule.DATABASE,"jobs");
+		this.addColumns(["job_id","job_title"])
 
-		this.sql =
-		`
-			select job_id, job_title from jobs
-			where upper(job_id||' '||job_title) like upper('%'||:job||'%')
-		`;
+		let contains:Custom = new Custom("contains");
+		contains.addBindValue(this.job);
+		this.addFilter(contains);
 
 		this.sorting = "job_title";
-		this.addBindValue(this.job);
 	}
 }

@@ -2,6 +2,7 @@ Cyclic master detail
 find ../core/src -name '*.ts' | xargs wc -l
 
 Remove stmt & bindvalues from Cursor
+Implement Between, Contains, isNull
 
 FormsModule.saveAll()
 

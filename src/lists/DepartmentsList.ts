@@ -1,5 +1,5 @@
 import { FormsModule } from "../FormsModule";
-import { BindValue, ListOfValues, QueryTable } from "forms42core";
+import { BindValue, ListOfValues, DatabaseSource, Custom } from "forms42core";
 
 export class DepartmentsList extends ListOfValues
 {
@@ -28,21 +28,21 @@ export class DepartmentsList extends ListOfValues
 	}
 }
 
-class Departments extends QueryTable
+class Departments extends DatabaseSource
 {
 	public department:BindValue = new BindValue("department","");
 
 	constructor()
 	{
-		super(FormsModule.DATABASE);
+		super(FormsModule.DATABASE,"departments");
+		this.addColumns(["department_id","department_name"])
 
-		this.sql =
-		`
-			select department_id, department_name from departments
-			where upper(department_name) like upper('%'||:department||'%')
-		`;
+		let contains:Custom = new Custom("contains");
 
-		this.sorting = "department_id";
-		this.addBindValue(this.department);
+		contains.addMapping("value","department");
+		contains.addMapping("column","department_name");
+
+		contains.addBindValue(this.department);
+		this.addFilter(contains);
 	}
 }

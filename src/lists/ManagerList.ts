@@ -1,5 +1,5 @@
 import { FormsModule } from "../FormsModule";
-import { BindValue, ListOfValues, QueryTable } from "forms42core";
+import { BindValue, ListOfValues, DatabaseSource, Custom } from "forms42core";
 
 export class ManagerList extends ListOfValues
 {
@@ -20,7 +20,7 @@ export class ManagerList extends ListOfValues
 		super();
 
 		this.datasource = new Employees();
-		this.bindvalue = this.datasource.emp;
+		this.bindvalue = this.datasource.employee;
 
 		this.targetfields = "manager_id";
 		this.sourcefields = "employee_id";
@@ -28,21 +28,18 @@ export class ManagerList extends ListOfValues
 	}
 }
 
-class Employees extends QueryTable
+class Employees extends DatabaseSource
 {
-	public emp:BindValue = new BindValue("emp","");
+	public employee:BindValue = new BindValue("name","");
 
 	constructor()
 	{
-		super(FormsModule.DATABASE);
-
-		this.sql =
-		`
-			select employee_id, first_name, last_name from employees
-			where upper(first_name||' '||last_name) like upper('%'||:emp||'%')
-		`;
-
+		super(FormsModule.DATABASE,"employees");
+		this.addColumns(["employee_id","first_name","last_name"])
 		this.sorting = "first_name, last_name";
-		this.addBindValue(this.emp);
+
+		let contains:Custom = new Custom("contains");
+		contains.addBindValue(this.employee);
+		this.addFilter(contains);
 	}
 }

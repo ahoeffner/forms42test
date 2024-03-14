@@ -1,5 +1,5 @@
 import { FormsModule } from "../FormsModule";
-import { BindValue, ListOfValues, QueryTable } from "forms42core";
+import { BindValue, ListOfValues, DatabaseSource, CustomEvent, Custom } from "forms42core";
 
 export class CountryList extends ListOfValues
 {
@@ -29,22 +29,17 @@ export class CountryList extends ListOfValues
 	}
 }
 
-class Countries extends QueryTable
+class Countries extends DatabaseSource
 {
 	public country:BindValue = new BindValue("country","");
 
 	constructor()
 	{
-		super(FormsModule.DATABASE);
-
-		this.sql =
-		`
-			/* Oracle doesn't have ilike */
-			select country_id, country_name from countries
-			where upper(country_id||' '||country_name) like upper('%'||:country||'%')
-		`;
-
-		this.sorting = "country_id";
-		this.addBindValue(this.country);
+		super(FormsModule.DATABASE,"countries");
+		this.addColumns(["country_id","country_name"])
+		
+		let contains:Custom = new Custom("contains");
+		contains.addBindValue(this.country);
+		this.addFilter(contains);
 	}
 }
