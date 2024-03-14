@@ -40,7 +40,8 @@ export class Countries extends DatabaseSource
 		let row:any[] = null;
 		let stmt:SQLStatement = new SQLStatement("getCountryName");
 
-		stmt.addBindValue(new BindValue("country",code,DataType.string));
+		stmt.cursor = true;
+		stmt.addBindValue(new BindValue("country_id",code,DataType.string));
 
 		let success:boolean = await stmt.execute(FormsModule.DATABASE);
 		if (success) row = await stmt.fetch();
