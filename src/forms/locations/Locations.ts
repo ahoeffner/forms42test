@@ -49,8 +49,13 @@ export class Locations extends BaseForm
 			let countries:DataSource = new CountryDS();
 			let countryname:Like = new Like("country_name").setConstraint(country);
 			let findcountries:Query = new Query(countries,"country_id",countryname);
+
+			// select country_id from countries where country_name like :country
+
 			let subquery:SubQuery = new SubQuery("country_id").setConstraint(findcountries);
 			loc.filter.and(subquery,"country_name");
+
+			// country_id in (select country_id from countries where country_name like :country)
 		}
 
 		return(true);
