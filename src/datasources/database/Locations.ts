@@ -20,7 +20,7 @@
 */
 
 import { FormsModule } from "../../FormsModule";
-import { BindValue, DatabaseSource, DataType, Like, SQLStatement } from "forms42core";
+import { BindValue, DatabaseSource, DataType, SQLStatement } from "forms42core";
 
 export class Locations extends DatabaseSource
 {
@@ -39,7 +39,7 @@ export class Locations extends DatabaseSource
 	{
 		let row:any[] = null;
 
-		let stmt:SQLStatement = new SQLStatement("getLocationName",true);
+		let stmt:SQLStatement = new SQLStatement("getLocationName",false);
 		stmt.addBindValue(new BindValue("loc_id",loc_id,DataType.smallint));
 
 		let success:boolean = await stmt.execute(FormsModule.DATABASE);

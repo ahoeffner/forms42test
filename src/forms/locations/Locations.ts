@@ -23,8 +23,10 @@ import content from './Locations.html';
 
 import { BaseForm } from "../../BaseForm";
 import { Countries } from '../../blocks/Countries';
-import { Block, datasource, EventType, formevent, FormEvent, Level } from "forms42core";
-import { Locations as Locationdata, CountryNameFilter } from "../../datasources/database/Locations";
+import { Locations as Locationdata } from "../../datasources/database/Locations";
+import { Block, DataSource, datasource, Equals, EventType, formevent, FormEvent, Level, Like, Query } from "forms42core";
+import { CountryDS } from '../countries/CountryDS';
+import { SubQuery } from 'forms42core/src/model/filters/SubQuery';
 
 @datasource("Locations",Locationdata)
 
@@ -44,8 +46,11 @@ export class Locations extends BaseForm
 
 		if (country != null)
 		{
-			loc.filter.delete("country_name");
-			loc.filter.and(new CountryNameFilter("country_name").setConstraint(country));
+			let countries:DataSource = new CountryDS();
+			let countryname:Like = new Like("country_name").setConstraint(country);
+			let findcountries:Query = new Query(countries,"country_id",countryname);
+			let subquery:SubQuery = new SubQuery("country_id").setConstraint(findcountries);
+			loc.filter.and(subquery,"country_name");
 		}
 
 		return(true);
