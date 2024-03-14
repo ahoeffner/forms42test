@@ -35,9 +35,11 @@ class Countries extends DatabaseSource
 
 	constructor()
 	{
-		super(FormsModule.DATABASE,"countries");
+		super("countries");
+		this.connection = FormsModule.DATABASE;
+
 		this.addColumns(["country_id","country_name"])
-		
+
 		let contains:Custom = new Custom("contains");
 		contains.addBindValue(this.country);
 		this.addFilter(contains);

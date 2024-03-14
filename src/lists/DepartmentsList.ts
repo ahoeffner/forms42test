@@ -34,7 +34,9 @@ class Departments extends DatabaseSource
 
 	constructor()
 	{
-		super(FormsModule.DATABASE,"departments");
+		super("departments");
+		this.connection = FormsModule.DATABASE;
+
 		this.addColumns(["department_id","department_name"])
 
 		let contains:Custom = new Custom("contains");

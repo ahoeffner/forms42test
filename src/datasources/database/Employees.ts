@@ -20,13 +20,14 @@
 */
 
 import { FormsModule } from "../../FormsModule";
-import { BindValue, DatabaseTable, DataType, SQLStatement } from "forms42core";
+import { BindValue, DatabaseSource, DataType, SQLStatement } from "forms42core";
 
-export class Employees extends DatabaseTable
+export class Employees extends DatabaseSource
 {
 	constructor()
 	{
-		super(FormsModule.DATABASE,"employees");
+		super("employees");
+		this.connection = FormsModule.DATABASE;
 
 		this.primaryKey = "employee_id";
 		this.insertReturnColumns = "employee_id";
@@ -37,23 +38,16 @@ export class Employees extends DatabaseTable
 	public static async getName(employee_id:number) : Promise<string>
 	{
 		let row:any[] = null;
-		let stmt:SQLStatement = new SQLStatement(FormsModule.DATABASE);
 
-		stmt.sql =
-		`
-			select first_name||' '||last_name
-			from employees
-			where employee_id = :employee_id
-		`;
-
+		let stmt:SQLStatement = new SQLStatement("getEmployeeName");
 		stmt.addBindValue(new BindValue("employee_id",employee_id,DataType.smallint));
 
-		let success:boolean = await stmt.execute();
+		let success:boolean = await stmt.execute(FormsModule.DATABASE);
 		if (success) row = await stmt.fetch();
 
 		stmt.close();
 		if (row)	return(row[0]);
-		
+
 		return(null);
 	}
 
@@ -62,16 +56,10 @@ export class Employees extends DatabaseTable
 		let row:any[] = null;
 		let employees:string[] = [];
 
-		let stmt:SQLStatement = new SQLStatement(FormsModule.DATABASE);
-
-		stmt.sql =
-		`
-			select first_name||' '||last_name
-			from employees order by last_name, first_name
-		`;
+		let stmt:SQLStatement = new SQLStatement("getAllEmployees");
 
 		stmt.arrayfetch = 32;
-		let success:boolean = await stmt.execute();
+		let success:boolean = await stmt.execute(FormsModule.DATABASE);
 
 		if (success)
 		{

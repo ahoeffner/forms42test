@@ -20,39 +20,30 @@
 */
 
 import { FormsModule } from "../../FormsModule";
-import { BindValue, DatabaseTable, DataType, SQLStatement } from "forms42core";
+import { BindValue, DatabaseSource, DataType, SQLStatement } from "forms42core";
 
-export class Departments extends DatabaseTable
+export class Departments extends DatabaseSource
 {
 	constructor()
 	{
-		super(FormsModule.DATABASE,"departments");
-
-		this.sorting = "department_id";
-		this.primaryKey = "department_id";
+		super("departments");
+		this.connection = FormsModule.DATABASE;
 		this.addColumns(["manager_id","loc_id"]);
 	}
 
 	public static async getTitle(id:string) : Promise<string>
 	{
 		let row:any[] = null;
-		let stmt:SQLStatement = new SQLStatement(FormsModule.DATABASE);
+		let stmt:SQLStatement = new SQLStatement("getDepartmentName");
 
-		stmt.sql =
-		`
-			select department_name
-			from departments
-			where department_id = :id
-		`;
+		stmt.addBindValue(new BindValue("department_id",id,DataType.integer));
 
-		stmt.addBindValue(new BindValue("id",id,DataType.integer));
-
-		let success:boolean = await stmt.execute();
+		let success:boolean = await stmt.execute(FormsModule.DATABASE);
 		if (success) row = await stmt.fetch();
 
 		stmt.close();
 		if (row)	return(row[0]);
-		
+
 		return(null);
 	}
 }

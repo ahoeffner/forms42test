@@ -1,5 +1,5 @@
 import { FormsModule } from "../FormsModule";
-import { BindValue, ListOfValues, QueryTable } from "forms42core";
+import { BindValue, ListOfValues, DatabaseSource, Custom } from "forms42core";
 
 export class LocationList extends ListOfValues
 {
@@ -28,21 +28,21 @@ export class LocationList extends ListOfValues
 	}
 }
 
-class Locations extends QueryTable
+class Locations extends DatabaseSource
 {
-	public loc:BindValue = new BindValue("loc","");
+	public loc:BindValue = new BindValue("location","");
 
 	constructor()
 	{
-		super(FormsModule.DATABASE);
+		super("locations");
+		this.connection = FormsModule.DATABASE;
 
-		this.sql =
-		`
-			select loc_id, city, street_address from locations
-			where upper(city||' '||street_address) like upper('%'||:loc||'%')
-		`;
+		this.addColumns(["job_id","city","street_address"])
+
+		let contains:Custom = new Custom("contains");
+		contains.addBindValue(this.loc);
+		this.addFilter(contains);
 
 		this.sorting = "city,street_address";
-		this.addBindValue(this.loc);
 	}
 }

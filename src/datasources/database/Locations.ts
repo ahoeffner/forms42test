@@ -20,34 +20,29 @@
 */
 
 import { FormsModule } from "../../FormsModule";
-import { BindValue, DatabaseTable, DataType, Like, SQLStatement } from "forms42core";
+import { BindValue, DatabaseSource, DataType, Like, SQLStatement } from "forms42core";
 
-export class Locations extends DatabaseTable
+export class Locations extends DatabaseSource
 {
 	constructor()
 	{
-		super(FormsModule.DATABASE,"locations");
+		super("locations");
 
 		this.sorting = "loc_id";
 		this.primaryKey = "loc_id";
 		this.addColumns("country_id");
+
+		this.connection = FormsModule.DATABASE;
 	}
 
 	public static async getLocation(loc_id:number) : Promise<string>
 	{
 		let row:any[] = null;
-		let stmt:SQLStatement = new SQLStatement(FormsModule.DATABASE);
-
-		stmt.sql =
-		`
-			select city||' '||street_address||' '||country_id
-			from locations
-			where loc_id = :loc_id
-		`;
+		let stmt:SQLStatement = new SQLStatement("getLocationName");
 
 		stmt.addBindValue(new BindValue("loc_id",loc_id,DataType.smallint));
 
-		let success:boolean = await stmt.execute();
+		let success:boolean = await stmt.execute(FormsModule.DATABASE);
 		if (success) row = await stmt.fetch();
 
 		stmt.close();

@@ -26,10 +26,11 @@ export class Locations extends DatabaseSource
 {
 	constructor()
 	{
-		super(FormsModule.DATABASE,"locations");
+		super("locations");
 
 		this.sorting = "loc_id";
 		this.primaryKey = "loc_id";
 		this.rowlocking = LockMode.Pessimistic;
+		this.connection = FormsModule.DATABASE;
 	}
 }

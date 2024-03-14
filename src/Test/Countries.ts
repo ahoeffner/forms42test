@@ -26,7 +26,8 @@ export class Countries extends DatabaseSource
 {
 	constructor()
 	{
-		super(FormsModule.DATABASE,"countries");
+		super("countries");
 		this.rowlocking = LockMode.Pessimistic;
+		this.connection = FormsModule.DATABASE;
 	}
 }

@@ -20,16 +20,18 @@
 */
 
 import { FormsModule } from "../../FormsModule";
-import { DatabaseTable, LockMode } from "forms42core";
+import { DatabaseSource, LockMode } from "forms42core";
 
-export class GeneratedDS extends DatabaseTable
+export class GeneratedDS extends DatabaseSource
 {
 	constructor()
 	{
-		super(FormsModule.DATABASE,"employees");
+		super("employees");
 
 		this.sorting = "last_name";
 		this.primaryKey = "employee_id";
 		this.rowlocking = LockMode.Pessimistic;
+
+		this.connection = FormsModule.DATABASE;
 	}
 }

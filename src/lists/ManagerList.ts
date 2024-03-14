@@ -34,7 +34,9 @@ class Employees extends DatabaseSource
 
 	constructor()
 	{
-		super(FormsModule.DATABASE,"employees");
+		super("employees");
+		this.connection = FormsModule.DATABASE;
+
 		this.addColumns(["employee_id","first_name","last_name"])
 		this.sorting = "first_name, last_name";
 

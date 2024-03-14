@@ -20,13 +20,15 @@
 */
 
 import { FormsModule } from "../../FormsModule";
-import { BindValue, DatabaseTable, DataType, LockMode, SQLStatement } from "forms42core";
+import { BindValue, DatabaseSource, DataType, LockMode, SQLStatement } from "forms42core";
 
-export class Countries extends DatabaseTable
+export class Countries extends DatabaseSource
 {
 	constructor()
 	{
-		super(FormsModule.DATABASE,"countries");
+		super("countries");
+		this.connection = FormsModule.DATABASE;
+
 
 		this.sorting = "country_id";
 		this.primaryKey = "country_id";
@@ -36,18 +38,11 @@ export class Countries extends DatabaseTable
 	public static async getName(code:string) : Promise<string>
 	{
 		let row:any[] = null;
-		let stmt:SQLStatement = new SQLStatement(FormsModule.DATABASE);
+		let stmt:SQLStatement = new SQLStatement("getCountryName");
 
-		stmt.sql =
-		`
-			select country_name
-			from countries
-			where country_id = :code
-		`;
+		stmt.addBindValue(new BindValue("country",code,DataType.string));
 
-		stmt.addBindValue(new BindValue("code",code,DataType.string));
-
-		let success:boolean = await stmt.execute();
+		let success:boolean = await stmt.execute(FormsModule.DATABASE);
 		if (success) row = await stmt.fetch();
 
 		if (row)	return(row[0]);

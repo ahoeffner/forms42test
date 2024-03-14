@@ -26,10 +26,12 @@ export class Departments extends DatabaseSource
 {
 	constructor()
 	{
-		super(FormsModule.DATABASE,"departments");
+		super("departments");
 
 		this.sorting = "department_id";
 		this.primaryKey = "department_id";
+
 		this.rowlocking = LockMode.Pessimistic;
+		this.connection = FormsModule.DATABASE;
 	}
 }

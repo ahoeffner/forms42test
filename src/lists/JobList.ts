@@ -34,7 +34,9 @@ class Jobs extends DatabaseSource
 
 	constructor()
 	{
-		super(FormsModule.DATABASE,"jobs");
+		super("jobs");
+		this.connection = FormsModule.DATABASE;
+
 		this.addColumns(["job_id","job_title"])
 
 		let contains:Custom = new Custom("contains");
