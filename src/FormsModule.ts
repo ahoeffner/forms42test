@@ -157,7 +157,7 @@ export class FormsModule extends FormsCoreModule
 		]);
 
 		FormsModule.DATABASE.connect("hr","hr");
-		FormsModule.showform(MDD);
+		//FormsModule.showform(MDD);
 		//FormsModule.OpenURLForm();
 	}
 

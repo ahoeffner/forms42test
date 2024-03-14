@@ -4,6 +4,10 @@ find ../core/src -name '*.ts' | xargs wc -l
 Remove stmt & bindvalues from Cursor
 Implement Between, Contains, isNull
 
+patch i connection
+SQLStatement returning etc
+
+
 FormsModule.saveAll()
 
 release after rollback requeries
