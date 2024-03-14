@@ -38,9 +38,8 @@ export class Countries extends DatabaseSource
 	public static async getName(code:string) : Promise<string>
 	{
 		let row:any[] = null;
-		let stmt:SQLStatement = new SQLStatement("getCountryName");
-
-		stmt.cursor = true;
+		
+		let stmt:SQLStatement = new SQLStatement("getCountryName",true);
 		stmt.addBindValue(new BindValue("country_id",code,DataType.string));
 
 		let success:boolean = await stmt.execute(FormsModule.DATABASE);

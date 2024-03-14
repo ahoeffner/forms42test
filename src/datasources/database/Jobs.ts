@@ -37,7 +37,7 @@ export class Jobs extends DatabaseSource
 	public static async getTitle(id:string) : Promise<string>
 	{
 		let row:any[] = null;
-		let stmt:SQLStatement = new SQLStatement("getJobTitle");
+		let stmt:SQLStatement = new SQLStatement("getJobTitle",true);
 
 		stmt.addBindValue(new BindValue("job_id",id,DataType.string));
 

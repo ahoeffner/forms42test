@@ -34,7 +34,7 @@ export class Departments extends DatabaseSource
 	public static async getTitle(id:string) : Promise<string>
 	{
 		let row:any[] = null;
-		let stmt:SQLStatement = new SQLStatement("getDepartmentName");
+		let stmt:SQLStatement = new SQLStatement("getDepartmentName",true);
 
 		stmt.addBindValue(new BindValue("department_id",id,DataType.integer));
 

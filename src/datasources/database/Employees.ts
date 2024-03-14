@@ -39,7 +39,7 @@ export class Employees extends DatabaseSource
 	{
 		let row:any[] = null;
 
-		let stmt:SQLStatement = new SQLStatement("getEmployeeName");
+		let stmt:SQLStatement = new SQLStatement("getEmployeeName",true);
 		stmt.addBindValue(new BindValue("employee_id",employee_id,DataType.smallint));
 
 		let success:boolean = await stmt.execute(FormsModule.DATABASE);
@@ -56,7 +56,7 @@ export class Employees extends DatabaseSource
 		let row:any[] = null;
 		let employees:string[] = [];
 
-		let stmt:SQLStatement = new SQLStatement("getAllEmployees");
+		let stmt:SQLStatement = new SQLStatement("getAllEmployees",true);
 
 		stmt.arrayfetch = 32;
 		let success:boolean = await stmt.execute(FormsModule.DATABASE);

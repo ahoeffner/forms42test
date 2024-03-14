@@ -38,8 +38,8 @@ export class Locations extends DatabaseSource
 	public static async getLocation(loc_id:number) : Promise<string>
 	{
 		let row:any[] = null;
-		let stmt:SQLStatement = new SQLStatement("getLocationName");
 
+		let stmt:SQLStatement = new SQLStatement("getLocationName",true);
 		stmt.addBindValue(new BindValue("loc_id",loc_id,DataType.smallint));
 
 		let success:boolean = await stmt.execute(FormsModule.DATABASE);
@@ -49,19 +49,5 @@ export class Locations extends DatabaseSource
 		if (row)	return(row[0]);
 
 		return(null);
-	}
-}
-
-export class CountryNameFilter extends Like
-{
-	constructor(column:string)
-	{
-		super(column);
-		this.setDataType("string");
-	}
-
-	public asSQL() : string
-	{
-		return("country_id in (select country_id from countries where country_name like :"+this.getBindValueName()+")");
 	}
 }
