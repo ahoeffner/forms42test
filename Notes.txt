@@ -7,7 +7,7 @@ Implement Between, Contains, isNull
 patch i connection
 SQLStatement returning etc
 
-ret fucking stavefejl i arrayfetch
+validate when deleted ????
 Insert commit doesn't work
 
 FormsModule.saveAll()
@@ -28,8 +28,6 @@ Propagate rightclick
 
 *** Jonas ***
 
-Style ListOfValues in demo
-datepicker allow double-click
 kigge på rightclick.
 
 *************
