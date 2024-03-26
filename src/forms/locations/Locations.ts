@@ -46,9 +46,8 @@ export class Locations extends BaseForm
 
 		if (country != null)
 		{
-			let countries:DataSource = new CountryDS();
 			let countryname:Like = new Like("country_name").setConstraint(country);
-			let findcountries:Query = new Query(countries,"country_id",countryname);
+			let findcountries:Query = new Query("countries","country_id",countryname);
 
 			// select country_id from countries where country_name like :country
 

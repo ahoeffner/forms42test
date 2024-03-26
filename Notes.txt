@@ -7,6 +7,8 @@ Implement Between, Contains, isNull
 patch i connection
 SQLStatement returning etc
 
+ret fucking stavefejl i arrayfetch
+Insert commit doesn't work
 
 FormsModule.saveAll()
 
