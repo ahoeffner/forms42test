@@ -56,8 +56,8 @@ export class Jobs extends DatabaseSource
 		let func:StoredProcedure = new StoredProcedure("getSalaryLimit");
 
 		func.addParameter("job",job,DataType.varchar);
-		func.addParameter("min",0,DataType.integer,ParameterType.inout);
-		func.addParameter("max",0,DataType.integer,ParameterType.inout);
+		func.addParameter("min",null,DataType.integer,ParameterType.out);
+		func.addParameter("max",null,DataType.integer,ParameterType.out);
 
 		let success:boolean = await func.execute(FormsModule.DATABASE);
 		if (!success) console.log(func.error());

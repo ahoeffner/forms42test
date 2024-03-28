@@ -189,6 +189,7 @@ export class Employees extends Block
 	{
 		let response:DatabaseResponse = this.getRecord().response;
 		this.setValue("employee_id",response.getValue("employee_id"));
+		console.log("hired per "+response.getValue("hire_date"));
 		return(true);
 	}
 }

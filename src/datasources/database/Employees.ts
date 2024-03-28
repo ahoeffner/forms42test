@@ -30,9 +30,9 @@ export class Employees extends DatabaseSource
 		this.connection = FormsModule.DATABASE;
 
 		this.primaryKey = "employee_id";
-		this.insertReturnColumns = "employee_id";
 		this.addDMLColumns(["job_id","department_id"]);
 		this.sorting = "department_id, last_name, first_name";
+		this.insertReturnColumns = ["employee_id","hire_date"];
 	}
 
 	public static async getName(employee_id:number) : Promise<string>

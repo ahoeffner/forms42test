@@ -41,7 +41,6 @@ import { PhoneBookMembased } from './forms/phonenook/PhoneBookMembased';
 import { JobList } from './lists/JobList';
 import { ManagerList } from './lists/ManagerList';
 import { CountryList } from './lists/CountryList';
-//import { CountryList2 } from './lists/CountryList2';
 import { LocationList } from './lists/LocationList';
 import { DepartmentsList } from './lists/DepartmentsList';
 
@@ -49,9 +48,8 @@ import { AppHeader } from './tags/AppHeader';
 import { LinkMapper } from './fields/LinkMapper';
 import { TrueFalseMapper } from './fields/TrueFalseMapper';
 
-import { KeyMapPage, FormsPathMapping, FormsModule as FormsCoreModule, FlushStrategy, KeyMap, FormEvent, EventType, DatabaseConnection as Connection, FormProperties, UsernamePassword, Form, AlertForm, InternalFormsConfig, ConnectionScope } from 'forms42core';
 import { Generated } from './forms/generated/Generated';
-import { MDD } from './Test/MDD';
+import { KeyMapPage, FormsPathMapping, FormsModule as FormsCoreModule, FlushStrategy, KeyMap, FormEvent, EventType, DatabaseConnection as Connection, FormProperties, UsernamePassword, Form, AlertForm, InternalFormsConfig, ConnectionScope } from 'forms42core';
 
 @FormsPathMapping(
 	[
@@ -156,9 +154,7 @@ export class FormsModule extends FormsCoreModule
 			{type:EventType.Key,key:this.masterdetail}
 		]);
 
-		FormsModule.DATABASE.connect("hr","hr");
-		//FormsModule.showform(MDD);
-		//FormsModule.OpenURLForm();
+		FormsModule.OpenURLForm();
 	}
 
 	private async open(event:FormEvent) : Promise<boolean>
