@@ -154,6 +154,7 @@ export class FormsModule extends FormsCoreModule
 			{type:EventType.Key,key:this.masterdetail}
 		]);
 
+		FormsModule.showurl = true;
 		FormsModule.OpenURLForm();
 	}
 
