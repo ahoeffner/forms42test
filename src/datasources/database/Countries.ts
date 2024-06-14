@@ -29,7 +29,6 @@ export class Countries extends DatabaseSource
 		super("countries");
 		this.connection = FormsModule.DATABASE;
 
-
 		this.sorting = "country_id";
 		this.primaryKey = "country_id";
 		this.rowlocking = LockMode.Pessimistic;
@@ -38,7 +37,7 @@ export class Countries extends DatabaseSource
 	public static async getName(code:string) : Promise<string>
 	{
 		let row:any[] = null;
-		
+
 		let stmt:SQLStatement = new SQLStatement("getCountryName",true);
 		stmt.addBindValue(new BindValue("country_id",code,DataType.string));
 
